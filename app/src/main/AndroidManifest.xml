@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="edu.aku.omarshoaib.renew">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <!--android:allowBackup="true"
+    android:dataExtractionRules="@xml/data_extraction_rules"
+    android:fullBackupContent="@xml/backup_rules"-->
+    <application
+        android:name=".global.MainApp"
+        android:icon="@drawable/app_icon"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppStructure.FullScreen.StatusBar"
+        android:usesCleartextTraffic="false"
+        tools:targetApi="31">
+
+        <!-- SPLASH ACTIVITY -->
+        <activity
+            android:name=".activity.SplashAC"
+            android:exported="true"
+            android:theme="@style/Theme.AppStructure.FullScreen"
+            tools:ignore="LockedOrientationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- LOGIN ACTIVITY -->
+        <activity
+            android:name=".activity.LoginAC"
+            android:exported="false"
+            android:theme="@style/Theme.AppStructure.FullScreen" />
+
+        <!-- CHANGE PASS ACTIVITY -->
+        <activity
+            android:name=".activity.ChangePassAC"
+            android:exported="false"
+            android:theme="@style/Theme.AppStructure.FullScreen" />
+
+        <!-- LOCK ACTIVITY -->
+        <activity
+            android:name=".activity.LockAC"
+            android:exported="false"
+            android:theme="@style/Theme.AppStructure.FullScreen" />
+
+        <!-- MAIN ACTIVITY -->
+        <activity
+            android:name=".activity.MainActivity"
+            android:exported="false" />
+
+        <!-- SYNC ACTIVITY -->
+        <activity
+            android:name=".activity.SyncAC"
+            android:exported="false" />
+
+        <!-- IDENTIFICATION ACTIVITY - SCREENING ID -->
+        <activity
+            android:name=".activity.IdentificationAC"
+            android:exported="false" />
+
+        <!-- SYNCED RECORDS LIST ACTIVITY -->
+        <activity
+            android:name=".synced_recs.SyncedRecsListAC"
+            android:exported="false" />
+
+        <!-- IMAGE VIEWER ACTIVITY -->
+        <activity
+            android:name=".activity.ImageViewerAC"
+            android:exported="false"
+            android:theme="@style/Theme.AppStructure.FullScreen" />
+
+        <!-- ENDING ACTIVITY -->
+        <activity
+            android:name=".activity.EndingAC"
+            android:exported="false" />
+
+        <!-- META DATA -->
+        <meta-data
+            android:name="YEK_REVRES"
+            android:value="v9y5B8E)H@McQfTjWnZr4u7w!z%C*F-JaNdRgUkXp2s5v8y/A?D(G+KbPeShVmYq" />
+        <meta-data
+            android:name="YEK_TRATS"
+            android:value="8" />
+        <!-- FOR DICTIONARY PORTAL -->
+        <meta-data
+            android:name="DP_YEK_REVRES"
+            android:value="v9y5B8E)H@McQfTjWnZr4u7w!z%C*F-JaNdRgUkXp2s5v8y/A?D(G+KbPeShVmYq" />
+        <meta-data
+            android:name="DP_YEK_TRATS"
+            android:value="7" />
+        <meta-data
+            android:name="YEK_DATA_KEY"
+            android:value="df5C7KcB" />
+        <meta-data
+            android:name="YEK_DATA_INDEX"
+            android:value="8" />
+
+        <!-- SEND DB -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.file_provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- For setting code scanner orientation -->
+        <activity
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            tools:replace="screenOrientation" />
+
+        <service
+            android:name=".global.GPSLocationService"
+            android:enabled="true"
+            android:exported="false" />
+    </application>
+
+</manifest>

@@ -1,0 +1,829 @@
+<resources>
+    <string name="app_name">RENEW</string>
+    <string name="language">English</string>
+    <string name="network_error">No Internet!</string>
+    <string name="network_error_desc">Please check your internet connection and try again</string>
+    <string name="need_permission">Need Permission!</string>
+    <string name="need_permission_desc">The app needs permission to use this feature</string>
+    <string name="goto_settings">GOTO SETTINGS</string>
+
+    <string name="success">Success!</string>
+    <string name="error">Error!</string>
+    <string name="warning">Warning!</string>
+    <string name="info">Info!</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="submit">Submit</string>
+    <string name="somethings_not_right">Something\'s not right. Please try again.</string>
+    <string name="loading">Loading. Please wait</string>
+    <string name="incorrect_cluster_code">Incorrect cluster code</string>
+    <string name="search">Search</string>
+    <string name="form_locked_title">Form Locked!</string>
+    <string name="record_saved">Record saved successfully</string>
+    <string name="specify"> Please explain </string>
+    <string name="back">Back</string>
+    <string name="close">Close</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="verify">Verify</string>
+    <string name="decline">Decline</string>
+    <string name="accept">Accept</string>
+    <string name="confirm">Confirm</string>
+    <string name="optional">Optional</string>
+    <string name="reason">Reason</string>
+    <string name="previous">Previous</string>
+    <string name="proceed">Proceed</string>
+    <string name="continued">Continue</string>
+    <string name="delete">Delete</string>
+    <string name="deleted">Deleted</string>
+
+    <string name="lang_sindhi">Sindhi</string>
+    <string name="lang_urdu">Urdu</string>
+    <string name="lang_english">English</string>
+
+    <string name="userId">User ID</string>
+    <string name="enter_your_userid">Enter your user id</string>
+    <string name="password">Password</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="field_empty_error">Please fill all the fields</string>
+    <string name="scan">Scan</string>
+    <string name="scan_cancelled">Scan Cancelled</string>
+    <string name="camera_scan_permission_not_enabled">Please enable the camera permission to scan the code</string>
+    <string name="scan_successful">Scan Successful</string>
+    <string name="permission_denied">Permission Denied!</string>
+    <string name="scan_not_successful">Scan not successful</string>
+    <string name="scan_timeout">Scan timeout</string>
+    <string name="today">Today</string>
+    <string name="select">Select</string>
+    <string name="selected">Selected</string>
+    <string name="invalid_time_error">Invalid Date!</string>
+    <string name="invalid_time_error_desc">Please select the valid date</string>
+    <string name="invalid_time_max_error_desc">Maximum observation time would be %d days</string>
+    <string name="time_not_selected_error_desc">Valid date or time must be selected</string>
+    <string name="dir_not_created">Directory not created</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">Welcome !</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >=%d characters</string>
+    <string name="login_failed">Login failed!</string>
+    <string name="data_sync_activity">Data Sync Activity</string>
+    <string name="sign_in">Sign In</string>
+    <string name="username">Username</string>
+    <string name="download_data">Download Data</string>
+    <string name="download_data_desc">Please download the data before login</string>
+    <string name="username_required">Username is required</string>
+    <string name="incorrect_username_or_password">Incorrect Username or Password</string>
+    <string name="attempt_no">Attempt %d - %s</string>
+    <string name="account_locked">Account Locked!</string>
+    <string name="login_attempts_exceeded">Number of login attempts exceeded</string>
+    <string name="upload_data">Upload Data</string>
+    <string name="upload_photos">Upload Photos</string>
+    <string name="sync_upload_duplicate">Duplicate photo</string>
+    <string name="sync_upload_success">Total: %d | Synced: %d | Duplicates: %d \n\nMessage: %s</string>
+    <string name="successful">Successful</string>
+    <string name="process_failed">Process Failed</string>
+    <string name="sync_error">Error: %s</string>
+    <string name="sync_download_success">Received: %d</string>
+    <string name="sync_download_success_seq">%s</string>
+    <string name="app_up_to_date">Latest Version Installed</string>
+    <string name="no_new_records_to_upload">No new records to upload</string>
+    <string name="status">Status: %s</string>
+    <string name="change_pass">Change Password</string>
+    <string name="db_browser">DB Browser</string>
+    <string name="options" translatable="false">Options</string>
+    <string name="sync_data" translatable="false">Sync Data</string>
+    <string name="pending_forms">Pending forms</string>
+    <string name="forms_report_by_date">Forms report by date</string>
+    <string name="forms_report_by_cluster">Forms report by cluster</string>
+    <string name="send_db">Send DB</string>
+    <string name="import_db" translatable="false">Import DB</string>
+    <string name="log_out">Logout</string>
+    <string name="age">Age</string>
+    <string name="backup_db">Backup DB</string>
+    <string name="backup_successful">Backup Successful</string>
+    <string name="backup_successful_desc">Database has been backed up successfully. To access the file please follow the instructions\n\n
+        \u2022 Open \'File Explorer\'\n
+        \u2022 Goto Android > data > %s > files > backup\n
+        \u2022 Backup file name would be \'%s\'</string>
+    <string name="backup_unsuccessful">Backup Unsuccessful: %s</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="check">Check</string>
+    <string name="edit_details">Edit details</string>
+    <string name="list_of_mwras">List Of MWRAs</string>
+    <string name="list_of_mwra_child">List of Children for MWRA</string>
+    <string name="list_of_adols">List of Adolescents</string>
+    <string name="town">Town</string>
+    <string name="uc">UC</string>
+    <string name="tehsil">Tehsil</string>
+    <string name="district">District</string>
+    <string name="identification">Identification</string>
+    <string name="no_image_found">No image found</string>
+
+    <!-- Synced Recs -->
+    <string name="synced_recs">Synced Records</string>
+    <string name="view_synced_recs_desc">Download synced records</string>
+    <string name="synced_recs_filter">Synced Records Filter</string>
+    <string name="select_module">Select Module</string>
+    <string name="site">Site</string>
+    <string name="start_date">From Date</string>
+    <string name="end_date">To Date</string>
+    <string name="select_synced_filter_desc">Please select filter to download the synced records</string>
+    <string name="module_not_defined">Module not defined</string>
+    <string name="clear">Clear</string>
+    <string name="already_selected">This value has already been selected.</string>
+    <string name="no_network_synced_recs_filter">No network! You can ony view records of the last inserted filter</string>
+    <string name="select_site">Select Site</string>
+    <string name="select_site_desc">Please select site to proceed</string>
+    <string name="cluster">Cluster</string>
+    <string name="insert_cluster_desc">Please insert cluster to proceed</string>
+
+    <string name="form_locked">This form1 has been locked.</string>
+    <string name="save">Save</string>
+    <string name="done">Done</string>
+    <string name="next">Next</string>
+    <string name="skip_to_end">Skip to End</string>
+    <string name="back_pressed_not_allowed">Back Press Not Allowed</string>
+    <string name="double_back_press">Please click BACK again</string>
+    <string name="double_cancel_press" translatable="false">Please click CANCEL again</string>
+    <string name="password_not_matched">Password did not match</string>
+    <string name="screen_locked">Screen Locked</string>
+    <string name="screen_locked_desc">App screen has been locked after 15 minutes of idle time. \nPlease enter your password to unlock the screen</string>
+    <string name="close_app">Close App</string>
+    <string name="unlock_screen">Unlock Screen</string>
+    <string name="main_screen">MAIN SCREEN</string>
+    <string name="start_interview">START INTERVIEW</string>
+    <string name="open_form">Open form1 to start Interview</string>
+    <string name="admin_options">ADMIN OPTIONS</string>
+    <string name="change_pass_desc">Your new password must be different from previous password</string>
+    <string name="old_password">Old Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="welcome_user">Welcome, %s!</string>
+    <string name="username_pass_same">Username and Password cannot be same</string>
+    <string name="incorrect_old_password">Incorrect old password</string>
+    <string name="current_previous_password_cannot_same">Password cannot not be same as previous.</string>
+    <string name="password_creation_criteria">Password must have alphabets, numbers and symbol</string>
+    <string name="secured_pass_not_generated">Secured password not generated</string>
+    <string name="password_reset_successful">Password has been reset successfully</string>
+    <string name="function_not_defined">Function not defined</string>
+    <string name="rooted_device_title">Rooted Device!</string>
+    <string name="rooted_device_desc">Your device is rooted. This app will not work on rooted device</string>
+    <string name="tamper_title">Device Tampering!</string>
+    <string name="tamper_desc">Your device is Tampered. This app will not work on Tampered device</string>
+    <string name="no_photos_taken">No photos were taken</string>
+    <string name="no_photos_to_upload">No photos to upload</string>
+    <string name="sync_upload_photo_success">Photo uploaded successfully</string>
+    <string name="image_not_taken">Image not taken</string>
+    <string name="no_records_found">No records found</string>
+    <string name="download_new_version">Download New Version</string>
+    <string name="please_select">Please Select</string>
+    <string name="time_format">hh:mm a</string>
+    <string name="date_format">yyyy-MM-dd</string>
+    <string name="download_data_desc_2">Please download data before Start Interview</string>
+    <string name="uncovered_uc">Uncovered UC</string>
+    <string name="uncovered_village">Uncovered Village</string>
+    <string name="update_db_failed">Update db FAILED</string>
+    <string name="no_assigned_district_desc">This user has no assigned district</string>
+    <string name="summary">Summary</string>
+    <string name="summary_u"><u>Summary</u></string>
+    <string name="summary_desc">Show summary of the records</string>
+    <string name="synced">Synced</string>
+    <string name="synced_desc">This form1 has been Synced</string>
+    <string name="unsynced">Unsynced</string>
+    <string name="completed">Completed</string>
+    <string name="completed_other">Completed (Other)</string>
+    <string name="incomplete">Incomplete</string>
+    <string name="todays_forms">Today\'s Forms</string>
+    <string name="total_forms">Total Forms</string>
+    <string name="no_data">No Data</string>
+    <string name="by_date">Search By Date</string>
+    <string name="total">Total</string>
+    <string name="incorrect_device_date">APP DATE ERROR_Incorrect device date_%s_%s</string>
+    <string name="incorrect_device_date_desc">Your device date is\n%s\n\nServer date is\n%s</string>
+    <string name="invalid_date">Invalid Date!</string>
+    <string name="date_error_popup_desc">Your device date is invalid! Adjust date &amp; time and try again.</string>
+    <string name="adjust_date">Adjust Date</string>
+    <string name="updated_version">Please download the updated version of the app\nVer. %s.%d</string>
+    <string name="pick_email_provider">Send Email</string>
+    <string name="folder_not_created">Folder not created</string>
+    <string name="file_not_found">File not found</string>
+    <string name="folder_not_deleted">Folder not deleted</string>
+    <string name="married">Married</string>
+    <string name="unmarried">Unmarried</string>
+    <string name="widowed">Widowed</string>
+    <string name="divorced">Divorced</string>
+    <string name="separated">Separated</string>
+    <string name="family_complete">Family Complete</string>
+    <string name="select_indexed">Select Indexed</string>
+    <string name="line_no">Line no. %d</string>
+    <string name="pregnancies">Pregnancies</string>
+    <string name="pregnancy_mismatched">You have entered only %d of %d Pregnancy.\nAre you sure you want to continue?</string>
+    <string name="pregnancy_add_more">You have already entered %d Pregnancy. Adding more will exceed pregnancy count of %d. Are you sure you want to add more pregnancies?</string>
+    <string name="date_of_outcome">Date of Outcome</string>
+    <string name="status_at_birth">Status at Birth</string>
+    <string name="current_status">Current Status</string>
+    <string name="born_alive">Born Alive</string>
+    <string name="born_dead">Born Dead</string>
+    <string name="twin_birth">Twin Birth</string>
+    <string name="one_alive_one_dead">One Alive One Dead</string>
+    <string name="both_dead">Both Dead</string>
+    <string name="miscarriage">Miscarriage</string>
+    <string name="all_family_mwras">All MWRAs in family</string>
+    <string name="all_family_members">All Family Members</string>
+    <string name="all_adolescents">All Adolescents in family</string>
+    <string name="not_applicable">Not applicable</string>
+    <string name="not_available_died">Not Available/Died</string>
+    <string name="line_no_1">Line no.</string>
+    <string name="add_details">Add details</string>
+    <string name="followup_no">Followup #%d</string>
+    <string name="locked">Locked</string>
+    <string name="please_scan_code">Please scan the code</string>
+    <string name="min_length">Minimum required length %d</string>
+    <string name="search_by_name">Search by Name</string>
+    <string name="search_by_id">Search by Id</string>
+    <string name="incorrect_hhId">Invalid household Id</string>
+    <string name="digits_all" translatable="false">AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789,. -</string>
+    <string name="digits_name" translatable="false">AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz -</string>
+    <string name="digits_number" translatable="false">0123456789</string>
+    <string name="digits_decimal" translatable="false">0123456789.</string>
+    <string name="digits_text_number" translatable="false">AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz 0123456789-</string>
+    <string name="digits_password" translatable="false">AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789@$!%*?.-_&amp;</string>
+    <string name="available_c"><![CDATA[<font color=#7f7f7f7f>Available</font><br/>%s]]></string>
+    <string name="father_name_c"><![CDATA[<font color=#7f7f7f7f>Father/Husband</font><br/>%s]]></string>
+    <string name="mother_name_c"><![CDATA[<font color=#7f7f7f7f>Mother Name</font><br/>%s]]></string>
+
+    <!-- FOOD RECALL -->
+    <string name="sectionFR24hoursdietryrecall_mainheading">SECTION FR: 24–HOURS DIETARY RECALL</string>
+    <string name="fr01">Before breakfast</string>
+    <string name="fr02">Breakfast</string>
+    <string name="fr03">Between breakfast and lunch</string>
+    <string name="fr04">Lunch</string>
+    <string name="fr05">Between lunch and dinner</string>
+    <string name="fr06">Dinner</string>
+    <string name="fr07">After dinner</string>
+    <string name="fr08">Supplements</string>
+    <string name="frw">Water intake in 24 hours</string>
+    <string name="frwa">No. of Glasses</string>
+    <string name="frwb">Size of Glass</string>
+    <string name="frwb01">Small</string>
+    <string name="frwb02">Medium</string>
+    <string name="frwb03">Large</string>
+    <string name="fra">Time (24–hour clock)</string>
+    <string name="frb">Description of Item</string>
+    <string name="frc">Ingredients</string>
+    <string name="frd">Quantity</string>
+    <string name="frd01">Scale</string>
+    <string name="frd02">Amount</string>
+    <string name="fre">Place prepared</string>
+    <string name="fre01">Home Grown</string>
+    <string name="fre02">Market</string>
+    <string name="frf">Place consumed</string>
+    <string name="frf01">Home</string>
+    <string name="frf02">Market</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="are_you_sure_food">Are you sure you want to remove this food?</string>
+    <string name="empty_food_list">Empty %s List</string>
+    <string name="no_meal_taken">No meal taken</string>
+
+    <string name="ending">Ending Activity</string>
+    <string name="Q_istatus">istatus</string>
+    <string name="istatus"> Result of Questionnaire interview </string>
+    <string name="istatusi"> Discuss any result not completed with team leader </string>
+    <string name="istatus01"> Complete </string>
+    <string name="istatus02"> Refused </string>
+    <string name="istatus03"> Other </string>
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="dkn"> Don\’t Know </string>
+    <string name="none"> No one </string>
+    <string name="never"> Never</string>
+    <string name="na"> Applicable</string>
+    <string name="nap"> Not Applicable </string>
+    <string name="nav">Not Available </string>
+    <string name="ref"> Refused </string>
+    <string name="other"> Other </string>
+    <string name="year"> Year </string>
+    <string name="month"> Month </string>
+    <string name="weeks"> Week </string>
+    <string name="days"> Day </string>
+    <string name="hours"> Hour </string>
+    <string name="minutes"> Minutes </string>
+    <string name="kg"> Kilograms </string>
+    <string name="km"> Kilometers </string>
+    <string name="cm"> cm </string>
+    <string name="in"> Inch </string>
+    <string name="rupees"> Rupees </string>
+    <string name="num"> Number </string>
+    <string name="name"> Name </string>
+    <string name="contactnum">Contact Number </string>
+    <string name="checkHHpresent"> The name of head of the household corresponds to the line listing data.</string>
+    <string name="newHHheadname"> Name of new head of the household </string>
+
+    <!-- FOOD RECALL -->
+    <string name='Q_fr01' translatable="false">fr01</string>
+    <string name='Q_fr02' translatable="false">fr02</string>
+    <string name='Q_fr03' translatable="false">fr03</string>
+    <string name='Q_fr04' translatable="false">fr04</string>
+    <string name='Q_fr05' translatable="false">fr05</string>
+    <string name='Q_fr06' translatable="false">fr06</string>
+    <string name='Q_fr07' translatable="false">fr07</string>
+    <string name='Q_fr08' translatable="false">fr08</string>
+    <string name='Q_frw' translatable="false">frw</string>
+
+    <!-- APP VARIABLES -->
+
+    <!-- Form1 1: Attendance Sheet For Health Education Session's Participants -->
+
+    <string name="f1t1">Form 01: Attendance Sheet for Health Education Sessions’ Participants</string>
+    <string name="f101">Team</string>
+    <string name="f102">HCF catchment</string>
+    <string name="f103">Date</string>
+
+    <!-- Form1a: Attendance Sheet For Health Education Session's Participants -->
+
+    <string name="dist">District</string>
+    <string name="f104">Name</string>
+    <string name="f105">Age in years</string>
+    <string name="f106">Marital status</string>
+    <string name="f10601">YES</string>
+    <string name="f10602">NO</string>
+    <string name="f107">Pregnancy status (For married women only between 10 to 49)</string>
+    <string name="f10701">YES</string>
+    <string name="f10702">NO</string>
+    <string name="f108">PHQ9 verbal consent (for 10 to 49 years of Age females only)</string>
+    <string name="f10801">YES</string>
+    <string name="f10802">NO</string>
+    <string name="f109">Pregnancy assessment Written consent (for 10 to 49 years married females only)</string>
+    <string name="f10901">YES</string>
+    <string name="f10902">NO</string>
+
+    <!-- Form1 2: Mental Health assessment (PHQ-9) Questionnaire -->
+
+    <string name="f2t1">Mental Health Assessment (PHQ–9) Questionnaire</string>
+    <string name="f2t2">To Identify–Depressive Symptoms Among WRA, Adolescent, And Pregant Women</string>
+    <string name="f201">Participant name</string>
+    <string name="f202">Husband/Father name</string>
+    <string name="f203">Age (in Years)</string>
+    <string name="f204">HCF Catchment</string>
+    <string name="f205">Village/address</string>
+    <string name="f206">Screening performed by staff name and code</string>
+    <string name="scrid">Screening Id</string>
+    <string name="f207">Date of screening</string>
+    <string name="f2t3">PHQ–9</string>
+    <string name="f208a">Little interest or pleasure in doing things</string>
+    <string name="f208a1">Not at all</string>
+    <string name="f208a2">Several days</string>
+    <string name="f208a3">More than half the days</string>
+    <string name="f208a4">Nearly every day</string>
+    <string name="f208b">Feeling down, depressed, or hopeless</string>
+    <string name="f208b1">Not at all</string>
+    <string name="f208b2">Several days</string>
+    <string name="f208b3">More than half the days</string>
+    <string name="f208b4">Nearly every day</string>
+    <string name="f208c">Trouble falling asleep, staying asleep, or sleeping too much</string>
+    <string name="f208c1">Not at all</string>
+    <string name="f208c2">Several days</string>
+    <string name="f208c3">More than half the days</string>
+    <string name="f208c4">Nearly every day</string>
+    <string name="f208d">Feeling tired or having little energy</string>
+    <string name="f208d1">Not at all</string>
+    <string name="f208d2">Several days</string>
+    <string name="f208d3">More than half the days</string>
+    <string name="f208d4">Nearly every day</string>
+    <string name="f208e">Poor appetite or overeating</string>
+    <string name="f208e1">Not at all</string>
+    <string name="f208e2">Several days</string>
+    <string name="f208e3">More than half the days</string>
+    <string name="f208e4">Nearly every day</string>
+    <string name="f208f">Feeling bad about yourself — or that you are a failure or have let yourself or your family Down</string>
+    <string name="f208f1">Not at all</string>
+    <string name="f208f2">Several days</string>
+    <string name="f208f3">More than half the days</string>
+    <string name="f208f4">Nearly every day</string>
+    <string name="f208g">Trouble concentrating on things</string>
+    <string name="f208g1">Not at all</string>
+    <string name="f208g2">Several days</string>
+    <string name="f208g3">More than half the days</string>
+    <string name="f208g4">Nearly every day</string>
+    <string name="f208h">Moving or speaking so slowly that others noticed — or being fidgety/restless</string>
+    <string name="f208h1">Not at all</string>
+    <string name="f208h2">Several days</string>
+    <string name="f208h3">More than half the days</string>
+    <string name="f208h4">Nearly every day</string>
+    <string name="f208i">Thoughts that you would be better off dead or of hurting yourself</string>
+    <string name="f208i1">Not at all</string>
+    <string name="f208i2">Several days</string>
+    <string name="f208i3">More than half the days</string>
+    <string name="f208i4">Nearly every day</string>
+    <string name="f209">Total PHQ–9 score</string>
+    <string name="f210">Interpretation</string>
+    <string name="f2101">Minimal</string>
+    <string name="f2102">Mild</string>
+    <string name="f2103">Moderate</string>
+    <string name="f2104">Moderately</string>
+    <string name="f2105">severe</string>
+    <string name="f211">Action protocol</string>
+    <string name="f2111">Counseling provided</string>
+    <string name="f2112">Referred to specialist</string>
+    <string name="f2113">Monitored only</string>
+
+    <!-- High Risk Pregnancy Assessment Form1 -->
+
+    <string name="f3t1">High Risk Pregnancy Assessment Form</string>
+    <string name="f301">Participant name</string>
+    <string name="f302">Husband/Father name</string>
+    <string name="f303">Age (Years)</string>
+    <string name="f304">Healthcare Facility Catchment</string>
+    <string name="f305">Village/address</string>
+    <string name="f306">Screening performed by, staff name and code</string>
+    <string name="f3dd">Date of screening</string>
+    <string name="f307">Written consent granted</string>
+    <string name="f30701">Yes</string>
+    <string name="f30702">No</string>
+    <string name="f308">Gestational Age in weeks</string>
+    <string name="f309">Expected Date of Delivery</string>
+    <string name="f310">Hemoglobin Result</string>
+    <string name="f31001">reading</string>
+    <string name="f31097">Refused</string>
+    <string name="f31096">Others specify</string>
+    <string name="f311">MMS Provided</string>
+    <string name="f31101">Yes</string>
+    <string name="f31102">No</string>
+    <string name="f31103">Already provided</string>
+    <string name="f31197">Refused to take</string>
+    <string name="f31196">Others specify</string>
+    <string name="f313t2">Danger Signs in Pregnancy (Antenatal Period)</string>
+    <string name="f313t3">Danger Sign</string>
+    <string name="f31301">Severe vaginal bleeding</string>
+    <string name="f31301t1">Threatened or actual miscarriage, placental abruption, or previa</string>
+    <string name="f31301t2">Immediate referral to nearest health facility</string>
+    <string name="f31302">Swelling of hands, face, or entire body</string>
+    <string name="f31302t1">Possible pre–eclampsia</string>
+    <string name="f31302t2">Refer for urgent evaluation</string>
+    <string name="f31303">Severe headache with blurred vision</string>
+    <string name="f31303t1">Signs of pre–eclampsia/eclampsia</string>
+    <string name="f31303t2">Immediate referral</string>
+    <string name="f31304">Convulsions or fits</string>
+    <string name="f31304t1">Eclampsia (life–threatening)</string>
+    <string name="f31304t2">Immediate referral/emergency transport</string>
+    <string name="f31305">Severe abdominal pain</string>
+    <string name="f31305t1">Possible ectopic pregnancy, abruption, or preterm labor</string>
+    <string name="f31305t2">Refer urgently</string>
+    <string name="f31306">High fever (≥38°C)</string>
+    <string name="f31306t1">Infection (e.g., malaria, sepsis)</string>
+    <string name="f31306t2">Refer for clinical management</string>
+    <string name="f31307">Painful or burning urination</string>
+    <string name="f31307t1">Urinary tract infection (risk of preterm labor)</string>
+    <string name="f031307t2">Refer for clinical management</string>
+    <string name="f31308">Reduced or absent fetal movement after 6 months gestation</string>
+    <string name="f31308t1">Possible fetal distress or intrauterine death</string>
+    <string name="f31308t2">Refer immediately</string>
+    <string name="f31309">Difficulty breathing or chest pain</string>
+    <string name="f31309t1">Cardiopulmonary risk, anemia, or infection</string>
+    <string name="f31309t2">Immediate referral</string>
+    <string name="f31310">Pallor or fatigue with fast breathing</string>
+    <string name="f31310t1">Severe anemia</string>
+    <string name="f31310t2">Urgent evaluation and treatment</string>
+    <string name="f31311">Watery discharge before 37 weeks</string>
+    <string name="f31311t1">Preterm premature rupture of membranes (PPROM)</string>
+    <string name="f31311t2">Refer urgently</string>
+    <string name="f309dk">Dont Know</string>
+
+    <!-- Form1 4: Initial Screening for Malnutrition -->
+
+    <string name="f4t1">Form 04: Initial Screening for Malnutrition</string>
+    <string name="f401">Staff Name</string>
+    <string name="f402">Date</string>
+    <string name="f403">HCF Catchment</string>
+    <string name="f404">Village/address</string>
+    <string name="f405">Child Name</string>
+    <string name="f406">Parents Name</string>
+    <string name="f407">Child Age</string>
+    <string name="f407dd">Age in Days</string>
+    <string name="f407mm">Age in Months</string>
+    <string name="f408">Sex</string>
+    <string name="f4081">Male</string>
+    <string name="f4082">Female</string>
+    <string name="f409">Edema</string>
+    <string name="f40901">Yes</string>
+    <string name="f40902">No</string>
+    <string name="f410">MUAC</string>
+    <string name="f4t2">If Edema is Yes or MUAC &lt;12.5 then fill Form–05 for Further screening</string>
+    <string name="f411">Written consent taken for further screening</string>
+    <string name="f41101">Yes</string>
+    <string name="f41102">No</string>
+
+    <!-- Form1 5: "Nutritional Screening for Enrollmentof Children Under Fivewith MUAC <12.5.
+    (For Community-Based Screening and Management of Malnutrition)" -->
+
+    <string name="f5t1">Nutritional Screening for Enrollmentof Children Under Fivewith MUAC &lt;12.5.
+(For Community–Based Screening and Management of Malnutrition)</string>
+    <string name="f501">Interviewer Name</string>
+    <string name="f502">Date</string>
+    <string name="f503">Parent/Guardian Consent</string>
+    <string name="f50301">Yes</string>
+    <string name="f50302">No</string>
+    <string name="f504">Child`s Full name</string>
+    <string name="f505">Enrollment ID</string>
+    <string name="f506">Child date of Birth</string>
+    <string name="f507dd">Age (Days)</string>
+    <string name="f507mm">Age (months)</string>
+    <string name="f508">Sex</string>
+    <string name="f50801">Male</string>
+    <string name="f50802">Female</string>
+    <string name="f509">Caregiver/father Name</string>
+    <string name="f510">Contact number</string>
+    <string name="f511">Village/Address</string>
+    <string name="f512">MUAC (cm)</string>
+    <string name="f513">Weight (kg)</string>
+    <string name="fo514">Height (cm)</string>
+    <string name="fo515">Edema</string>
+    <string name="f51501"> Present</string>
+    <string name="f51502">Absent</string>
+    <string name="f516">Appetite Test</string>
+    <string name="f51601"> Passed</string>
+    <string name="f51602">Failed</string>
+    <string name="f517t">Danger Signs (If yes is marked for any danger sign. Refer child to a public health facility for further evaluation )</string>
+    <string name="f517a">Severe dehydration </string>
+    <string name="f517a01">Yes</string>
+    <string name="f517a02">No</string>
+    <string name="f517b">High fever or hypothermia</string>
+    <string name="f517b01">Yes</string>
+    <string name="f517b02">No</string>
+    <string name="f517c">Persistent vomiting</string>
+    <string name="f517c01">Yes</string>
+    <string name="f517c02">No</string>
+    <string name="f517d">Severe respiratory distress</string>
+    <string name="f517d01">Yes</string>
+    <string name="f517d02">No</string>
+    <string name="f517e">Convulsion</string>
+    <string name="f517e01">Yes</string>
+    <string name="f517e02">No</string>
+    <string name="f517f">Lethargy or unconsciousness</string>
+    <string name="f517f01">Yes</string>
+    <string name="f517f02">No</string>
+    <string name="f517g">Severe anemia</string>
+    <string name="f517g01">Yes</string>
+    <string name="f517g02">No</string>
+    <string name="f518">Immunization Status</string>
+    <string name="f51801"> Complete</string>
+    <string name="f51802"> Partial</string>
+    <string name="f51897">None</string>
+    <string name="f519">Chronic Illness/Disability</string>
+    <string name="f51901">Yes</string>
+    <string name="f51902">No</string>
+    <string name="f520">Previous Malnutrition</string>
+    <string name="f52001">Yes</string>
+    <string name="f52002">No</string>
+    <string name="f521">Screening status</string>
+    <string name="f52101">Received RUSF [qty]</string>
+    <string name="f52102">Received RUTF [qty]</string>
+    <string name="f52103">Referred</string>
+    <string name="f52104">Refused supplements</string>
+    <string name="f52105">Refused referral</string>
+    <string name="f52096">Other</string>
+
+    <!-- Form1 6: "Nutritional SupplementationFollow-Up Form1
+    (For Monitoring and Management of Children with Acute Malnutrition) " -->
+
+    <string name="f6t1">Nutritional SupplementationFollow–Up Form(For Monitoring and Management of Children with Acute Malnutrition)</string>
+    <string name="f601">Follow–Up Staff Name</string>
+    <string name="f602">Date of Follow–Up</string>
+    <string name="f603">Follow–up Visit #</string>
+    <string name="f604">Enrollment ID</string>
+    <string name="f605">MUAC (cm)</string>
+    <string name="f606">Weight (kg)</string>
+    <string name="f607">Height (cm)</string>
+    <string name="f608">Edema</string>
+    <string name="f60801">Present</string>
+    <string name="f60802">Absent</string>
+    <string name="f609">Appetite Test</string>
+    <string name="f60901">Passed</string>
+    <string name="f60902">Failed</string>
+    <string name="t6t2">Danger Signs</string>
+    <string name="t6t2a">If yes is marked for any danger refer child to a public healthcare facility</string>
+    <string name="f610a">Severe dehydration</string>
+    <string name="f610a01">Yes</string>
+    <string name="f610a02">No</string>
+    <string name="f610b">High fever or hypothermia</string>
+    <string name="f610b01">Yes</string>
+    <string name="f610b02">No</string>
+    <string name="f610c">Persistent vomiting</string>
+    <string name="f610c01">Yes</string>
+    <string name="f610c02">No</string>
+    <string name="f610d">Severe respiratory distress</string>
+    <string name="f610d01">Yes</string>
+    <string name="f610d02">No</string>
+    <string name="f610e">Convulsion</string>
+    <string name="f610e01">Yes</string>
+    <string name="f610e02">No</string>
+    <string name="f610f">Lethargy or unconsciousness</string>
+    <string name="f610f01">Yes</string>
+    <string name="f610f02">No</string>
+    <string name="f610g">Severe anemia</string>
+    <string name="f610g01">Yes</string>
+    <string name="f610g02">No</string>
+    <string name="t6t3">Supplement compliance</string>
+    <string name="f611">How many sachets did you used since last visit?</string>
+    <string name="f612">Have you shared sachets since last visit?</string>
+    <string name="f61296">Yes</string>
+    <string name="f61202">No</string>
+    <string name="f613">Leftover Sachet</string>
+    <string name="f61396">Yes</string>
+    <string name="f61302">No</string>
+    <string name="f614">Any challenges reported in feeding the supplement.</string>
+    <string name="f61497">None</string>
+    <string name="f61401">Vomiting</string>
+    <string name="f61402">Refusal b/c of taste</string>
+    <string name="f61403">Diarrhea</string>
+    <string name="f61404">Abdominal pain</string>
+    <string name="f61496">Other</string>
+    <string name="f615">Counseling Provided</string>
+    <string name="f61501">Yes</string>
+    <string name="f61502">No</string>
+    <string name="f616">Illness Since Last Visit</string>
+    <string name="f61601">Yes</string>
+    <string name="f61602">No</string>
+    <string name="f617">If Yes, Specify</string>
+    <string name="f618">Medical Care Sought</string>
+    <string name="f61801">Yes</string>
+    <string name="f61802">No</string>
+    <string name="f619">Follow up status</string>
+    <string name="f61901">Supplement continued  (Mention qty provided)</string>
+    <string name="f61902">Recovered (MUAC ≥12.5 for 2 visits &amp; no oedema)</string>
+    <string name="f61903">Defaulted (Did not return for 2 consecutive visits)</string>
+    <string name="f61904">Non–responder (No improvement after 2 months)</string>
+    <string name="f61905">Died (Date)</string>
+    <string name="f61906">Referred to Facility (  Medical complications)</string>
+
+
+    <!-- XML QUESTIONS -->
+
+    <string name='Q_f101' translatable='false'>f101</string>
+    <string name='Q_f102' translatable='false'>f102</string>
+    <string name='Q_f103' translatable='false'>f103</string>
+    <string name='Q_dist' translatable='false'>dist</string>
+    <string name='Q_f104' translatable='false'>f104</string>
+    <string name='Q_f105' translatable='false'>f105</string>
+    <string name='Q_f106' translatable='false'>f106</string>
+    <string name='Q_f107' translatable='false'>f107</string>
+    <string name='Q_f108' translatable='false'>f108</string>
+    <string name='Q_f109' translatable='false'>f109</string>
+    <string name='Q_f1t1' translatable='false'>f1t1</string>
+
+    <string name='Q_f201' translatable='false'>f201</string>
+    <string name='Q_f202' translatable='false'>f202</string>
+    <string name='Q_f203' translatable='false'>f203</string>
+    <string name='Q_f204' translatable='false'>f204</string>
+    <string name='Q_f205' translatable='false'>f205</string>
+    <string name='Q_f206' translatable='false'>f206</string>
+    <string name='Q_f207' translatable='false'>f207</string>
+    <string name='Q_f208a' translatable='false'>f208a</string>
+    <string name='Q_f208b' translatable='false'>f208b</string>
+    <string name='Q_f208c' translatable='false'>f208c</string>
+    <string name='Q_f208d' translatable='false'>f208d</string>
+    <string name='Q_f208e' translatable='false'>f208e</string>
+    <string name='Q_f208f' translatable='false'>f208f</string>
+    <string name='Q_f208g' translatable='false'>f208g</string>
+    <string name='Q_f208h' translatable='false'>f208h</string>
+    <string name='Q_f208i' translatable='false'>f208i</string>
+    <string name='Q_f209' translatable='false'>f209</string>
+    <string name='Q_f210' translatable='false'>f210</string>
+    <string name='Q_f211' translatable='false'>f211</string>
+    <string name='Q_f2t1' translatable='false'>f2t1</string>
+    <string name='Q_f2t2' translatable='false'>f2t2</string>
+    <string name='Q_f2t3' translatable='false'>f2t3</string>
+    <string name='Q_scrid' translatable='false'>scrid</string>
+
+    <string name='Q_f031307t2' translatable='false'>f031307t2</string>
+    <string name='Q_f301' translatable='false'>f301</string>
+    <string name='Q_f302' translatable='false'>f302</string>
+    <string name='Q_f303' translatable='false'>f303</string>
+    <string name='Q_f304' translatable='false'>f304</string>
+    <string name='Q_f305' translatable='false'>f305</string>
+    <string name='Q_f306' translatable='false'>f306</string>
+    <string name='Q_f307' translatable='false'>f307</string>
+    <string name='Q_f308' translatable='false'>f308</string>
+    <string name='Q_f309' translatable='false'>f309</string>
+    <string name='Q_f310' translatable='false'>f310</string>
+    <string name='Q_f311' translatable='false'>f311</string>
+    <string name='Q_f31301' translatable='false'>f31301</string>
+    <string name='Q_f31301t1' translatable='false'>f31301t1</string>
+    <string name='Q_f31301t2' translatable='false'>f31301t2</string>
+    <string name='Q_f31302' translatable='false'>f31302</string>
+    <string name='Q_f31302t1' translatable='false'>f31302t1</string>
+    <string name='Q_f31302t2' translatable='false'>f31302t2</string>
+    <string name='Q_f31303' translatable='false'>f31303</string>
+    <string name='Q_f31303t1' translatable='false'>f31303t1</string>
+    <string name='Q_f31303t2' translatable='false'>f31303t2</string>
+    <string name='Q_f31304' translatable='false'>f31304</string>
+    <string name='Q_f31304t1' translatable='false'>f31304t1</string>
+    <string name='Q_f31304t2' translatable='false'>f31304t2</string>
+    <string name='Q_f31305' translatable='false'>f31305</string>
+    <string name='Q_f31305t1' translatable='false'>f31305t1</string>
+    <string name='Q_f31305t2' translatable='false'>f31305t2</string>
+    <string name='Q_f31306' translatable='false'>f31306</string>
+    <string name='Q_f31306t1' translatable='false'>f31306t1</string>
+    <string name='Q_f31306t2' translatable='false'>f31306t2</string>
+    <string name='Q_f31307' translatable='false'>f31307</string>
+    <string name='Q_f31307t1' translatable='false'>f31307t1</string>
+    <string name='Q_f31308' translatable='false'>f31308</string>
+    <string name='Q_f31308t1' translatable='false'>f31308t1</string>
+    <string name='Q_f31308t2' translatable='false'>f31308t2</string>
+    <string name='Q_f31309' translatable='false'>f31309</string>
+    <string name='Q_f31309t1' translatable='false'>f31309t1</string>
+    <string name='Q_f31309t2' translatable='false'>f31309t2</string>
+    <string name='Q_f31310' translatable='false'>f31310</string>
+    <string name='Q_f31310t1' translatable='false'>f31310t1</string>
+    <string name='Q_f31310t2' translatable='false'>f31310t2</string>
+    <string name='Q_f31311' translatable='false'>f31311</string>
+    <string name='Q_f31311t1' translatable='false'>f31311t1</string>
+    <string name='Q_f31311t2' translatable='false'>f31311t2</string>
+    <string name='Q_f313t2' translatable='false'>f313t2</string>
+    <string name='Q_f313t3' translatable='false'>f313t3</string>
+    <string name='Q_f3dd' translatable='false'>f3dd</string>
+    <string name='Q_f3t1' translatable='false'>f3t1</string>
+
+    <string name='Q_f401' translatable='false'>f401</string>
+    <string name='Q_f402' translatable='false'>f402</string>
+    <string name='Q_f403' translatable='false'>f403</string>
+    <string name='Q_f404' translatable='false'>f404</string>
+    <string name='Q_f405' translatable='false'>f405</string>
+    <string name='Q_f406' translatable='false'>f406</string>
+    <string name='Q_f407' translatable='false'>f407</string>
+    <string name='Q_f408' translatable='false'>f408</string>
+    <string name='Q_f409' translatable='false'>f409</string>
+    <string name='Q_f410' translatable='false'>f410</string>
+    <string name='Q_f411' translatable='false'>f411</string>
+    <string name='Q_f4t1' translatable='false'>f4t1</string>
+    <string name='Q_f4t2' translatable='false'>f4t2</string>
+
+    <string name='Q_f501' translatable='false'>f501</string>
+    <string name='Q_f502' translatable='false'>f502</string>
+    <string name='Q_f503' translatable='false'>f503</string>
+    <string name='Q_f504' translatable='false'>f504</string>
+    <string name='Q_f505' translatable='false'>f505</string>
+    <string name='Q_f506' translatable='false'>f506</string>
+    <string name='Q_f507dd' translatable='false'>f507dd</string>
+    <string name='Q_f507mm' translatable='false'>f507mm</string>
+    <string name='Q_f508' translatable='false'>f508</string>
+    <string name='Q_f509' translatable='false'>f509</string>
+    <string name='Q_f510' translatable='false'>f510</string>
+    <string name='Q_f511' translatable='false'>f511</string>
+    <string name='Q_f512' translatable='false'>f512</string>
+    <string name='Q_f513' translatable='false'>f513</string>
+    <string name='Q_f516' translatable='false'>f516</string>
+    <string name='Q_f517a' translatable='false'>f517a</string>
+    <string name='Q_f517b' translatable='false'>f517b</string>
+    <string name='Q_f517c' translatable='false'>f517c</string>
+    <string name='Q_f517d' translatable='false'>f517d</string>
+    <string name='Q_f517e' translatable='false'>f517e</string>
+    <string name='Q_f517f' translatable='false'>f517f</string>
+    <string name='Q_f517g' translatable='false'>f517g</string>
+    <string name='Q_f517t' translatable='false'>f517t</string>
+    <string name='Q_f518' translatable='false'>f518</string>
+    <string name='Q_f519' translatable='false'>f519</string>
+    <string name='Q_f520' translatable='false'>f520</string>
+    <string name='Q_f521' translatable='false'>f521</string>
+    <string name='Q_f5t1' translatable='false'>f5t1</string>
+    <string name='Q_fo514' translatable='false'>fo514</string>
+    <string name='Q_fo515' translatable='false'>fo515</string>
+
+    <string name='Q_f6t1' translatable='false'>f6t1</string>
+    <string name='Q_f601' translatable='false'>f601</string>
+    <string name='Q_f602' translatable='false'>f602</string>
+    <string name='Q_f603' translatable='false'>f603</string>
+    <string name='Q_f604' translatable='false'>f604</string>
+    <string name='Q_f605' translatable='false'>f605</string>
+    <string name='Q_f606' translatable='false'>f606</string>
+    <string name='Q_f607' translatable='false'>f607</string>
+    <string name='Q_f608' translatable='false'>f608</string>
+    <string name='Q_f609' translatable='false'>f609</string>
+    <string name='Q_f610a' translatable='false'>f610a</string>
+    <string name='Q_f610b' translatable='false'>f610b</string>
+    <string name='Q_f610c' translatable='false'>f610c</string>
+    <string name='Q_f610d' translatable='false'>f610d</string>
+    <string name='Q_f610e' translatable='false'>f610e</string>
+    <string name='Q_f610f' translatable='false'>f610f</string>
+    <string name='Q_f610g' translatable='false'>f610g</string>
+    <string name='Q_f611' translatable='false'>f611</string>
+    <string name='Q_f612' translatable='false'>f612</string>
+    <string name='Q_f613' translatable='false'>f613</string>
+    <string name='Q_f614' translatable='false'>f614</string>
+    <string name='Q_f615' translatable='false'>f615</string>
+    <string name='Q_f616' translatable='false'>f616</string>
+    <string name='Q_f617' translatable='false'>f617</string>
+    <string name='Q_f618' translatable='false'>f618</string>
+    <string name='Q_f619' translatable='false'>f619</string>
+    <string name='Q_t6t2' translatable='false'>t6t2</string>
+    <string name='Q_t6t2a' translatable='false'>t6t2a</string>
+    <string name='Q_t6t3' translatable='false'>t6t3</string>
+
+</resources>

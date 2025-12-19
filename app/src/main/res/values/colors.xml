@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!--App Colors-->
+    <color name="primary_color">#009688</color>
+    <color name="primary_color_light">#BEE6E2</color>
+    <color name="primary_color_dark">#00796B</color>
+    <color name="primary_color_accent">#5CBF88</color>
+
+    <color name="secondary_color">#FF9800</color>
+    <color name="secondary_color_light">#FFDBA6</color>
+    <color name="secondary_color_dark">#D57E00</color>
+    <color name="secondary_color_accent">#FACB82</color>
+
+    <color name="status_bar_color">#005A50</color>
+    <color name="appbar_color">@color/primary_color_dark</color>
+
+    <color name="background_color">#FFFFFF</color>
+    <color name="text_color">#2C2C2C</color>
+    <color name="text_color_light">#b4b4b4</color>
+    <color name="hint_color">#B9B9B9</color>
+    <color name="disabled_text_color">#8E8E8E</color>
+    <color name="divider_color">#5E5E5E</color>
+    <color name="divider_color_light">#1F000000</color>
+    <color name="edittext_color">#FFFFFF</color>
+    <color name="edittext_disabled_color">#E6E6E6</color>
+    <color name="edittext_border_color">#979797</color>
+    <color name="button_color">#098A0B</color>
+    <color name="icon_color">#7E7E7E</color>
+    <color name="red_color">#B10827</color>
+    <color name="yellow_color">#FFEB9C</color>
+    <color name="red_color_light">#d6ef0000</color>
+    <color name="gray_dark">#424242</color>
+    <color name="pink_light">#BEECC3C3</color>
+    <color name="transparent_color">#00FFFFFF</color>
+    <color name="disabled_bg_color">#26000000</color>
+
+    <color name="black_overlay">#7f000000</color>
+    <color name="white_overlay">#7fffffff</color>
+    <color name="gray_overlay">#7f7f7f7f</color>
+    <color name="off_white">#EFEFEF</color>
+    <color name="green_overlay">#dde5b6</color>
+    <color name="red_overlay">#fff0f3</color>
+    <color name="red_overlay1">#ffccd5</color>
+    <color name="blue_overlay">#660A6ECA</color>
+
+    <color name="dark_translucent_color">#FA000000</color>
+    <color name="success_color">#27A605</color>
+    <color name="error_color">#ca0a2e</color>
+    <color name="warning_color">#ca720a</color>
+    <color name="info_color">#0a6eca</color>
+
+    <color name="picker_default_divider_color">#6e6e6e</color>
+    <color name="chip_default_color">#E8E8E8</color>
+    <color name="chip_new_color">#B86706</color>
+    <color name="light_gray_color">#8B8B8B</color>
+    <color name="lighter_gray_color">#EFEFEF</color>
+    <color name="clickable_color">#2E94F1</color>
+    <color name="light_clickable_color">#BF2E94F1</color>
+    <color name="lighter_clickable_color">#0D2E94F1</color>
+
+    <color name="synced_color">#27A605</color>
+    <color name="unsynced_color">#ca720a</color>
+    <color name="completed_color">#0a6eca</color>
+    <color name="completed_other_color">#0AA4CA</color>
+    <color name="incomplete_color">#ca0a2e</color>
+
+    <color name="mother_color">#FF8C59</color>
+    <color name="child_color">#55E475</color>
+    <color name="male_color">#02A3FE</color>
+    <color name="female_color">#E84BA3</color>
+    <color name="twins_color">#8C4BE8</color>
+    <color name="mother_color_light">#80FF8C59</color>
+    <color name="child_color_light">#8055E475</color>
+    <color name="male_color_light">#8002A3FE</color>
+    <color name="female_color_light">#80E84BA3</color>
+    <color name="twins_color_light">#808C4BE8</color>
+    <color name="tarnsgen_color">#2BACAC</color>
+
+</resources>

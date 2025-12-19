@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.EndingActivity">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="callback"
+            type="edu.aku.omarshoaib.renew.activity.EndingAC" />
+    </data>
+
+
+    <LinearLayout
+        style="@style/Theme.AppStructure.Background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/view_appbar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/main_padding">
+
+            <LinearLayout
+                android:id="@+id/GrpName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <!-- istatus  Radio   -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVistatus"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_istatus" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/istatus" />
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/textView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/istatusi" />
+
+                        <RadioGroup
+                            android:id="@+id/istatus"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:onCheckedChanged="@{callback::onIStatusCheckChanged}">
+
+                            <RadioButton
+                                android:id="@+id/istatusa"
+                                style="@style/Theme.AppStructure.RadioButton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:tag="1"
+                                android:text="@string/istatus01" />
+
+                            <RadioButton
+                                android:id="@+id/istatusb"
+                                style="@style/Theme.AppStructure.RadioButton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:tag="3"
+                                android:text="@string/istatus02" />
+
+                            <RadioButton
+                                android:id="@+id/istatusc"
+                                style="@style/Theme.AppStructure.RadioButton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:tag="96"
+                                android:text="@string/istatus03" />
+
+                            <EditText
+                                android:id="@+id/istatus96x"
+                                style="@style/Theme.AppStructure.EditTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:digits="@string/digits_all"
+                                android:hint="@string/istatus03"
+                                android:inputType="text"
+                                android:tag="istatusc"
+                                android:visibility='@{istatusc.checked? View.VISIBLE : View.GONE}'
+                                tools:ignore="Autofill" />
+                        </RadioGroup>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <edu.aku.omarshoaib.renew.global.views.AppEndButtons
+                    android:id="@+id/endButtonsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:btnNegVisible="-1" />
+
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+</layout>

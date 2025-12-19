@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AppButton">
+        <attr name="btnBackground" format="integer" />
+        <attr name="btnShadow" format="integer" />
+        <attr name="btnId" format="reference" />
+        <attr name="btnText" format="string" />
+        <attr name="btnTextColor" format="integer" />
+        <attr name="btnPaddingStart" format="dimension" />
+        <attr name="btnPaddingTop" format="dimension" />
+        <attr name="btnPaddingEnd" format="dimension" />
+        <attr name="btnPaddingBottom" format="dimension" />
+        <attr name="btnEnabled" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="AppEditText">
+        <attr name="etLayoutBackground" format="integer" />
+        <attr name="etLayoutMarginTop" format="dimension" />
+        <attr name="etTitleText" format="string" />
+        <attr name="etId" format="reference" />
+        <attr name="etMarginTop" format="dimension" />
+        <attr name="etDrawableEnd" format="integer" />
+        <attr name="etDrawableStart" format="integer" />
+        <attr name="etHint" format="string" />
+        <attr name="etFocusable" format="boolean" />
+        <attr name="etMaxLength" format="integer" />
+        <attr name="etMaxLines" format="integer" />
+        <attr name="etMinHeight" format="dimension" />
+        <attr name="etEnabled" format="boolean" />
+        <attr name="android:inputType" />
+        <attr name="android:imeOptions" />
+        <attr name="android:gravity" />
+        <attr name="etCursorVisible" format="boolean" />
+        <attr name="etTitleVisible" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="AppEndButtons">
+        <attr name="btnPosBackground" format="integer" />
+        <attr name="btnNegBackground" format="integer" />
+        <attr name="btnPosText" format="string" />
+        <attr name="btnNegText" format="string" />
+        <attr name="btnPosClick" format="string" />
+        <attr name="btnNegClick" format="string" />
+        <attr name="btnPosTextColor" format="integer" />
+        <attr name="btnNegTextColor" format="integer" />
+        <attr name="btnPosVisible" format="integer" />
+        <attr name="btnNegVisible" format="integer" />
+        <attr name="btnPosEnabled" format="boolean" />
+        <attr name="btnNegEnabled" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="ItemSummary">
+        <attr name="titleBGColor" format="integer" />
+        <attr name="title" format="string" />
+        <attr name="count" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="AppTextInput">
+        <attr name="tiId" format="reference" />
+        <attr name="tiHint" format="string" />
+        <attr name="tiStartIconDrawable" format="integer" />
+        <attr name="android:inputType" />
+        <attr name="tiMaxLength" format="integer" />
+        <attr name="tiMaxLines" format="integer" />
+        <attr name="tiMinHeight" format="dimension" />
+        <attr name="tiEnabled" format="boolean" />
+        <attr name="tiFocusable" format="boolean" />
+        <attr name="android:imeOptions" />
+        <attr name="android:gravity" />
+    </declare-styleable>
+
+    <!-- RadioGroup Theme -->
+    <declare-styleable name="AppRadioGroup">
+        <attr name="columnCount" format="integer" />
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_bottomsheet"
+    android:layoutDirection="ltr"
+    android:orientation="vertical"
+    android:paddingTop="0dp"
+    android:paddingBottom="@dimen/_10sdp">
+
+    <Button
+        android:id="@+id/bsCloseBtn"
+        style="@style/Theme.AppStructure.ButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_30sdp"
+        android:alpha="0.7"
+        android:background="@drawable/bg_rounded_app_dark_filled"
+        android:backgroundTint="@color/red_color"
+        android:elevation="@dimen/_1sdp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/summary"
+        android:textSize="@dimen/_11ssp"
+        app:backgroundTint="@null" />
+
+    <LinearLayout
+        android:id="@+id/filterCGMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bsCloseBtn"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@drawable/bg_rounded_gray_bordered"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/filterCG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:foregroundGravity="center"
+            android:orientation="horizontal"
+            app:checkedChip="@+id/todaysChip"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/todaysChip"
+                style="@style/Theme.AppStructure.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/today"
+                android:textSize="@dimen/text_size_regular" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/byDateChip"
+                style="@style/Theme.AppStructure.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/by_date"
+                android:textSize="@dimen/text_size_regular" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/totalChip"
+                style="@style/Theme.AppStructure.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/total"
+                android:textSize="@dimen/text_size_regular" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <TextView
+            android:id="@+id/formTypeTV"
+            style="@style/Theme.AppStructure.RegularText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:background="@drawable/bg_rounded_app_bordered"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            app:drawableEndCompat="@drawable/ic_arrow_down" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/filterTitleTV"
+        style="@style/Theme.AppStructure.TitleBoldText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/filterCGMain"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center"
+        android:text="@string/todays_forms"
+        android:textColor="@color/disabled_text_color" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/filterTitleTV"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_10sdp">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_minus60sdp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/row1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <view
+                    android:id="@+id/byDateLayout"
+                    class="edu.aku.omarshoaib.renew.global.SummaryUtils$ItemSummary"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:visibility="gone"
+                    app:count="0"
+                    app:title="@string/todays_forms"
+                    app:titleBGColor="@color/disabled_text_color" />
+
+                <view
+                    android:id="@+id/totalLayout"
+                    class="edu.aku.omarshoaib.renew.global.SummaryUtils$ItemSummary"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:count="0"
+                    app:title="@string/total_forms"
+                    app:titleBGColor="@color/disabled_text_color" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/row1"
+                android:orientation="horizontal">
+
+                <view
+                    android:id="@+id/syncedLayout"
+                    class="edu.aku.omarshoaib.renew.global.SummaryUtils$ItemSummary"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:count="0"
+                    app:title="@string/synced"
+                    app:titleBGColor="@color/synced_color" />
+
+                <view
+                    android:id="@+id/unsyncedLayout"
+                    class="edu.aku.omarshoaib.renew.global.SummaryUtils$ItemSummary"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:count="0"
+                    app:title="@string/unsynced"
+                    app:titleBGColor="@color/unsynced_color" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/row2"
+                android:orientation="horizontal">
+
+                <view
+                    android:id="@+id/completedLayout"
+                    class="edu.aku.omarshoaib.renew.global.SummaryUtils$ItemSummary"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:count="0"
+                    app:title="@string/completed"
+                    app:titleBGColor="@color/completed_color" />
+
+                <view
+                    android:id="@+id/completedOtherLayout"
+                    class="edu.aku.omarshoaib.renew.global.SummaryUtils$ItemSummary"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:count="0"
+                    app:title="@string/completed_other"
+                    app:titleBGColor="@color/completed_other_color" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/row3"
+                android:orientation="horizontal">
+
+                <view
+                    android:id="@+id/incompleteLayout"
+                    class="edu.aku.omarshoaib.renew.global.SummaryUtils$ItemSummary"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:count="0"
+                    app:title="@string/incomplete"
+                    app:titleBGColor="@color/incomplete_color" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_weight="1"
+            android:elevation="@dimen/_minus1sdp">
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/chart"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_170sdp" />
+
+            <TextView
+                android:id="@+id/bsErrorTV"
+                style="@style/Theme.AppStructure.BoldText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/_50sdp"
+                android:gravity="center"
+                android:text="@string/no_data"
+                android:textColor="@color/error_color"
+                tools:ignore="RelativeOverlap" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</RelativeLayout>

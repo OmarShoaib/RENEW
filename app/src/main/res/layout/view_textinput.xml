@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.textfield.TextInputLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/titleTIL"
+    style="@style/Theme.AppStructure.TextInputStyle"
+    android:background="@android:color/transparent"
+    android:hint="@string/username"
+    app:hintTextColor="@color/primary_color_dark"
+    app:startIconDrawable="@drawable/ic_user"
+    app:startIconTint="@color/primary_color_dark">
+
+    <EditText
+        android:id="@+id/defaultET"
+        style="@style/Theme.AppStructure.EditTextStyle"
+        android:layout_gravity="center_horizontal"
+        android:layout_toStartOf="@+id/usernameIV"
+        android:background="@null"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:singleLine="true"
+        android:textColor="@color/primary_color"
+        tools:ignore="Autofill,LabelFor" />
+
+</com.google.android.material.textfield.TextInputLayout>

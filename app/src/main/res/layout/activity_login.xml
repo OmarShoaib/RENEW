@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.LoginAC">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="callback"
+            type="edu.aku.omarshoaib.renew.activity.LoginAC" />
+    </data>
+
+    <RelativeLayout
+        style="@style/Theme.AppStructure.Background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="ltr">
+
+        <!-- For testing app indication -->
+        <TextView
+            android:id="@+id/testingAppTV"
+            style="@style/Theme.AppStructure.BoldText"
+            android:layout_width="@dimen/_16sdp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:background="@color/red_color"
+            android:gravity="center"
+            android:text="T\nE\nS\nT\nI\nN\nG\n\nA\nP\nP"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp"
+            android:visibility="gone"
+            tools:ignore="HardcodedText" />
+
+        <ImageView
+            android:id="@+id/langBtn"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="@dimen/_15sdp"
+            android:background="@drawable/bg_circle_white_filled"
+            android:elevation="@dimen/_1sdp"
+            android:onClick="@{callback::changeLanguage}"
+            android:padding="@dimen/_4sdp"
+            android:src="@drawable/ic_language"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/updateVersionTV"
+            style="@style/Theme.AppStructure.BoldText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/langBtn"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_minus4sdp"
+            android:alpha="0.8"
+            android:background="@color/red_color"
+            android:gravity="center"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/updated_version"
+            android:textColor="@color/white"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="@dimen/_5sdp"
+            android:gravity="center"
+            android:padding="@dimen/_30sdp">
+
+            <RelativeLayout
+                android:id="@+id/lockedLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/loginLayout"
+                android:layout_alignBottom="@+id/loginLayout"
+                android:alpha="0.65"
+                android:background="@drawable/bg_rounded_white_filled"
+                android:backgroundTint="@color/black"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                tools:visibility="gone">
+
+                <TextView
+                    android:id="@+id/lockedTitleTV"
+                    style="@style/Theme.AppStructure.TitleBoldText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/download_data"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_17ssp" />
+
+                <TextView
+                    android:id="@+id/lockedDescTV"
+                    style="@style/Theme.AppStructure.RegularText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lockedTitleTV"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/download_data_desc"
+                    android:textColor="@color/white" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/appLogoIV"
+                android:layout_width="@dimen/_65sdp"
+                android:layout_height="@dimen/_65sdp"
+                android:layout_alignTop="@+id/loginLayout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_minus30sdp"
+                android:background="@drawable/bg_circle_white_filled"
+                android:elevation="@dimen/_3sdp"
+                android:padding="@dimen/_2sdp"
+                android:src="@drawable/app_icon"
+                tools:ignore="ContentDescription" />
+
+            <RelativeLayout
+                android:id="@+id/loginLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_rounded_app_bordered"
+                android:elevation="-1dp"
+                android:gravity="center_horizontal"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingTop="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_15sdp"
+                android:paddingBottom="@dimen/_17sdp">
+
+                <TextView
+                    android:id="@+id/appNameTV"
+                    style="@style/Theme.AppStructure.TitleBoldText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.6"
+                    android:text="@string/app_name"
+                    android:textColor="@color/black_overlay"
+                    android:textSize="@dimen/_11ssp"
+                    android:textStyle="bold"
+                    tools:ignore="RelativeOverlap" />
+
+                <TextView
+                    android:id="@+id/languageTV"
+                    style="@style/Theme.AppStructure.TitleBoldText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/language"
+                    android:textColor="@color/primary_color"
+                    android:textSize="@dimen/_12ssp"
+                    tools:ignore="RelativeOverlap" />
+
+                <edu.aku.omarshoaib.renew.global.views.AppTextInput
+                    android:id="@+id/usernameTextInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    app:startIconTint="@color/primary_color_dark"
+                    app:tiHint="@string/username"
+                    app:tiId="@+id/username"
+                    app:tiStartIconDrawable="@drawable/ic_user" />
+
+                <edu.aku.omarshoaib.renew.global.views.AppTextInput
+                    android:id="@+id/passwordTextInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/usernameTextInput"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
+                    app:startIconTint="@color/primary_color_dark"
+                    app:tiHint="@string/password"
+                    app:tiId="@+id/password"
+                    app:tiStartIconDrawable="@drawable/ic_locked" />
+
+                <Button
+                    android:id="@+id/signInBtn"
+                    style="@style/Theme.AppStructure.ButtonStyle"
+                    android:layout_below="@+id/passwordTextInput"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:onClick="@{callback::login}"
+                    android:text="@string/login" />
+
+                <ProgressBar
+                    android:id="@+id/loginProgress"
+                    style="?android:attr/progressBarStyleLarge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/signInBtn"
+                    android:layout_alignBottom="@+id/signInBtn"
+                    android:indeterminate="true"
+                    android:indeterminateTint="@color/primary_color_dark"
+                    android:indeterminateTintMode="src_atop"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/downloadDataLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/loginLayout"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/bg_rounded_sec_bordered"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_15sdp"
+                android:paddingBottom="@dimen/_8sdp">
+
+                <TextView
+                    android:id="@+id/downloadDataDescTV"
+                    style="@style/Theme.AppStructure.BoldText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/download_data_desc"
+                    android:textColor="@color/black_overlay" />
+
+                <Button
+                    android:id="@+id/syncDataBtn"
+                    style="@style/Theme.AppStructure.ButtonStyle"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:onClick="@{callback::gotoSyncActivity}"
+                    android:text="@string/download_data"
+                    app:backgroundTint="@color/secondary_color_dark" />
+
+                <TextView
+                    android:id="@+id/installDateTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:gravity="center"
+                    android:textColor="@color/gray_overlay"
+                    android:textSize="@dimen/_8ssp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.lists.SyncedRecsListAC">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="callback"
+            type="edu.aku.omarshoaib.renew.synced_recs.SyncedRecsListAC" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg"
+        android:layoutDirection="ltr"
+        android:orientation="vertical">
+
+        <include layout="@layout/view_appbar" />
+
+        <LinearLayout
+            android:id="@+id/filterLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/bg_rounded_white_filled"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/siteTitleTV"
+                style="@style/Theme.AppStructure.SmallRegularText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/top_round_shape"
+                android:backgroundTint="@color/secondary_color"
+                android:gravity="center"
+                android:textColor="@color/white" />
+
+            <RadioGroup
+                android:id="@+id/searchRG"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/main_padding">
+
+                <RadioButton
+                    android:id="@+id/nameRB"
+                    style="@style/Theme.AppStructure.RadioButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:checked="true"
+                    android:tag="1"
+                    android:text="@string/name" />
+
+                <!--<RadioButton
+                    android:id="@+id/scrIdRB"
+                    style="@style/Theme.AppStructure.RadioButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:tag="2"
+                    android:text="@string/screening_id" />
+
+                <RadioButton
+                    android:id="@+id/enrIdRB"
+                    style="@style/Theme.AppStructure.RadioButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:tag="3"
+                    android:text="@string/enrollment_id" />-->
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/main_padding"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/main_padding">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_rounded_gray_bordered"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_10sdp">
+
+                    <EditText
+                        android:id="@+id/searchET"
+                        style="@style/Theme.AppStructure.EditTextStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_toStartOf="@+id/clearSearchBtn"
+                        android:background="@android:color/transparent"
+                        android:digits="AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789-"
+                        android:hint="@string/search"
+                        android:inputType="text"
+                        tools:ignore="Autofill" />
+
+                    <ImageView
+                        android:id="@+id/clearSearchBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/ic_close_red"
+                        android:onClick="clearSearch"
+                        tools:ignore="ContentDescription" />
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/searchBtn"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="0dp"
+                    android:onClick="filterForms"
+                    android:src="@drawable/ic_search"
+                    tools:ignore="ContentDescription" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            app:cardCornerRadius="@dimen/border_radius"
+            app:cardElevation="@dimen/card_elevation">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/syncedRecsRV"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/_5sdp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                <TextView
+                    android:id="@+id/emptyTV"
+                    style="@style/Theme.AppStructure.TitleRegularText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/bg_rounded_white_filled"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/no_records_found"
+                    android:textColor="@color/red_color_light"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.AppStructure.FullScreen.StatusBar" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary_color</item>
+        <item name="colorPrimaryDark">@color/primary_color_dark</item>
+        <item name="colorAccent">@color/primary_color_light</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/status_bar_color</item>
+        <!-- Customize your theme here. -->
+        <item name="android:fontFamily">open-sans</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!-- Custom Fullscreen Application theme with Status Bar - Sections-->
+    <style name="Theme.AppStructure.FullScreen.StatusBar.Sections" parent="Theme.AppStructure.FullScreen.StatusBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary_color</item>
+        <item name="colorPrimaryDark">@color/primary_color_light</item>
+        <item name="colorAccent">@color/white</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/status_bar_color</item>
+        <!-- Customize your theme here. -->
+        <item name="android:fontFamily">open-sans</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!--<item name="android:textViewStyle">@style/labels</item>-->
+        <item name="editTextStyle">@style/Theme.AppStructure.EditTextStyle</item>
+        <item name="android:timePickerStyle">@style/Theme.AppStructure.TimePickerStyle</item>
+        <item name="android:datePickerStyle">@style/Theme.AppStructure.DatePickerStyle</item>
+        <item name="buttonStyle">@style/Theme.AppStructure.ButtonStyle</item>
+        <item name="radioButtonStyle">@style/Theme.AppStructure.RadioButton</item>
+        <item name="checkboxStyle">@style/Theme.AppStructure.Checkbox</item>
+        <item name="alertDialogTheme">@style/Theme.AppStructure.AlertPopup</item>
+        <item name="spinnerStyle">@style/Theme.AppStructure.SpinnerStyle</item>
+    </style>
+
+    <!-- Chip Text Theme -->
+    <style name="Theme.AppStructure.ChipText" parent="TextAppearance.MaterialComponents.Chip">
+        <item name="android:textSize">@dimen/text_size_regular</item>
+        <item name="android:fontFamily">open-sans</item>
+    </style>
+
+</resources>

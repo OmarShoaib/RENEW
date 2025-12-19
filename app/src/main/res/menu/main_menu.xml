@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/mainItem"
+        android:icon="@drawable/ic_menu_hamburger"
+        android:title="@string/options"
+        app:showAsAction="ifRoom">
+        <menu>
+            <item
+                android:id="@+id/onSync"
+                android:title="@string/sync_data"
+                app:showAsAction="collapseActionView" />
+            <item
+                android:id="@+id/changePassword"
+                android:title="@string/change_pass" />
+            <item
+                android:id="@+id/dbBrowser"
+                android:title="@string/db_browser"
+                android:visible="false" />
+            <item
+                android:id="@+id/backupDB"
+                android:title="@string/backup_db"
+                android:titleCondensed="Backup database"
+                android:visible="false"
+                app:showAsAction="collapseActionView" />
+            <item
+                android:id="@+id/sendDB"
+                android:title="@string/send_db"
+                android:titleCondensed="Email database"
+                android:visible="false"
+                app:showAsAction="collapseActionView" />
+            <item
+                android:id="@+id/importDB"
+                android:title="@string/import_db"
+                android:titleCondensed="Import database"
+                android:visible="false"
+                app:showAsAction="collapseActionView" />
+            <item
+                android:id="@+id/logout"
+                android:title="@string/log_out" />
+        </menu>
+    </item>
+</menu>

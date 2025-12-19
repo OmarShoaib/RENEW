@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.LockAC">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="callback"
+            type="edu.aku.omarshoaib.renew.activity.LockAC" />
+    </data>
+
+    <RelativeLayout
+        style="@style/Theme.AppStructure.Background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="ltr">
+
+        <androidx.cardview.widget.CardView
+            style="@style/cardView"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_8sdp">
+
+                <TextView
+                    style="@style/Theme.AppStructure.TitleBoldText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/screen_locked"
+                    android:textColor="@color/primary_color_dark" />
+
+                <TextView
+                    style="@style/Theme.AppStructure.SmallRegularText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/screen_locked_desc" />
+
+                <RelativeLayout
+                    android:id="@+id/usernameLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/bg_rounded_app_bordered">
+
+                    <EditText
+                        android:id="@+id/usernameET"
+                        style="@style/Theme.AppStructure.EditTextStyle"
+                        android:layout_toStartOf="@+id/usernameIV"
+                        android:background="@null"
+                        android:enabled="false"
+                        android:hint="@string/username"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:textColor="@color/primary_color"
+                        tools:ignore="Autofill" />
+
+                    <ImageView
+                        android:id="@+id/usernameIV"
+                        android:layout_width="@dimen/_18sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:background="@drawable/ic_user"
+                        tools:ignore="ContentDescription" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/passwordLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/bg_rounded_app_bordered">
+
+                    <EditText
+                        android:id="@+id/passwordET"
+                        style="@style/Theme.AppStructure.EditTextStyle"
+                        android:layout_toStartOf="@+id/passwordIV"
+                        android:background="@null"
+                        android:digits="@string/digits_password"
+                        android:hint="@string/password"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPassword"
+                        android:singleLine="true"
+                        android:textColor="@color/primary_color"
+                        tools:ignore="Autofill" />
+
+                    <ImageView
+                        android:id="@+id/passwordIV"
+                        android:layout_width="@dimen/_18sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:background="@drawable/ic_locked"
+                        android:onClick="@{callback::togglePassVisibility}"
+                        tools:ignore="ContentDescription" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/closeAppBtn"
+                        style="@style/Theme.AppStructure.ButtonStyle"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:onClick="@{callback::closeApp}"
+                        android:text="@string/close_app"
+                        android:textColor="@color/red_color" />
+
+                    <Button
+                        android:id="@+id/unlockBtn"
+                        style="@style/Theme.AppStructure.ButtonStyle"
+                        android:layout_weight="1"
+                        android:onClick="@{callback::attemptUnlock}"
+                        android:radius="5dp"
+                        android:text="@string/unlock_screen" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</layout>

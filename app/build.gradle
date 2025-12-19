@@ -1,0 +1,236 @@
+plugins {
+    id 'com.android.application'
+
+    /*// Make sure that you have the Google services Gradle plugin
+    id 'com.google.gms.google-services'
+
+    // Add the Crashlytics Gradle plugin
+    id 'com.google.firebase.crashlytics'*/
+}
+
+android {
+    namespace 'edu.aku.omarshoaib.renew'
+    compileSdk 33
+
+    buildTypes {
+        release {
+            minifyEnabled true        // ✅ Enables shrinking, obfuscation, and optimization
+            shrinkResources true      // ✅ (Optional) Removes unused resources
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            debuggable false // Temporarily enable debugging for release build
+        }
+    }
+    compileOptions {
+        // Flag to enable support for the new language APIs
+        coreLibraryDesugaringEnabled true
+
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+        buildConfig = true
+    }
+
+    // For dynamic version change on build
+    Properties versionProps = new Properties()
+    def versionPropsFile = file('version.properties')
+
+    //Create a version properties file and add required properties with default values
+    if (!versionPropsFile.exists()) {
+        versionProps['VERSION_NUMBER'] = "1"
+        versionProps['VERSION_BUILD'] = "1"
+        versionProps['VERSION_PATCH'] = "0"
+        versionProps.store(versionPropsFile.newWriter(), null)
+    }
+
+    // Read existing
+    if (versionPropsFile.canRead()) {
+        versionProps = new Properties()
+        versionProps.load(new FileInputStream(versionPropsFile))
+
+        def value = 0
+        def versionType = "D"
+
+        def runTasks = gradle.startParameter.taskNames
+        if ('assemble' in runTasks || ':app:assembleRelease' in runTasks || 'aR' in runTasks) {
+            value = 1
+            versionType = "R"
+        }
+
+        def versionNumber = versionProps['VERSION_NUMBER'].toInteger()
+        def versionBuild = versionProps['VERSION_BUILD'].toInteger() + (value > 0 ? 1 : 0)
+//        def versionBuild = versionProps['VERSION_BUILD'].toInteger() + 1
+        def versionPatch = versionProps['VERSION_PATCH'].toInteger() + value
+
+        versionProps['VERSION_NUMBER'] = versionNumber.toString()
+        versionProps['VERSION_BUILD'] = versionBuild.toString()
+        versionProps['VERSION_PATCH'] = versionPatch.toString()
+
+        versionProps.store(versionPropsFile.newWriter(), null)
+
+        defaultConfig {
+            applicationId "edu.aku.omarshoaib.renew"
+            minSdk 23
+            targetSdk 33
+            versionCode versionBuild
+            versionName "${versionNumber}.${versionPatch}${versionType}"
+
+            testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+            // Change this key when certificate will update on server
+            buildConfigField "String", "CERT_KEY", "\"sha256/Wec45nQiFwKvHtuHxSAMGkt19k+uPSw9JlEkxhvYPHk=\""
+            buildConfigField "String", "CERT_KEY_BACKUP", "\"sha256/RQeZkB42znUfsDIIFWIRiYEcKl7nHwNFwWCrnMMJbVc=\""
+
+            // For writing room db schema
+            javaCompileOptions {
+                annotationProcessorOptions {
+                    arguments += ["room.schemaLocation": "$projectDir/schemas".toString()]
+                }
+            }
+        }
+
+        applicationVariants.configureEach { variant ->
+            variant.outputs.each { output ->
+
+                def appName = rootProject.name
+                def date = new Date()
+                def formattedDate = date.format('yyyy_MM_dd')
+
+                def outputFileName = "${appName}_${formattedDate}_${versionType}v${versionBuild}.apk"
+                def defaultOutputDir = variant.packageApplicationProvider.get().outputDirectory
+                output.outputFileName = new File("$defaultOutputDir/$outputFileName").name
+            }
+        }
+
+    } else {
+        throw new GradleException("Could not read version.properties!")
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.annotation:annotation:1.9.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.2'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+//    implementation fileTree(dir: 'libs', include: ['*.aar'])
+
+    constraints {
+        implementation("org.jetbrains.kotlin:kotlin-stdlib:1.8.0") {
+            because("kotlin-stdlib-jdk7 and kotlin-stdlib-jdk8 are now part of kotlin-stdlib")
+        }
+    }
+
+    /*// Import the Firebase BoM
+    implementation platform('com.google.firebase:firebase-bom:31.0.1')
+
+    // When using the BoM, don't specify versions in Firebase dependencies
+    // Firebase SDK for Google Analytics
+    implementation 'com.google.firebase:firebase-analytics'
+
+    // Firebase SDK for Crashlytics
+    implementation 'com.google.firebase:firebase-crashlytics'*/
+
+    // For Location - Play Services
+    implementation 'com.google.android.gms:play-services-location:21.3.0'
+
+    // For CardView
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    // For RecyclerView
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+
+    // For CardView
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    // For EditText
+    implementation 'com.github.AliAzaz:Edittext-Library:2.0.0'
+    implementation 'com.github.AliAzaz:AndroidValidatorCrawler:1.0.3'
+
+    // For Loading
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+
+    // Room DB
+    def room_version = "2.5.2"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+
+    // For Securing Database
+    implementation "net.zetetic:android-database-sqlcipher:4.5.1"
+    implementation "androidx.sqlite:sqlite:2.3.1"
+
+    // For Web Service Call
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.1.0'
+
+    // For Web Service Logging
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.4.1'
+
+    // For Runtime Permissions
+    implementation 'com.karumi:dexter:6.2.3'
+
+    // For Responsiveness - Views and Text Dimensions
+    implementation 'com.intuit.sdp:sdp-android:1.1.0'
+    implementation 'com.intuit.ssp:ssp-android:1.1.0'
+
+    // For SnackBar
+    implementation 'com.github.matecode:Snacky:1.1.5'
+
+    // For Image Loading and Caching
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
+
+    // For Capturing and Selecting Image - Camera
+    implementation 'com.github.dhaval2404:imagepicker:2.1'
+
+    implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+//    implementation 'com.google.zxing:core:3.3.0'
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.2'
+
+    // For Date Time Picker
+    implementation 'com.github.BlackBoxVision:datetimepicker-edittext:v0.5.0'
+
+    // Room DB Explorer
+    implementation 'com.wajahatkarim:roomexplorer:1.0.1'
+
+    /*// Android Database Browser - Unencrypted
+    debugImplementation 'com.github.amitshekhariitbhu.Android-Debug-Database:debug-db:1.0.6'
+
+    // Android Database Browser - Encrypted
+    implementation 'com.github.amitshekhariitbhu.Android-Debug-Database:debug-db-encrypt:1.0.6'*/
+
+    // Android Database Browser
+    implementation 'com.github.amitshekhariitbhu.Android-Debug-Database:debug-db:v1.0.6'
+
+    // For Chart/Graph
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    // For Grid Layout
+    implementation 'androidx.gridlayout:gridlayout:1.0.0'
+
+    // For Checking Rooted Device
+    implementation 'com.scottyab:rootbeer-lib:0.1.0'
+
+    // For Islamic Calender
+//    implementation 'com.aminography:primedatepicker:3.6.0'
+//    implementation 'com.aminography:primecalendar:1.7.0'
+
+    // For Dynamic String Update --- START ---
+    // Replace bundled strings dynamically
+    implementation 'dev.b3nedikt.restring:restring:5.0.0'
+
+    // Intercept view inflation
+    implementation 'dev.b3nedikt.viewpump:viewpump:4.0.13'
+
+    // Allows to update the text of views at runtime without recreating the activity
+    implementation 'dev.b3nedikt.reword:reword:4.0.4'
+    // For Dynamic String Update --- END ---
+
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/endButtonsLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:layout_marginBottom="@dimen/_10sdp"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/_5sdp"
+    android:paddingEnd="@dimen/_5sdp">
+
+    <Button
+        android:id="@+id/negBtn"
+        style="@style/Theme.AppStructure.ButtonStyle"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_weight="1"
+        android:text="@string/cancel"
+        app:backgroundTint="@color/red_color"
+        tools:ignore="UsingOnClickInXml" />
+
+    <Button
+        android:id="@+id/posBtn"
+        style="@style/Theme.AppStructure.ButtonStyle"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_weight="1"
+        android:text="@string/save"
+        tools:ignore="UsingOnClickInXml" />
+</LinearLayout>

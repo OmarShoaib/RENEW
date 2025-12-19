@@ -1,0 +1,491 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.AppStructure.FullScreen.StatusBar" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary_color</item>
+        <item name="colorPrimaryDark">@color/primary_color_dark</item>
+        <item name="colorAccent">@color/primary_color_light</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/status_bar_color</item>
+        <!-- Customize your theme here. -->
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!-- Custom Fullscreen Application theme with Status Bar -->
+    <style name="Theme.AppStructure.FullScreen.StatusBar.Sections" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary_color</item>
+        <item name="colorPrimaryDark">@color/primary_color_light</item>
+        <item name="colorAccent">@color/white</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/status_bar_color</item>
+        <!-- Customize your theme here. -->
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!--        <item name="android:textViewStyle">@style/labels</item>-->
+        <item name="editTextStyle">@style/Theme.AppStructure.EditTextStyle</item>
+        <item name="android:timePickerStyle">@style/Theme.AppStructure.TimePickerStyle</item>
+        <item name="android:datePickerStyle">@style/Theme.AppStructure.DatePickerStyle</item>
+        <item name="buttonStyle">@style/Theme.AppStructure.ButtonStyle</item>
+        <item name="radioButtonStyle">@style/Theme.AppStructure.RadioButton</item>
+        <item name="checkboxStyle">@style/Theme.AppStructure.Checkbox</item>
+        <item name="alertDialogTheme">@style/Theme.AppStructure.AlertPopup</item>
+        <item name="spinnerStyle">@style/Theme.AppStructure.SpinnerStyle</item>
+    </style>
+
+    <!-- Custom Fullscreen Application Theme -->
+    <style name="Theme.AppStructure.FullScreen" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!-- Custom Action Bar -->
+    <style name="Theme.AppStructure.Toolbar" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="colorControlActivated">@color/white</item>
+        <item name="android:textColor">@color/text_color</item>
+        <!--        <item name="android:textColorHint">@color/toolbar_hint</item>-->
+        <!--        <item name="colorAccent">@color/white</item>-->
+    </style>
+
+    <!-- Background -->
+    <style name="Theme.AppStructure.Background" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:background">@drawable/bg_gradient</item>
+    </style>
+
+    <!-- Regular Text -->
+    <style name="Theme.AppStructure.RegularText" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/text_size_regular</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <!-- Bold Text -->
+    <style name="Theme.AppStructure.BoldText" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_regular</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <!-- Title Regular Text -->
+    <style name="Theme.AppStructure.TitleRegularText" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/text_size_title</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <!-- Title Bold Text -->
+    <style name="Theme.AppStructure.TitleBoldText" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_title</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <!-- Small Regular Text -->
+    <style name="Theme.AppStructure.SmallRegularText" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <!-- Small Bold Text -->
+    <style name="Theme.AppStructure.SmallBoldText" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <!-- Regular Font-->
+    <style name="Theme.AppStructure.RegularFont">
+        <item name="android:fontFamily">@font/roboto_regular</item>
+    </style>
+
+    <!-- Medium Font -->
+    <style name="Theme.AppStructure.MediumFont">
+        <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <!-- Bold Font -->
+    <style name="Theme.AppStructure.BoldFont">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <!-- Light Font -->
+    <style name="Theme.AppStructure.LightFont">
+        <item name="android:fontFamily">@font/roboto_light</item>
+    </style>
+
+    <!-- Button Theme -->
+    <style name="Theme.AppStructure.ButtonStyle" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="android:paddingStart">@dimen/_5sdp</item>
+        <item name="android:paddingEnd">@dimen/_5sdp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_size_title</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:background">@drawable/bg_rounded_app_dark_filled</item>
+        <item name="android:backgroundTint">@color/primary_color_dark</item>
+        <item name="backgroundTint">@color/primary_color_dark</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:elevation">@dimen/_1sdp</item>
+    </style>
+
+    <!-- EditText Theme -->
+    <style name="Theme.AppStructure.EditTextStyle" parent="@android:style/Widget.EditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">@dimen/_10sdp</item>
+        <item name="android:paddingEnd">@dimen/_10sdp</item>
+        <item name="android:background">@drawable/edittext_selector</item>
+        <item name="android:textColor">@color/text_selector</item>
+        <item name="android:minHeight">@dimen/field_height</item>
+        <item name="android:digits">@string/digits_all</item>
+        <item name="android:inputType">text</item>
+        <item name="android:textColorHint">@color/hint_color</item>
+        <item name="android:textSize">@dimen/text_size_regular</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:drawablePadding">@dimen/_10sdp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <!-- TextInput Theme -->
+    <style name="Theme.AppStructure.TextInputStyle" parent="@android:style/Widget.EditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="boxStrokeColor">@color/primary_color_dark</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="boxBackgroundMode">outline</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/_6sdp</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/_6sdp</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/_6sdp</item>
+        <item name="boxCornerRadiusTopStart">@dimen/_6sdp</item>
+    </style>
+
+    <!-- Spinner Theme -->
+    <style name="Theme.AppStructure.SpinnerStyle" parent="Widget.AppCompat.Spinner">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/spinner_selector</item>
+        <item name="android:minHeight">@dimen/field_height</item>
+        <item name="android:textSize">@dimen/text_size_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:spinnerMode">dropdown</item>
+    </style>
+
+    <!-- Radiobutton Theme -->
+    <style name="Theme.AppStructure.RadioButton" parent="Widget.MaterialComponents.CompoundButton.RadioButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">@dimen/_2sdp</item>
+        <item name="android:paddingEnd">@dimen/_3sdp</item>
+        <item name="buttonTint">@color/radiobutton_selector</item>
+        <item name="android:textColor">@color/text_selector</item>
+        <item name="android:background">@drawable/options_separator</item>
+        <item name="android:minHeight">@dimen/field_height</item>
+        <item name="android:textSize">@dimen/text_size_regular</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <!-- Checkbox Theme -->
+    <style name="Theme.AppStructure.Checkbox" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">@dimen/_2sdp</item>
+        <item name="android:paddingEnd">@dimen/_3sdp</item>
+        <item name="buttonTint">@color/radiobutton_selector</item>
+        <item name="android:textColor">@color/text_selector</item>
+        <item name="android:background">@drawable/options_separator</item>
+        <item name="android:minHeight">@dimen/field_height</item>
+        <item name="android:textSize">@dimen/text_size_regular</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <!-- AlertPopup Theme -->
+    <style name="Theme.AppStructure.AlertPopup" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="colorAccent">@color/primary_color</item>
+        <item name="android:windowTitleStyle">@style/Theme.AppStructure.AlertPopup.Title</item>
+        <item name="android:textAppearanceMedium">@style/Theme.AppStructure.AlertPopup.Message
+        </item>
+    </style>
+
+    <!-- AlertPopup Theme - Title -->
+    <style name="Theme.AppStructure.AlertPopup.Title" parent="@android:style/TextAppearance.Widget.TextView">
+        <!-- Set text size and color of title and message here -->
+        <item name="android:textSize">@dimen/text_size_regular</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <!-- AlertPopup Theme - Message -->
+    <style name="Theme.AppStructure.AlertPopup.Message" parent="@android:style/TextAppearance.Widget.TextView">
+        <!-- Set text size and color of title and message here -->
+        <item name="android:textSize">@dimen/text_size_regular</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <!-- Bottom Sheet Theme -->
+    <style name="Theme.AppStructure.BottomSheetStyle" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="bottomSheetStyle">@style/Theme.AppStructure.CustomBottomSheetStyle</item>
+    </style>
+
+    <style name="Theme.AppStructure.CustomBottomSheetStyle" parent="ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <!-- Chip Theme - Action -->
+    <style name="Theme.AppStructure.Chip.Action" parent="@style/Widget.MaterialComponents.Chip.Action">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="chipBackgroundColor">@color/chip_selector</item>
+        <item name="checkedIconVisible">false</item>
+        <item name="shapeAppearanceOverlay">@null</item>
+        <item name="closeIconVisible">false</item>
+        <item name="android:textSize">@dimen/text_size_regular</item>
+        <item name="android:textColor">@color/chip_text_selector</item>
+        <item name="android:textAppearance">@style/Theme.AppStructure.ChipText</item>
+        <item name="chipCornerRadius">@dimen/_50sdp</item>
+        <item name="chipMinHeight">@dimen/chip_height</item>
+    </style>
+
+    <!-- Chip Theme - Choice -->
+    <style name="Theme.AppStructure.Chip.Choice" parent="@style/Widget.MaterialComponents.Chip.Choice">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="chipBackgroundColor">@color/chip_selector</item>
+        <item name="checkedIconVisible">false</item>
+        <item name="shapeAppearanceOverlay">@null</item>
+        <item name="closeIconVisible">false</item>
+        <item name="android:textSize">@dimen/text_size_regular</item>
+        <item name="android:textColor">@color/chip_text_selector</item>
+        <item name="android:textAppearance">@style/Theme.AppStructure.ChipText</item>
+        <item name="chipCornerRadius">@dimen/_50sdp</item>
+        <item name="android:dropDownSelector">@android:color/transparent</item>
+        <item name="chipMinHeight">@dimen/chip_height</item>
+        <item name="chipStartPadding">@dimen/_5sdp</item>
+        <item name="chipEndPadding">@dimen/_5sdp</item>
+    </style>
+
+    <!-- Chip Text Theme -->
+    <style name="Theme.AppStructure.ChipText" parent="TextAppearance.MaterialComponents.Chip">
+        <item name="android:textSize">@dimen/text_size_regular</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+    </style>
+
+    <!-- &lt;!&ndash; DatePicker Theme &ndash;&gt;
+     <style name="Theme.AppStructure.DatePickerEditTextStyle" parent="@android:style/Widget.Material.Light.DatePicker">
+         <item name="android:headerBackground">@color/primary_color</item>
+         <item name="android:calendarTextColor">@color/primary_color_dark</item>
+         <item name="android:dayOfWeekBackground">@color/primary_color_dark</item>
+         <item name="android:yearListSelectorColor">@color/primary_color_accent</item>
+         <item name="android:firstDayOfWeek">2</item>
+         <item name="android:datePickerMode">calendar</item>
+     </style>-->
+
+    <!-- DatePicker Theme -->
+    <style name="Theme.AppStructure.DatePickerStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/primary_color
+        </item>                   <!--header background-->
+        <item name="android:windowBackground">@color/white</item>     <!--calendar background-->
+        <item name="android:colorControlActivated">@color/primary_color</item> <!--selected day-->
+        <item name="android:textColorPrimary">@color/text_color</item> <!--days of the month-->
+        <item name="android:textColorSecondary">@color/primary_color_dark
+        </item>    <!--days of the week-->
+        <item name="android:datePickerMode">calendar</item>
+        <item name="android:buttonBarPositiveButtonStyle">
+            @style/Theme.AppStructure.DatePickerStyle.Button.Positive
+        </item>
+        <item name="android:buttonBarNeutralButtonStyle">
+            @style/Theme.AppStructure.DatePickerStyle.Button.Negative
+        </item>
+    </style>
+
+    <style name="Theme.AppStructure.DatePickerStyle.Button.Positive" parent="Widget.AppCompat.Button.Borderless.Colored">
+        <item name="android:textColor">@color/primary_color</item>
+    </style>
+
+    <style name="Theme.AppStructure.DatePickerStyle.Button.Negative" parent="Widget.AppCompat.Button.Borderless.Colored">
+        <item name="android:textColor">@color/light_gray_color</item>
+    </style>
+
+    <style name="Theme.AppStructure.DatePickerStyle.Button.Neutral" parent="Widget.AppCompat.Button.Borderless.Colored">
+        <item name="android:textColor">@color/primary_color_accent</item>
+    </style>
+
+    <!-- TimePicker Theme -->
+    <style name="Theme.AppStructure.TimePickerStyle" parent="android:Widget.Material.Light.TimePicker">
+        <item name="android:headerBackground">@color/primary_color</item>
+        <item name="android:numbersTextColor">@color/text_color</item>
+        <item name="android:numbersSelectorColor">@color/primary_color_light</item>
+        <item name="android:numbersBackgroundColor">@color/lighter_gray_color</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <!-- Switch -->
+    <style name="Theme.AppStructure.Switch" parent="Theme.AppCompat.Light">
+        <!-- active thumb & track color -->
+        <item name="colorControlActivated">@color/primary_color_dark</item>
+        <!-- inactive thumb color -->
+        <item name="colorSwitchThumbNormal">@color/light_gray_color</item>
+        <!-- inactive track color -->
+        <item name="android:colorForeground">@color/primary_color_dark</item>
+    </style>
+
+    <!--Card View Start-->
+    <style name="cardView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/_3sdp</item>
+        <item name="android:padding">@dimen/_2sdp</item>
+        <item name="android:foreground">@drawable/bg_rounded_app_transparent_bordered</item>
+        <item name="cardCornerRadius">@dimen/border_radius</item>
+        <item name="cardElevation">@dimen/_1sdp</item>
+    </style>
+
+    <style name="labelsHead" parent="@android:style/TextAppearance.Widget.TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_regular</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_marginTop">@dimen/_5sdp</item>
+        <item name="android:layout_marginStart">@dimen/_3sdp</item>
+        <item name="android:layout_marginBottom">@dimen/_5sdp</item>
+        <item name="android:layout_marginEnd">@dimen/_3sdp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/_3sdp</item>
+        <item name="android:background">@drawable/bg_rounded_sec_filled</item>
+    </style>
+
+    <style name="labels" parent="@android:style/TextAppearance.Widget.TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/field_height</item>
+        <item name="android:textSize">@dimen/text_size_regular</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@color/primary_color_accent</item>
+        <item name="android:paddingStart">@dimen/_7sdp</item>
+        <item name="android:paddingEnd">@dimen/_7sdp</item>
+        <item name="android:paddingTop">@dimen/_4sdp</item>
+        <item name="android:paddingBottom">@dimen/_4sdp</item>
+    </style>
+
+    <style name="quesNum">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/primary_color</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">@dimen/text_size_regular</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">@dimen/_7sdp</item>
+        <item name="android:paddingEnd">@dimen/_7sdp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="sub_labels">
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:background">@drawable/sub_labels_separator</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">@dimen/_4sdp</item>
+        <item name="android:paddingEnd">@dimen/_4sdp</item>
+        <item name="android:paddingTop">@dimen/_2sdp</item>
+        <item name="android:paddingBottom">@dimen/_2sdp</item>
+        <item name="android:minHeight">@dimen/_8sdp</item>
+        <item name="android:layout_height">@dimen/_8sdp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/text_size_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:shadowColor">#00000000</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">0</item>
+    </style>
+
+    <style name="textView">
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:background">@color/primary_color_light</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">@dimen/_4sdp</item>
+        <item name="android:paddingEnd">@dimen/_4sdp</item>
+        <item name="android:paddingTop">@dimen/_2sdp</item>
+        <item name="android:paddingBottom">@dimen/_2sdp</item>
+        <item name="android:minHeight">@dimen/_8sdp</item>
+        <item name="android:layout_height">@dimen/_8sdp</item>
+        <item name="android:textColor">@color/primary_color_dark</item>
+        <item name="android:textSize">@dimen/text_size_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:shadowColor">#00000000</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">0</item>
+    </style>
+
+    <style name="info">
+        <item name="android:background">@drawable/bg_rounded_white_filled</item>
+        <item name="android:backgroundTint">@color/yellow_color</item>
+        <item name="android:textColor">@color/red_color_light</item>
+        <item name="android:minHeight">@dimen/_26sdp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/text_size_regular</item>
+        <item name="android:layout_marginStart">@dimen/main_padding</item>
+        <item name="android:layout_marginEnd">@dimen/main_padding</item>
+        <item name="android:paddingStart">@dimen/main_padding</item>
+        <item name="android:paddingEnd">@dimen/main_padding</item>
+        <item name="android:paddingTop">@dimen/_3sdp</item>
+        <item name="android:paddingBottom">@dimen/_3sdp</item>
+        <item name="android:layout_marginBottom">@dimen/_5sdp</item>
+        <item name="android:letterSpacing">0.04</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="dont_know">
+        <item name="android:background">@color/pink_light</item>
+        <item name="android:backgroundTint">@color/pink_light</item>
+        <item name="android:textColor">@color/dont_know_text_selector</item>
+        <item name="android:textSize">@dimen/text_size_regular</item>
+        <item name="android:tag">-1</item>
+        <item name="buttonTint">@color/dont_know_cb_selector</item>
+    </style>
+
+    <style name="blue_checkbox">
+        <item name="android:background">@color/blue_overlay</item>
+        <item name="android:backgroundTint">@color/blue_overlay</item>
+        <item name="android:textColor">@color/blue_text_selector</item>
+        <item name="android:textSize">@dimen/text_size_regular</item>
+        <item name="android:tag">-1</item>
+        <item name="buttonTint">@color/blue_cb_selector</item>
+    </style>
+
+    <!-- Switch -->
+    <style name="CustomSwitch" parent="Theme.AppCompat.Light">
+        <!-- active thumb & track color -->
+        <item name="colorControlActivated">@color/secondary_color_dark</item>
+        <!-- inactive thumb color -->
+        <item name="colorSwitchThumbNormal">@color/primary_color_light</item>
+        <!-- inactive track color -->
+        <item name="android:colorForeground">@color/primary_color_dark</item>
+    </style>
+
+
+</resources>

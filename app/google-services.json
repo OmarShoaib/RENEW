@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "756556642706",
+    "project_id": "app-structure-ed4bf",
+    "storage_bucket": "app-structure-ed4bf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:756556642706:android:448319be7e0c67757da94b",
+        "android_client_info": {
+          "package_name": "edu.aku.omarshoaib.appstructure"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "756556642706-6lt54fc18i0gf52v6p9vk52d5tacqirj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.aku.omarshoaib.appstructure",
+            "certificate_hash": "3e39eff255178e0f9d9131993e983bbde10db81a"
+          }
+        },
+        {
+          "client_id": "756556642706-thm67fnlhp630kjvp57suhf62og3vjdm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwy5TPeSaZK75-ylymR_HY6kPL-PcTl7M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "756556642706-thm67fnlhp630kjvp57suhf62og3vjdm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
