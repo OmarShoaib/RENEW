@@ -102,21 +102,18 @@
                             android:layout_weight="1"
                             android:text="@string/f602" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
+                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
                             android:id="@+id/f602"
                             style="@style/Theme.AppStructure.EditTextStyle"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:digits="@string/digits_number"
                             android:gravity="center"
-                            android:hint="###########"
-                            android:inputType="number"
-                            android:maxLength="11"
+                            android:hint="@string/date_format"
                             android:text="@={form.f602}"
-                            app:maxValue="Todays date"
-                            app:minValue="F5 Q02"
-                            app:type="range" />
+                            app:dateFormat="@string/date_format"
+                            app:maxDate="CR_DATE"
+                            app:minDate="CR_DATE" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 

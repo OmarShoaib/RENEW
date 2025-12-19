@@ -44,6 +44,7 @@ public class SectionF01 extends BaseActivity {
     }
 
     private void initUI() {
+        bi.f103.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
     }
 
     private boolean formValidation() {

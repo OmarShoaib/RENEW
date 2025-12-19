@@ -14,6 +14,7 @@ import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.BaseActivity;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivitySectionF05Binding;
+import edu.aku.omarshoaib.renew.global.DateUtils;
 import edu.aku.omarshoaib.renew.model.Form5;
 
 public class SectionF05 extends BaseActivity {
@@ -42,6 +43,14 @@ public class SectionF05 extends BaseActivity {
     }
 
     private void initUI() {
+        bi.f502.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
+        bi.f506.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
+
+        //TODO: Need 502 Watcher
+        bi.f506.setMaxDate(DateUtils.addSubMonths(sF5.getF502(), -6));
+        bi.f506.setMinDate(DateUtils.addSubMonths(sF5.getF502(), -59));
+       /* bi.f506.setMinDate(F502 Screen Date  - 6 Months)
+        bi.f506.setMaxDate(F502 Screen Date  - 59 Months)*/
     }
 
     private boolean formValidation() {

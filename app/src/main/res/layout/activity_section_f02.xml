@@ -318,48 +318,44 @@
                                 android:text="@string/f208a" />
                         </LinearLayout>
 
-                        <RadioGroup
+                        <edu.aku.omarshoaib.renew.global.views.AppRadioGroup
                             android:id="@+id/f208a"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            app:columnCount="2">
 
                             <RadioButton
                                 android:id="@+id/f208a1"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208a.equals(`0`)}"
                                 android:onClick="@{()->form.setF208a(`0`)}"
                                 android:text="@string/f208a1" />
 
                             <RadioButton
                                 android:id="@+id/f208a2"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208a.equals(`1`)}"
                                 android:onClick="@{()->form.setF208a(`1`)}"
                                 android:text="@string/f208a2" />
 
                             <RadioButton
                                 android:id="@+id/f208a3"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208a.equals(`2`)}"
                                 android:onClick="@{()->form.setF208a(`2`)}"
                                 android:text="@string/f208a3" />
 
                             <RadioButton
                                 android:id="@+id/f208a4"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208a.equals(`3`)}"
                                 android:onClick="@{()->form.setF208a(`3`)}"
                                 android:text="@string/f208a4" />
-                        </RadioGroup>
+                        </edu.aku.omarshoaib.renew.global.views.AppRadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -391,48 +387,44 @@
                                 android:text="@string/f208b" />
                         </LinearLayout>
 
-                        <RadioGroup
+                        <edu.aku.omarshoaib.renew.global.views.AppRadioGroup
                             android:id="@+id/f208b"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            app:columnCount="2">
 
                             <RadioButton
                                 android:id="@+id/f208b1"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208b.equals(`0`)}"
                                 android:onClick="@{()->form.setF208b(`0`)}"
                                 android:text="@string/f208b1" />
 
                             <RadioButton
                                 android:id="@+id/f208b2"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208b.equals(`1`)}"
                                 android:onClick="@{()->form.setF208b(`1`)}"
                                 android:text="@string/f208b2" />
 
                             <RadioButton
                                 android:id="@+id/f208b3"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208b.equals(`2`)}"
                                 android:onClick="@{()->form.setF208b(`2`)}"
                                 android:text="@string/f208b3" />
 
                             <RadioButton
                                 android:id="@+id/f208b4"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208b.equals(`3`)}"
                                 android:onClick="@{()->form.setF208b(`3`)}"
                                 android:text="@string/f208b4" />
-                        </RadioGroup>
+                        </edu.aku.omarshoaib.renew.global.views.AppRadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -464,48 +456,44 @@
                                 android:text="@string/f208c" />
                         </LinearLayout>
 
-                        <RadioGroup
+                        <edu.aku.omarshoaib.renew.global.views.AppRadioGroup
                             android:id="@+id/f208c"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            app:columnCount="2">
 
                             <RadioButton
                                 android:id="@+id/f208c1"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208c.equals(`0`)}"
                                 android:onClick="@{()->form.setF208c(`0`)}"
                                 android:text="@string/f208c1" />
 
                             <RadioButton
                                 android:id="@+id/f208c2"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208c.equals(`1`)}"
                                 android:onClick="@{()->form.setF208c(`1`)}"
                                 android:text="@string/f208c2" />
 
                             <RadioButton
                                 android:id="@+id/f208c3"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208c.equals(`2`)}"
                                 android:onClick="@{()->form.setF208c(`2`)}"
                                 android:text="@string/f208c3" />
 
                             <RadioButton
                                 android:id="@+id/f208c4"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208c.equals(`3`)}"
                                 android:onClick="@{()->form.setF208c(`3`)}"
                                 android:text="@string/f208c4" />
-                        </RadioGroup>
+                        </edu.aku.omarshoaib.renew.global.views.AppRadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -537,48 +525,44 @@
                                 android:text="@string/f208d" />
                         </LinearLayout>
 
-                        <RadioGroup
+                        <edu.aku.omarshoaib.renew.global.views.AppRadioGroup
                             android:id="@+id/f208d"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            app:columnCount="2">
 
                             <RadioButton
                                 android:id="@+id/f208d1"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208d.equals(`0`)}"
                                 android:onClick="@{()->form.setF208d(`0`)}"
                                 android:text="@string/f208d1" />
 
                             <RadioButton
                                 android:id="@+id/f208d2"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208d.equals(`1`)}"
                                 android:onClick="@{()->form.setF208d(`1`)}"
                                 android:text="@string/f208d2" />
 
                             <RadioButton
                                 android:id="@+id/f208d3"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208d.equals(`2`)}"
                                 android:onClick="@{()->form.setF208d(`2`)}"
                                 android:text="@string/f208d3" />
 
                             <RadioButton
                                 android:id="@+id/f208d4"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208d.equals(`3`)}"
                                 android:onClick="@{()->form.setF208d(`3`)}"
                                 android:text="@string/f208d4" />
-                        </RadioGroup>
+                        </edu.aku.omarshoaib.renew.global.views.AppRadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -610,48 +594,44 @@
                                 android:text="@string/f208e" />
                         </LinearLayout>
 
-                        <RadioGroup
+                        <edu.aku.omarshoaib.renew.global.views.AppRadioGroup
                             android:id="@+id/f208e"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            app:columnCount="2">
 
                             <RadioButton
                                 android:id="@+id/f208e1"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208e.equals(`0`)}"
                                 android:onClick="@{()->form.setF208e(`0`)}"
                                 android:text="@string/f208e1" />
 
                             <RadioButton
                                 android:id="@+id/f208e2"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208e.equals(`1`)}"
                                 android:onClick="@{()->form.setF208e(`1`)}"
                                 android:text="@string/f208e2" />
 
                             <RadioButton
                                 android:id="@+id/f208e3"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208e.equals(`2`)}"
                                 android:onClick="@{()->form.setF208e(`2`)}"
                                 android:text="@string/f208e3" />
 
                             <RadioButton
                                 android:id="@+id/f208e4"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208e.equals(`3`)}"
                                 android:onClick="@{()->form.setF208e(`3`)}"
                                 android:text="@string/f208e4" />
-                        </RadioGroup>
+                        </edu.aku.omarshoaib.renew.global.views.AppRadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -683,48 +663,44 @@
                                 android:text="@string/f208f" />
                         </LinearLayout>
 
-                        <RadioGroup
+                        <edu.aku.omarshoaib.renew.global.views.AppRadioGroup
                             android:id="@+id/f208f"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            app:columnCount="2">
 
                             <RadioButton
                                 android:id="@+id/f208f1"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208f.equals(`0`)}"
                                 android:onClick="@{()->form.setF208f(`0`)}"
                                 android:text="@string/f208f1" />
 
                             <RadioButton
                                 android:id="@+id/f208f2"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208f.equals(`1`)}"
                                 android:onClick="@{()->form.setF208f(`1`)}"
                                 android:text="@string/f208f2" />
 
                             <RadioButton
                                 android:id="@+id/f208f3"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208f.equals(`2`)}"
                                 android:onClick="@{()->form.setF208f(`2`)}"
                                 android:text="@string/f208f3" />
 
                             <RadioButton
                                 android:id="@+id/f208f4"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208f.equals(`3`)}"
                                 android:onClick="@{()->form.setF208f(`3`)}"
                                 android:text="@string/f208f4" />
-                        </RadioGroup>
+                        </edu.aku.omarshoaib.renew.global.views.AppRadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -756,48 +732,44 @@
                                 android:text="@string/f208g" />
                         </LinearLayout>
 
-                        <RadioGroup
+                        <edu.aku.omarshoaib.renew.global.views.AppRadioGroup
                             android:id="@+id/f208g"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            app:columnCount="2">
 
                             <RadioButton
                                 android:id="@+id/f208g1"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208g.equals(`0`)}"
                                 android:onClick="@{()->form.setF208g(`0`)}"
                                 android:text="@string/f208g1" />
 
                             <RadioButton
                                 android:id="@+id/f208g2"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208g.equals(`1`)}"
                                 android:onClick="@{()->form.setF208g(`1`)}"
                                 android:text="@string/f208g2" />
 
                             <RadioButton
                                 android:id="@+id/f208g3"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208g.equals(`2`)}"
                                 android:onClick="@{()->form.setF208g(`2`)}"
                                 android:text="@string/f208g3" />
 
                             <RadioButton
                                 android:id="@+id/f208g4"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208g.equals(`3`)}"
                                 android:onClick="@{()->form.setF208g(`3`)}"
                                 android:text="@string/f208g4" />
-                        </RadioGroup>
+                        </edu.aku.omarshoaib.renew.global.views.AppRadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -829,48 +801,44 @@
                                 android:text="@string/f208h" />
                         </LinearLayout>
 
-                        <RadioGroup
+                        <edu.aku.omarshoaib.renew.global.views.AppRadioGroup
                             android:id="@+id/f208h"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            app:columnCount="2">
 
                             <RadioButton
                                 android:id="@+id/f208h1"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208h.equals(`0`)}"
                                 android:onClick="@{()->form.setF208h(`0`)}"
                                 android:text="@string/f208h1" />
 
                             <RadioButton
                                 android:id="@+id/f208h2"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208h.equals(`1`)}"
                                 android:onClick="@{()->form.setF208h(`1`)}"
                                 android:text="@string/f208h2" />
 
                             <RadioButton
                                 android:id="@+id/f208h3"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208h.equals(`2`)}"
                                 android:onClick="@{()->form.setF208h(`2`)}"
                                 android:text="@string/f208h3" />
 
                             <RadioButton
                                 android:id="@+id/f208h4"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208h.equals(`3`)}"
                                 android:onClick="@{()->form.setF208h(`3`)}"
                                 android:text="@string/f208h4" />
-                        </RadioGroup>
+                        </edu.aku.omarshoaib.renew.global.views.AppRadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -902,48 +870,44 @@
                                 android:text="@string/f208i" />
                         </LinearLayout>
 
-                        <RadioGroup
+                        <edu.aku.omarshoaib.renew.global.views.AppRadioGroup
                             android:id="@+id/f208i"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            app:columnCount="2">
 
                             <RadioButton
                                 android:id="@+id/f208i1"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208i.equals(`0`)}"
                                 android:onClick="@{()->form.setF208i(`0`)}"
                                 android:text="@string/f208i1" />
 
                             <RadioButton
                                 android:id="@+id/f208i2"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208i.equals(`1`)}"
                                 android:onClick="@{()->form.setF208i(`1`)}"
                                 android:text="@string/f208i2" />
 
                             <RadioButton
                                 android:id="@+id/f208i3"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208i.equals(`2`)}"
                                 android:onClick="@{()->form.setF208i(`2`)}"
                                 android:text="@string/f208i3" />
 
                             <RadioButton
                                 android:id="@+id/f208i4"
-                                android:layout_width="0dp"
+                                android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1"
                                 android:checked="@{form.f208i.equals(`3`)}"
                                 android:onClick="@{()->form.setF208i(`3`)}"
                                 android:text="@string/f208i4" />
-                        </RadioGroup>
+                        </edu.aku.omarshoaib.renew.global.views.AppRadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 

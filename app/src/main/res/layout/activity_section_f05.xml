@@ -275,21 +275,18 @@
                             android:layout_weight="1"
                             android:text="@string/f506" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
+                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
                             android:id="@+id/f506"
                             style="@style/Theme.AppStructure.EditTextStyle"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:digits="@string/digits_number"
                             android:gravity="center"
-                            android:hint="##############################"
-                            android:inputType="number"
-                            android:maxLength="30"
+                            android:hint="@string/date_format"
                             android:text="@={form.f506}"
-                            app:maxValue="(F502 Screen Date  - 6 Months)"
-                            app:minValue="(F502 Screen Date  - 59 Months)"
-                            app:type="range" />
+                            app:dateFormat="@string/date_format"
+                            app:maxDate="CR_DATE"
+                            app:minDate="CR_DATE" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -1474,7 +1471,7 @@
                                 android:text="@string/f52105" />
 
                             <RadioButton
-                                android:id="@+id/f52096"
+                                android:id="@+id/f52196"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:checked="@{form.f521.equals(`96`)}"
@@ -1483,7 +1480,7 @@
                         </edu.aku.omarshoaib.renew.global.views.AppRadioGroup>
 
                         <EditText
-                            android:id="@+id/f52096x"
+                            android:id="@+id/f52196x"
                             style="@style/Theme.AppStructure.EditTextStyle"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -1491,8 +1488,8 @@
                             android:hint="@string/f52096"
                             android:inputType="text"
                             android:maxLength="250"
-                            android:tag="f52096"
-                            android:text="@={form.f52096x}"
+                            android:tag="f52196"
+                            android:text="@={form.f52196x}"
                             android:visibility="@{form.f521.equals(`96`) ? View.VISIBLE : View.GONE}"
                             tools:ignore="Autofill" />
                     </LinearLayout>
