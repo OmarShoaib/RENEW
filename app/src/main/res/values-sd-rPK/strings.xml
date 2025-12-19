@@ -324,10 +324,9 @@
     <string name="f1t1">صحت جي تعليم جي سيشن جي شرڪت ڪندڙن لاءِ حاضري شيٽ</string>
     <string name="f101">ٽيم</string>
     <string name="f102">صحت مرڪز جي ڪيچمينٽ</string>
-    <string name="f103">تاريخ</string>
+    <string name="f103">انٽرويو جي تاريخ</string>
 
     <!-- Form1a: Attendance Sheet For Health Education Session's Participants -->
-
     <string name="dist">ضلعو</string>
     <string name="f104">نالو</string>
     <string name="f105">عمر سالن ۾</string>
