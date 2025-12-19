@@ -12,7 +12,6 @@ import com.google.gson.reflect.TypeToken;
 
 import edu.aku.omarshoaib.renew.BR;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
-import edu.aku.omarshoaib.renew.database.dao.Form1Dao;
 import edu.aku.omarshoaib.renew.database.dao.Form2Dao;
 import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.MainApp;
@@ -120,7 +119,7 @@ public class Form2 extends FormBaseModel {
 
     public void setEndingDate(String endingDate) {
         this.endingDate = endingDate;
-    }private SF2 sF;
+    }
 
     public SF2 getSF2() {
         return sF2;

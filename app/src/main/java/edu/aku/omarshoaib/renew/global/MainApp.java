@@ -19,6 +19,9 @@ import edu.aku.omarshoaib.renew.model.AppInfo;
 import edu.aku.omarshoaib.renew.model.Cluster;
 import edu.aku.omarshoaib.renew.model.Form1;
 import edu.aku.omarshoaib.renew.model.Form2;
+import edu.aku.omarshoaib.renew.model.Form3;
+import edu.aku.omarshoaib.renew.model.Form4;
+import edu.aku.omarshoaib.renew.model.Form5;
 import edu.aku.omarshoaib.renew.model.User;
 
 public class MainApp extends Application {
@@ -33,6 +36,9 @@ public class MainApp extends Application {
     public static Cluster selectedCluster;
     public static Form1 form1;
     public static Form2 form2;
+    public static Form3 form3;
+    public static Form4 form4;
+    public static Form5 form5;
 
     // LockScreen timer and tone
     public static ToneGenerator toneGen;
