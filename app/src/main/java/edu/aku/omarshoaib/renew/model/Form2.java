@@ -237,6 +237,7 @@ public class Form2 extends FormBaseModel {
 
         public void setF208a(String f208a) {
             this.f208a = f208a;
+            calculateF209();
             notifyPropertyChanged(BR.f208a);
         }
 
@@ -247,6 +248,7 @@ public class Form2 extends FormBaseModel {
 
         public void setF208b(String f208b) {
             this.f208b = f208b;
+            calculateF209();
             notifyPropertyChanged(BR.f208b);
         }
 
@@ -257,6 +259,7 @@ public class Form2 extends FormBaseModel {
 
         public void setF208c(String f208c) {
             this.f208c = f208c;
+            calculateF209();
             notifyPropertyChanged(BR.f208c);
         }
 
@@ -267,6 +270,7 @@ public class Form2 extends FormBaseModel {
 
         public void setF208d(String f208d) {
             this.f208d = f208d;
+            calculateF209();
             notifyPropertyChanged(BR.f208d);
         }
 
@@ -277,6 +281,7 @@ public class Form2 extends FormBaseModel {
 
         public void setF208e(String f208e) {
             this.f208e = f208e;
+            calculateF209();
             notifyPropertyChanged(BR.f208e);
         }
 
@@ -287,6 +292,7 @@ public class Form2 extends FormBaseModel {
 
         public void setF208f(String f208f) {
             this.f208f = f208f;
+            calculateF209();
             notifyPropertyChanged(BR.f208f);
         }
 
@@ -297,6 +303,7 @@ public class Form2 extends FormBaseModel {
 
         public void setF208g(String f208g) {
             this.f208g = f208g;
+            calculateF209();
             notifyPropertyChanged(BR.f208g);
         }
 
@@ -307,6 +314,7 @@ public class Form2 extends FormBaseModel {
 
         public void setF208h(String f208h) {
             this.f208h = f208h;
+            calculateF209();
             notifyPropertyChanged(BR.f208h);
         }
 
@@ -317,6 +325,7 @@ public class Form2 extends FormBaseModel {
 
         public void setF208i(String f208i) {
             this.f208i = f208i;
+            calculateF209();
             notifyPropertyChanged(BR.f208i);
         }
 
@@ -327,7 +336,43 @@ public class Form2 extends FormBaseModel {
 
         public void setF209(String f209) {
             this.f209 = f209;
+            setF210(getSeverityLevel());
             notifyPropertyChanged(BR.f209);
+        }
+
+        private void calculateF209() {
+            int sum = 0;
+            boolean hasAnyValue = false;
+
+            String[] fields = {f208a, f208b, f208c, f208d, f208e,
+                    f208f, f208g, f208h, f208i};
+
+            for (String field : fields) {
+                if (!field.isEmpty()) {  // or !field.equals(_EMPTY_)
+                    hasAnyValue = true;
+                    try {
+                        sum += Integer.parseInt(field.trim());
+                    } catch (NumberFormatException e) {}
+                }
+            }
+            setF209(hasAnyValue ? String.valueOf(sum) : _EMPTY_);
+        }
+
+        private String getSeverityLevel() {
+            if (f209.equals(_EMPTY_) || f209.trim().isEmpty()) return _EMPTY_;
+
+            try {
+                int score = Integer.parseInt(f209.trim());
+
+                if (score >= 0 && score <= 4)        return "1";
+                else if (score >=  5 && score <=  9) return "2";
+                else if (score >= 10 && score <= 14) return "3";
+                else if (score >= 15 && score <= 19) return "4";
+                else if (score >= 20 && score <= 27) return "5";
+            } catch (NumberFormatException e) {
+                return _EMPTY_; // or "Invalid"
+            }
+            return _EMPTY_;
         }
 
         @Bindable
@@ -337,6 +382,7 @@ public class Form2 extends FormBaseModel {
 
         public void setF210(String f210) {
             this.f210 = f210;
+            setF211(f210.equals("1") ? _EMPTY_ : this.f211);
             notifyPropertyChanged(BR.f210);
         }
 
