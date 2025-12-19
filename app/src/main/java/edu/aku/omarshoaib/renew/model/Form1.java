@@ -121,11 +121,11 @@ public class Form1 extends FormBaseModel {
         this.endingDate = endingDate;
     }
 
-    public SF1 getSF() {
+    public SF1 getSF1() {
         return sF1;
     }
 
-    public void setSF(SF1 sF) {
+    public void setSF1(SF1 sF) {
         this.sF1 = sF;
     }
 
@@ -155,13 +155,13 @@ public class Form1 extends FormBaseModel {
 
         // Save section object as json object in db
         public static int saveData(SF1 data) {
-            MainApp.form1.setSF(data);
+            MainApp.form1.setSF1(data);
             return AppDatabase.getDBInstance().form1Dao().update(MainApp.form1);
         }
 
         // Get section object by parsing json
         public static SF1 getData() {
-            return MainApp.form1.getSF();
+            return MainApp.form1.getSF1();
         }
 
         @Bindable

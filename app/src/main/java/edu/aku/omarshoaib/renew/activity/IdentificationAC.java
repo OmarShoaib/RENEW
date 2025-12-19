@@ -1,11 +1,7 @@
 package edu.aku.omarshoaib.renew.activity;
 
-import static edu.aku.omarshoaib.renew.global.AppConstants._EMPTY_;
-
 import android.app.Activity;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 
@@ -20,7 +16,6 @@ import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivityIdentificationBinding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.MainApp;
-import edu.aku.omarshoaib.renew.model.Cluster;
 import edu.aku.omarshoaib.renew.model.Form1;
 
 public class IdentificationAC extends BaseActivity {
@@ -54,13 +49,13 @@ public class IdentificationAC extends BaseActivity {
 
     private void initUI() {
         bi.a102.setEnabled(false);
-        bi.a103.setEnabled(false);
-        bi.a104.setEnabled(false);
-        bi.a105.setEnabled(false);
+//        bi.a103.setEnabled(false);
+//        bi.a104.setEnabled(false);
+//        bi.a105.setEnabled(false);
 
         posBtn = bi.endButtonsLayout.findViewById(R.id.posBtn);
 
-        bi.a101.addTextChangedListener(new TextWatcher() {
+       /* bi.a101.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -82,12 +77,12 @@ public class IdentificationAC extends BaseActivity {
             public void afterTextChanged(Editable editable) {
 
             }
-        });
+        });*/
     }
 
     // Search Cluster
     public void search(View view) {
-        if (AppConstants.isEmpty(bi.a101) || Objects.requireNonNull(bi.a101.getText()).toString().length() < 8)
+        /*if (AppConstants.isEmpty(bi.a101) || Objects.requireNonNull(bi.a101.getText()).toString().length() < 8)
             return;
         Cluster cluster = appDatabase.clusterDao().getDataByClusterNo(Objects.requireNonNull(bi.a101.getText()).toString());
         if (cluster != null) {
@@ -100,7 +95,7 @@ public class IdentificationAC extends BaseActivity {
             AppConstants.hideSoftKeyboard(activity);
             AppConstants.showSimpleSnackBar(activity, getString(R.string.incorrect_cluster_code),
                     AppConstants.MSG_DURATION, AppConstants.TYPE_ERROR);
-        }
+        }*/
     }
 
     public void btnContinue(View view) {
@@ -111,7 +106,7 @@ public class IdentificationAC extends BaseActivity {
             // Form1 has been Synced
             MainApp.isSynced = true;
         // New form1
-        String clusterNo = Objects.requireNonNull(bi.a101.getText()).toString();
+//        String clusterNo = Objects.requireNonNull(bi.a101.getText()).toString();
         String hhId = Objects.requireNonNull(bi.a107.getText()).toString();
         MainApp.form1.setDistrictCode(MainApp.user.getDistId());
         MainApp.form1.setScrId(hhId);
