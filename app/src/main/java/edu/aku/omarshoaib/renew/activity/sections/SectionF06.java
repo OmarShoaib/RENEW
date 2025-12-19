@@ -14,6 +14,7 @@ import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.BaseActivity;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivitySectionF06Binding;
+import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.model.Form6;
 
 public class SectionF06 extends BaseActivity {
@@ -32,7 +33,7 @@ public class SectionF06 extends BaseActivity {
         super.activity = activity;
 
         // Init toolbar
-        AppConstants.initToolbar(activity, getString(R.string.f6t1), getString(R.string.f6t1), false);
+        AppConstants.initToolbar(activity, getString(R.string.f6t0), getString(R.string.f6t1), false);
         appDatabase = AppDatabase.getDBInstance();
 
         sF6 = Form6.SF6.getData();
@@ -42,6 +43,8 @@ public class SectionF06 extends BaseActivity {
     }
 
     private void initUI() {
+        bi.f602.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
+        bi.f602.setMinDate(MainApp.form5.getSF5().getF502());
     }
 
     private boolean formValidation() {

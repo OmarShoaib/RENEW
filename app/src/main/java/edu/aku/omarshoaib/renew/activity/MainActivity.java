@@ -21,6 +21,12 @@ import java.io.File;
 import java.util.List;
 
 import edu.aku.omarshoaib.renew.R;
+import edu.aku.omarshoaib.renew.activity.sections.SectionF01;
+import edu.aku.omarshoaib.renew.activity.sections.SectionF02;
+import edu.aku.omarshoaib.renew.activity.sections.SectionF03;
+import edu.aku.omarshoaib.renew.activity.sections.SectionF04;
+import edu.aku.omarshoaib.renew.activity.sections.SectionF05;
+import edu.aku.omarshoaib.renew.activity.sections.SectionF06;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivityMainBinding;
 import edu.aku.omarshoaib.renew.global.AlertPopup;
@@ -82,7 +88,22 @@ public class MainActivity extends AppCompatActivity {
 
         if (viewId == R.id.option1) {
             MainApp.entryType = 1;
-            AppConstants.gotoActivity(activity, IdentificationAC.class, true);
+            AppConstants.gotoActivity(activity, SectionF01.class, true);
+        } else if (viewId == R.id.option2) {
+            MainApp.entryType = 2;
+            AppConstants.gotoActivity(activity, SectionF02.class, true);
+        } else if (viewId == R.id.option3) {
+            MainApp.entryType = 3;
+            AppConstants.gotoActivity(activity, SectionF03.class, true);
+        } else if (viewId == R.id.option4) {
+            MainApp.entryType = 4;
+            AppConstants.gotoActivity(activity, SectionF04.class, true);
+        } else if (viewId == R.id.option5) {
+            MainApp.entryType = 5;
+            AppConstants.gotoActivity(activity, SectionF05.class, true);
+        } else if (viewId == R.id.option6) {
+            MainApp.entryType = 6;
+            AppConstants.gotoActivity(activity, SectionF06.class, true);
         } else if (viewId == R.id.summaryLayout) {
             // Show summary bottomsheet
             SummaryUtils.showSummary(activity);

@@ -340,11 +340,11 @@
     <!-- APP VARIABLES -->
 
     <!-- Form1 1: Attendance Sheet For Health Education Session's Participants -->
-
-    <string name="f1t1">Form 01: Attendance Sheet for Health Education Sessions’ Participants</string>
+    <string name="f1t0">Form 01 :</string>
+    <string name="f1t1">Attendance Sheet for Health Education Sessions’ Participants :</string>
     <string name="f101">Team</string>
     <string name="f102">HCF catchment</string>
-    <string name="f103">Date</string>
+    <string name="f103">Interview Date</string>
 
     <!-- Form1a: Attendance Sheet For Health Education Session's Participants -->
 
@@ -352,20 +352,20 @@
     <string name="f104">Name</string>
     <string name="f105">Age in years</string>
     <string name="f106">Marital status</string>
-    <string name="f10601">YES</string>
-    <string name="f10602">NO</string>
+    <string name="f10601">Yes</string>
+    <string name="f10602">No</string>
     <string name="f107">Pregnancy status (For married women only between 10 to 49)</string>
-    <string name="f10701">YES</string>
-    <string name="f10702">NO</string>
+    <string name="f10701">Yes</string>
+    <string name="f10702">No</string>
     <string name="f108">PHQ9 verbal consent (for 10 to 49 years of Age females only)</string>
-    <string name="f10801">YES</string>
-    <string name="f10802">NO</string>
+    <string name="f10801">Yes</string>
+    <string name="f10802">No</string>
     <string name="f109">Pregnancy assessment Written consent (for 10 to 49 years married females only)</string>
-    <string name="f10901">YES</string>
-    <string name="f10902">NO</string>
+    <string name="f10901">Yes</string>
+    <string name="f10902">No</string>
 
     <!-- Form1 2: Mental Health assessment (PHQ-9) Questionnaire -->
-
+    <string name="f2t0">Form 02 :</string>
     <string name="f2t1">Mental Health Assessment (PHQ–9) Questionnaire</string>
     <string name="f2t2">To Identify–Depressive Symptoms Among WRA, Adolescent, And Pregant Women</string>
     <string name="f201">Participant name</string>
@@ -435,7 +435,7 @@
     <string name="f2113">Monitored only</string>
 
     <!-- High Risk Pregnancy Assessment Form1 -->
-
+    <string name="f3t0">Form 03 :</string>
     <string name="f3t1">High Risk Pregnancy Assessment Form</string>
     <string name="f301">Participant name</string>
     <string name="f302">Husband/Father name</string>
@@ -497,8 +497,8 @@
     <string name="f309dk">Dont Know</string>
 
     <!-- Form1 4: Initial Screening for Malnutrition -->
-
-    <string name="f4t1">Form 04: Initial Screening for Malnutrition</string>
+    <string name="f4t0">Form 04 :</string>
+    <string name="f4t1">Initial Screening for Malnutrition</string>
     <string name="f401">Staff Name</string>
     <string name="f402">Date</string>
     <string name="f403">HCF Catchment</string>
@@ -522,9 +522,8 @@
 
     <!-- Form1 5: "Nutritional Screening for Enrollmentof Children Under Fivewith MUAC <12.5.
     (For Community-Based Screening and Management of Malnutrition)" -->
-
-    <string name="f5t1">Nutritional Screening for Enrollmentof Children Under Fivewith MUAC &lt;12.5.
-(For Community–Based Screening and Management of Malnutrition)</string>
+    <string name="f5t0">Form 05 :</string>
+    <string name="f5t1">Nutritional Screening for Enrollmentof Children Under Fivewith MUAC &lt;12.5. (For Community–Based Screening and Management of Malnutrition)</string>
     <string name="f501">Interviewer Name</string>
     <string name="f502">Date</string>
     <string name="f503">Parent/Guardian Consent</string>
@@ -592,8 +591,8 @@
 
     <!-- Form1 6: "Nutritional SupplementationFollow-Up Form1
     (For Monitoring and Management of Children with Acute Malnutrition) " -->
-
-    <string name="f6t1">Nutritional SupplementationFollow–Up Form(For Monitoring and Management of Children with Acute Malnutrition)</string>
+    <string name="f6t0">Form 06 :</string>
+    <string name="f6t1">Nutritional Supplementation Follow–Up Form (For Monitoring and Management of Children with Acute Malnutrition)</string>
     <string name="f601">Follow–Up Staff Name</string>
     <string name="f602">Date of Follow–Up</string>
     <string name="f603">Follow–up Visit #</string>
@@ -661,11 +660,9 @@
     <string name="f61903">Defaulted (Did not return for 2 consecutive visits)</string>
     <string name="f61904">Non–responder (No improvement after 2 months)</string>
     <string name="f61905">Died (Date)</string>
-    <string name="f61906">Referred to Facility (  Medical complications)</string>
-
+    <string name="f61906">Referred to Facility (Medical complications)</string>
 
     <!-- XML QUESTIONS -->
-
     <string name='Q_f101' translatable='false'>f101</string>
     <string name='Q_f102' translatable='false'>f102</string>
     <string name='Q_f103' translatable='false'>f103</string>

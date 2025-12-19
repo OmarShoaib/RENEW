@@ -34,7 +34,7 @@ public class SectionF01 extends BaseActivity {
         super.activity = activity;
 
         // Init toolbar
-        AppConstants.initToolbar(activity, getString(R.string.f1t1), getString(R.string.f1t1), false);
+        AppConstants.initToolbar(activity, getString(R.string.f1t0), getString(R.string.f1t1), false);
         appDatabase = AppDatabase.getDBInstance();
 
         sF1 = Form1.SF1.getData();
@@ -44,6 +44,7 @@ public class SectionF01 extends BaseActivity {
     }
 
     private void initUI() {
+        bi.f103.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
     }
 
     private boolean formValidation() {

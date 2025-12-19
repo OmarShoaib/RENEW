@@ -320,14 +320,13 @@
     <!-- APP VARIABLES -->
 
     <!-- Form1 1: Attendance Sheet For Health Education Session's Participants -->
-
-    <string name="f1t1">فارم 01: صحت جي تعليم جي سيشن جي شرڪت ڪندڙن لاءِ حاضري شيٽ</string>
+    <string name="f1t0">فارم 01 :</string>
+    <string name="f1t1">صحت جي تعليم جي سيشن جي شرڪت ڪندڙن لاءِ حاضري شيٽ</string>
     <string name="f101">ٽيم</string>
     <string name="f102">صحت مرڪز جي ڪيچمينٽ</string>
-    <string name="f103">تاريخ</string>
+    <string name="f103">انٽرويو جي تاريخ</string>
 
     <!-- Form1a: Attendance Sheet For Health Education Session's Participants -->
-
     <string name="dist">ضلعو</string>
     <string name="f104">نالو</string>
     <string name="f105">عمر سالن ۾</string>
@@ -345,7 +344,7 @@
     <string name="f10902">نه</string>
 
     <!-- Form1 2: Mental Health assessment (PHQ-9) Questionnaire -->
-
+    <string name="f2t0">فارم 02 :</string>
     <string name="f2t1">ذهني صحت جي تشخيص (PHQ–9) سوالنامو</string>
     <string name="f2t2">نوجوانن ۽ حامله عورتن ۾ ڊپريشن جي علامتن جي سڃاڻپ ڪرڻ لاءِ</string>
     <string name="f201">شرڪت ڪندڙ جو نالو</string>
@@ -415,7 +414,7 @@
     <string name="f2113">– صرف نگراني هيٺ</string>
 
     <!-- High Risk Pregnancy Assessment Form1 -->
-
+    <string name="f3t0">فارم 03 :</string>
     <string name="f3t1">هاءِ رسڪ حمل جي تشخيص جو فارم</string>
     <string name="f301">شرڪت ڪندڙ جو نالو</string>
     <string name="f302">مڙس/پيءُ جو نالو</string>
@@ -477,8 +476,8 @@
     <string name="f309dk">خبر ناهي</string>
 
     <!-- Form1 4: Initial Screening for Malnutrition -->
-
-    <string name="f4t1">فارم 04: شديد غذائيت جي شروعاتي اسڪريننگ</string>
+    <string name="f4t0">فارم 04 :</string>
+    <string name="f4t1">شديد غذائيت جي شروعاتي اسڪريننگ</string>
     <string name="f401">عملي جو نالو</string>
     <string name="f402">تاريخ</string>
     <string name="f403">صحت مرڪز جي ڪيچمينٽ</string>
@@ -502,9 +501,8 @@
 
     <!-- Form1 5: "Nutritional Screening for Enrollmentof Children Under Fivewith MUAC <12.5.
     (For Community-Based Screening and Management of Malnutrition)" -->
-
-    <string name="f5t1">پنجن سالن کان گهٽ عمر وارن ٻارن جي داخلا لاءِ غذائي اسڪريننگ
-(ڪميونٽي تي ٻڌل اسڪريننگ ۽ غذائيت جي انتظام لاءِ)</string>
+    <string name="f5t0">فارم 05 :</string>
+    <string name="f5t1">پنجن سالن کان گهٽ عمر وارن ٻارن جي داخلا لاءِ غذائي اسڪريننگ (ڪميونٽي تي ٻڌل اسڪريننگ ۽ غذائيت جي انتظام لاءِ)</string>
     <string name="f501">انٽرويو وٺندڙ جو نالو</string>
     <string name="f502">تاريخ</string>
     <string name="f503">والدين/سرپرست جي رضامندي</string>
@@ -572,8 +570,8 @@
 
     <!-- Form1 6: "Nutritional SupplementationFollow-Up Form1
     (For Monitoring and Management of Children with Acute Malnutrition) " -->
-
-    <string name="f6t1">فارم 06 غذائي سپليمينٽيشن فالو اپ فارم(شديد غذائيت وارن ٻارن جي نگراني ۽ انتظام لاءِ)</string>
+    <string name="f6t0">فارم 06 :</string>
+    <string name="f6t1">غذائي سپليمينٽيشن فالو اپ فارم(شديد غذائيت وارن ٻارن جي نگراني ۽ انتظام لاءِ)</string>
     <string name="f601">فالو اپ اسٽاف جو نالو</string>
     <string name="f602">فالو اپ جي تاريخ</string>
     <string name="f603">فالو اپ دوري جو نمبر</string>

@@ -32,7 +32,7 @@ public class SectionF04 extends BaseActivity {
         super.activity = activity;
 
         // Init toolbar
-        AppConstants.initToolbar(activity, getString(R.string.f4t1), getString(R.string.f4t1), false);
+        AppConstants.initToolbar(activity, getString(R.string.f4t0), getString(R.string.f4t1), false);
         appDatabase = AppDatabase.getDBInstance();
 
         sF4 = Form4.SF4.getData();

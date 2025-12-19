@@ -532,22 +532,22 @@
                             android:orientation="horizontal">
 
                             <RadioButton
-                                android:id="@+id/f411"
+                                android:id="@+id/f41101"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.f411.equals(`1`)}"
                                 android:onClick="@{()->form.setF411(`1`)}"
-                                android:text="@string/f411" />
+                                android:text="@string/f41101" />
 
                             <RadioButton
-                                android:id="@+id/f411"
+                                android:id="@+id/f41102"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
                                 android:checked="@{form.f411.equals(`2`)}"
                                 android:onClick="@{()->form.setF411(`2`)}"
-                                android:text="@string/f411" />
+                                android:text="@string/f41102" />
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
