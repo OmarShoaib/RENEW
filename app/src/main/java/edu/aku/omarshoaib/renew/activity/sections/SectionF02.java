@@ -33,7 +33,7 @@ public class SectionF02 extends BaseActivity {
         super.activity = activity;
 
         // Init toolbar
-        AppConstants.initToolbar(activity, getString(R.string.f2t1), getString(R.string.f2t1), false);
+        AppConstants.initToolbar(activity, getString(R.string.f2t0), getString(R.string.f2t1), false);
         appDatabase = AppDatabase.getDBInstance();
 
         sF2 = Form2.SF2.getData();
