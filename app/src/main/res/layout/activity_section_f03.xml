@@ -1,0 +1,1084 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.sections.SectionF03">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="form"
+            type="edu.aku.omarshoaib.renew.model.Form3.SF3" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/topLayout"
+        style="@style/Theme.AppStructure.Background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/view_appbar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/main_padding">
+
+            <LinearLayout
+                android:id="@+id/GrpName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- f301 Input -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVf301"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_f301" />
+
+                        <TextView
+                            style="@style/labels"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/f301" />
+
+                        <EditText
+                            android:id="@+id/f301"
+                            style="@style/Theme.AppStructure.EditTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:digits="@string/digits_all"
+                            android:gravity="center"
+                            android:hint="@string/f301"
+                            android:inputType="text"
+                            android:maxLength="250"
+                            android:text="@={form.f301}"
+                            tools:ignore="Autofill" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- f302 Input -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVf302"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_f302" />
+
+                        <TextView
+                            style="@style/labels"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/f302" />
+
+                        <EditText
+                            android:id="@+id/f302"
+                            style="@style/Theme.AppStructure.EditTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:digits="@string/digits_all"
+                            android:gravity="center"
+                            android:hint="@string/f302"
+                            android:inputType="text"
+                            android:maxLength="250"
+                            android:text="@={form.f302}"
+                            tools:ignore="Autofill" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- f303 Input-Numeric -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVf303"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_f303" />
+
+                        <TextView
+                            style="@style/labels"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/f303" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/f303"
+                            style="@style/Theme.AppStructure.EditTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:digits="@string/digits_number"
+                            android:gravity="center"
+                            android:hint="##"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:text="@={form.f303}"
+                            app:maxValue="49"
+                            app:minValue="10"
+                            app:type="range" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- f304 Dropdown -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVf304"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_f304" />
+
+                        <TextView
+                            style="@style/labels"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/f304" />
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/f304"
+                            style="@style/Theme.AppStructure.SpinnerStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:spinnerMode="dropdown" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- f305 Input-Numeric -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVf305"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_f305" />
+
+                        <TextView
+                            style="@style/labels"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/f305" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/f305"
+                            style="@style/Theme.AppStructure.EditTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:digits="@string/digits_number"
+                            android:gravity="center"
+                            android:hint="#"
+                            android:inputType="number"
+                            android:maxLength="1"
+                            android:text="@={form.f305}"
+                            app:maxValue="9"
+                            app:minValue="0"
+                            app:type="range" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- f306 Input -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVf306"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_f306" />
+
+                        <TextView
+                            style="@style/labels"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/f306" />
+
+                        <EditText
+                            android:id="@+id/f306"
+                            style="@style/Theme.AppStructure.EditTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:digits="@string/digits_all"
+                            android:gravity="center"
+                            android:hint="@string/f306"
+                            android:inputType="text"
+                            android:maxLength="250"
+                            android:text="@={form.f306}"
+                            tools:ignore="Autofill" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- f3dd Date -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVf3dd"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_f3dd" />
+
+                        <TextView
+                            style="@style/labels"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/f3dd" />
+
+                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
+                            android:id="@+id/f3dd"
+                            style="@style/Theme.AppStructure.EditTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:hint="@string/date_format"
+                            android:text="@={form.f3dd}"
+                            app:dateFormat="@string/date_format"
+                            app:maxDate="CR_DATE"
+                            app:minDate="CR_DATE" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- f307 Radio -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVf307"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_f307" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/f307" />
+                        </LinearLayout>
+
+                        <RadioGroup
+                            android:id="@+id/f307"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/f30701"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{form.f307.equals(`1`)}"
+                                android:onClick="@{()->form.setF307(`1`)}"
+                                android:text="@string/f30701" />
+
+                            <RadioButton
+                                android:id="@+id/f30702"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{form.f307.equals(`2`)}"
+                                android:onClick="@{()->form.setF307(`2`)}"
+                                android:text="@string/f30702" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- f308 Input-Numeric -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVf308"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_f308" />
+
+                        <TextView
+                            style="@style/labels"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/f308" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/f308"
+                            style="@style/Theme.AppStructure.EditTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:digits="@string/digits_number"
+                            android:gravity="center"
+                            android:hint="##"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:text="@={form.f308}"
+                            app:maxValue="42"
+                            app:minValue="1"
+                            app:type="range" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- f309 Input -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVf309"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_f309" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/f309" />
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/f309"
+                            style="@style/Theme.AppStructure.EditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:digits="@string/digits_all"
+                            android:gravity="center"
+                            android:hint="@string/f309"
+                            android:inputType="text"
+                            android:maxLength="250"
+                            android:text="@={form.f309}"
+                            tools:ignore="Autofill" />
+
+                        <RadioButton
+                            android:id="@+id/f309dk"
+                            style="@style/dont_know"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:checked="@{form.f309.equals(`98`)}"
+                            android:onClick="@{()->form.setF309(`98`)}"
+                            android:text="@string/f309dk" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- f310 Radio -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVf310"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_f310" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/f310" />
+                        </LinearLayout>
+
+                        <RadioGroup
+                            android:id="@+id/f310"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/f31001"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{form.f310.equals(``)}"
+                                android:onClick="@{()->form.setF310(``)}"
+                                android:text="@string/f31001" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/f31001x"
+                                style="@style/Theme.AppStructure.EditTextStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:digits="@string/digits_number"
+                                android:gravity="center"
+                                android:hint="#"
+                                android:inputType="number"
+                                android:maxLength="1"
+                                android:tag="f31001"
+                                android:text="@={form.f31001x}"
+                                android:visibility="@{form.f310.equals(``) ? View.VISIBLE : View.GONE}"
+                                app:maxValue="9"
+                                app:minValue="0"
+                                app:type="range" />
+
+                            <RadioButton
+                                android:id="@+id/f31097"
+                                style="@style/dont_know"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{form.f310.equals(`97`)}"
+                                android:onClick="@{()->form.setF310(`97`)}"
+                                android:text="@string/f31097" />
+
+                            <RadioButton
+                                android:id="@+id/f31096"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{form.f310.equals(`96`)}"
+                                android:onClick="@{()->form.setF310(`96`)}"
+                                android:text="@string/f31096" />
+                        </RadioGroup>
+
+                        <EditText
+                            android:id="@+id/f31096x"
+                            style="@style/Theme.AppStructure.EditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:digits="@string/digits_all"
+                            android:hint="@string/f31096"
+                            android:inputType="text"
+                            android:maxLength="250"
+                            android:tag="f31096"
+                            android:text="@={form.f31096x}"
+                            android:visibility="@{form.f310.equals(`96`) ? View.VISIBLE : View.GONE}"
+                            tools:ignore="Autofill" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- f311 Radio -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVf311"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_f311" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/f311" />
+                        </LinearLayout>
+
+                        <edu.aku.omarshoaib.appstructure.global.views.AppRadioGroup
+                            android:id="@+id/f311"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:columnCount="2">
+
+                            <RadioButton
+                                android:id="@+id/f31101"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.f311.equals(`1`)}"
+                                android:onClick="@{()->form.setF311(`1`)}"
+                                android:text="@string/f31101" />
+
+                            <RadioButton
+                                android:id="@+id/f31102"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.f311.equals(`2`)}"
+                                android:onClick="@{()->form.setF311(`2`)}"
+                                android:text="@string/f31102" />
+
+                            <RadioButton
+                                android:id="@+id/f31103"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.f311.equals(`3`)}"
+                                android:onClick="@{()->form.setF311(`3`)}"
+                                android:text="@string/f31103" />
+
+                            <RadioButton
+                                android:id="@+id/f31197"
+                                style="@style/dont_know"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.f311.equals(`97`)}"
+                                android:onClick="@{()->form.setF311(`97`)}"
+                                android:text="@string/f31197" />
+
+                            <RadioButton
+                                android:id="@+id/f31196"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.f311.equals(`96`)}"
+                                android:onClick="@{()->form.setF311(`96`)}"
+                                android:text="@string/f31196" />
+                        </edu.aku.omarshoaib.appstructure.global.views.AppRadioGroup>
+
+                        <EditText
+                            android:id="@+id/f31196x"
+                            style="@style/Theme.AppStructure.EditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:digits="@string/digits_all"
+                            android:hint="@string/f31196"
+                            android:inputType="text"
+                            android:maxLength="250"
+                            android:tag="f31196"
+                            android:text="@={form.f31196x}"
+                            android:visibility="@{form.f311.equals(`96`) ? View.VISIBLE : View.GONE}"
+                            tools:ignore="Autofill" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- f313t2 Title -->
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/f313t2" />
+
+                <!-- f313t3 Title -->
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/f313t3" />
+
+                <!-- f31301 CheckBox -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVf31301"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_f31301" />
+
+                        <TextView
+                            style="@style/labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/f31301" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- f31301t1 Title -->
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/f31301t1" />
+
+                <!-- f31301t2 Title -->
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/f31301t2" />
+
+                <!-- f31302 CheckBox -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVf31302"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_f31302" />
+
+                        <TextView
+                            style="@style/labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/f31302" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- f31302t1 Title -->
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/f31302t1" />
+
+                <!-- f31302t2 Title -->
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/f31302t2" />
+
+                <!-- f31303 CheckBox -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVf31303"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_f31303" />
+
+                        <TextView
+                            style="@style/labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/f31303" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- f31303t1 Title -->
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/f31303t1" />
+
+                <!-- f31303t2 Title -->
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/f31303t2" />
+
+                <!-- f31304 CheckBox -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVf31304"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_f31304" />
+
+                        <TextView
+                            style="@style/labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/f31304" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- f31304t1 Title -->
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/f31304t1" />
+
+                <!-- f31304t2 Title -->
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/f31304t2" />
+
+                <!-- f31305 CheckBox -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVf31305"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_f31305" />
+
+                        <TextView
+                            style="@style/labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/f31305" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- f31305t1 Title -->
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/f31305t1" />
+
+                <!-- f31305t2 Title -->
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/f31305t2" />
+
+                <!-- f31306 CheckBox -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVf31306"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_f31306" />
+
+                        <TextView
+                            style="@style/labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/f31306" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- f31306t1 Title -->
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/f31306t1" />
+
+                <!-- f31306t2 Title -->
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/f31306t2" />
+
+                <!-- f31307 CheckBox -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVf31307"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_f31307" />
+
+                        <TextView
+                            style="@style/labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/f31307" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- f31307t1 Title -->
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/f31307t1" />
+
+                <!-- f031307t2 Title -->
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/f031307t2" />
+
+                <!-- f31308 CheckBox -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVf31308"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_f31308" />
+
+                        <TextView
+                            style="@style/labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/f31308" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- f31308t1 Title -->
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/f31308t1" />
+
+                <!-- f31308t2 Title -->
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/f31308t2" />
+
+                <!-- f31309 CheckBox -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVf31309"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_f31309" />
+
+                        <TextView
+                            style="@style/labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/f31309" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- f31309t1 Title -->
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/f31309t1" />
+
+                <!-- f31309t2 Title -->
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/f31309t2" />
+
+                <!-- f31310 CheckBox -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVf31310"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_f31310" />
+
+                        <TextView
+                            style="@style/labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/f31310" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- f31310t1 Title -->
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/f31310t1" />
+
+                <!-- f31310t2 Title -->
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/f31310t2" />
+
+                <!-- f31311 CheckBox -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVf31311"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_f31311" />
+
+                        <TextView
+                            style="@style/labels"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/f31311" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- f31311t1 Title -->
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/f31311t1" />
+
+                <!-- f31311t2 Title -->
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/f31311t2" />
+
+                <edu.aku.omarshoaib.renew.global.views.AppEndButtons
+                    android:id="@+id/endButtonsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

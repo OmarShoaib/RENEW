@@ -77,6 +77,36 @@
             android:name=".activity.IdentificationAC"
             android:exported="false" />
 
+        <!-- SectionF01 -->
+        <activity
+            android:name="edu.aku.omarshoaib.renew.activity.sections.SectionF01"
+            android:exported="false" />
+
+        <!-- SectionF02 -->
+        <activity
+            android:name="edu.aku.omarshoaib.renew.activity.sections.SectionF02"
+            android:exported="false" />
+
+        <!-- SectionF03 -->
+        <activity
+            android:name="edu.aku.omarshoaib.renew.activity.sections.SectionF03"
+            android:exported="false" />
+
+        <!-- SectionF04 -->
+        <activity
+            android:name="edu.aku.omarshoaib.renew.activity.sections.SectionF04"
+            android:exported="false" />
+
+        <!-- SectionF05 -->
+        <activity
+            android:name="edu.aku.omarshoaib.renew.activity.sections.SectionF05"
+            android:exported="false" />
+
+        <!-- SectionF06 -->
+        <activity
+            android:name="edu.aku.omarshoaib.renew.activity.sections.SectionF06"
+            android:exported="false" />
+
         <!-- SYNCED RECORDS LIST ACTIVITY -->
         <activity
             android:name=".synced_recs.SyncedRecsListAC"
