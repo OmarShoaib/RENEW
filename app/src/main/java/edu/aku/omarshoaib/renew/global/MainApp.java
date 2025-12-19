@@ -22,6 +22,7 @@ import edu.aku.omarshoaib.renew.model.Form2;
 import edu.aku.omarshoaib.renew.model.Form3;
 import edu.aku.omarshoaib.renew.model.Form4;
 import edu.aku.omarshoaib.renew.model.Form5;
+import edu.aku.omarshoaib.renew.model.Form6;
 import edu.aku.omarshoaib.renew.model.User;
 
 public class MainApp extends Application {
@@ -39,6 +40,7 @@ public class MainApp extends Application {
     public static Form3 form3;
     public static Form4 form4;
     public static Form5 form5;
+    public static Form6 form6;
 
     // LockScreen timer and tone
     public static ToneGenerator toneGen;

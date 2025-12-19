@@ -1392,7 +1392,7 @@
                                 android:text="@string/f521" />
                         </LinearLayout>
 
-                        <edu.aku.omarshoaib.appstructure.global.views.AppRadioGroup
+                        <edu.aku.omarshoaib.renew.global.views.AppRadioGroup
                             android:id="@+id/f521"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -1480,7 +1480,7 @@
                                 android:checked="@{form.f521.equals(`96`)}"
                                 android:onClick="@{()->form.setF521(`96`)}"
                                 android:text="@string/f52096" />
-                        </edu.aku.omarshoaib.appstructure.global.views.AppRadioGroup>
+                        </edu.aku.omarshoaib.renew.global.views.AppRadioGroup>
 
                         <EditText
                             android:id="@+id/f52096x"

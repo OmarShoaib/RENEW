@@ -1056,7 +1056,7 @@
                                 android:text="@string/f614" />
                         </LinearLayout>
 
-                        <edu.aku.omarshoaib.appstructure.global.views.AppRadioGroup
+                        <edu.aku.omarshoaib.renew.global.views.AppRadioGroup
                             android:id="@+id/f614"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -1111,7 +1111,7 @@
                                 android:checked="@{form.f614.equals(`96`)}"
                                 android:onClick="@{()->form.setF614(`96`)}"
                                 android:text="@string/f61496" />
-                        </edu.aku.omarshoaib.appstructure.global.views.AppRadioGroup>
+                        </edu.aku.omarshoaib.renew.global.views.AppRadioGroup>
 
                         <EditText
                             android:id="@+id/f61496x"

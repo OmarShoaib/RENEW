@@ -23,6 +23,7 @@ import edu.aku.omarshoaib.renew.database.dao.Form2Dao;
 import edu.aku.omarshoaib.renew.database.dao.Form3Dao;
 import edu.aku.omarshoaib.renew.database.dao.Form4Dao;
 import edu.aku.omarshoaib.renew.database.dao.Form5Dao;
+import edu.aku.omarshoaib.renew.database.dao.Form6Dao;
 import edu.aku.omarshoaib.renew.database.dao.GeneralDao;
 import edu.aku.omarshoaib.renew.database.dao.SummaryDao;
 import edu.aku.omarshoaib.renew.database.dao.UserDao;
@@ -35,15 +36,17 @@ import edu.aku.omarshoaib.renew.model.Form2;
 import edu.aku.omarshoaib.renew.model.Form3;
 import edu.aku.omarshoaib.renew.model.Form4;
 import edu.aku.omarshoaib.renew.model.Form5;
+import edu.aku.omarshoaib.renew.model.Form6;
 import edu.aku.omarshoaib.renew.model.SyncModel;
 import edu.aku.omarshoaib.renew.model.User;
 import edu.aku.omarshoaib.renew.model.Villages;
 
 @Database(entities = {User.class, Villages.class, Cluster.class, EntryLog.class,
-        Form1.class, Form2.class, Form3.class, Form4.class, Form5.class},
+        Form1.class, Form2.class, Form3.class, Form4.class, Form5.class, Form6.class},
         version = 1, exportSchema = false)
-@TypeConverters({SyncModel.ResponseDate.DataConverter.class, Form1.SF1.DataConverter.class,
-        Form2.SF2.DataConverter.class, Form3.SF3.DataConverter.class, Form4.SF4.DataConverter.class, Form5.SF5.DataConverter.class})
+@TypeConverters({SyncModel.ResponseDate.DataConverter.class,
+        Form1.SF1.DataConverter.class, Form2.SF2.DataConverter.class, Form3.SF3.DataConverter.class,
+        Form4.SF4.DataConverter.class, Form5.SF5.DataConverter.class, Form6.SF6.DataConverter.class})
 public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase appDatabase;
@@ -97,6 +100,8 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract Form4Dao form4Dao();
 
     public abstract Form5Dao form5Dao();
+
+    public abstract Form6Dao form6Dao();
 
     // Type converter used to save JsonObject in a single column
     public static class BaseConverter<T> {
