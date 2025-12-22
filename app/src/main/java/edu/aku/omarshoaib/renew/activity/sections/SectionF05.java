@@ -7,6 +7,9 @@ import android.view.View;
 import androidx.databinding.DataBindingUtil;
 import com.validatorcrawler.aliazaz.Validator;
 
+import java.util.Date;
+import java.util.List;
+
 import edu.aku.omarshoaib.renew.activity.EndingAC;
 import edu.aku.omarshoaib.renew.activity.MainActivity;
 import edu.aku.omarshoaib.renew.global.AppConstants;
@@ -48,22 +51,40 @@ public class SectionF05 extends BaseActivity {
         sF5.setF501(MainApp.form5.getUsername());
         bi.f502.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
         bi.f506.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
+        bi.f502.addTextChangedListener(new AppTextWatcher(bi.f502.getId(), dateTextWatcher));
         bi.f506.addTextChangedListener(new AppTextWatcher(bi.f506.getId(), dateTextWatcher));
     }
 
     AppTextWatcher.IAppTextWatcher dateTextWatcher = (viewId, text) -> {
-        if(text.isEmpty()) {
-            String today = DateUtils.getCurrentDateTime(AppConstants.APP_DATE_FORMAT);
-            String maxDate1 = DateUtils.addSubMonths(today, -6);
-            String minDate1 = DateUtils.addSubMonths(today, -59);
-            bi.f506.setMinDate(minDate1);
-            bi.f506.setMaxDate(maxDate1);
-            return;
+        if(viewId == bi.f502.getId()) {
+            if (text.isEmpty()) {
+                String today = DateUtils.getCurrentDateTime(AppConstants.APP_DATE_FORMAT);
+                String maxDate1 = DateUtils.addSubMonths(today, -6);
+                String minDate1 = DateUtils.addSubMonths(today, -59);
+                bi.f506.setMinDate(minDate1);
+                bi.f506.setMaxDate(maxDate1);
+                return;
+            }
+            String maxDate2 = DateUtils.addSubMonths(text, -6);
+            String minDate2 = DateUtils.addSubMonths(text, -59);
+            bi.f506.setMinDate(minDate2);
+            bi.f506.setMaxDate(maxDate2);
+        } else if(viewId == bi.f506.getId()) {
+            if (text.isEmpty()) {
+                sF5.setF507dd("");
+                sF5.setF507mm("");
+                return;
+            }
+            String[] dob = text.split("-");
+            List<String> age = DateUtils.calculateAge(dob[0], dob[1], dob[2]);
+            sF5.setF507dd(age.get(2));
+            sF5.setF507mm(String.
+                    valueOf(DateUtils.
+                            getAgeInMonths(age.get(0), age.get(1))
+                    )
+            );
+
         }
-        String maxDate2 = DateUtils.addSubMonths(text, -6);
-        String minDate2 = DateUtils.addSubMonths(text, -59);
-        bi.f506.setMinDate(minDate2);
-        bi.f506.setMaxDate(maxDate2);
     };
 
     private boolean formValidation() {

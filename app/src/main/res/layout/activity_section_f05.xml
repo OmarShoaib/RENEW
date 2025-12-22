@@ -292,10 +292,15 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- f507dd Input-Numeric -->
+                <!-- f507 Input-Numeric -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVf507dd"
                     style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -313,7 +318,20 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="@string/f507dd" />
+                            android:text="@string/f507" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/sub_labels"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/f507dd"  />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/f507dd"
@@ -324,37 +342,21 @@
                             android:digits="@string/digits_number"
                             android:gravity="center"
                             android:hint="##"
+                            android:enabled="false"
+                            android:textColor="@color/red_color"
                             android:inputType="number"
                             android:maxLength="2"
                             android:text="@={form.f507dd}"
                             app:maxValue="29"
                             app:minValue="0"
                             app:type="range" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- f507mm Input-Numeric -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVf507mm"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
 
                         <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_f507mm" />
-
-                        <TextView
-                            style="@style/labels"
+                            style="@style/sub_labels"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="@string/f507mm" />
+                            android:text="@string/f507mm"  />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
                             android:id="@+id/f507mm"
@@ -365,12 +367,15 @@
                             android:digits="@string/digits_number"
                             android:gravity="center"
                             android:hint="##"
+                            android:enabled="false"
+                            android:textColor="@color/red_color"
                             android:inputType="number"
                             android:maxLength="2"
                             android:text="@={form.f507mm}"
                             app:maxValue="59"
                             app:minValue="6"
                             app:type="range" />
+                    </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
