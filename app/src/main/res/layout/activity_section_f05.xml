@@ -789,9 +789,9 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- f517a Radio -->
+                <!-- f517 Radio -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVf517a"
+                    android:id="@+id/fldGrpCVf517"
                     style="@style/cardView">
 
                     <LinearLayout
@@ -808,7 +808,7 @@
                                 style="@style/quesNum"
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:text="@string/Q_f517a" />
+                                android:text="@string/Q_f517" />
 
                             <TextView
                                 style="@style/labels"
