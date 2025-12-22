@@ -7,6 +7,9 @@ import android.view.View;
 import androidx.databinding.DataBindingUtil;
 import com.validatorcrawler.aliazaz.Validator;
 
+import java.util.Date;
+import java.util.List;
+
 import edu.aku.omarshoaib.renew.activity.EndingAC;
 import edu.aku.omarshoaib.renew.activity.MainActivity;
 import edu.aku.omarshoaib.renew.global.AppConstants;
@@ -14,7 +17,9 @@ import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.BaseActivity;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivitySectionF05Binding;
+import edu.aku.omarshoaib.renew.global.AppTextWatcher;
 import edu.aku.omarshoaib.renew.global.DateUtils;
+import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.model.Form5;
 
 public class SectionF05 extends BaseActivity {
@@ -43,15 +48,44 @@ public class SectionF05 extends BaseActivity {
     }
 
     private void initUI() {
+        sF5.setF501(MainApp.form5.getUsername());
         bi.f502.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
         bi.f506.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
-
-        //TODO: Need 502 Watcher
-        bi.f506.setMaxDate(DateUtils.addSubMonths(sF5.getF502(), -6));
-        bi.f506.setMinDate(DateUtils.addSubMonths(sF5.getF502(), -59));
-       /* bi.f506.setMinDate(F502 Screen Date  - 6 Months)
-        bi.f506.setMaxDate(F502 Screen Date  - 59 Months)*/
+        bi.f502.addTextChangedListener(new AppTextWatcher(bi.f502.getId(), dateTextWatcher));
+        bi.f506.addTextChangedListener(new AppTextWatcher(bi.f506.getId(), dateTextWatcher));
     }
+
+    AppTextWatcher.IAppTextWatcher dateTextWatcher = (viewId, text) -> {
+        if(viewId == bi.f502.getId()) {
+            if (text.isEmpty()) {
+                String today = DateUtils.getCurrentDateTime(AppConstants.APP_DATE_FORMAT);
+                String maxDate1 = DateUtils.addSubMonths(today, -6);
+                String minDate1 = DateUtils.addSubMonths(today, -59);
+                bi.f506.setMinDate(minDate1);
+                bi.f506.setMaxDate(maxDate1);
+                return;
+            }
+            String maxDate2 = DateUtils.addSubMonths(text, -6);
+            String minDate2 = DateUtils.addSubMonths(text, -59);
+            bi.f506.setMinDate(minDate2);
+            bi.f506.setMaxDate(maxDate2);
+        } else if(viewId == bi.f506.getId()) {
+            if (text.isEmpty()) {
+                sF5.setF507dd("");
+                sF5.setF507mm("");
+                return;
+            }
+            String[] dob = text.split("-");
+            List<String> age = DateUtils.calculateAge(dob[0], dob[1], dob[2]);
+            sF5.setF507dd(age.get(2));
+            sF5.setF507mm(String.
+                    valueOf(DateUtils.
+                            getAgeInMonths(age.get(0), age.get(1))
+                    )
+            );
+
+        }
+    };
 
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(activity, bi.GrpName);
