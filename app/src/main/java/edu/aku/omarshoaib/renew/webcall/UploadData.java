@@ -28,6 +28,11 @@ import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.model.EntryLog;
 import edu.aku.omarshoaib.renew.model.Form1;
+import edu.aku.omarshoaib.renew.model.Form2;
+import edu.aku.omarshoaib.renew.model.Form3;
+import edu.aku.omarshoaib.renew.model.Form4;
+import edu.aku.omarshoaib.renew.model.Form5;
+import edu.aku.omarshoaib.renew.model.Form6;
 import edu.aku.omarshoaib.renew.model.SyncModel;
 import edu.aku.omarshoaib.renew.webcall.web_client.CryptoUtil;
 import edu.aku.omarshoaib.renew.webcall.web_client.WebAPI;
@@ -61,6 +66,10 @@ public class UploadData {
         UPLOAD_TABLES = new LinkedHashMap<SyncModel, Boolean>() {{
             put(new SyncModel(EntryLog.TABLE_NAME, AppConstants._EMPTY_), false);
             put(new SyncModel(Form1.class, MainApp.MODULE_FORM, Form1.TABLE_NAME, Form1.SECTION_NAME), true);
+            put(new SyncModel(Form2.class, MainApp.MODULE_FORM, Form2.TABLE_NAME, Form2.SECTION_NAME), true);
+            put(new SyncModel(Form3.class, MainApp.MODULE_FORM, Form3.TABLE_NAME, Form3.SECTION_NAME), true);
+            put(new SyncModel(Form4.class, MainApp.MODULE_FORM, Form4.TABLE_NAME, Form4.SECTION_NAME), true);
+            put(new SyncModel(Form5.class, MainApp.MODULE_FORM, Form5.TABLE_NAME, Form5.SECTION_NAME), true);
         }};
     }
 
@@ -163,6 +172,56 @@ public class UploadData {
 
         /* ADD MORE TABLE HERE TO UPLOAD IF NECESSARY */
 
+        // Form2
+        iFormCompletedUIds = uIdsHM.get(Form2.TABLE_NAME);
+        tableName = ((SyncModel) UPLOAD_TABLES.keySet().toArray()[2]).getTable();
+        List<Form2> list2 = appDatabase.form2Dao().getAllUnSyncedDataByUIds(iFormCompletedUIds);
+        if (list2 != null && !list2.isEmpty()) {
+            postData = prepareUploadData(tableName, gson.toJson(list2));
+            webCall.call(webAPI.uploadEncData(postData), AppConstants.UPLOAD_DATA, tableName, ++index, list2.size(), iFormCompletedUIds, IS_CALL_ENCRYPTED);
+        } else
+            iWebCallback.onFailure(tableName, activity.getString(R.string.no_new_records_to_upload), ++index, 0, null);
+
+        // Form3
+        iFormCompletedUIds = uIdsHM.get(Form3.TABLE_NAME);
+        tableName = ((SyncModel) UPLOAD_TABLES.keySet().toArray()[3]).getTable();
+        List<Form3> list3 = appDatabase.form3Dao().getAllUnSyncedDataByUIds(iFormCompletedUIds);
+        if (list3 != null && !list3.isEmpty()) {
+            postData = prepareUploadData(tableName, gson.toJson(list3));
+            webCall.call(webAPI.uploadEncData(postData), AppConstants.UPLOAD_DATA, tableName, ++index, list3.size(), iFormCompletedUIds, IS_CALL_ENCRYPTED);
+        } else
+            iWebCallback.onFailure(tableName, activity.getString(R.string.no_new_records_to_upload), ++index, 0, null);
+
+        // Form4
+        iFormCompletedUIds = uIdsHM.get(Form4.TABLE_NAME);
+        tableName = ((SyncModel) UPLOAD_TABLES.keySet().toArray()[4]).getTable();
+        List<Form4> list4 = appDatabase.form4Dao().getAllUnSyncedDataByUIds(iFormCompletedUIds);
+        if (list4 != null && !list4.isEmpty()) {
+            postData = prepareUploadData(tableName, gson.toJson(list4));
+            webCall.call(webAPI.uploadEncData(postData), AppConstants.UPLOAD_DATA, tableName, ++index, list4.size(), iFormCompletedUIds, IS_CALL_ENCRYPTED);
+        } else
+            iWebCallback.onFailure(tableName, activity.getString(R.string.no_new_records_to_upload), ++index, 0, null);
+
+        // Form5
+        iFormCompletedUIds = uIdsHM.get(Form5.TABLE_NAME);
+        tableName = ((SyncModel) UPLOAD_TABLES.keySet().toArray()[5]).getTable();
+        List<Form5> list5 = appDatabase.form5Dao().getAllUnSyncedDataByUIds(iFormCompletedUIds);
+        if (list5 != null && !list5.isEmpty()) {
+            postData = prepareUploadData(tableName, gson.toJson(list5));
+            webCall.call(webAPI.uploadEncData(postData), AppConstants.UPLOAD_DATA, tableName, ++index, list5.size(), iFormCompletedUIds, IS_CALL_ENCRYPTED);
+        } else
+            iWebCallback.onFailure(tableName, activity.getString(R.string.no_new_records_to_upload), ++index, 0, null);
+
+        // Form6
+        iFormCompletedUIds = uIdsHM.get(Form6.TABLE_NAME);
+        tableName = ((SyncModel) UPLOAD_TABLES.keySet().toArray()[6]).getTable();
+        List<Form6> list6 = appDatabase.form6Dao().getAllUnSyncedDataByUIds(iFormCompletedUIds);
+        if (list6 != null && !list6.isEmpty()) {
+            postData = prepareUploadData(tableName, gson.toJson(list6));
+            webCall.call(webAPI.uploadEncData(postData), AppConstants.UPLOAD_DATA, tableName, ++index, list6.size(), iFormCompletedUIds, IS_CALL_ENCRYPTED);
+        } else
+            iWebCallback.onFailure(tableName, activity.getString(R.string.no_new_records_to_upload), ++index, 0, null);
+
     }
 
     /*private String testData() {
@@ -225,6 +284,16 @@ public class UploadData {
                 appDatabase.entryLogDao().updateSyncSuccess(responses);
             } else if (tag.equals(Form1.TABLE_NAME)) {
                 appDatabase.form1Dao().updateSyncSuccess(responses);
+            } else if (tag.equals(Form2.TABLE_NAME)) {
+                appDatabase.form2Dao().updateSyncSuccess(responses);
+            } else if (tag.equals(Form3.TABLE_NAME)) {
+                appDatabase.form3Dao().updateSyncSuccess(responses);
+            } else if (tag.equals(Form4.TABLE_NAME)) {
+                appDatabase.form4Dao().updateSyncSuccess(responses);
+            } else if (tag.equals(Form5.TABLE_NAME)) {
+                appDatabase.form5Dao().updateSyncSuccess(responses);
+            } else if (tag.equals(Form6.TABLE_NAME)) {
+                appDatabase.form6Dao().updateSyncSuccess(responses);
             }
         } else {
             // Update sync error status to db
@@ -232,6 +301,16 @@ public class UploadData {
                 appDatabase.entryLogDao().updateSyncError(appDatabase.entryLogDao().getAllUnSyncedData());
             } else if (tag.equals(Form1.TABLE_NAME)) {
                 appDatabase.form1Dao().updateSyncError(appDatabase.form1Dao().getAllUnSyncedDataByUIds(list));
+            } else if (tag.equals(Form2.TABLE_NAME)) {
+                appDatabase.form2Dao().updateSyncError(appDatabase.form2Dao().getAllUnSyncedDataByUIds(list));
+            } else if (tag.equals(Form3.TABLE_NAME)) {
+                appDatabase.form3Dao().updateSyncError(appDatabase.form3Dao().getAllUnSyncedDataByUIds(list));
+            } else if (tag.equals(Form4.TABLE_NAME)) {
+                appDatabase.form4Dao().updateSyncError(appDatabase.form4Dao().getAllUnSyncedDataByUIds(list));
+            } else if (tag.equals(Form5.TABLE_NAME)) {
+                appDatabase.form5Dao().updateSyncError(appDatabase.form5Dao().getAllUnSyncedDataByUIds(list));
+            } else if (tag.equals(Form6.TABLE_NAME)) {
+                appDatabase.form6Dao().updateSyncError(appDatabase.form6Dao().getAllUnSyncedDataByUIds(list));
             }
         }
     }
