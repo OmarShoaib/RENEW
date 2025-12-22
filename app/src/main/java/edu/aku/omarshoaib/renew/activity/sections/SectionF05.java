@@ -14,7 +14,9 @@ import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.BaseActivity;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivitySectionF05Binding;
+import edu.aku.omarshoaib.renew.global.AppTextWatcher;
 import edu.aku.omarshoaib.renew.global.DateUtils;
+import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.model.Form5;
 
 public class SectionF05 extends BaseActivity {
@@ -43,15 +45,26 @@ public class SectionF05 extends BaseActivity {
     }
 
     private void initUI() {
+        sF5.setF501(MainApp.form5.getUsername());
         bi.f502.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
         bi.f506.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
-
-        //TODO: Need 502 Watcher
-        bi.f506.setMaxDate(DateUtils.addSubMonths(sF5.getF502(), -6));
-        bi.f506.setMinDate(DateUtils.addSubMonths(sF5.getF502(), -59));
-       /* bi.f506.setMinDate(F502 Screen Date  - 6 Months)
-        bi.f506.setMaxDate(F502 Screen Date  - 59 Months)*/
+        bi.f506.addTextChangedListener(new AppTextWatcher(bi.f506.getId(), dateTextWatcher));
     }
+
+    AppTextWatcher.IAppTextWatcher dateTextWatcher = (viewId, text) -> {
+        if(text.isEmpty()) {
+            String today = DateUtils.getCurrentDateTime(AppConstants.APP_DATE_FORMAT);
+            String maxDate1 = DateUtils.addSubMonths(today, -6);
+            String minDate1 = DateUtils.addSubMonths(today, -59);
+            bi.f506.setMinDate(minDate1);
+            bi.f506.setMaxDate(maxDate1);
+            return;
+        }
+        String maxDate2 = DateUtils.addSubMonths(text, -6);
+        String minDate2 = DateUtils.addSubMonths(text, -59);
+        bi.f506.setMinDate(minDate2);
+        bi.f506.setMaxDate(maxDate2);
+    };
 
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(activity, bi.GrpName);

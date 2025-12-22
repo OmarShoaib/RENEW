@@ -63,11 +63,13 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:digits="@string/digits_all"
+                            android:enabled="false"
                             android:gravity="center"
                             android:hint="@string/f401"
                             android:inputType="text"
                             android:maxLength="250"
                             android:text="@={form.f401}"
+                            android:textColor="@color/red_color"
                             tools:ignore="Autofill" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -106,7 +108,7 @@
                             android:text="@={form.f402}"
                             app:dateFormat="@string/date_format"
                             app:maxDate="CR_DATE"
-                            app:minDate="CR_DATE" />
+                            app:minDate="2025-12-10" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -183,11 +185,11 @@
                 </androidx.cardview.widget.CardView>
 
                 <!-- scrid Title -->
-                <TextView
+                <!--<TextView
                     style="@style/info"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/scrid" />
+                    android:text="@string/scrid" />-->
 
                 <!-- f405 Input -->
                 <androidx.cardview.widget.CardView
@@ -295,47 +297,57 @@
                                 android:text="@string/f407" />
                         </LinearLayout>
 
-                        <TextView
-                            style="@style/sub_labels"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/f407dd" />
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/f407dd"
-                            style="@style/Theme.AppStructure.EditTextStyle"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:digits="@string/digits_number"
-                            android:gravity="center"
-                            android:hint="#"
-                            android:inputType="number"
-                            android:maxLength="2"
-                            android:text="@={form.f407dd}"
-                            app:maxValue="29"
-                            app:minValue="0"
-                            app:type="range" />
+                            android:orientation="horizontal">
 
-                        <TextView
-                            style="@style/sub_labels"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="@string/f407mm" />
+                            <TextView
+                                style="@style/sub_labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/f407dd" />
 
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/f407mm"
-                            style="@style/Theme.AppStructure.EditTextStyle"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:digits="@string/digits_number"
-                            android:gravity="center"
-                            android:hint="#"
-                            android:inputType="number"
-                            android:maxLength="2"
-                            android:text="@={form.f407mm}"
-                            app:maxValue="59"
-                            app:minValue="6"
-                            app:type="range" />
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/f407dd"
+                                style="@style/Theme.AppStructure.EditTextStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:digits="@string/digits_number"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={form.f407dd}"
+                                app:maxValue="29"
+                                app:minValue="0"
+                                app:type="range" />
+
+                            <TextView
+                                style="@style/sub_labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/f407mm" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/f407mm"
+                                style="@style/Theme.AppStructure.EditTextStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:digits="@string/digits_number"
+                                android:gravity="center"
+                                android:hint="##"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:text="@={form.f407mm}"
+                                app:maxValue="59"
+                                app:minValue="6"
+                                app:type="range" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -480,7 +492,7 @@
                             android:layout_weight="1"
                             android:digits="@string/digits_number"
                             android:gravity="center"
-                            android:hint="####"
+                            android:hint="##.#"
                             android:inputType="number"
                             android:maxLength="4"
                             android:text="@={form.f410}"
@@ -536,6 +548,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="false"
+                                android:textColor="@color/red_color"
                                 android:checked="@{form.f411.equals(`1`)}"
                                 android:onClick="@{()->form.setF411(`1`)}"
                                 android:text="@string/f41101" />
@@ -545,6 +559,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="false"
+                                android:textColor="@color/red_color"
                                 android:checked="@{form.f411.equals(`2`)}"
                                 android:onClick="@{()->form.setF411(`2`)}"
                                 android:text="@string/f41102" />

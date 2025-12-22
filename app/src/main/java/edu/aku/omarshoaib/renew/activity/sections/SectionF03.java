@@ -45,6 +45,8 @@ public class SectionF03 extends BaseActivity {
     }
 
     private void initUI() {
+        bi.f3dd.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
+        bi.f309.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
         bi.f3dd.addTextChangedListener(new AppTextWatcher(bi.f3dd.getId(), dateTextWatcher));
     }
 
