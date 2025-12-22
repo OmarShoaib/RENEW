@@ -15,6 +15,8 @@ import edu.aku.omarshoaib.renew.activity.MainActivity;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivitySectionF03Binding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
+import edu.aku.omarshoaib.renew.global.AppTextWatcher;
+import edu.aku.omarshoaib.renew.global.DateUtils;
 import edu.aku.omarshoaib.renew.model.Form3;
 
 public class SectionF03 extends BaseActivity {
@@ -43,7 +45,21 @@ public class SectionF03 extends BaseActivity {
     }
 
     private void initUI() {
+        bi.f3dd.addTextChangedListener(new AppTextWatcher(bi.f3dd.getId(), dateTextWatcher));
     }
+
+    AppTextWatcher.IAppTextWatcher dateTextWatcher = (viewId, text) -> {
+        if(text.isEmpty()) {
+            String today = DateUtils.getCurrentDateTime(AppConstants.APP_DATE_FORMAT);
+            String maxDate1 = DateUtils.addSubMonths(today, 9);
+            bi.f309.setMinDate(today);
+            bi.f309.setMaxDate(maxDate1);
+            return;
+        }
+        String maxDate2 = DateUtils.addSubMonths(text, 9);
+        bi.f309.setMinDate(text);
+        bi.f309.setMaxDate(maxDate2);
+    };
 
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(activity, bi.GrpName);

@@ -144,6 +144,7 @@ public class Form3 extends FormBaseModel {
         private String f307 = _EMPTY_;
         private String f308 = _EMPTY_;
         private String f309 = _EMPTY_;
+        private String f309dk = _EMPTY_;
         private String f310 = _EMPTY_;
         private String f31001x = _EMPTY_;
         private String f31096x = _EMPTY_;
@@ -269,6 +270,17 @@ public class Form3 extends FormBaseModel {
         }
 
         @Bindable
+        public String getF309dk() {
+            return f309dk;
+        }
+
+        public void setF309dk(String f309dk) {
+            this.f309dk = f309dk;
+            setF309(f309dk.equals("98") ? _EMPTY_ : this.f309);
+            notifyPropertyChanged(BR.f309dk);
+        }
+
+        @Bindable
         public String getF310() {
             return f310;
         }
@@ -276,6 +288,7 @@ public class Form3 extends FormBaseModel {
         public void setF310(String f310) {
             this.f310 = f310;
             setF31096x(f310.equals("96") ? this.f31096x: _EMPTY_);
+            setF31001x(f310.equals("1") ? this.f31001x: _EMPTY_);
             notifyPropertyChanged(BR.f310);
         }
 
