@@ -991,6 +991,8 @@
                                 android:id="@+id/f21001"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
+                                android:enabled="false"
+                                android:textColor="@color/red_color"
                                 android:checked="@{form.f210.equals(`1`)}"
                                 android:onClick="@{()->form.setF210(`1`)}"
                                 android:text="@string/f2101" />
@@ -999,6 +1001,8 @@
                                 android:id="@+id/f21002"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
+                                android:enabled="false"
+                                android:textColor="@color/red_color"
                                 android:checked="@{form.f210.equals(`2`)}"
                                 android:onClick="@{()->form.setF210(`2`)}"
                                 android:text="@string/f2102" />
@@ -1007,6 +1011,8 @@
                                 android:id="@+id/f21003"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
+                                android:enabled="false"
+                                android:textColor="@color/red_color"
                                 android:checked="@{form.f210.equals(`3`)}"
                                 android:onClick="@{()->form.setF210(`3`)}"
                                 android:text="@string/f2103" />
@@ -1015,6 +1021,8 @@
                                 android:id="@+id/f2104"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
+                                android:enabled="false"
+                                android:textColor="@color/red_color"
                                 android:checked="@{form.f210.equals(`4`)}"
                                 android:onClick="@{()->form.setF210(`4`)}"
                                 android:text="@string/f2104" />
@@ -1023,6 +1031,8 @@
                                 android:id="@+id/f2105"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
+                                android:enabled="false"
+                                android:textColor="@color/red_color"
                                 android:checked="@{form.f210.equals(`5`)}"
                                 android:onClick="@{()->form.setF210(`5`)}"
                                 android:text="@string/f2105" />
@@ -1033,7 +1043,8 @@
                 <!-- f211 Radio -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVf211"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.f210.equals(`1`) ? View.GONE : View.VISIBLE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"

@@ -532,6 +532,7 @@
     <string name="f504">Child`s Full name</string>
     <string name="f505">Enrollment ID</string>
     <string name="f506">Child date of Birth</string>
+    <string name="f507">Age</string>
     <string name="f507dd">Age (Days)</string>
     <string name="f507mm">Age (months)</string>
     <string name="f508">Sex</string>
@@ -768,6 +769,7 @@
     <string name='Q_f504' translatable='false'>f504</string>
     <string name='Q_f505' translatable='false'>f505</string>
     <string name='Q_f506' translatable='false'>f506</string>
+    <string name='Q_f507' translatable='false'>f507</string>
     <string name='Q_f507dd' translatable='false'>f507dd</string>
     <string name='Q_f507mm' translatable='false'>f507mm</string>
     <string name='Q_f508' translatable='false'>f508</string>
@@ -777,6 +779,7 @@
     <string name='Q_f512' translatable='false'>f512</string>
     <string name='Q_f513' translatable='false'>f513</string>
     <string name='Q_f516' translatable='false'>f516</string>
+    <string name='Q_f517' translatable='false'>f517</string>
     <string name='Q_f517a' translatable='false'>f517a</string>
     <string name='Q_f517b' translatable='false'>f517b</string>
     <string name='Q_f517c' translatable='false'>f517c</string>
