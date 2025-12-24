@@ -263,6 +263,7 @@ public class Form1 extends FormBaseModel {
 
         public void setF108(String f108) {
             this.f108 = f108;
+            setF109(f108.equals("1") ? this.f109 : _EMPTY_);
             notifyPropertyChanged(BR.f108);
         }
 

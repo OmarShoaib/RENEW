@@ -5,7 +5,6 @@
     tools:context=".activity.sections.SectionF01">
 
     <data>
-
         <import type="android.view.View" />
 
         <variable
@@ -136,7 +135,6 @@
                             app:minDate="CR_DATE" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-
 
                 <!-- f104 Input -->
                 <androidx.cardview.widget.CardView
@@ -377,7 +375,8 @@
                 <!-- f109 Radio -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVf109"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.f108.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -428,7 +427,6 @@
                         </RadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-
 
                 <edu.aku.omarshoaib.renew.global.views.AppEndButtons
                     android:id="@+id/endButtonsLayout"
