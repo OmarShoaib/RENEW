@@ -1,9 +1,13 @@
 package edu.aku.omarshoaib.renew.activity.sections;
 
+import static edu.aku.omarshoaib.renew.global.AppConstants._EMPTY_;
+
 import android.app.Activity;
+import android.opengl.Visibility;
 import android.os.Bundle;
 import android.sax.EndElementListener;
 import android.view.View;
+import android.widget.RadioGroup;
 
 import androidx.databinding.DataBindingUtil;
 
@@ -16,6 +20,7 @@ import edu.aku.omarshoaib.renew.activity.MainActivity;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivitySectionF01Binding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
+import edu.aku.omarshoaib.renew.global.AppTextWatcher;
 import edu.aku.omarshoaib.renew.model.Form1;
 
 public class SectionF01 extends BaseActivity {
@@ -45,6 +50,29 @@ public class SectionF01 extends BaseActivity {
 
     private void initUI() {
         bi.f103.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
+        bi.f105.addTextChangedListener(new AppTextWatcher(bi.f105.getId(), textWatcher));
+        bi.f106.setOnCheckedChangeListener(changeListener);
+    }
+
+    RadioGroup.OnCheckedChangeListener changeListener = (radioGroup, i) -> {
+        if(i == R.id.f106) radioGroup.post(this::askF107);
+    };
+
+    AppTextWatcher.IAppTextWatcher textWatcher = (viewId, text) -> {
+        if(text.isEmpty() || Integer.parseInt(text) < 10) {
+            bi.fldGrpCVf106.setVisibility(View.GONE);
+            sF1.setF106(_EMPTY_);
+        } else bi.fldGrpCVf106.setVisibility(View.VISIBLE);
+    };
+
+    private void askF107() {
+        String text = sF1.getF105();
+        if(text.isEmpty() || Integer.parseInt(text) > 49 || Integer.parseInt(text) < 10 || !sF1.getF106().equals("1")) {
+           bi.fldGrpCVf107.setVisibility(View.GONE);
+           sF1.setF107(_EMPTY_);
+           return;
+        }
+        bi.fldGrpCVf107.setVisibility(View.VISIBLE);
     }
 
     private boolean formValidation() {
