@@ -6,8 +6,11 @@ import android.graphics.drawable.Drawable;
 import android.text.InputFilter;
 import android.text.InputType;
 import android.util.AttributeSet;
+import android.view.ActionMode;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
@@ -26,7 +29,7 @@ public class AppTextInput extends TextInputLayout {
         init(context, attrs);
     }
 
-    public void init(Context context, AttributeSet attrs) {
+    private void init(Context context, AttributeSet attrs) {
         View view = LayoutInflater.from(context).inflate(R.layout.view_textinput, this, true);
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.AppTextInput, 0, 0);
 
@@ -43,7 +46,7 @@ public class AppTextInput extends TextInputLayout {
             boolean tiEnabled = typedArray.getBoolean(R.styleable.AppTextInput_tiEnabled, true);
             boolean tiFocusable = typedArray.getBoolean(R.styleable.AppTextInput_tiFocusable, true);
 
-            defaultTI = (TextInputLayout) view.findViewById(R.id.titleTIL);
+            defaultTI = view.findViewById(R.id.titleTIL);
             defaultTI.setHint(tiHint);
             if (tiDrawableStart != null)
                 defaultTI.setStartIconDrawable(tiDrawableStart);
@@ -59,6 +62,7 @@ public class AppTextInput extends TextInputLayout {
             defaultET.setFocusable(tiFocusable);
 
             if (tiMinHeight > 0) defaultET.setMinHeight((int) tiMinHeight);
+            disableCopyPaste(defaultET);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -73,5 +77,54 @@ public class AppTextInput extends TextInputLayout {
 
     public EditText getDefaultET() {
         return defaultET;
+    }
+
+    private void disableCopyPaste(EditText editText) {
+        // Disable long click
+        editText.setLongClickable(false);
+        editText.setTextIsSelectable(false);
+
+        // Disable contextual menu (cut, copy, paste, select all)
+        editText.setCustomSelectionActionModeCallback(new ActionMode.Callback() {
+            @Override
+            public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+                return false;
+            }
+
+            @Override
+            public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
+                return false;
+            }
+
+            @Override
+            public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+                return false;
+            }
+
+            @Override
+            public void onDestroyActionMode(ActionMode mode) { }
+        });
+
+        // Block paste programmatically
+        editText.setOnLongClickListener(v -> true);
+        editText.setCustomInsertionActionModeCallback(new ActionMode.Callback() {
+            @Override
+            public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+                return false;
+            }
+
+            @Override
+            public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
+                return false;
+            }
+
+            @Override
+            public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+                return false;
+            }
+
+            @Override
+            public void onDestroyActionMode(ActionMode mode) { }
+        });
     }
 }
