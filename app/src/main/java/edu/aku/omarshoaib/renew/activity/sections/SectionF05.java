@@ -97,7 +97,7 @@ public class SectionF05 extends BaseActivity {
 
         if(!proceed()) {
             AppConstants.showSimpleSnackBar(activity,
-                    "Child noe eligible for enrollment", AppConstants.TYPE_ERROR);
+                    "Child not eligible for enrollment", AppConstants.TYPE_ERROR);
             return false;
         }
 
@@ -116,7 +116,7 @@ public class SectionF05 extends BaseActivity {
     private boolean proceed() {
         boolean lowMuac = !sF5.getF512().isEmpty() && Float.parseFloat(sF5.getF512()) < 12.5f;
         boolean edema = sF5.getFo515().equals("1");
-        return !(lowMuac || edema);
+        return lowMuac || edema;
     }
 
     public void btnContinue(View view) {
