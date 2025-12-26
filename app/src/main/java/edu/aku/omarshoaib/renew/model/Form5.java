@@ -344,6 +344,21 @@ public class Form5 extends FormBaseModel {
             notifyPropertyChanged(BR.fo515);
         }
 
+        public void clearUnEligible() {
+            setF516(_EMPTY_);
+            setF517a(_EMPTY_);
+            setF517b(_EMPTY_);
+            setF517c(_EMPTY_);
+            setF517d(_EMPTY_);
+            setF517e(_EMPTY_);
+            setF517f(_EMPTY_);
+            setF517g(_EMPTY_);
+            setF518(_EMPTY_);
+            setF519(_EMPTY_);
+            setF520(_EMPTY_);
+            setF521(_EMPTY_);
+        }
+
         @Bindable
         public String getF516() {
             return f516;
@@ -451,6 +466,7 @@ public class Form5 extends FormBaseModel {
 
         public void setF520(String f520) {
             this.f520 = f520;
+            setF52001x(f520.equals("1") ? this.f52001x: _EMPTY_);
             notifyPropertyChanged(BR.f520);
         }
 
@@ -472,6 +488,8 @@ public class Form5 extends FormBaseModel {
         public void setF521(String f521) {
             this.f521 = f521;
             setF52196x(f521.equals("96") ? this.f52196x: _EMPTY_);
+            setF52101x(f521.equals("1") ? this.f52101x: _EMPTY_);
+            setF52102x(f521.equals("2") ? this.f52102x: _EMPTY_);
             notifyPropertyChanged(BR.f521);
         }
 

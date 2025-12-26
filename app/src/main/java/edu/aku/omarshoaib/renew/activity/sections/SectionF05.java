@@ -1,13 +1,15 @@
 package edu.aku.omarshoaib.renew.activity.sections;
 
+import static edu.aku.omarshoaib.renew.global.AppConstants._EMPTY_;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 
 import androidx.databinding.DataBindingUtil;
+
 import com.validatorcrawler.aliazaz.Validator;
 
-import java.util.Date;
 import java.util.List;
 
 import edu.aku.omarshoaib.renew.activity.EndingAC;
@@ -55,8 +57,18 @@ public class SectionF05 extends BaseActivity {
         bi.f506.addTextChangedListener(new AppTextWatcher(bi.f506.getId(), dateTextWatcher));
     }
 
+    AppTextWatcher.IAppTextWatcher textWatcher = (viewId, text) -> {
+        if (proceed()) {
+            bi.eligible.setVisibility(View.VISIBLE);
+        } else {
+            bi.eligible.setVisibility(View.GONE);
+            sF5.clearUnEligible();
+        }
+    };
+
     AppTextWatcher.IAppTextWatcher dateTextWatcher = (viewId, text) -> {
-        if(viewId == bi.f502.getId()) {
+        if (viewId == bi.f502.getId()) {
+            sF5.setF506(_EMPTY_);
             if (text.isEmpty()) {
                 String today = DateUtils.getCurrentDateTime(AppConstants.APP_DATE_FORMAT);
                 String maxDate1 = DateUtils.addSubMonths(today, -6);
@@ -69,26 +81,31 @@ public class SectionF05 extends BaseActivity {
             String minDate2 = DateUtils.addSubMonths(text, -59);
             bi.f506.setMinDate(minDate2);
             bi.f506.setMaxDate(maxDate2);
-        } else if(viewId == bi.f506.getId()) {
+        } else if (viewId == bi.f506.getId()) {
             if (text.isEmpty()) {
                 sF5.setF507dd("");
                 sF5.setF507mm("");
                 return;
             }
             String[] dob = text.split("-");
-            List<String> age = DateUtils.calculateAge(dob[0], dob[1], dob[2]);
+            List<String> age = DateUtils.calculateAge(sF5.getF502(), dob[0], dob[1], dob[2]);
             sF5.setF507dd(age.get(2));
             sF5.setF507mm(String.
                     valueOf(DateUtils.
                             getAgeInMonths(age.get(0), age.get(1))
                     )
             );
-
         }
     };
 
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(activity, bi.GrpName);
+    }
+
+    private boolean proceed() {
+        boolean lowMuac = !sF5.getF512().isEmpty() && Float.parseFloat(sF5.getF512()) < 12.5f;
+        boolean edema = sF5.getFo515().equals("1");
+        return lowMuac || edema;
     }
 
     public void btnContinue(View view) {
