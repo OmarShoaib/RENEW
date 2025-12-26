@@ -55,16 +55,10 @@ public class SectionF05 extends BaseActivity {
         bi.f506.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
         bi.f502.addTextChangedListener(new AppTextWatcher(bi.f502.getId(), dateTextWatcher));
         bi.f506.addTextChangedListener(new AppTextWatcher(bi.f506.getId(), dateTextWatcher));
+        bi.f512.addTextChangedListener(new AppTextWatcher(bi.f512.getId(),
+                (viewId, text) -> eligible()));
+        bi.fo515.setOnCheckedChangeListener((rG, i) -> rG.post(this::eligible));
     }
-
-    AppTextWatcher.IAppTextWatcher textWatcher = (viewId, text) -> {
-        if (proceed()) {
-            bi.eligible.setVisibility(View.VISIBLE);
-        } else {
-            bi.eligible.setVisibility(View.GONE);
-            sF5.clearUnEligible();
-        }
-    };
 
     AppTextWatcher.IAppTextWatcher dateTextWatcher = (viewId, text) -> {
         if (viewId == bi.f502.getId()) {
@@ -99,7 +93,24 @@ public class SectionF05 extends BaseActivity {
     };
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(activity, bi.GrpName);
+        if(!Validator.emptyCheckingContainer(activity, bi.GrpName)) return false;
+
+        if(!proceed()) {
+            AppConstants.showSimpleSnackBar(activity,
+                    "Child noe eligible for enrollment", AppConstants.TYPE_ERROR);
+            return false;
+        }
+
+        return true;
+    }
+
+    private void eligible() {
+        if (proceed()) {
+            bi.eligible.setVisibility(View.VISIBLE);
+        } else {
+            bi.eligible.setVisibility(View.GONE);
+            sF5.clearUnEligible();
+        }
     }
 
     private boolean proceed() {
