@@ -21,7 +21,8 @@ import java.io.File;
 import java.util.List;
 
 import edu.aku.omarshoaib.renew.R;
-import edu.aku.omarshoaib.renew.activity.sections.SectionF01;
+import edu.aku.omarshoaib.renew.activity.sections.Section1.Identification01;
+import edu.aku.omarshoaib.renew.activity.sections.Section1.SectionF01;
 import edu.aku.omarshoaib.renew.activity.sections.SectionF02;
 import edu.aku.omarshoaib.renew.activity.sections.SectionF03;
 import edu.aku.omarshoaib.renew.activity.sections.SectionF04;
@@ -88,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (viewId == R.id.option1) {
             MainApp.entryType = 1;
-            AppConstants.gotoActivity(activity, SectionF01.class, true);
+            AppConstants.gotoActivity(activity, Identification01.class, true);
         } else if (viewId == R.id.option2) {
             MainApp.entryType = 2;
             AppConstants.gotoActivity(activity, SectionF02.class, true);
@@ -171,8 +172,8 @@ public class MainActivity extends AppCompatActivity {
 
         // For Clusters
         // To show/hide intro layout
-        List<Cluster> clusterList = appDatabase.clusterDao().getAllData();
-        if (clusterList != null && !clusterList.isEmpty())
+//        List<Cluster> clusterList = appDatabase.clusterDao().getAllData();
+//        if (clusterList != null && !clusterList.isEmpty())
             bi.lockedLayout.setVisibility(View.GONE);
 
         // For Villages

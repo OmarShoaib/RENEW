@@ -109,7 +109,7 @@ public class DownloadData {
             appInfo.setFolder(WebAPI.VERSION_OUTPUT_JSON_FILE_PATH);
             webCall.call(webAPI.downloadEncData(CryptoUtil.encrypt(gson.toJson(appInfo))), AppConstants.DOWNLOAD_DATA, DT_BEFORE_LOGIN.get(0), ++index, 0, IS_CALL_ENCRYPTED);
 
-            SyncModel s1 = new SyncModel(DT_BEFORE_LOGIN.get(1), select, filter, check);
+            SyncModel s1 = new SyncModel(DT_BEFORE_LOGIN.get(1), select, "", check);
             webCall.call(webAPI.downloadEncData(CryptoUtil.encrypt(gson.toJson(s1))), AppConstants.DOWNLOAD_DATA, DT_BEFORE_LOGIN.get(1), ++index, 0, IS_CALL_ENCRYPTED);
         } else {
             // After Login tables download

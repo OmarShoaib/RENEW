@@ -71,7 +71,7 @@ public class AppConstants {
     public static final String DATABASE_NAME = PROJECT_NAME + "_DB";
 
     // For service api
-    public static final String API_NAME = "app_structure";
+    public static final String API_NAME = "renew";
     // CRF Id
     public static final String CRF_ID = "1234";
     // For adding 'm2', 'm3' etc for multiple crf strings
@@ -82,7 +82,7 @@ public class AppConstants {
     public static final String[] SEND_DB_CC_EMAIL = new String[]{"omar.shoaib@aku.edu", "hussain.siddiqui@aku.edu"};
 
     /**
-     * =============================
+     * ==============================
      * SWITCHES OF THE APP - START
      * ==============================
      */

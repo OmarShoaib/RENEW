@@ -58,9 +58,6 @@ public class Form1 extends FormBaseModel {
     /*JSON OBJECTS*/
     private SF1 sF1;
 
-    public Form1() {
-    }
-
     // Init default data
     public static void initMeta() {
         // This is used to add record for the first time

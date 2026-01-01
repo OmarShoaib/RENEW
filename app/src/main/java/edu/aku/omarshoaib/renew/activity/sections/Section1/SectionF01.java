@@ -1,11 +1,9 @@
-package edu.aku.omarshoaib.renew.activity.sections;
+package edu.aku.omarshoaib.renew.activity.sections.Section1;
 
 import static edu.aku.omarshoaib.renew.global.AppConstants._EMPTY_;
 
 import android.app.Activity;
-import android.opengl.Visibility;
 import android.os.Bundle;
-import android.sax.EndElementListener;
 import android.view.View;
 import android.widget.RadioGroup;
 
@@ -49,16 +47,17 @@ public class SectionF01 extends BaseActivity {
     }
 
     private void initUI() {
-        bi.f103.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
         bi.f105.addTextChangedListener(new AppTextWatcher(bi.f105.getId(), textWatcher));
         bi.f106.setOnCheckedChangeListener(changeListener);
     }
 
     RadioGroup.OnCheckedChangeListener changeListener = (radioGroup, i) -> {
-        if(i == R.id.f106) radioGroup.post(this::askF107);
+        if(i == R.id.f106)
+            radioGroup.post(this::askF107);
     };
 
     AppTextWatcher.IAppTextWatcher textWatcher = (viewId, text) -> {
+        askF107();
         if(text.isEmpty() || Integer.parseInt(text) < 10) {
             bi.fldGrpCVf106.setVisibility(View.GONE);
             sF1.setF106(_EMPTY_);
@@ -67,12 +66,16 @@ public class SectionF01 extends BaseActivity {
 
     private void askF107() {
         String text = sF1.getF105();
-        if(text.isEmpty() || Integer.parseInt(text) > 49 || Integer.parseInt(text) < 10 || !sF1.getF106().equals("1")) {
+        if(text.isEmpty() || Integer.parseInt(text) > 49 ||
+                Integer.parseInt(text) < 10 || !sF1.getF106().equals("1")) {
            bi.fldGrpCVf107.setVisibility(View.GONE);
+           bi.fldGrpCVf108.setVisibility(View.GONE);
            sF1.setF107(_EMPTY_);
-           return;
+           sF1.setF108(_EMPTY_);
+        } else {
+            bi.fldGrpCVf107.setVisibility(View.VISIBLE);
+            bi.fldGrpCVf108.setVisibility(View.VISIBLE);
         }
-        bi.fldGrpCVf107.setVisibility(View.VISIBLE);
     }
 
     private boolean formValidation() {

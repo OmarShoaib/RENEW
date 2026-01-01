@@ -36,7 +36,7 @@
             android:name=".activity.SplashAC"
             android:exported="true"
             android:theme="@style/Theme.AppStructure.FullScreen"
-            tools:ignore="LockedOrientationActivity">
+            tools:ignore="LockedOrientationActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -79,7 +79,10 @@
 
         <!-- SectionF01 -->
         <activity
-            android:name="edu.aku.omarshoaib.renew.activity.sections.SectionF01"
+            android:name="edu.aku.omarshoaib.renew.activity.sections.Section1.SectionF01"
+            android:exported="false" />
+        <activity
+            android:name="edu.aku.omarshoaib.renew.activity.sections.Section1.Identification01"
             android:exported="false" />
 
         <!-- SectionF02 -->
@@ -105,7 +108,7 @@
         <!-- SectionF06 -->
         <activity
             android:name="edu.aku.omarshoaib.renew.activity.sections.SectionF06"
-            android:exported="false" />
+            android:exported="true" />
 
         <!-- SYNCED RECORDS LIST ACTIVITY -->
         <activity
@@ -126,10 +129,10 @@
         <!-- META DATA -->
         <meta-data
             android:name="YEK_REVRES"
-            android:value="v9y5B8E)H@McQfTjWnZr4u7w!z%C*F-JaNdRgUkXp2s5v8y/A?D(G+KbPeShVmYq" />
+            android:value="dba5cee2d4672d033150751d39f47f88928fc5f1eb35c7cef78ca91e687ce918" />
         <meta-data
             android:name="YEK_TRATS"
-            android:value="8" />
+            android:value="31" />
         <!-- FOR DICTIONARY PORTAL -->
         <meta-data
             android:name="DP_YEK_REVRES"

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.sections.Section1.SectionF01">
+
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="form"
+            type="edu.aku.omarshoaib.renew.model.Form1.SF1" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/topLayout"
+        style="@style/Theme.AppStructure.Background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/view_appbar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/main_padding">
+
+            <LinearLayout
+                android:id="@+id/GrpName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- f101 Dropdown -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVf101"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_f101" />
+
+                        <TextView
+                            style="@style/labels"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:text="@string/f101" />
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/f101"
+                            style="@style/Theme.AppStructure.SpinnerStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="3"
+                            android:spinnerMode="dropdown" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- f102 Dropdown -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVf102"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_f102" />
+
+                        <TextView
+                            style="@style/labels"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:text="@string/f102" />
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/f102"
+                            style="@style/Theme.AppStructure.SpinnerStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="3"
+                            android:spinnerMode="dropdown" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- f103 Date -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVf103"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_f103" />
+
+                        <TextView
+                            style="@style/labels"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:text="@string/f103" />
+
+                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
+                            android:id="@+id/f103"
+                            style="@style/Theme.AppStructure.EditTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="3"
+                            android:gravity="center"
+                            android:hint="@string/date_format"
+                            android:text="@={form.f103}"
+                            app:dateFormat="@string/date_format"
+                            app:maxDate="CR_DATE"
+                            app:minDate="2025-10-10" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- f104 Input -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVf104"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_f104" />
+
+                        <TextView
+                            style="@style/labels"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:text="@string/f103a" />
+
+                        <TextView
+                            android:id="@+id/scrId"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:enabled="false"
+                            android:textColor="@color/red_color"
+                            android:digits="@string/digits_number"
+                            android:gravity="center" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/f103a"
+                            style="@style/Theme.AppStructure.EditTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:digits="@string/digits_number"
+                            android:gravity="center"
+                            android:hint="##"
+                            android:enabled="@{!form.f103.isEmpty()}"
+                            app:pattern="[0-9]{2}"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            app:maxValue="06"
+                            app:minValue="01"
+                            app:type="range" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <edu.aku.omarshoaib.renew.global.views.AppEndButtons
+                    android:id="@+id/endButtonsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

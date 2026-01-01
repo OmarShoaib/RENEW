@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".activity.sections.SectionF01">
+    tools:context=".activity.sections.Section1.SectionF01">
 
     <data>
         <import type="android.view.View" />
@@ -31,110 +31,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
-                <!-- f101 Dropdown -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVf101"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_f101" />
-
-                        <TextView
-                            style="@style/labels"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2"
-                            android:text="@string/f101" />
-
-                        <androidx.appcompat.widget.AppCompatSpinner
-                            android:id="@+id/f101"
-                            style="@style/Theme.AppStructure.SpinnerStyle"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="3"
-                            android:spinnerMode="dropdown" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- f102 Dropdown -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVf102"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_f102" />
-
-                        <TextView
-                            style="@style/labels"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2"
-                            android:text="@string/f102" />
-
-                        <androidx.appcompat.widget.AppCompatSpinner
-                            android:id="@+id/f102"
-                            style="@style/Theme.AppStructure.SpinnerStyle"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="3"
-                            android:spinnerMode="dropdown" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- f103 Date -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVf103"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_f103" />
-
-                        <TextView
-                            style="@style/labels"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2"
-                            android:text="@string/f103" />
-
-                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
-                            android:id="@+id/f103"
-                            style="@style/Theme.AppStructure.EditTextStyle"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="3"
-                            android:gravity="center"
-                            android:hint="@string/date_format"
-                            android:text="@={form.f103}"
-                            app:dateFormat="@string/date_format"
-                            app:maxDate="CR_DATE"
-                            app:minDate="CR_DATE" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
 
                 <!-- f104 Input -->
                 <androidx.cardview.widget.CardView
@@ -219,7 +115,8 @@
                 <!-- f106 Radio -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVf106"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="gone">
 
                     <RadioGroup
                         android:id="@+id/f106"
@@ -263,8 +160,7 @@
                 <!-- f107 Radio -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVf107"
-                    style="@style/cardView"
-                    android:visibility="@{form.f106.equals(`1`) ?  View.VISIBLE : View.GONE}">
+                    style="@style/cardView">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -319,8 +215,7 @@
                 <!-- f108 Radio -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVf108"
-                    style="@style/cardView"
-                    android:visibility="@{form.f106.equals(`1`) ? View.VISIBLE : View.GONE}">
+                    style="@style/cardView">
 
                     <LinearLayout
                         android:layout_width="match_parent"
