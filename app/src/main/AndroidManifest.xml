@@ -84,10 +84,13 @@
         <activity
             android:name="edu.aku.omarshoaib.renew.activity.sections.Section1.Identification01"
             android:exported="false" />
+        <activity
+            android:name="edu.aku.omarshoaib.renew.activity.sections.Section1.ParticipantListAC"
+            android:exported="false" />
 
         <!-- SectionF02 -->
         <activity
-            android:name="edu.aku.omarshoaib.renew.activity.sections.SectionF02"
+            android:name="edu.aku.omarshoaib.renew.activity.sections.Section2.SectionF02"
             android:exported="false" />
 
         <!-- SectionF03 -->

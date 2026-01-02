@@ -9,7 +9,7 @@
 
         <variable
             name="form"
-            type="edu.aku.omarshoaib.renew.model.Form1.SF1" />
+            type="edu.aku.omarshoaib.renew.model.Participant.SF1" />
     </data>
 
     <LinearLayout

@@ -19,7 +19,9 @@ import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivitySectionF01Binding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.AppTextWatcher;
+import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.model.Form1;
+import edu.aku.omarshoaib.renew.model.Participant;
 
 public class SectionF01 extends BaseActivity {
 
@@ -28,7 +30,7 @@ public class SectionF01 extends BaseActivity {
 
     ActivitySectionF01Binding bi;
     private AppDatabase appDatabase;
-    private Form1.SF1 sF1;
+    private Participant.SF1 sF1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +42,8 @@ public class SectionF01 extends BaseActivity {
         AppConstants.initToolbar(activity, getString(R.string.f1t0), getString(R.string.f1t1), false);
         appDatabase = AppDatabase.getDBInstance();
 
-        sF1 = Form1.SF1.getData();
-        sF1 = sF1 == null ? new Form1.SF1() : sF1;
+        sF1 = Participant.SF1.getData();
+        sF1 = sF1 == null ? new Participant.SF1() : sF1;
         bi.setForm(sF1);
         initUI();
     }
@@ -51,10 +53,8 @@ public class SectionF01 extends BaseActivity {
         bi.f106.setOnCheckedChangeListener(changeListener);
     }
 
-    RadioGroup.OnCheckedChangeListener changeListener = (radioGroup, i) -> {
-        if(i == R.id.f106)
-            radioGroup.post(this::askF107);
-    };
+    RadioGroup.OnCheckedChangeListener changeListener =
+            (radioGroup, i) -> radioGroup.post(this::askF107);
 
     AppTextWatcher.IAppTextWatcher textWatcher = (viewId, text) -> {
         askF107();
@@ -84,8 +84,9 @@ public class SectionF01 extends BaseActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        Form1.SF1.saveData(sF1);
-        AppConstants.gotoActivity(activity, EndingAC.class, true);
+        Participant.saveMainData(MainApp.form1.getScrId());
+        Participant.SF1.saveData(sF1);
+        AppConstants.gotoActivity(activity, ParticipantListAC.class, true);
     }
 
     @Override

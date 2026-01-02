@@ -36,6 +36,7 @@ public class SectionF06 extends BaseActivity {
         AppConstants.initToolbar(activity, getString(R.string.f6t0), getString(R.string.f6t1), false);
         appDatabase = AppDatabase.getDBInstance();
 
+        MainApp.form6 = new Form6();
         sF6 = Form6.SF6.getData();
         sF6 = sF6 == null ? new Form6.SF6() : sF6;
         bi.setForm(sF6);
@@ -44,7 +45,8 @@ public class SectionF06 extends BaseActivity {
 
     private void initUI() {
         bi.f602.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
-        bi.f602.setMinDate(MainApp.form5.getSF5().getF502());
+        if(!AppConstants.isEmpty(MainApp.form5))
+            bi.f602.setMinDate(MainApp.form5.getSF5().getF502());
         sF6.setF601(MainApp.form6.getUsername());
     }
 

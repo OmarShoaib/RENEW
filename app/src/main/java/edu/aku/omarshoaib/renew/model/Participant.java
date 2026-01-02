@@ -13,14 +13,15 @@ import com.google.gson.reflect.TypeToken;
 import edu.aku.omarshoaib.renew.BR;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.database.dao.Form1Dao;
+import edu.aku.omarshoaib.renew.database.dao.ParticipantDao;
 import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.MainApp;
+import retrofit2.http.Part;
 
-@Entity(tableName = Form1.TABLE_NAME)
-public class Form1 extends FormBaseModel {
-
-    public static final String TABLE_NAME = "Form1";
-    public static final String SECTION_NAME = "Sections: F1, F1A";
+@Entity(tableName = Participant.TABLE_NAME)
+public class Participant extends FormBaseModel{
+    public static final String TABLE_NAME = "Participant";
+    public static final String SECTION_NAME = "Sections: F1";
     // Only for Main Table i.e. Module Table like Form1.
     // These fields are used to display on Synced Recs list.
     // Dynamic approach + Sequence matters
@@ -37,6 +38,12 @@ public class Form1 extends FormBaseModel {
 
     @SerializedName("ending_date")
     private String endingDate = _EMPTY_;
+
+    @SerializedName("_uuid")
+    private String uuid = _EMPTY_;
+
+    @SerializedName("line_no")
+    private int lineNo;
 
     // This variable is used to mark the form1 that its completed once.
     // To implement the logic of displaying 'Skip to End' button over
@@ -59,22 +66,27 @@ public class Form1 extends FormBaseModel {
     private SF1 sF1;
 
     // Init default data
-    public static void initMeta() {
+    public static void initMeta(int lineNo) {
         // This is used to add record for the first time
-        MainApp.form1 = new Form1();
-        MainApp.form1.setDistrictCode(MainApp.user.getDistId());
+        MainApp.participant = new Participant();
+        MainApp.participant.setDistrictCode(MainApp.user.getDistId());
+        MainApp.participant.setLineNo(lineNo);
+        MainApp.participant.setUuid(MainApp.form1.getUid());
+        MainApp.participant.setScrId(MainApp.form1.getScrId());
+        MainApp.participant.setVillageName(MainApp.form1.getVillageName());
     }
 
     /*FOR IDENTIFICATION INFORMATION - CLUSTER-WISE*/
     // Save data in db
     public static void saveMainData(String scrId) {
-        Form1Dao formsDao = AppDatabase.getDBInstance().form1Dao();
-        Form1 form1 = formsDao.getDataByScrId(MainApp.user.getDistId(), scrId);
+        ParticipantDao formsDao = AppDatabase.getDBInstance().participantDao();
+        Participant form1 = formsDao.getDataByLineNo(MainApp.form1.getUid(),
+                MainApp.participant.getLineNo());
         if (form1 != null) {
-            MainApp.form1 = form1;
+            MainApp.participant = form1;
         } else {
-            MainApp.form1.setUid(AppConstants.generateUid());
-            MainApp.form1.setId(formsDao.add(MainApp.form1));
+            MainApp.participant.setUid(AppConstants.generateUid());
+            MainApp.participant.setId(formsDao.add(MainApp.participant));
         }
     }
 
@@ -92,6 +104,22 @@ public class Form1 extends FormBaseModel {
 
     public void setScrId(String scrId) {
         this.scrId = scrId;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
+    public int getLineNo() {
+        return lineNo;
+    }
+
+    public void setLineNo(int lineNo) {
+        this.lineNo = lineNo;
     }
 
     public String getDistrictCode() {
@@ -129,89 +157,33 @@ public class Form1 extends FormBaseModel {
     /**
      * Form 1: Attendance Sheet For Health Education Session's Participants
      */
-
     public static class SF1 extends BaseObservable {
-        private String dist = _EMPTY_;
-        private String scrid = _EMPTY_;
-        private String f101 = _EMPTY_;
-        private String f102 = _EMPTY_;
-        private String f103 = _EMPTY_;
-        /*private String f104 = _EMPTY_;
+        private String f104 = _EMPTY_;
         private String f105 = _EMPTY_;
         private String f106 = _EMPTY_;
         private String f107 = _EMPTY_;
         private String f108 = _EMPTY_;
-        private String f109 = _EMPTY_;*/
+        private String f109 = _EMPTY_;
 
-        public static class DataConverter extends AppDatabase.BaseConverter<SF1> {
+        public static class DataConverter extends AppDatabase.BaseConverter<Participant.SF1> {
             public DataConverter() {
-                super(new TypeToken<SF1>() {
+                super(new TypeToken<Participant.SF1>() {
                 }.getType());
             }
         }
 
         // Save section object as json object in db
         public static int saveData(SF1 data) {
-            MainApp.form1.setSF1(data);
-            return AppDatabase.getDBInstance().form1Dao().update(MainApp.form1);
+            MainApp.participant.setSF1(data);
+            return AppDatabase.getDBInstance().participantDao().update(MainApp.participant);
         }
 
         // Get section object by parsing json
         public static SF1 getData() {
-            return MainApp.form1.getSF1();
+            return MainApp.participant.getSF1();
         }
 
         @Bindable
-        public String getDist() {
-            return dist;
-        }
-
-        public void setDist(String dist) {
-            this.dist = dist;
-            notifyPropertyChanged(BR.dist);
-        }
-
-        @Bindable
-        public String getScrid() {
-            return scrid;
-        }
-
-        public void setScrid(String scrid) {
-            this.scrid = scrid;
-            notifyPropertyChanged(BR.scrid);
-        }
-
-        @Bindable
-        public String getF101() {
-            return f101;
-        }
-
-        public void setF101(String f101) {
-            this.f101 = f101;
-            notifyPropertyChanged(BR.f101);
-        }
-
-        @Bindable
-        public String getF102() {
-            return f102;
-        }
-
-        public void setF102(String f102) {
-            this.f102 = f102;
-            notifyPropertyChanged(BR.f102);
-        }
-
-        @Bindable
-        public String getF103() {
-            return f103;
-        }
-
-        public void setF103(String f103) {
-            this.f103 = f103;
-            notifyPropertyChanged(BR.f103);
-        }
-
-        /*@Bindable
         public String getF104() {
             return f104;
         }
@@ -272,8 +244,7 @@ public class Form1 extends FormBaseModel {
         public void setF109(String f109) {
             this.f109 = f109;
             notifyPropertyChanged(BR.f109);
-        }*/
+        }
 
     }
-
 }

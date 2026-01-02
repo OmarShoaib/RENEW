@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".activity.sections.SectionF02">
+    tools:context=".activity.sections.Section2.SectionF02">
 
     <data>
         <import type="android.view.View" />

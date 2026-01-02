@@ -171,7 +171,7 @@ public class EndingAC extends BaseActivity {
 
         appDatabase.form1Dao().updateIStatus(MainApp.form1.getId(), status, otherET.getText().toString(), isFormCompleteOnce, endingDate);
         //appDatabase.formDao().update(MainApp.form1);
-        AppConstants.gotoActivity(activity, IdentificationAC.class, true);
+        AppConstants.gotoActivity(activity, MainActivity.class, true);
     }
 
     @Override

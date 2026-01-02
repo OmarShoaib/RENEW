@@ -11,6 +11,8 @@ import android.provider.Settings;
 
 import com.google.gson.Gson;
 
+import java.util.List;
+
 import dev.b3nedikt.restring.Restring;
 import dev.b3nedikt.reword.RewordInterceptor;
 import dev.b3nedikt.viewpump.ViewPump;
@@ -23,6 +25,7 @@ import edu.aku.omarshoaib.renew.model.Form3;
 import edu.aku.omarshoaib.renew.model.Form4;
 import edu.aku.omarshoaib.renew.model.Form5;
 import edu.aku.omarshoaib.renew.model.Form6;
+import edu.aku.omarshoaib.renew.model.Participant;
 import edu.aku.omarshoaib.renew.model.User;
 
 public class MainApp extends Application {
@@ -36,6 +39,8 @@ public class MainApp extends Application {
     public static User user;
     public static Cluster selectedCluster;
     public static Form1 form1;
+    public static Participant participant;
+    public static List<Participant> participantList;
     public static Form2 form2;
     public static Form3 form3;
     public static Form4 form4;

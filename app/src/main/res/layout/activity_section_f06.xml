@@ -232,12 +232,13 @@
                             android:layout_weight="1"
                             android:digits="@string/digits_number"
                             android:gravity="center"
-                            android:hint="##"
+                            android:hint="##.#"
+                            app:mask= "##.#"
                             android:inputType="number"
-                            android:maxLength="2"
+                            android:maxLength="4"
                             android:text="@={form.f605}"
-                            app:maxValue="25"
-                            app:minValue="10"
+                            app:maxValue="25.0"
+                            app:minValue="10.0"
                             app:type="range" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -273,12 +274,12 @@
                             android:layout_weight="1"
                             android:digits="@string/digits_number"
                             android:gravity="center"
-                            android:hint="##.#"
+                            android:hint="##.##"
                             android:inputType="number"
-                            android:maxLength="4"
+                            android:maxLength="5"
                             android:text="@={form.f606}"
                             app:maxValue="24.0"
-                            app:minValue="5.0"
+                            app:minValue="05.00"
                             app:type="range" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -315,11 +316,12 @@
                             android:digits="@string/digits_number"
                             android:gravity="center"
                             android:hint="###.#"
+                            app:mask="###.#"
                             android:inputType="number"
                             android:maxLength="5"
                             android:text="@={form.f607}"
                             app:maxValue="120.0"
-                            app:minValue="45.0"
+                            app:minValue="045.0"
                             app:type="range" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -932,12 +934,12 @@
                                 android:layout_weight="1"
                                 android:digits="@string/digits_number"
                                 android:gravity="center"
-                                android:hint="#"
+                                android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:tag="f61296"
                                 android:text="@={form.f61296x}"
-                                android:visibility="@{form.f612.equals(`1`) ? View.VISIBLE : View.GONE}"
+                                android:enabled="@{form.f612.equals(`1`)}"
                                 app:maxValue="90"
                                 app:minValue="1"
                                 app:type="range" />
@@ -1005,12 +1007,12 @@
                                 android:layout_weight="1"
                                 android:digits="@string/digits_number"
                                 android:gravity="center"
-                                android:hint="#"
+                                android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
                                 android:tag="f61396"
                                 android:text="@={form.f61396x}"
-                                android:visibility="@{form.f613.equals(`1`) ? View.VISIBLE : View.GONE}"
+                                android:enabled="@{form.f613.equals(`1`)}"
                                 app:maxValue="90"
                                 app:minValue="1"
                                 app:type="range" />
@@ -1235,11 +1237,25 @@
                                 android:onClick="@{()->form.setF616(`2`)}"
                                 android:text="@string/f61602" />
                         </RadioGroup>
+
+                        <EditText
+                            android:id="@+id/f617"
+                            style="@style/Theme.AppStructure.EditTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="@string/digits_all"
+                            android:gravity="center"
+                            android:hint="@string/f617"
+                            android:visibility="@{form.f616.equals(`1`) ? View.VISIBLE : View.GONE}"
+                            android:inputType="text"
+                            android:maxLength="250"
+                            android:text="@={form.f617}"
+                            tools:ignore="Autofill" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
                 <!-- f617 Input -->
-                <androidx.cardview.widget.CardView
+                <!--<androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVf617"
                     style="@style/cardView">
 
@@ -1275,7 +1291,7 @@
                             android:text="@={form.f617}"
                             tools:ignore="Autofill" />
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>-->
 
                 <!-- f618 Radio -->
                 <androidx.cardview.widget.CardView

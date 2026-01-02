@@ -90,7 +90,6 @@ public class Identification01 extends BaseActivity {
 //        String clusterNo = Objects.requireNonNull(bi.a101.getText()).toString();
         MainApp.form1.setScrId(scrId);
         Form1.saveMainData(scrId);
-        Form1.SF1.saveData(sF1);
-        AppConstants.gotoActivity(activity, SectionF01.class, true);
+        AppConstants.gotoActivity(activity, ParticipantListAC.class, true);
     }
 }

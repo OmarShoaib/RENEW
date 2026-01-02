@@ -1,4 +1,4 @@
-package edu.aku.omarshoaib.renew.activity.sections;
+package edu.aku.omarshoaib.renew.activity.sections.Section2;
 
 import android.app.Activity;
 import android.os.Bundle;

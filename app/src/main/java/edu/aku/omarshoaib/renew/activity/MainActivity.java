@@ -18,12 +18,10 @@ import androidx.databinding.DataBindingUtil;
 import com.wajahatkarim3.roomexplorer.RoomExplorer;
 
 import java.io.File;
-import java.util.List;
 
 import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.sections.Section1.Identification01;
-import edu.aku.omarshoaib.renew.activity.sections.Section1.SectionF01;
-import edu.aku.omarshoaib.renew.activity.sections.SectionF02;
+import edu.aku.omarshoaib.renew.activity.sections.Section2.SectionF02;
 import edu.aku.omarshoaib.renew.activity.sections.SectionF03;
 import edu.aku.omarshoaib.renew.activity.sections.SectionF04;
 import edu.aku.omarshoaib.renew.activity.sections.SectionF05;
@@ -37,7 +35,6 @@ import edu.aku.omarshoaib.renew.global.ImportDB;
 import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.global.SendDB;
 import edu.aku.omarshoaib.renew.global.SummaryUtils;
-import edu.aku.omarshoaib.renew.model.Cluster;
 import edu.aku.omarshoaib.renew.synced_recs.SyncedRecsFilter;
 import edu.aku.omarshoaib.renew.webcall.UploadData;
 

@@ -1,6 +1,7 @@
 package edu.aku.omarshoaib.renew.activity.sections;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -70,7 +71,8 @@ public class SectionF03 extends BaseActivity {
     public void btnContinue(View view) {
         if (!formValidation()) return;
         Form3.SF3.saveData(sF3);
-        AppConstants.gotoActivity(activity, EndingAC.class, true);
+        finish();
+        startActivity(new Intent(activity, EndingAC.class).putExtra("complete", true));
     }
 
     @Override
