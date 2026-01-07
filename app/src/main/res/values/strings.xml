@@ -829,5 +829,8 @@
     <string name='Q_t6t2a' translatable='false'>t6t2a</string>
     <string name='Q_t6t3' translatable='false'>t6t3</string>
     <string name="participant_list">Participant List</string>
+    <string name="eligible_participant_list">Eligible Participant List</string>
+    <string name="scr_id_not_found">Inalid Sreening Id</string>
+    <string name="no_eligible_participants">No Eligible Partiipants</string>
 
 </resources>

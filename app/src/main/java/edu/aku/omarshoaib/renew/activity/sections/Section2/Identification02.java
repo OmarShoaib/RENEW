@@ -1,4 +1,4 @@
-package edu.aku.omarshoaib.renew.activity.sections.Section1;
+package edu.aku.omarshoaib.renew.activity.sections.Section2;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -10,30 +10,31 @@ import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 
 import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.BaseActivity;
-import edu.aku.omarshoaib.renew.activity.IdentificationAC;
-import edu.aku.omarshoaib.renew.activity.MainActivity;
+import edu.aku.omarshoaib.renew.activity.sections.Section1.Identification01;
+import edu.aku.omarshoaib.renew.activity.sections.Section1.ParticipantListAC;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivityIdentification01Binding;
-import edu.aku.omarshoaib.renew.databinding.ActivityIdentificationBinding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.AppTextWatcher;
 import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.model.Form1;
+import edu.aku.omarshoaib.renew.model.Participant;
 
-public class Identification01 extends BaseActivity {
+public class Identification02 extends BaseActivity {
 
     private final String TAG = getClass().getSimpleName();
-    private final Activity activity = Identification01.this;
+    private final Activity activity = Identification02.this;
 
     ActivityIdentification01Binding bi;
     private AppDatabase appDatabase;
 
-    private Form1.SF1 sF1;
     private Button posBtn;
 
     @Override
@@ -44,12 +45,6 @@ public class Identification01 extends BaseActivity {
 
         // Init toolbar
         AppConstants.initToolbar(activity, getString(R.string.identification), "", false);
-
-        // Init form1 for the first time
-        Form1.initMeta();
-        sF1 = new Form1.SF1();
-        bi.setForm(sF1);
-
         appDatabase = AppDatabase.getDBInstance();
 
         initUI();
@@ -81,25 +76,36 @@ public class Identification01 extends BaseActivity {
         if (!formValidation()) return;
 
         String scrId = bi.scrId.getText().toString() + Objects.requireNonNull(bi.f103a.getText());
-
-        // Do not allow synced form1 to be edited
-        if (appDatabase.form1Dao().isFormSynced(MainApp.user.getDistId(), scrId))
-            MainApp.isSynced = true;
+        Form1 form1 = appDatabase.form1Dao().getDataByScrId(MainApp.user.getDistId(), scrId);
+        if (form1 == null) {
+            AppConstants.showSimpleSnackBar(activity, getString(R.string.scr_id_not_found),
+                    AppConstants.MSG_DURATION, AppConstants.TYPE_ERROR);
+            return;
+        }
+        MainApp.form1 = form1;
+        List<Participant> participantList = appDatabase.participantDao().getAllDataByUuid(form1.getUid());
+        participantList = eligibleParticipants(participantList);
+        if(participantList.isEmpty()) {
+            AppConstants.showSimpleSnackBar(activity, getString(R.string.no_eligible_participants),
+                    AppConstants.MSG_DURATION, AppConstants.TYPE_ERROR);
+            return;
+        }
+        MainApp.participantList = participantList;
+        AppConstants.gotoActivity(activity, EligibleParticipantsAC.class, true);
 
         // New form1
 //        String clusterNo = Objects.requireNonNull(bi.a101.getText()).toString();
-        MainApp.form1.setScrId(scrId);
-        Form1.saveMainData(scrId);
-        Form1.SF1.saveData(sF1);
-        AppConstants.gotoActivity(activity, ParticipantListAC.class, true);
+//        MainApp.form1.setScrId(scrId);
+//        Form1.saveMainData(scrId);
+//        AppConstants.gotoActivity(activity, ParticipantListAC.class, true);
     }
 
-    public void btnEnd(View view) {
-        AppConstants.checkDoubleCancelPress(activity, MainActivity.class);
-    }
-
-    @Override
-    public void onBackPressed() {
-        AppConstants.checkDoubleBackPress(activity, MainActivity.class);
+    private List<Participant> eligibleParticipants(List<Participant> list) {
+        List<Participant> eligibleList = new ArrayList<>();
+        for (Participant participant : list) {
+            if(participant.getSF1().getF108().equals("1"))
+                eligibleList.add(participant);
+        }
+        return eligibleList;
     }
 }

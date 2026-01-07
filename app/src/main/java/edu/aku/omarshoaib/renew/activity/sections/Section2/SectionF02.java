@@ -15,6 +15,7 @@ import edu.aku.omarshoaib.renew.activity.MainActivity;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivitySectionF02Binding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
+import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.model.Form2;
 
 public class SectionF02 extends BaseActivity {
@@ -43,6 +44,12 @@ public class SectionF02 extends BaseActivity {
     }
 
     private void initUI() {
+        sF2.setF201(MainApp.participant.getSF1().getF104());
+        sF2.setF203(MainApp.participant.getSF1().getF105());
+        sF2.setF205(MainApp.participant.getVillageName());
+        sF2.setF206(MainApp.user.getFullName()+" - "+MainApp.user.getUserId());
+        bi.f207.setMinDate(MainApp.form1.getSF1().getF103());
+        bi.scrid.setText(MainApp.form1.getScrId());
     }
 
     private boolean formValidation() {
@@ -51,8 +58,10 @@ public class SectionF02 extends BaseActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
+        Form2.saveMainData(MainApp.form1.getScrId());
+        MainApp.form2.setIStatus("1");
         Form2.SF2.saveData(sF2);
-        AppConstants.gotoActivity(activity, EndingAC.class, true);
+        AppConstants.gotoActivity(activity, EligibleParticipantsAC.class, true);
     }
 
     @Override

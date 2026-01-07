@@ -211,7 +211,6 @@ public class Participant extends FormBaseModel{
         public void setF106(String f106) {
             this.f106 = f106;
             setF107(f106.equals("1") ? this.f107 : _EMPTY_);
-            setF108(f106.equals("1") ? this.f108 : _EMPTY_);
             notifyPropertyChanged(BR.f106);
         }
 

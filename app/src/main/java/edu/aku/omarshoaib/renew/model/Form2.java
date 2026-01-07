@@ -32,6 +32,9 @@ public class Form2 extends FormBaseModel {
     @SerializedName("village_name")
     private String villageName = _EMPTY_;
 
+    @SerializedName("_uuid")
+    private String uuId = _EMPTY_;
+
     @SerializedName("scr_id")
     private String scrId = _EMPTY_;
 
@@ -66,13 +69,16 @@ public class Form2 extends FormBaseModel {
         // This is used to add record for the first time
         MainApp.form2 = new Form2();
         MainApp.form2.setDistrictCode(MainApp.user.getDistId());
+        MainApp.form2.setScrId(MainApp.form1.getScrId());
+        MainApp.form2.setVillageName(MainApp.form1.getVillageName());
+        MainApp.form2.setUuId(MainApp.participant.getUid());
     }
 
     /*FOR IDENTIFICATION INFORMATION - CLUSTER-WISE*/
     // Save data in db
     public static void saveMainData(String scrId) {
         Form2Dao formsDao = AppDatabase.getDBInstance().form2Dao();
-        Form2 form2 = formsDao.getDataByScrId(MainApp.user.getDistId(), scrId);
+        Form2 form2 = formsDao.getDataByUuid(MainApp.participant.getUid(), scrId);
         if (form2 != null) {
             MainApp.form2 = form2;
         } else {
@@ -95,6 +101,14 @@ public class Form2 extends FormBaseModel {
 
     public void setScrId(String scrId) {
         this.scrId = scrId;
+    }
+
+    public String getUuId() {
+        return uuId;
+    }
+
+    public void setUuId(String uuId) {
+        this.uuId = uuId;
     }
 
     public String getDistrictCode() {
@@ -140,6 +154,7 @@ public class Form2 extends FormBaseModel {
         private String f204 = _EMPTY_;
         private String f205 = _EMPTY_;
         private String f206 = _EMPTY_;
+        private String f207 = _EMPTY_;
         private String f208a = _EMPTY_;
         private String f208b = _EMPTY_;
         private String f208c = _EMPTY_;
@@ -228,6 +243,16 @@ public class Form2 extends FormBaseModel {
         public void setF206(String f206) {
             this.f206 = f206;
             notifyPropertyChanged(BR.f206);
+        }
+
+        @Bindable
+        public String getF207() {
+            return f207;
+        }
+
+        public void setF207(String f207) {
+            this.f207 = f207;
+            notifyPropertyChanged(BR.f207);
         }
 
         @Bindable

@@ -11,6 +11,7 @@ import android.provider.Settings;
 
 import com.google.gson.Gson;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import dev.b3nedikt.restring.Restring;
@@ -42,6 +43,7 @@ public class MainApp extends Application {
     public static Participant participant;
     public static List<Participant> participantList;
     public static Form2 form2;
+    public static List<Form2> listForm2;
     public static Form3 form3;
     public static Form4 form4;
     public static Form5 form5;

@@ -68,6 +68,8 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:enabled="false"
+                            android:textColor="@color/red_color"
                             android:digits="@string/digits_all"
                             android:gravity="center"
                             android:hint="@string/f201"
@@ -107,7 +109,7 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:digits="@string/digits_all"
+                            android:digits="@string/digits_name"
                             android:gravity="center"
                             android:hint="@string/f202"
                             android:inputType="text"
@@ -149,6 +151,8 @@
                             android:digits="@string/digits_number"
                             android:gravity="center"
                             android:hint="##"
+                            android:enabled="false"
+                            android:textColor="@color/red_color"
                             android:inputType="number"
                             android:maxLength="2"
                             android:text="@={form.f203}"
@@ -261,6 +265,8 @@
                             android:layout_weight="1"
                             android:digits="@string/digits_all"
                             android:gravity="center"
+                            android:enabled="false"
+                            android:textColor="@color/red_color"
                             android:hint="@string/f206"
                             android:inputType="text"
                             android:maxLength="250"
@@ -269,23 +275,81 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- scrid Title -->
-                <TextView
-                    style="@style/info"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/scrid" />
+                <!-- f206a Input -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVf206a"
+                    style="@style/cardView">
 
-                <!-- f207 Title -->
-                <TextView
-                    style="@style/info"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/f207" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/labels"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1.25"
+                            android:text="@string/scrid" />
+
+                        <EditText
+                            android:id="@+id/scrid"
+                            style="@style/Theme.AppStructure.EditTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:digits="@string/digits_all"
+                            android:gravity="center"
+                            android:enabled="false"
+                            android:textColor="@color/red_color"
+                            android:hint="@string/f207"
+                            android:inputType="text"
+                            android:maxLength="250"
+                            tools:ignore="Autofill" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- f207 Date -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVf207"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_f207" />
+
+                        <TextView
+                            style="@style/labels"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:text="@string/f207" />
+
+                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
+                            android:id="@+id/f207"
+                            style="@style/Theme.AppStructure.EditTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:gravity="center"
+                            android:hint="@string/date_format"
+                            android:text="@={form.f207}"
+                            app:dateFormat="@string/date_format"
+                            app:maxDate="CR_DATE"
+                            app:minDate="2025-10-10" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
                 <!-- f2t3 Title -->
                 <TextView
-                    style="@style/info"
+                    style="@style/labelsHead"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/f2t3" />
@@ -943,6 +1007,8 @@
                             android:digits="@string/digits_number"
                             android:gravity="center"
                             android:hint="##"
+                            android:enabled="false"
+                            android:textColor="@color/red_color"
                             android:inputType="number"
                             android:maxLength="2"
                             android:text="@={form.f209}"

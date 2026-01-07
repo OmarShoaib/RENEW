@@ -643,5 +643,9 @@
     <string name="f61904">علاج جو فائدو نه ٿيو (مهينن کان پوءِ به ڪا بهتري نه آئي)</string>
     <string name="f61905">فوت ٿي ويو (تاريخ)</string>
     <string name="f61906">اسپتال ڏانهن ريفر ڪيو ويو (طبي پيچيدگيون)</string>
+    <string name="participant_list">Participant List</string>
+    <string name="eligible_participant_list">Eligible Participant List</string>
+    <string name="scr_id_not_found">Inalid Sreening Id</string>
+    <string name="no_eligible_participants">No Eligible Partiipants</string>
 
 </resources>

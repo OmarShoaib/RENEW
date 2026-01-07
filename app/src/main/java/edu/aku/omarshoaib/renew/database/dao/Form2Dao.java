@@ -40,8 +40,11 @@ public abstract class Form2Dao implements BaseDao<Form2> {
     @Query("SELECT * FROM Form2 WHERE uid = :uid")
     public abstract Form2 getDataByUid(String uid);
 
-    @Query("SELECT * FROM Form2 WHERE districtCode = :districtCode AND scrId = :scrId")
-    public abstract Form2 getDataByScrId(String districtCode, String scrId);
+    @Query("SELECT * FROM Form2 WHERE uuid = :uuid AND scrId = :scrId")
+    public abstract Form2 getDataByUuid(String uuid, String scrId);
+
+    @Query("SELECT * FROM Form2 WHERE scrId = :scrId")
+    public abstract List<Form2> getDataByScrId(String scrId);
 
     @Query("SELECT * FROM Form2 WHERE sysDate LIKE :date || '%'")
     public abstract List<Form2> getAllByDate(String date);
