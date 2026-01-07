@@ -96,12 +96,18 @@
             android:name="edu.aku.omarshoaib.renew.activity.sections.Section2.Identification02"
             android:exported="false" />
         <activity
-            android:name="edu.aku.omarshoaib.renew.activity.sections.Section2.EligibleParticipantsAC"
+            android:name="edu.aku.omarshoaib.renew.activity.sections.Section2.PHQ9ParticipantsAC"
             android:exported="false" />
 
         <!-- SectionF03 -->
         <activity
             android:name="edu.aku.omarshoaib.renew.activity.sections.Section3.SectionF03"
+            android:exported="false" />
+        <activity
+            android:name="edu.aku.omarshoaib.renew.activity.sections.Section3.Identification03"
+            android:exported="false" />
+        <activity
+            android:name="edu.aku.omarshoaib.renew.activity.sections.Section3.PregnantParticipantsAC"
             android:exported="false" />
 
         <!-- SectionF04 -->

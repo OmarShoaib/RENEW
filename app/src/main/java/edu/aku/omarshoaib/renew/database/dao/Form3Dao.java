@@ -6,6 +6,7 @@ import androidx.room.Query;
 import java.util.List;
 
 import edu.aku.omarshoaib.renew.global.DateUtils;
+import edu.aku.omarshoaib.renew.model.Form2;
 import edu.aku.omarshoaib.renew.model.Form3;
 import edu.aku.omarshoaib.renew.model.SyncModel;
 
@@ -40,8 +41,11 @@ public abstract class Form3Dao implements BaseDao<Form3> {
     @Query("SELECT * FROM Form3 WHERE uid = :uid")
     public abstract Form3 getDataByUid(String uid);
 
-    @Query("SELECT * FROM Form3 WHERE districtCode = :districtCode AND scrId = :scrId")
-    public abstract Form3 getDataByScrId(String districtCode, String scrId);
+    @Query("SELECT * FROM Form3 WHERE scrId = :scrId")
+    public abstract List<Form3> getDataByScrId(String scrId);
+
+    @Query("SELECT * FROM Form3 WHERE uuid = :uuid AND scrId = :scrId")
+    public abstract Form3 getDataByUuid(String uuid, String scrId);
 
     @Query("SELECT * FROM Form3 WHERE sysDate LIKE :date || '%'")
     public abstract List<Form3> getAllByDate(String date);

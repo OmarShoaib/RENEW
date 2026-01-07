@@ -1,4 +1,4 @@
-package edu.aku.omarshoaib.renew.activity.sections;
+package edu.aku.omarshoaib.renew.activity.sections.Section3;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -13,11 +13,14 @@ import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.BaseActivity;
 import edu.aku.omarshoaib.renew.activity.EndingAC;
 import edu.aku.omarshoaib.renew.activity.MainActivity;
+import edu.aku.omarshoaib.renew.activity.sections.Section2.PHQ9ParticipantsAC;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivitySectionF03Binding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.AppTextWatcher;
 import edu.aku.omarshoaib.renew.global.DateUtils;
+import edu.aku.omarshoaib.renew.global.MainApp;
+import edu.aku.omarshoaib.renew.model.Form2;
 import edu.aku.omarshoaib.renew.model.Form3;
 
 public class SectionF03 extends BaseActivity {
@@ -70,9 +73,10 @@ public class SectionF03 extends BaseActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
+        Form3.saveMainData(MainApp.form1.getScrId());
+        MainApp.form3.setIStatus("1");
         Form3.SF3.saveData(sF3);
-        finish();
-        startActivity(new Intent(activity, EndingAC.class).putExtra("complete", true));
+        AppConstants.gotoActivity(activity, PregnantParticipantsAC.class, true);
     }
 
     @Override

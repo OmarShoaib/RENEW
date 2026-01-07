@@ -45,6 +45,7 @@ public class MainApp extends Application {
     public static Form2 form2;
     public static List<Form2> listForm2;
     public static Form3 form3;
+    public static List<Form3> listForm3;
     public static Form4 form4;
     public static Form5 form5;
     public static Form6 form6;

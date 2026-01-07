@@ -1,4 +1,4 @@
-package edu.aku.omarshoaib.renew.activity.sections.Section2;
+package edu.aku.omarshoaib.renew.activity.sections.Section3;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -18,6 +18,8 @@ import java.util.Objects;
 import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.BaseActivity;
 import edu.aku.omarshoaib.renew.activity.MainActivity;
+import edu.aku.omarshoaib.renew.activity.sections.Section2.Identification02;
+import edu.aku.omarshoaib.renew.activity.sections.Section2.PHQ9ParticipantsAC;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivityIdentification01Binding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
@@ -26,10 +28,10 @@ import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.model.Form1;
 import edu.aku.omarshoaib.renew.model.Participant;
 
-public class Identification02 extends BaseActivity {
+public class Identification03 extends BaseActivity {
 
     private final String TAG = getClass().getSimpleName();
-    private final Activity activity = Identification02.this;
+    private final Activity activity = Identification03.this;
 
     ActivityIdentification01Binding bi;
     private AppDatabase appDatabase;
@@ -90,7 +92,7 @@ public class Identification02 extends BaseActivity {
             return;
         }
         MainApp.participantList = participantList;
-        AppConstants.gotoActivity(activity, PHQ9ParticipantsAC.class, true);
+        AppConstants.gotoActivity(activity, PregnantParticipantsAC.class, true);
 
         // New form1
 //        String clusterNo = Objects.requireNonNull(bi.a101.getText()).toString();
@@ -102,7 +104,7 @@ public class Identification02 extends BaseActivity {
     private List<Participant> eligibleParticipants(List<Participant> list) {
         List<Participant> eligibleList = new ArrayList<>();
         for (Participant participant : list) {
-            if(participant.getSF1().getF108().equals("1"))
+            if(participant.getSF1().getF109().equals("1"))
                 eligibleList.add(participant);
         }
         return eligibleList;

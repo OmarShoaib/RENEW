@@ -1,7 +1,6 @@
 package edu.aku.omarshoaib.renew.activity.sections.Section2;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,9 +15,7 @@ import java.util.Locale;
 
 import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.BaseActivity;
-import edu.aku.omarshoaib.renew.activity.EndingAC;
 import edu.aku.omarshoaib.renew.activity.MainActivity;
-import edu.aku.omarshoaib.renew.activity.sections.Section1.ParticipantListAC;
 import edu.aku.omarshoaib.renew.activity.sections.Section1.SectionF01;
 import edu.aku.omarshoaib.renew.adapter.GenericAdapter;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
@@ -28,10 +25,10 @@ import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.model.Form2;
 import edu.aku.omarshoaib.renew.model.Participant;
 
-public class EligibleParticipantsAC extends BaseActivity {
+public class PHQ9ParticipantsAC extends BaseActivity {
 
     private final String TAG = getClass().getSimpleName();
-    private final Activity activity = EligibleParticipantsAC.this;
+    private final Activity activity = PHQ9ParticipantsAC.this;
 
     ActivityParticipantListBinding bi;
     private AppDatabase appDatabase;

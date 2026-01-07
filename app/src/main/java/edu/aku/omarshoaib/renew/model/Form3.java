@@ -35,6 +35,9 @@ public class Form3 extends FormBaseModel {
     @SerializedName("scr_id")
     private String scrId = _EMPTY_;
 
+    @SerializedName("_uuid")
+    private String uuid = _EMPTY_;
+
     @SerializedName("ending_date")
     private String endingDate = _EMPTY_;
 
@@ -66,13 +69,16 @@ public class Form3 extends FormBaseModel {
         // This is used to add record for the first time
         MainApp.form3 = new Form3();
         MainApp.form3.setDistrictCode(MainApp.user.getDistId());
+        MainApp.form3.setScrId(MainApp.form1.getScrId());
+        MainApp.form3.setVillageName(MainApp.form1.getVillageName());
+        MainApp.form3.setUuid(MainApp.participant.getUid());
     }
 
     /*FOR IDENTIFICATION INFORMATION - CLUSTER-WISE*/
     // Save data in db
     public static void saveMainData(String scrId) {
         Form3Dao formsDao = AppDatabase.getDBInstance().form3Dao();
-        Form3 form3 = formsDao.getDataByScrId(MainApp.user.getDistId(), scrId);
+        Form3 form3 = formsDao.getDataByUuid(MainApp.participant.getUid(), scrId);
         if (form3 != null) {
             MainApp.form3 = form3;
         } else {
@@ -111,6 +117,14 @@ public class Form3 extends FormBaseModel {
 
     public void setFormCompleteOnce(boolean formCompleteOnce) {
         isFormCompleteOnce = formCompleteOnce;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public String getEndingDate() {

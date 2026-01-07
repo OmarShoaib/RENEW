@@ -10,7 +10,6 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.BaseActivity;
-import edu.aku.omarshoaib.renew.activity.EndingAC;
 import edu.aku.omarshoaib.renew.activity.MainActivity;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivitySectionF02Binding;
@@ -61,7 +60,7 @@ public class SectionF02 extends BaseActivity {
         Form2.saveMainData(MainApp.form1.getScrId());
         MainApp.form2.setIStatus("1");
         Form2.SF2.saveData(sF2);
-        AppConstants.gotoActivity(activity, EligibleParticipantsAC.class, true);
+        AppConstants.gotoActivity(activity, PHQ9ParticipantsAC.class, true);
     }
 
     @Override

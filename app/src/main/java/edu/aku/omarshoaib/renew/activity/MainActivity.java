@@ -22,6 +22,7 @@ import java.io.File;
 import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.sections.Section1.Identification01;
 import edu.aku.omarshoaib.renew.activity.sections.Section2.Identification02;
+import edu.aku.omarshoaib.renew.activity.sections.Section3.Identification03;
 import edu.aku.omarshoaib.renew.activity.sections.Section3.SectionF03;
 import edu.aku.omarshoaib.renew.activity.sections.SectionF04;
 import edu.aku.omarshoaib.renew.activity.sections.SectionF05;
@@ -92,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
             AppConstants.gotoActivity(activity, Identification02.class, true);
         } else if (viewId == R.id.option3) {
             MainApp.entryType = 3;
-            AppConstants.gotoActivity(activity, SectionF03.class, true);
+            AppConstants.gotoActivity(activity, Identification03.class, true);
         } else if (viewId == R.id.option4) {
             MainApp.entryType = 4;
             AppConstants.gotoActivity(activity, SectionF04.class, true);
