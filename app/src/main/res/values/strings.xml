@@ -350,6 +350,7 @@
     <!-- Form1a: Attendance Sheet For Health Education Session's Participants -->
 
     <string name="dist">District</string>
+    <string name="f10x">Line No.</string>
     <string name="f104">Name</string>
     <string name="f105">Age in years</string>
     <string name="f106">Marital status</string>

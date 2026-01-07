@@ -329,6 +329,7 @@
 
     <!-- Form1a: Attendance Sheet For Health Education Session's Participants -->
     <string name="dist">ضلعو</string>
+    <string name="f10x">Line No.</string>
     <string name="f104">نالو</string>
     <string name="f105">عمر سالن ۾</string>
     <string name="f106">ازدواجي حيثيت</string>

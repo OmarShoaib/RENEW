@@ -90,7 +90,7 @@ public class ParticipantListAC extends BaseActivity {
             }
         };
         bi.rv.setAdapter(genericAdapter);
-        boolean isCountMismatch = MainApp.participantList.size() >= 2;
+        boolean isCountMismatch = MainApp.participantList.size() >= 3;
 
         bi.addMoreBtn.setVisibility(isCountMismatch ? View.GONE : View.VISIBLE);
         bi.endButtonsLayout.findViewById(R.id.posBtn).setVisibility(isCountMismatch ? View.VISIBLE : View.INVISIBLE);
