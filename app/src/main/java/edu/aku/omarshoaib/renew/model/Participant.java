@@ -222,6 +222,7 @@ public class Participant extends FormBaseModel{
 
         public void setF107(String f107) {
             this.f107 = f107;
+            setF109(f107.equals("1") ? this.f109 : _EMPTY_);
             notifyPropertyChanged(BR.f107);
         }
 
@@ -232,7 +233,6 @@ public class Participant extends FormBaseModel{
 
         public void setF108(String f108) {
             this.f108 = f108;
-            setF109(f108.equals("1") ? this.f109 : _EMPTY_);
             notifyPropertyChanged(BR.f108);
         }
 

@@ -66,15 +66,16 @@ public class SectionF01 extends BaseActivity {
 
     private void askF107() {
         String text = sF1.getF105();
-        if(text.isEmpty() || Integer.parseInt(text) > 49 ||
-                Integer.parseInt(text) < 10 || !sF1.getF106().equals("1")) {
-           bi.fldGrpCVf107.setVisibility(View.GONE);
-           bi.fldGrpCVf108.setVisibility(View.GONE);
+        boolean invalidAge = text.isEmpty() || Integer.parseInt(text) > 49 ||
+                Integer.parseInt(text) < 10,
+                married = sF1.getF106().equals("1");
+        bi.fldGrpCVf107.setVisibility(!invalidAge && married ? View.VISIBLE : View.GONE);
+        bi.fldGrpCVf108.setVisibility(!invalidAge ? View.VISIBLE : View.GONE);
+        if(invalidAge) {
            sF1.setF107(_EMPTY_);
            sF1.setF108(_EMPTY_);
-        } else {
-            bi.fldGrpCVf107.setVisibility(View.VISIBLE);
-            bi.fldGrpCVf108.setVisibility(View.VISIBLE);
+        } else if(!married) {
+            sF1.setF107(_EMPTY_);
         }
     }
 

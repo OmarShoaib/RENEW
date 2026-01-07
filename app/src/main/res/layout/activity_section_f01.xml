@@ -61,7 +61,7 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="3"
-                            android:digits="@string/digits_all"
+                            android:digits="@string/digits_name"
                             android:gravity="center"
                             android:hint="@string/f104"
                             android:inputType="text"
@@ -271,7 +271,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVf109"
                     style="@style/cardView"
-                    android:visibility="@{form.f108.equals(`1`) ? View.VISIBLE : View.GONE}">
+                    android:visibility="@{form.f107.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"
