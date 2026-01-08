@@ -26,6 +26,7 @@ import edu.aku.omarshoaib.renew.model.Form3;
 import edu.aku.omarshoaib.renew.model.Form4;
 import edu.aku.omarshoaib.renew.model.Form5;
 import edu.aku.omarshoaib.renew.model.Form6;
+import edu.aku.omarshoaib.renew.model.HCF;
 import edu.aku.omarshoaib.renew.model.Participant;
 import edu.aku.omarshoaib.renew.model.User;
 
@@ -38,6 +39,7 @@ public class MainApp extends Application {
     // Static object of models
     public static AppInfo appInfo;
     public static User user;
+    public static HCF hcf;
     public static Cluster selectedCluster;
     public static Form1 form1;
     public static Participant participant;

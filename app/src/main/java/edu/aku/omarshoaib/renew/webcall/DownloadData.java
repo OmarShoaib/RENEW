@@ -32,6 +32,7 @@ import edu.aku.omarshoaib.renew.global.SharedPrefs;
 import edu.aku.omarshoaib.renew.model.AppInfo;
 import edu.aku.omarshoaib.renew.model.Cluster;
 import edu.aku.omarshoaib.renew.model.DPortal;
+import edu.aku.omarshoaib.renew.model.HCF;
 import edu.aku.omarshoaib.renew.model.SyncModel;
 import edu.aku.omarshoaib.renew.model.User;
 import edu.aku.omarshoaib.renew.webcall.web_client.CryptoUtil;
@@ -70,6 +71,7 @@ public class DownloadData {
         add("RANGES");
         /* APP CODE STARTS FROM HERE */
         add(Cluster.TABLE_NAME);
+        add(HCF.TABLE_NAME);
     }};
 
     /**
@@ -119,6 +121,7 @@ public class DownloadData {
             crfIdMap.put("id_crf", AppConstants.CRF_ID);
             crfIdMap.put("prefix", AppConstants.CRF_PREFIX);
             String crfIdJson = CryptoUtil.encrypt(gson.toJson(crfIdMap), true);
+
             webCall.call(webAPI.downloadStringsAndRanges(WebClient.DICTIONARY_PORTAL_URL
                     + "getStrings.php", crfIdJson), AppConstants.DOWNLOAD_DATA, DT_AFTER_LOGIN.get(0), ++index, 0, true);
 
@@ -128,8 +131,11 @@ public class DownloadData {
 
             /* APP CODE STARTS FROM HERE */
 
-            SyncModel s1 = new SyncModel(DT_AFTER_LOGIN.get(1), select, filter + "AND dist_id = " + MainApp.user.getDistId(), check);
+            SyncModel s1 = new SyncModel(DT_AFTER_LOGIN.get(2), select, filter + "AND dist_id = " + MainApp.user.getDistId(), check);
             webCall.call(webAPI.downloadEncData(CryptoUtil.encrypt(gson.toJson(s1))), AppConstants.DOWNLOAD_DATA, DT_AFTER_LOGIN.get(2), ++index, 0, IS_CALL_ENCRYPTED);
+
+            SyncModel s2 = new SyncModel(DT_AFTER_LOGIN.get(3), select, filter + "AND dist_id = " + MainApp.hcf.getDistCode(), check);
+            webCall.call(webAPI.downloadEncData(CryptoUtil.encrypt(gson.toJson(s2))), AppConstants.DOWNLOAD_DATA, DT_AFTER_LOGIN.get(3), ++index, 0, IS_CALL_ENCRYPTED);
         }
     }
 
@@ -272,6 +278,16 @@ public class DownloadData {
 
                 // Clear and Add data to db
                 appDatabase.clusterDao().reinsert(clusters);
+            }
+            else if (tag.equals(HCF.TABLE_NAME)) {
+                HCF[] hcfs = gson.fromJson(jsonResponse, HCF[].class);
+                // Update sync list view
+                SyncModel syncModel = getUpdatedSyncDownloadItem(activity, syncTablesList.get(index), hcfs.length, AppConstants.RESPONSE_SUCCESS, null);
+                syncTablesList.set(index, syncModel);
+                syncAdapter.notifyItemChanged(index);
+
+                // Clear and Add data to db
+                appDatabase.hcfDao().reinsert(hcfs);
             }
         }
 
