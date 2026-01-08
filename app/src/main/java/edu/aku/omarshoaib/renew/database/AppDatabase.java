@@ -25,6 +25,7 @@ import edu.aku.omarshoaib.renew.database.dao.Form4Dao;
 import edu.aku.omarshoaib.renew.database.dao.Form5Dao;
 import edu.aku.omarshoaib.renew.database.dao.Form6Dao;
 import edu.aku.omarshoaib.renew.database.dao.GeneralDao;
+import edu.aku.omarshoaib.renew.database.dao.HCFDao;
 import edu.aku.omarshoaib.renew.database.dao.ParticipantDao;
 import edu.aku.omarshoaib.renew.database.dao.SummaryDao;
 import edu.aku.omarshoaib.renew.database.dao.UserDao;
@@ -38,6 +39,7 @@ import edu.aku.omarshoaib.renew.model.Form3;
 import edu.aku.omarshoaib.renew.model.Form4;
 import edu.aku.omarshoaib.renew.model.Form5;
 import edu.aku.omarshoaib.renew.model.Form6;
+import edu.aku.omarshoaib.renew.model.HCF;
 import edu.aku.omarshoaib.renew.model.Participant;
 import edu.aku.omarshoaib.renew.model.SyncModel;
 import edu.aku.omarshoaib.renew.model.User;
@@ -45,7 +47,7 @@ import edu.aku.omarshoaib.renew.model.Villages;
 
 @Database(entities = {User.class, Villages.class, Cluster.class, EntryLog.class,
         Form1.class, Form2.class, Form3.class, Form4.class, Form5.class, Form6.class,
-        Participant.class},
+        Participant.class, HCF.class},
         version = 1, exportSchema = false)
 @TypeConverters({SyncModel.ResponseDate.DataConverter.class,
         Form1.SF1.DataConverter.class, Form2.SF2.DataConverter.class, Form3.SF3.DataConverter.class,
@@ -108,6 +110,8 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract Form5Dao form5Dao();
 
     public abstract Form6Dao form6Dao();
+
+    public abstract HCFDao hcfDao();
 
     // Type converter used to save JsonObject in a single column
     public static class BaseConverter<T> {
