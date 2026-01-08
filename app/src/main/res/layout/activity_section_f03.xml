@@ -179,13 +179,21 @@
                             android:layout_weight="1"
                             android:text="@string/f304" />
 
-                        <androidx.appcompat.widget.AppCompatSpinner
+                        <EditText
                             android:id="@+id/f304"
-                            style="@style/Theme.AppStructure.SpinnerStyle"
+                            style="@style/Theme.AppStructure.EditTextStyle"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:spinnerMode="dropdown" />
+                            android:digits="@string/digits_all"
+                            android:gravity="center"
+                            android:enabled="false"
+                            android:textColor="@color/red_color"
+                            android:hint="@string/f304"
+                            android:inputType="text"
+                            android:maxLength="250"
+                            android:text="@={form.f304}"
+                            tools:ignore="Autofill" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -457,6 +465,7 @@
                                 style="@style/dont_know"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:tag="-1"
                                 android:checked="@{form.f309dk.equals(`98`)}"
                                 android:onClick="@{()->form.setF309dk(form.f309dk.equals(`98`)?``:`98`)}"
                                 android:text="@string/f309dk" />
@@ -514,14 +523,15 @@
                                     android:layout_weight="1"
                                     android:digits="@string/digits_number"
                                     android:gravity="center"
-                                    android:hint="#"
+                                    android:hint="##.#"
+                                    app:mask="##.#"
                                     android:inputType="number"
-                                    android:maxLength="1"
+                                    android:maxLength="4"
                                     android:tag="f31001"
                                     android:text="@={form.f31001x}"
                                     android:enabled="@{form.f310.equals(`1`)}"
-                                    app:maxValue="9"
-                                    app:minValue="0"
+                                    app:maxValue="30.0"
+                                    app:minValue="04.0"
                                     app:type="range" />
 
                                 <RadioButton
@@ -653,7 +663,7 @@
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
-                    <!-- f31301 CheckBox -->
+                    <!-- f313 CheckBox -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVf313"
                         style="@style/cardView">

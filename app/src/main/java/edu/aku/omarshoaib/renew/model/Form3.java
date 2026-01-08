@@ -271,6 +271,24 @@ public class Form3 extends FormBaseModel {
 
         public void setF307(String f307) {
             this.f307 = f307;
+            if(!f307.equals("1")) {
+                setF308(_EMPTY_);
+                setF309(_EMPTY_);
+                setF309dk(_EMPTY_);
+                setF310(_EMPTY_);
+                setF311(_EMPTY_);
+                setF31301(_EMPTY_);
+                setF31302(_EMPTY_);
+                setF31303(_EMPTY_);
+                setF31304(_EMPTY_);
+                setF31305(_EMPTY_);
+                setF31306(_EMPTY_);
+                setF31307(_EMPTY_);
+                setF31308(_EMPTY_);
+                setF31309(_EMPTY_);
+                setF31310(_EMPTY_);
+                setF31311(_EMPTY_);
+            }
             notifyPropertyChanged(BR.f307);
         }
 

@@ -52,6 +52,12 @@ public class SectionF03 extends BaseActivity {
         bi.f3dd.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
         bi.f309.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
         bi.f3dd.addTextChangedListener(new AppTextWatcher(bi.f3dd.getId(), dateTextWatcher));
+        sF3.setF301(MainApp.participant.getSF1().getF104());
+        sF3.setF303(MainApp.participant.getSF1().getF105());
+        sF3.setF304(MainApp.form1.getSF1().getF102());
+        sF3.setF305(MainApp.participant.getVillageName());
+        sF3.setF306(MainApp.user.getFullName()+" - "+MainApp.user.getUserId());
+        bi.f3dd.setMinDate(MainApp.form1.getSF1().getF103());
     }
 
     AppTextWatcher.IAppTextWatcher dateTextWatcher = (viewId, text) -> {

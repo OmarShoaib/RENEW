@@ -21,6 +21,9 @@ public abstract class HCFDao implements BaseDao<HCF>{
     @Query("DELETE FROM HCF")
     public abstract void deleteAll();
 
+    @Query("Select * from HCF Where hfCode = :hfCode")
+    public abstract HCF getHcfCodeByName(String hfCode);
+
     @Transaction
     public void reinsert(HCF[] list) {
         deleteAll();
