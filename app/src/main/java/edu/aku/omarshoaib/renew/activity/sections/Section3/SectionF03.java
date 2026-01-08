@@ -79,8 +79,12 @@ public class SectionF03 extends BaseActivity {
         AppConstants.gotoActivity(activity, PregnantParticipantsAC.class, true);
     }
 
+    public void btnEnd(View view) {
+        AppConstants.checkDoubleCancelPress(activity, PregnantParticipantsAC.class);
+    }
+
     @Override
     public void onBackPressed() {
-        AppConstants.checkDoubleBackPress(activity, MainActivity.class);
+        AppConstants.checkDoubleBackPress(activity, PregnantParticipantsAC.class);
     }
 }

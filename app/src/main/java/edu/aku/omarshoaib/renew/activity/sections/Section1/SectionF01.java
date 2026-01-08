@@ -95,8 +95,12 @@ public class SectionF01 extends BaseActivity {
         AppConstants.gotoActivity(activity, ParticipantListAC.class, true);
     }
 
+    public void btnEnd(View view) {
+        AppConstants.checkDoubleCancelPress(activity, ParticipantListAC.class);
+    }
+
     @Override
     public void onBackPressed() {
-        AppConstants.checkDoubleBackPress(activity, MainActivity.class);
+        AppConstants.checkDoubleBackPress(activity, ParticipantListAC.class);
     }
 }

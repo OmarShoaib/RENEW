@@ -296,7 +296,7 @@
     <string name="istatus"> Result of Questionnaire interview </string>
     <string name="istatusi"> Discuss any result not completed with team leader </string>
     <string name="istatus01"> Complete </string>
-    <string name="istatus02"> Refused </string>
+    <string name="istatus02"> Incomplete </string>
     <string name="istatus03"> Other </string>
 
     <string name="yes">Yes</string>
@@ -715,6 +715,7 @@
     <string name='Q_f309' translatable='false'>f309</string>
     <string name='Q_f310' translatable='false'>f310</string>
     <string name='Q_f311' translatable='false'>f311</string>
+    <string name='Q_f313' translatable='false'>f313</string>
     <string name='Q_f31301' translatable='false'>f31301</string>
     <string name='Q_f31301t1' translatable='false'>f31301t1</string>
     <string name='Q_f31301t2' translatable='false'>f31301t2</string>

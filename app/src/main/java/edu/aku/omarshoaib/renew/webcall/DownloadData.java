@@ -134,7 +134,7 @@ public class DownloadData {
             SyncModel s1 = new SyncModel(DT_AFTER_LOGIN.get(2), select, filter + "AND dist_id = " + MainApp.user.getDistId(), check);
             webCall.call(webAPI.downloadEncData(CryptoUtil.encrypt(gson.toJson(s1))), AppConstants.DOWNLOAD_DATA, DT_AFTER_LOGIN.get(2), ++index, 0, IS_CALL_ENCRYPTED);
 
-            SyncModel s2 = new SyncModel(DT_AFTER_LOGIN.get(3), select, filter + "AND dist_id = " + MainApp.hcf.getDistCode(), check);
+            SyncModel s2 = new SyncModel(DT_AFTER_LOGIN.get(3), select, "" + " dist_id = " + MainApp.user.getDistId(), check);
             webCall.call(webAPI.downloadEncData(CryptoUtil.encrypt(gson.toJson(s2))), AppConstants.DOWNLOAD_DATA, DT_AFTER_LOGIN.get(3), ++index, 0, IS_CALL_ENCRYPTED);
         }
     }

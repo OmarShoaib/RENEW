@@ -54,6 +54,8 @@ public class Identification03 extends BaseActivity {
     private void initUI() {
         bi.f103.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
         bi.f103.addTextChangedListener(new AppTextWatcher(bi.f103.getId(), textWatcher));
+        bi.fldGrpCVf101.setVisibility(View.GONE);
+        bi.fldGrpCVf102.setVisibility(View.GONE);
     }
 
     AppTextWatcher.IAppTextWatcher textWatcher = (viewId, text) -> {

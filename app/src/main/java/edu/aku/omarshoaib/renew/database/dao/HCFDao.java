@@ -16,7 +16,7 @@ import edu.aku.omarshoaib.renew.model.User;
 public abstract class HCFDao implements BaseDao<HCF>{
 
     @Query("SELECT * FROM HCF")
-    public abstract List<User> getAllData();
+    public abstract List<HCF> getAllData();
 
     @Query("DELETE FROM HCF")
     public abstract void deleteAll();

@@ -3,6 +3,8 @@ package edu.aku.omarshoaib.renew.activity.sections.Section2;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 
 import androidx.annotation.Nullable;
@@ -24,6 +26,7 @@ import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.AppTextWatcher;
 import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.model.Form1;
+import edu.aku.omarshoaib.renew.model.HCF;
 import edu.aku.omarshoaib.renew.model.Participant;
 
 public class Identification02 extends BaseActivity {
@@ -52,6 +55,8 @@ public class Identification02 extends BaseActivity {
     private void initUI() {
         bi.f103.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
         bi.f103.addTextChangedListener(new AppTextWatcher(bi.f103.getId(), textWatcher));
+        bi.fldGrpCVf101.setVisibility(View.GONE);
+        bi.fldGrpCVf102.setVisibility(View.GONE);
     }
 
     AppTextWatcher.IAppTextWatcher textWatcher = (viewId, text) -> {

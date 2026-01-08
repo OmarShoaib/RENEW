@@ -11,12 +11,9 @@ import android.provider.Settings;
 
 import com.google.gson.Gson;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import dev.b3nedikt.restring.Restring;
-import dev.b3nedikt.reword.RewordInterceptor;
-import dev.b3nedikt.viewpump.ViewPump;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.model.AppInfo;
 import edu.aku.omarshoaib.renew.model.Cluster;
@@ -117,7 +114,6 @@ public class MainApp extends Application {
 
         // For dynamic string update
         Restring.init(this);
-        ViewPump.init(RewordInterceptor.INSTANCE);
 
         // For Kish Grid Generation dynamically
 //      KishGrid.genKishGrid(AppConstants.KG_HOUSEHOLD_COUNT, AppConstants.KG_MAX_ELIGIBLE_COUNT);

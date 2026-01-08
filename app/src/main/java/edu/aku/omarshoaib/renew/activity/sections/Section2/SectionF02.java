@@ -11,6 +11,7 @@ import com.validatorcrawler.aliazaz.Validator;
 import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.BaseActivity;
 import edu.aku.omarshoaib.renew.activity.MainActivity;
+import edu.aku.omarshoaib.renew.activity.sections.Section1.ParticipantListAC;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivitySectionF02Binding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
@@ -63,8 +64,12 @@ public class SectionF02 extends BaseActivity {
         AppConstants.gotoActivity(activity, PHQ9ParticipantsAC.class, true);
     }
 
+    public void btnEnd(View view) {
+        AppConstants.checkDoubleCancelPress(activity, PHQ9ParticipantsAC.class);
+    }
+
     @Override
     public void onBackPressed() {
-        AppConstants.checkDoubleBackPress(activity, MainActivity.class);
+        AppConstants.checkDoubleBackPress(activity, PHQ9ParticipantsAC.class);
     }
 }

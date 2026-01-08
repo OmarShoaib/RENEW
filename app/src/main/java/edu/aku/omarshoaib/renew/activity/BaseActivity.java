@@ -4,8 +4,10 @@ package edu.aku.omarshoaib.renew.activity;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.Resources;
 import android.media.ToneGenerator;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -23,7 +25,6 @@ import java.util.Collections;
 import java.util.Locale;
 
 import dev.b3nedikt.restring.Restring;
-import dev.b3nedikt.reword.Reword;
 import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.MainApp;
@@ -46,6 +47,9 @@ public class BaseActivity extends AppCompatActivity {
 //    private boolean isACSwitching = false;
 
     private Helper.IHelperCB iHelperCB;
+
+    // For Server strings update on UI
+    private Resources restringResources;
 
     @SuppressLint("SourceLockedOrientationActivity")
     @Override
@@ -106,14 +110,22 @@ public class BaseActivity extends AppCompatActivity {
         startHandler();
         // For checking radio groups clear checks
         Helper.radioGroupsClearChecks(this, activity);
-        // Update the UI
-        // updates all views that display string resources in the current window.
-        if (activity.getWindow() != null) {
-            Reword.reword(activity.getWindow().getDecorView());
 
-            // Apply ranges from server
-            Helper.applyRanges(activity);
+        // Apply ranges from server
+        Helper.applyRanges(activity);
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(Restring.wrapContext(newBase));
+    }
+
+    @Override
+    public Resources getResources() {
+        if (restringResources == null) {
+            restringResources = Restring.wrapContext(super.getBaseContext()).getResources();
         }
+        return restringResources;
     }
 
     @Override

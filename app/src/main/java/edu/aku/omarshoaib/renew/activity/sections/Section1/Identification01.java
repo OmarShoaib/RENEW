@@ -3,6 +3,8 @@ package edu.aku.omarshoaib.renew.activity.sections.Section1;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 
 import androidx.annotation.Nullable;
@@ -10,8 +12,11 @@ import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.BaseActivity;
@@ -24,6 +29,7 @@ import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.AppTextWatcher;
 import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.model.Form1;
+import edu.aku.omarshoaib.renew.model.HCF;
 
 public class Identification01 extends BaseActivity {
 
@@ -58,11 +64,52 @@ public class Identification01 extends BaseActivity {
     private void initUI() {
         bi.f103.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
         bi.f103.addTextChangedListener(new AppTextWatcher(bi.f103.getId(), textWatcher));
+        setupHCFSpinner();
+    }
+
+    private void setupHCFSpinner() {
+        List<HCF> list = new ArrayList<>();
+        HCF ps = new HCF();
+        ps.setHfCode("");
+        ps.setHfName("Please Select");
+        list.add(ps);
+
+        list.addAll(
+                appDatabase.hcfDao().getAllData());
+        ArrayAdapter<HCF> adapter =
+                new ArrayAdapter<>(this,
+                        android.R.layout.simple_spinner_item, list);
+        adapter.setDropDownViewResource(
+                android.R.layout.simple_spinner_dropdown_item);
+        bi.f102.setAdapter(adapter);
+        bi.f102.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
+                    sF1.setF102("");
+                    return;
+                }
+                String item = parent.getItemAtPosition(position).toString();
+                sF1.setF102(item.split("-")[0].trim());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) { }
+        });
+        if (!sF1.getF102().isEmpty()) {
+            for (int i = 0; i < list.size(); i++) {
+                if (list.get(i).getHfCode().trim().equals(sF1.getF102())) {
+                    bi.f102.setSelection(i);
+                    break;
+                }
+            }
+        }
+
     }
 
     AppTextWatcher.IAppTextWatcher textWatcher = (viewId, text) -> {
-        if(text.isEmpty()) {
-            bi.scrId.setText(String.format(Locale.getDefault(),"%02d-######-",
+        if (text.isEmpty()) {
+            bi.scrId.setText(String.format(Locale.getDefault(), "%02d-######-",
                     MainApp.user.getUserId()));
             bi.f103a.setText("");
         } else {

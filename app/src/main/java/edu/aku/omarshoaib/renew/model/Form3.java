@@ -164,6 +164,17 @@ public class Form3 extends FormBaseModel {
         private String f31096x = _EMPTY_;
         private String f311 = _EMPTY_;
         private String f31196x = _EMPTY_;
+        private String f31301 = _EMPTY_;
+        private String f31302 = _EMPTY_;
+        private String f31303 = _EMPTY_;
+        private String f31304 = _EMPTY_;
+        private String f31305 = _EMPTY_;
+        private String f31306 = _EMPTY_;
+        private String f31307 = _EMPTY_;
+        private String f31308 = _EMPTY_;
+        private String f31309 = _EMPTY_;
+        private String f31310 = _EMPTY_;
+        private String f31311 = _EMPTY_;
 
         public static class DataConverter extends AppDatabase.BaseConverter<SF3> {
             public DataConverter() {
@@ -345,6 +356,116 @@ public class Form3 extends FormBaseModel {
         public void setF31196x(String f31196x) {
             this.f31196x = f31196x;
             notifyPropertyChanged(BR.f31196x);
+        }
+
+        @Bindable
+        public String getF31301() {
+            return f31301;
+        }
+
+        public void setF31301(String f31301) {
+            this.f31301 = f31301;
+            notifyPropertyChanged(BR.f31301);
+        }
+
+        @Bindable
+        public String getF31302() {
+            return f31302;
+        }
+
+        public void setF31302(String f31302) {
+            this.f31302 = f31302;
+            notifyPropertyChanged(BR.f31302);
+        }
+
+        @Bindable
+        public String getF31303() {
+            return f31303;
+        }
+
+        public void setF31303(String f31303) {
+            this.f31303 = f31303;
+            notifyPropertyChanged(BR.f31303);
+        }
+
+        @Bindable
+        public String getF31304() {
+            return f31304;
+        }
+
+        public void setF31304(String f31304) {
+            this.f31304 = f31304;
+            notifyPropertyChanged(BR.f31304);
+        }
+
+        @Bindable
+        public String getF31305() {
+            return f31305;
+        }
+
+        public void setF31305(String f31305) {
+            this.f31305 = f31305;
+            notifyPropertyChanged(BR.f31305);
+        }
+
+        @Bindable
+        public String getF31306() {
+            return f31306;
+        }
+
+        public void setF31306(String f31306) {
+            this.f31306 = f31306;
+            notifyPropertyChanged(BR.f31306);
+        }
+
+        @Bindable
+        public String getF31307() {
+            return f31307;
+        }
+
+        public void setF31307(String f31307) {
+            this.f31307 = f31307;
+            notifyPropertyChanged(BR.f31307);
+        }
+
+        @Bindable
+        public String getF31308() {
+            return f31308;
+        }
+
+        public void setF31308(String f31308) {
+            this.f31308 = f31308;
+            notifyPropertyChanged(BR.f31308);
+        }
+
+        @Bindable
+        public String getF31309() {
+            return f31309;
+        }
+
+        public void setF31309(String f31309) {
+            this.f31309 = f31309;
+            notifyPropertyChanged(BR.f31309);
+        }
+
+        @Bindable
+        public String getF31310() {
+            return f31310;
+        }
+
+        public void setF31310(String f31310) {
+            this.f31310 = f31310;
+            notifyPropertyChanged(BR.f31310);
+        }
+
+        @Bindable
+        public String getF31311() {
+            return f31311;
+        }
+
+        public void setF31311(String f31311) {
+            this.f31311 = f31311;
+            notifyPropertyChanged(BR.f31311);
         }
 
     }

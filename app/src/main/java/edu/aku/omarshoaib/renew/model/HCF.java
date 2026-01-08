@@ -43,6 +43,10 @@ public class HCF {
         return id;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public String getDistCode() {
         return distCode;
     }
@@ -110,6 +114,6 @@ public class HCF {
     @NonNull
     @Override
     public String toString() {
-        return hfCode+" - "+hfName;
+        return hfCode.trim()+" - "+hfName.trim();
     }
 }
