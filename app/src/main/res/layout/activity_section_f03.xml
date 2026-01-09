@@ -707,6 +707,13 @@
                                     android:text="@string/f31301" />
 
                                 <TextView
+                                    style="@style/sub_labels"
+                                    android:visibility="@{form.f31301.equals(`1`) ? View.VISIBLE : View.GONE}"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/f31301t1" />
+
+                                <TextView
                                     style="@style/info"
                                     android:visibility="@{form.f31301.equals(`1`) ? View.VISIBLE : View.GONE}"
                                     android:layout_width="match_parent"
@@ -720,6 +727,13 @@
                                     android:checked="@{form.f31302.equals(`2`)}"
                                     android:onClick="@{()->form.setF31302(form.f31302.equals(`2`)?``:`2`)}"
                                     android:text="@string/f31302" />
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:visibility="@{form.f31302.equals(`2`) ? View.VISIBLE : View.GONE}"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/f31302t1" />
 
                                 <TextView
                                     style="@style/info"
@@ -737,6 +751,13 @@
                                     android:text="@string/f31303" />
 
                                 <TextView
+                                    style="@style/sub_labels"
+                                    android:visibility="@{form.f31303.equals(`3`) ? View.VISIBLE : View.GONE}"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/f31303t1" />
+
+                                <TextView
                                     style="@style/info"
                                     android:visibility="@{form.f31303.equals(`3`) ? View.VISIBLE : View.GONE}"
                                     android:layout_width="match_parent"
@@ -750,6 +771,13 @@
                                     android:checked="@{form.f31304.equals(`4`)}"
                                     android:onClick="@{()->form.setF31304(form.f31304.equals(`4`)?``:`4`)}"
                                     android:text="@string/f31304" />
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:visibility="@{form.f31304.equals(`4`) ? View.VISIBLE : View.GONE}"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/f31304t1" />
 
                                 <TextView
                                     style="@style/info"
@@ -767,6 +795,13 @@
                                     android:text="@string/f31305" />
 
                                 <TextView
+                                    style="@style/sub_labels"
+                                    android:visibility="@{form.f31305.equals(`5`) ? View.VISIBLE : View.GONE}"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/f31305t1" />
+
+                                <TextView
                                     style="@style/info"
                                     android:visibility="@{form.f31305.equals(`5`) ? View.VISIBLE : View.GONE}"
                                     android:layout_width="match_parent"
@@ -780,6 +815,13 @@
                                     android:checked="@{form.f31306.equals(`6`)}"
                                     android:onClick="@{()->form.setF31306(form.f31306.equals(`6`)?``:`6`)}"
                                     android:text="@string/f31306" />
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:visibility="@{form.f31306.equals(`6`) ? View.VISIBLE : View.GONE}"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/f31306t1" />
 
                                 <TextView
                                     style="@style/info"
@@ -797,6 +839,13 @@
                                     android:text="@string/f31307" />
 
                                 <TextView
+                                    style="@style/sub_labels"
+                                    android:visibility="@{form.f31307.equals(`7`) ? View.VISIBLE : View.GONE}"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/f31307t1" />
+
+                                <TextView
                                     style="@style/info"
                                     android:visibility="@{form.f31307.equals(`7`) ? View.VISIBLE : View.GONE}"
                                     android:layout_width="match_parent"
@@ -810,6 +859,13 @@
                                     android:checked="@{form.f31308.equals(`8`)}"
                                     android:onClick="@{()->form.setF31308(form.f31308.equals(`8`)?``:`8`)}"
                                     android:text="@string/f31308" />
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:visibility="@{form.f31308.equals(`8`) ? View.VISIBLE : View.GONE}"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/f31308t1" />
 
                                 <TextView
                                     style="@style/info"
@@ -827,6 +883,13 @@
                                     android:text="@string/f31309" />
 
                                 <TextView
+                                    style="@style/sub_labels"
+                                    android:visibility="@{form.f31309.equals(`9`) ? View.VISIBLE : View.GONE}"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/f31309t1" />
+
+                                <TextView
                                     style="@style/info"
                                     android:visibility="@{form.f31309.equals(`9`) ? View.VISIBLE : View.GONE}"
                                     android:layout_width="match_parent"
@@ -842,6 +905,13 @@
                                     android:text="@string/f31310" />
 
                                 <TextView
+                                    style="@style/sub_labels"
+                                    android:visibility="@{form.f31310.equals(`10`) ? View.VISIBLE : View.GONE}"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/f31310t1" />
+
+                                <TextView
                                     style="@style/info"
                                     android:visibility="@{form.f31310.equals(`10`) ? View.VISIBLE : View.GONE}"
                                     android:layout_width="match_parent"
@@ -855,6 +925,13 @@
                                     android:checked="@{form.f31311.equals(`11`)}"
                                     android:onClick="@{()->form.setF31311(form.f31311.equals(`11`)?``:`11`)}"
                                     android:text="@string/f31311" />
+
+                                <TextView
+                                    style="@style/sub_labels"
+                                    android:visibility="@{form.f31311.equals(`11`) ? View.VISIBLE : View.GONE}"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/f31311t1" />
 
                                 <TextView
                                     style="@style/info"

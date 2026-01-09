@@ -153,6 +153,7 @@
     <string name="close_app">Close App</string>
     <string name="unlock_screen">Unlock Screen</string>
     <string name="main_screen">MAIN SCREEN</string>
+    <string name="module_screen">Module Screen</string>
     <string name="start_interview">START INTERVIEW</string>
     <string name="open_form">Open form1 to start Interview</string>
     <string name="admin_options">ADMIN OPTIONS</string>
@@ -320,6 +321,10 @@
     <!-- APP VARIABLES -->
 
     <!-- Form1 1: Attendance Sheet For Health Education Session's Participants -->
+    <string name="m1t0">ماڊيول 1</string>
+    <string name="m1t1">عورتن جو ماڊيول</string>
+    <string name="m2t0">ماڊيول 2</string>
+    <string name="m2t1">ٻارن جو ماڊيول</string>
     <string name="f1t0">فارم 01 :</string>
     <string name="f1t1">صحت جي تعليم جي سيشن جي شرڪت ڪندڙن لاءِ حاضري شيٽ</string>
     <string name="f101">ٽيم</string>

@@ -49,7 +49,7 @@ public class SectionF02 extends BaseActivity {
 //        String hcfCode = MainApp.form1.getSF1().getF102();
 //        String hcfName = appDatabase.hcfDao().getHcfCodeByName(hcfCode).toString();
         sF2.setF204(MainApp.form1.getSF1().getF102());
-        sF2.setF205(MainApp.participant.getVillageName());
+//        sF2.setF205(MainApp.participant.getVillageName());
         sF2.setF206(MainApp.user.getFullName()+" - "+MainApp.user.getUserId());
         bi.f207.setMinDate(MainApp.form1.getSF1().getF103());
         bi.scrid.setText(MainApp.form1.getScrId());

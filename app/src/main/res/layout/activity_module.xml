@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.MainActivity">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="callback"
+            type="edu.aku.omarshoaib.renew.activity.ModuleAC" />
+    </data>
+
+    <RelativeLayout
+        style="@style/Theme.AppStructure.Background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="ltr"
+        android:orientation="vertical">
+
+        <include layout="@layout/view_appbar" />
+
+        <ImageView
+            android:id="@+id/appLogoIV"
+            android:layout_width="@dimen/_75sdp"
+            android:layout_height="@dimen/_75sdp"
+            android:layout_below="@+id/appBarLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:background="@drawable/bg_circle_white_filled"
+            android:elevation="@dimen/_3sdp"
+            android:padding="@dimen/_2sdp"
+            android:src="@drawable/app_icon"
+            tools:ignore="ContentDescription" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/appLogoIV"
+            android:layout_marginTop="@dimen/_minus35sdp"
+            android:background="@drawable/top_round_shape"
+            android:elevation="1dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="@dimen/_25sdp">
+
+            <TextView
+                style="@style/Theme.AppStructure.TitleBoldText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:elevation="@dimen/_1sdp"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/module_screen"
+                android:textColor="@color/primary_color"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.gridlayout.widget.GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:columnCount="1">
+
+                        <!--FORM 01-->
+                        <androidx.cardview.widget.CardView
+                            style="@style/cardView"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_columnWeight="1">
+
+                            <RelativeLayout
+                                android:id="@+id/option1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/white"
+                                android:onClick="@{callback::openForm}"
+                                android:padding="@dimen/_10sdp">
+
+                                <ImageView
+                                    android:id="@+id/siIV1"
+                                    android:layout_width="@dimen/_15sdp"
+                                    android:layout_height="@dimen/_15sdp"
+                                    android:layout_centerVertical="true"
+                                    android:background="@drawable/ic_interview"
+                                    tools:ignore="ContentDescription" />
+
+                                <TextView
+                                    android:id="@+id/siTitleTV1"
+                                    style="@style/Theme.AppStructure.BoldText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_8sdp"
+                                    android:layout_toStartOf="@+id/siArrowIV1"
+                                    android:layout_toEndOf="@+id/siIV1"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/m1t1"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/primary_color"
+                                    android:textSize="@dimen/_9ssp" />
+
+                                <TextView
+                                    android:id="@+id/siSubTitleTV1"
+                                    style="@style/Theme.AppStructure.SmallRegularText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/siTitleTV1"
+                                    android:layout_marginStart="@dimen/_8sdp"
+                                    android:layout_toStartOf="@+id/siArrowIV1"
+                                    android:layout_toEndOf="@+id/siIV1"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/m1t0"
+                                    android:textColor="@color/gray_dark" />
+
+                                <ImageView
+                                    android:id="@+id/siArrowIV1"
+                                    android:layout_width="@dimen/_12sdp"
+                                    android:layout_height="@dimen/_12sdp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:background="@drawable/ic_item_right_arrow"
+                                    android:backgroundTint="@color/primary_color"
+                                    android:textColor="@color/secondary_color_accent"
+                                    tools:ignore="ContentDescription" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <!--FORM 02-->
+                        <androidx.cardview.widget.CardView
+                            style="@style/cardView"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_columnWeight="1">
+
+                            <RelativeLayout
+                                android:id="@+id/option2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/white"
+                                android:onClick="@{callback::openForm}"
+                                android:padding="@dimen/_10sdp">
+
+                                <ImageView
+                                    android:id="@+id/siIV2"
+                                    android:layout_width="@dimen/_15sdp"
+                                    android:layout_height="@dimen/_15sdp"
+                                    android:layout_centerVertical="true"
+                                    android:background="@drawable/ic_interview"
+                                    tools:ignore="ContentDescription" />
+
+                                <TextView
+                                    android:id="@+id/siTitleTV2"
+                                    style="@style/Theme.AppStructure.BoldText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_8sdp"
+                                    android:layout_toStartOf="@+id/siArrowIV2"
+                                    android:layout_toEndOf="@+id/siIV2"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/m2t1"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/primary_color"
+                                    android:textSize="@dimen/_9ssp" />
+
+                                <TextView
+                                    android:id="@+id/siSubTitleTV2"
+                                    style="@style/Theme.AppStructure.SmallRegularText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/siTitleTV2"
+                                    android:layout_marginStart="@dimen/_8sdp"
+                                    android:layout_toStartOf="@+id/siArrowIV2"
+                                    android:layout_toEndOf="@+id/siIV2"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/m2t0"
+                                    android:textColor="@color/gray_dark" />
+
+                                <ImageView
+                                    android:id="@+id/siArrowIV2"
+                                    android:layout_width="@dimen/_12sdp"
+                                    android:layout_height="@dimen/_12sdp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:background="@drawable/ic_item_right_arrow"
+                                    android:backgroundTint="@color/primary_color"
+                                    android:textColor="@color/secondary_color_accent"
+                                    tools:ignore="ContentDescription" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+                    </androidx.gridlayout.widget.GridLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

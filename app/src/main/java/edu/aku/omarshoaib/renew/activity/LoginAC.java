@@ -152,7 +152,7 @@ public class LoginAC extends AppCompatActivity {
                 if (AppConstants.IS_ADMIN) {
                     // Login as admin
                     EntryLog.initEntryLog(appDatabase, AppConstants.ADMIN_LOGIN_SUCCESS, _username);
-                    AppConstants.gotoActivity(activity, MainActivity.class, false);
+                    AppConstants.gotoActivity(activity, ModuleAC.class, false);
                 } else {
                     if (MainApp.user.getNewUser().equals("1")) {
                         // Login as user for the first time
@@ -161,7 +161,7 @@ public class LoginAC extends AppCompatActivity {
                     } else {
                         // Login as user - normal
                         EntryLog.initEntryLog(appDatabase, AppConstants.USER_LOGIN_SUCCESS, _username);
-                        AppConstants.gotoActivity(activity, MainActivity.class, false);
+                        AppConstants.gotoActivity(activity, ModuleAC.class, false);
                     }
                 }
                 attemptCounter = 0;

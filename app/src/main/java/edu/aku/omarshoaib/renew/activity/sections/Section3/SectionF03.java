@@ -55,7 +55,7 @@ public class SectionF03 extends BaseActivity {
         sF3.setF301(MainApp.participant.getSF1().getF104());
         sF3.setF303(MainApp.participant.getSF1().getF105());
         sF3.setF304(MainApp.form1.getSF1().getF102());
-        sF3.setF305(MainApp.participant.getVillageName());
+//        sF3.setF305(MainApp.participant.getVillageName());
         sF3.setF306(MainApp.user.getFullName()+" - "+MainApp.user.getUserId());
         bi.f3dd.setMinDate(MainApp.form1.getSF1().getF103());
     }

@@ -11,6 +11,10 @@
         <variable
             name="callback"
             type="edu.aku.omarshoaib.renew.activity.MainActivity" />
+
+        <variable
+            name="module"
+            type="int" />
     </data>
 
     <RelativeLayout
@@ -35,43 +39,6 @@
             android:padding="@dimen/_2sdp"
             android:src="@drawable/app_icon"
             tools:ignore="ContentDescription" />
-
-        <!--Summary Button-->
-        <!--<com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/summary"
-            style="@style/Theme.AppStructure.ButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/appLogoIV"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="@dimen/_minus25sdp"
-            android:layout_marginEnd="@dimen/_13sdp"
-            android:alpha="0.7"
-            android:backgroundTint="@color/red_color"
-            android:contentDescription="@string/summary"
-            android:onClick="@{callback::openForm}"
-            app:backgroundTint="@color/red_color"
-            app:borderWidth="0dp"
-            app:elevation="@dimen/_2sdp"
-            app:fabCustomSize="@dimen/_30sdp"
-            app:maxImageSize="@dimen/_17sdp"
-            app:rippleColor="@color/red_color_light"
-            app:srcCompat="@drawable/ic_summary"
-            app:tint="@color/white" />
-
-        <TextView
-            android:id="@+id/summaryTitleTV"
-            style="@style/Theme.AppStructure.SmallBoldText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/summary"
-            android:layout_alignStart="@+id/summary"
-            android:layout_alignEnd="@+id/summary"
-            android:elevation="@dimen/_1sdp"
-            android:gravity="center"
-            android:text="@string/summary"
-            android:textColor="@color/light_gray_color"
-            android:textSize="@dimen/_6ssp" />-->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -110,14 +77,15 @@
                     <androidx.gridlayout.widget.GridLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:columnCount="2">
+                        app:columnCount="1">
 
                         <!--FORM 01-->
                         <androidx.cardview.widget.CardView
                             style="@style/cardView"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            app:layout_columnWeight="1">
+                            app:layout_columnWeight="1"
+                            android:visibility="@{module == 1 ? View.VISIBLE : View.GONE}" >
 
                             <RelativeLayout
                                 android:id="@+id/option1"
@@ -182,7 +150,8 @@
                             style="@style/cardView"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            app:layout_columnWeight="1">
+                            app:layout_columnWeight="1"
+                            android:visibility="@{module == 1 ? View.VISIBLE : View.GONE}" >
 
                             <RelativeLayout
                                 android:id="@+id/option2"
@@ -247,7 +216,8 @@
                             style="@style/cardView"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            app:layout_columnWeight="1">
+                            app:layout_columnWeight="1"
+                            android:visibility="@{module == 1 ? View.VISIBLE : View.GONE}" >
 
                             <RelativeLayout
                                 android:id="@+id/option3"
@@ -312,7 +282,8 @@
                             style="@style/cardView"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            app:layout_columnWeight="1">
+                            app:layout_columnWeight="1"
+                            android:visibility="@{module == 2 ? View.VISIBLE : View.GONE}" >
 
                             <RelativeLayout
                                 android:id="@+id/option4"
@@ -377,7 +348,8 @@
                             style="@style/cardView"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            app:layout_columnWeight="1">
+                            app:layout_columnWeight="1"
+                            android:visibility="@{module == 2 ? View.VISIBLE : View.GONE}">
 
                             <RelativeLayout
                                 android:id="@+id/option5"
@@ -442,7 +414,8 @@
                             style="@style/cardView"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            app:layout_columnWeight="1">
+                            app:layout_columnWeight="1"
+                            android:visibility="@{module == 2 ? View.VISIBLE : View.GONE}" >
 
                             <RelativeLayout
                                 android:id="@+id/option6"

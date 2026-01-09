@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 MainApp.user != null ? MainApp.user.getFullName() : ""), null, false);
 
         appDatabase = AppDatabase.getDBInstance();
+        bi.setModule(MainApp.entryType);
 
         initUI();
     }
@@ -81,27 +82,21 @@ public class MainActivity extends AppCompatActivity {
 
     public void openForm(View view) {
         int viewId = view.getId();
-        MainApp.entryType = 0;
+//        MainApp.entryType = 0;
         MainApp.isSynced = false;   // For locally saved synced form1
         MainApp.isSyncedRecs = false;   // For Synced Recs
 
         if (viewId == R.id.option1) {
-            MainApp.entryType = 1;
             AppConstants.gotoActivity(activity, Identification01.class, true);
         } else if (viewId == R.id.option2) {
-            MainApp.entryType = 2;
             AppConstants.gotoActivity(activity, Identification02.class, true);
         } else if (viewId == R.id.option3) {
-            MainApp.entryType = 3;
             AppConstants.gotoActivity(activity, Identification03.class, true);
         } else if (viewId == R.id.option4) {
-            MainApp.entryType = 4;
             AppConstants.gotoActivity(activity, SectionF04.class, true);
         } else if (viewId == R.id.option5) {
-            MainApp.entryType = 5;
             AppConstants.gotoActivity(activity, SectionF05.class, true);
         } else if (viewId == R.id.option6) {
-            MainApp.entryType = 6;
             AppConstants.gotoActivity(activity, SectionF06.class, true);
         } else if (viewId == R.id.summaryLayout) {
             // Show summary bottomsheet
