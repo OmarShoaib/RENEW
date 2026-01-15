@@ -213,14 +213,14 @@ public class UploadData {
             iWebCallback.onFailure(tableName, activity.getString(R.string.no_new_records_to_upload), ++index, 0, null);
 
         // Form6
-        iFormCompletedUIds = uIdsHM.get(Form6.TABLE_NAME);
-        tableName = ((SyncModel) UPLOAD_TABLES.keySet().toArray()[6]).getTable();
-        List<Form6> list6 = appDatabase.form6Dao().getAllUnSyncedDataByUIds(iFormCompletedUIds);
-        if (list6 != null && !list6.isEmpty()) {
-            postData = prepareUploadData(tableName, gson.toJson(list6));
-            webCall.call(webAPI.uploadEncData(postData), AppConstants.UPLOAD_DATA, tableName, ++index, list6.size(), iFormCompletedUIds, IS_CALL_ENCRYPTED);
-        } else
-            iWebCallback.onFailure(tableName, activity.getString(R.string.no_new_records_to_upload), ++index, 0, null);
+//        iFormCompletedUIds = uIdsHM.get(Form6.TABLE_NAME);
+//        tableName = ((SyncModel) UPLOAD_TABLES.keySet().toArray()[5]).getTable();
+//        List<Form6> list6 = appDatabase.form6Dao().getAllUnSyncedDataByUIds(iFormCompletedUIds);
+//        if (list6 != null && !list6.isEmpty()) {
+//            postData = prepareUploadData(tableName, gson.toJson(list6));
+//            webCall.call(webAPI.uploadEncData(postData), AppConstants.UPLOAD_DATA, tableName, ++index, list6.size(), iFormCompletedUIds, IS_CALL_ENCRYPTED);
+//        } else
+//            iWebCallback.onFailure(tableName, activity.getString(R.string.no_new_records_to_upload), ++index, 0, null);
 
     }
 

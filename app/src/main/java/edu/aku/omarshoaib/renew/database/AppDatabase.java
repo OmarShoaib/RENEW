@@ -20,6 +20,7 @@ import edu.aku.omarshoaib.renew.database.dao.ClusterDao;
 import edu.aku.omarshoaib.renew.database.dao.EntryLogDao;
 import edu.aku.omarshoaib.renew.database.dao.Form1Dao;
 import edu.aku.omarshoaib.renew.database.dao.Form2Dao;
+import edu.aku.omarshoaib.renew.database.dao.Form2aDao;
 import edu.aku.omarshoaib.renew.database.dao.Form3Dao;
 import edu.aku.omarshoaib.renew.database.dao.Form4Dao;
 import edu.aku.omarshoaib.renew.database.dao.Form5Dao;
@@ -29,12 +30,14 @@ import edu.aku.omarshoaib.renew.database.dao.HCFDao;
 import edu.aku.omarshoaib.renew.database.dao.ParticipantDao;
 import edu.aku.omarshoaib.renew.database.dao.SummaryDao;
 import edu.aku.omarshoaib.renew.database.dao.UserDao;
+import edu.aku.omarshoaib.renew.database.dao.VPHQ9Dao;
 import edu.aku.omarshoaib.renew.database.dao.VillagesDao;
 import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.model.Cluster;
 import edu.aku.omarshoaib.renew.model.EntryLog;
 import edu.aku.omarshoaib.renew.model.Form1;
 import edu.aku.omarshoaib.renew.model.Form2;
+import edu.aku.omarshoaib.renew.model.Form2a;
 import edu.aku.omarshoaib.renew.model.Form3;
 import edu.aku.omarshoaib.renew.model.Form4;
 import edu.aku.omarshoaib.renew.model.Form5;
@@ -43,16 +46,17 @@ import edu.aku.omarshoaib.renew.model.HCF;
 import edu.aku.omarshoaib.renew.model.Participant;
 import edu.aku.omarshoaib.renew.model.SyncModel;
 import edu.aku.omarshoaib.renew.model.User;
+import edu.aku.omarshoaib.renew.model.VPHQ9;
 import edu.aku.omarshoaib.renew.model.Villages;
 
 @Database(entities = {User.class, Villages.class, Cluster.class, EntryLog.class,
-        Form1.class, Form2.class, Form3.class, Form4.class, Form5.class, Form6.class,
-        Participant.class, HCF.class},
+        Form1.class, Form2.class, Form2a.class, Form3.class, Form4.class, Form5.class,
+        Form6.class, Participant.class, HCF.class, VPHQ9.class},
         version = 1, exportSchema = false)
 @TypeConverters({SyncModel.ResponseDate.DataConverter.class,
         Form1.SF1.DataConverter.class, Form2.SF2.DataConverter.class, Form3.SF3.DataConverter.class,
         Form4.SF4.DataConverter.class, Form5.SF5.DataConverter.class, Form6.SF6.DataConverter.class,
-        Participant.SF1.DataConverter.class})
+        Participant.SF1.DataConverter.class, Form2a.SF2a.DataConverter.class,})
 public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase appDatabase;
@@ -103,6 +107,8 @@ public abstract class AppDatabase extends RoomDatabase {
 
     public abstract Form2Dao form2Dao();
 
+    public abstract Form2aDao form2aDao();
+
     public abstract Form3Dao form3Dao();
 
     public abstract Form4Dao form4Dao();
@@ -110,6 +116,8 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract Form5Dao form5Dao();
 
     public abstract Form6Dao form6Dao();
+
+    public abstract VPHQ9Dao vphq9Dao();
 
     public abstract HCFDao hcfDao();
 

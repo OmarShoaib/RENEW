@@ -38,6 +38,9 @@ public class Form2 extends FormBaseModel {
     @SerializedName("scr_id")
     private String scrId = _EMPTY_;
 
+    @SerializedName("participant_id")
+    private String participantId = _EMPTY_;
+
     @SerializedName("ending_date")
     private String endingDate = _EMPTY_;
 
@@ -101,6 +104,14 @@ public class Form2 extends FormBaseModel {
 
     public void setScrId(String scrId) {
         this.scrId = scrId;
+    }
+
+    public String getParticipantId() {
+        return participantId;
+    }
+
+    public void setParticipantId(String participantId) {
+        this.participantId = participantId;
     }
 
     public String getUuId() {
@@ -167,6 +178,8 @@ public class Form2 extends FormBaseModel {
         private String f209 = _EMPTY_;
         private String f210 = _EMPTY_;
         private String f211 = _EMPTY_;
+        private String f212 = _EMPTY_;
+        private String f213 = _EMPTY_;
 
         public static class DataConverter extends AppDatabase.BaseConverter<SF2> {
             public DataConverter() {
@@ -407,7 +420,9 @@ public class Form2 extends FormBaseModel {
 
         public void setF210(String f210) {
             this.f210 = f210;
-            setF211(f210.equals("1") ? _EMPTY_ : this.f211);
+            setF211(f210.equals("1") || f210.equals("2") ? _EMPTY_ : this.f211);
+            setF212(f210.equals("1") || f210.equals("2") ? _EMPTY_ : this.f212);
+            setF213(f210.equals("1") || f210.equals("2") ? _EMPTY_ : this.f213);
             notifyPropertyChanged(BR.f210);
         }
 
@@ -421,7 +436,25 @@ public class Form2 extends FormBaseModel {
             notifyPropertyChanged(BR.f211);
         }
 
+        @Bindable
+        public String getF212() {
+            return f212;
+        }
+
+        public void setF212(String f212) {
+            this.f212 = f212;
+            notifyPropertyChanged(BR.f212);
+        }
+
+        @Bindable
+        public String getF213() {
+            return f213;
+        }
+
+        public void setF213(String f213) {
+            this.f213 = f213;
+            notifyPropertyChanged(BR.f213);
+        }
+
     }
-
-
 }

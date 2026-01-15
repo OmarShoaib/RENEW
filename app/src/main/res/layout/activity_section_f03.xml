@@ -192,7 +192,6 @@
                             android:hint="@string/f304"
                             android:inputType="text"
                             android:maxLength="250"
-                            android:text="@={form.f304}"
                             tools:ignore="Autofill" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -702,6 +701,7 @@
                                     android:id="@+id/f31301"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:enabled="@{!form.f31398.equals(`98`)}"
                                     android:checked="@{form.f31301.equals(`1`)}"
                                     android:onClick="@{()->form.setF31301(form.f31301.equals(`1`)?``:`1`)}"
                                     android:text="@string/f31301" />
@@ -724,6 +724,7 @@
                                     android:id="@+id/f31302"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:enabled="@{!form.f31398.equals(`98`)}"
                                     android:checked="@{form.f31302.equals(`2`)}"
                                     android:onClick="@{()->form.setF31302(form.f31302.equals(`2`)?``:`2`)}"
                                     android:text="@string/f31302" />
@@ -746,6 +747,7 @@
                                     android:id="@+id/f31303"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:enabled="@{!form.f31398.equals(`98`)}"
                                     android:checked="@{form.f31303.equals(`3`)}"
                                     android:onClick="@{()->form.setF31303(form.f31303.equals(`3`)?``:`3`)}"
                                     android:text="@string/f31303" />
@@ -768,6 +770,7 @@
                                     android:id="@+id/f31304"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:enabled="@{!form.f31398.equals(`98`)}"
                                     android:checked="@{form.f31304.equals(`4`)}"
                                     android:onClick="@{()->form.setF31304(form.f31304.equals(`4`)?``:`4`)}"
                                     android:text="@string/f31304" />
@@ -790,6 +793,7 @@
                                     android:id="@+id/f31305"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:enabled="@{!form.f31398.equals(`98`)}"
                                     android:checked="@{form.f31305.equals(`5`)}"
                                     android:onClick="@{()->form.setF31305(form.f31305.equals(`5`)?``:`5`)}"
                                     android:text="@string/f31305" />
@@ -812,6 +816,7 @@
                                     android:id="@+id/f31306"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:enabled="@{!form.f31398.equals(`98`)}"
                                     android:checked="@{form.f31306.equals(`6`)}"
                                     android:onClick="@{()->form.setF31306(form.f31306.equals(`6`)?``:`6`)}"
                                     android:text="@string/f31306" />
@@ -834,6 +839,7 @@
                                     android:id="@+id/f31307"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:enabled="@{!form.f31398.equals(`98`)}"
                                     android:checked="@{form.f31307.equals(`7`)}"
                                     android:onClick="@{()->form.setF31307(form.f31307.equals(`7`)?``:`7`)}"
                                     android:text="@string/f31307" />
@@ -856,6 +862,7 @@
                                     android:id="@+id/f31308"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:enabled="@{!form.f31398.equals(`98`)}"
                                     android:checked="@{form.f31308.equals(`8`)}"
                                     android:onClick="@{()->form.setF31308(form.f31308.equals(`8`)?``:`8`)}"
                                     android:text="@string/f31308" />
@@ -878,6 +885,7 @@
                                     android:id="@+id/f31309"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:enabled="@{!form.f31398.equals(`98`)}"
                                     android:checked="@{form.f31309.equals(`9`)}"
                                     android:onClick="@{()->form.setF31309(form.f31309.equals(`9`)?``:`9`)}"
                                     android:text="@string/f31309" />
@@ -900,6 +908,7 @@
                                     android:id="@+id/f31310"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:enabled="@{!form.f31398.equals(`98`)}"
                                     android:checked="@{form.f31310.equals(`10`)}"
                                     android:onClick="@{()->form.setF31310(form.f31310.equals(`10`)?``:`10`)}"
                                     android:text="@string/f31310" />
@@ -922,6 +931,7 @@
                                     android:id="@+id/f31311"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:enabled="@{!form.f31398.equals(`98`)}"
                                     android:checked="@{form.f31311.equals(`11`)}"
                                     android:onClick="@{()->form.setF31311(form.f31311.equals(`11`)?``:`11`)}"
                                     android:text="@string/f31311" />
@@ -939,10 +949,107 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:text="@string/f31311t2" />
+
+                                <CheckBox
+                                    style="@style/dont_know"
+                                    android:id="@+id/f31398"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:checked="@{form.f31398.equals(`98`)}"
+                                    android:onClick="@{()->form.setF31398(form.f31398.equals(`98`)?``:`98`)}"
+                                    android:text="@string/f31398" />
                             </LinearLayout>
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
+                    <!-- F315-16 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="@{form.f31398.equals(`98`) ? View.GONE : View.VISIBLE}">
+
+                        <!-- f315 Input-Numeric -->
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/fldGrpCVf315"
+                            style="@style/cardView">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/Q_f315" />
+
+                                <TextView
+                                    style="@style/labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/f315" />
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/f315"
+                                    style="@style/Theme.AppStructure.EditTextStyle"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:digits="@string/digits_number"
+                                    android:gravity="center"
+                                    android:hint="####"
+                                    android:inputType="number"
+                                    android:maxLength="4"
+                                    app:pattern="[0-9]{4}"
+                                    android:text="@={form.f315}"
+                                    app:maxValue="9999"
+                                    app:minValue="0001"
+                                    app:type="range" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- f316 Input-Numeric -->
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/fldGrpCVf316"
+                            style="@style/cardView">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/quesNum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/Q_f316" />
+
+                                <TextView
+                                    style="@style/labels"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="@string/f316" />
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/f316"
+                                    style="@style/Theme.AppStructure.EditTextStyle"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:digits="@string/digits_number"
+                                    android:gravity="center"
+                                    app:pattern="[0-9]{11}"
+                                    android:hint="###########"
+                                    android:inputType="number"
+                                    android:maxLength="11"
+                                    android:text="@={form.f316}" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
                 </LinearLayout>
 
                 <edu.aku.omarshoaib.renew.global.views.AppEndButtons

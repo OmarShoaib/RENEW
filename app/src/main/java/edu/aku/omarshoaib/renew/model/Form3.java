@@ -35,6 +35,9 @@ public class Form3 extends FormBaseModel {
     @SerializedName("scr_id")
     private String scrId = _EMPTY_;
 
+    @SerializedName("pregnant_woman_id")
+    private String pregnantWomanId = _EMPTY_;
+
     @SerializedName("_uuid")
     private String uuid = _EMPTY_;
 
@@ -101,6 +104,14 @@ public class Form3 extends FormBaseModel {
 
     public void setScrId(String scrId) {
         this.scrId = scrId;
+    }
+
+    public String getPregnantWomanId() {
+        return pregnantWomanId;
+    }
+
+    public void setPregnantWomanId(String pregnantWomanId) {
+        this.pregnantWomanId = pregnantWomanId;
     }
 
     public String getDistrictCode() {
@@ -175,6 +186,9 @@ public class Form3 extends FormBaseModel {
         private String f31309 = _EMPTY_;
         private String f31310 = _EMPTY_;
         private String f31311 = _EMPTY_;
+        private String f31398 = _EMPTY_;
+        private String f315 = _EMPTY_;
+        private String f316 = _EMPTY_;
 
         public static class DataConverter extends AppDatabase.BaseConverter<SF3> {
             public DataConverter() {
@@ -486,7 +500,47 @@ public class Form3 extends FormBaseModel {
             notifyPropertyChanged(BR.f31311);
         }
 
+        @Bindable
+        public String getF31398() {
+            return f31398;
+        }
+
+        public void setF31398(String f31398) {
+            this.f31398 = f31398;
+            setF31301(_EMPTY_);
+            setF31302(_EMPTY_);
+            setF31303(_EMPTY_);
+            setF31304(_EMPTY_);
+            setF31305(_EMPTY_);
+            setF31306(_EMPTY_);
+            setF31307(_EMPTY_);
+            setF31308(_EMPTY_);
+            setF31309(_EMPTY_);
+            setF31310(_EMPTY_);
+            setF31311(_EMPTY_);
+            setF315(_EMPTY_);
+            setF316(_EMPTY_);
+            notifyPropertyChanged(BR.f31398);
+        }
+
+        @Bindable
+        public String getF315() {
+            return f315;
+        }
+
+        public void setF315(String f315) {
+            this.f315 = f315;
+            notifyPropertyChanged(BR.f315);
+        }
+
+        @Bindable
+        public String getF316() {
+            return f316;
+        }
+
+        public void setF316(String f316) {
+            this.f316 = f316;
+            notifyPropertyChanged(BR.f316);
+        }
     }
-
-
 }

@@ -436,10 +436,101 @@
     <string name="f2103">Moderate</string>
     <string name="f2104">Moderately</string>
     <string name="f2105">severe</string>
-    <string name="f211">Action protocol</string>
-    <string name="f2111">Counseling provided</string>
-    <string name="f2112">Referred to specialist</string>
-    <string name="f2113">Monitored only</string>
+    <string name="f211"> Referred to Psychologist</string>
+    <string name="f21101">Yes</string>
+    <string name="f21102">No</string>
+    <string name="f212">Participant Id</string>
+    <string name="f213">Contact Number of Respondent</string>
+
+    <!-- Form 02a: Mental Health Assessment (PHQ-9) Questionnaire Screening of WRA, adolescents,
+         and pregnant women for depression symptoms by Psychologist. -->
+    <string name="t2at1">Form 02a: Mental Health Assessment (PHQ–9) QuestionnaireScreening of WRA, adolescents, and pregnant women for depression symptoms by Psychologist</string>
+    <string name="t2at2">Section A: Baseline Information</string>
+    <string name="f2a01">Participant Id</string>
+    <string name="f2a02">Participant name</string>
+    <string name="f2a03">Husband/Father name</string>
+    <string name="f2a04">Age (Years)</string>
+    <string name="f2a05">Contact Number of Respondent</string>
+    <string name="f2a06">Healthcare Facility Catchment</string>
+    <string name="f2a07">Village/address</string>
+    <string name="f2a08">Screening performed by staff name and code</string>
+    <string name="f2a09">Date of screening by Field Staff:</string>
+    <string name="f2a10">PHQ–9 score at Screening by Field Staff:</string>
+    <string name="f2a11">Date of Referral:</string>
+    <string name="f2a12">Date of Psychologist Follow–up:</string>
+    <string name="f2a13">Psychologist Name:</string>
+    <string name="f2a14">Session Number:</string>
+    <string name="t2bt3">Assessment of Depressive Symptoms by Psychologist  (PHQ–9)</string>
+    <string name="f2b01">Little interest or pleasure in doing things</string>
+    <string name="f2b0101">Not at all</string>
+    <string name="f2b0102">Several days</string>
+    <string name="f2b0103">More than half the days</string>
+    <string name="f2b0104">Nearly every day</string>
+    <string name="f2b02">Feeling down, depressed, or hopeless</string>
+    <string name="f2b0201">Not at all</string>
+    <string name="f2b0202">Several days</string>
+    <string name="f2b0203">More than half the days</string>
+    <string name="f2b0204">Nearly every day</string>
+    <string name="f2b03">Trouble falling asleep, staying asleep, or sleeping too much</string>
+    <string name="f2b0301">Not at all</string>
+    <string name="f2b0302">Several days</string>
+    <string name="f2b0303">More than half the days</string>
+    <string name="f2b0304">Nearly every day</string>
+    <string name="f2b04">Feeling tired or having little energy</string>
+    <string name="f2b0401">Not at all</string>
+    <string name="f2b0402">Several days</string>
+    <string name="f2b0403">More than half the days</string>
+    <string name="f2b0404">Nearly every day</string>
+    <string name="f2b05">Poor appetite or overeating</string>
+    <string name="f2b0501">Not at all</string>
+    <string name="f2b0502">Several days</string>
+    <string name="f2b0503">More than half the days</string>
+    <string name="f2b0504">Nearly every day</string>
+    <string name="f2b06">Feeling bad about yourself — or that you are a failure or have let yourself or your family Down</string>
+    <string name="f2b0601">Not at all</string>
+    <string name="f2b0602">Several days</string>
+    <string name="f2b0603">More than half the days</string>
+    <string name="f2b0604">Nearly every day</string>
+    <string name="f2b07">Trouble concentrating on things</string>
+    <string name="f2b0701">Not at all</string>
+    <string name="f2b0702">Several days</string>
+    <string name="f2b0703">More than half the days</string>
+    <string name="f2b0704">Nearly every day</string>
+    <string name="f2b08">Moving or speaking so slowly that others noticed — or being fidgety/restless</string>
+    <string name="f2b0801">Not at all</string>
+    <string name="f2b0802">Several days</string>
+    <string name="f2b0803">More than half the days</string>
+    <string name="f2b0804">Nearly every day</string>
+    <string name="f2b09">Thoughts that you would be better off dead or of hurting yourself</string>
+    <string name="f2b090">Not at all</string>
+    <string name="f2b0902">Several days</string>
+    <string name="f2b0903">More than half the days</string>
+    <string name="f2b0904">Nearly every day</string>
+    <string name="f2b10">Total PHQ–9 score (Screening by Psychologist)</string>
+    <string name="f2b1001">Not at all</string>
+    <string name="f2b1002">Several days</string>
+    <string name="f2b1003">More than half the days</string>
+    <string name="f2b1004">Nearly every day</string>
+    <string name="f2b11">Interpretation</string>
+    <string name="f2b1101">Minimal</string>
+    <string name="f2b1102">Mild</string>
+    <string name="f2b1103">Moderate</string>
+    <string name="f2b1104">Moderatey</string>
+    <string name="f2b1105">severe</string>
+    <string name="f2b12">Action protocol</string>
+    <string name="f2b1201">Counseling provided</string>
+    <string name="f2b1202">Referred to specialist</string>
+    <string name="f2b1203">Monitored only</string>
+    <string name="t2ct4">Psychologist Session</string>
+    <string name="f2c01">Date of Psychologist Session:</string>
+    <string name="f2c02">Mode of Session:</string>
+    <string name="f2c0201">On–Call</string>
+    <string name="f2c0202">Face to Face</string>
+    <string name="f2c03">Duration of Session (mins):</string>
+    <string name="f2c04">Next Session Date</string>
+    <string name="f2c0401">Date</string>
+    <string name="f2c0402">Not Applicable</string>
+
 
     <!-- High Risk Pregnancy Assessment Form1 -->
     <string name="f3t0">Form 03 :</string>
@@ -499,9 +590,13 @@
     <string name="f31310t1">Severe anemia</string>
     <string name="f31310t2">Urgent evaluation and treatment</string>
     <string name="f31311">Watery discharge before 37 weeks</string>
+    <string name="f31398">No danger sign</string>
     <string name="f31311t1">Preterm premature rupture of membranes (PPROM)</string>
     <string name="f31311t2">Refer urgently</string>
-    <string name="f309dk">Dont Know</string>
+    <string name="f309dk">Don\'t Know</string>
+    <string name="f315">Pregnant Woman Id</string>
+    <string name="f316">Contact Number of Respondent:</string>
+
 
     <!-- Form1 4: Initial Screening for Malnutrition -->
     <string name="f4t0">Form 04 :</string>
@@ -703,10 +798,47 @@
     <string name='Q_f209' translatable='false'>f209</string>
     <string name='Q_f210' translatable='false'>f210</string>
     <string name='Q_f211' translatable='false'>f211</string>
+    <string name='Q_f212' translatable='false'>f212</string>
+    <string name='Q_f213' translatable='false'>f213</string>
     <string name='Q_f2t1' translatable='false'>f2t1</string>
     <string name='Q_f2t2' translatable='false'>f2t2</string>
     <string name='Q_f2t3' translatable='false'>f2t3</string>
     <string name='Q_scrid' translatable='false'>scrid</string>
+
+    <string name='Q_f2a01' translatable='false'>f2a01</string>
+    <string name='Q_f2a02' translatable='false'>f2a02</string>
+    <string name='Q_f2a03' translatable='false'>f2a03</string>
+    <string name='Q_f2a04' translatable='false'>f2a04</string>
+    <string name='Q_f2a05' translatable='false'>f2a05</string>
+    <string name='Q_f2a06' translatable='false'>f2a06</string>
+    <string name='Q_f2a07' translatable='false'>f2a07</string>
+    <string name='Q_f2a08' translatable='false'>f2a08</string>
+    <string name='Q_f2a09' translatable='false'>f2a09</string>
+    <string name='Q_f2a10' translatable='false'>f2a10</string>
+    <string name='Q_f2a11' translatable='false'>f2a11</string>
+    <string name='Q_f2a12' translatable='false'>f2a12</string>
+    <string name='Q_f2a13' translatable='false'>f2a13</string>
+    <string name='Q_f2a14' translatable='false'>f2a14</string>
+    <string name='Q_f2b01' translatable='false'>f2b01</string>
+    <string name='Q_f2b02' translatable='false'>f2b02</string>
+    <string name='Q_f2b03' translatable='false'>f2b03</string>
+    <string name='Q_f2b04' translatable='false'>f2b04</string>
+    <string name='Q_f2b05' translatable='false'>f2b05</string>
+    <string name='Q_f2b06' translatable='false'>f2b06</string>
+    <string name='Q_f2b07' translatable='false'>f2b07</string>
+    <string name='Q_f2b08' translatable='false'>f2b08</string>
+    <string name='Q_f2b09' translatable='false'>f2b09</string>
+    <string name='Q_f2b10' translatable='false'>f2b10</string>
+    <string name='Q_f2b11' translatable='false'>f2b11</string>
+    <string name='Q_f2b12' translatable='false'>f2b12</string>
+    <string name='Q_f2c01' translatable='false'>f2c01</string>
+    <string name='Q_f2c02' translatable='false'>f2c02</string>
+    <string name='Q_f2c03' translatable='false'>f2c03</string>
+    <string name='Q_f2c04' translatable='false'>f2c04</string>
+    <string name='Q_t2at1' translatable='false'>t2at1</string>
+    <string name='Q_t2at2' translatable='false'>t2at2</string>
+    <string name='Q_t2bt3' translatable='false'>t2bt3</string>
+    <string name='Q_t2ct4' translatable='false'>t2ct4</string>
 
     <string name='Q_f031307t2' translatable='false'>f031307t2</string>
     <string name='Q_f301' translatable='false'>f301</string>
@@ -721,6 +853,8 @@
     <string name='Q_f310' translatable='false'>f310</string>
     <string name='Q_f311' translatable='false'>f311</string>
     <string name='Q_f313' translatable='false'>f313</string>
+    <string name='Q_f315' translatable='false'>f315</string>
+    <string name='Q_f316' translatable='false'>f316</string>
     <string name='Q_f31301' translatable='false'>f31301</string>
     <string name='Q_f31301t1' translatable='false'>f31301t1</string>
     <string name='Q_f31301t2' translatable='false'>f31301t2</string>

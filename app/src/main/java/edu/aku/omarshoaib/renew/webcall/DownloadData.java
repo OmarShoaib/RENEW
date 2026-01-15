@@ -35,6 +35,7 @@ import edu.aku.omarshoaib.renew.model.DPortal;
 import edu.aku.omarshoaib.renew.model.HCF;
 import edu.aku.omarshoaib.renew.model.SyncModel;
 import edu.aku.omarshoaib.renew.model.User;
+import edu.aku.omarshoaib.renew.model.VPHQ9;
 import edu.aku.omarshoaib.renew.webcall.web_client.CryptoUtil;
 import edu.aku.omarshoaib.renew.webcall.web_client.WebAPI;
 import edu.aku.omarshoaib.renew.webcall.web_client.WebCall;
@@ -72,6 +73,7 @@ public class DownloadData {
         /* APP CODE STARTS FROM HERE */
         add(Cluster.TABLE_NAME);
         add(HCF.TABLE_NAME);
+        add(VPHQ9.TABLE_NAME);
     }};
 
     /**
@@ -131,11 +133,14 @@ public class DownloadData {
 
             /* APP CODE STARTS FROM HERE */
 
-            SyncModel s1 = new SyncModel(DT_AFTER_LOGIN.get(2), select, filter + "AND dist_id = " + MainApp.user.getDistId(), check);
+            SyncModel s1 = new SyncModel(DT_AFTER_LOGIN.get(2), select, filter + /*"AND dist_id = " + MainApp.user.getDistId()*/ "", check);
             webCall.call(webAPI.downloadEncData(CryptoUtil.encrypt(gson.toJson(s1))), AppConstants.DOWNLOAD_DATA, DT_AFTER_LOGIN.get(2), ++index, 0, IS_CALL_ENCRYPTED);
 
             SyncModel s2 = new SyncModel(DT_AFTER_LOGIN.get(3), select, "" + " dist_id = " + MainApp.user.getDistId(), check);
             webCall.call(webAPI.downloadEncData(CryptoUtil.encrypt(gson.toJson(s2))), AppConstants.DOWNLOAD_DATA, DT_AFTER_LOGIN.get(3), ++index, 0, IS_CALL_ENCRYPTED);
+
+            SyncModel s3 = new SyncModel(DT_AFTER_LOGIN.get(4), select, "" /*+ " dist_id = " + MainApp.user.getDistId()*/, check);
+            webCall.call(webAPI.downloadEncData(CryptoUtil.encrypt(gson.toJson(s3))), AppConstants.DOWNLOAD_DATA, DT_AFTER_LOGIN.get(4), ++index, 0, IS_CALL_ENCRYPTED);
         }
     }
 
@@ -288,6 +293,15 @@ public class DownloadData {
 
                 // Clear and Add data to db
                 appDatabase.hcfDao().reinsert(hcfs);
+            } else if (tag.equals(VPHQ9.TABLE_NAME)) {
+                VPHQ9[] vhq9Views = gson.fromJson(jsonResponse, VPHQ9[].class);
+                // Update sync list view
+                SyncModel syncModel = getUpdatedSyncDownloadItem(activity, syncTablesList.get(index), vhq9Views.length, AppConstants.RESPONSE_SUCCESS, null);
+                syncTablesList.set(index, syncModel);
+                syncAdapter.notifyItemChanged(index);
+
+                // Clear and Add data to db
+                appDatabase.vphq9Dao().reinsert(vhq9Views);
             }
         }
 

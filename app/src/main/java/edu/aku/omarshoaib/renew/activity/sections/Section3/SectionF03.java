@@ -55,6 +55,8 @@ public class SectionF03 extends BaseActivity {
         sF3.setF301(MainApp.participant.getSF1().getF104());
         sF3.setF303(MainApp.participant.getSF1().getF105());
         sF3.setF304(MainApp.form1.getSF1().getF102());
+        bi.f304.setText(appDatabase.hcfDao().
+                getHcfbyCode(MainApp.form1.getSF1().getF102()).getHfName());
 //        sF3.setF305(MainApp.participant.getVillageName());
         sF3.setF306(MainApp.user.getFullName()+" - "+MainApp.user.getUserId());
         bi.f3dd.setMinDate(MainApp.form1.getSF1().getF103());
@@ -81,6 +83,7 @@ public class SectionF03 extends BaseActivity {
         if (!formValidation()) return;
         Form3.saveMainData(MainApp.form1.getScrId());
         MainApp.form3.setIStatus("1");
+        MainApp.form3.setPregnantWomanId(sF3.getF315());
         Form3.SF3.saveData(sF3);
         AppConstants.gotoActivity(activity, PregnantParticipantsAC.class, true);
     }

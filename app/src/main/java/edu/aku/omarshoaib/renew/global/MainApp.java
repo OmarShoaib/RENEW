@@ -19,6 +19,7 @@ import edu.aku.omarshoaib.renew.model.AppInfo;
 import edu.aku.omarshoaib.renew.model.Cluster;
 import edu.aku.omarshoaib.renew.model.Form1;
 import edu.aku.omarshoaib.renew.model.Form2;
+import edu.aku.omarshoaib.renew.model.Form2a;
 import edu.aku.omarshoaib.renew.model.Form3;
 import edu.aku.omarshoaib.renew.model.Form4;
 import edu.aku.omarshoaib.renew.model.Form5;
@@ -26,6 +27,7 @@ import edu.aku.omarshoaib.renew.model.Form6;
 import edu.aku.omarshoaib.renew.model.HCF;
 import edu.aku.omarshoaib.renew.model.Participant;
 import edu.aku.omarshoaib.renew.model.User;
+import edu.aku.omarshoaib.renew.model.VPHQ9;
 
 public class MainApp extends Application {
 
@@ -42,8 +44,10 @@ public class MainApp extends Application {
     public static Cluster selectedCluster;
     public static Form1 form1;
     public static Participant participant;
+    public static VPHQ9 vPHQ9;
     public static List<Participant> participantList;
     public static Form2 form2;
+    public static Form2a form2a;
     public static List<Form2> listForm2;
     public static Form3 form3;
     public static List<Form3> listForm3;
