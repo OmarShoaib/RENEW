@@ -101,6 +101,12 @@
         <activity
             android:name="edu.aku.omarshoaib.renew.activity.sections.Section2.PHQ9ParticipantsAC"
             android:exported="false" />
+        <activity
+            android:name="edu.aku.omarshoaib.renew.activity.sections.Section2.followup.Followup2aListAC"
+            android:exported="false" />
+        <activity
+            android:name="edu.aku.omarshoaib.renew.activity.sections.Section2.followup.SectionF02a"
+            android:exported="false" />
 
         <!-- SectionF03 -->
         <activity

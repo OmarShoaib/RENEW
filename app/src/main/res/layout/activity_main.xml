@@ -211,6 +211,73 @@
                             </RelativeLayout>
                         </androidx.cardview.widget.CardView>
 
+
+                        <!--FORM 02-->
+                        <androidx.cardview.widget.CardView
+                            style="@style/cardView"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            app:layout_columnWeight="1"
+                            android:visibility="@{module == 1 ? View.VISIBLE : View.GONE}" >
+
+                            <RelativeLayout
+                                android:id="@+id/option2a"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/white"
+                                android:onClick="@{callback::openForm}"
+                                android:padding="@dimen/_10sdp">
+
+                                <ImageView
+                                    android:id="@+id/siIV2a"
+                                    android:layout_width="@dimen/_15sdp"
+                                    android:layout_height="@dimen/_15sdp"
+                                    android:layout_centerVertical="true"
+                                    android:background="@drawable/ic_interview"
+                                    tools:ignore="ContentDescription" />
+
+                                <TextView
+                                    android:id="@+id/siTitleTV2a"
+                                    style="@style/Theme.AppStructure.BoldText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_8sdp"
+                                    android:layout_toStartOf="@+id/siArrowIV2a"
+                                    android:layout_toEndOf="@+id/siIV2a"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/f2at0"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/primary_color"
+                                    android:textSize="@dimen/_9ssp" />
+
+                                <TextView
+                                    android:id="@+id/siSubTitleTV2a"
+                                    style="@style/Theme.AppStructure.SmallRegularText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/siTitleTV2a"
+                                    android:layout_marginStart="@dimen/_8sdp"
+                                    android:layout_toStartOf="@+id/siArrowIV2a"
+                                    android:layout_toEndOf="@+id/siIV2a"
+                                    android:fontFamily="@font/roboto_regular"
+                                    android:gravity="center_vertical"
+                                    android:text="@string/start_interview"
+                                    android:textColor="@color/gray_dark" />
+
+                                <ImageView
+                                    android:id="@+id/siArrowIV2a"
+                                    android:layout_width="@dimen/_12sdp"
+                                    android:layout_height="@dimen/_12sdp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:background="@drawable/ic_item_right_arrow"
+                                    android:backgroundTint="@color/primary_color"
+                                    android:textColor="@color/secondary_color_accent"
+                                    tools:ignore="ContentDescription" />
+                            </RelativeLayout>
+                        </androidx.cardview.widget.CardView>
+
                         <!--FORM 03-->
                         <androidx.cardview.widget.CardView
                             style="@style/cardView"

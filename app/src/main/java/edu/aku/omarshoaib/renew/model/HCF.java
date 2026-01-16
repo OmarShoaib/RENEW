@@ -52,7 +52,7 @@ public class HCF {
     }
 
     public void setDistCode(String distCode) {
-        this.distCode = distCode;
+        this.distCode = distCode.trim();
     }
 
     public String getDistName() {
@@ -60,7 +60,7 @@ public class HCF {
     }
 
     public void setDistName(String distName) {
-        this.distName = distName;
+        this.distName = distName.trim();
     }
 
     public String getTehsilCode() {
@@ -68,7 +68,7 @@ public class HCF {
     }
 
     public void setTehsilCode(String tehsilCode) {
-        this.tehsilCode = tehsilCode;
+        this.tehsilCode = tehsilCode.trim();
     }
 
     public String getTehsilName() {
@@ -76,7 +76,7 @@ public class HCF {
     }
 
     public void setTehsilName(String tehsilName) {
-        this.tehsilName = tehsilName;
+        this.tehsilName = tehsilName.trim();
     }
 
     public String getUcCode() {
@@ -84,7 +84,7 @@ public class HCF {
     }
 
     public void setUcCode(String ucCode) {
-        this.ucCode = ucCode;
+        this.ucCode = ucCode.trim();
     }
 
     public String getUcName() {
@@ -92,7 +92,7 @@ public class HCF {
     }
 
     public void setUcName(String ucName) {
-        this.ucName = ucName;
+        this.ucName = ucName.trim();
     }
 
     public String getHfCode() {
@@ -100,7 +100,7 @@ public class HCF {
     }
 
     public void setHfCode(String hfCode) {
-        this.hfCode = hfCode;
+        this.hfCode = hfCode.trim();
     }
 
     public String getHfName() {
@@ -108,7 +108,7 @@ public class HCF {
     }
 
     public void setHfName(String hfName) {
-        this.hfName = hfName;
+        this.hfName = hfName.trim();
     }
 
     @NonNull

@@ -323,6 +323,7 @@
     <string name="rupees"> Rupees </string>
     <string name="num"> Number </string>
     <string name="name"> Name </string>
+    <string name="pid">Participant Id</string>
     <string name="contactnum">Contact Number </string>
     <string name="checkHHpresent"> The name of head of the household corresponds to the line listing data.</string>
     <string name="newHHheadname"> Name of new head of the household </string>
@@ -444,6 +445,7 @@
 
     <!-- Form 02a: Mental Health Assessment (PHQ-9) Questionnaire Screening of WRA, adolescents,
          and pregnant women for depression symptoms by Psychologist. -->
+    <string name="f2at0">Form 2a :</string>
     <string name="t2at1">Form 02a: Mental Health Assessment (PHQ–9) QuestionnaireScreening of WRA, adolescents, and pregnant women for depression symptoms by Psychologist</string>
     <string name="t2at2">Section A: Baseline Information</string>
     <string name="f2a01">Participant Id</string>
@@ -502,7 +504,7 @@
     <string name="f2b0803">More than half the days</string>
     <string name="f2b0804">Nearly every day</string>
     <string name="f2b09">Thoughts that you would be better off dead or of hurting yourself</string>
-    <string name="f2b090">Not at all</string>
+    <string name="f2b0901">Not at all</string>
     <string name="f2b0902">Several days</string>
     <string name="f2b0903">More than half the days</string>
     <string name="f2b0904">Nearly every day</string>
@@ -531,6 +533,132 @@
     <string name="f2c0401">Date</string>
     <string name="f2c0402">Not Applicable</string>
 
+    <!-- Form 02b: Follow-up of Referral -->
+    <string name="t02b">Follow–up of Referral</string>
+    <string name="f02b01">Participnat Id</string>
+    <string name="f02b02">Participant name</string>
+    <string name="f02b03">Husband/Father name</string>
+    <string name="f02b04">Age (Years)</string>
+    <string name="f02b05">Contact Number of Respondent</string>
+    <string name="f02b06">Healthcare Facility Catchment</string>
+    <string name="f02b07">Village/address</string>
+    <string name="f02b08">Date of screening by Psychologist:</string>
+    <string name="f02b09">PHQ–9 score at Screening by Psychologist:</string>
+    <string name="f02b10">Date of Feedback Call</string>
+    <string name="f02b11">Time of Call</string>
+    <string name="f02b12">Call Conducted by (Psychologist Name &amp; Code):</string>
+    <string name="f02b13">Did the woman reach the referred facility?</string>
+    <string name="f02b1301">Yes</string>
+    <string name="f02b1302">No</string>
+    <string name="f02b14">Reason for not visiting:</string>
+    <string name="f02b1401">Transport issue</string>
+    <string name="f02b1402">Financial issue</string>
+    <string name="f02b1403">Family refusal</string>
+    <string name="f02b1404">Felt better</string>
+    <string name="f02b1496">Other</string>
+    <string name="f02b15">Action Taken</string>
+    <string name="f02b1501">Counseled again</string>
+    <string name="f02b1502">Re–referred</string>
+    <string name="f02b1503">Escalated to supervisor</string>
+
+    <!-- Form03a: High Risk Pregnancy Assessment Form (Validation by Doctor) -->
+
+    <string name="t3a1">Form03a</string>
+    <string name="t3a1b">High Risk Pregnancy Assessment Form (Validation by Doctor)</string>
+    <string name="f3a01">PW–ID</string>
+    <string name="f3a02">Participant name</string>
+    <string name="f3a03">Husband/Father name</string>
+    <string name="f3a04">Age (Years)</string>
+    <string name="f3a05">Contact Number of Respondent</string>
+    <string name="f3a06">Healthcare Facility Catchment</string>
+    <string name="f3a07">Village/address</string>
+    <string name="f3a08">Screening performed by Doctor name and code</string>
+    <string name="f3a09">Date of screening</string>
+    <string name="f3a10">Written consent granted</string>
+    <string name="f3a1001">Yes</string>
+    <string name="f3a1002">No</string>
+    <string name="f3a11">Pregnancy trimester</string>
+    <string name="f3a1101">1st trimster</string>
+    <string name="f3a1102">2nd trimster</string>
+    <string name="f3a1103">3rd trimster</string>
+    <string name="f3a12">EDD if available</string>
+    <string name="f3a13">HB</string>
+    <string name="f3a1301">reading</string>
+    <string name="f3a1302">Refused</string>
+    <string name="f3a1396">others</string>
+    <string name="f3a14">MMS Provided</string>
+    <string name="f3a1401">Yes</string>
+    <string name="f3a1402">No</string>
+    <string name="f3a1403">Already provided</string>
+    <string name="f3a1497">Refused to take</string>
+    <string name="f3a1496">Other</string>
+    <string name="f3a15">IFA prvided</string>
+    <string name="f3a1501">Yes</string>
+    <string name="f3a1502">No</string>
+    <string name="f3a1503">Already provided</string>
+    <string name="f3a1597">Refused to take</string>
+    <string name="f3a1596">Other</string>
+    <string name="t3a2">Danger Signs in Pregnancy (Antenatal Period)</string>
+    <string name="t3a3">Danger Sign</string>
+    <string name="f3a1601">Severe vaginal bleeding</string>
+    <string name="f3a1601t1">Threatened or actual miscarriage, placental abruption, or previa</string>
+    <string name="f3a1602t2">Immediate referral to nearest health facility</string>
+    <string name="f3a1602">Swelling of hands, face, or entire body</string>
+    <string name="f3a1602t1">Possible pre–eclampsia</string>
+    <string name="f3a1602t2">Refer for urgent evaluation</string>
+    <string name="f3a1603">Severe headache with blurred vision</string>
+    <string name="f3a1603t1">Signs of pre–eclampsia/eclampsia</string>
+    <string name="f3a1603t2">Immediate referral</string>
+    <string name="f3a1604">Convulsions or fits</string>
+    <string name="f3a1604t1">Eclampsia (life–threatening)</string>
+    <string name="f3a1604t2">Immediate referral/emergency transport</string>
+    <string name="f3a1605">Severe abdominal pain</string>
+    <string name="f3a1605t1">Possible ectopic pregnancy, abruption, or preterm labor</string>
+    <string name="f3a1605t2">Refer urgently</string>
+    <string name="f3a1606">High fever (≥38°C)</string>
+    <string name="f3a1606t1">Infection (e.g., malaria, sepsis)</string>
+    <string name="f3a1606t2">Refer for clinical management</string>
+    <string name="f3a1607">Painful or burning urination</string>
+    <string name="f3a1607t1">Urinary tract infection (risk of preterm labor)</string>
+    <string name="f3a1607t2">Refer for clinical management</string>
+    <string name="f3a1608">Reduced or absent fetal movement after 6 months gestation</string>
+    <string name="f3a1608t1">Possible fetal distress or intrauterine death</string>
+    <string name="f3a1608t2">Refer immediately</string>
+    <string name="f3a1609">Difficulty breathing or chest pain</string>
+    <string name="f3a1609t1">Cardiopulmonary risk, anemia, or infection</string>
+    <string name="f3a1609t2">Immediate referral</string>
+    <string name="f3a1610">Pallor or fatigue with fast breathing</string>
+    <string name="f3a1610t1">Severe anemia</string>
+    <string name="f3a1610t2">Urgent evaluation and treatment</string>
+    <string name="f3a1611">Watery discharge before 37 weeks</string>
+    <string name="f3a1611t1">Preterm premature rupture of membranes (PPROM)</string>
+    <string name="f3a1611t2">Refer urgently</string>
+    <string name="f3a17">No danger sign</string>
+    <string name="t3a01">Follow–up Details</string>
+    <string name="f03a01">Date of Feedback Call</string>
+    <string name="f03a02">Time of Call</string>
+    <string name="f03a03">Respondent on Call:</string>
+    <string name="f03a0301">Pregnant woman</string>
+    <string name="f03a0302">Husband</string>
+    <string name="f03a0303">Mother–in–law</string>
+    <string name="f03a0396">Other:</string>
+    <string name="f03a04">Did the woman reach the referred facility</string>
+    <string name="f03a0401">Yes</string>
+    <string name="f03a0402">No</string>
+    <string name="f03a05">Which health facility did the woman visit?</string>
+    <string name="f03a0501">BHU</string>
+    <string name="f03a0502">RHC</string>
+    <string name="f03a0503">DHQ/THQ</string>
+    <string name="f03a06">Reason for not visiting:</string>
+    <string name="f03a0601">Transport issue</string>
+    <string name="f03a0602">Financial issue</string>
+    <string name="f03a0603">Family refusal</string>
+    <string name="f03a0604">Felt better</string>
+    <string name="f03a0696">Other:</string>
+    <string name="f03a07">Action Taken</string>
+    <string name="f03a0701">Counseled again</string>
+    <string name="f03a0702">Re–referred</string>
+    <string name="f03a0703">Escalated to supervisor</string>
 
     <!-- High Risk Pregnancy Assessment Form1 -->
     <string name="f3t0">Form 03 :</string>
@@ -840,6 +968,63 @@
     <string name='Q_t2bt3' translatable='false'>t2bt3</string>
     <string name='Q_t2ct4' translatable='false'>t2ct4</string>
 
+    <string name='Q_f02b01' translatable='false'>f02b01</string>
+    <string name='Q_f02b02' translatable='false'>f02b02</string>
+    <string name='Q_f02b03' translatable='false'>f02b03</string>
+    <string name='Q_f02b04' translatable='false'>f02b04</string>
+    <string name='Q_f02b05' translatable='false'>f02b05</string>
+    <string name='Q_f02b06' translatable='false'>f02b06</string>
+    <string name='Q_f02b07' translatable='false'>f02b07</string>
+    <string name='Q_f02b08' translatable='false'>f02b08</string>
+    <string name='Q_f02b09' translatable='false'>f02b09</string>
+    <string name='Q_f02b10' translatable='false'>f02b10</string>
+    <string name='Q_f02b11' translatable='false'>f02b11</string>
+    <string name='Q_f02b12' translatable='false'>f02b12</string>
+    <string name='Q_f02b13' translatable='false'>f02b13</string>
+    <string name='Q_f02b14' translatable='false'>f02b14</string>
+    <string name='Q_f02b15' translatable='false'>f02b15</string>
+    <string name='Q_t02b' translatable='false'>t02b</string>
+
+    <string name='Q_f03a01' translatable='false'>f03a01</string>
+    <string name='Q_f03a02' translatable='false'>f03a02</string>
+    <string name='Q_f03a03' translatable='false'>f03a03</string>
+    <string name='Q_f03a04' translatable='false'>f03a04</string>
+    <string name='Q_f03a05' translatable='false'>f03a05</string>
+    <string name='Q_f03a06' translatable='false'>f03a06</string>
+    <string name='Q_f03a07' translatable='false'>f03a07</string>
+    <string name='Q_f3a01' translatable='false'>f3a01</string>
+    <string name='Q_f3a02' translatable='false'>f3a02</string>
+    <string name='Q_f3a03' translatable='false'>f3a03</string>
+    <string name='Q_f3a04' translatable='false'>f3a04</string>
+    <string name='Q_f3a05' translatable='false'>f3a05</string>
+    <string name='Q_f3a06' translatable='false'>f3a06</string>
+    <string name='Q_f3a07' translatable='false'>f3a07</string>
+    <string name='Q_f3a08' translatable='false'>f3a08</string>
+    <string name='Q_f3a09' translatable='false'>f3a09</string>
+    <string name='Q_f3a10' translatable='false'>f3a10</string>
+    <string name='Q_f3a11' translatable='false'>f3a11</string>
+    <string name='Q_f3a12' translatable='false'>f3a12</string>
+    <string name='Q_f3a13' translatable='false'>f3a13</string>
+    <string name='Q_f3a14' translatable='false'>f3a14</string>
+    <string name='Q_f3a15' translatable='false'>f3a15</string>
+    <string name='Q_f3a1601' translatable='false'>f3a1601</string>
+    <string name='Q_f3a1602' translatable='false'>f3a1602</string>
+    <string name='Q_f3a1603' translatable='false'>f3a1603</string>
+    <string name='Q_f3a1604' translatable='false'>f3a1604</string>
+    <string name='Q_f3a1605' translatable='false'>f3a1605</string>
+    <string name='Q_f3a1606' translatable='false'>f3a1606</string>
+    <string name='Q_f3a1607' translatable='false'>f3a1607</string>
+    <string name='Q_f3a1608' translatable='false'>f3a1608</string>
+    <string name='Q_f3a1609' translatable='false'>f3a1609</string>
+    <string name='Q_f3a1610' translatable='false'>f3a1610</string>
+    <string name='Q_f3a1611' translatable='false'>f3a1611</string>
+    <string name='Q_f3a17' translatable='false'>f3a17</string>
+    <string name='Q_t3a01' translatable='false'>t3a01</string>
+    <string name='Q_t3a1' translatable='false'>t3a1</string>
+    <string name='Q_t3a2' translatable='false'>t3a2</string>
+    <string name='Q_t3a3' translatable='false'>t3a3</string>
+
+
     <string name='Q_f031307t2' translatable='false'>f031307t2</string>
     <string name='Q_f301' translatable='false'>f301</string>
     <string name='Q_f302' translatable='false'>f302</string>
@@ -972,5 +1157,7 @@
     <string name="eligible_participant_list">Eligible Participant List</string>
     <string name="scr_id_not_found">Inalid Sreening Id</string>
     <string name="no_eligible_participants">No Eligible Partiipants</string>
+    <string name="select_search_type">Please Select search type</string>
+    <string name="search_by_pid">Search value by Participant Id</string>
 
 </resources>

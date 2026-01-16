@@ -29,6 +29,7 @@ import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.model.EntryLog;
 import edu.aku.omarshoaib.renew.model.Form1;
 import edu.aku.omarshoaib.renew.model.Form2;
+import edu.aku.omarshoaib.renew.model.Form2a;
 import edu.aku.omarshoaib.renew.model.Form3;
 import edu.aku.omarshoaib.renew.model.Form4;
 import edu.aku.omarshoaib.renew.model.Form5;
@@ -70,6 +71,7 @@ public class UploadData {
             put(new SyncModel(Form3.class, MainApp.MODULE_FORM, Form3.TABLE_NAME, Form3.SECTION_NAME), true);
             put(new SyncModel(Form4.class, MainApp.MODULE_FORM, Form4.TABLE_NAME, Form4.SECTION_NAME), true);
             put(new SyncModel(Form5.class, MainApp.MODULE_FORM, Form5.TABLE_NAME, Form5.SECTION_NAME), true);
+            put(new SyncModel(Form2a.class, MainApp.MODULE_FORM, Form2a.TABLE_NAME, Form2a.SECTION_NAME), true);
         }};
     }
 
@@ -209,6 +211,16 @@ public class UploadData {
         if (list5 != null && !list5.isEmpty()) {
             postData = prepareUploadData(tableName, gson.toJson(list5));
             webCall.call(webAPI.uploadEncData(postData), AppConstants.UPLOAD_DATA, tableName, ++index, list5.size(), iFormCompletedUIds, IS_CALL_ENCRYPTED);
+        } else
+            iWebCallback.onFailure(tableName, activity.getString(R.string.no_new_records_to_upload), ++index, 0, null);
+
+        // Form2a
+        iFormCompletedUIds = uIdsHM.get(Form2a.TABLE_NAME);
+        tableName = ((SyncModel) UPLOAD_TABLES.keySet().toArray()[6]).getTable();
+        List<Form2a> list2a = appDatabase.form2aDao().getAllUnSyncedDataByUIds(iFormCompletedUIds);
+        if (list2a != null && !list2a.isEmpty()) {
+            postData = prepareUploadData(tableName, gson.toJson(list2a));
+            webCall.call(webAPI.uploadEncData(postData), AppConstants.UPLOAD_DATA, tableName, ++index, list2a.size(), iFormCompletedUIds, IS_CALL_ENCRYPTED);
         } else
             iWebCallback.onFailure(tableName, activity.getString(R.string.no_new_records_to_upload), ++index, 0, null);
 

@@ -33,9 +33,6 @@ public class Form2a extends FormBaseModel{
     @SerializedName("village_name")
     private String villageName = _EMPTY_;
 
-    @SerializedName("_uuid")
-    private String uuId = _EMPTY_;
-
     @SerializedName("participant_id")
     private String participantId = _EMPTY_;
 
@@ -62,14 +59,14 @@ public class Form2a extends FormBaseModel{
     /*JSON OBJECTS*/
     private SF2a sF2a;
 
-    public Form2a() {
-    }
-
     // Init default data
     public static void initMeta() {
         // This is used to add record for the first time
         MainApp.form2a = new Form2a();
         MainApp.form2a.setDistrictCode(MainApp.user.getDistId());
+        MainApp.form2a.setVillageName(MainApp.vPHQ9.getVillageAddress());
+        MainApp.form2a.setParticipantId(MainApp.vPHQ9.getParticipantId());
+
 //        MainApp.form2a.setScrId(MainApp.form1.getScrId());
 //        MainApp.form2a.setVillageName(MainApp.form1.getVillageName());
 //        MainApp.form2a.setUuId(MainApp.participant.getUid());
@@ -103,14 +100,6 @@ public class Form2a extends FormBaseModel{
 
     public void setVillageName(String villageName) {
         this.villageName = villageName;
-    }
-
-    public String getUuId() {
-        return uuId;
-    }
-
-    public void setUuId(String uuId) {
-        this.uuId = uuId;
     }
 
     public String getParticipantId() {
@@ -180,6 +169,7 @@ public class Form2a extends FormBaseModel{
         private String f2c02 = _EMPTY_;
         private String f2c03 = _EMPTY_;
         private String f2c04 = _EMPTY_;
+        private String f2c0401x = _EMPTY_;
 
         public static class DataConverter extends AppDatabase.BaseConverter<SF2a> {
             public DataConverter() {
@@ -345,6 +335,7 @@ public class Form2a extends FormBaseModel{
 
         public void setF2b01(String f2b01) {
             this.f2b01 = f2b01;
+            calculateF209();
             notifyPropertyChanged(BR.f2b01);
         }
 
@@ -355,6 +346,7 @@ public class Form2a extends FormBaseModel{
 
         public void setF2b02(String f2b02) {
             this.f2b02 = f2b02;
+            calculateF209();
             notifyPropertyChanged(BR.f2b02);
         }
 
@@ -365,6 +357,7 @@ public class Form2a extends FormBaseModel{
 
         public void setF2b03(String f2b03) {
             this.f2b03 = f2b03;
+            calculateF209();
             notifyPropertyChanged(BR.f2b03);
         }
 
@@ -375,6 +368,7 @@ public class Form2a extends FormBaseModel{
 
         public void setF2b04(String f2b04) {
             this.f2b04 = f2b04;
+            calculateF209();
             notifyPropertyChanged(BR.f2b04);
         }
 
@@ -385,6 +379,7 @@ public class Form2a extends FormBaseModel{
 
         public void setF2b05(String f2b05) {
             this.f2b05 = f2b05;
+            calculateF209();
             notifyPropertyChanged(BR.f2b05);
         }
 
@@ -395,6 +390,7 @@ public class Form2a extends FormBaseModel{
 
         public void setF2b06(String f2b06) {
             this.f2b06 = f2b06;
+            calculateF209();
             notifyPropertyChanged(BR.f2b06);
         }
 
@@ -405,6 +401,7 @@ public class Form2a extends FormBaseModel{
 
         public void setF2b07(String f2b07) {
             this.f2b07 = f2b07;
+            calculateF209();
             notifyPropertyChanged(BR.f2b07);
         }
 
@@ -415,6 +412,7 @@ public class Form2a extends FormBaseModel{
 
         public void setF2b08(String f2b08) {
             this.f2b08 = f2b08;
+            calculateF209();
             notifyPropertyChanged(BR.f2b08);
         }
 
@@ -425,7 +423,43 @@ public class Form2a extends FormBaseModel{
 
         public void setF2b09(String f2b09) {
             this.f2b09 = f2b09;
+            calculateF209();
             notifyPropertyChanged(BR.f2b09);
+        }
+
+        private void calculateF209() {
+            int sum = 0;
+            boolean hasAnyValue = false;
+
+            String[] fields = {f2b01, f2b02, f2b03, f2b04, f2b05,
+                    f2b06, f2b07, f2b08, f2b09};
+
+            for (String field : fields) {
+                if (!field.isEmpty()) {  // or !field.equals(_EMPTY_)
+                    hasAnyValue = true;
+                    try {
+                        sum += (Integer.parseInt(field.trim()) - 1);
+                    } catch (NumberFormatException e) {}
+                }
+            }
+            setF2b10(hasAnyValue ? String.valueOf(sum) : _EMPTY_);
+        }
+
+        private String getSeverityLevel() {
+            if (f2b10.equals(_EMPTY_) || f2b10.trim().isEmpty()) return _EMPTY_;
+
+            try {
+                int score = Integer.parseInt(f2b10);
+
+                if (score >= 0 && score <= 4)        return "1";
+                else if (score >=  5 && score <=  9) return "2";
+                else if (score >= 10 && score <= 14) return "3";
+                else if (score >= 15 && score <= 19) return "4";
+                else if (score >= 20 && score <= 27) return "5";
+            } catch (NumberFormatException e) {
+                return _EMPTY_; // or "Invalid"
+            }
+            return _EMPTY_;
         }
 
         @Bindable
@@ -435,6 +469,7 @@ public class Form2a extends FormBaseModel{
 
         public void setF2b10(String f2b10) {
             this.f2b10 = f2b10;
+            setF2b11(getSeverityLevel());
             notifyPropertyChanged(BR.f2b10);
         }
 
@@ -496,6 +531,16 @@ public class Form2a extends FormBaseModel{
         public void setF2c04(String f2c04) {
             this.f2c04 = f2c04;
             notifyPropertyChanged(BR.f2c04);
+        }
+
+        @Bindable
+        public String getF2c0401x() {
+            return f2c0401x;
+        }
+
+        public void setF2c0401x(String f2c0401x) {
+            this.f2c0401x = f2c0401x;
+            notifyPropertyChanged(BR.f2c0401x);
         }
     }
 }

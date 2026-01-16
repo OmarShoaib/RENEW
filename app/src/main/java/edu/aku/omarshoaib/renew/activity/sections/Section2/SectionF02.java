@@ -17,6 +17,7 @@ import edu.aku.omarshoaib.renew.databinding.ActivitySectionF02Binding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.model.Form2;
+import edu.aku.omarshoaib.renew.model.HCF;
 
 public class SectionF02 extends BaseActivity {
 
@@ -50,7 +51,8 @@ public class SectionF02 extends BaseActivity {
 //        String hcfCode = MainApp.form1.getSF1().getF102();
 //        String hcfName = appDatabase.hcfDao().getHcfCodeByName(hcfCode).toString();
         sF2.setF204(MainApp.form1.getSF1().getF102());
-        bi.f204.setText(appDatabase.hcfDao().getHcfbyCode(MainApp.form1.getSF1().getF102()).getHfName());
+        HCF hcf = appDatabase.hcfDao().getHcfbyCode(MainApp.form1.getSF1().getF102());
+        bi.f204.setText(hcf == null ? "" : hcf.getHfName());
         sF2.setF205(MainApp.participant.getVillageName());
         sF2.setF206(MainApp.user.getFullName()+" - "+MainApp.user.getUserId());
         bi.f207.setMinDate(MainApp.form1.getSF1().getF103());
