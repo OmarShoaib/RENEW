@@ -55,9 +55,6 @@ public class Form2b extends FormBaseModel{
     public String gPerm = GPSLocation.GPS_PERMISSION;
     public String gAvail = GPSLocation.GPS_AVAILABLE;*/
 
-    /*JSON OBJECTS*/
-    private Form2a.SF2a sF2a;
-
     // Init default data
     public static void initMeta() {
         // This is used to add record for the first time
@@ -124,6 +121,7 @@ public class Form2b extends FormBaseModel{
         isFormCompleteOnce = formCompleteOnce;
     }
 
+    /*JSON OBJECTS*/
     private SF2b sF2b;
 
     public SF2b getSF2b() {

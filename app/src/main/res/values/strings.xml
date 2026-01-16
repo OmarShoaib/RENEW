@@ -602,7 +602,7 @@
     <string name="t3a3">Danger Sign</string>
     <string name="f3a1601">Severe vaginal bleeding</string>
     <string name="f3a1601t1">Threatened or actual miscarriage, placental abruption, or previa</string>
-    <string name="f3a1602t2">Immediate referral to nearest health facility</string>
+<!--    <string name="f3a1602t2">Immediate referral to nearest health facility</string>-->
     <string name="f3a1602">Swelling of hands, face, or entire body</string>
     <string name="f3a1602t1">Possible pre–eclampsia</string>
     <string name="f3a1602t2">Refer for urgent evaluation</string>
