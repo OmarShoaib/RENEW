@@ -530,6 +530,7 @@ public class Form2a extends FormBaseModel{
 
         public void setF2c04(String f2c04) {
             this.f2c04 = f2c04;
+            setF2c0401x(f2c04.equals("1") ? this.f2c0401x : _EMPTY_);
             notifyPropertyChanged(BR.f2c04);
         }
 

@@ -476,6 +476,8 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
+                            android:enabled="false"
+                            android:textColor="@color/red_color"
                             android:hint="@string/date_format"
                             app:dateFormat="@string/date_format"
                             android:text="@={form.f2a11}"
@@ -1658,6 +1660,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
+                                android:enabled="@{form.f2c04.equals(`1`)}"
                                 android:gravity="center"
                                 android:hint="@string/date_format"
                                 android:tag="f2c0401"
@@ -1667,6 +1670,7 @@
                                 app:minDate="CR_DATE" />
 
                             <RadioButton
+                                style="@style/dont_know"
                                 android:id="@+id/f2c0402"
                                 android:text="@string/f2c0402"
                                 android:layout_width="0dp"

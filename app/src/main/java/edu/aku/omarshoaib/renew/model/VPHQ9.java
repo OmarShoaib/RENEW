@@ -43,6 +43,9 @@ public class VPHQ9 {
     @SerializedName("phq9_score")
     private String phq9Score;
 
+    @SerializedName("ref_date")
+    private String refrenceDate;
+
     public long getId() {
         return id;
     }
@@ -56,7 +59,7 @@ public class VPHQ9 {
     }
 
     public void setParticipantId(String participantId) {
-        this.participantId = participantId;
+        this.participantId = participantId.trim();
     }
 
     public String getParticipantName() {
@@ -64,7 +67,7 @@ public class VPHQ9 {
     }
 
     public void setParticipantName(String participantName) {
-        this.participantName = participantName;
+        this.participantName = participantName.trim();
     }
 
     public String getFatherName() {
@@ -72,7 +75,7 @@ public class VPHQ9 {
     }
 
     public void setFatherName(String fatherName) {
-        this.fatherName = fatherName;
+        this.fatherName = fatherName.trim();
     }
 
     public String getAge() {
@@ -80,7 +83,7 @@ public class VPHQ9 {
     }
 
     public void setAge(String age) {
-        this.age = age;
+        this.age = age.trim();
     }
 
     public String getContactNumber() {
@@ -88,7 +91,7 @@ public class VPHQ9 {
     }
 
     public void setContactNumber(String contactNumber) {
-        this.contactNumber = contactNumber;
+        this.contactNumber = contactNumber.trim();
     }
 
     public String getHcfId() {
@@ -96,7 +99,7 @@ public class VPHQ9 {
     }
 
     public void setHcfId(String hcfId) {
-        this.hcfId = hcfId;
+        this.hcfId = hcfId.trim();
     }
 
     public String getVillageAddress() {
@@ -104,7 +107,7 @@ public class VPHQ9 {
     }
 
     public void setVillageAddress(String villageAddress) {
-        this.villageAddress = villageAddress;
+        this.villageAddress = villageAddress.trim();
     }
 
     public String getEnteryUser() {
@@ -112,7 +115,7 @@ public class VPHQ9 {
     }
 
     public void setEnteryUser(String enteryUser) {
-        this.enteryUser = enteryUser;
+        this.enteryUser = enteryUser.trim();
     }
 
     public String getScreeningDate() {
@@ -120,7 +123,7 @@ public class VPHQ9 {
     }
 
     public void setScreeningDate(String screeningDate) {
-        this.screeningDate = screeningDate;
+        this.screeningDate = screeningDate.trim();
     }
 
     public String getPhq9Score() {
@@ -128,6 +131,14 @@ public class VPHQ9 {
     }
 
     public void setPhq9Score(String phq9Score) {
-        this.phq9Score = phq9Score;
+        this.phq9Score = phq9Score.trim();
+    }
+
+    public String getRefrenceDate() {
+        return refrenceDate;
+    }
+
+    public void setRefrenceDate(String refrenceDate) {
+        this.refrenceDate = refrenceDate.trim();
     }
 }

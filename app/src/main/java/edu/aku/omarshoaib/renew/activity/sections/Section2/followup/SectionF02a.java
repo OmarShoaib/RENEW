@@ -60,6 +60,7 @@ public class SectionF02a extends BaseActivity {
         sF2a.setF2a08(MainApp.vPHQ9.getEnteryUser());
         sF2a.setF2a09(MainApp.vPHQ9.getScreeningDate());
         sF2a.setF2a10(MainApp.vPHQ9.getPhq9Score());
+        sF2a.setF2a11(MainApp.vPHQ9.getRefrenceDate());
 
     }
 

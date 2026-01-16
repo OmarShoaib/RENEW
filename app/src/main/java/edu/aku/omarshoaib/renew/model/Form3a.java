@@ -63,10 +63,6 @@ public class Form3a extends FormBaseModel {
         MainApp.form3a.setDistrictCode(MainApp.user.getDistId());
         MainApp.form3a.setVillageName(MainApp.vPHQ9.getVillageAddress());
         MainApp.form3a.setParticipantId(MainApp.vPHQ9.getParticipantId());
-
-//        MainApp.form2a.setScrId(MainApp.form1.getScrId());
-//        MainApp.form2a.setVillageName(MainApp.form1.getVillageName());
-//        MainApp.form2a.setUuId(MainApp.participant.getUid());
     }
 
     /*FOR IDENTIFICATION INFORMATION - CLUSTER-WISE*/
