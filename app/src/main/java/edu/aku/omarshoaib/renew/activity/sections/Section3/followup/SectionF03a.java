@@ -73,16 +73,16 @@ public class SectionF03a extends BaseActivity {
         Form3a.saveMainData(MainApp.form3a.getParticipantId());
         MainApp.form3a.setIStatus("1");
         Form3a.SF3a.saveData(sF3a);
-        AppConstants.gotoActivity(activity, Followup3aListAC.class, true);
+//        AppConstants.gotoActivity(activity, Followup3aListAC.class, true);
     }
 
     public void btnEnd(View view) {
-        AppConstants.checkDoubleCancelPress(activity, Followup2aListAC.class);
+//        AppConstants.checkDoubleCancelPress(activity, Followup2aListAC.class);
     }
 
     @Override
     public void onBackPressed() {
-        AppConstants.checkDoubleBackPress(activity, Followup2aListAC.class);
+//        AppConstants.checkDoubleBackPress(activity, Followup2aListAC.class);
     }
 
 }
