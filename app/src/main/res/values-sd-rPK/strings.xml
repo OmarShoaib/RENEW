@@ -424,6 +424,7 @@
 
     <!-- Form 02a: Mental Health Assessment (PHQ-9) Questionnaire
     Screening of WRA, adolescents, and pregnant women for depression symptoms by Psychologist. -->
+    <string name="f2at0">Form 2a :</string>
     <string name="t2at1"></string>
     <string name="t2at2"></string>
     <string name="f2a01">شريڪ ڪندڙ جو شناختي نمبر</string>
@@ -440,6 +441,9 @@
     <string name="f2a12">ذهني ماهر جي فالو اپ جي تاريخ:</string>
     <string name="f2a13">ذهني ماهر جو نالو:</string>
     <string name="f2a14">سيشن جو نمبر</string>
+
+
+    <string name="f2bt0">Form 2b :</string>
     <string name="t2bt3">ماڻهن جي نفسياتي ماهر پاران ڊپريشن جي علامتن جو جائزو (PHQ–9)</string>
     <string name="f2b01">ڪنهن به ڪم ڪرڻ ۾ گهٽ دلچسپي يا خوشي محسوس نه ٿيڻ</string>
     <string name="f2b0101">بالڪل نه</string>
@@ -580,7 +584,7 @@
     <string name="t3a3">خطري جي نشاني</string>
     <string name="f3a1601">سخت خون وهڻ</string>
     <string name="f3a1601t1">خطرو يا اصل حمل ضايع ٿيڻ، پلاسينٽا جي الڳ ٿيڻ،</string>
-<!--    <string name="f3a1602t2">ويجهي صحت مرڪز ڏانهن فوري طور تي ريفرل</string>-->
+    <string name="f3a1601t2">ويجهي صحت مرڪز ڏانهن فوري طور تي ريفرل</string>
     <string name="f3a1602">هٿن، چهري، يا سڄي جسم جي سوڄ</string>
     <string name="f3a1602t1">پري ايڪلمپسيا جو امڪان</string>
     <string name="f3a1602t2">تڪڙي تشخيص لاءِ رجوع ڪريو</string>

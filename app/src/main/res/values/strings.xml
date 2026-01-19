@@ -462,6 +462,9 @@
     <string name="f2a12">Date of Psychologist Follow–up:</string>
     <string name="f2a13">Psychologist Name:</string>
     <string name="f2a14">Session Number:</string>
+
+
+    <string name="f2bt0">Form 2b :</string>
     <string name="t2bt3">Assessment of Depressive Symptoms by Psychologist  (PHQ–9)</string>
     <string name="f2b01">Little interest or pleasure in doing things</string>
     <string name="f2b0101">Not at all</string>
@@ -563,7 +566,7 @@
 
     <!-- Form03a: High Risk Pregnancy Assessment Form (Validation by Doctor) -->
 
-    <string name="t3a1">Form03a</string>
+    <string name="t3a1">Form03a :</string>
     <string name="t3a1b">High Risk Pregnancy Assessment Form (Validation by Doctor)</string>
     <string name="f3a01">PW–ID</string>
     <string name="f3a02">Participant name</string>
@@ -602,7 +605,7 @@
     <string name="t3a3">Danger Sign</string>
     <string name="f3a1601">Severe vaginal bleeding</string>
     <string name="f3a1601t1">Threatened or actual miscarriage, placental abruption, or previa</string>
-<!--    <string name="f3a1602t2">Immediate referral to nearest health facility</string>-->
+    <string name="f3a1601t2">Immediate referral to nearest health facility</string>
     <string name="f3a1602">Swelling of hands, face, or entire body</string>
     <string name="f3a1602t1">Possible pre–eclampsia</string>
     <string name="f3a1602t2">Refer for urgent evaluation</string>
@@ -1007,17 +1010,7 @@
     <string name='Q_f3a13' translatable='false'>f3a13</string>
     <string name='Q_f3a14' translatable='false'>f3a14</string>
     <string name='Q_f3a15' translatable='false'>f3a15</string>
-    <string name='Q_f3a1601' translatable='false'>f3a1601</string>
-    <string name='Q_f3a1602' translatable='false'>f3a1602</string>
-    <string name='Q_f3a1603' translatable='false'>f3a1603</string>
-    <string name='Q_f3a1604' translatable='false'>f3a1604</string>
-    <string name='Q_f3a1605' translatable='false'>f3a1605</string>
-    <string name='Q_f3a1606' translatable='false'>f3a1606</string>
-    <string name='Q_f3a1607' translatable='false'>f3a1607</string>
-    <string name='Q_f3a1608' translatable='false'>f3a1608</string>
-    <string name='Q_f3a1609' translatable='false'>f3a1609</string>
-    <string name='Q_f3a1610' translatable='false'>f3a1610</string>
-    <string name='Q_f3a1611' translatable='false'>f3a1611</string>
+    <string name='Q_f3a16' translatable='false'>f3a16</string>
     <string name='Q_f3a17' translatable='false'>f3a17</string>
     <string name='Q_t3a01' translatable='false'>t3a01</string>
     <string name='Q_t3a1' translatable='false'>t3a1</string>

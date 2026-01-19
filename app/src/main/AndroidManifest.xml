@@ -107,6 +107,12 @@
         <activity
             android:name="edu.aku.omarshoaib.renew.activity.sections.Section2.followup.SectionF02a"
             android:exported="false" />
+        <activity
+            android:name="edu.aku.omarshoaib.renew.activity.sections.Section2.followup.FollowUp2bListAC"
+            android:exported="false" />
+        <activity
+            android:name="edu.aku.omarshoaib.renew.activity.sections.Section2.followup.SectionF02b"
+            android:exported="false" />
 
         <!-- SectionF03 -->
         <activity
@@ -117,6 +123,12 @@
             android:exported="false" />
         <activity
             android:name="edu.aku.omarshoaib.renew.activity.sections.Section3.PregnantParticipantsAC"
+            android:exported="false" />
+        <activity
+            android:name="edu.aku.omarshoaib.renew.activity.sections.Section3.followup.Followup3aListAC"
+            android:exported="false" />
+        <activity
+            android:name="edu.aku.omarshoaib.renew.activity.sections.Section3.followup.SectionF03a"
             android:exported="false" />
 
         <!-- SectionF04 -->

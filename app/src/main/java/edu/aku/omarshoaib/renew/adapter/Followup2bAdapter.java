@@ -13,22 +13,22 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.aku.omarshoaib.renew.activity.sections.Section2.followup.SectionF02a;
+import edu.aku.omarshoaib.renew.activity.sections.Section2.followup.SectionF02b;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ItemFollowupBinding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.MainApp;
-import edu.aku.omarshoaib.renew.model.Form2a;
-import edu.aku.omarshoaib.renew.model.VPHQ9;
+import edu.aku.omarshoaib.renew.model.Form2b;
+import edu.aku.omarshoaib.renew.model.VForm2b;
 
-public class Followup2aAdapter extends RecyclerView.Adapter<Followup2aAdapter.ViewHolder> implements Filterable {
+public class Followup2bAdapter extends RecyclerView.Adapter<Followup2bAdapter.ViewHolder> implements Filterable {
 
     private final Activity activity;
-    private final List<VPHQ9> mainList;
-    private List<VPHQ9> filteredList;
+    private final List<VForm2b> mainList;
+    private List<VForm2b> filteredList;
     private int searchType = 1;
 
-    public Followup2aAdapter(Activity activity, List<VPHQ9> mainList) {
+    public Followup2bAdapter(Activity activity, List<VForm2b> mainList) {
         this.activity = activity;
         this.mainList = mainList;
         this.filteredList = new ArrayList<>(mainList);
@@ -45,43 +45,31 @@ public class Followup2aAdapter extends RecyclerView.Adapter<Followup2aAdapter.Vi
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public Followup2bAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ItemFollowupBinding itemView = ItemFollowupBinding.inflate(LayoutInflater.from(activity), parent, false);
         itemView.itemLayout.setOnClickListener(view -> {
             int pos = (int) view.getTag();
-            MainApp.vPHQ9 = filteredList.get(pos);
+            MainApp.vForm2b = filteredList.get(pos);
 //            if (MainApp.selectedMWRA.getStatus() != 3) {
-            Form2a form2a = AppDatabase.getDBInstance().form2aDao().getDataByParticipantId(MainApp.vPHQ9.getParticipantId());
-            if (form2a != null) MainApp.form2a = form2a;
-            else Form2a.initMeta();
-            AppConstants.gotoActivity(activity, SectionF02a.class, true);
+            Form2b form2b = AppDatabase.getDBInstance().form2bDao().getDataByParticipantId(MainApp.vForm2b.getParticipantId());
+            if (form2b != null) MainApp.form2b = form2b;
+            else Form2b.initMeta();
+            AppConstants.gotoActivity(activity, SectionF02b.class, true);
 //            } else
 //                AlertPopup.alert(activity, activity.getString(R.string.form_synced),
 //                        activity.getString(R.string.form_synced_desc), AppConstants.TYPE_SUCCESS);
         });
-        return new ViewHolder(itemView);
+        return new Followup2bAdapter.ViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull Followup2bAdapter.ViewHolder holder, int position) {
         ItemFollowupBinding bi = holder.binding;
-        VPHQ9 vphq9 = filteredList.get(position);
+        VForm2b vForm2b = filteredList.get(position);
         bi.itemLayout.setTag(position);
-        bi.memberNameTV.setText(vphq9.getParticipantName());
-        bi.pIdTV.setText(vphq9.getParticipantId());
-        bi.clusterNoTV.setText(vphq9.getScreeningDate());
-
-      /*if        (vphq9.getStatus() == 1) {
-            bi.statusIV.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(activity, R.color.info_color)));
-            bi.statusIV.setVisibility(View.VISIBLE);
-        } else if (vphq9.getStatus() == 2) {
-            bi.statusIV.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(activity, R.color.error_color)));
-            bi.statusIV.setVisibility(View.VISIBLE);
-        } else if (vphq9.getStatus() == 3) {
-            bi.statusIV.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(activity, R.color.success_color)));
-            bi.statusIV.setVisibility(View.VISIBLE);
-        } else
-            bi.statusIV.setVisibility(View.GONE);*/
+        bi.memberNameTV.setText(vForm2b.getParticipantName());
+        bi.pIdTV.setText(vForm2b.getParticipantId());
+        bi.clusterNoTV.setText(vForm2b.getScreeningDate());
     }
 
     @Override
@@ -100,13 +88,13 @@ public class Followup2aAdapter extends RecyclerView.Adapter<Followup2aAdapter.Vi
             @SuppressWarnings("unchecked")
             @Override
             protected void publishResults(CharSequence constraint, FilterResults results) {
-                filteredList = (List<VPHQ9>) results.values;
+                filteredList = (List<VForm2b>) results.values;
                 notifyDataSetChanged();
             }
 
             @Override
             protected FilterResults performFiltering(CharSequence constraint) {
-                List<VPHQ9> filteredResults;
+                List<VForm2b> filteredResults;
                 if (constraint.length() == 0) {
                     filteredResults = mainList;
                 } else {
@@ -121,10 +109,10 @@ public class Followup2aAdapter extends RecyclerView.Adapter<Followup2aAdapter.Vi
         };
     }
 
-    protected List<VPHQ9> getFilteredResults(String constraint) {
-        List<VPHQ9> results = new ArrayList<>();
+    protected List<VForm2b> getFilteredResults(String constraint) {
+        List<VForm2b> results = new ArrayList<>();
 
-        for (VPHQ9 item : mainList) {
+        for (VForm2b item : mainList) {
             if (searchType == 1) {
                 // Search by Name
                 if (item.getParticipantName().toLowerCase().contains(constraint))

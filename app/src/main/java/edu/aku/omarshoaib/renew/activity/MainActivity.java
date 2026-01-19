@@ -22,9 +22,11 @@ import java.io.File;
 import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.sections.Section1.Identification01;
 import edu.aku.omarshoaib.renew.activity.sections.Section2.Identification02;
+import edu.aku.omarshoaib.renew.activity.sections.Section2.followup.FollowUp2bListAC;
 import edu.aku.omarshoaib.renew.activity.sections.Section2.followup.Followup2aListAC;
 import edu.aku.omarshoaib.renew.activity.sections.Section3.Identification03;
 import edu.aku.omarshoaib.renew.activity.sections.Section3.SectionF03;
+import edu.aku.omarshoaib.renew.activity.sections.Section3.followup.Followup3aListAC;
 import edu.aku.omarshoaib.renew.activity.sections.SectionF04;
 import edu.aku.omarshoaib.renew.activity.sections.SectionF05;
 import edu.aku.omarshoaib.renew.activity.sections.SectionF06;
@@ -93,6 +95,10 @@ public class MainActivity extends AppCompatActivity {
             AppConstants.gotoActivity(activity, Identification02.class, true);
         } else if (viewId == R.id.option2a) {
             AppConstants.gotoActivity(activity, Followup2aListAC.class, true);
+        } else if (viewId == R.id.option2b) {
+            AppConstants.gotoActivity(activity, FollowUp2bListAC.class, true);
+        } else if (viewId == R.id.option3a) {
+            AppConstants.gotoActivity(activity, Followup3aListAC.class, true);
         } else if (viewId == R.id.option3) {
             AppConstants.gotoActivity(activity, Identification03.class, true);
         } else if (viewId == R.id.option4) {

@@ -16,6 +16,7 @@ import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.model.Form2a;
 import edu.aku.omarshoaib.renew.model.Form2b;
+import edu.aku.omarshoaib.renew.model.HCF;
 
 public class SectionF02b extends BaseActivity {
     private final String TAG = getClass().getSimpleName();
@@ -42,21 +43,20 @@ public class SectionF02b extends BaseActivity {
     }
 
     private void initUI() {
-//        bi.f2b11.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
-//        bi.f2b12.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
-//        sF2b.setf2b01(MainApp.vPHQ9.getParticipantId());
-//        sF2b.setf2b02(MainApp.vPHQ9.getParticipantName());
-//        sF2b.setf2b03(MainApp.vPHQ9.getFatherName());
-//        sF2b.setf2b04(MainApp.vPHQ9.getAge());
-//        sF2b.setf2b05(MainApp.vPHQ9.getContactNumber());
-//        sF2b.setf2b06(MainApp.vPHQ9.getHcfId());
-//        HCF hcf = appDatabase.hcfDao().getHcfbyCode(MainApp.vPHQ9.getHcfId());
-//        bi.f2b06.setText(hcf == null ? "" : hcf.getHfName());
-//        sF2b.setf2b07(MainApp.vPHQ9.getVillageAddress());
-//        sF2b.setf2b08(MainApp.vPHQ9.getEnteryUser());
-//        sF2b.setf2b09(MainApp.vPHQ9.getScreeningDate());
-//        sF2b.setf2b10(MainApp.vPHQ9.getPhq9Score());
-
+        bi.f02b10.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
+        bi.f02b11.setThemeId(R.style.Theme_AppStructure_TimePickerStyle);
+        sF2b.setF02b01(MainApp.vForm2b.getParticipantId());
+        sF2b.setF02b02(MainApp.vForm2b.getParticipantName());
+        sF2b.setF02b03(MainApp.vForm2b.getFatherName());
+        sF2b.setF02b04(MainApp.vForm2b.getAge());
+        sF2b.setF02b05(MainApp.vForm2b.getContactNumber());
+        sF2b.setF02b06(MainApp.vForm2b.getHcfId());
+        HCF hcf = appDatabase.hcfDao().getHcfbyCode(MainApp.vForm2b.getHcfId());
+        bi.f02b06.setText(hcf == null ? "" : hcf.getHfName());
+        sF2b.setF02b07(MainApp.vForm2b.getVillageAddress());
+        sF2b.setF02b08(MainApp.vForm2b.getRefrenceDate());
+        sF2b.setF02b09(MainApp.vForm2b.getPsycologistPhq9Score());
+//        sF2b.setF02b10(MainApp.vForm2b.getPhq9Score());
     }
 
     private boolean formValidation() {
@@ -68,15 +68,15 @@ public class SectionF02b extends BaseActivity {
         Form2a.saveMainData(MainApp.form2b.getParticipantId());
         MainApp.form2b.setIStatus("1");
         Form2b.SF2b.saveData(sF2b);
-//        AppConstants.gotoActivity(activity, Followup2bListAC.class, true);
+        AppConstants.gotoActivity(activity, FollowUp2bListAC.class, true);
     }
 
     public void btnEnd(View view) {
-//        AppConstants.checkDoubleCancelPress(activity, Followup2bListAC.class);
+        AppConstants.checkDoubleCancelPress(activity, FollowUp2bListAC.class);
     }
 
     @Override
     public void onBackPressed() {
-//        AppConstants.checkDoubleBackPress(activity, Followup2bListAC.class);
+        AppConstants.checkDoubleBackPress(activity, FollowUp2bListAC.class);
     }
 }

@@ -145,6 +145,7 @@ public class Form3a extends FormBaseModel {
         private String f3a10 = _EMPTY_;
         private String f3a11 = _EMPTY_;
         private String f3a12 = _EMPTY_;
+        private String f3a1201x = _EMPTY_;
         private String f3a13 = _EMPTY_;
         private String f3a1301x = _EMPTY_;
         private String f3a1396x = _EMPTY_;
@@ -152,6 +153,18 @@ public class Form3a extends FormBaseModel {
         private String f3a1496x = _EMPTY_;
         private String f3a15 = _EMPTY_;
         private String f3a1596x = _EMPTY_;
+        private String f3a1601 = _EMPTY_;
+        private String f3a1602 = _EMPTY_;
+        private String f3a1603 = _EMPTY_;
+        private String f3a1604 = _EMPTY_;
+        private String f3a1605 = _EMPTY_;
+        private String f3a1606 = _EMPTY_;
+        private String f3a1607 = _EMPTY_;
+        private String f3a1608 = _EMPTY_;
+        private String f3a1609 = _EMPTY_;
+        private String f3a1610 = _EMPTY_;
+        private String f3a1611 = _EMPTY_;
+        private String f3a1698 = _EMPTY_;
         private String f03a01 = _EMPTY_;
         private String f03a02 = _EMPTY_;
         private String f03a03 = _EMPTY_;
@@ -296,7 +309,18 @@ public class Form3a extends FormBaseModel {
 
         public void setF3a12(String f3a12) {
             this.f3a12 = f3a12;
+            setF3a1201x(f3a12.equals("1") ? this.f3a1201x : _EMPTY_);
             notifyPropertyChanged(BR.f3a12);
+        }
+
+        @Bindable
+        public String getF3a1201x() {
+            return f3a1201x;
+        }
+
+        public void setF3a1201x(String f3a1201x) {
+            this.f3a1201x = f3a1201x;
+            notifyPropertyChanged(BR.f3a1201x);
         }
 
         @Bindable
@@ -370,6 +394,137 @@ public class Form3a extends FormBaseModel {
         public void setF3a1596x(String f3a1596x) {
             this.f3a1596x = f3a1596x;
             notifyPropertyChanged(BR.f3a1596x);
+        }
+
+        @Bindable
+        public String getF3a1601() {
+            return f3a1601;
+        }
+
+        public void setF3a1601(String f3a1601) {
+            this.f3a1601 = f3a1601;
+            notifyPropertyChanged(BR.f3a1601);
+        }
+
+        @Bindable
+        public String getF3a1602() {
+            return f3a1602;
+        }
+
+        public void setF3a1602(String f3a1602) {
+            this.f3a1602 = f3a1602;
+            notifyPropertyChanged(BR.f3a1602);
+        }
+
+        @Bindable
+        public String getF3a1603() {
+            return f3a1603;
+        }
+
+        public void setF3a1603(String f3a1603) {
+            this.f3a1603 = f3a1603;
+            notifyPropertyChanged(BR.f3a1603);
+        }
+
+        @Bindable
+        public String getF3a1604() {
+            return f3a1604;
+        }
+
+        public void setF3a1604(String f3a1604) {
+            this.f3a1604 = f3a1604;
+            notifyPropertyChanged(BR.f3a1604);
+        }
+
+        @Bindable
+        public String getF3a1605() {
+            return f3a1605;
+        }
+
+        public void setF3a1605(String f3a1605) {
+            this.f3a1605 = f3a1605;
+            notifyPropertyChanged(BR.f3a1605);
+        }
+
+        @Bindable
+        public String getF3a1606() {
+            return f3a1606;
+        }
+
+        public void setF3a1606(String f3a1606) {
+            this.f3a1606 = f3a1606;
+            notifyPropertyChanged(BR.f3a1606);
+        }
+
+        @Bindable
+        public String getF3a1607() {
+            return f3a1607;
+        }
+
+        public void setF3a1607(String f3a1607) {
+            this.f3a1607 = f3a1607;
+            notifyPropertyChanged(BR.f3a1607);
+        }
+
+        @Bindable
+        public String getF3a1608() {
+            return f3a1608;
+        }
+
+        public void setF3a1608(String f3a1608) {
+            this.f3a1608 = f3a1608;
+            notifyPropertyChanged(BR.f3a1608);
+        }
+
+        @Bindable
+        public String getF3a1609() {
+            return f3a1609;
+        }
+
+        public void setF3a1609(String f3a1609) {
+            this.f3a1609 = f3a1609;
+            notifyPropertyChanged(BR.f3a1609);
+        }
+
+        @Bindable
+        public String getF3a1610() {
+            return f3a1610;
+        }
+
+        public void setF3a1610(String f3a1610) {
+            this.f3a1610 = f3a1610;
+            notifyPropertyChanged(BR.f3a1610);
+        }
+
+        @Bindable
+        public String getF3a1611() {
+            return f3a1611;
+        }
+
+        public void setF3a1611(String f3a1611) {
+            this.f3a1611 = f3a1611;
+            notifyPropertyChanged(BR.f3a1611);
+        }
+
+        @Bindable
+        public String getF3a1698() {
+            return f3a1698;
+        }
+
+        public void setF3a1698(String f3a1698) {
+            this.f3a1698 = f3a1698;
+            setF3a1601(_EMPTY_);
+            setF3a1602(_EMPTY_);
+            setF3a1603(_EMPTY_);
+            setF3a1604(_EMPTY_);
+            setF3a1605(_EMPTY_);
+            setF3a1606(_EMPTY_);
+            setF3a1607(_EMPTY_);
+            setF3a1608(_EMPTY_);
+            setF3a1609(_EMPTY_);
+            setF3a1610(_EMPTY_);
+            setF3a1611(_EMPTY_);
+            notifyPropertyChanged(BR.f3a1698);
         }
 
         @Bindable

@@ -13,6 +13,7 @@ import com.google.gson.reflect.TypeToken;
 import edu.aku.omarshoaib.renew.BR;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.database.dao.Form2aDao;
+import edu.aku.omarshoaib.renew.database.dao.Form2bDao;
 import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.MainApp;
 
@@ -60,8 +61,8 @@ public class Form2b extends FormBaseModel{
         // This is used to add record for the first time
         MainApp.form2b = new Form2b();
         MainApp.form2b.setDistrictCode(MainApp.user.getDistId());
-        MainApp.form2b.setVillageName(MainApp.vPHQ9.getVillageAddress());
-        MainApp.form2b.setParticipantId(MainApp.vPHQ9.getParticipantId());
+        MainApp.form2b.setVillageName(MainApp.vForm2b.getVillageAddress());
+        MainApp.form2b.setParticipantId(MainApp.vForm2b.getParticipantId());
 
 //        MainApp.form2a.setScrId(MainApp.form1.getScrId());
 //        MainApp.form2a.setVillageName(MainApp.form1.getVillageName());
@@ -71,13 +72,13 @@ public class Form2b extends FormBaseModel{
     /*FOR IDENTIFICATION INFORMATION - CLUSTER-WISE*/
     // Save data in db
     public static void saveMainData(String participantId) {
-        Form2aDao forms2aDao = AppDatabase.getDBInstance().form2aDao();
-        Form2a form2a = forms2aDao.getDataByParticipantId(participantId);
-        if (form2a != null) {
-            MainApp.form2a = form2a;
+        Form2bDao forms2bDao = AppDatabase.getDBInstance().form2bDao();
+        Form2b form2b = forms2bDao.getDataByParticipantId(participantId);
+        if (form2b != null) {
+            MainApp.form2b = form2b;
         } else {
-            MainApp.form2a.setUid(AppConstants.generateUid());
-            MainApp.form2a.setId(forms2aDao.add(MainApp.form2a));
+            MainApp.form2b.setUid(AppConstants.generateUid());
+            MainApp.form2b.setId(forms2bDao.add(MainApp.form2b));
         }
     }
 

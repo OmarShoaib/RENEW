@@ -45,7 +45,7 @@ public class SectionF03a extends BaseActivity {
     }
 
     private void initUI() {
-//        bi.f2a11.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
+        bi.f3a1201x.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
 //        bi.f2a12.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
 //        bi.f2c01.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
 //        bi.f2c0401x.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);

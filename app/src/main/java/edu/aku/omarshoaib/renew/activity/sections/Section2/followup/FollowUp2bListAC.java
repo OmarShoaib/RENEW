@@ -15,23 +15,23 @@ import androidx.databinding.DataBindingUtil;
 import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.BaseActivity;
 import edu.aku.omarshoaib.renew.activity.MainActivity;
-import edu.aku.omarshoaib.renew.adapter.Followup2aAdapter;
+import edu.aku.omarshoaib.renew.adapter.Followup2bAdapter;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivitySection2aListBinding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.AppTextWatcher;
 import edu.aku.omarshoaib.renew.global.MainApp;
 
-public class Followup2aListAC extends BaseActivity {
+public class FollowUp2bListAC extends BaseActivity {
 
     private final String TAG = getClass().getSimpleName();
-    private final Activity activity = Followup2aListAC.this;
+    private final Activity activity = FollowUp2bListAC.this;
 
     ActivitySection2aListBinding bi;
     private AppDatabase appDatabase;
 //    private Loading loading;
 
-    private Followup2aAdapter followup2aAdapter;
+    private Followup2bAdapter followup2bAdapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -50,7 +50,7 @@ public class Followup2aListAC extends BaseActivity {
     }
 
     private void initUI() {
-        MainApp.vPHQ9List = appDatabase.vphq9Dao().getAllData();
+        MainApp.vForm2bList = appDatabase.vForm2bDao().getAllData();
         bi.searchET.addTextChangedListener(new AppTextWatcher(bi.searchET.getId(), iAppTextWatcher));
 
 //        markSyncedForms();
@@ -84,8 +84,8 @@ public class Followup2aListAC extends BaseActivity {
             return;
         }
         String tagStr = (String) bi.searchRG.findViewById(bi.searchRG.getCheckedRadioButtonId()).getTag();
-        followup2aAdapter.setSearchType(Integer.parseInt(tagStr));
-        followup2aAdapter.getFilter().filter(text);
+        followup2bAdapter.setSearchType(Integer.parseInt(tagStr));
+        followup2bAdapter.getFilter().filter(text);
     };
 
     @Override
@@ -94,9 +94,9 @@ public class Followup2aListAC extends BaseActivity {
 //        loading.showLoading();
 
         new Handler().post(() -> {
-            if (MainApp.vPHQ9List != null) {
-                followup2aAdapter = new Followup2aAdapter(activity, MainApp.vPHQ9List);
-                bi.mwraRV.setAdapter(followup2aAdapter);
+            if (MainApp.vForm2bList != null) {
+                followup2bAdapter = new Followup2bAdapter(activity, MainApp.vForm2bList);
+                bi.mwraRV.setAdapter(followup2bAdapter);
                 bi.mwraRV.setVisibility(View.VISIBLE);
                 bi.emptyTV.setVisibility(View.GONE);
                 bi.filterLayout.setVisibility(View.VISIBLE);

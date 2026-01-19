@@ -1,4 +1,4 @@
-package edu.aku.omarshoaib.renew.activity.sections.Section2.followup;
+package edu.aku.omarshoaib.renew.activity.sections.Section3.followup;
 
 import static edu.aku.omarshoaib.renew.global.AppConstants._EMPTY_;
 
@@ -15,23 +15,23 @@ import androidx.databinding.DataBindingUtil;
 import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.BaseActivity;
 import edu.aku.omarshoaib.renew.activity.MainActivity;
-import edu.aku.omarshoaib.renew.adapter.Followup2aAdapter;
+import edu.aku.omarshoaib.renew.adapter.Followup3aAdapter;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivitySection2aListBinding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.AppTextWatcher;
 import edu.aku.omarshoaib.renew.global.MainApp;
 
-public class Followup2aListAC extends BaseActivity {
+public class Followup3aListAC extends BaseActivity {
 
     private final String TAG = getClass().getSimpleName();
-    private final Activity activity = Followup2aListAC.this;
+    private final Activity activity = Followup3aListAC.this;
 
     ActivitySection2aListBinding bi;
     private AppDatabase appDatabase;
 //    private Loading loading;
 
-    private Followup2aAdapter followup2aAdapter;
+    private Followup3aAdapter followup3aAdapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -50,7 +50,7 @@ public class Followup2aListAC extends BaseActivity {
     }
 
     private void initUI() {
-        MainApp.vPHQ9List = appDatabase.vphq9Dao().getAllData();
+        MainApp.vForm3aList = appDatabase.vForm3aDao().getAllData();
         bi.searchET.addTextChangedListener(new AppTextWatcher(bi.searchET.getId(), iAppTextWatcher));
 
 //        markSyncedForms();
@@ -84,8 +84,8 @@ public class Followup2aListAC extends BaseActivity {
             return;
         }
         String tagStr = (String) bi.searchRG.findViewById(bi.searchRG.getCheckedRadioButtonId()).getTag();
-        followup2aAdapter.setSearchType(Integer.parseInt(tagStr));
-        followup2aAdapter.getFilter().filter(text);
+        followup3aAdapter.setSearchType(Integer.parseInt(tagStr));
+        followup3aAdapter.getFilter().filter(text);
     };
 
     @Override
@@ -94,9 +94,9 @@ public class Followup2aListAC extends BaseActivity {
 //        loading.showLoading();
 
         new Handler().post(() -> {
-            if (MainApp.vPHQ9List != null) {
-                followup2aAdapter = new Followup2aAdapter(activity, MainApp.vPHQ9List);
-                bi.mwraRV.setAdapter(followup2aAdapter);
+            if (MainApp.vForm3aList != null) {
+                followup3aAdapter = new Followup3aAdapter(activity, MainApp.vForm3aList);
+                bi.mwraRV.setAdapter(followup3aAdapter);
                 bi.mwraRV.setVisibility(View.VISIBLE);
                 bi.emptyTV.setVisibility(View.GONE);
                 bi.filterLayout.setVisibility(View.VISIBLE);
