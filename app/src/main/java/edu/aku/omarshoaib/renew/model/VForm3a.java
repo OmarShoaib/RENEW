@@ -14,7 +14,7 @@ public class VForm3a {
     @SerializedName("_id")
     private long id;
 
-    @SerializedName("participant_id")
+    @SerializedName("pregnant_woman_id")
     private String participantId;
 
     @SerializedName("participant_name")
@@ -39,15 +39,6 @@ public class VForm3a {
 
     @SerializedName("screening_date")
     private String screeningDate;
-
-    @SerializedName("FS_PHQ9")
-    private String fieldStaffPhq9Score;
-
-    @SerializedName("ref_date")
-    private String refrenceDate;
-
-    @SerializedName("Ref_PHQ9")
-    private String psycologistPhq9Score;
 
     public long getId() {
         return id;
@@ -127,29 +118,5 @@ public class VForm3a {
 
     public void setScreeningDate(String screeningDate) {
         this.screeningDate = screeningDate;
-    }
-
-    public String getFieldStaffPhq9Score() {
-        return fieldStaffPhq9Score;
-    }
-
-    public void setFieldStaffPhq9Score(String fieldStaffPhq9Score) {
-        this.fieldStaffPhq9Score = fieldStaffPhq9Score;
-    }
-
-    public String getRefrenceDate() {
-        return refrenceDate;
-    }
-
-    public void setRefrenceDate(String refrenceDate) {
-        this.refrenceDate = refrenceDate;
-    }
-
-    public String getPsycologistPhq9Score() {
-        return psycologistPhq9Score;
-    }
-
-    public void setPsycologistPhq9Score(String psycologistPhq9Score) {
-        this.psycologistPhq9Score = psycologistPhq9Score;
     }
 }

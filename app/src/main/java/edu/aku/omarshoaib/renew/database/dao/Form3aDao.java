@@ -40,7 +40,7 @@ public abstract class Form3aDao implements BaseDao<Form3a>{
     @Query("SELECT * FROM Form3a WHERE uid = :uid")
     public abstract Form3a getDataByUid(String uid);
 
-    @Query("SELECT * FROM Form3a WHERE participantId = :participantId")
+    @Query("SELECT * FROM Form3a WHERE pregnantWomanId = :participantId")
     public abstract Form3a getDataByParticipantId(String participantId);
 
     @Query("SELECT * FROM Form3a WHERE sysDate LIKE :date || '%'")

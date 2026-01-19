@@ -33,8 +33,8 @@ public class Form3a extends FormBaseModel {
     @SerializedName("village_name")
     private String villageName = _EMPTY_;
 
-    @SerializedName("participant_id")
-    private String participantId = _EMPTY_;
+    @SerializedName("pregnant_woman_id")
+    private String pregnantWomanId = _EMPTY_;
 
     @SerializedName("ending_date")
     private String endingDate = _EMPTY_;
@@ -61,8 +61,8 @@ public class Form3a extends FormBaseModel {
         // This is used to add record for the first time
         MainApp.form3a = new Form3a();
         MainApp.form3a.setDistrictCode(MainApp.user.getDistId());
-        MainApp.form3a.setVillageName(MainApp.vPHQ9.getVillageAddress());
-        MainApp.form3a.setParticipantId(MainApp.vPHQ9.getParticipantId());
+        MainApp.form3a.setVillageName(MainApp.vForm3a.getVillageAddress());
+        MainApp.form3a.setPregnantWomanId(MainApp.vForm3a.getParticipantId());
     }
 
     /*FOR IDENTIFICATION INFORMATION - CLUSTER-WISE*/
@@ -94,12 +94,12 @@ public class Form3a extends FormBaseModel {
         this.villageName = villageName;
     }
 
-    public String getParticipantId() {
-        return participantId;
+    public String getPregnantWomanId() {
+        return pregnantWomanId;
     }
 
-    public void setParticipantId(String participantId) {
-        this.participantId = participantId;
+    public void setPregnantWomanId(String pregnantWomanId) {
+        this.pregnantWomanId = pregnantWomanId;
     }
 
     public String getEndingDate() {

@@ -46,22 +46,20 @@ public class SectionF03a extends BaseActivity {
 
     private void initUI() {
         bi.f3a1201x.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
-//        bi.f2a12.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
-//        bi.f2c01.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
-//        bi.f2c0401x.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
-//        sF3a.setF2a01(MainApp.vPHQ9.getParticipantId());
-//        sF3a.setF2a02(MainApp.vPHQ9.getParticipantName());
-//        sF3a.setF2a03(MainApp.vPHQ9.getFatherName());
-//        sF3a.setF2a04(MainApp.vPHQ9.getAge());
-//        sF3a.setF2a05(MainApp.vPHQ9.getContactNumber());
-//        sF3a.setF2a06(MainApp.vPHQ9.getHcfId());
-//        HCF hcf = appDatabase.hcfDao().getHcfbyCode(MainApp.vPHQ9.getHcfId());
-//        bi.f2a06.setText(hcf == null ? "" : hcf.getHfName());
-//        sF3a.setF2a07(MainApp.vPHQ9.getVillageAddress());
-//        sF3a.setF2a08(MainApp.vPHQ9.getEnteryUser());
-//        sF3a.setF2a09(MainApp.vPHQ9.getScreeningDate());
-//        sF3a.setF2a10(MainApp.vPHQ9.getPhq9Score());
-
+        bi.f03a01.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
+        bi.f03a02.setThemeId(R.style.Theme_AppStructure_TimePickerStyle);
+        sF3a.setF3a01(MainApp.vForm3a.getParticipantId());
+        sF3a.setF3a02(MainApp.vForm3a.getParticipantName());
+        sF3a.setF3a03(MainApp.vForm3a.getFatherName());
+        sF3a.setF3a04(MainApp.vForm3a.getAge());
+        sF3a.setF3a05(MainApp.vForm3a.getContactNumber());
+        sF3a.setF3a06(MainApp.vForm3a.getHcfId());
+        HCF hcf = appDatabase.hcfDao().getHcfbyCode(MainApp.vForm3a.getHcfId());
+        bi.f3a06.setText(hcf == null ? "" : hcf.getHfName());
+        sF3a.setF3a07(MainApp.vForm3a.getVillageAddress());
+        sF3a.setF3a08(MainApp.vForm3a.getEnteryUser());
+        sF3a.setF3a09(MainApp.vForm3a.getScreeningDate());
+        bi.f03a01.setMinDate(MainApp.vForm3a.getScreeningDate());
     }
 
     private boolean formValidation() {
@@ -70,19 +68,19 @@ public class SectionF03a extends BaseActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        Form3a.saveMainData(MainApp.form3a.getParticipantId());
+        Form3a.saveMainData(MainApp.form3a.getPregnantWomanId());
         MainApp.form3a.setIStatus("1");
         Form3a.SF3a.saveData(sF3a);
-//        AppConstants.gotoActivity(activity, Followup3aListAC.class, true);
+        AppConstants.gotoActivity(activity, Followup3aListAC.class, true);
     }
 
     public void btnEnd(View view) {
-//        AppConstants.checkDoubleCancelPress(activity, Followup2aListAC.class);
+        AppConstants.checkDoubleCancelPress(activity, Followup3aListAC.class);
     }
 
     @Override
     public void onBackPressed() {
-//        AppConstants.checkDoubleBackPress(activity, Followup2aListAC.class);
+        AppConstants.checkDoubleBackPress(activity, Followup3aListAC.class);
     }
 
 }

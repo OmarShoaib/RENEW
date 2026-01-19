@@ -276,7 +276,6 @@
                             android:hint="@string/f3a06"
                             android:inputType="text"
                             android:maxLength="250"
-                            android:text="@={form.f3a06}"
                             android:textColor="@color/red_color"
                             tools:ignore="Autofill" />
                     </LinearLayout>
