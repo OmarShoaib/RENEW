@@ -65,7 +65,7 @@ public class SectionF02b extends BaseActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        Form2a.saveMainData(MainApp.form2b.getParticipantId());
+        Form2b.saveMainData(MainApp.form2b.getParticipantId());
         MainApp.form2b.setIStatus("1");
         Form2b.SF2b.saveData(sF2b);
         AppConstants.gotoActivity(activity, FollowUp2bListAC.class, true);

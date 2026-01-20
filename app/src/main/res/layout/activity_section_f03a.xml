@@ -649,7 +649,7 @@
                                 android:maxLength="1"
                                 android:tag="f3a1301"
                                 android:text="@={form.f3a1301x}"
-                                android:visibility="@{form.f3a13.equals(`1`) ? View.VISIBLE : View.GONE}"
+                                android:enabled="@{form.f3a13.equals(`1`)}"
                                 app:maxValue="9"
                                 app:minValue="0"
                                 app:type="range" />

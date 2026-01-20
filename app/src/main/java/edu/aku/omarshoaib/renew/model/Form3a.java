@@ -331,6 +331,7 @@ public class Form3a extends FormBaseModel {
         public void setF3a13(String f3a13) {
             this.f3a13 = f3a13;
             setF3a1396x(f3a13.equals("96") ? this.f3a1396x: _EMPTY_);
+            setF3a1301x(f3a13.equals("1") ? this.f3a1301x: _EMPTY_);
             notifyPropertyChanged(BR.f3a13);
         }
 

@@ -100,7 +100,11 @@ public class PHQ9ParticipantsAC extends BaseActivity {
         bi.endButtonsLayout.findViewById(R.id.posBtn).setVisibility(isCountMismatch ? View.VISIBLE : View.INVISIBLE);
     }
 
-
+    private void markIStatus() {
+        for(Form2 form2 : MainApp.listForm2) {
+            form2.setIStatus("1");
+        }
+    }
 
     public void btnAddMore(View view) {
         Participant.initMeta(MainApp.participantList.size() + 1);

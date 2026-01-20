@@ -34,6 +34,7 @@ import edu.aku.omarshoaib.renew.model.Cluster;
 import edu.aku.omarshoaib.renew.model.DPortal;
 import edu.aku.omarshoaib.renew.model.HCF;
 import edu.aku.omarshoaib.renew.model.SyncModel;
+import edu.aku.omarshoaib.renew.model.Teams;
 import edu.aku.omarshoaib.renew.model.User;
 import edu.aku.omarshoaib.renew.model.VForm2b;
 import edu.aku.omarshoaib.renew.model.VForm3a;
@@ -78,6 +79,7 @@ public class DownloadData {
         add(VPHQ9.TABLE_NAME);
         add(VForm2b.TABLE_NAME);
         add(VForm3a.TABLE_NAME);
+        add(Teams.TABLE_NAME);
     }};
 
     /**
@@ -151,6 +153,9 @@ public class DownloadData {
 
             SyncModel s5 = new SyncModel(DT_AFTER_LOGIN.get(6), select, "" /*+ " dist_id = " + MainApp.user.getDistId()*/, check);
             webCall.call(webAPI.downloadEncData(CryptoUtil.encrypt(gson.toJson(s5))), AppConstants.DOWNLOAD_DATA, DT_AFTER_LOGIN.get(6), ++index, 0, IS_CALL_ENCRYPTED);
+
+            SyncModel s6 = new SyncModel(DT_AFTER_LOGIN.get(7), select, "" /*+ " dist_id = " + MainApp.user.getDistId()*/, check);
+            webCall.call(webAPI.downloadEncData(CryptoUtil.encrypt(gson.toJson(s6))), AppConstants.DOWNLOAD_DATA, DT_AFTER_LOGIN.get(7), ++index, 0, IS_CALL_ENCRYPTED);
         }
     }
 
@@ -330,6 +335,15 @@ public class DownloadData {
 
                 // Clear and Add data to db
                 appDatabase.vForm3aDao().reinsert(vForm3as);
+            } else if (tag.equals(Teams.TABLE_NAME)) {
+                Teams[] vForm3as = gson.fromJson(jsonResponse, Teams[].class);
+                // Update sync list view
+                SyncModel syncModel = getUpdatedSyncDownloadItem(activity, syncTablesList.get(index), vForm3as.length, AppConstants.RESPONSE_SUCCESS, null);
+                syncTablesList.set(index, syncModel);
+                syncAdapter.notifyItemChanged(index);
+
+                // Clear and Add data to db
+                appDatabase.teamsDao().reinsert(vForm3as);
             }
         }
 
