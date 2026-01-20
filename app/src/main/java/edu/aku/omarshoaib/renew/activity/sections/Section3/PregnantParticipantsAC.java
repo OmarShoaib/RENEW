@@ -23,8 +23,8 @@ import edu.aku.omarshoaib.renew.adapter.GenericAdapter;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivityParticipantListBinding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
+import edu.aku.omarshoaib.renew.global.DateUtils;
 import edu.aku.omarshoaib.renew.global.MainApp;
-import edu.aku.omarshoaib.renew.model.Form2;
 import edu.aku.omarshoaib.renew.model.Form3;
 import edu.aku.omarshoaib.renew.model.Participant;
 
@@ -103,14 +103,22 @@ public class PregnantParticipantsAC extends BaseActivity {
         bi.endButtonsLayout.findViewById(R.id.posBtn).setVisibility(isCountMismatch ? View.VISIBLE : View.INVISIBLE);
     }
 
+    private void markIStatus() {
+        if(MainApp.listForm3.size() < MainApp.participantList.size()) return;
+        String today = DateUtils.getCurrentDateTime(AppConstants.APP_DATE_FORMAT);
+        for(Form3 form : MainApp.listForm3)
+            appDatabase.form3Dao().updateIStatus(form.getId(), "1", "",
+                    true, today);
 
+    }
 
     public void btnAddMore(View view) {
-        Participant.initMeta(MainApp.participantList.size() + 1);
+        Participant.initMeta(MainApp.listForm3.size() + 1);
         AppConstants.gotoActivity(activity, SectionF01.class, true);
     }
 
     public void btnContinue(View view) {
+        markIStatus();
         AppConstants.gotoActivity(activity, MainActivity.class, true);
     }
 

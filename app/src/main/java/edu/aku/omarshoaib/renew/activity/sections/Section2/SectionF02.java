@@ -48,8 +48,6 @@ public class SectionF02 extends BaseActivity {
         bi.f207.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
         sF2.setF201(MainApp.participant.getSF1().getF104());
         sF2.setF203(MainApp.participant.getSF1().getF105());
-//        String hcfCode = MainApp.form1.getSF1().getF102();
-//        String hcfName = appDatabase.hcfDao().getHcfCodeByName(hcfCode).toString();
         sF2.setF204(MainApp.form1.getSF1().getF102());
         HCF hcf = appDatabase.hcfDao().getHcfbyCode(MainApp.form1.getSF1().getF102());
         bi.f204.setText(hcf == null ? "" : hcf.getHfName());
@@ -67,7 +65,6 @@ public class SectionF02 extends BaseActivity {
         if (!formValidation()) return;
         Form2.saveMainData(MainApp.form1.getScrId());
         MainApp.form2.setParticipantId(sF2.getF212());
-        MainApp.form2.setIStatus("1");
         Form2.SF2.saveData(sF2);
         AppConstants.gotoActivity(activity, PHQ9ParticipantsAC.class, true);
     }

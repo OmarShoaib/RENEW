@@ -83,7 +83,6 @@ public class SectionF03 extends BaseActivity {
     public void btnContinue(View view) {
         if (!formValidation()) return;
         Form3.saveMainData(sF3.getF315());
-        MainApp.form3.setIStatus("1");
         MainApp.form3.setPregnantWomanId(sF3.getF315());
         Form3.SF3.saveData(sF3);
         AppConstants.gotoActivity(activity, PregnantParticipantsAC.class, true);
