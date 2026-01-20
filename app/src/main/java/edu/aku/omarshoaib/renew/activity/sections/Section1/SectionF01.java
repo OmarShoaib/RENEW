@@ -50,10 +50,7 @@ public class SectionF01 extends BaseActivity {
 
     private void initUI() {
         bi.f10x.setText(String.
-                valueOf(MainApp.participant.
-                        getLineNo()
-                )
-        );
+                valueOf(MainApp.participant.getLineNo()));
         bi.f105.addTextChangedListener(new AppTextWatcher(bi.f105.getId(), textWatcher));
         bi.f106.setOnCheckedChangeListener(changeListener);
     }

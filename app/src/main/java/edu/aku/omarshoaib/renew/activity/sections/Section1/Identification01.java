@@ -30,6 +30,7 @@ import edu.aku.omarshoaib.renew.global.AppTextWatcher;
 import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.model.Form1;
 import edu.aku.omarshoaib.renew.model.HCF;
+import edu.aku.omarshoaib.renew.model.Teams;
 
 public class Identification01 extends BaseActivity {
 
@@ -65,6 +66,47 @@ public class Identification01 extends BaseActivity {
         bi.f103.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
         bi.f103.addTextChangedListener(new AppTextWatcher(bi.f103.getId(), textWatcher));
         setupHCFSpinner();
+        setupTeamSpinner();
+    }
+
+    private void setupTeamSpinner() {
+        List<Teams> list = new ArrayList<>();
+        Teams team = new Teams();
+        team.setTeamId("");
+        team.setTeamName("Please Select");
+        list.add(team);
+
+        list.addAll(
+                appDatabase.teamsDao().getAllData());
+        ArrayAdapter<Teams> adapter =
+                new ArrayAdapter<>(this,
+                        android.R.layout.simple_spinner_item, list);
+        adapter.setDropDownViewResource(
+                android.R.layout.simple_spinner_dropdown_item);
+        bi.f101.setAdapter(adapter);
+        bi.f101.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
+                    sF1.setF101("");
+                    return;
+                }
+                String item = parent.getItemAtPosition(position).toString();
+                sF1.setF101(item.split("-")[0].trim());
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) { }
+        });
+        if (!sF1.getF101().isEmpty()) {
+            for (int i = 0; i < list.size(); i++) {
+                if (list.get(i).getTeamId().trim().equals(sF1.getF101())) {
+                    bi.f101.setSelection(i);
+                    break;
+                }
+            }
+        }
+
     }
 
     private void setupHCFSpinner() {
@@ -136,6 +178,7 @@ public class Identification01 extends BaseActivity {
         // New form1
 //        String clusterNo = Objects.requireNonNull(bi.a101.getText()).toString();
         MainApp.form1.setScrId(scrId);
+        MainApp.form1.setTeamId(sF1.getF101());
         Form1.saveMainData(scrId);
         Form1.SF1.saveData(sF1);
         AppConstants.gotoActivity(activity, ParticipantListAC.class, true);

@@ -38,6 +38,9 @@ public class Form1 extends FormBaseModel {
     @SerializedName("ending_date")
     private String endingDate = _EMPTY_;
 
+    @SerializedName("team_id")
+    private String teamId = _EMPTY_;
+
     // This variable is used to mark the form1 that its completed once.
     // To implement the logic of displaying 'Skip to End' button over
     // the sections if user open the form1 in edit mode, update any section/value,
@@ -108,6 +111,14 @@ public class Form1 extends FormBaseModel {
 
     public void setFormCompleteOnce(boolean formCompleteOnce) {
         isFormCompleteOnce = formCompleteOnce;
+    }
+
+    public String getTeamId() {
+        return teamId;
+    }
+
+    public void setTeamId(String teamId) {
+        this.teamId = teamId;
     }
 
     public String getEndingDate() {

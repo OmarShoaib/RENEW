@@ -17,9 +17,6 @@ public abstract class TeamDao implements BaseDao<Teams> {
     @Query("DELETE FROM Teams")
     public abstract void deleteAll();
 
-//    @Query("Select * from Teams Where hfCode = :hfCode")
-//    public abstract Teams getTeamsbyCode(String hfCode);
-
     @Transaction
     public void reinsert(Teams[] list) {
         deleteAll();

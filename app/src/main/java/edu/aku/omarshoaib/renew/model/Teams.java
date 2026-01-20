@@ -1,5 +1,6 @@
 package edu.aku.omarshoaib.renew.model;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -10,37 +11,33 @@ public class Teams {
 
     public static String TABLE_NAME = "Teams";
 
-    @PrimaryKey(autoGenerate = true)
-    @SerializedName("_id")
-    private long id;
-
+    @PrimaryKey
+    @NonNull
     @SerializedName("team_id")
-    private String distCode;
+    private String teamId;
 
     @SerializedName("team_name")
-    private String distName;
+    private String teamName;
 
-    public long getId() {
-        return id;
+    public String getTeamId() {
+        return teamId.trim();
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setTeamId(String teamId) {
+        this.teamId = teamId;
     }
 
-    public String getDistCode() {
-        return distCode;
+    public String getTeamName() {
+        return teamName.trim();
     }
 
-    public void setDistCode(String distCode) {
-        this.distCode = distCode;
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
     }
 
-    public String getDistName() {
-        return distName;
-    }
-
-    public void setDistName(String distName) {
-        this.distName = distName;
+    @NonNull
+    @Override
+    public String toString() {
+        return teamId.trim()+"-"+teamName;
     }
 }
