@@ -446,7 +446,7 @@
     <!-- Form 02a: Mental Health Assessment (PHQ-9) Questionnaire Screening of WRA, adolescents,
          and pregnant women for depression symptoms by Psychologist. -->
     <string name="f2at0">Form 2a :</string>
-    <string name="t2at1">Form 02a: Mental Health Assessment (PHQ–9) QuestionnaireScreening of WRA, adolescents, and pregnant women for depression symptoms by Psychologist</string>
+    <string name="t2at1">Mental Health Assessment (PHQ–9) QuestionnaireScreening of WRA, adolescents, and pregnant women for depression symptoms by Psychologist</string>
     <string name="t2at2">Section A: Baseline Information</string>
     <string name="f2a01">Participant Id</string>
     <string name="f2a02">Participant name</string>

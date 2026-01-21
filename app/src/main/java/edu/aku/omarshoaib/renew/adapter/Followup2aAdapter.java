@@ -3,6 +3,7 @@ package edu.aku.omarshoaib.renew.adapter;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
@@ -70,18 +71,12 @@ public class Followup2aAdapter extends RecyclerView.Adapter<Followup2aAdapter.Vi
         bi.memberNameTV.setText(vphq9.getParticipantName());
         bi.pIdTV.setText(vphq9.getParticipantId());
         bi.clusterNoTV.setText(vphq9.getScreeningDate());
+        Form2a form2a = AppDatabase.getDBInstance().form2aDao()
+                .getDataByParticipantId(vphq9.getParticipantId());
+        if (form2a != null)
+            bi.statusIV.setVisibility(
+                    form2a == null ? View.GONE : View.VISIBLE);
 
-      /*if        (vphq9.getStatus() == 1) {
-            bi.statusIV.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(activity, R.color.info_color)));
-            bi.statusIV.setVisibility(View.VISIBLE);
-        } else if (vphq9.getStatus() == 2) {
-            bi.statusIV.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(activity, R.color.error_color)));
-            bi.statusIV.setVisibility(View.VISIBLE);
-        } else if (vphq9.getStatus() == 3) {
-            bi.statusIV.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(activity, R.color.success_color)));
-            bi.statusIV.setVisibility(View.VISIBLE);
-        } else
-            bi.statusIV.setVisibility(View.GONE);*/
     }
 
     @Override
@@ -127,12 +122,10 @@ public class Followup2aAdapter extends RecyclerView.Adapter<Followup2aAdapter.Vi
         for (VPHQ9 item : mainList) {
             if (searchType == 1) {
                 // Search by Name
-                if (item.getParticipantName().toLowerCase().contains(constraint))
-                    results.add(item);
+                if (item.getParticipantName().toLowerCase().contains(constraint)) results.add(item);
             } else if (searchType == 2) {
                 // Search by Participant Id
-                if (item.getParticipantId().toLowerCase().contains(constraint))
-                    results.add(item);
+                if (item.getParticipantId().toLowerCase().contains(constraint)) results.add(item);
             }
         }
         return results;

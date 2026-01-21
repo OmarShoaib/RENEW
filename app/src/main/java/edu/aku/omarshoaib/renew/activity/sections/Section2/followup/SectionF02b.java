@@ -54,7 +54,9 @@ public class SectionF02b extends BaseActivity {
         bi.f02b06.setText(hcf == null ? "" : hcf.getHfName());
         sF2b.setF02b07(MainApp.vForm2b.getVillageAddress());
         sF2b.setF02b08(MainApp.vForm2b.getRefrenceDate());
+        bi.f02b10.setMinDate(MainApp.vForm2b.getRefrenceDate());
         sF2b.setF02b09(MainApp.vForm2b.getPsycologistPhq9Score());
+        sF2b.setF02b12(MainApp.user.getFullName()+" - "+MainApp.user.getUserId());
 //        sF2b.setF02b10(MainApp.vForm2b.getPhq9Score());
     }
 

@@ -35,7 +35,7 @@ public class SectionF03a extends BaseActivity {
         super.activity = activity;
 
         // Init toolbar
-        AppConstants.initToolbar(activity, getString(R.string.f3t0), getString(R.string.f3t1), false);
+        AppConstants.initToolbar(activity, getString(R.string.t3a1), getString(R.string.t3a1b), false);
         appDatabase = AppDatabase.getDBInstance();
 
         sF3a = Form3a.SF3a.getData();
@@ -57,9 +57,11 @@ public class SectionF03a extends BaseActivity {
         HCF hcf = appDatabase.hcfDao().getHcfbyCode(MainApp.vForm3a.getHcfId());
         bi.f3a06.setText(hcf == null ? "" : hcf.getHfName());
         sF3a.setF3a07(MainApp.vForm3a.getVillageAddress());
-        sF3a.setF3a08(MainApp.vForm3a.getEnteryUser());
-        sF3a.setF3a09(MainApp.vForm3a.getScreeningDate());
+//        sF3a.setF3a08(MainApp.vForm3a.getEnteryUser());
+        sF3a.setF3a08(MainApp.user.getFullName()+" - "+MainApp.user.getUserId());
+//        sF3a.setF3a09(MainApp.vForm3a.getScreeningDate());
         bi.f03a01.setMinDate(MainApp.vForm3a.getScreeningDate());
+        bi.f3a09.setMinDate(MainApp.vForm3a.getScreeningDate());
     }
 
     private boolean formValidation() {

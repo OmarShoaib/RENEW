@@ -303,6 +303,14 @@ public class Form2b extends FormBaseModel{
 
         public void setF02b13(String f02b13) {
             this.f02b13 = f02b13;
+            if(!f02b13.equals("2")) {
+                setF02b1401(_EMPTY_);
+                setF02b1402(_EMPTY_);
+                setF02b1403(_EMPTY_);
+                setF02b1404(_EMPTY_);
+                setF02b1496(_EMPTY_);
+                setF02b15(_EMPTY_);
+            }
             notifyPropertyChanged(BR.f02b13);
         }
 

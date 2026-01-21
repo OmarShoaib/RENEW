@@ -34,7 +34,7 @@ public class SectionF02a extends BaseActivity {
         super.activity = activity;
 
         // Init toolbar
-        AppConstants.initToolbar(activity, getString(R.string.f3t0), getString(R.string.f3t1), false);
+        AppConstants.initToolbar(activity, getString(R.string.f2at0), getString(R.string.t2at1), false);
         appDatabase = AppDatabase.getDBInstance();
 
         sF2a = Form2a.SF2a.getData();
@@ -59,6 +59,7 @@ public class SectionF02a extends BaseActivity {
         sF2a.setF2a07(MainApp.vPHQ9.getVillageAddress());
         sF2a.setF2a08(MainApp.vPHQ9.getEnteryUser());
         sF2a.setF2a09(MainApp.vPHQ9.getScreeningDate());
+        bi.f2a12.setMinDate(MainApp.vPHQ9.getScreeningDate());
         sF2a.setF2a10(MainApp.vPHQ9.getPhq9Score());
         sF2a.setF2a11(MainApp.vPHQ9.getRefrenceDate());
 

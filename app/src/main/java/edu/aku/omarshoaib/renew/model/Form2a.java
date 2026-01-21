@@ -490,6 +490,10 @@ public class Form2a extends FormBaseModel{
 
         public void setF2b12(String f2b12) {
             this.f2b12 = f2b12;
+            setF2c01(f2b12.equals("1") ? this.f2c01 : _EMPTY_);
+            setF2c02(f2b12.equals("1") ? this.f2c02 : _EMPTY_);
+            setF2c03(f2b12.equals("1") ? this.f2c03 : _EMPTY_);
+            setF2c04(f2b12.equals("1") ? this.f2c04 : _EMPTY_);
             notifyPropertyChanged(BR.f2b12);
         }
 

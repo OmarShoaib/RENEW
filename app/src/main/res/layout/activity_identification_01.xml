@@ -132,7 +132,7 @@
                             android:text="@={form.f103}"
                             app:dateFormat="@string/date_format"
                             app:maxDate="CR_DATE"
-                            app:minDate="2025-10-10" />
+                            app:minDate="2026-01-20" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
