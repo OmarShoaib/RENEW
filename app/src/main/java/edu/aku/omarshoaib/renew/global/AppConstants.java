@@ -141,6 +141,9 @@ public class AppConstants {
     // Connection timeout in seconds - 5 minutes
     public static int READ_TIMEOUT = 5 * 60;
 
+    // Connection timeout in seconds - 5 minutes
+    public static int WRITE_TIMEOUT = 5 * 60;
+
     // Screen idle timeout - 15 minutes
     public static long IDLE_TIMEOUT = 15 * 60 * 1000;
 

@@ -184,7 +184,76 @@ public class CryptoUtil {
     *//* WEB CALL SSL/TLS VERIFICATION - END *//*
      */
 
+    // Current Code
     public static OkHttpClient generateSecureOkHttpClient(Context context, String HOST_NAME) {
+        try {
+            //-----------------------------------------
+            // 1. Logging (ONLY enable for debug mode)
+            //-----------------------------------------
+            HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
+            loggingInterceptor.setLevel(BuildConfig.DEBUG ?
+                    HttpLoggingInterceptor.Level.BODY :
+                    HttpLoggingInterceptor.Level.NONE);
+
+            //-----------------------------------------
+            // 2. Load server certificate (PEM)
+            //-----------------------------------------
+            CertificateFactory cf = CertificateFactory.getInstance("X.509");
+
+            InputStream caInput = context.getResources().openRawResource(R.raw.vcoe1_aku_edu);
+            Certificate ca = cf.generateCertificate(caInput);
+            caInput.close();
+
+            //-----------------------------------------
+            // 3. Create KeyStore with server certificate
+            //-----------------------------------------
+            KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
+            keyStore.load(null, null);
+            keyStore.setCertificateEntry("server", ca);
+
+            //-----------------------------------------
+            // 4. Trusted CA for server validation
+            //-----------------------------------------
+            TrustManagerFactory tmf = TrustManagerFactory.getInstance(
+                    TrustManagerFactory.getDefaultAlgorithm());
+            tmf.init(keyStore);
+
+            X509TrustManager trustManager =
+                    (X509TrustManager) tmf.getTrustManagers()[0];
+
+
+            //-----------------------------------------
+            // 5. SSL Context
+            //-----------------------------------------
+            SSLContext sslContext = SSLContext.getInstance("TLS");
+            sslContext.init(null, new TrustManager[]{trustManager}, null);
+
+            //-----------------------------------------
+            // 6. Certificate Pinning (Public-Key Pinning)
+            //-----------------------------------------
+            CertificatePinner certificatePinner = new CertificatePinner.Builder()
+                    .add(HOST_NAME, BuildConfig.CERT_KEY)
+                    .add(HOST_NAME, BuildConfig.CERT_KEY_BACKUP)
+                    .build();
+
+            //-----------------------------------------
+            // 7. Final Secure OkHttp Client
+            //-----------------------------------------
+            return new OkHttpClient.Builder()
+                    .sslSocketFactory(sslContext.getSocketFactory(), trustManager)
+                    .certificatePinner(certificatePinner)
+                    .addInterceptor(loggingInterceptor)
+                    .connectTimeout(AppConstants.CONNECTION_TIMEOUT, TimeUnit.SECONDS)
+                    .readTimeout(AppConstants.READ_TIMEOUT, TimeUnit.SECONDS)
+                    .writeTimeout(AppConstants.WRITE_TIMEOUT, TimeUnit.SECONDS)
+                    .build();
+
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to create secure OkHttpClient", e);
+        }
+    }
+
+    /*public static OkHttpClient generateSecureOkHttpClient(Context context, String HOST_NAME) {
         try {
             //-----------------------------------------
             // 1. Logging (ONLY enable for debug mode)
@@ -249,7 +318,7 @@ public class CryptoUtil {
         } catch (Exception e) {
             throw new RuntimeException("Failed to create secure OkHttpClient", e);
         }
-    }
+    }*/
 
     /*public static OkHttpClient generateSecureOkHttpClient(Context context, String HOST_NAME) {
         try {

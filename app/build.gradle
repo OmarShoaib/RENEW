@@ -80,8 +80,8 @@ android {
             testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
             // Change this key when certificate will update on server
-            buildConfigField "String", "CERT_KEY", "\"sha256/Wec45nQiFwKvHtuHxSAMGkt19k+uPSw9JlEkxhvYPHk=\""
-            buildConfigField "String", "CERT_KEY_BACKUP", "\"sha256/RQeZkB42znUfsDIIFWIRiYEcKl7nHwNFwWCrnMMJbVc=\""
+            buildConfigField "String", "CERT_KEY", "\"sha256/A1HD6IfDednYIJexev3YHpRitYcLdESeiEgoxSOb3m8=\""
+            buildConfigField "String", "CERT_KEY_BACKUP", "\"sha256/Wec45nQiFwKvHtuHxSAMGkt19k+uPSw9JlEkxhvYPHk=\""
 
             // For writing room db schema
             javaCompileOptions {
