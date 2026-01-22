@@ -14,6 +14,8 @@ import edu.aku.omarshoaib.renew.activity.sections.Section2.followup.Followup2aLi
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivitySectionF03aBinding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
+import edu.aku.omarshoaib.renew.global.AppTextWatcher;
+import edu.aku.omarshoaib.renew.global.DateUtils;
 import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.model.Form2a;
 import edu.aku.omarshoaib.renew.model.Form3a;
@@ -62,7 +64,18 @@ public class SectionF03a extends BaseActivity {
 //        sF3a.setF3a09(MainApp.vForm3a.getScreeningDate());
         bi.f03a01.setMinDate(MainApp.vForm3a.getScreeningDate());
         bi.f3a09.setMinDate(MainApp.vForm3a.getScreeningDate());
+
     }
+
+    AppTextWatcher.IAppTextWatcher iAppTextWatcher = (viewId, text) -> {
+        if(text.length() == 0) {
+            bi.f3a1201x.setMinDate(DateUtils.getCurrentDateTime(AppConstants.APP_DATE_FORMAT));
+        } else {
+            bi.f3a1201x.setMinDate(text);
+            String maxDate = DateUtils.addSubMonths(text, 9);
+            bi.f3a1201x.setMaxDate(maxDate);
+        }
+    };
 
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(activity, bi.GrpName);

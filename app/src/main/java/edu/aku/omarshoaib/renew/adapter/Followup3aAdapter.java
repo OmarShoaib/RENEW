@@ -3,6 +3,7 @@ package edu.aku.omarshoaib.renew.adapter;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
@@ -62,6 +63,9 @@ public class Followup3aAdapter extends RecyclerView.Adapter<Followup3aAdapter.Vi
     public void onBindViewHolder(@NonNull Followup3aAdapter.ViewHolder holder, int position) {
         ItemFollowupBinding bi = holder.binding;
         VForm3a vForm3a = filteredList.get(position);
+        Form3a form3a = AppDatabase.getDBInstance().form3aDao()
+                .getDataByParticipantId(vForm3a.getParticipantId());
+        bi.statusIV.setVisibility(form3a != null ? View.VISIBLE : View.GONE);
         bi.itemLayout.setTag(position);
         bi.memberNameTV.setText(vForm3a.getParticipantName());
         bi.pIdTV.setText(vForm3a.getParticipantId());

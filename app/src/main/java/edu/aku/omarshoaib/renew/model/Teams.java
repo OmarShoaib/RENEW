@@ -19,6 +19,12 @@ public class Teams {
     @SerializedName("team_name")
     private String teamName;
 
+    @SerializedName("dist_id")
+    private String districtId;
+
+    @SerializedName("dist_name")
+    private String districtName;
+
     public String getTeamId() {
         return teamId.trim();
     }
@@ -33,6 +39,22 @@ public class Teams {
 
     public void setTeamName(String teamName) {
         this.teamName = teamName;
+    }
+
+    public String getDistrictId() {
+        return districtId;
+    }
+
+    public void setDistrictId(String districtId) {
+        this.districtId = districtId;
+    }
+
+    public String getDistrictName() {
+        return districtName;
+    }
+
+    public void setDistrictName(String districtName) {
+        this.districtName = districtName;
     }
 
     @NonNull

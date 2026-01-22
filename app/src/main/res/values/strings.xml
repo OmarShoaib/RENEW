@@ -534,7 +534,7 @@
     <string name="f2c03">Duration of Session (mins):</string>
     <string name="f2c04">Next Session Date</string>
     <string name="f2c0401">Date</string>
-    <string name="f2c0402">Not Applicable</string>
+    <string name="f2c0402">Don’t Know</string>
 
     <!-- Form 02b: Follow-up of Referral -->
     <string name="t02b">Follow–up of Referral</string>
@@ -584,8 +584,8 @@
     <string name="f3a1101">1st trimster</string>
     <string name="f3a1102">2nd trimster</string>
     <string name="f3a1103">3rd trimster</string>
-    <string name="f3a12">EDD if available</string>
-    <string name="f3a13">HB</string>
+    <string name="f3a12">Expected date of delivery</string>
+    <string name="f3a13">Hemoglobin Result</string>
     <string name="f3a1301">reading</string>
     <string name="f3a1302">Refused</string>
     <string name="f3a1396">others</string>

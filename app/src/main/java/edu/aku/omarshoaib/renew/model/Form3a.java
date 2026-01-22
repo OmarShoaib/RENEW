@@ -151,8 +151,8 @@ public class Form3a extends FormBaseModel {
         private String f3a1396x = _EMPTY_;
         private String f3a14 = _EMPTY_;
         private String f3a1496x = _EMPTY_;
-        private String f3a15 = _EMPTY_;
-        private String f3a1596x = _EMPTY_;
+//        private String f3a15 = _EMPTY_;
+//        private String f3a1596x = _EMPTY_;
         private String f3a1601 = _EMPTY_;
         private String f3a1602 = _EMPTY_;
         private String f3a1603 = _EMPTY_;
@@ -289,6 +289,21 @@ public class Form3a extends FormBaseModel {
 
         public void setF3a10(String f3a10) {
             this.f3a10 = f3a10;
+            if(!f3a10.equals("1")) {
+                setF3a11(_EMPTY_);
+                setF3a12(_EMPTY_);
+                setF3a13(_EMPTY_);
+                setF3a14(_EMPTY_);
+                setF3a1698(_EMPTY_);
+//                setF3a15(_EMPTY_);
+//                setF03a01(_EMPTY_);
+//                setF03a02(_EMPTY_);
+//                setF03a03(_EMPTY_);
+//                setF03a04(_EMPTY_);
+//                setF03a05(_EMPTY_);
+//                setF03a06(_EMPTY_);
+//                setF03a07(_EMPTY_);
+            }
             notifyPropertyChanged(BR.f3a10);
         }
 
@@ -376,7 +391,7 @@ public class Form3a extends FormBaseModel {
             notifyPropertyChanged(BR.f3a1496x);
         }
 
-        @Bindable
+        /*@Bindable
         public String getF3a15() {
             return f3a15;
         }
@@ -395,7 +410,7 @@ public class Form3a extends FormBaseModel {
         public void setF3a1596x(String f3a1596x) {
             this.f3a1596x = f3a1596x;
             notifyPropertyChanged(BR.f3a1596x);
-        }
+        }*/
 
         @Bindable
         public String getF3a1601() {
@@ -525,6 +540,13 @@ public class Form3a extends FormBaseModel {
             setF3a1609(_EMPTY_);
             setF3a1610(_EMPTY_);
             setF3a1611(_EMPTY_);
+            setF03a01(_EMPTY_);
+            setF03a02(_EMPTY_);
+            setF03a03(_EMPTY_);
+            setF03a04(_EMPTY_);
+            setF03a05(_EMPTY_);
+            setF03a06(_EMPTY_);
+            setF03a07(_EMPTY_);
             notifyPropertyChanged(BR.f3a1698);
         }
 
@@ -576,6 +598,9 @@ public class Form3a extends FormBaseModel {
 
         public void setF03a04(String f03a04) {
             this.f03a04 = f03a04;
+            setF03a05(f03a04.equals("1") ? this.f03a05: _EMPTY_);
+            setF03a06(f03a04.equals("2") ? this.f03a06: _EMPTY_);
+            setF03a07(f03a04.equals("2") ? this.f03a07: _EMPTY_);
             notifyPropertyChanged(BR.f03a04);
         }
 
