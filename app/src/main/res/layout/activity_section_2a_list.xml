@@ -76,6 +76,18 @@
                         android:fontFamily="@font/roboto_regular"
                         android:tag="2"
                         android:text="@string/pid" />
+
+                    <RadioButton
+                        android:id="@+id/cNoRB"
+                        style="@style/Theme.AppStructure.RadioButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:checked="false"
+                        android:fontFamily="@font/roboto_regular"
+                        android:tag="3"
+                        android:text="@string/contactnum" />
                 </RadioGroup>
 
                 <LinearLayout

@@ -13,7 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
+import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.sections.Section3.followup.SectionF03a;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ItemFollowupBinding;
@@ -70,6 +72,13 @@ public class Followup3aAdapter extends RecyclerView.Adapter<Followup3aAdapter.Vi
         bi.memberNameTV.setText(vForm3a.getParticipantName());
         bi.pIdTV.setText(vForm3a.getParticipantId());
         bi.clusterNoTV.setText(vForm3a.getScreeningDate());
+
+        bi.hhIdTV.setText(
+                AppConstants.getRichText(String.format(Locale.getDefault(),
+                        activity.getString(R.string.age_c), vForm3a.getAge())
+                )
+        );
+        bi.contactNoTV.setText(vForm3a.getContactNumber());
     }
 
     @Override
@@ -120,6 +129,10 @@ public class Followup3aAdapter extends RecyclerView.Adapter<Followup3aAdapter.Vi
             } else if (searchType == 2) {
                 // Search by Participant Id
                 if (item.getParticipantId().toLowerCase().contains(constraint))
+                    results.add(item);
+            } else if (searchType == 3) {
+                // Search by Contact No
+                if (item.getContactNumber().contains(constraint))
                     results.add(item);
             }
         }

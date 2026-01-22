@@ -13,7 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
+import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.sections.Section2.followup.SectionF02a;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ItemFollowupBinding;
@@ -71,9 +73,15 @@ public class Followup2aAdapter extends RecyclerView.Adapter<Followup2aAdapter.Vi
         bi.memberNameTV.setText(vphq9.getParticipantName());
         bi.pIdTV.setText(vphq9.getParticipantId());
         bi.clusterNoTV.setText(vphq9.getScreeningDate());
+        bi.hhIdTV.setText(
+                AppConstants.getRichText(String.format(Locale.getDefault(),
+                        activity.getString(R.string.age_c), vphq9.getAge())
+                )
+        );
+        bi.contactNoTV.setText(vphq9.getContactNumber());
+
         Form2a form2a = AppDatabase.getDBInstance().form2aDao()
                 .getDataByParticipantId(vphq9.getParticipantId());
-        if (form2a != null)
             bi.statusIV.setVisibility(
                     form2a == null ? View.GONE : View.VISIBLE);
 
@@ -126,6 +134,9 @@ public class Followup2aAdapter extends RecyclerView.Adapter<Followup2aAdapter.Vi
             } else if (searchType == 2) {
                 // Search by Participant Id
                 if (item.getParticipantId().toLowerCase().contains(constraint)) results.add(item);
+            } else if (searchType == 3) {
+                // Search by Participant Id
+                if (item.getContactNumber().contains(constraint)) results.add(item);
             }
         }
         return results;

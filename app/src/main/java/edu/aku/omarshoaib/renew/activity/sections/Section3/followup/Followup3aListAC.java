@@ -62,17 +62,22 @@ public class Followup3aListAC extends BaseActivity {
             if (checkedId == bi.pidRB.getId()) {
                 hint = getString(R.string.search_by_pid);
                 inputType = InputType.TYPE_TEXT_FLAG_CAP_CHARACTERS;
-                mask = "#-####-###-##";
-                maxLength = 13;
-            } else {
+//                mask = _EMPTY_;
+                maxLength = 20;
+            } else if(checkedId == bi.wraNameRB.getId()) {
                 hint = getString(R.string.search_by_name);
                 inputType = InputType.TYPE_CLASS_TEXT;
-                mask = _EMPTY_;
+//                mask = _EMPTY_;
                 maxLength = 100;
+            } else {
+                hint = getString(R.string.search_by_number);
+                inputType = InputType.TYPE_CLASS_NUMBER;
+//                mask = _EMPTY_;
+                maxLength = 11;
             }
             bi.searchET.setHint(hint);
             bi.searchET.setInputType(inputType);
-            bi.searchET.setMask(mask);
+//            bi.searchET.setMask(mask);
             bi.searchET.setFilters(new InputFilter[]{new InputFilter.LengthFilter(maxLength)});
         });
     }

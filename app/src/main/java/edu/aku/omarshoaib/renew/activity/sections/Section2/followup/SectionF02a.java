@@ -14,6 +14,7 @@ import edu.aku.omarshoaib.renew.activity.sections.Section3.PregnantParticipantsA
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivitySectionF02aBinding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
+import edu.aku.omarshoaib.renew.global.DateUtils;
 import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.model.Form2a;
 import edu.aku.omarshoaib.renew.model.HCF;
@@ -62,7 +63,9 @@ public class SectionF02a extends BaseActivity {
         bi.f2a12.setMinDate(MainApp.vPHQ9.getScreeningDate());
         sF2a.setF2a10(MainApp.vPHQ9.getPhq9Score());
         sF2a.setF2a11(MainApp.vPHQ9.getRefrenceDate());
-
+        bi.f2c0401x.setMaxDate(DateUtils.addSubMonths(
+                DateUtils.getCurrentDateTime(AppConstants.APP_DATE_FORMAT), 1)
+        );
     }
 
     private boolean formValidation() {

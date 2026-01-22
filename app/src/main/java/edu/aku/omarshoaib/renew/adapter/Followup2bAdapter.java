@@ -3,6 +3,7 @@ package edu.aku.omarshoaib.renew.adapter;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
@@ -12,14 +13,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
+import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.sections.Section2.followup.SectionF02b;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ItemFollowupBinding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.MainApp;
+import edu.aku.omarshoaib.renew.model.Form2a;
 import edu.aku.omarshoaib.renew.model.Form2b;
 import edu.aku.omarshoaib.renew.model.VForm2b;
+import edu.aku.omarshoaib.renew.model.VPHQ9;
 
 public class Followup2bAdapter extends RecyclerView.Adapter<Followup2bAdapter.ViewHolder> implements Filterable {
 
@@ -70,6 +75,18 @@ public class Followup2bAdapter extends RecyclerView.Adapter<Followup2bAdapter.Vi
         bi.memberNameTV.setText(vForm2b.getParticipantName());
         bi.pIdTV.setText(vForm2b.getParticipantId());
         bi.clusterNoTV.setText(vForm2b.getScreeningDate());
+
+        bi.hhIdTV.setText(
+                AppConstants.getRichText(String.format(Locale.getDefault(),
+                        activity.getString(R.string.age_c), vForm2b.getAge())
+                )
+        );
+        bi.contactNoTV.setText(vForm2b.getContactNumber());
+
+        Form2b form2b = AppDatabase.getDBInstance().form2bDao()
+                .getDataByParticipantId(vForm2b.getParticipantId());
+        bi.statusIV.setVisibility(
+                form2b == null ? View.GONE : View.VISIBLE);
     }
 
     @Override
@@ -120,6 +137,10 @@ public class Followup2bAdapter extends RecyclerView.Adapter<Followup2bAdapter.Vi
             } else if (searchType == 2) {
                 // Search by Participant Id
                 if (item.getParticipantId().toLowerCase().contains(constraint))
+                    results.add(item);
+            } else if (searchType == 3) {
+                // Search by contact no
+                if (item.getContactNumber().contains(constraint))
                     results.add(item);
             }
         }

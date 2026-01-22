@@ -49,6 +49,7 @@ public class SectionF03a extends BaseActivity {
     private void initUI() {
         bi.f3a1201x.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
         bi.f03a01.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
+        bi.f3a09.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
         bi.f03a02.setThemeId(R.style.Theme_AppStructure_TimePickerStyle);
         sF3a.setF3a01(MainApp.vForm3a.getParticipantId());
         sF3a.setF3a02(MainApp.vForm3a.getParticipantName());
@@ -64,11 +65,12 @@ public class SectionF03a extends BaseActivity {
 //        sF3a.setF3a09(MainApp.vForm3a.getScreeningDate());
         bi.f03a01.setMinDate(MainApp.vForm3a.getScreeningDate());
         bi.f3a09.setMinDate(MainApp.vForm3a.getScreeningDate());
-
+        bi.f3a09.addTextChangedListener(new AppTextWatcher(bi.f3a09.getId(), iAppTextWatcher));
     }
 
     AppTextWatcher.IAppTextWatcher iAppTextWatcher = (viewId, text) -> {
-        if(text.length() == 0) {
+        sF3a.setF3a1201x("");
+        if(text.isEmpty()) {
             bi.f3a1201x.setMinDate(DateUtils.getCurrentDateTime(AppConstants.APP_DATE_FORMAT));
         } else {
             bi.f3a1201x.setMinDate(text);
