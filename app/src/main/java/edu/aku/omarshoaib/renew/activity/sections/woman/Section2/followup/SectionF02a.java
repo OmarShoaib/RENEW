@@ -1,4 +1,4 @@
-package edu.aku.omarshoaib.renew.activity.sections.Section2.followup;
+package edu.aku.omarshoaib.renew.activity.sections.woman.Section2.followup;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -10,7 +10,6 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.BaseActivity;
-import edu.aku.omarshoaib.renew.activity.sections.Section3.PregnantParticipantsAC;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivitySectionF02aBinding;
 import edu.aku.omarshoaib.renew.global.AppConstants;

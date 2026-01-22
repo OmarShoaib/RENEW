@@ -211,6 +211,9 @@ public class Form5 extends FormBaseModel {
 
         public void setF503(String f503) {
             this.f503 = f503;
+            if(!f503.equals("1")) {
+
+            }
             notifyPropertyChanged(BR.f503);
         }
 

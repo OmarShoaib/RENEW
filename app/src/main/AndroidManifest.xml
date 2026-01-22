@@ -82,68 +82,68 @@
 
         <!-- SectionF01 -->
         <activity
-            android:name="edu.aku.omarshoaib.renew.activity.sections.Section1.SectionF01"
+            android:name="edu.aku.omarshoaib.renew.activity.sections.woman.Section1.SectionF01"
             android:exported="false" />
         <activity
-            android:name="edu.aku.omarshoaib.renew.activity.sections.Section1.Identification01"
+            android:name="edu.aku.omarshoaib.renew.activity.sections.woman.Section1.Identification01"
             android:exported="false" />
         <activity
-            android:name="edu.aku.omarshoaib.renew.activity.sections.Section1.ParticipantListAC"
+            android:name="edu.aku.omarshoaib.renew.activity.sections.woman.Section1.ParticipantListAC"
             android:exported="false" />
 
         <!-- SectionF02 -->
         <activity
-            android:name="edu.aku.omarshoaib.renew.activity.sections.Section2.SectionF02"
+            android:name="edu.aku.omarshoaib.renew.activity.sections.woman.Section2.SectionF02"
             android:exported="false" />
         <activity
-            android:name="edu.aku.omarshoaib.renew.activity.sections.Section2.Identification02"
+            android:name="edu.aku.omarshoaib.renew.activity.sections.woman.Section2.Identification02"
             android:exported="false" />
         <activity
-            android:name="edu.aku.omarshoaib.renew.activity.sections.Section2.PHQ9ParticipantsAC"
+            android:name="edu.aku.omarshoaib.renew.activity.sections.woman.Section2.PHQ9ParticipantsAC"
             android:exported="false" />
         <activity
-            android:name="edu.aku.omarshoaib.renew.activity.sections.Section2.followup.Followup2aListAC"
+            android:name="edu.aku.omarshoaib.renew.activity.sections.woman.Section2.followup.Followup2aListAC"
             android:exported="false" />
         <activity
-            android:name="edu.aku.omarshoaib.renew.activity.sections.Section2.followup.SectionF02a"
+            android:name="edu.aku.omarshoaib.renew.activity.sections.woman.Section2.followup.SectionF02a"
             android:exported="false" />
         <activity
-            android:name="edu.aku.omarshoaib.renew.activity.sections.Section2.followup.FollowUp2bListAC"
+            android:name="edu.aku.omarshoaib.renew.activity.sections.woman.Section2.followup.FollowUp2bListAC"
             android:exported="false" />
         <activity
-            android:name="edu.aku.omarshoaib.renew.activity.sections.Section2.followup.SectionF02b"
+            android:name="edu.aku.omarshoaib.renew.activity.sections.woman.Section2.followup.SectionF02b"
             android:exported="false" />
 
         <!-- SectionF03 -->
         <activity
-            android:name="edu.aku.omarshoaib.renew.activity.sections.Section3.SectionF03"
+            android:name="edu.aku.omarshoaib.renew.activity.sections.woman.Section3.SectionF03"
             android:exported="false" />
         <activity
-            android:name="edu.aku.omarshoaib.renew.activity.sections.Section3.Identification03"
+            android:name="edu.aku.omarshoaib.renew.activity.sections.woman.Section3.Identification03"
             android:exported="false" />
         <activity
-            android:name="edu.aku.omarshoaib.renew.activity.sections.Section3.PregnantParticipantsAC"
+            android:name="edu.aku.omarshoaib.renew.activity.sections.woman.Section3.PregnantParticipantsAC"
             android:exported="false" />
         <activity
-            android:name="edu.aku.omarshoaib.renew.activity.sections.Section3.followup.Followup3aListAC"
+            android:name="edu.aku.omarshoaib.renew.activity.sections.woman.Section3.followup.Followup3aListAC"
             android:exported="false" />
         <activity
-            android:name="edu.aku.omarshoaib.renew.activity.sections.Section3.followup.SectionF03a"
+            android:name="edu.aku.omarshoaib.renew.activity.sections.woman.Section3.followup.SectionF03a"
             android:exported="false" />
 
         <!-- SectionF04 -->
         <activity
-            android:name="edu.aku.omarshoaib.renew.activity.sections.SectionF04"
+            android:name="edu.aku.omarshoaib.renew.activity.sections.child.SectionF04"
             android:exported="false" />
 
         <!-- SectionF05 -->
         <activity
-            android:name="edu.aku.omarshoaib.renew.activity.sections.SectionF05"
+            android:name="edu.aku.omarshoaib.renew.activity.sections.child.SectionF05"
             android:exported="false" />
 
         <!-- SectionF06 -->
         <activity
-            android:name="edu.aku.omarshoaib.renew.activity.sections.SectionF06"
+            android:name="edu.aku.omarshoaib.renew.activity.sections.child.SectionF06"
             android:exported="true" />
 
         <!-- SYNCED RECORDS LIST ACTIVITY -->

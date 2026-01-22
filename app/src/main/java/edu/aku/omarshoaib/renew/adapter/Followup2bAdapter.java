@@ -16,15 +16,13 @@ import java.util.List;
 import java.util.Locale;
 
 import edu.aku.omarshoaib.renew.R;
-import edu.aku.omarshoaib.renew.activity.sections.Section2.followup.SectionF02b;
+import edu.aku.omarshoaib.renew.activity.sections.woman.Section2.followup.SectionF02b;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ItemFollowupBinding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.MainApp;
-import edu.aku.omarshoaib.renew.model.Form2a;
 import edu.aku.omarshoaib.renew.model.Form2b;
 import edu.aku.omarshoaib.renew.model.VForm2b;
-import edu.aku.omarshoaib.renew.model.VPHQ9;
 
 public class Followup2bAdapter extends RecyclerView.Adapter<Followup2bAdapter.ViewHolder> implements Filterable {
 

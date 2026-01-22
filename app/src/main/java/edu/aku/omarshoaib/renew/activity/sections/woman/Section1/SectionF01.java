@@ -1,4 +1,4 @@
-package edu.aku.omarshoaib.renew.activity.sections.Section1;
+package edu.aku.omarshoaib.renew.activity.sections.woman.Section1;
 
 import static edu.aku.omarshoaib.renew.global.AppConstants._EMPTY_;
 
@@ -13,14 +13,11 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.BaseActivity;
-import edu.aku.omarshoaib.renew.activity.EndingAC;
-import edu.aku.omarshoaib.renew.activity.MainActivity;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivitySectionF01Binding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.AppTextWatcher;
 import edu.aku.omarshoaib.renew.global.MainApp;
-import edu.aku.omarshoaib.renew.model.Form1;
 import edu.aku.omarshoaib.renew.model.Participant;
 
 public class SectionF01 extends BaseActivity {

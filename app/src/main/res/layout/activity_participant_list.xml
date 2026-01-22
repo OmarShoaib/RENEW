@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".activity.sections.Section1.ParticipantListAC">
+    tools:context=".activity.sections.woman.Section1.ParticipantListAC">
 
     <data>
 
@@ -10,7 +10,7 @@
 
         <!--<variable
             name="callback"
-            type="edu.aku.omarshoaib.renew.activity.sections.Section1.ParticipantListAC" />-->
+            type="edu.aku.omarshoaib.renew.activity.sections.woman.Section1.ParticipantListAC" />-->
     </data>
 
     <LinearLayout

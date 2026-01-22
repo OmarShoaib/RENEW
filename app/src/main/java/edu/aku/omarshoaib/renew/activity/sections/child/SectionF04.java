@@ -1,12 +1,10 @@
-package edu.aku.omarshoaib.renew.activity.sections;
+package edu.aku.omarshoaib.renew.activity.sections.child;
 
 import static edu.aku.omarshoaib.renew.global.AppConstants._EMPTY_;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 
 import androidx.databinding.DataBindingUtil;
 
@@ -55,8 +53,7 @@ public class SectionF04 extends BaseActivity {
     }
 
     private void viewF411() {
-        if (proceedToF05())
-            bi.fldGrpCVf411.setVisibility(View.VISIBLE);
+        if (proceedToF05()) bi.fldGrpCVf411.setVisibility(View.VISIBLE);
         else {
             bi.fldGrpCVf411.setVisibility(View.GONE);
             sF4.setF411(_EMPTY_);
@@ -77,8 +74,8 @@ public class SectionF04 extends BaseActivity {
         if (!formValidation()) return;
         Form4.saveMainData(MainApp.form4.getScrId());
         Form4.SF4.saveData(sF4);
-        AppConstants.gotoActivity(activity, sF4.getF411().equals("1") ?
-                SectionF05.class : EndingAC.class, true);
+        AppConstants.gotoActivity(activity, proceedToF05() ?
+                SectionF05.class : MainActivity.class, true);
     }
 
     @Override

@@ -1,4 +1,4 @@
-package edu.aku.omarshoaib.renew.activity.sections.Section1;
+package edu.aku.omarshoaib.renew.activity.sections.child;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -16,46 +16,45 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.BaseActivity;
-import edu.aku.omarshoaib.renew.activity.IdentificationAC;
 import edu.aku.omarshoaib.renew.activity.MainActivity;
+import edu.aku.omarshoaib.renew.activity.sections.woman.Section1.ParticipantListAC;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
-import edu.aku.omarshoaib.renew.databinding.ActivityIdentification01Binding;
-import edu.aku.omarshoaib.renew.databinding.ActivityIdentificationBinding;
+import edu.aku.omarshoaib.renew.databinding.ActivityIdentification02Binding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.AppTextWatcher;
 import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.model.Form1;
+import edu.aku.omarshoaib.renew.model.Form4;
 import edu.aku.omarshoaib.renew.model.HCF;
 import edu.aku.omarshoaib.renew.model.Teams;
 
-public class Identification01 extends BaseActivity {
+public class Identification02 extends BaseActivity {
 
     private final String TAG = getClass().getSimpleName();
-    private final Activity activity = Identification01.this;
+    private final Activity activity = Identification02.this;
 
-    ActivityIdentification01Binding bi;
+    ActivityIdentification02Binding bi;
     private AppDatabase appDatabase;
 
-    private Form1.SF1 sF1;
+    private Form4.SF4 sF4;
     private Button posBtn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(activity, R.layout.activity_identification_01);
+        bi = DataBindingUtil.setContentView(activity, R.layout.activity_identification_02);
         super.activity = activity;
 
         // Init toolbar
         AppConstants.initToolbar(activity, getString(R.string.identification), "", false);
 
         // Init form1 for the first time
-        Form1.initMeta();
-        sF1 = new Form1.SF1();
-        bi.setForm(sF1);
+        Form4.initMeta();
+        sF4 = new Form4.SF4();
+        bi.setForm(sF4);
 
         appDatabase = AppDatabase.getDBInstance();
 
@@ -66,10 +65,10 @@ public class Identification01 extends BaseActivity {
         bi.f103.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
         bi.f103.addTextChangedListener(new AppTextWatcher(bi.f103.getId(), textWatcher));
         setupHCFSpinner();
-        setupTeamSpinner();
+//        setupTeamSpinner();
     }
 
-    private void setupTeamSpinner() {
+    /*private void setupTeamSpinner() {
         List<Teams> list = new ArrayList<>();
         Teams team = new Teams();
         team.setTeamId("");
@@ -88,26 +87,26 @@ public class Identification01 extends BaseActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0) {
-                    sF1.setF101("");
+                    sF4.setF101("");
                     return;
                 }
                 String item = parent.getItemAtPosition(position).toString();
-                sF1.setF101(item.split("-")[0].trim());
+                sF4.setF101(item.split("-")[0].trim());
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) { }
         });
-        if (!sF1.getF101().isEmpty()) {
+        if (!sF4.getF101().isEmpty()) {
             for (int i = 0; i < list.size(); i++) {
-                if (list.get(i).getTeamId().trim().equals(sF1.getF101())) {
+                if (list.get(i).getTeamId().trim().equals(sF4.getF101())) {
                     bi.f101.setSelection(i);
                     break;
                 }
             }
         }
 
-    }
+    }*/
 
     private void setupHCFSpinner() {
         List<HCF> list = new ArrayList<>();
@@ -128,19 +127,19 @@ public class Identification01 extends BaseActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0) {
-                    sF1.setF102("");
+                    sF4.setF403("");
                     return;
                 }
                 String item = parent.getItemAtPosition(position).toString();
-                sF1.setF102(item.split("-")[0].trim());
+                sF4.setF403(item.split("-")[0].trim());
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) { }
         });
-        if (!sF1.getF102().isEmpty()) {
+        if (!sF4.getF403().isEmpty()) {
             for (int i = 0; i < list.size(); i++) {
-                if (list.get(i).getHfCode().trim().equals(sF1.getF102())) {
+                if (list.get(i).getHfCode().trim().equals(sF4.getF403())) {
                     bi.f102.setSelection(i);
                     break;
                 }
@@ -172,16 +171,16 @@ public class Identification01 extends BaseActivity {
         String scrId = bi.scrId.getText().toString() + Objects.requireNonNull(bi.f103a.getText());
 
         // Do not allow synced form1 to be edited
-        if (appDatabase.form1Dao().isFormSynced(MainApp.user.getDistId(), scrId))
+        if (appDatabase.form4Dao().isFormSynced(MainApp.user.getDistId(), scrId))
             MainApp.isSynced = true;
 
         // New form1
 //        String clusterNo = Objects.requireNonNull(bi.a101.getText()).toString();
-        MainApp.form1.setScrId(scrId);
-        MainApp.form1.setTeamId(sF1.getF101());
-        Form1.saveMainData(scrId);
-        Form1.SF1.saveData(sF1);
-        AppConstants.gotoActivity(activity, ParticipantListAC.class, true);
+        MainApp.form4.setScrId(scrId);
+//        MainApp.form4.setTeamId(sF4.getF101());
+        Form4.saveMainData(scrId);
+//        Form4.SF4.saveData(sF4);
+        AppConstants.gotoActivity(activity, SectionF04.class, true);
     }
 
     public void btnEnd(View view) {

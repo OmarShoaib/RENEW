@@ -1,4 +1,4 @@
-package edu.aku.omarshoaib.renew.activity.sections.Section3.followup;
+package edu.aku.omarshoaib.renew.activity.sections.woman.Section3.followup;
 
 import static edu.aku.omarshoaib.renew.global.AppConstants._EMPTY_;
 

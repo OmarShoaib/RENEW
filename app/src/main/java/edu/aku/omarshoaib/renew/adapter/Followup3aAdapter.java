@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Locale;
 
 import edu.aku.omarshoaib.renew.R;
-import edu.aku.omarshoaib.renew.activity.sections.Section3.followup.SectionF03a;
+import edu.aku.omarshoaib.renew.activity.sections.woman.Section3.followup.SectionF03a;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ItemFollowupBinding;
 import edu.aku.omarshoaib.renew.global.AppConstants;

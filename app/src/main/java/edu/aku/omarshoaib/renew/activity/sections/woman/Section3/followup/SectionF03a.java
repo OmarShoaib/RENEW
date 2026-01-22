@@ -1,4 +1,4 @@
-package edu.aku.omarshoaib.renew.activity.sections.Section3.followup;
+package edu.aku.omarshoaib.renew.activity.sections.woman.Section3.followup;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -10,14 +10,12 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.BaseActivity;
-import edu.aku.omarshoaib.renew.activity.sections.Section2.followup.Followup2aListAC;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivitySectionF03aBinding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.AppTextWatcher;
 import edu.aku.omarshoaib.renew.global.DateUtils;
 import edu.aku.omarshoaib.renew.global.MainApp;
-import edu.aku.omarshoaib.renew.model.Form2a;
 import edu.aku.omarshoaib.renew.model.Form3a;
 import edu.aku.omarshoaib.renew.model.HCF;
 

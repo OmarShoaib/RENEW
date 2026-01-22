@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".activity.sections.SectionF04">
+    tools:context=".activity.sections.child.SectionF04">
 
     <data>
 
@@ -104,44 +104,13 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center"
+                            android:enabled="false"
+                            android:textColor="@color/red_color"
                             android:hint="@string/date_format"
                             android:text="@={form.f402}"
                             app:dateFormat="@string/date_format"
                             app:maxDate="CR_DATE"
                             app:minDate="2025-12-10" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- f403 Dropdown -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVf403"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_f403" />
-
-                        <TextView
-                            style="@style/labels"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="@string/f403" />
-
-                        <androidx.appcompat.widget.AppCompatSpinner
-                            android:id="@+id/f403"
-                            style="@style/Theme.AppStructure.SpinnerStyle"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:spinnerMode="dropdown" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 

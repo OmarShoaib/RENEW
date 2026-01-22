@@ -1,6 +1,7 @@
-package edu.aku.omarshoaib.renew.activity.sections.Section2;
+package edu.aku.omarshoaib.renew.activity.sections.woman.Section1;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,21 +16,18 @@ import java.util.Locale;
 
 import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.BaseActivity;
-import edu.aku.omarshoaib.renew.activity.MainActivity;
-import edu.aku.omarshoaib.renew.activity.sections.Section1.SectionF01;
+import edu.aku.omarshoaib.renew.activity.EndingAC;
 import edu.aku.omarshoaib.renew.adapter.GenericAdapter;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivityParticipantListBinding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
-import edu.aku.omarshoaib.renew.global.DateUtils;
 import edu.aku.omarshoaib.renew.global.MainApp;
-import edu.aku.omarshoaib.renew.model.Form2;
 import edu.aku.omarshoaib.renew.model.Participant;
 
-public class PHQ9ParticipantsAC extends BaseActivity {
+public class ParticipantListAC extends BaseActivity {
 
     private final String TAG = getClass().getSimpleName();
-    private final Activity activity = PHQ9ParticipantsAC.this;
+    private final Activity activity = ParticipantListAC.this;
 
     ActivityParticipantListBinding bi;
     private AppDatabase appDatabase;
@@ -43,27 +41,26 @@ public class PHQ9ParticipantsAC extends BaseActivity {
         super.activity = activity;
 
         // Init toolbar
-        AppConstants.initToolbar(activity, getString(R.string.eligible_participant_list),
-                "", false);
-        bi.titleTV.setText(getString(R.string.eligible_participant_list));
-        bi.addMoreBtn.setVisibility(View.INVISIBLE);
+        AppConstants.initToolbar(activity, getString(R.string.participant_list),
+                getString(R.string.participant_list), false);
+        bi.titleTV.setText("Participant List");
 
         appDatabase = AppDatabase.getDBInstance();
-    }
-
-    private boolean isCompleted(Participant participant) {
-        for (Form2 form2 : MainApp.listForm2)
-            if(form2.getUuId().equals(participant.getUid()))
-                return true;
-
-        return false;
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        MainApp.participantList = appDatabase.participantDao().getAllDataByUuid(MainApp.form1.getUid());
+
+        if (MainApp.participantList == null || MainApp.participantList.isEmpty()) {
+            bi.rv.setVisibility(View.GONE);
+            bi.emptyTV.setVisibility(View.GONE);
+            bi.endButtonsLayout.findViewById(R.id.posBtn).setVisibility(View.INVISIBLE);
+            return;
+        }
+
         bi.totalTV.setText(String.valueOf(MainApp.participantList.size()));
-        MainApp.listForm2 = appDatabase.form2Dao().getDataByScrId(MainApp.form1.getScrId());
 
         genericAdapter = new GenericAdapter<Participant>(activity, MainApp.participantList,
                 bi.rv, null, false) {
@@ -81,8 +78,6 @@ public class PHQ9ParticipantsAC extends BaseActivity {
                 TextView lineNoTV = view.findViewById(R.id.lineNoTV);
                 TextView nameTV = view.findViewById(R.id.nameTV);
                 ImageView imageView = view.findViewById(R.id.iv);
-                ImageView completeFlagIV = view.findViewById(R.id.completeFlagIV);
-                completeFlagIV.setVisibility(isCompleted(item) ? View.VISIBLE : View.INVISIBLE);
 
                 lineNoTV.setText(String.format(Locale.ENGLISH, "Participant# %02d", item.getLineNo()));
                 imageView.setImageDrawable(ContextCompat.getDrawable(activity, R.drawable.fetus));
@@ -90,41 +85,28 @@ public class PHQ9ParticipantsAC extends BaseActivity {
 
                 view.setOnClickListener(view1 -> {
                     MainApp.participant = MainApp.participantList.get((int) view1.getTag());
-                    MainApp.form2 = appDatabase.form2Dao().getDataByUuid(MainApp.participant.getUid(), MainApp.form1.getScrId());
-                    if (MainApp.form2 == null) Form2.initMeta();
-                    AppConstants.gotoActivity(activity, SectionF02.class, true);
+                    AppConstants.gotoActivity(activity, SectionF01.class, true);
                 });
             }
         };
         bi.rv.setAdapter(genericAdapter);
-        boolean isCountMismatch = MainApp.participantList.size() == MainApp.listForm2.size();
+        boolean isCountMismatch = MainApp.participantList.size() >= 3;
+
+//        bi.addMoreBtn.setVisibility(isCountMismatch ? View.GONE : View.VISIBLE);
         bi.endButtonsLayout.findViewById(R.id.posBtn).setVisibility(isCountMismatch ? View.VISIBLE : View.INVISIBLE);
     }
 
-    private void markIStatus() {
-        if(MainApp.listForm2.size() < MainApp.participantList.size()) return;
-        String today = DateUtils.getCurrentDateTime(AppConstants.APP_DATE_FORMAT);
-        for(Form2 form : MainApp.listForm2)
-            appDatabase.form2Dao().updateIStatus(form.getId(), "1", "",
-                    true, today);
-    }
-
     public void btnAddMore(View view) {
-        Participant.initMeta(MainApp.listForm2.size() + 1);
+        Participant.initMeta(MainApp.participantList.size() + 1);
         AppConstants.gotoActivity(activity, SectionF01.class, true);
     }
 
     public void btnContinue(View view) {
-        markIStatus();
-        AppConstants.gotoActivity(activity, MainActivity.class, true);
+        finish();
+        startActivity(new Intent(activity, EndingAC.class).putExtra("complete", true));
     }
 
     public void btnEnd(View view) {
-        AppConstants.checkDoubleCancelPress(activity, MainActivity.class);
-    }
-
-    @Override
-    public void onBackPressed() {
-        AppConstants.checkDoubleBackPress(activity, MainActivity.class);
+        AppConstants.checkDoubleCancelPress(activity, EndingAC.class);
     }
 }

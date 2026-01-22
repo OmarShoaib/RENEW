@@ -1,4 +1,4 @@
-package edu.aku.omarshoaib.renew.activity.sections.Section2.followup;
+package edu.aku.omarshoaib.renew.activity.sections.woman.Section2.followup;
 
 import android.app.Activity;
 import android.os.Bundle;

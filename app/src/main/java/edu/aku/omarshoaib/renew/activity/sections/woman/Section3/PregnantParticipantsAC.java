@@ -1,4 +1,4 @@
-package edu.aku.omarshoaib.renew.activity.sections.Section3;
+package edu.aku.omarshoaib.renew.activity.sections.woman.Section3;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -16,9 +16,7 @@ import java.util.Locale;
 import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.BaseActivity;
 import edu.aku.omarshoaib.renew.activity.MainActivity;
-import edu.aku.omarshoaib.renew.activity.sections.Section1.SectionF01;
-import edu.aku.omarshoaib.renew.activity.sections.Section2.PHQ9ParticipantsAC;
-import edu.aku.omarshoaib.renew.activity.sections.Section2.SectionF02;
+import edu.aku.omarshoaib.renew.activity.sections.woman.Section1.SectionF01;
 import edu.aku.omarshoaib.renew.adapter.GenericAdapter;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivityParticipantListBinding;
