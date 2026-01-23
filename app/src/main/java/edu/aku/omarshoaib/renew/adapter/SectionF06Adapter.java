@@ -1,0 +1,151 @@
+package edu.aku.omarshoaib.renew.adapter;
+
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+
+import edu.aku.omarshoaib.renew.R;
+import edu.aku.omarshoaib.renew.activity.sections.woman.Section2.followup.SectionF02b;
+import edu.aku.omarshoaib.renew.database.AppDatabase;
+import edu.aku.omarshoaib.renew.databinding.ItemFollowupBinding;
+import edu.aku.omarshoaib.renew.global.AppConstants;
+import edu.aku.omarshoaib.renew.global.MainApp;
+import edu.aku.omarshoaib.renew.model.Form2b;
+import edu.aku.omarshoaib.renew.model.Form6;
+import edu.aku.omarshoaib.renew.model.VForm2b;
+import edu.aku.omarshoaib.renew.model.VFormF06;
+
+public class SectionF06Adapter extends RecyclerView.Adapter<SectionF06Adapter.ViewHolder> implements Filterable {
+
+    private final Activity activity;
+    private final List<VFormF06> mainList;
+    private List<VFormF06> filteredList;
+    private int searchType = 1;
+
+    public SectionF06Adapter(Activity activity, List<VFormF06> mainList) {
+        this.activity = activity;
+        this.mainList = mainList;
+        this.filteredList = new ArrayList<>(mainList);
+    }
+
+    protected static class ViewHolder extends RecyclerView.ViewHolder {
+        ItemFollowupBinding binding;
+
+        public ViewHolder(ItemFollowupBinding itemView) {
+            super(itemView.getRoot());
+            binding = itemView;
+        }
+    }
+
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        ItemFollowupBinding itemView = ItemFollowupBinding.inflate(LayoutInflater.from(activity), parent, false);
+        itemView.itemLayout.setOnClickListener(view -> {
+            int pos = (int) view.getTag();
+            MainApp.vFormF06 = filteredList.get(pos);
+//            if (MainApp.selectedMWRA.getStatus() != 3) {
+            Form6 form6 = AppDatabase.getDBInstance().form6Dao().getDataByScrId(MainApp.user.getDistId(),
+                    MainApp.vFormF06.getParticipantId());
+            if (form6 != null) MainApp.form6 = form6;
+            else Form6.initMeta();
+            AppConstants.gotoActivity(activity, SectionF02b.class, true);
+//            } else
+//                AlertPopup.alert(activity, activity.getString(R.string.form_synced),
+//                        activity.getString(R.string.form_synced_desc), AppConstants.TYPE_SUCCESS);
+        });
+        return new SectionF06Adapter.ViewHolder(itemView);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        ItemFollowupBinding bi = holder.binding;
+        VFormF06 vForm06 = filteredList.get(position);
+        bi.itemLayout.setTag(position);
+        bi.memberNameTV.setText(vForm06.getParticipantName());
+        bi.pIdTV.setText(vForm06.getParticipantId());
+//        bi.clusterNoTV.setText(vForm06.getScreeningDate());
+
+        bi.hhIdTV.setText(
+                AppConstants.getRichText(String.format(Locale.getDefault(),
+                        activity.getString(R.string.age_c), vForm06.getAge())
+                )
+        );
+        bi.contactNoTV.setText(vForm06.getContactNumber());
+
+        Form6 form6 = AppDatabase.getDBInstance().form6Dao()
+                .getDataByScrId(MainApp.user.getDistId(),
+                        vForm06.getParticipantId());
+        bi.statusIV.setVisibility(
+                form6 == null ? View.GONE : View.VISIBLE);
+    }
+
+    @Override
+    public int getItemCount() {
+        return filteredList != null ? filteredList.size() : 0;
+    }
+
+    public void setSearchType(int searchType) {
+        this.searchType = searchType;
+    }
+
+    @Override
+    public Filter getFilter() {
+        return new Filter() {
+            @SuppressLint("NotifyDataSetChanged")
+            @SuppressWarnings("unchecked")
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+                filteredList = (List<VFormF06>) results.values;
+                notifyDataSetChanged();
+            }
+
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                List<VFormF06> filteredResults;
+                if (constraint.length() == 0) {
+                    filteredResults = mainList;
+                } else {
+                    filteredResults = getFilteredResults(constraint.toString().toLowerCase());
+                }
+
+                FilterResults results = new FilterResults();
+                results.values = filteredResults;
+
+                return results;
+            }
+        };
+    }
+
+    protected List<VFormF06> getFilteredResults(String constraint) {
+        List<VFormF06> results = new ArrayList<>();
+
+        for (VFormF06 item : mainList) {
+            if (searchType == 1) {
+                // Search by Name
+                if (item.getParticipantName().toLowerCase().contains(constraint))
+                    results.add(item);
+            } else if (searchType == 2) {
+                // Search by Participant Id
+                if (item.getParticipantId().toLowerCase().contains(constraint))
+                    results.add(item);
+            } else if (searchType == 3) {
+                // Search by contact no
+                if (item.getContactNumber().contains(constraint))
+                    results.add(item);
+            }
+        }
+        return results;
+    }
+}

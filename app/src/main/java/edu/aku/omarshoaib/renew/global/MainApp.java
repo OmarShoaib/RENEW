@@ -31,6 +31,7 @@ import edu.aku.omarshoaib.renew.model.Participant;
 import edu.aku.omarshoaib.renew.model.User;
 import edu.aku.omarshoaib.renew.model.VForm2b;
 import edu.aku.omarshoaib.renew.model.VForm3a;
+import edu.aku.omarshoaib.renew.model.VFormF06;
 import edu.aku.omarshoaib.renew.model.VPHQ9;
 
 public class MainApp extends Application {
@@ -52,6 +53,8 @@ public class MainApp extends Application {
     public static List<VPHQ9> vPHQ9List;
     public static VForm2b vForm2b;
     public static List<VForm2b> vForm2bList;
+    public static VFormF06 vFormF06;
+    public static List<VFormF06> vFormF06List;
     public static VForm3a vForm3a;
     public static List<VForm3a> vForm3aList;
     public static List<Participant> participantList;
