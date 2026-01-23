@@ -73,6 +73,7 @@ public class SectionF04 extends BaseActivity {
     public void btnContinue(View view) {
         if (!formValidation()) return;
         Form4.saveMainData(MainApp.form4.getScrId());
+        MainApp.form4.setIStatus("1");
         Form4.SF4.saveData(sF4);
         AppConstants.gotoActivity(activity, proceedToF05() ?
                 SectionF05.class : MainActivity.class, true);

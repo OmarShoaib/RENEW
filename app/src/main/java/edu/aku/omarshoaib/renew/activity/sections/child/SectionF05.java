@@ -49,6 +49,8 @@ public class SectionF05 extends BaseActivity {
         AppConstants.initToolbar(activity, getString(R.string.f5t0), getString(R.string.f5t1), false);
         appDatabase = AppDatabase.getDBInstance();
 
+        MainApp.form5 = appDatabase.form5Dao().getDataByScrId(MainApp.user.getDistId(), MainApp.form4.getScrId());
+        if (MainApp.form5 == null) Form5.initMeta();
         sF5 = Form5.SF5.getData();
         sF5 = sF5 == null ? new Form5.SF5() : sF5;
         bi.setForm(sF5);
@@ -127,6 +129,7 @@ public class SectionF05 extends BaseActivity {
     public void btnContinue(View view) {
         if (!formValidation()) return;
         Form5.saveMainData(MainApp.form4.getScrId());
+        MainApp.form5.setIStatus("1");
         Form5.SF5.saveData(sF5);
         AppConstants.gotoActivity(activity, MainActivity.class, true);
     }

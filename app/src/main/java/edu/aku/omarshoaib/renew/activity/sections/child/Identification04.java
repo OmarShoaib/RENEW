@@ -20,21 +20,18 @@ import java.util.Objects;
 import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.BaseActivity;
 import edu.aku.omarshoaib.renew.activity.MainActivity;
-import edu.aku.omarshoaib.renew.activity.sections.woman.Section1.ParticipantListAC;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivityIdentification02Binding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.AppTextWatcher;
 import edu.aku.omarshoaib.renew.global.MainApp;
-import edu.aku.omarshoaib.renew.model.Form1;
 import edu.aku.omarshoaib.renew.model.Form4;
 import edu.aku.omarshoaib.renew.model.HCF;
-import edu.aku.omarshoaib.renew.model.Teams;
 
-public class Identification02 extends BaseActivity {
+public class Identification04 extends BaseActivity {
 
     private final String TAG = getClass().getSimpleName();
-    private final Activity activity = Identification02.this;
+    private final Activity activity = Identification04.this;
 
     ActivityIdentification02Binding bi;
     private AppDatabase appDatabase;
@@ -177,8 +174,9 @@ public class Identification02 extends BaseActivity {
         // New form1
 //        String clusterNo = Objects.requireNonNull(bi.a101.getText()).toString();
         MainApp.form4.setScrId(scrId);
-//        MainApp.form4.setTeamId(sF4.getF101());
+        MainApp.form4.setSF4(sF4);
         Form4.saveMainData(scrId);
+//        MainApp.form4.setTeamId(sF4.getF101());
 //        Form4.SF4.saveData(sF4);
         AppConstants.gotoActivity(activity, SectionF04.class, true);
     }

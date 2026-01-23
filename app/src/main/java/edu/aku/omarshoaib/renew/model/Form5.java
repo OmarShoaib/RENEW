@@ -47,25 +47,16 @@ public class Form5 extends FormBaseModel {
     @ColumnInfo(defaultValue = "0")
     private transient boolean isFormCompleteOnce;
 
-    // For enabling GPS
-   /* public String gLat = SharedPrefs.read(SharedPrefs.GPS_LAT, _EMPTY_);
-    public String gLon = SharedPrefs.read(SharedPrefs.GPS_LON, _EMPTY_);
-    public String gAcc = SharedPrefs.read(SharedPrefs.GPS_ACC, _EMPTY_);
-    public String gDate = SharedPrefs.read(SharedPrefs.GPS_DATE, _EMPTY_);
-    public String gPerm = GPSLocation.GPS_PERMISSION;
-    public String gAvail = GPSLocation.GPS_AVAILABLE;*/
-
     /*JSON OBJECTS*/
     private SF5 sF5;
-
-    public Form5() {
-    }
 
     // Init default data
     public static void initMeta() {
         // This is used to add record for the first time
         MainApp.form5 = new Form5();
         MainApp.form5.setDistrictCode(MainApp.user.getDistId());
+        MainApp.form5.setVillageName(MainApp.form4.getVillageName());
+        MainApp.form5.setScrId(MainApp.form4.getScrId());
     }
 
     /*FOR IDENTIFICATION INFORMATION - CLUSTER-WISE*/

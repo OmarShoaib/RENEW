@@ -135,6 +135,9 @@
         <activity
             android:name="edu.aku.omarshoaib.renew.activity.sections.child.SectionF04"
             android:exported="false" />
+        <activity
+            android:name="edu.aku.omarshoaib.renew.activity.sections.child.Identification04"
+            android:exported="false" />
 
         <!-- SectionF05 -->
         <activity
