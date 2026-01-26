@@ -275,6 +275,7 @@
                             android:digits="@string/digits_number"
                             android:gravity="center"
                             android:hint="##.##"
+                            app:mask="##.##"
                             android:inputType="number"
                             android:maxLength="5"
                             android:text="@={form.f606}"
@@ -1332,8 +1333,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.f618.equals(``)}"
-                                android:onClick="@{()->form.setF618(``)}"
+                                android:checked="@{form.f618.equals(`1`)}"
+                                android:onClick="@{()->form.setF618(`1`)}"
                                 android:text="@string/f61801" />
 
                             <RadioButton
@@ -1341,8 +1342,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:checked="@{form.f618.equals(``)}"
-                                android:onClick="@{()->form.setF618(``)}"
+                                android:checked="@{form.f618.equals(`2`)}"
+                                android:onClick="@{()->form.setF618(`2`)}"
                                 android:text="@string/f61802" />
                         </RadioGroup>
                     </LinearLayout>
