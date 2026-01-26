@@ -51,7 +51,7 @@ public class SectionF03 extends BaseActivity {
         sF3.setF301(MainApp.participant.getSF1().getF104());
         sF3.setF303(MainApp.participant.getSF1().getF105());
         sF3.setF304(MainApp.form1.getSF1().getF102());
-        HCF hcf = appDatabase.hcfDao().getHcfbyCode(MainApp.form1.getSF1().getF102());
+        HCF hcf = appDatabase.hcfDao().getHcfbyCode(MainApp.form1.getSF1().getF102().trim());
         bi.f304.setText(hcf == null ? "" : hcf.getHfName());
 //        sF3.setF305(MainApp.participant.getVillageName());
         sF3.setF306(MainApp.user.getFullName()+" - "+MainApp.user.getUserId());

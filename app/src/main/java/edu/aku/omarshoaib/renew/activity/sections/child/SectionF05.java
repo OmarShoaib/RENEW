@@ -82,6 +82,7 @@ public class SectionF05 extends BaseActivity {
         sF5 = new Form5.SF5();
         sF5.setF501(MainApp.user.getFullName()+" - "+MainApp.user.getUserId());
         sF5.setF502(MainApp.form4.getSF4().getF402());
+        sF5.setF503("2");
         bi.setForm(sF5);
     });
 

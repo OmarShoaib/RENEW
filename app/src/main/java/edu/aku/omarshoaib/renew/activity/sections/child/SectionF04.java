@@ -20,6 +20,7 @@ import edu.aku.omarshoaib.renew.databinding.ActivitySectionF04Binding;
 import edu.aku.omarshoaib.renew.global.AppTextWatcher;
 import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.model.Form4;
+import edu.aku.omarshoaib.renew.model.HCF;
 
 public class SectionF04 extends BaseActivity {
 
@@ -48,6 +49,8 @@ public class SectionF04 extends BaseActivity {
 
     private void initUI() {
         sF4.setF401(MainApp.form4.getUsername());
+        HCF hcf = appDatabase.hcfDao().getHcfbyCode(sF4.getF403().trim());
+        bi.f403.setText(hcf == null ? "" : hcf.getHfName());
         bi.f409.setOnCheckedChangeListener((group, checkedId) -> group.post(this::viewF411));
         bi.f410.addTextChangedListener(new AppTextWatcher(bi.f410.getId(), (viewId, text) -> viewF411()));
     }
