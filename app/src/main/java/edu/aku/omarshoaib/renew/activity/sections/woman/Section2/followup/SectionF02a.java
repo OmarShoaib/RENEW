@@ -85,6 +85,7 @@ public class SectionF02a extends BaseActivity {
         if (!formValidation()) return;
         Form2a.saveMainData(MainApp.form2a.getParticipantId());
         MainApp.form2a.setIStatus("1");
+        MainApp.form2a.setEndingDate(DateUtils.getCurrentDateTime());
         Form2a.SF2a.saveData(sF2a);
         AppConstants.gotoActivity(activity, Followup2aListAC.class, true);
     }

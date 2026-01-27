@@ -131,6 +131,7 @@ public class SectionF05 extends BaseActivity {
         if (!formValidation()) return;
         Form5.saveMainData(MainApp.form4.getScrId());
         MainApp.form5.setIStatus("1");
+        MainApp.form5.setEndingDate(DateUtils.getCurrentDateTime());
         Form5.SF5.saveData(sF5);
         AppConstants.gotoActivity(activity, MainActivity.class, true);
     }

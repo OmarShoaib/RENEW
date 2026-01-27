@@ -20,6 +20,7 @@ import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.BaseActivity;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivitySectionF06Binding;
+import edu.aku.omarshoaib.renew.global.DateUtils;
 import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.model.Form6;
 
@@ -52,8 +53,7 @@ public class SectionF06 extends BaseActivity {
     private void initUI() {
         setChangeListeners();
         bi.f602.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
-        if(!AppConstants.isEmpty(MainApp.form5))
-            bi.f602.setMinDate(MainApp.form5.getSF5().getF502());
+        sF6.setF604(MainApp.vFormF06.getParticipantId());
         sF6.setF601(MainApp.form6.getUsername());
     }
 
@@ -65,6 +65,7 @@ public class SectionF06 extends BaseActivity {
         if (!formValidation()) return;
         Form6.saveMainData(MainApp.vFormF06.getParticipantId());
         MainApp.form6.setIStatus("1");
+        MainApp.form6.setEndingDate(DateUtils.getCurrentDateTime());
         Form6.SF6.saveData(sF6);
         AppConstants.gotoActivity(activity, MainActivity.class, true);
     }

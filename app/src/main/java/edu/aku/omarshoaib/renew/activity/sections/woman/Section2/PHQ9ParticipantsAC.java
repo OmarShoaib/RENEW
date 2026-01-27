@@ -103,7 +103,7 @@ public class PHQ9ParticipantsAC extends BaseActivity {
 
     private void markIStatus() {
         if(MainApp.listForm2.size() < MainApp.participantList.size()) return;
-        String today = DateUtils.getCurrentDateTime(AppConstants.APP_DATE_FORMAT);
+        String today = DateUtils.getCurrentDateTime();
         for(Form2 form : MainApp.listForm2)
             appDatabase.form2Dao().updateIStatus(form.getId(), "1", "",
                     true, today);

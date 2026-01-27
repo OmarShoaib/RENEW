@@ -85,6 +85,7 @@ public class SectionF03a extends BaseActivity {
         if (!formValidation()) return;
         Form3a.saveMainData(MainApp.form3a.getPregnantWomanId());
         MainApp.form3a.setIStatus("1");
+        MainApp.form3a.setEndingDate(DateUtils.getCurrentDateTime());
         Form3a.SF3a.saveData(sF3a);
         AppConstants.gotoActivity(activity, Followup3aListAC.class, true);
     }

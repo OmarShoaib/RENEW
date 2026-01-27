@@ -13,6 +13,7 @@ import edu.aku.omarshoaib.renew.activity.BaseActivity;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivitySectionF02bBinding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
+import edu.aku.omarshoaib.renew.global.DateUtils;
 import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.model.Form2b;
 import edu.aku.omarshoaib.renew.model.HCF;
@@ -68,6 +69,7 @@ public class SectionF02b extends BaseActivity {
         if (!formValidation()) return;
         Form2b.saveMainData(MainApp.form2b.getParticipantId());
         MainApp.form2b.setIStatus("1");
+        MainApp.form2b.setEndingDate(DateUtils.getCurrentDateTime());
         Form2b.SF2b.saveData(sF2b);
         AppConstants.gotoActivity(activity, FollowUp2bListAC.class, true);
     }

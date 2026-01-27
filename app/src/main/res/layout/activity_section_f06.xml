@@ -192,6 +192,8 @@
                             android:digits="@string/digits_number"
                             android:gravity="center"
                             android:hint="#####"
+                            android:enabled="false"
+                            android:textColor="@color/red_color"
                             android:inputType="number"
                             android:maxLength="5"
                             android:text="@={form.f604}"
@@ -695,6 +697,7 @@
                 <TextView
                     android:id="@+id/f610_info"
                     style="@style/info"
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/t6t2a" />
@@ -1652,7 +1655,7 @@
                             android:layout_height="wrap_content"
                             android:digits="@string/digits_number"
                             android:gravity="center"
-                            android:hint="#"
+                            android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
                             android:text="@={form.f61901}"

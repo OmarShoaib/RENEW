@@ -9,15 +9,34 @@
     <color name="white">#FFFFFFFF</color>
 
     <!--App Colors-->
-    <color name="primary_color">#009688</color>
+    <!--<color name="primary_color">#009688</color>
     <color name="primary_color_light">#BEE6E2</color>
     <color name="primary_color_dark">#00796B</color>
-    <color name="primary_color_accent">#5CBF88</color>
+    <color name="primary_color_accent">#5CBF88</color>-->
+    <!--<color name="primary_color">#6F8F7D</color>
+    <color name="primary_color_light">#E6EFEA</color>
+    <color name="primary_color_dark">#4F6F60</color>
+    <color name="primary_color_accent">#8FAE9D</color>-->
+    <color name="primary_color">#2FA4A9</color>
+    <color name="primary_color_light">#CDECEE</color>
+    <color name="primary_color_dark">#1E7F84</color>
+    <color name="primary_color_accent">#5FC3C7</color>
 
-    <color name="secondary_color">#FF9800</color>
+
+    <color name="secondary_color">#F07C6C</color>
+    <color name="secondary_color_light">#FFD9D3</color>
+    <color name="secondary_color_dark">#C55B4D</color>
+    <color name="secondary_color_accent">#F5A094</color>
+
+    <!--<color name="secondary_color">#C27A5A</color>
+    <color name="secondary_color_light">#F3E1D8</color>
+    <color name="secondary_color_dark">#8F4E34</color>
+    <color name="secondary_color_accent">#D9A38B</color>-->
+
+    <!--<color name="secondary_color">#FF9800</color>
     <color name="secondary_color_light">#FFDBA6</color>
     <color name="secondary_color_dark">#D57E00</color>
-    <color name="secondary_color_accent">#FACB82</color>
+    <color name="secondary_color_accent">#FACB82</color>-->
 
     <color name="status_bar_color">#005A50</color>
     <color name="appbar_color">@color/primary_color_dark</color>

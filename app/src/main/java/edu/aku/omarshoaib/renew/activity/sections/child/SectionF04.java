@@ -17,6 +17,7 @@ import edu.aku.omarshoaib.renew.activity.BaseActivity;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivitySectionF04Binding;
 import edu.aku.omarshoaib.renew.global.AppTextWatcher;
+import edu.aku.omarshoaib.renew.global.DateUtils;
 import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.model.Form4;
 import edu.aku.omarshoaib.renew.model.HCF;
@@ -76,6 +77,7 @@ public class SectionF04 extends BaseActivity {
         if (!formValidation()) return;
         Form4.saveMainData(MainApp.form4.getScrId());
         MainApp.form4.setIStatus("1");
+        MainApp.form4.setEndingDate(DateUtils.getCurrentDateTime());
         Form4.SF4.saveData(sF4);
         AppConstants.gotoActivity(activity, sF4.getF411().equals("1") ?
                 SectionF05.class : MainActivity.class, true);
