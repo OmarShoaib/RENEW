@@ -12,10 +12,10 @@ import edu.aku.omarshoaib.renew.model.VFormF06;
 @Dao
 public abstract class VForm06Dao implements BaseDao<VFormF06> {
 
-    @Query("SELECT * FROM vw_Form6")
+    @Query("SELECT * FROM vw_form6")
     public abstract List<VFormF06> getAllData();
 
-    @Query("DELETE FROM vw_Form6")
+    @Query("DELETE FROM vw_form6")
     public abstract void deleteAll();
 
     @Transaction

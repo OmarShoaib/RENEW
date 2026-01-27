@@ -650,6 +650,7 @@
                                     android:enabled="@{form.f3a13.equals(`1`)}"
                                     android:gravity="center"
                                     android:hint="##.#"
+                                    app:pattern="[0-9]{2}.[0-9]"
                                     android:inputType="number"
                                     android:maxLength="4"
                                     android:tag="f3a1301"

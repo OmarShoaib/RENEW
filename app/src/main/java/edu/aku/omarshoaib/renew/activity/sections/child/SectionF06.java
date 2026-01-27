@@ -3,9 +3,15 @@ package edu.aku.omarshoaib.renew.activity.sections.child;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.RadioGroup;
 
 import androidx.databinding.DataBindingUtil;
 import com.validatorcrawler.aliazaz.Validator;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Stream;
 
 import edu.aku.omarshoaib.renew.activity.EndingAC;
 import edu.aku.omarshoaib.renew.activity.MainActivity;
@@ -25,6 +31,7 @@ public class SectionF06 extends BaseActivity {
     ActivitySectionF06Binding bi;
     private AppDatabase appDatabase;
     private Form6.SF6 sF6;
+    private List<RadioGroup> f610RadioGroups = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +43,6 @@ public class SectionF06 extends BaseActivity {
         AppConstants.initToolbar(activity, getString(R.string.f6t0), getString(R.string.f6t1), false);
         appDatabase = AppDatabase.getDBInstance();
 
-        MainApp.form6 = new Form6();
         sF6 = Form6.SF6.getData();
         sF6 = sF6 == null ? new Form6.SF6() : sF6;
         bi.setForm(sF6);
@@ -44,6 +50,7 @@ public class SectionF06 extends BaseActivity {
     }
 
     private void initUI() {
+        setChangeListeners();
         bi.f602.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
         if(!AppConstants.isEmpty(MainApp.form5))
             bi.f602.setMinDate(MainApp.form5.getSF5().getF502());
@@ -56,12 +63,43 @@ public class SectionF06 extends BaseActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
+        Form6.saveMainData(MainApp.vFormF06.getParticipantId());
+        MainApp.form6.setIStatus("1");
         Form6.SF6.saveData(sF6);
-        AppConstants.gotoActivity(activity, EndingAC.class, true);
+        AppConstants.gotoActivity(activity, MainActivity.class, true);
     }
 
     @Override
     public void onBackPressed() {
         AppConstants.checkDoubleBackPress(activity, MainActivity.class);
     }
+
+    private void getAllRadioGroups(ViewGroup parent) {
+        for (int i = 0; i < parent.getChildCount(); i++) {
+            View child = parent.getChildAt(i);
+            if (child instanceof RadioGroup)
+                f610RadioGroups.add((RadioGroup) child);
+
+            if (child instanceof ViewGroup) {
+                getAllRadioGroups((ViewGroup) child); // Recursive call
+            }
+        }
+    }
+
+    private void setChangeListeners() {
+        getAllRadioGroups(bi.fldGrpCVf610);
+        for(RadioGroup rg  : f610RadioGroups) rg.setOnCheckedChangeListener(listener);
+    }
+
+    private boolean areAnyJ517One() {
+        return Stream.of(
+                sF6.getF610a(), sF6.getF610b(), sF6.getF610c(),
+                sF6.getF610d(), sF6.getF610e(), sF6.getF610f(),
+                sF6.getF610g()
+        ).anyMatch("1"::equals);
+    }
+
+    RadioGroup.OnCheckedChangeListener listener =
+            ((group, checkedId) -> group.post(() ->
+                    bi.f610Info.setVisibility(areAnyJ517One() ? View.VISIBLE : View.GONE)));
 }

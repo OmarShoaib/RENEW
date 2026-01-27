@@ -547,7 +547,8 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             app:layout_columnWeight="1"
-                            android:visibility="@{module == 2 ? View.VISIBLE : View.GONE}">
+                            android:visibility="gone" >
+<!--                            android:visibility="@{module == 2 ? View.VISIBLE : View.GONE}">-->
 
                             <RelativeLayout
                                 android:id="@+id/option5"

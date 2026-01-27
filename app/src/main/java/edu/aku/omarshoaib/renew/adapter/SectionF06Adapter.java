@@ -9,6 +9,7 @@ import android.widget.Filter;
 import android.widget.Filterable;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.content.res.AppCompatResources;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -16,14 +17,13 @@ import java.util.List;
 import java.util.Locale;
 
 import edu.aku.omarshoaib.renew.R;
-import edu.aku.omarshoaib.renew.activity.sections.woman.Section2.followup.SectionF02b;
+import edu.aku.omarshoaib.renew.activity.sections.child.SectionF06;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ItemFollowupBinding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
+import edu.aku.omarshoaib.renew.global.DateUtils;
 import edu.aku.omarshoaib.renew.global.MainApp;
-import edu.aku.omarshoaib.renew.model.Form2b;
 import edu.aku.omarshoaib.renew.model.Form6;
-import edu.aku.omarshoaib.renew.model.VForm2b;
 import edu.aku.omarshoaib.renew.model.VFormF06;
 
 public class SectionF06Adapter extends RecyclerView.Adapter<SectionF06Adapter.ViewHolder> implements Filterable {
@@ -56,11 +56,11 @@ public class SectionF06Adapter extends RecyclerView.Adapter<SectionF06Adapter.Vi
             int pos = (int) view.getTag();
             MainApp.vFormF06 = filteredList.get(pos);
 //            if (MainApp.selectedMWRA.getStatus() != 3) {
-            Form6 form6 = AppDatabase.getDBInstance().form6Dao().getDataByScrId(MainApp.user.getDistId(),
+            Form6 form6 = AppDatabase.getDBInstance().form6Dao().getDataByParticipantId(MainApp.user.getDistId(),
                     MainApp.vFormF06.getParticipantId());
             if (form6 != null) MainApp.form6 = form6;
             else Form6.initMeta();
-            AppConstants.gotoActivity(activity, SectionF02b.class, true);
+            AppConstants.gotoActivity(activity, SectionF06.class, true);
 //            } else
 //                AlertPopup.alert(activity, activity.getString(R.string.form_synced),
 //                        activity.getString(R.string.form_synced_desc), AppConstants.TYPE_SUCCESS);
@@ -73,19 +73,26 @@ public class SectionF06Adapter extends RecyclerView.Adapter<SectionF06Adapter.Vi
         ItemFollowupBinding bi = holder.binding;
         VFormF06 vForm06 = filteredList.get(position);
         bi.itemLayout.setTag(position);
-        bi.memberNameTV.setText(vForm06.getParticipantName());
+        bi.memberNameTV.setText(vForm06.getChildName());
         bi.pIdTV.setText(vForm06.getParticipantId());
 //        bi.clusterNoTV.setText(vForm06.getScreeningDate());
+        bi.memberIV.setImageDrawable(AppCompatResources.getDrawable(activity, R.drawable.ic_baby_boy));
 
+        String[] dob = vForm06.getDob().split("-");
+        List<String> age = DateUtils.calculateAge(vForm06.getEnrollmentDate(),
+                dob[0], dob[1], dob[2]);
+        int ageInMonths = DateUtils.getAgeInMonths(age.get(0), age.get(1));
+//        bi.clusterNoTV.setText(ageInMonths)
+        bi.clusterNoTV.setText(vForm06.getFatherName());
         bi.hhIdTV.setText(
                 AppConstants.getRichText(String.format(Locale.getDefault(),
-                        activity.getString(R.string.age_c), vForm06.getAge())
+                        activity.getString(R.string.age_c_months), ageInMonths)
                 )
         );
-        bi.contactNoTV.setText(vForm06.getContactNumber());
+        bi.contactNoTV.setText(vForm06.getContactNo());
 
         Form6 form6 = AppDatabase.getDBInstance().form6Dao()
-                .getDataByScrId(MainApp.user.getDistId(),
+                .getDataByParticipantId(MainApp.user.getDistId(),
                         vForm06.getParticipantId());
         bi.statusIV.setVisibility(
                 form6 == null ? View.GONE : View.VISIBLE);
@@ -134,7 +141,7 @@ public class SectionF06Adapter extends RecyclerView.Adapter<SectionF06Adapter.Vi
         for (VFormF06 item : mainList) {
             if (searchType == 1) {
                 // Search by Name
-                if (item.getParticipantName().toLowerCase().contains(constraint))
+                if (item.getChildName().toLowerCase().contains(constraint))
                     results.add(item);
             } else if (searchType == 2) {
                 // Search by Participant Id
@@ -142,7 +149,7 @@ public class SectionF06Adapter extends RecyclerView.Adapter<SectionF06Adapter.Vi
                     results.add(item);
             } else if (searchType == 3) {
                 // Search by contact no
-                if (item.getContactNumber().contains(constraint))
+                if (item.getContactNo().contains(constraint))
                     results.add(item);
             }
         }

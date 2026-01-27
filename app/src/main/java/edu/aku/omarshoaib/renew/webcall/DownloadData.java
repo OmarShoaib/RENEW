@@ -30,7 +30,6 @@ import edu.aku.omarshoaib.renew.global.DateUtils;
 import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.global.SharedPrefs;
 import edu.aku.omarshoaib.renew.model.AppInfo;
-import edu.aku.omarshoaib.renew.model.Cluster;
 import edu.aku.omarshoaib.renew.model.DPortal;
 import edu.aku.omarshoaib.renew.model.HCF;
 import edu.aku.omarshoaib.renew.model.SyncModel;
@@ -75,7 +74,7 @@ public class DownloadData {
         add("STRINGS");
         add("RANGES");
         /* APP CODE STARTS FROM HERE */
-        add(Cluster.TABLE_NAME);
+//        add(Cluster.TABLE_NAME);
         add(HCF.TABLE_NAME);
         add(VPHQ9.TABLE_NAME);
         add(VForm2b.TABLE_NAME);
@@ -141,26 +140,23 @@ public class DownloadData {
 
             /* APP CODE STARTS FROM HERE */
 
-            SyncModel s1 = new SyncModel(DT_AFTER_LOGIN.get(2), select, filter + /*"AND dist_id = " + MainApp.user.getDistId()*/ "", check);
-            webCall.call(webAPI.downloadEncData(CryptoUtil.encrypt(gson.toJson(s1))), AppConstants.DOWNLOAD_DATA, DT_AFTER_LOGIN.get(2), ++index, 0, IS_CALL_ENCRYPTED);
+            SyncModel s2 = new SyncModel(DT_AFTER_LOGIN.get(2), select, "" + " dist_id = " + MainApp.user.getDistId(), check);
+            webCall.call(webAPI.downloadEncData(CryptoUtil.encrypt(gson.toJson(s2))), AppConstants.DOWNLOAD_DATA, DT_AFTER_LOGIN.get(2), ++index, 0, IS_CALL_ENCRYPTED);
 
-            SyncModel s2 = new SyncModel(DT_AFTER_LOGIN.get(3), select, "" + " dist_id = " + MainApp.user.getDistId(), check);
-            webCall.call(webAPI.downloadEncData(CryptoUtil.encrypt(gson.toJson(s2))), AppConstants.DOWNLOAD_DATA, DT_AFTER_LOGIN.get(3), ++index, 0, IS_CALL_ENCRYPTED);
+            SyncModel s3 = new SyncModel(DT_AFTER_LOGIN.get(3), select, "" /*+ " dist_id = " + MainApp.user.getDistId()*/, check);
+            webCall.call(webAPI.downloadEncData(CryptoUtil.encrypt(gson.toJson(s3))), AppConstants.DOWNLOAD_DATA, DT_AFTER_LOGIN.get(3), ++index, 0, IS_CALL_ENCRYPTED);
 
-            SyncModel s3 = new SyncModel(DT_AFTER_LOGIN.get(4), select, "" /*+ " dist_id = " + MainApp.user.getDistId()*/, check);
-            webCall.call(webAPI.downloadEncData(CryptoUtil.encrypt(gson.toJson(s3))), AppConstants.DOWNLOAD_DATA, DT_AFTER_LOGIN.get(4), ++index, 0, IS_CALL_ENCRYPTED);
+            SyncModel s4 = new SyncModel(DT_AFTER_LOGIN.get(4), select, "" /*+ " dist_id = " + MainApp.user.getDistId()*/, check);
+            webCall.call(webAPI.downloadEncData(CryptoUtil.encrypt(gson.toJson(s4))), AppConstants.DOWNLOAD_DATA, DT_AFTER_LOGIN.get(4), ++index, 0, IS_CALL_ENCRYPTED);
 
-            SyncModel s4 = new SyncModel(DT_AFTER_LOGIN.get(5), select, "" /*+ " dist_id = " + MainApp.user.getDistId()*/, check);
-            webCall.call(webAPI.downloadEncData(CryptoUtil.encrypt(gson.toJson(s4))), AppConstants.DOWNLOAD_DATA, DT_AFTER_LOGIN.get(5), ++index, 0, IS_CALL_ENCRYPTED);
+            SyncModel s5 = new SyncModel(DT_AFTER_LOGIN.get(5), select, "" /*+ " dist_id = " + MainApp.user.getDistId()*/, check);
+            webCall.call(webAPI.downloadEncData(CryptoUtil.encrypt(gson.toJson(s5))), AppConstants.DOWNLOAD_DATA, DT_AFTER_LOGIN.get(5), ++index, 0, IS_CALL_ENCRYPTED);
 
-            SyncModel s5 = new SyncModel(DT_AFTER_LOGIN.get(6), select, "" /*+ " dist_id = " + MainApp.user.getDistId()*/, check);
-            webCall.call(webAPI.downloadEncData(CryptoUtil.encrypt(gson.toJson(s5))), AppConstants.DOWNLOAD_DATA, DT_AFTER_LOGIN.get(6), ++index, 0, IS_CALL_ENCRYPTED);
+            SyncModel s6 = new SyncModel(DT_AFTER_LOGIN.get(6), select, "" /*" dist_id = " + MainApp.user.getDistId()*/, check);
+            webCall.call(webAPI.downloadEncData(CryptoUtil.encrypt(gson.toJson(s6))), AppConstants.DOWNLOAD_DATA, DT_AFTER_LOGIN.get(6), ++index, 0, IS_CALL_ENCRYPTED);
 
-            SyncModel s6 = new SyncModel(DT_AFTER_LOGIN.get(7), select, " dist_id = " + MainApp.user.getDistId(), check);
-            webCall.call(webAPI.downloadEncData(CryptoUtil.encrypt(gson.toJson(s6))), AppConstants.DOWNLOAD_DATA, DT_AFTER_LOGIN.get(7), ++index, 0, IS_CALL_ENCRYPTED);
-
-            SyncModel s7 = new SyncModel(DT_AFTER_LOGIN.get(8), select, " dist_id = " + MainApp.user.getDistId(), check);
-            webCall.call(webAPI.downloadEncData(CryptoUtil.encrypt(gson.toJson(s7))), AppConstants.DOWNLOAD_DATA, DT_AFTER_LOGIN.get(8), ++index, 0, IS_CALL_ENCRYPTED);
+            SyncModel s7 = new SyncModel(DT_AFTER_LOGIN.get(7), select, "" /*" dist_id = " + MainApp.user.getDistId()*/, check);
+            webCall.call(webAPI.downloadEncData(CryptoUtil.encrypt(gson.toJson(s7))), AppConstants.DOWNLOAD_DATA, DT_AFTER_LOGIN.get(7), ++index, 0, IS_CALL_ENCRYPTED);
         }
     }
 
@@ -294,16 +290,6 @@ public class DownloadData {
                 }
             }
             /* APP CODE STARTS FROM HERE */
-            else if (tag.equals(Cluster.TABLE_NAME)) {
-                Cluster[] clusters = gson.fromJson(jsonResponse, Cluster[].class);
-                // Update sync list view
-                SyncModel syncModel = getUpdatedSyncDownloadItem(activity, syncTablesList.get(index), clusters.length, AppConstants.RESPONSE_SUCCESS, null);
-                syncTablesList.set(index, syncModel);
-                syncAdapter.notifyItemChanged(index);
-
-                // Clear and Add data to db
-                appDatabase.clusterDao().reinsert(clusters);
-            }
             else if (tag.equals(HCF.TABLE_NAME)) {
                 HCF[] hcfs = gson.fromJson(jsonResponse, HCF[].class);
                 // Update sync list view

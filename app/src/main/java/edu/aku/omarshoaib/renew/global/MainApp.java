@@ -16,7 +16,6 @@ import java.util.List;
 import dev.b3nedikt.restring.Restring;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.model.AppInfo;
-import edu.aku.omarshoaib.renew.model.Cluster;
 import edu.aku.omarshoaib.renew.model.Form1;
 import edu.aku.omarshoaib.renew.model.Form2;
 import edu.aku.omarshoaib.renew.model.Form2a;
@@ -46,7 +45,6 @@ public class MainApp extends Application {
     public static AppInfo appInfo;
     public static User user;
     public static HCF hcf;
-    public static Cluster selectedCluster;
     public static Form1 form1;
     public static Participant participant;
     public static VPHQ9 vPHQ9;

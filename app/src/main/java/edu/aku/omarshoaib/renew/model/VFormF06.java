@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName;
 
 @Entity(tableName = VFormF06.TABLE_NAME)
 public class VFormF06 {
-    public final static String TABLE_NAME = "vw_Form6";
+    public final static String TABLE_NAME = "vw_form6";
 
     @PrimaryKey(autoGenerate = true)
     @SerializedName("_id")
@@ -16,25 +16,22 @@ public class VFormF06 {
     @SerializedName("participant_id")
     private String participantId;
 
-    @SerializedName("participant_name")
-    private String participantName;
+    @SerializedName("Enrol_date")
+    private String enrollmentDate;
 
-    @SerializedName("father_name")
+    @SerializedName("Child_Name")
+    private String childName;
+
+    @SerializedName("DOB")
+    private String dob;
+
+    @SerializedName("father_caregiver")
     private String fatherName;
 
-    private String age;
+    @SerializedName("contact")
+    private String contactNo;
 
-    @SerializedName("contact_number")
-    private String contactNumber;
-
-    @SerializedName("hcf_id")
-    private String hcfId;
-
-    @SerializedName("village_address")
-    private String villageAddress;
-
-    @SerializedName("staff")
-    private String enteryUser;
+    private String village;
 
     public long getId() {
         return id;
@@ -52,14 +49,6 @@ public class VFormF06 {
         this.participantId = participantId;
     }
 
-    public String getParticipantName() {
-        return participantName;
-    }
-
-    public void setParticipantName(String participantName) {
-        this.participantName = participantName;
-    }
-
     public String getFatherName() {
         return fatherName;
     }
@@ -68,43 +57,43 @@ public class VFormF06 {
         this.fatherName = fatherName;
     }
 
-    public String getAge() {
-        return age;
+    public String getEnrollmentDate() {
+        return enrollmentDate;
     }
 
-    public void setAge(String age) {
-        this.age = age;
+    public void setEnrollmentDate(String enrollmentDate) {
+        this.enrollmentDate = enrollmentDate;
     }
 
-    public String getContactNumber() {
-        return contactNumber;
+    public String getChildName() {
+        return childName;
     }
 
-    public void setContactNumber(String contactNumber) {
-        this.contactNumber = contactNumber;
+    public void setChildName(String childName) {
+        this.childName = childName;
     }
 
-    public String getHcfId() {
-        return hcfId;
+    public String getDob() {
+        return dob;
     }
 
-    public void setHcfId(String hcfId) {
-        this.hcfId = hcfId;
+    public void setDob(String dob) {
+        this.dob = dob;
     }
 
-    public String getVillageAddress() {
-        return villageAddress;
+    public String getContactNo() {
+        return contactNo;
     }
 
-    public void setVillageAddress(String villageAddress) {
-        this.villageAddress = villageAddress;
+    public void setContactNo(String contactNo) {
+        this.contactNo = contactNo;
     }
 
-    public String getEnteryUser() {
-        return enteryUser;
+    public String getVillage() {
+        return village;
     }
 
-    public void setEnteryUser(String enteryUser) {
-        this.enteryUser = enteryUser;
+    public void setVillage(String village) {
+        this.village = village;
     }
 }

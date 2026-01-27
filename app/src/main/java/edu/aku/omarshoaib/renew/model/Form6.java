@@ -29,8 +29,8 @@ public class Form6 extends FormBaseModel {
     @SerializedName("dist_id")
     private String districtCode = _EMPTY_;
 
-    @SerializedName("scr_id")
-    private String scrId = _EMPTY_;
+    @SerializedName("participant_id")
+    private String participantId = _EMPTY_;
 
     @SerializedName("ending_date")
     private String endingDate = _EMPTY_;
@@ -63,13 +63,14 @@ public class Form6 extends FormBaseModel {
         // This is used to add record for the first time
         MainApp.form6 = new Form6();
         MainApp.form6.setDistrictCode(MainApp.user.getDistId());
+        MainApp.form6.setParticipantId(MainApp.vFormF06.getParticipantId());
     }
 
     /*FOR IDENTIFICATION INFORMATION - CLUSTER-WISE*/
     // Save data in db
-    public static void saveMainData(String scrId) {
+    public static void saveMainData(String participantId) {
         Form6Dao dao = AppDatabase.getDBInstance().form6Dao();
-        Form6 form = dao.getDataByScrId(MainApp.user.getDistId(), scrId);
+        Form6 form = dao.getDataByParticipantId(MainApp.user.getDistId(), participantId);
         if (form != null) {
             MainApp.form6 = form;
         } else {
@@ -86,12 +87,12 @@ public class Form6 extends FormBaseModel {
         this.districtCode = districtCode;
     }
 
-    public String getScrId() {
-        return scrId;
+    public String getParticipantId() {
+        return participantId;
     }
 
-    public void setScrId(String scrId) {
-        this.scrId = scrId;
+    public void setParticipantId(String scrId) {
+        this.participantId = scrId;
     }
 
     public boolean isFormCompleteOnce() {

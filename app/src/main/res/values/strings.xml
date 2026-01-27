@@ -260,6 +260,7 @@
     <string name="father_name_c"><![CDATA[<font color=#7f7f7f7f>Father/Husband</font><br/>%s]]></string>
     <string name="mother_name_c"><![CDATA[<font color=#7f7f7f7f>Mother Name</font><br/>%s]]></string>
     <string name="age_c"><![CDATA[<font color=#7f7f7f7f>Age: </font>%s]]></string>
+    <string name="age_c_months"><![CDATA[<font color=#7f7f7f7f>Age: </font>%02d months]]></string>
     <string name="contact_c"><![CDATA[<font color=#7f7f7f7f>Contact No: </font>%s]]></string>
 
     <!-- FOOD RECALL -->
@@ -782,11 +783,13 @@
     <string name="fo514">Height (cm)</string>
     <string name="fo515">Edema</string>
     <string name="f51501"> Present</string>
+    <string name="f51501_info">If Present refer</string>
     <string name="f51502">Absent</string>
     <string name="f516">Appetite Test</string>
     <string name="f51601"> Passed</string>
     <string name="f51602">Failed</string>
     <string name="f517t">Danger Signs (If yes is marked for any danger sign. Refer child to a public health facility for further evaluation )</string>
+    <string name="f517_info">Refer Child to a public health facility for further evaluation</string>
     <string name="f517a">Severe dehydration </string>
     <string name="f517a01">Yes</string>
     <string name="f517a02">No</string>
@@ -1131,6 +1134,7 @@
     <string name='Q_f607' translatable='false'>f607</string>
     <string name='Q_f608' translatable='false'>f608</string>
     <string name='Q_f609' translatable='false'>f609</string>
+    <string name='Q_f610' translatable='false'>f610</string>
     <string name='Q_f610a' translatable='false'>f610a</string>
     <string name='Q_f610b' translatable='false'>f610b</string>
     <string name='Q_f610c' translatable='false'>f610c</string>

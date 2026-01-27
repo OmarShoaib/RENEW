@@ -3,6 +3,7 @@ package edu.aku.omarshoaib.renew.synced_recs;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -63,7 +64,8 @@ public class SyncedRecsAdapter extends RecyclerView.Adapter<SyncedRecsAdapter.Vi
             assert fieldsToDisplay != null;
 
             bi.itemLayout.setTag(position);
-            bi.siteAC.setText(MainApp.selectedCluster.getClusterNo());
+//            bi.siteAC.setText(MainApp.selectedCluster.getClusterNo());
+            bi.siteAC.setVisibility(View.GONE);
             // replaceAll is to remove all spaces from field names if any
             bi.memberNameTV.setText(jObject.getString(fieldsToDisplay[0].replaceAll("\\s", "")));
             bi.usernameTV.setText(MainApp.user.getUsername());

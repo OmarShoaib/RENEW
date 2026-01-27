@@ -166,20 +166,8 @@ public class SectionF05 extends BaseActivity {
     }
 
     RadioGroup.OnCheckedChangeListener listener =
-            ((group, checkedId) -> group.post(() -> {
-                /*if (areAnyJ517One()) {
-                    bi.fldGrpCVj0401m.setVisibility(View.VISIBLE);
-                } else {
-                    bi.fldGrpCVj0401m.setVisibility(View.GONE);
-                    sJ4.setJ0401ma(_EMPTY_);
-                    sJ4.setJ0401mb(_EMPTY_);
-                    sJ4.setJ0401mc(_EMPTY_);
-                    sJ4.setJ0401md(_EMPTY_);
-                    sJ4.setJ0401me(_EMPTY_);
-                    sJ4.setJ0401mf(_EMPTY_);
-                    sJ4.setJ0401mxx(_EMPTY_);
-                }*/
-            }));
+            ((group, checkedId) -> group.post(() ->
+                    bi.f517Info.setVisibility(areAnyJ517One() ? View.VISIBLE : View.GONE)));
 
     /*private boolean proceed() {
         boolean lowMuac = !sF5.getF512().isEmpty() && Float.parseFloat(sF5.getF512()) < 12.5f;

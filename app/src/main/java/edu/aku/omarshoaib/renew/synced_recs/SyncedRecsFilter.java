@@ -35,7 +35,6 @@ import edu.aku.omarshoaib.renew.global.ConnectionDetector;
 import edu.aku.omarshoaib.renew.global.DateUtils;
 import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.global.SharedPrefs;
-import edu.aku.omarshoaib.renew.model.Cluster;
 import edu.aku.omarshoaib.renew.model.User;
 
 public class SyncedRecsFilter {
@@ -57,7 +56,6 @@ public class SyncedRecsFilter {
 
     // Selected module
     private int selectedEntryType;
-    private Cluster selectedCluster;
 
     public SyncedRecsFilter(Activity activity) {
         this.activity = activity;
@@ -135,7 +133,6 @@ public class SyncedRecsFilter {
             if (!isDataCollector)
                 bi.usernameAC.setText(null);
             selectedEntryType = 0;
-            selectedCluster = null;
             whereClauses.clear();
         });
 
@@ -184,9 +181,6 @@ public class SyncedRecsFilter {
             // Set Module
             bi.moduleTV.setText(whereClauses.get("mainTable"));
             selectedEntryType = Integer.parseInt(Objects.requireNonNull(whereClauses.get("entryType")));
-
-            // Set Cluster/Site
-            selectedCluster = appDatabase.clusterDao().getDataByClusterNo(whereClauses.get("site_code"));
 
             // Set Start Date if exists
             if (whereClauses.containsKey("sysdate_s"))
@@ -240,9 +234,6 @@ public class SyncedRecsFilter {
             bi.messageTV.setText(activity.getString(R.string.insert_cluster_desc));
             return false;
         }
-        MainApp.selectedCluster = selectedCluster;
-        // This where clause is for local use
-        whereClauses.put("site_code", selectedCluster.getClusterNo());
 
         // If Start Date Picker not empty
         if (!AppConstants.isEmpty(bi.startDatePicker))

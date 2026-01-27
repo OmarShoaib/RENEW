@@ -21,6 +21,7 @@ import java.io.File;
 
 import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.sections.child.Identification04;
+import edu.aku.omarshoaib.renew.activity.sections.child.SectionF06ListAC;
 import edu.aku.omarshoaib.renew.activity.sections.woman.Section1.Identification01;
 import edu.aku.omarshoaib.renew.activity.sections.woman.Section2.Identification02;
 import edu.aku.omarshoaib.renew.activity.sections.woman.Section2.followup.FollowUp2bListAC;
@@ -103,10 +104,10 @@ public class MainActivity extends AppCompatActivity {
             AppConstants.gotoActivity(activity, Identification03.class, true);
         } else if (viewId == R.id.option4) {
             AppConstants.gotoActivity(activity, Identification04.class, true);
-        } else if (viewId == R.id.option5) {
+        }/* else if (viewId == R.id.option5) {
             AppConstants.gotoActivity(activity, SectionF05.class, true);
-        } else if (viewId == R.id.option6) {
-            AppConstants.gotoActivity(activity, SectionF06.class, true);
+        }*/ else if (viewId == R.id.option6) {
+            AppConstants.gotoActivity(activity, SectionF06ListAC.class, true);
         } else if (viewId == R.id.summaryLayout) {
             // Show summary bottomsheet
             SummaryUtils.showSummary(activity);

@@ -8,11 +8,14 @@ import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
+import java.util.Date;
+
 import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.BaseActivity;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivitySectionF02aBinding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
+import edu.aku.omarshoaib.renew.global.AppTextWatcher;
 import edu.aku.omarshoaib.renew.global.DateUtils;
 import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.model.Form2a;
@@ -65,7 +68,14 @@ public class SectionF02a extends BaseActivity {
         bi.f2c0401x.setMaxDate(DateUtils.addSubMonths(
                 DateUtils.getCurrentDateTime(AppConstants.APP_DATE_FORMAT), 1)
         );
+        bi.f2a12.addTextChangedListener(new AppTextWatcher(bi.f2a12.getId(), iAppTextWatcher));
     }
+
+    AppTextWatcher.IAppTextWatcher iAppTextWatcher = (viewId, text) -> {
+            bi.f2c01.setMinDate( text.isEmpty() ?
+                    DateUtils.getCurrentDateTime(AppConstants.APP_DATE_FORMAT) :
+                    text);
+    };
 
     private boolean formValidation() {
         return Validator.emptyCheckingContainer(activity, bi.GrpName);

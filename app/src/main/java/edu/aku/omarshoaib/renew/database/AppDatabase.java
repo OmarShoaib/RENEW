@@ -16,7 +16,6 @@ import net.sqlcipher.database.SupportFactory;
 
 import java.lang.reflect.Type;
 
-import edu.aku.omarshoaib.renew.database.dao.ClusterDao;
 import edu.aku.omarshoaib.renew.database.dao.EntryLogDao;
 import edu.aku.omarshoaib.renew.database.dao.Form1Dao;
 import edu.aku.omarshoaib.renew.database.dao.Form2Dao;
@@ -39,7 +38,6 @@ import edu.aku.omarshoaib.renew.database.dao.VForm3aDao;
 import edu.aku.omarshoaib.renew.database.dao.VPHQ9Dao;
 import edu.aku.omarshoaib.renew.database.dao.VillagesDao;
 import edu.aku.omarshoaib.renew.global.AppConstants;
-import edu.aku.omarshoaib.renew.model.Cluster;
 import edu.aku.omarshoaib.renew.model.EntryLog;
 import edu.aku.omarshoaib.renew.model.Form1;
 import edu.aku.omarshoaib.renew.model.Form2;
@@ -61,7 +59,7 @@ import edu.aku.omarshoaib.renew.model.VFormF06;
 import edu.aku.omarshoaib.renew.model.VPHQ9;
 import edu.aku.omarshoaib.renew.model.Villages;
 
-@Database(entities = {User.class, Villages.class, Cluster.class, EntryLog.class,
+@Database(entities = {User.class, Villages.class, EntryLog.class,
         Form1.class, Form2.class, Form2a.class, Form3.class, Form4.class, Form5.class,
         Form6.class, Participant.class, HCF.class, VPHQ9.class, Form2b.class, Form3a.class,
         VForm2b.class, VForm3a.class, Teams.class, VFormF06.class},
@@ -112,8 +110,6 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract UserDao userDao();
 
     public abstract VillagesDao villagesDao();
-
-    public abstract ClusterDao clusterDao();
 
     public abstract Form1Dao form1Dao();
 

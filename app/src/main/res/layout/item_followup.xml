@@ -74,11 +74,12 @@
                 android:layout_alignParentEnd="true"
                 android:layout_below="@+id/hhIdTV"
                 android:layout_marginEnd="@dimen/_15sdp"
+                android:maxLength="18"
                 android:ellipsize="end"
                 android:fontFamily="@font/roboto_regular"
                 android:maxLines="1"
                 android:textColor="@color/gray_dark"
-                tools:text="999999" />
+                tools:text="9999999999" />
 
             <TextView
                 android:id="@+id/contactNoTV"

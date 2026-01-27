@@ -10,7 +10,6 @@ import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
-import edu.aku.omarshoaib.renew.activity.EndingAC;
 import edu.aku.omarshoaib.renew.activity.MainActivity;
 import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.R;
@@ -56,14 +55,14 @@ public class SectionF04 extends BaseActivity {
     }
 
     private void viewF411() {
-        if (proceedToF05()) bi.fldGrpCVf411.setVisibility(View.VISIBLE);
+        if (verifyCrieteria()) bi.fldGrpCVf411.setVisibility(View.VISIBLE);
         else {
             bi.fldGrpCVf411.setVisibility(View.GONE);
             sF4.setF411(_EMPTY_);
         }
     }
 
-    private boolean proceedToF05() {
+    private boolean verifyCrieteria() {
         boolean lowMuac = !sF4.getF410().isEmpty() && Float.parseFloat(sF4.getF410()) < 12.5f;
         boolean edema = sF4.getF409().equals("1");
         return lowMuac || edema;
@@ -78,7 +77,7 @@ public class SectionF04 extends BaseActivity {
         Form4.saveMainData(MainApp.form4.getScrId());
         MainApp.form4.setIStatus("1");
         Form4.SF4.saveData(sF4);
-        AppConstants.gotoActivity(activity, proceedToF05() ?
+        AppConstants.gotoActivity(activity, sF4.getF411().equals("1") ?
                 SectionF05.class : MainActivity.class, true);
     }
 
