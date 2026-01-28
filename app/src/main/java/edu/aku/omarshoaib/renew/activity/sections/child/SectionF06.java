@@ -78,12 +78,9 @@ public class SectionF06 extends BaseActivity {
     private void getAllRadioGroups(ViewGroup parent) {
         for (int i = 0; i < parent.getChildCount(); i++) {
             View child = parent.getChildAt(i);
-            if (child instanceof RadioGroup)
-                f610RadioGroups.add((RadioGroup) child);
+            if (child instanceof RadioGroup) f610RadioGroups.add((RadioGroup) child);
+            else if (child instanceof ViewGroup) getAllRadioGroups((ViewGroup) child); // Recursive call
 
-            if (child instanceof ViewGroup) {
-                getAllRadioGroups((ViewGroup) child); // Recursive call
-            }
         }
     }
 
