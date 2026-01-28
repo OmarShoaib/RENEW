@@ -797,7 +797,7 @@
                                     style="@style/info"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:visibility="@{form.f516.equals(`1`) ? View.VISIBLE : View.GONE}"
+                                    android:visibility="@{form.f516.equals(`2`) ? View.VISIBLE : View.GONE}"
                                     android:text="@string/f51501_info" />
 
                                 <RadioGroup
