@@ -60,8 +60,8 @@ android {
         }
 
         def versionNumber = versionProps['VERSION_NUMBER'].toInteger()
-        def versionBuild = versionProps['VERSION_BUILD'].toInteger() + (value > 0 ? 1 : 0)
-//        def versionBuild = versionProps['VERSION_BUILD'].toInteger() + 1
+//        def versionBuild = versionProps['VERSION_BUILD'].toInteger() + (value > 0 ? 1 : 0)
+        def versionBuild = versionProps['VERSION_BUILD'].toInteger() + 1
         def versionPatch = versionProps['VERSION_PATCH'].toInteger() + value
 
         versionProps['VERSION_NUMBER'] = versionNumber.toString()
