@@ -72,6 +72,7 @@ public class MainApp extends Application {
 
     // For open form1 onClick
     public static int entryType = 1;
+    public static int formType = 0;
 
     public static Gson gson;
 

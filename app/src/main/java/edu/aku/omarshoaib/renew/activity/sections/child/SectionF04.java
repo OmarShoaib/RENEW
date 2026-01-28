@@ -76,7 +76,8 @@ public class SectionF04 extends BaseActivity {
     public void btnContinue(View view) {
         if (!formValidation()) return;
         Form4.saveMainData(MainApp.form4.getScrId());
-        MainApp.form4.setIStatus("1");
+        if(MainApp.form4.getIStatus().equals(""))
+            MainApp.form4.setIStatus(sF4.getF411().equals("1") ? "" : "1");
         MainApp.form4.setEndingDate(DateUtils.getCurrentDateTime());
         Form4.SF4.saveData(sF4);
         AppConstants.gotoActivity(activity, sF4.getF411().equals("1") ?

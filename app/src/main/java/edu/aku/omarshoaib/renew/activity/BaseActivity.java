@@ -147,7 +147,14 @@ public class BaseActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         if (activity == null)
             return false;
-        if (MainApp.form1 != null && !AppConstants.isEmpty(MainApp.form1.getSynced())) {
+        if ((MainApp.formType == 1 && MainApp.form1 != null && !AppConstants.isEmpty(MainApp.form1.getSynced())) ||
+                (MainApp.formType == 2 && MainApp.form2 != null && !AppConstants.isEmpty(MainApp.form2.getSynced())) ||
+                (MainApp.formType == 3 && MainApp.form2a != null && !AppConstants.isEmpty(MainApp.form2a.getSynced())) ||
+                (MainApp.formType == 4 && MainApp.form2b != null && !AppConstants.isEmpty(MainApp.form2b.getSynced())) ||
+                (MainApp.formType == 5 && MainApp.form3a != null && !AppConstants.isEmpty(MainApp.form3a.getSynced())) ||
+                (MainApp.formType == 6 && MainApp.form3 != null && !AppConstants.isEmpty(MainApp.form3.getSynced())) ||
+                (MainApp.formType == 7 && MainApp.form4 != null && !AppConstants.isEmpty(MainApp.form4.getSynced())) ||
+                (MainApp.formType == 8 && MainApp.form6 != null && !AppConstants.isEmpty(MainApp.form6.getSynced()))) {
             // If form1 is synced then show form1 in view mode i.e. disable all fields
             // isLayoutFilled = This extra check is used to the special condition when the user
             // submits the section but cancel it on the next section. So we are check if the next

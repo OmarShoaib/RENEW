@@ -90,7 +90,7 @@ public class AppConstants {
     // For toggling between Production and Testing server redirection
     // true = Production Server
     // false = Testing Server
-    public static boolean IS_PRODUCTION_SERVER = false;
+    public static boolean IS_PRODUCTION_SERVER = true;
 
     // To check as an admin
     // true = Show admin level features

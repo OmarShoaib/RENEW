@@ -133,6 +133,8 @@ public class SectionF05 extends BaseActivity {
         MainApp.form5.setIStatus("1");
         MainApp.form5.setEndingDate(DateUtils.getCurrentDateTime());
         Form5.SF5.saveData(sF5);
+        appDatabase.form4Dao().updateIStatus(MainApp.form4.getId(), "1", "",
+                true, DateUtils.getCurrentDateTime());
         AppConstants.gotoActivity(activity, MainActivity.class, true);
     }
 

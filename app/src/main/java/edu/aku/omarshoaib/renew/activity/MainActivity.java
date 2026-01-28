@@ -91,22 +91,30 @@ public class MainActivity extends AppCompatActivity {
         MainApp.isSyncedRecs = false;   // For Synced Recs
 
         if (viewId == R.id.option1) {
+            MainApp.formType = 1;
             AppConstants.gotoActivity(activity, Identification01.class, true);
         } else if (viewId == R.id.option2) {
+            MainApp.formType = 2;
             AppConstants.gotoActivity(activity, Identification02.class, true);
         } else if (viewId == R.id.option2a) {
+            MainApp.formType = 3;
             AppConstants.gotoActivity(activity, Followup2aListAC.class, true);
         } else if (viewId == R.id.option2b) {
+            MainApp.formType = 4;
             AppConstants.gotoActivity(activity, FollowUp2bListAC.class, true);
         } else if (viewId == R.id.option3a) {
+            MainApp.formType = 5;
             AppConstants.gotoActivity(activity, Followup3aListAC.class, true);
         } else if (viewId == R.id.option3) {
+            MainApp.formType = 6;
             AppConstants.gotoActivity(activity, Identification03.class, true);
         } else if (viewId == R.id.option4) {
+            MainApp.formType = 7;
             AppConstants.gotoActivity(activity, Identification04.class, true);
         }/* else if (viewId == R.id.option5) {
             AppConstants.gotoActivity(activity, SectionF05.class, true);
         }*/ else if (viewId == R.id.option6) {
+            MainApp.formType = 8;
             AppConstants.gotoActivity(activity, SectionF06ListAC.class, true);
         } else if (viewId == R.id.summaryLayout) {
             // Show summary bottomsheet
