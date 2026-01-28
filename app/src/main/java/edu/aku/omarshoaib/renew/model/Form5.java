@@ -29,9 +29,6 @@ public class Form5 extends FormBaseModel {
     @SerializedName("dist_id")
     private String districtCode = _EMPTY_;
 
-    @SerializedName("village_name")
-    private String villageName = _EMPTY_;
-
     @SerializedName("scr_id")
     private String scrId = _EMPTY_;
 
@@ -55,7 +52,6 @@ public class Form5 extends FormBaseModel {
         // This is used to add record for the first time
         MainApp.form5 = new Form5();
         MainApp.form5.setDistrictCode(MainApp.user.getDistId());
-        MainApp.form5.setVillageName(MainApp.form4.getVillageName());
         MainApp.form5.setScrId(MainApp.form4.getScrId());
     }
 
@@ -70,14 +66,6 @@ public class Form5 extends FormBaseModel {
             MainApp.form5.setUid(AppConstants.generateUid());
             MainApp.form5.setId(formsDao.add(MainApp.form5));
         }
-    }
-
-    public String getVillageName() {
-        return villageName;
-    }
-
-    public void setVillageName(String villageName) {
-        this.villageName = villageName;
     }
 
     public String getScrId() {

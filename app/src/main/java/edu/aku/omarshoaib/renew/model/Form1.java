@@ -29,9 +29,6 @@ public class Form1 extends FormBaseModel {
     @SerializedName("dist_id")
     private String districtCode = _EMPTY_;
 
-    @SerializedName("village_name")
-    private String villageName = _EMPTY_;
-
     @SerializedName("scr_id")
     private String scrId = _EMPTY_;
 
@@ -79,14 +76,6 @@ public class Form1 extends FormBaseModel {
             MainApp.form1.setUid(AppConstants.generateUid());
             MainApp.form1.setId(formsDao.add(MainApp.form1));
         }
-    }
-
-    public String getVillageName() {
-        return villageName;
-    }
-
-    public void setVillageName(String villageName) {
-        this.villageName = villageName;
     }
 
     public String getScrId() {
@@ -142,8 +131,6 @@ public class Form1 extends FormBaseModel {
      */
 
     public static class SF1 extends BaseObservable {
-        private String dist = _EMPTY_;
-        private String scrid = _EMPTY_;
         private String f101 = _EMPTY_;
         private String f102 = _EMPTY_;
         private String f103 = _EMPTY_;
@@ -170,26 +157,6 @@ public class Form1 extends FormBaseModel {
         // Get section object by parsing json
         public static SF1 getData() {
             return MainApp.form1.getSF1();
-        }
-
-        @Bindable
-        public String getDist() {
-            return dist;
-        }
-
-        public void setDist(String dist) {
-            this.dist = dist;
-            notifyPropertyChanged(BR.dist);
-        }
-
-        @Bindable
-        public String getScrid() {
-            return scrid;
-        }
-
-        public void setScrid(String scrid) {
-            this.scrid = scrid;
-            notifyPropertyChanged(BR.scrid);
         }
 
         @Bindable

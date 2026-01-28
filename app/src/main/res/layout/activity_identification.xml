@@ -65,7 +65,6 @@
                             android:gravity="center"
                             android:hint="@string/dist"
                             android:inputType="text"
-                            android:text="@={form.dist}"
                             tools:ignore="Autofill" />
 
                     </LinearLayout>
@@ -104,7 +103,6 @@
                             android:hint="###"
                             android:inputType="textCapCharacters|textVisiblePassword"
                             android:maxLength="3"
-                            android:text="@={form.scrid}"
                             app:mask="###"
                             app:pattern="[0-9]{3}" />
 

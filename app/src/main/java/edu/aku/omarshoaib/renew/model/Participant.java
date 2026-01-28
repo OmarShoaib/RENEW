@@ -30,9 +30,6 @@ public class Participant extends FormBaseModel{
     @SerializedName("dist_id")
     private String districtCode = _EMPTY_;
 
-    @SerializedName("village_name")
-    private String villageName = _EMPTY_;
-
     @SerializedName("scr_id")
     private String scrId = _EMPTY_;
 
@@ -73,7 +70,6 @@ public class Participant extends FormBaseModel{
         MainApp.participant.setLineNo(lineNo);
         MainApp.participant.setUuid(MainApp.form1.getUid());
         MainApp.participant.setScrId(MainApp.form1.getScrId());
-        MainApp.participant.setVillageName(MainApp.form1.getVillageName());
     }
 
     /*FOR IDENTIFICATION INFORMATION - CLUSTER-WISE*/
@@ -88,14 +84,6 @@ public class Participant extends FormBaseModel{
             MainApp.participant.setUid(AppConstants.generateUid());
             MainApp.participant.setId(formsDao.add(MainApp.participant));
         }
-    }
-
-    public String getVillageName() {
-        return villageName;
-    }
-
-    public void setVillageName(String villageName) {
-        this.villageName = villageName;
     }
 
     public String getScrId() {

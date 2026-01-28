@@ -49,7 +49,6 @@ public class SectionF02 extends BaseActivity {
         sF2.setF204(MainApp.form1.getSF1().getF102());
         HCF hcf = appDatabase.hcfDao().getHcfbyCode(MainApp.form1.getSF1().getF102().trim());
         bi.f204.setText(hcf == null ? "" : hcf.getHfName());
-        sF2.setF205(MainApp.participant.getVillageName());
         sF2.setF206(MainApp.user.getFullName()+" - "+MainApp.user.getUserId());
         bi.f207.setMinDate(MainApp.form1.getSF1().getF103());
         bi.scrid.setText(MainApp.form1.getScrId());

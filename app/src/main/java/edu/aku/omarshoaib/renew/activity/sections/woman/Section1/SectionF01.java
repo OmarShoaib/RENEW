@@ -17,6 +17,7 @@ import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivitySectionF01Binding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.AppTextWatcher;
+import edu.aku.omarshoaib.renew.global.DateUtils;
 import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.model.Participant;
 
@@ -85,6 +86,7 @@ public class SectionF01 extends BaseActivity {
     public void btnContinue(View view) {
         if (!formValidation()) return;
         Participant.saveMainData(MainApp.form1.getScrId());
+        MainApp.participant.setEndingDate(DateUtils.getCurrentDateTime());
         Participant.SF1.saveData(sF1);
         AppConstants.gotoActivity(activity, ParticipantListAC.class, true);
     }

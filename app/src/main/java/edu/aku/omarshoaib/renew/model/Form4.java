@@ -29,9 +29,6 @@ public class Form4 extends FormBaseModel {
     @SerializedName("dist_id")
     private String districtCode = _EMPTY_;
 
-    @SerializedName("village_name")
-    private String villageName = _EMPTY_;
-
     @SerializedName("scr_id")
     private String scrId = _EMPTY_;
 
@@ -79,14 +76,6 @@ public class Form4 extends FormBaseModel {
             MainApp.form4.setUid(AppConstants.generateUid());
             MainApp.form4.setId(formsDao.add(MainApp.form4));
         }
-    }
-
-    public String getVillageName() {
-        return villageName;
-    }
-
-    public void setVillageName(String villageName) {
-        this.villageName = villageName;
     }
 
     public String getScrId() {

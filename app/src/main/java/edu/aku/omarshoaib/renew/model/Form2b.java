@@ -30,9 +30,6 @@ public class Form2b extends FormBaseModel{
     @SerializedName("dist_id")
     private String districtCode = _EMPTY_;
 
-    @SerializedName("village_name")
-    private String villageName = _EMPTY_;
-
     @SerializedName("participant_id")
     private String participantId = _EMPTY_;
 
@@ -61,7 +58,6 @@ public class Form2b extends FormBaseModel{
         // This is used to add record for the first time
         MainApp.form2b = new Form2b();
         MainApp.form2b.setDistrictCode(MainApp.user.getDistId());
-        MainApp.form2b.setVillageName(MainApp.vForm2b.getVillageAddress());
         MainApp.form2b.setParticipantId(MainApp.vForm2b.getParticipantId());
 
 //        MainApp.form2a.setScrId(MainApp.form1.getScrId());
@@ -88,14 +84,6 @@ public class Form2b extends FormBaseModel{
 
     public void setDistrictCode(String districtCode) {
         this.districtCode = districtCode;
-    }
-
-    public String getVillageName() {
-        return villageName;
-    }
-
-    public void setVillageName(String villageName) {
-        this.villageName = villageName;
     }
 
     public String getParticipantId() {

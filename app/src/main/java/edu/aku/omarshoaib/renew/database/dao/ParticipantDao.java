@@ -27,8 +27,11 @@ public abstract class ParticipantDao implements BaseDao<Participant> {
     @Query("SELECT * FROM Participant WHERE (uuid IN (:uIds) AND (synced IS '' OR synced IS null) AND (syncDate IS '' OR syncDate IS null)) OR isError IS 1")
     public abstract List<Participant> getAllUnSyncedDataByUIds(List<String> uIds);
 
-    /*@Query("SELECT child.* FROM Participant child LEFT JOIN Form parent ON child.uuid = parent.uid WHERE (child.uuid IN (:uuid)) OR (child.synced = '' AND parent.synced != '') OR child.isError IS 1")
-    public abstract List<Participant> getDataByUuids(List<String> uuid);*/
+    @Query("SELECT child.* FROM PARTICIPANT child LEFT JOIN Form1 parent ON child.uuid = parent.uid WHERE (child.uuid IN (:uuid)) OR (child.synced = '' AND parent.synced != '') OR child.isError IS 1")
+    public abstract List<Participant> getAllUnSyncedDataByUuIds(List<String> uuid);
+
+    @Query("UPDATE PARTICIPANT SET iStatus = :iStatus, iStatus96x = :iStatus96x, isFormCompleteOnce = :isFormCompleteOnce, endingDate = :endingDate WHERE id = :id")
+    public abstract void updateIStatus(long id, String iStatus, String iStatus96x, boolean isFormCompleteOnce, String endingDate);
 
     // This query is only used for updating sync list
     // id = rowId

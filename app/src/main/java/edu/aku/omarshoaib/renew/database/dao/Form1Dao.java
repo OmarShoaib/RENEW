@@ -7,6 +7,7 @@ import java.util.List;
 
 import edu.aku.omarshoaib.renew.global.DateUtils;
 import edu.aku.omarshoaib.renew.model.Form1;
+import edu.aku.omarshoaib.renew.model.Participant;
 import edu.aku.omarshoaib.renew.model.SyncModel;
 
 @Dao
@@ -23,8 +24,8 @@ public abstract class Form1Dao implements BaseDao<Form1> {
     public abstract List<Form1> getAllUnSyncedDataByUIds(List<String> uIds);
 
     // Use it in child table - Get data from child table (updated Query)
-    /*@Query("SELECT child.* FROM ChildForm child LEFT JOIN ParentForm parent ON child.uuid = parent.uid WHERE (child.uuid IN (:uuid)) OR (child.synced = '' AND parent.synced != '') OR child.isError IS 1")
-    public abstract List<ChildForm> getAllUnSyncedDataByUuIds(List<String> uuid);*/
+//    @Query("SELECT child.* FROM PARTICIPANT child LEFT JOIN Form1 parent ON child.uuid = parent.uid WHERE (child.uuid IN (:uuid)) OR (child.synced = '' AND parent.synced != '') OR child.isError IS 1")
+//    public abstract List<Participant> getAllUnSyncedDataByUuIds(List<String> uuid);
 
     @Query("UPDATE Form1 SET iStatus = :iStatus, iStatus96x = :iStatus96x, isFormCompleteOnce = :isFormCompleteOnce, endingDate = :endingDate WHERE id = :id")
     public abstract void updateIStatus(long id, String iStatus, String iStatus96x, boolean isFormCompleteOnce, String endingDate);

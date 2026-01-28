@@ -36,6 +36,7 @@ import edu.aku.omarshoaib.renew.model.Form3a;
 import edu.aku.omarshoaib.renew.model.Form4;
 import edu.aku.omarshoaib.renew.model.Form5;
 import edu.aku.omarshoaib.renew.model.Form6;
+import edu.aku.omarshoaib.renew.model.Participant;
 import edu.aku.omarshoaib.renew.model.SyncModel;
 import edu.aku.omarshoaib.renew.webcall.web_client.CryptoUtil;
 import edu.aku.omarshoaib.renew.webcall.web_client.WebAPI;
@@ -69,6 +70,7 @@ public class UploadData {
         UPLOAD_TABLES = new LinkedHashMap<SyncModel, Boolean>() {{
             put(new SyncModel(EntryLog.TABLE_NAME, AppConstants._EMPTY_), false);
             put(new SyncModel(Form1.class, MainApp.MODULE_FORM, Form1.TABLE_NAME, Form1.SECTION_NAME), true);
+            put(new SyncModel(Participant.class, MainApp.MODULE_FORM, Participant.TABLE_NAME, Participant.SECTION_NAME), false);
             put(new SyncModel(Form2.class, MainApp.MODULE_FORM, Form2.TABLE_NAME, Form2.SECTION_NAME), true);
             put(new SyncModel(Form3.class, MainApp.MODULE_FORM, Form3.TABLE_NAME, Form3.SECTION_NAME), true);
             put(new SyncModel(Form4.class, MainApp.MODULE_FORM, Form4.TABLE_NAME, Form4.SECTION_NAME), true);
@@ -177,11 +179,20 @@ public class UploadData {
         } else
             iWebCallback.onFailure(tableName, activity.getString(R.string.no_new_records_to_upload), ++index, 0, null);
 
+        tableName = ((SyncModel) UPLOAD_TABLES.keySet().toArray()[2]).getTable();
+        List<Participant> list1_2 = appDatabase.participantDao().getAllUnSyncedDataByUuIds(iFormCompletedUIds);
+        if (list1_2 != null && !list1_2.isEmpty()) {
+            postData = prepareUploadData(tableName, gson.toJson(list1_2));
+//            postData = prepareUploadData(tableName, testData());
+            webCall.call(webAPI.uploadEncData(postData), AppConstants.UPLOAD_DATA, tableName, ++index, list1_2.size(), iFormCompletedUIds, IS_CALL_ENCRYPTED);
+        } else
+            iWebCallback.onFailure(tableName, activity.getString(R.string.no_new_records_to_upload), ++index, 0, null);
+
         /* ADD MORE TABLE HERE TO UPLOAD IF NECESSARY */
 
         // Form2
         iFormCompletedUIds = uIdsHM.get(Form2.TABLE_NAME);
-        tableName = ((SyncModel) UPLOAD_TABLES.keySet().toArray()[2]).getTable();
+        tableName = ((SyncModel) UPLOAD_TABLES.keySet().toArray()[3]).getTable();
         List<Form2> list2 = appDatabase.form2Dao().getAllUnSyncedDataByUIds(iFormCompletedUIds);
         if (list2 != null && !list2.isEmpty()) {
             postData = prepareUploadData(tableName, gson.toJson(list2));
@@ -191,7 +202,7 @@ public class UploadData {
 
         // Form3
         iFormCompletedUIds = uIdsHM.get(Form3.TABLE_NAME);
-        tableName = ((SyncModel) UPLOAD_TABLES.keySet().toArray()[3]).getTable();
+        tableName = ((SyncModel) UPLOAD_TABLES.keySet().toArray()[4]).getTable();
         List<Form3> list3 = appDatabase.form3Dao().getAllUnSyncedDataByUIds(iFormCompletedUIds);
         if (list3 != null && !list3.isEmpty()) {
             postData = prepareUploadData(tableName, gson.toJson(list3));
@@ -201,7 +212,7 @@ public class UploadData {
 
         // Form4
         iFormCompletedUIds = uIdsHM.get(Form4.TABLE_NAME);
-        tableName = ((SyncModel) UPLOAD_TABLES.keySet().toArray()[4]).getTable();
+        tableName = ((SyncModel) UPLOAD_TABLES.keySet().toArray()[5]).getTable();
         List<Form4> list4 = appDatabase.form4Dao().getAllUnSyncedDataByUIds(iFormCompletedUIds);
         if (list4 != null && !list4.isEmpty()) {
             postData = prepareUploadData(tableName, gson.toJson(list4));
@@ -211,7 +222,7 @@ public class UploadData {
 
         // Form5
         iFormCompletedUIds = uIdsHM.get(Form5.TABLE_NAME);
-        tableName = ((SyncModel) UPLOAD_TABLES.keySet().toArray()[5]).getTable();
+        tableName = ((SyncModel) UPLOAD_TABLES.keySet().toArray()[6]).getTable();
         List<Form5> list5 = appDatabase.form5Dao().getAllUnSyncedDataByUIds(iFormCompletedUIds);
         if (list5 != null && !list5.isEmpty()) {
             postData = prepareUploadData(tableName, gson.toJson(list5));
@@ -221,7 +232,7 @@ public class UploadData {
 
         // Form6
         iFormCompletedUIds = uIdsHM.get(Form6.TABLE_NAME);
-        tableName = ((SyncModel) UPLOAD_TABLES.keySet().toArray()[6]).getTable();
+        tableName = ((SyncModel) UPLOAD_TABLES.keySet().toArray()[7]).getTable();
         List<Form6> list6 = appDatabase.form6Dao().getAllUnSyncedDataByUIds(iFormCompletedUIds);
         if (list6 != null && !list6.isEmpty()) {
             postData = prepareUploadData(tableName, gson.toJson(list6));
@@ -231,7 +242,7 @@ public class UploadData {
 
         // Form2a
         iFormCompletedUIds = uIdsHM.get(Form2a.TABLE_NAME);
-        tableName = ((SyncModel) UPLOAD_TABLES.keySet().toArray()[7]).getTable();
+        tableName = ((SyncModel) UPLOAD_TABLES.keySet().toArray()[8]).getTable();
         List<Form2a> list2a = appDatabase.form2aDao().getAllUnSyncedDataByUIds(iFormCompletedUIds);
         if (list2a != null && !list2a.isEmpty()) {
             postData = prepareUploadData(tableName, gson.toJson(list2a));
@@ -241,7 +252,7 @@ public class UploadData {
 
         // Form2b
         iFormCompletedUIds = uIdsHM.get(Form2b.TABLE_NAME);
-        tableName = ((SyncModel) UPLOAD_TABLES.keySet().toArray()[8]).getTable();
+        tableName = ((SyncModel) UPLOAD_TABLES.keySet().toArray()[9]).getTable();
         List<Form2b> list2b = appDatabase.form2bDao().getAllUnSyncedDataByUIds(iFormCompletedUIds);
         if (list2b != null && !list2b.isEmpty()) {
             postData = prepareUploadData(tableName, gson.toJson(list2b));
@@ -251,7 +262,7 @@ public class UploadData {
 
         // Form3a
         iFormCompletedUIds = uIdsHM.get(Form3a.TABLE_NAME);
-        tableName = ((SyncModel) UPLOAD_TABLES.keySet().toArray()[9]).getTable();
+        tableName = ((SyncModel) UPLOAD_TABLES.keySet().toArray()[10]).getTable();
         List<Form3a> list3a = appDatabase.form3aDao().getAllUnSyncedDataByUIds(iFormCompletedUIds);
         if (list3a != null && !list3a.isEmpty()) {
             postData = prepareUploadData(tableName, gson.toJson(list3a));
@@ -331,6 +342,8 @@ public class UploadData {
                 appDatabase.entryLogDao().updateSyncSuccess(responses);
             } else if (tag.equals(Form1.TABLE_NAME)) {
                 appDatabase.form1Dao().updateSyncSuccess(responses);
+            } else if (tag.equals(Participant.TABLE_NAME)) {
+                appDatabase.participantDao().updateSyncSuccess(responses);
             } else if (tag.equals(Form2.TABLE_NAME)) {
                 appDatabase.form2Dao().updateSyncSuccess(responses);
             } else if (tag.equals(Form3.TABLE_NAME)) {
@@ -354,6 +367,8 @@ public class UploadData {
                 appDatabase.entryLogDao().updateSyncError(appDatabase.entryLogDao().getAllUnSyncedData());
             } else if (tag.equals(Form1.TABLE_NAME)) {
                 appDatabase.form1Dao().updateSyncError(appDatabase.form1Dao().getAllUnSyncedDataByUIds(list));
+            }  else if (tag.equals(Participant.TABLE_NAME)) {
+                appDatabase.participantDao().updateSyncError(appDatabase.participantDao().getAllUnSyncedDataByUIds(list));
             } else if (tag.equals(Form2.TABLE_NAME)) {
                 appDatabase.form2Dao().updateSyncError(appDatabase.form2Dao().getAllUnSyncedDataByUIds(list));
             } else if (tag.equals(Form3.TABLE_NAME)) {

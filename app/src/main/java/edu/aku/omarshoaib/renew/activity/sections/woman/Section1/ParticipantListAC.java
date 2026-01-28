@@ -21,7 +21,9 @@ import edu.aku.omarshoaib.renew.adapter.GenericAdapter;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivityParticipantListBinding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
+import edu.aku.omarshoaib.renew.global.DateUtils;
 import edu.aku.omarshoaib.renew.global.MainApp;
+import edu.aku.omarshoaib.renew.model.Form2;
 import edu.aku.omarshoaib.renew.model.Participant;
 
 public class ParticipantListAC extends BaseActivity {
@@ -102,8 +104,16 @@ public class ParticipantListAC extends BaseActivity {
     }
 
     public void btnContinue(View view) {
+        markIStatus();
         finish();
         startActivity(new Intent(activity, EndingAC.class).putExtra("complete", true));
+    }
+
+    private void markIStatus() {
+        String today = DateUtils.getCurrentDateTime();
+        for(Participant form : MainApp.participantList)
+            appDatabase.participantDao().updateIStatus(form.getId(), "1", "",
+                    true, today);
     }
 
     public void btnEnd(View view) {
