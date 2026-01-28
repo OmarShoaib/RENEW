@@ -129,6 +129,7 @@
                             android:layout_weight="3"
                             android:gravity="center"
                             android:hint="@string/date_format"
+                            android:textLocale="en-US"
                             android:text="@={form.f103}"
                             app:dateFormat="@string/date_format"
                             app:maxDate="CR_DATE"

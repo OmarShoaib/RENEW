@@ -62,6 +62,7 @@ public class Identification01 extends BaseActivity {
     private void initUI() {
         bi.f103.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
         bi.f103.addTextChangedListener(new AppTextWatcher(bi.f103.getId(), textWatcher));
+        bi.f103.setTextLocale(Locale.ENGLISH);
         setupHCFSpinner();
         setupTeamSpinner();
     }

@@ -52,6 +52,7 @@ public class Identification02 extends BaseActivity {
     private void initUI() {
         bi.f103.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
         bi.f103.addTextChangedListener(new AppTextWatcher(bi.f103.getId(), textWatcher));
+        bi.f103.setTextLocale(Locale.ENGLISH);
         bi.fldGrpCVf101.setVisibility(View.GONE);
         bi.fldGrpCVf102.setVisibility(View.GONE);
     }
