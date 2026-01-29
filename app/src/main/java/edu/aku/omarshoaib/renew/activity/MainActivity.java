@@ -18,6 +18,7 @@ import androidx.databinding.DataBindingUtil;
 import com.wajahatkarim3.roomexplorer.RoomExplorer;
 
 import java.io.File;
+import java.util.List;
 
 import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.sections.child.Identification04;
@@ -28,9 +29,6 @@ import edu.aku.omarshoaib.renew.activity.sections.woman.Section2.followup.Follow
 import edu.aku.omarshoaib.renew.activity.sections.woman.Section2.followup.Followup2aListAC;
 import edu.aku.omarshoaib.renew.activity.sections.woman.Section3.Identification03;
 import edu.aku.omarshoaib.renew.activity.sections.woman.Section3.followup.Followup3aListAC;
-import edu.aku.omarshoaib.renew.activity.sections.child.SectionF04;
-import edu.aku.omarshoaib.renew.activity.sections.child.SectionF05;
-import edu.aku.omarshoaib.renew.activity.sections.child.SectionF06;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivityMainBinding;
 import edu.aku.omarshoaib.renew.global.AlertPopup;
@@ -40,6 +38,7 @@ import edu.aku.omarshoaib.renew.global.ImportDB;
 import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.global.SendDB;
 import edu.aku.omarshoaib.renew.global.SummaryUtils;
+import edu.aku.omarshoaib.renew.model.HCF;
 import edu.aku.omarshoaib.renew.synced_recs.SyncedRecsFilter;
 import edu.aku.omarshoaib.renew.webcall.UploadData;
 
@@ -92,29 +91,38 @@ public class MainActivity extends AppCompatActivity {
 
         if (viewId == R.id.option1) {
             MainApp.formType = 1;
+            MainApp.form1 = null;
             AppConstants.gotoActivity(activity, Identification01.class, true);
         } else if (viewId == R.id.option2) {
             MainApp.formType = 2;
+            MainApp.form2 = null;
             AppConstants.gotoActivity(activity, Identification02.class, true);
         } else if (viewId == R.id.option2a) {
             MainApp.formType = 3;
+            MainApp.form2a = null;
             AppConstants.gotoActivity(activity, Followup2aListAC.class, true);
         } else if (viewId == R.id.option2b) {
             MainApp.formType = 4;
+            MainApp.form2b = null;
             AppConstants.gotoActivity(activity, FollowUp2bListAC.class, true);
         } else if (viewId == R.id.option3a) {
             MainApp.formType = 5;
+            MainApp.form3a = null;
             AppConstants.gotoActivity(activity, Followup3aListAC.class, true);
         } else if (viewId == R.id.option3) {
             MainApp.formType = 6;
+            MainApp.form3 = null;
             AppConstants.gotoActivity(activity, Identification03.class, true);
         } else if (viewId == R.id.option4) {
             MainApp.formType = 7;
+            MainApp.form4 = null;
+            MainApp.form5 = null;
             AppConstants.gotoActivity(activity, Identification04.class, true);
         }/* else if (viewId == R.id.option5) {
             AppConstants.gotoActivity(activity, SectionF05.class, true);
         }*/ else if (viewId == R.id.option6) {
             MainApp.formType = 8;
+            MainApp.form6 = null;
             AppConstants.gotoActivity(activity, SectionF06ListAC.class, true);
         } else if (viewId == R.id.summaryLayout) {
             // Show summary bottomsheet
@@ -183,8 +191,8 @@ public class MainActivity extends AppCompatActivity {
 
         // For Clusters
         // To show/hide intro layout
-//        List<Cluster> clusterList = appDatabase.clusterDao().getAllData();
-//        if (clusterList != null && !clusterList.isEmpty())
+        List<HCF> hcfList = appDatabase.hcfDao().getAllData();
+        if (hcfList != null && !hcfList.isEmpty())
             bi.lockedLayout.setVisibility(View.GONE);
 
         // For Villages
