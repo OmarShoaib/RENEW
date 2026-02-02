@@ -62,6 +62,7 @@ public class PHQ9ParticipantsAC extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        bi.addMoreBtn.setVisibility(View.GONE);
         bi.totalTV.setText(String.valueOf(MainApp.participantList.size()));
         MainApp.listForm2 = appDatabase.form2Dao().getDataByScrId(MainApp.form1.getScrId());
 
@@ -107,11 +108,6 @@ public class PHQ9ParticipantsAC extends BaseActivity {
         for(Form2 form : MainApp.listForm2)
             appDatabase.form2Dao().updateIStatus(form.getId(), "1", "",
                     true, today);
-    }
-
-    public void btnAddMore(View view) {
-        Participant.initMeta(MainApp.listForm2.size() + 1);
-        AppConstants.gotoActivity(activity, SectionF01.class, true);
     }
 
     public void btnContinue(View view) {

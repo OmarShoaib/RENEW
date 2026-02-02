@@ -16,6 +16,7 @@ import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.AppTextWatcher;
 import edu.aku.omarshoaib.renew.global.DateUtils;
 import edu.aku.omarshoaib.renew.global.MainApp;
+import edu.aku.omarshoaib.renew.model.Form2;
 import edu.aku.omarshoaib.renew.model.Form3;
 import edu.aku.omarshoaib.renew.model.HCF;
 
@@ -77,7 +78,7 @@ public class SectionF03 extends BaseActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        Form3.saveMainData(sF3.getF315());
+        Form3.saveMainData(MainApp.form1.getScrId());
         MainApp.form3.setPregnantWomanId(sF3.getF315());
         Form3.SF3.saveData(sF3);
         AppConstants.gotoActivity(activity, PregnantParticipantsAC.class, true);
