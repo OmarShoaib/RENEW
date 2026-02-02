@@ -450,6 +450,8 @@ public class Form6 extends FormBaseModel {
 
         public void setF619(String f619) {
             this.f619 = f619;
+            setF61901(f619.equals("1") ? this.f61901: _EMPTY_);
+            setF61905(f619.equals("5") ? this.f61905: _EMPTY_);
             notifyPropertyChanged(BR.f619);
         }
 

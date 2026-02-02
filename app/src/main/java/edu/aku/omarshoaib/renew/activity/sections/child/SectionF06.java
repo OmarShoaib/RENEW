@@ -53,8 +53,9 @@ public class SectionF06 extends BaseActivity {
     private void initUI() {
         setChangeListeners();
         bi.f602.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
-        sF6.setF604(MainApp.vFormF06.getParticipantId());
         sF6.setF601(MainApp.form6.getUsername());
+        sF6.setF604(MainApp.vFormF06.getParticipantId());
+        bi.f61905x.setMinDate(MainApp.vFormF06.getEnrollmentDate());
     }
 
     private boolean formValidation() {

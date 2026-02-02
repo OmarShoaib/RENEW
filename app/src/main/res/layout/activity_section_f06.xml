@@ -1629,27 +1629,35 @@
                                 android:text="@string/f619" />
                         </LinearLayout>
 
-                        <EditText
-                            android:id="@+id/f619"
-                            style="@style/Theme.AppStructure.EditTextStyle"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:digits="@string/digits_all"
-                            android:gravity="center"
-                            android:hint="@string/f619"
-                            android:inputType="text"
-                            android:maxLength="250"
-                            android:text="@={form.f619}"
-                            tools:ignore="Autofill" />
+<!--                        <EditText-->
+<!--                            android:id="@+id/f619"-->
+<!--                            style="@style/Theme.AppStructure.EditTextStyle"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:digits="@string/digits_all"-->
+<!--                            android:gravity="center"-->
+<!--                            android:hint="@string/f619"-->
+<!--                            android:inputType="text"-->
+<!--                            android:maxLength="250"-->
+<!--                            android:text="@={form.f619}"-->
+<!--                            tools:ignore="Autofill" />-->
 
-                        <TextView
-                            style="@style/sub_labels"
+<!--                        <TextView-->
+<!--                            style="@style/sub_labels"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:text="@string/f61901" />-->
+
+                        <RadioButton
+                            android:id="@+id/f61901"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:checked="@{form.f619.equals(`1`)}"
+                            android:onClick="@{()->form.setF619(`1`)}"
                             android:text="@string/f61901" />
 
                         <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/f61901"
+                            android:id="@+id/f61901x"
                             style="@style/Theme.AppStructure.EditTextStyle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -1659,6 +1667,7 @@
                             android:inputType="number"
                             android:maxLength="2"
                             android:text="@={form.f61901}"
+                            android:visibility="@{form.f619.equals(`1`) ? View.VISIBLE : View.GONE}"
                             app:maxValue="90"
                             app:minValue="30"
                             app:type="range" />
@@ -1687,31 +1696,42 @@
                             android:onClick="@{()->form.setF619(`4`)}"
                             android:text="@string/f61904" />
 
-                        <TextView
-                            style="@style/sub_labels"
+                        <RadioButton
+                            android:id="@+id/f61905"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:checked="@{form.f619.equals(`5`)}"
+                            android:onClick="@{()->form.setF619(`5`)}"
                             android:text="@string/f61905" />
 
-                        <EditText
-                            android:id="@+id/f61905"
+                        <io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText
+                            android:id="@+id/f61905x"
                             style="@style/Theme.AppStructure.EditTextStyle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:digits="@string/digits_all"
-                            android:hint="@string/f61905"
-                            android:inputType="text"
-                            android:maxLength="250"
+                            android:gravity="center"
+                            android:hint="@string/date_format"
                             android:text="@={form.f61905}"
-                            tools:ignore="Autofill" />
+                            android:visibility="@{form.f619.equals(`5`) ? View.VISIBLE : View.GONE}"
+                            app:dateFormat="@string/date_format"
+                            app:maxDate="CR_DATE"
+                            app:minDate="2025-12-10" />
 
-                        <CheckBox
+                        <RadioButton
                             android:id="@+id/f61906"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:checked="@{form.f61906.equals(``)}"
-                            android:onClick="@{()->form.setF61906(form.f61906.equals(``)?``:``)}"
+                            android:layout_height="match_parent"
+                            android:checked="@{form.f619.equals(`6`)}"
+                            android:onClick="@{()->form.setF619(`6`)}"
                             android:text="@string/f61906" />
+
+<!--                        <CheckBox-->
+<!--                            android:id="@+id/f61906"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:checked="@{form.f61906.equals(``)}"-->
+<!--                            android:onClick="@{()->form.setF61906(form.f61906.equals(``)?``:``)}"-->
+<!--                            android:text="@string/f61906" />-->
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
