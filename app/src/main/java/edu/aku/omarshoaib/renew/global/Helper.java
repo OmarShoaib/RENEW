@@ -12,13 +12,16 @@ import android.widget.RadioGroup;
 
 import com.edittextpicker.aliazaz.EditTextPicker;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.BaseActivity;
 import edu.aku.omarshoaib.renew.model.DPortal;
+import io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText;
 
 public class Helper {
 
@@ -38,7 +41,7 @@ public class Helper {
             View view = activity.findViewById(R.id.GrpName);
             if (view instanceof ViewGroup) {
                 if (radioGroupList.isEmpty()) {
-                    getAllRadioGroups((ViewGroup) view);
+                    getAllRadioGroupsAndSetDatePickerFormat((ViewGroup) view);
                     if (!radioGroupList.isEmpty())
                         handler.post(clearChecksRunnable);
                 } else handler.post(clearChecksRunnable);
@@ -50,15 +53,17 @@ public class Helper {
     }
 
     // Get all radio groups
-    private static void getAllRadioGroups(ViewGroup parent) {
+    private static void getAllRadioGroupsAndSetDatePickerFormat(ViewGroup parent) {
+        SimpleDateFormat sdf = new SimpleDateFormat(AppConstants.APP_DATE_FORMAT, Locale.ENGLISH);
         for (int i = 0; i < parent.getChildCount(); i++) {
             View child = parent.getChildAt(i);
             if (child instanceof RadioGroup)
                 radioGroupList.add((RadioGroup) child);
 
-            if (child instanceof ViewGroup) {
-                getAllRadioGroups((ViewGroup) child); // Recursive call
-            }
+            if (child instanceof ViewGroup)
+                getAllRadioGroupsAndSetDatePickerFormat((ViewGroup) child); // Recursive call
+            else if (child instanceof DatePickerEditText)
+                ((DatePickerEditText) child).setDateFormat(sdf);
         }
     }
 

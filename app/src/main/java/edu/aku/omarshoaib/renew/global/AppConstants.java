@@ -97,7 +97,7 @@ public class AppConstants {
     // false = Hide admin level features
     public static boolean IS_ADMIN = false;
     public static String TEST_USERNAME = "test0002";
-    public static String TEST_PASSWORD = "Test0002";
+    public static String TEST_PASSWORD = "Abcd.1234";
 
     // For development purposes & for DEVELOPER ONLY
     // Do not share it with anyone
