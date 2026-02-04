@@ -33,9 +33,31 @@
             android:padding="@dimen/_13sdp">
 
             <LinearLayout
+                android:id="@+id/switchLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Production Server"
+                    android:textSize="@dimen/_7ssp" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/productionServer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/buttonsLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/switchLayout"
                 android:gravity="center_horizontal"
                 android:orientation="horizontal">
 

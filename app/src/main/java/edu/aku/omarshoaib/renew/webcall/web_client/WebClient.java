@@ -71,9 +71,7 @@ public class WebClient {
     }
 
     public static synchronized WebClient getInstance(Activity activity) {
-        if (instance == null) {
-            instance = new WebClient(activity);
-        }
+        instance = new WebClient(activity);
         return instance;
     }
 

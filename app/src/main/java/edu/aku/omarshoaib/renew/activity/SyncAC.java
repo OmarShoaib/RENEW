@@ -83,6 +83,11 @@ public class SyncAC extends AppCompatActivity {
     private void initSyncList() {
         syncAdapter = new SyncAdapter(activity, syncTablesList, null);
         bi.syncRV.setAdapter(syncAdapter);
+        bi.productionServer.setVisibility(AppConstants.IS_ADMIN ? View.VISIBLE : View.GONE);
+        bi.productionServer.setChecked(AppConstants.IS_PRODUCTION_SERVER);
+        bi.productionServer.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (AppConstants.IS_ADMIN) AppConstants.IS_PRODUCTION_SERVER = isChecked;
+        });
 
         // For Synced Recs
         // If network is not available then show proceed btn for checking
