@@ -82,7 +82,7 @@ public class ParticipantListAC extends BaseActivity {
                 ImageView imageView = view.findViewById(R.id.iv);
 
                 lineNoTV.setText(String.format(Locale.ENGLISH, "Participant# %02d", item.getLineNo()));
-                imageView.setImageDrawable(ContextCompat.getDrawable(activity, R.drawable.fetus));
+                imageView.setImageDrawable(ContextCompat.getDrawable(activity, R.drawable.ic_girl));
                 nameTV.setText(item.getSF1().getF104());
 
                 view.setOnClickListener(view1 -> {
