@@ -25,6 +25,7 @@ import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.ConnectionDetector;
 import edu.aku.omarshoaib.renew.global.ImageUtils;
 import edu.aku.omarshoaib.renew.global.MainApp;
+import edu.aku.omarshoaib.renew.global.SharedPrefs;
 import edu.aku.omarshoaib.renew.model.SyncModel;
 import edu.aku.omarshoaib.renew.synced_recs.DownloadSyncedRecsData;
 import edu.aku.omarshoaib.renew.synced_recs.SyncedRecsListAC;
@@ -83,11 +84,7 @@ public class SyncAC extends AppCompatActivity {
     private void initSyncList() {
         syncAdapter = new SyncAdapter(activity, syncTablesList, null);
         bi.syncRV.setAdapter(syncAdapter);
-        bi.productionServer.setVisibility(AppConstants.IS_ADMIN ? View.VISIBLE : View.GONE);
-        bi.productionServer.setChecked(AppConstants.IS_PRODUCTION_SERVER);
-        bi.productionServer.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (AppConstants.IS_ADMIN) AppConstants.IS_PRODUCTION_SERVER = isChecked;
-        });
+        changeServer();
 
         // For Synced Recs
         // If network is not available then show proceed btn for checking
@@ -105,6 +102,18 @@ public class SyncAC extends AppCompatActivity {
                 bi.emptyTV.setVisibility(View.VISIBLE);
             }
         }
+    }
+
+    private void changeServer() {
+        if (!AppConstants.IS_ADMIN) return;
+        AppConstants.IS_PRODUCTION_SERVER = SharedPrefs.read("IS_PRODUCTION_SERVER", true);
+        bi.productionServer.setVisibility(View.VISIBLE);
+        bi.productionServer.setChecked(AppConstants.IS_PRODUCTION_SERVER);
+        bi.productionServer.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (!AppConstants.IS_ADMIN) return;
+            AppConstants.IS_PRODUCTION_SERVER = isChecked;
+            SharedPrefs.write("IS_PRODUCTION_SERVER", isChecked);
+        });
     }
 
     // Download Data
