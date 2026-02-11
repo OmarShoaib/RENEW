@@ -62,8 +62,10 @@ public class Helper {
 
             if (child instanceof ViewGroup)
                 getAllRadioGroupsAndSetDatePickerFormat((ViewGroup) child); // Recursive call
-            else if (child instanceof DatePickerEditText)
+            else if (child instanceof DatePickerEditText) {
                 ((DatePickerEditText) child).setDateFormat(sdf);
+                ((DatePickerEditText) child).setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
+            }
         }
     }
 
