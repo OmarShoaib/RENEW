@@ -107,7 +107,7 @@ public class SyncAC extends AppCompatActivity {
     private void changeServer() {
         if (!AppConstants.IS_ADMIN) return;
         AppConstants.IS_PRODUCTION_SERVER = SharedPrefs.read("IS_PRODUCTION_SERVER", true);
-        bi.productionServer.setVisibility(View.VISIBLE);
+        bi.switchLayout.setVisibility(View.VISIBLE);
         bi.productionServer.setChecked(AppConstants.IS_PRODUCTION_SERVER);
         bi.productionServer.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (!AppConstants.IS_ADMIN) return;
