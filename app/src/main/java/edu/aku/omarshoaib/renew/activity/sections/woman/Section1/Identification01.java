@@ -62,7 +62,6 @@ public class Identification01 extends BaseActivity {
     private void initUI() {
         bi.f103.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
         bi.f103.addTextChangedListener(new AppTextWatcher(bi.f103.getId(), textWatcher));
-        bi.f103.setTextLocale(Locale.ENGLISH);
         setupHCFSpinner();
         setupTeamSpinner();
     }
@@ -134,7 +133,7 @@ public class Identification01 extends BaseActivity {
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> parent) { }
+            public void onNothingSelected(AdapterView<?> parent) {}
         });
         if (!sF1.getF102().isEmpty()) {
             for (int i = 0; i < list.size(); i++) {
