@@ -1,5 +1,7 @@
 package edu.aku.omarshoaib.renew.activity.sections.woman.Section1;
 
+import static edu.aku.omarshoaib.renew.global.views.AppDropdown.setupSpinner;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,6 +27,7 @@ import edu.aku.omarshoaib.renew.databinding.ActivityIdentification01Binding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.AppTextWatcher;
 import edu.aku.omarshoaib.renew.global.MainApp;
+import edu.aku.omarshoaib.renew.global.views.AppDropdown;
 import edu.aku.omarshoaib.renew.model.Form1;
 import edu.aku.omarshoaib.renew.model.HCF;
 import edu.aku.omarshoaib.renew.model.Teams;
@@ -60,9 +63,9 @@ public class Identification01 extends BaseActivity {
     }
 
     private void initUI() {
+        sF1.setF102("1202");
         bi.f103.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
         bi.f103.addTextChangedListener(new AppTextWatcher(bi.f103.getId(), textWatcher));
-        bi.f103.setTextLocale(Locale.ENGLISH);
         setupHCFSpinner();
         setupTeamSpinner();
     }
@@ -108,17 +111,24 @@ public class Identification01 extends BaseActivity {
     }
 
     private void setupHCFSpinner() {
-        List<HCF> list = new ArrayList<>();
+       /* List<HCF> list = new ArrayList<>();
         HCF ps = new HCF();
         ps.setHfCode("");
         ps.setHfName("Please Select");
-        list.add(ps);
+        list.add(ps);*/
 
-        list.addAll(
-                appDatabase.hcfDao().getAllData());
+        AppDropdown.setupSpinner(
+                this,
+                bi.f102,
+                appDatabase.hcfDao().getAllData(),
+                value -> sF1.setF102(value),
+                hcf -> hcf.getHfCode()
+        );
+
+
+        /*list.addAll(appDatabase.hcfDao().getAllData());
         ArrayAdapter<HCF> adapter =
-                new ArrayAdapter<>(this,
-                        android.R.layout.simple_spinner_item, list);
+                new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, list);
         adapter.setDropDownViewResource(
                 android.R.layout.simple_spinner_dropdown_item);
         bi.f102.setAdapter(adapter);
@@ -143,7 +153,7 @@ public class Identification01 extends BaseActivity {
                     break;
                 }
             }
-        }
+        }*/
 
     }
 
