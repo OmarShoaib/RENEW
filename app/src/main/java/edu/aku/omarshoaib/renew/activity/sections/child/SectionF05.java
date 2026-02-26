@@ -6,7 +6,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 
 import androidx.databinding.DataBindingUtil;
@@ -26,7 +25,6 @@ import edu.aku.omarshoaib.renew.databinding.ActivitySectionF05Binding;
 import edu.aku.omarshoaib.renew.global.AppTextWatcher;
 import edu.aku.omarshoaib.renew.global.DateUtils;
 import edu.aku.omarshoaib.renew.global.MainApp;
-import edu.aku.omarshoaib.renew.model.Form4;
 import edu.aku.omarshoaib.renew.model.Form5;
 
 public class SectionF05 extends BaseActivity {
@@ -59,28 +57,61 @@ public class SectionF05 extends BaseActivity {
 
     private void initUI() {
         setChangeListeners();
-        sF5.setF501(MainApp.user.getFullName()+" - "+MainApp.user.getUserId());
+        sF5.setF501(MainApp.user.getFullName() + " - " + MainApp.user.getUserId());
         sF5.setF502(MainApp.form4.getSF4().getF402());
         bi.f502.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
         bi.f506.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
         bi.f502.addTextChangedListener(new AppTextWatcher(bi.f502.getId(), dateTextWatcher));
         bi.f506.addTextChangedListener(new AppTextWatcher(bi.f506.getId(), dateTextWatcher));
+        bi.f521a.addTextChangedListener(new AppTextWatcher(bi.f521a.getId(), dateTextWatcher));
 //        bi.f512.addTextChangedListener(new AppTextWatcher(bi.f512.getId(),
 //                (viewId, text) -> eligible()));
 //        bi.fo515.setOnCheckedChangeListener((rG, i) -> rG.post(this::eligible));
         bi.f503.setOnCheckedChangeListener(f503Listener);
     }
 
+    /*private boolean isAnyF517One() {
+        return Stream.of(
+                sF5.getF517a(), sF5.getF517b(), sF5.getF517c(),
+                sF5.getF517d(), sF5.getF517e(), sF5.getF517f(),
+                sF5.getF517g()
+        ).anyMatch("1"::equals);
+    }*/
+
+    /*RadioGroup.OnCheckedChangeListener listener =
+            ((group, checkedId) -> group.post(() -> {
+                if (isAnyF517One()) sF5.setF521("3");
+                else sF5.setF521(sF5.getF515b());
+            }));*/
+
+    /*private void setRadioGroupListeners(ViewGroup parent) {
+        for (int i = 0; i < parent.getChildCount(); i++) {
+            View child = parent.getChildAt(i);
+
+            if (child instanceof RadioGroup) {
+                ((RadioGroup) child).setOnCheckedChangeListener(listener);
+            } else if (child instanceof ViewGroup) {
+                setRadioGroupListeners((ViewGroup) child);
+            }
+        }
+    }*/
+
     RadioGroup.OnCheckedChangeListener f503Listener = (RadioGroup radioGroup, int i) -> radioGroup.post(() -> {
-        if(i == bi.f50301.getId()) {
+        if (i == bi.f50301.getId()) {
             sF5.setF504(MainApp.form4.getSF4().getF405());
             sF5.setF511(MainApp.form4.getSF4().getF404());
             sF5.setF512(MainApp.form4.getSF4().getF410());
             sF5.setFo515(MainApp.form4.getSF4().getF409());
+            sF5.setF515a(MainApp.form4.getSF4().getF409a());
+            float muac = Float.parseFloat(MainApp.form4.getSF4().getF410());
+//            if(!sF5.getF515a().isEmpty() || muac < 12.5f) {
+            String f515b = sF5.getFo515().equals("1") || muac < 11.5f ? "2" : "1";
+            sF5.setF515b(f515b);
+//            } else bi.fldGrpCVf515b.setVisibility(View.GONE);
             return;
         }
         sF5 = new Form5.SF5();
-        sF5.setF501(MainApp.user.getFullName()+" - "+MainApp.user.getUserId());
+        sF5.setF501(MainApp.user.getFullName() + " - " + MainApp.user.getUserId());
         sF5.setF502(MainApp.form4.getSF4().getF402());
         sF5.setF503("2");
         bi.setForm(sF5);
@@ -115,6 +146,19 @@ public class SectionF05 extends BaseActivity {
                             getAgeInMonths(age.get(0), age.get(1))
                     )
             );
+        } else if (viewId == bi.f521a.getId()) {
+            if (text.isEmpty()) {
+                bi.fldGrpCVf522.setVisibility(View.GONE);
+                sF5.setF522("");
+                return;
+            }
+            int count = Integer.parseInt(sF5.getF521a());
+            if ((sF5.getF521().equals("1") && count == 30) || (sF5.getF521().equals("2") && count == 150)) {
+                bi.fldGrpCVf522.setVisibility(View.GONE);
+                sF5.setF522("");
+                return;
+            }
+            bi.fldGrpCVf522.setVisibility(View.VISIBLE);
         }
     };
 
@@ -157,7 +201,7 @@ public class SectionF05 extends BaseActivity {
 
     private void setChangeListeners() {
         getAllRadioGroups(bi.fldGrpCVf517);
-        for(RadioGroup rg  : f0515RadioGroups) rg.setOnCheckedChangeListener(listener);
+        for (RadioGroup rg : f0515RadioGroups) rg.setOnCheckedChangeListener(listener);
     }
 
     private boolean areAnyJ517One() {
@@ -168,9 +212,11 @@ public class SectionF05 extends BaseActivity {
         ).anyMatch("1"::equals);
     }
 
-    RadioGroup.OnCheckedChangeListener listener =
-            ((group, checkedId) -> group.post(() ->
-                    bi.f517Info.setVisibility(areAnyJ517One() ? View.VISIBLE : View.GONE)));
+    RadioGroup.OnCheckedChangeListener listener = (group, checkedId) -> group.post(() -> {
+        bi.f517Info.setVisibility(areAnyJ517One() ? View.VISIBLE : View.GONE);
+        if (areAnyJ517One()) sF5.setF521("3");
+        else sF5.setF521(sF5.getF515b());
+    });
 
     /*private boolean proceed() {
         boolean lowMuac = !sF5.getF512().isEmpty() && Float.parseFloat(sF5.getF512()) < 12.5f;

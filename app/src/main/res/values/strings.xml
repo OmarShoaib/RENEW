@@ -686,6 +686,9 @@
     <string name="f31001">reading</string>
     <string name="f31097">Refused</string>
     <string name="f31096">Others specify</string>
+    <string name="f310a">Temperature (°C)</string>
+    <string name="f310b">Weight (Kg)</string>
+    <string name="f310c">Height (cm)</string>
     <string name="f311">MMS Provided</string>
     <string name="f31101">Yes</string>
     <string name="f31102">No</string>
@@ -748,9 +751,14 @@
     <string name="f408">Sex</string>
     <string name="f4081">Male</string>
     <string name="f4082">Female</string>
-    <string name="f409">Edema</string>
+    <string name="f409">Bilateral Pitting Edema</string>
     <string name="f40901">Yes</string>
     <string name="f40902">No</string>
+    <string name="f409a">Severity of pitting Edema</string>
+    <string name="f409a01">Mild</string>
+    <string name="f409a02">Moderate</string>
+    <string name="f409a03">Severe</string>
+    <string name="f409a_info">Refer Child to a public health facility for further evaluation</string>
     <string name="f410">MUAC</string>
     <string name="f4t2">If Edema is Yes or MUAC &lt;12.5 then fill Form–05 for Further screening</string>
     <string name="f411">Written consent taken for further screening</string>
@@ -781,10 +789,17 @@
     <string name="f512">MUAC (cm)</string>
     <string name="f513">Weight (kg)</string>
     <string name="fo514">Height (cm)</string>
-    <string name="fo515">Edema</string>
+    <string name="fo514a">Temperature (°C)</string>
+    <string name="fo515">Pitting Edema</string>
     <string name="f51501"> Present</string>
     <string name="f51501_info">If Present refer</string>
     <string name="f51502">Absent</string>
+    <string name="f515a">Severity of pitting Edema</string>
+    <string name="f515a01">Mild</string>
+    <string name="f515a02">Moderate</string>
+    <string name="f515b">Type of Malnutrition</string>
+    <string name="f515b01">MAM (if MUAC is 12.5cm to ≥11.5cm)</string>
+    <string name="f515b02">SAM (MUAC &lt; 11.5cm or mild/moderate edema)</string>
     <string name="f516">Appetite Test</string>
     <string name="f51601"> Passed</string>
     <string name="f51602">Failed</string>
@@ -828,6 +843,10 @@
     <string name="f52104">Refused supplements</string>
     <string name="f52105">Refused referral</string>
     <string name="f52096">Other</string>
+    <string name="f521a">Number of Sachet Provided</string>
+    <string name="f522">Record reasons, if the supplement is provided below the recommended dose.</string>
+    <string name="f52201">Limited Stock / Stockout</string>
+    <string name="f52202">Refused for supplementation</string>
 
     <!-- Form1 6: "Nutritional SupplementationFollow-Up Form1
     (For Monitoring and Management of Children with Acute Malnutrition) " -->
@@ -1035,6 +1054,9 @@
     <string name='Q_f308' translatable='false'>f308</string>
     <string name='Q_f309' translatable='false'>f309</string>
     <string name='Q_f310' translatable='false'>f310</string>
+    <string name='Q_f310a' translatable='false'>f310a</string>
+    <string name='Q_f310b' translatable='false'>f310b</string>
+    <string name='Q_f310c' translatable='false'>f310c</string>
     <string name='Q_f311' translatable='false'>f311</string>
     <string name='Q_f313' translatable='false'>f313</string>
     <string name='Q_f315' translatable='false'>f315</string>
@@ -1086,6 +1108,7 @@
     <string name='Q_f407' translatable='false'>f407</string>
     <string name='Q_f408' translatable='false'>f408</string>
     <string name='Q_f409' translatable='false'>f409</string>
+    <string name='Q_f409a' translatable='false'>f409a</string>
     <string name='Q_f410' translatable='false'>f410</string>
     <string name='Q_f411' translatable='false'>f411</string>
     <string name='Q_f4t1' translatable='false'>f4t1</string>
@@ -1120,9 +1143,14 @@
     <string name='Q_f519' translatable='false'>f519</string>
     <string name='Q_f520' translatable='false'>f520</string>
     <string name='Q_f521' translatable='false'>f521</string>
+    <string name='Q_f521a' translatable='false'>f521a</string>
+    <string name='Q_f522' translatable='false'>f522</string>
     <string name='Q_f5t1' translatable='false'>f5t1</string>
     <string name='Q_fo514' translatable='false'>fo514</string>
+    <string name='Q_fo514a' translatable='false'>fo514a</string>
     <string name='Q_fo515' translatable='false'>fo515</string>
+    <string name='Q_f515a' translatable='false'>f515a</string>
+    <string name='Q_f515b' translatable='false'>f515b</string>
 
     <string name='Q_f6t1' translatable='false'>f6t1</string>
     <string name='Q_f601' translatable='false'>f601</string>

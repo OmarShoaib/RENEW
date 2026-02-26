@@ -128,7 +128,10 @@ public class Form5 extends FormBaseModel {
         private String f512 = _EMPTY_;
         private String f513 = _EMPTY_;
         private String fo514 = _EMPTY_;
+        private String fo514a = _EMPTY_;
         private String fo515 = _EMPTY_;
+        private String f515a = _EMPTY_;
+        private String f515b = _EMPTY_;
         private String f516 = _EMPTY_;
         private String f517a = _EMPTY_;
         private String f517b = _EMPTY_;
@@ -145,6 +148,8 @@ public class Form5 extends FormBaseModel {
         private String f52101x = _EMPTY_;
         private String f52102x = _EMPTY_;
         private String f52196x = _EMPTY_;
+        private String f521a = _EMPTY_;
+        private String f522 = _EMPTY_;
 
         public static class DataConverter extends AppDatabase.BaseConverter<SF5> {
             public DataConverter() {
@@ -317,6 +322,16 @@ public class Form5 extends FormBaseModel {
         }
 
         @Bindable
+        public String getFo514a() {
+            return fo514a;
+        }
+
+        public void setFo514a(String fo514a) {
+            this.fo514a = fo514a;
+            notifyPropertyChanged(BR.fo514a);
+        }
+
+        @Bindable
         public String getFo515() {
             return fo515;
         }
@@ -324,6 +339,26 @@ public class Form5 extends FormBaseModel {
         public void setFo515(String fo515) {
             this.fo515 = fo515;
             notifyPropertyChanged(BR.fo515);
+        }
+
+        @Bindable
+        public String getF515a() {
+            return f515a;
+        }
+
+        public void setF515a(String f515a) {
+            this.f515a = f515a;
+            notifyPropertyChanged(BR.f515a);
+        }
+
+        @Bindable
+        public String getF515b() {
+            return f515b;
+        }
+
+        public void setF515b(String f515b) {
+            this.f515b = f515b;
+            notifyPropertyChanged(BR.f515b);
         }
 
         public void clearUnEligible() {
@@ -469,9 +504,9 @@ public class Form5 extends FormBaseModel {
 
         public void setF521(String f521) {
             this.f521 = f521;
-            setF52196x(f521.equals("96") ? this.f52196x: _EMPTY_);
-            setF52101x(f521.equals("1") ? this.f52101x: _EMPTY_);
-            setF52102x(f521.equals("2") ? this.f52102x: _EMPTY_);
+            setF521a(f521.equals("1") || f521.equals("2")? this.f521a : _EMPTY_);
+            setF52101x(f521.equals("1") ? "30" : _EMPTY_);
+            setF52102x(f521.equals("2") ? "150" : _EMPTY_);
             notifyPropertyChanged(BR.f521);
         }
 
@@ -505,5 +540,24 @@ public class Form5 extends FormBaseModel {
             notifyPropertyChanged(BR.f52196x);
         }
 
+        @Bindable
+        public String getF521a() {
+            return f521a;
+        }
+
+        public void setF521a(String f521a) {
+            this.f521a = f521a;
+            notifyPropertyChanged(BR.f521a);
+        }
+
+        @Bindable
+        public String getF522() {
+            return f522;
+        }
+
+        public void setF522(String f522) {
+            this.f522 = f522;
+            notifyPropertyChanged(BR.f522);
+        }
     }
 }
