@@ -816,9 +816,8 @@
     <string name="f52001">ها</string>
     <string name="f52002">نه</string>
     <string name="f521">تحقيق ۾ شموليت</string>
-    <string name="f52101">جي گهربل مقدار RUSF</string>
-<!--    <string name="f52102">RUTF جي گهربل مقدار</string>-->
-    <string name="f52102">جي گهربل مقدار RUTF</string>
+    <string name="f52101">۔RUSF جي گهربل مقدار</string>
+    <string name="f52102">۔RUTF جي گهربل مقدار</string>
     <string name="f52103">حوالو ڏنو ويو</string>
     <string name="f52104">رد ڪيل سپليمنٽس</string>
     <string name="f52105">رد ڪيل حوالو</string>

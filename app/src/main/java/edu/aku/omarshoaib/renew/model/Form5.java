@@ -508,7 +508,7 @@ public class Form5 extends FormBaseModel {
             setF52101x(f521.equals("1") ? "30" : _EMPTY_);
             float weight = this.f513.isEmpty() ? 0f : Float.parseFloat(this.f513);
             float rutfValue = weight == 0 ? 150f : weight*4.5f;
-            setF52102x(f521.equals("2") ? String.valueOf(rutfValue) : _EMPTY_);
+            setF52102x(f521.equals("2") ? String.valueOf(Math.round(rutfValue)) : _EMPTY_);
             notifyPropertyChanged(BR.f521);
         }
 
