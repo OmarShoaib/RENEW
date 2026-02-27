@@ -153,7 +153,7 @@ public class SectionF05 extends BaseActivity {
                 return;
             }
             int count = Integer.parseInt(sF5.getF521a());
-            if ((sF5.getF521().equals("1") && count == 30) || (sF5.getF521().equals("2") && count == 150)) {
+            if ((sF5.getF521().equals("1") && count >= 30) || (sF5.getF521().equals("2") && count >= 150)) {
                 bi.fldGrpCVf522.setVisibility(View.GONE);
                 sF5.setF522("");
                 return;
