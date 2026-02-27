@@ -738,7 +738,8 @@
     <string name="f409a03">شديد</string>
     <string name="f409a_info">وڌيڪ تشخيص لاءِ ٻار کي سرڪاري صحت جي سهولت ڏانهن موڪليو</string>
     <string name="f410">مٿئين ٻانهن جي وچ واري گولائي</string>
-    <string name="f4t2">جيڪڏهن سوجن موجود آهي يا MUAC &lt;12.5 سينٽي ميٽر کان گهٽ آهي ته وڌيڪ اسڪريننگ لاءِ فارم–05 مڪملڪريو</string>
+    <string name="f4t2">جيڪڏهن هلڪي يا وچولي سوج هجي ته فارم-05 مڪمل ڪريو ۽ ويجهي سرڪاري صحت مرڪز ڏانهن طبي جاچ لاءِ ريفر ڪريو۔ جيڪڏهن MUAC 12.5 سينٽي ميٽر کان گهٽ هجي ته فارم-05 مڪمل ڪريو۔</string>
+<!--    <string name="f4t2">جيڪڏهن سوجن موجود آهي يا MUAC &lt;12.5 سينٽي ميٽر کان گهٽ آهي ته وڌيڪ اسڪريننگ لاءِ فارم–05 مڪملڪريو</string>-->
     <string name="f411">وڌيڪ اسڪريننگ لاء تحريري رضامندي</string>
     <string name="f41101">ها</string>
     <string name="f41102">نه</string>
@@ -814,9 +815,9 @@
     <string name="f520">ماضي ۾ غذائي کوٽ</string>
     <string name="f52001">ها</string>
     <string name="f52002">نه</string>
-    <string name="f521">اسڪريننگ جي حالت</string>
-    <string name="f52101">RUSF [مقدار] حاصل ڪيو</string>
-    <string name="f52102">RUTF [مقدار] حاصل ڪيو</string>
+    <string name="f521">تحقيق ۾ شموليت</string>
+    <string name="f52101">جي گهربل مقدار RUSF</string>
+    <string name="f52102">RUTF جي گهربل مقدار</string>
     <string name="f52103">حوالو ڏنو ويو</string>
     <string name="f52104">رد ڪيل سپليمنٽس</string>
     <string name="f52105">رد ڪيل حوالو</string>

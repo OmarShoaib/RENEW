@@ -84,6 +84,10 @@ public class SectionF04 extends BaseActivity {
                 SectionF05.class : MainActivity.class, true);
     }
 
+    public void btnEnd(View view) {
+        AppConstants.checkDoubleCancelPress(activity, MainActivity.class);
+    }
+
     @Override
     public void onBackPressed() {
         AppConstants.checkDoubleBackPress(activity, MainActivity.class);

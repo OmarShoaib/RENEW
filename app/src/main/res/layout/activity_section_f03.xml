@@ -569,6 +569,135 @@
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
+                    <!-- f310a Input-Numeric -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVf310a"
+                        style="@style/cardView">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_f310a" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/f310a" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/f310a"
+                                style="@style/Theme.AppStructure.EditTextStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:digits="@string/digits_number"
+                                android:gravity="center"
+                                android:hint="##.#"
+                                android:inputType="number"
+                                android:maxLength="4"
+                                app:mask="##.#"
+                                app:pattern="[0-9]{2}.[0-9]"
+                                android:text="@={form.f310a}"
+                                app:maxValue="40.0"
+                                app:minValue="32.0"
+                                app:type="range" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- f310b Input-Numeric -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVf310b"
+                        style="@style/cardView">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_f310b" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/f310b" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/f310b"
+                                style="@style/Theme.AppStructure.EditTextStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:digits="@string/digits_number"
+                                android:gravity="center"
+                                android:hint="###.#"
+                                app:mask="###.#"
+                                app:pattern="[0-9]{3}.[0-9]"
+                                android:inputType="number"
+                                android:maxLength="5"
+                                android:text="@={form.f310b}"
+                                app:maxValue="120"
+                                app:minValue="25"
+                                app:type="range" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- f310c Input-Numeric -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVf310c"
+                        style="@style/cardView">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_f310c" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/f310c" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/f310c"
+                                style="@style/Theme.AppStructure.EditTextStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:digits="@string/digits_number"
+                                android:gravity="center"
+                                android:hint="###.#"
+                                app:mask="###.#"
+                                app:pattern="[0-9]{3}.[0-9]"
+                                android:inputType="number"
+                                android:maxLength="5"
+                                android:text="@={form.f310c}"
+                                app:maxValue="220.0"
+                                app:minValue="90.0"
+                                app:type="range" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
                     <!-- f311 Radio -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVf311"
@@ -1051,129 +1180,6 @@
                         </androidx.cardview.widget.CardView>
                     </LinearLayout>
                 </LinearLayout>
-                
-                <!-- f310a Input-Numeric -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVf310a"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_f310a" />
-
-                        <TextView
-                            style="@style/labels"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="@string/f310a" />
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/f310a"
-                            style="@style/Theme.AppStructure.EditTextStyle"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:digits="@string/digits_number"
-                            android:gravity="center"
-                            android:hint="##"
-                            android:inputType="number"
-                            android:maxLength="2"
-                            android:text="@={form.f310a}"
-                            app:maxValue="41"
-                            app:minValue="35"
-                            app:type="range" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-                
-                <!-- f310b Input-Numeric -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVf310b"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_f310b" />
-
-                        <TextView
-                            style="@style/labels"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="@string/f310b" />
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/f310b"
-                            style="@style/Theme.AppStructure.EditTextStyle"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:digits="@string/digits_number"
-                            android:gravity="center"
-                            android:hint="###"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            android:text="@={form.f310b}"
-                            app:maxValue="120"
-                            app:minValue="25"
-                            app:type="range" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- f310c Input-Numeric -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVf310c"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_f310c" />
-
-                        <TextView
-                            style="@style/labels"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="@string/f310c" />
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/f310c"
-                            style="@style/Theme.AppStructure.EditTextStyle"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:digits="@string/digits_number"
-                            android:gravity="center"
-                            android:hint="###"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            android:text="@={form.f310c}"
-                            app:maxValue="165"
-                            app:minValue="150"
-                            app:type="range" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
 
                 <edu.aku.omarshoaib.renew.global.views.AppEndButtons
                     android:id="@+id/endButtonsLayout"

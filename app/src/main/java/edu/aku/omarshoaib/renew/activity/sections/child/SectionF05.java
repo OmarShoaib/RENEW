@@ -163,12 +163,21 @@ public class SectionF05 extends BaseActivity {
     };
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(activity, bi.GrpName);
-        /*if(!proceed()) {
-            AppConstants.showSimpleSnackBar(activity,
-                    "Child not eligible for enrollment", AppConstants.TYPE_ERROR);
-            return false;
-        }*/
+        if (!Validator.emptyCheckingContainer(activity, bi.GrpName)) return false;
+
+        if (sF5.getF521().equals("1"))
+            if (Integer.parseInt(sF5.getF521a()) > Integer.parseInt(sF5.getF52101x())) {
+                Validator.emptyCustomTextBox(activity, bi.f521a, "Given dose is greater from required dose");
+                return false;
+            }
+
+        if (sF5.getF521().equals("2"))
+            if (Integer.parseInt(sF5.getF521a()) > Integer.parseInt(sF5.getF52102x())) {
+                Validator.emptyCustomTextBox(activity, bi.f521a, "Given dose is greater from required dose");
+                return false;
+            }
+
+        return true;
     }
 
     public void btnContinue(View view) {
@@ -180,6 +189,10 @@ public class SectionF05 extends BaseActivity {
         appDatabase.form4Dao().updateIStatus(MainApp.form4.getId(), "1", "",
                 true, DateUtils.getCurrentDateTime());
         AppConstants.gotoActivity(activity, MainActivity.class, true);
+    }
+
+    public void btnEnd(View view) {
+        AppConstants.checkDoubleCancelPress(activity, MainActivity.class);
     }
 
     @Override

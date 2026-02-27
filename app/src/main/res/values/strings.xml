@@ -760,7 +760,8 @@
     <string name="f409a03">Severe</string>
     <string name="f409a_info">Refer Child to a public health facility for further evaluation</string>
     <string name="f410">MUAC</string>
-    <string name="f4t2">If Edema is Yes or MUAC &lt;12.5 then fill Form–05 for Further screening</string>
+<!--    <string name="f4t2">If Edema is Yes or MUAC &lt;12.5 then fill Form–05 for Further screening</string>-->
+    <string name="f4t2">If mild/moderate edema complete Form-05 also refer for medical evaluation to nearest public health facility MUAC is &lt;12.5 cm, complete go to Form-05</string>
     <string name="f411">Written consent taken for further screening</string>
     <string name="f41101">Yes</string>
     <string name="f41102">No</string>
@@ -836,9 +837,9 @@
     <string name="f520">Previous Malnutrition</string>
     <string name="f52001">Yes</string>
     <string name="f52002">No</string>
-    <string name="f521">Screening status</string>
-    <string name="f52101">Received RUSF [qty]</string>
-    <string name="f52102">Received RUTF [qty]</string>
+    <string name="f521">Enrollment Status</string>
+    <string name="f52101">RUSF Required Dose [qty]</string>
+    <string name="f52102">RUTF Required Dose [qty]</string>
     <string name="f52103">Referred</string>
     <string name="f52104">Refused supplements</string>
     <string name="f52105">Refused referral</string>

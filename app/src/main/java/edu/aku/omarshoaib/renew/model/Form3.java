@@ -281,6 +281,9 @@ public class Form3 extends FormBaseModel {
                 setF309(_EMPTY_);
                 setF309dk(_EMPTY_);
                 setF310(_EMPTY_);
+                setF310a(_EMPTY_);
+                setF310b(_EMPTY_);
+                setF310c(_EMPTY_);
                 setF311(_EMPTY_);
                 setF31301(_EMPTY_);
                 setF31302(_EMPTY_);

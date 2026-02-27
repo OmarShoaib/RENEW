@@ -262,6 +262,7 @@ public class Form4 extends FormBaseModel {
 
         public void setF409a(String f409a) {
             this.f409a = f409a;
+            setF411(f409a.equals("3") ? _EMPTY_ : this.f411);
             notifyPropertyChanged(BR.f409a);
         }
 
