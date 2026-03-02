@@ -308,6 +308,7 @@ public class Form5 extends FormBaseModel {
 
         public void setF513(String f513) {
             this.f513 = f513;
+            calculateRUTF();
             notifyPropertyChanged(BR.f513);
         }
 
@@ -506,10 +507,15 @@ public class Form5 extends FormBaseModel {
             this.f521 = f521;
             setF521a(f521.equals("1") || f521.equals("2")? this.f521a : _EMPTY_);
             setF52101x(f521.equals("1") ? "30" : _EMPTY_);
-            float weight = this.f513.isEmpty() ? 0f : Float.parseFloat(this.f513);
-            float rutfValue = weight == 0 ? 150f : weight*4.5f;
-            setF52102x(f521.equals("2") ? String.valueOf(Math.round(rutfValue)) : _EMPTY_);
+            calculateRUTF();
             notifyPropertyChanged(BR.f521);
+        }
+
+        private void calculateRUTF() {
+            if(this.f513.isEmpty() || !this.f521.equals("2")) return;
+            float weight = Float.parseFloat(this.f513);
+            float rutfValue = weight == 0 ? 150f : weight*((float) 150/500)*15;// 4.5f;
+            setF52102x(f521.equals("2") ? String.valueOf(Math.round(rutfValue)) : _EMPTY_);
         }
 
         @Bindable
