@@ -1682,6 +1682,7 @@
                                         android:text="@string/f52202" />
 
                                     <RadioButton
+                                        style="@style/dont_know"
                                         android:id="@+id/f52203"
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
