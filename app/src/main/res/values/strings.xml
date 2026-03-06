@@ -848,6 +848,7 @@
     <string name="f522">Record reasons, if the supplement is provided below the recommended dose.</string>
     <string name="f52201">Limited Stock / Stockout</string>
     <string name="f52202">Refused for supplementation</string>
+    <string name="f52203">Not Applicable</string>
 
     <!-- Form1 6: "Nutritional SupplementationFollow-Up Form1
     (For Monitoring and Management of Children with Acute Malnutrition) " -->
