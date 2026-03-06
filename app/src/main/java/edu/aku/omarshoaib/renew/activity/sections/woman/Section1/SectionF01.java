@@ -50,11 +50,8 @@ public class SectionF01 extends BaseActivity {
         bi.f10x.setText(String.
                 valueOf(MainApp.participant.getLineNo()));
         bi.f105.addTextChangedListener(new AppTextWatcher(bi.f105.getId(), textWatcher));
-        bi.f106.setOnCheckedChangeListener(changeListener);
+        bi.f106.setOnCheckedChangeListener((rG, i) -> rG.post(this::askF107));
     }
-
-    RadioGroup.OnCheckedChangeListener changeListener =
-            (radioGroup, i) -> radioGroup.post(this::askF107);
 
     AppTextWatcher.IAppTextWatcher textWatcher = (viewId, text) -> {
         askF107();

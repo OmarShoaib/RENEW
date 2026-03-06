@@ -133,6 +133,7 @@ public class Form4 extends FormBaseModel {
         private String f407mm = _EMPTY_;
         private String f408 = _EMPTY_;
         private String f409 = _EMPTY_;
+        private String f409a = _EMPTY_;
         private String f410 = _EMPTY_;
         private String f411 = _EMPTY_;
 
@@ -250,7 +251,19 @@ public class Form4 extends FormBaseModel {
 
         public void setF409(String f409) {
             this.f409 = f409;
+            setF409a(f409.equals("1") ? this.f409a : _EMPTY_);
             notifyPropertyChanged(BR.f409);
+        }
+
+        @Bindable
+        public String getF409a() {
+            return f409a;
+        }
+
+        public void setF409a(String f409a) {
+            this.f409a = f409a;
+            setF411(f409a.equals("3") ? _EMPTY_ : this.f411);
+            notifyPropertyChanged(BR.f409a);
         }
 
         @Bindable

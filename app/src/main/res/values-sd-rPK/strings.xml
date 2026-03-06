@@ -665,6 +665,9 @@
     <string name="f31001">نتيجو</string>
     <string name="f31097">انڪار ڪيو</string>
     <string name="f31096">ٻيو (وضاحت ڪريو)</string>
+    <string name="f310a">درجو حرارت (سينٽي گريڊ)</string>
+    <string name="f310b">وزن (ڪلوگرام)</string>
+    <string name="f310c">اوچائي (سينٽي ميٽر)</string>
     <string name="f311">MMS مهيا ڪيو ويو</string>
     <string name="f31101">ها</string>
     <string name="f31102">نه</string>
@@ -726,11 +729,17 @@
     <string name="f408">جنس</string>
     <string name="f4081">مرد</string>
     <string name="f4082">عورت</string>
-    <string name="f409">پيرن تي سوجن</string>
+    <string name="f409">ٻنهي ٽنگن ۾ پِٽنگ ايڊيمه</string>
     <string name="f40901">ها</string>
     <string name="f40902">نه</string>
+    <string name="f409a">پِٽنگ ايڊيمه جي شدت</string>
+    <string name="f409a01">هلڪو</string>
+    <string name="f409a02">وچولي</string>
+    <string name="f409a03">شديد</string>
+    <string name="f409a_info">وڌيڪ تشخيص لاءِ ٻار کي سرڪاري صحت جي سهولت ڏانهن موڪليو</string>
     <string name="f410">مٿئين ٻانهن جي وچ واري گولائي</string>
-    <string name="f4t2">جيڪڏهن سوجن موجود آهي يا MUAC &lt;12.5 سينٽي ميٽر کان گهٽ آهي ته وڌيڪ اسڪريننگ لاءِ فارم–05 مڪملڪريو</string>
+    <string name="f4t2">جيڪڏهن هلڪي يا وچولي سوج هجي ته فارم-05 مڪمل ڪريو ۽ ويجهي سرڪاري صحت مرڪز ڏانهن طبي جاچ لاءِ ريفر ڪريو۔ جيڪڏهن MUAC 12.5 سينٽي ميٽر کان گهٽ هجي ته فارم-05 مڪمل ڪريو۔</string>
+<!--    <string name="f4t2">جيڪڏهن سوجن موجود آهي يا MUAC &lt;12.5 سينٽي ميٽر کان گهٽ آهي ته وڌيڪ اسڪريننگ لاءِ فارم–05 مڪملڪريو</string>-->
     <string name="f411">وڌيڪ اسڪريننگ لاء تحريري رضامندي</string>
     <string name="f41101">ها</string>
     <string name="f41102">نه</string>
@@ -759,10 +768,17 @@
     <string name="f512">بازو جي مٿئين حصي جو گهيرو (سينٽي ميٽر ۾)</string>
     <string name="f513">وزن (ڪلو ۾)</string>
     <string name="fo514">قد جي ماپ (سينٽي ميٽر ۾)</string>
+    <string name="fo514a">درجو حرارت (سينٽي گريڊ)</string>
     <string name="fo515">پيرن تي سوجن</string>
     <string name="f51501">موجود</string>
     <string name="f51501_info">جيڪڏهن موجوده حوالو ڏيو</string>
     <string name="f51502">موجود نه</string>
+    <string name="f515a"> س(Pitting Edema)سوجن جي شدت </string>
+    <string name="f515a01">هلڪو</string>
+    <string name="f515a02">وچولي</string>
+    <string name="f515b">غذائي کوٽ جو قسم</string>
+    <string name="f515b01">MAM (MUAC 11.5–12.5 سينٽي ميٽر)</string>
+    <string name="f515b02">SAM (MUAC &lt;11.5 سينٽي ميٽر)</string>
     <string name="f516">اپيٽائٽ ٽيسٽ</string>
     <string name="f51601">پاس ٿيو</string>
     <string name="f51602">پاس نه ٿيو</string>
@@ -799,13 +815,18 @@
     <string name="f520">ماضي ۾ غذائي کوٽ</string>
     <string name="f52001">ها</string>
     <string name="f52002">نه</string>
-    <string name="f521">اسڪريننگ جي حالت</string>
-    <string name="f52101">RUSF [مقدار] حاصل ڪيو</string>
-    <string name="f52102">RUTF [مقدار] حاصل ڪيو</string>
+    <string name="f521">تحقيق ۾ شموليت</string>
+    <string name="f52101">۔RUSF جي گهربل مقدار</string>
+    <string name="f52102">۔RUTF جي گهربل مقدار</string>
     <string name="f52103">حوالو ڏنو ويو</string>
     <string name="f52104">رد ڪيل سپليمنٽس</string>
     <string name="f52105">رد ڪيل حوالو</string>
     <string name="f52096">ٻيا</string>
+    <string name="f521a">مهيا ڪيل ساشيٽن جو تعداد</string>
+    <string name="f522">جيڪڏهن سپليمينٽ تجويز ڪيل مقدار کان گهٽ ڏنو ويو هجي، ته ان جا سبب درج ڪريو۔</string>
+    <string name="f52201">محدود اسٽاڪ / اسٽاڪ ختم ٿيڻ</string>
+    <string name="f52202">سپليمينٽيشن کان انڪار ڪيو</string>
+    <string name="f52203">لاڳو نٿو ٿئي</string>
 
     <!-- Form1 6: "Nutritional SupplementationFollow-Up Form1
     (For Monitoring and Management of Children with Acute Malnutrition) " -->

@@ -470,6 +470,78 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+                <!-- f409a Radio -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVf409a"
+                    style="@style/cardView"
+                    android:visibility="@{form.f409.equals(`1`) ? View.VISIBLE : View.GONE}">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_f409a" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/f409a" />
+                        </LinearLayout>
+
+                        <RadioGroup
+                            android:id="@+id/f409a"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/f409a01"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{form.f409a.equals(`1`)}"
+                                android:onClick="@{()->form.setF409a(`1`)}"
+                                android:text="@string/f409a01" />
+
+                            <RadioButton
+                                android:id="@+id/f409a02"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{form.f409a.equals(`2`)}"
+                                android:onClick="@{()->form.setF409a(`2`)}"
+                                android:text="@string/f409a02" />
+
+                            <RadioButton
+                                android:id="@+id/f409a03"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{form.f409a.equals(`3`)}"
+                                android:onClick="@{()->form.setF409a(`3`)}"
+                                android:text="@string/f409a03" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="@{form.f409a.equals(`3`) ? View.VISIBLE : View.GONE}"
+                    android:text="@string/f409a_info" />
+
                 <!-- f410 Input-Numeric -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVf410"
@@ -522,7 +594,8 @@
                 <!-- f411 Radio -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVf411"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{!form.f409a.equals(`3`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"

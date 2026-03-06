@@ -65,8 +65,8 @@ public class SectionF04 extends BaseActivity {
 
     private boolean verifyCrieteria() {
         boolean lowMuac = !sF4.getF410().isEmpty() && Float.parseFloat(sF4.getF410()) < 12.5f;
-        boolean edema = sF4.getF409().equals("1");
-        return lowMuac || edema;
+        boolean edema = sF4.getF409().equals("1"); //&& !sF4.getF409a().equals("3");
+        return !sF4.getF409a().equals("3") && (lowMuac || edema);
     }
 
     private boolean formValidation() {
@@ -80,8 +80,12 @@ public class SectionF04 extends BaseActivity {
             MainApp.form4.setIStatus(sF4.getF411().equals("1") ? "" : "1");
         MainApp.form4.setEndingDate(DateUtils.getCurrentDateTime());
         Form4.SF4.saveData(sF4);
-        AppConstants.gotoActivity(activity, sF4.getF411().equals("1") ?
+        AppConstants.gotoActivity(activity, sF4.getF411().equals("1") && !sF4.getF409a().equals("3")?
                 SectionF05.class : MainActivity.class, true);
+    }
+
+    public void btnEnd(View view) {
+        AppConstants.checkDoubleCancelPress(activity, MainActivity.class);
     }
 
     @Override

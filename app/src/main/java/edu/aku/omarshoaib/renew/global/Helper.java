@@ -22,6 +22,7 @@ import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.BaseActivity;
 import edu.aku.omarshoaib.renew.model.DPortal;
 import io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText;
+import io.blackbox_vision.datetimepickeredittext.view.TimePickerEditText;
 
 public class Helper {
 
@@ -65,7 +66,9 @@ public class Helper {
             else if (child instanceof DatePickerEditText) {
                 ((DatePickerEditText) child).setDateFormat(sdf);
                 ((DatePickerEditText) child).setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
-            }
+            } else if (child instanceof TimePickerEditText)
+                ((TimePickerEditText) child).setThemeId(R.style.Theme_AppStructure_TimePickerStyle);
+
         }
     }
 
