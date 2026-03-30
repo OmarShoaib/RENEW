@@ -512,7 +512,7 @@ public class Form5 extends FormBaseModel {
         }
 
         private void calculateRUTF() {
-            if(this.f513.isEmpty() || !this.f521.equals("2")) return;
+            if(this.f513.isEmpty()) return;
             float weight = Float.parseFloat(this.f513);
             float rutfValue = weight == 0 ? 150f : weight*((float) 150/500)*15;// 4.5f;
             setF52102x(f521.equals("2") ? String.valueOf(Math.round(rutfValue)) : _EMPTY_);

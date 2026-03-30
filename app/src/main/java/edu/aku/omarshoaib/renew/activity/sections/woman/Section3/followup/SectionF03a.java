@@ -45,10 +45,6 @@ public class SectionF03a extends BaseActivity {
     }
 
     private void initUI() {
-        bi.f3a1201x.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
-        bi.f03a01.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
-        bi.f3a09.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
-        bi.f03a02.setThemeId(R.style.Theme_AppStructure_TimePickerStyle);
         sF3a.setF3a01(MainApp.vForm3a.getParticipantId());
         sF3a.setF3a02(MainApp.vForm3a.getParticipantName());
         sF3a.setF3a03(MainApp.vForm3a.getFatherName());

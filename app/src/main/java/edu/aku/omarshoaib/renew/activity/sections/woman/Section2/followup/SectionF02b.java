@@ -8,6 +8,9 @@ import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+
 import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.BaseActivity;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
@@ -43,8 +46,6 @@ public class SectionF02b extends BaseActivity {
     }
 
     private void initUI() {
-        bi.f02b10.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
-        bi.f02b11.setThemeId(R.style.Theme_AppStructure_TimePickerStyle);
         sF2b.setF02b01(MainApp.vForm2b.getParticipantId());
         sF2b.setF02b02(MainApp.vForm2b.getParticipantName());
         sF2b.setF02b03(MainApp.vForm2b.getFatherName());

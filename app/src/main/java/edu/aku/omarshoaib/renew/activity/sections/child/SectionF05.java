@@ -59,8 +59,6 @@ public class SectionF05 extends BaseActivity {
         setChangeListeners();
         sF5.setF501(MainApp.user.getFullName() + " - " + MainApp.user.getUserId());
         sF5.setF502(MainApp.form4.getSF4().getF402());
-        bi.f502.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
-        bi.f506.setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
         bi.f502.addTextChangedListener(new AppTextWatcher(bi.f502.getId(), dateTextWatcher));
         bi.f506.addTextChangedListener(new AppTextWatcher(bi.f506.getId(), dateTextWatcher));
         bi.f521a.addTextChangedListener(new AppTextWatcher(bi.f521a.getId(), dateTextWatcher));

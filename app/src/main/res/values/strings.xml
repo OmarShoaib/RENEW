@@ -584,10 +584,11 @@
     <string name="f3a10">Written consent granted</string>
     <string name="f3a1001">Yes</string>
     <string name="f3a1002">No</string>
-    <string name="f3a11">Pregnancy trimester</string>
-    <string name="f3a1101">1st trimster</string>
-    <string name="f3a1102">2nd trimster</string>
-    <string name="f3a1103">3rd trimster</string>
+<!--    <string name="f3a11">Pregnancy trimester</string>-->
+    <string name="f3a11">Gestational Age in weeks</string>
+<!--    <string name="f3a1101">1st trimster</string>-->
+<!--    <string name="f3a1102">2nd trimster</string>-->
+<!--    <string name="f3a1103">3rd trimster</string>-->
     <string name="f3a12">Expected date of delivery</string>
     <string name="f3a13">Hemoglobin Result</string>
     <string name="f3a1301">reading</string>
@@ -686,7 +687,7 @@
     <string name="f31001">reading</string>
     <string name="f31097">Refused</string>
     <string name="f31096">Others specify</string>
-    <string name="f310a">Temperature (°C)</string>
+    <string name="f310a">Temperature (°F)</string>
     <string name="f310b">Weight (Kg)</string>
     <string name="f310c">Height (cm)</string>
     <string name="f311">MMS Provided</string>
@@ -790,7 +791,7 @@
     <string name="f512">MUAC (cm)</string>
     <string name="f513">Weight (kg)</string>
     <string name="fo514">Height (cm)</string>
-    <string name="fo514a">Temperature (°C)</string>
+    <string name="fo514a">Temperature (°F)</string>
     <string name="fo515">Pitting Edema</string>
     <string name="f51501"> Present</string>
     <string name="f51501_info">If Present refer</string>
