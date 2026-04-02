@@ -359,6 +359,7 @@ public class Form5 extends FormBaseModel {
 
         public void setF515b(String f515b) {
             this.f515b = f515b;
+            setF516(f515b.equals("2") ? this.f516 : _EMPTY_);
             notifyPropertyChanged(BR.f515b);
         }
 
