@@ -59,7 +59,18 @@ public class SectionF06 extends BaseActivity {
     }
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(activity, bi.GrpName);
+        if(!Validator.emptyCheckingContainer(activity,bi.GrpName)) return false;
+
+        int f611 = sF6.getF611().isEmpty() ? 0 : Integer.parseInt(sF6.getF611()),
+                f612 = sF6.getF61296x().isEmpty() ? 0 : Integer.parseInt(sF6.getF61296x()),
+                f613 = sF6.getF61396x().isEmpty() ? 0 : Integer.parseInt(sF6.getF61396x());
+//        int previousSachets = 120;
+//        if(f611+f612+f613 > previousSachets) {
+//            Validator.emptyCustomTextBox(activity, bi.f611, "Incorrect count");
+//            return false;
+//        }
+
+        return true;
     }
 
     public void btnContinue(View view) {

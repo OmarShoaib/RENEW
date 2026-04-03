@@ -64,11 +64,12 @@ public class Helper {
             if (child instanceof ViewGroup)
                 getAllRadioGroupsAndSetDatePickerFormat((ViewGroup) child); // Recursive call
             else if (child instanceof DatePickerEditText) {
-                ((DatePickerEditText) child).setDateFormat(sdf);
                 ((DatePickerEditText) child).setThemeId(R.style.Theme_AppStructure_DatePickerStyle);
+                ((DatePickerEditText) child).setDateFormat(sdf);
             } else if (child instanceof TimePickerEditText) {
                 ((TimePickerEditText) child).setThemeId(R.style.Theme_AppStructure_TimePickerStyle);
-                ((TimePickerEditText) child).setTimeFormat(new SimpleDateFormat(AppConstants.APP_TIME_FORMAT, Locale.ENGLISH));
+                ((TimePickerEditText) child).setTimeFormat(
+                        new SimpleDateFormat(AppConstants.APP_TIME_FORMAT, Locale.ENGLISH));
             }
         }
     }

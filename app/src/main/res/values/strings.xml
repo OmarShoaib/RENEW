@@ -859,12 +859,20 @@
     <string name="f602">Date of Follow–Up</string>
     <string name="f603">Follow–up Visit #</string>
     <string name="f604">Enrollment ID</string>
+    <string name="f604a">Child Status</string>
+    <string name="f604a01">Alive</string>
+    <string name="f604a02">Died</string>
+    <string name="f604a03">Child not available</string>
+    <string name="f604b">Date of Death</string>
     <string name="f605">MUAC (cm)</string>
     <string name="f606">Weight (kg)</string>
     <string name="f607">Height (cm)</string>
     <string name="f608">Edema</string>
     <string name="f60801">Present</string>
     <string name="f60802">Absent</string>
+    <string name="f608a">Severity of Pitting Edema</string>
+    <string name="f608a01">Mild</string>
+    <string name="f608a02">Moderate</string>
     <string name="f609">Appetite Test</string>
     <string name="f60901">Passed</string>
     <string name="f60902">Failed</string>
@@ -896,6 +904,9 @@
     <string name="f612">Have you shared sachets since last visit?</string>
     <string name="f61296">Yes</string>
     <string name="f61202">No</string>
+    <string name="f613a">Record reason if the sum of Q 11,12,13 is not equal to the quantities of supplement provided during the last visit.</string>
+    <string name="f613a01">Sold</string>
+    <string name="f613a02">Other Specify</string>
     <string name="f613">Leftover Sachet</string>
     <string name="f61396">Yes</string>
     <string name="f61302">No</string>
@@ -905,6 +916,7 @@
     <string name="f61402">Refusal b/c of taste</string>
     <string name="f61403">Diarrhea</string>
     <string name="f61404">Abdominal pain</string>
+    <string name="f61405">Body rash</string>
     <string name="f61496">Other</string>
     <string name="f615">Counseling Provided</string>
     <string name="f61501">Yes</string>
@@ -916,6 +928,13 @@
     <string name="f618">Medical Care Sought</string>
     <string name="f61801">Yes</string>
     <string name="f61802">No</string>
+    <string name="f618a">Compliance of Sachet</string>
+    <string name="f618a01">Yes</string>
+    <string name="f618a02">No</string>
+    <string name="f618b">Reason for Non-compliance</string>
+    <string name="f618b01">Poor appetite or illness.</string>
+    <string name="f618b02">Caregivers hesitate for giving sachet</string>
+    <string name="f618b96">Other (Specify)</string>
     <string name="f619">Follow up status</string>
     <string name="f61901">Supplement continued  (Mention qty provided)</string>
     <string name="f61902">Recovered (MUAC ≥12.5 for 2 visits &amp; no oedema)</string>
@@ -1160,10 +1179,13 @@
     <string name='Q_f602' translatable='false'>f602</string>
     <string name='Q_f603' translatable='false'>f603</string>
     <string name='Q_f604' translatable='false'>f604</string>
+    <string name='Q_f604a' translatable='false'>f604a</string>
+    <string name='Q_f604b' translatable='false'>f604b</string>
     <string name='Q_f605' translatable='false'>f605</string>
     <string name='Q_f606' translatable='false'>f606</string>
     <string name='Q_f607' translatable='false'>f607</string>
     <string name='Q_f608' translatable='false'>f608</string>
+    <string name='Q_f608a' translatable='false'>f608a</string>
     <string name='Q_f609' translatable='false'>f609</string>
     <string name='Q_f610' translatable='false'>f610</string>
     <string name='Q_f610a' translatable='false'>f610a</string>
@@ -1176,11 +1198,14 @@
     <string name='Q_f611' translatable='false'>f611</string>
     <string name='Q_f612' translatable='false'>f612</string>
     <string name='Q_f613' translatable='false'>f613</string>
+    <string name='Q_f613a' translatable='false'>f613a</string>
     <string name='Q_f614' translatable='false'>f614</string>
     <string name='Q_f615' translatable='false'>f615</string>
     <string name='Q_f616' translatable='false'>f616</string>
     <string name='Q_f617' translatable='false'>f617</string>
     <string name='Q_f618' translatable='false'>f618</string>
+    <string name='Q_f618a' translatable='false'>f618a</string>
+    <string name='Q_f618b' translatable='false'>f618b</string>
     <string name='Q_f619' translatable='false'>f619</string>
     <string name='Q_t6t2' translatable='false'>t6t2</string>
     <string name='Q_t6t2a' translatable='false'>t6t2a</string>
