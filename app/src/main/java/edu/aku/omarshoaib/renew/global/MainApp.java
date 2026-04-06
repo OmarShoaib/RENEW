@@ -24,12 +24,14 @@ import edu.aku.omarshoaib.renew.model.Form3;
 import edu.aku.omarshoaib.renew.model.Form3a;
 import edu.aku.omarshoaib.renew.model.Form4;
 import edu.aku.omarshoaib.renew.model.Form5;
+import edu.aku.omarshoaib.renew.model.Form5A;
 import edu.aku.omarshoaib.renew.model.Form6;
 import edu.aku.omarshoaib.renew.model.HCF;
 import edu.aku.omarshoaib.renew.model.Participant;
 import edu.aku.omarshoaib.renew.model.User;
 import edu.aku.omarshoaib.renew.model.VForm2b;
 import edu.aku.omarshoaib.renew.model.VForm3a;
+import edu.aku.omarshoaib.renew.model.VFormF05A;
 import edu.aku.omarshoaib.renew.model.VFormF06;
 import edu.aku.omarshoaib.renew.model.VPHQ9;
 
@@ -52,6 +54,8 @@ public class MainApp extends Application {
     public static VForm2b vForm2b;
     public static List<VForm2b> vForm2bList;
     public static VFormF06 vFormF06;
+    public static VFormF05A vFormF05a;
+    public static List<VFormF05A> vFormF05aList;
     public static List<VFormF06> vFormF06List;
     public static VForm3a vForm3a;
     public static List<VForm3a> vForm3aList;
@@ -65,6 +69,7 @@ public class MainApp extends Application {
     public static List<Form3> listForm3;
     public static Form4 form4;
     public static Form5 form5;
+    public static Form5A form5a;
     public static Form6 form6;
 
     // LockScreen timer and tone

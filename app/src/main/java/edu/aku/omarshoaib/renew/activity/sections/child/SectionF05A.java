@@ -16,49 +16,48 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-import edu.aku.omarshoaib.renew.activity.MainActivity;
-import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.BaseActivity;
+import edu.aku.omarshoaib.renew.activity.MainActivity;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
-import edu.aku.omarshoaib.renew.databinding.ActivitySectionF05Binding;
+import edu.aku.omarshoaib.renew.databinding.ActivitySectionF05aBinding;
+import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.AppTextWatcher;
 import edu.aku.omarshoaib.renew.global.DateUtils;
 import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.model.Form5;
+import edu.aku.omarshoaib.renew.model.Form5A;
 
-public class SectionF05 extends BaseActivity {
-
+public class SectionF05A extends BaseActivity {
+    
     private final String TAG = getClass().getSimpleName();
-    private final Activity activity = SectionF05.this;
+    private final Activity activity = SectionF05A.this;
 
-    ActivitySectionF05Binding bi;
+    ActivitySectionF05aBinding bi;
     private AppDatabase appDatabase;
-    private Form5.SF5 sF5;
+    private Form5A.SF5A sF5a;
     private List<RadioGroup> f0515RadioGroups = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(activity, R.layout.activity_section_f05);
+        bi = DataBindingUtil.setContentView(activity, R.layout.activity_section_f06);
         super.activity = activity;
 
         // Init toolbar
-        AppConstants.initToolbar(activity, getString(R.string.f5t0), getString(R.string.f5t1), false);
+        AppConstants.initToolbar(activity, getString(R.string.f6t0), getString(R.string.f6t1), false);
         appDatabase = AppDatabase.getDBInstance();
 
-        MainApp.form5 = appDatabase.form5Dao().getDataByScrId(MainApp.user.getDistId(), MainApp.form4.getScrId());
-        if (MainApp.form5 == null) Form5.initMeta();
-        sF5 = Form5.SF5.getData();
-        sF5 = sF5 == null ? new Form5.SF5() : sF5;
-        bi.setForm(sF5);
+        sF5a = Form5A.SF5A.getData();
+        sF5a = sF5a == null ? new Form5A.SF5A() : sF5a;
+        bi.setForm(sF5a);
         initUI();
     }
 
     private void initUI() {
         setChangeListeners();
-        sF5.setF501(MainApp.user.getFullName() + " - " + MainApp.user.getUserId());
-        sF5.setF502(MainApp.form4.getSF4().getF402());
+        sF5a.setF501(MainApp.user.getFullName() + " - " + MainApp.user.getUserId());
+        sF5a.setF502(MainApp.form4.getSF4().getF402());
         bi.f502.addTextChangedListener(new AppTextWatcher(bi.f502.getId(), dateTextWatcher));
         bi.f506.addTextChangedListener(new AppTextWatcher(bi.f506.getId(), dateTextWatcher));
         bi.f521a.addTextChangedListener(new AppTextWatcher(bi.f521a.getId(), dateTextWatcher));
@@ -70,28 +69,28 @@ public class SectionF05 extends BaseActivity {
 
     RadioGroup.OnCheckedChangeListener f503Listener = (RadioGroup radioGroup, int i) -> radioGroup.post(() -> {
         if (i == bi.f50301.getId()) {
-            sF5.setF504(MainApp.form4.getSF4().getF405());
-            sF5.setF511(MainApp.form4.getSF4().getF404());
-            sF5.setF512(MainApp.form4.getSF4().getF410());
-            sF5.setFo515(MainApp.form4.getSF4().getF409());
-            sF5.setF515a(MainApp.form4.getSF4().getF409a());
+            sF5a.setF504(MainApp.form4.getSF4().getF405());
+            sF5a.setF511(MainApp.form4.getSF4().getF404());
+            sF5a.setF512(MainApp.form4.getSF4().getF410());
+            sF5a.setFo515(MainApp.form4.getSF4().getF409());
+            sF5a.setF515a(MainApp.form4.getSF4().getF409a());
             float muac = Float.parseFloat(MainApp.form4.getSF4().getF410());
-//            if(!sF5.getF515a().isEmpty() || muac < 12.5f) {
-            String f515b = sF5.getFo515().equals("1") || muac < 11.5f ? "2" : "1";
-            sF5.setF515b(f515b);
+//            if(!sF5a.getF515a().isEmpty() || muac < 12.5f) {
+            String f515b = sF5a.getFo515().equals("1") || muac < 11.5f ? "2" : "1";
+            sF5a.setF515b(f515b);
 //            } else bi.fldGrpCVf515b.setVisibility(View.GONE);
             return;
         }
-        sF5 = new Form5.SF5();
-        sF5.setF501(MainApp.user.getFullName() + " - " + MainApp.user.getUserId());
-        sF5.setF502(MainApp.form4.getSF4().getF402());
-        sF5.setF503("2");
-        bi.setForm(sF5);
+        sF5a = new Form5A.SF5A();
+        sF5a.setF501(MainApp.user.getFullName() + " - " + MainApp.user.getUserId());
+        sF5a.setF502(MainApp.form4.getSF4().getF402());
+        sF5a.setF503("2");
+        bi.setForm(sF5a);
     });
 
     AppTextWatcher.IAppTextWatcher dateTextWatcher = (viewId, text) -> {
         if (viewId == bi.f502.getId()) {
-            sF5.setF506(_EMPTY_);
+            sF5a.setF506(_EMPTY_);
             if (text.isEmpty()) {
                 String today = DateUtils.getCurrentDateTime(AppConstants.APP_DATE_FORMAT);
                 String maxDate1 = DateUtils.addSubMonths(today, -6);
@@ -106,14 +105,14 @@ public class SectionF05 extends BaseActivity {
             bi.f506.setMaxDate(maxDate2);
         } else if (viewId == bi.f506.getId()) {
             if (text.isEmpty()) {
-                sF5.setF507dd("");
-                sF5.setF507mm("");
+                sF5a.setF507dd("");
+                sF5a.setF507mm("");
                 return;
             }
             String[] dob = text.split("-");
-            List<String> age = DateUtils.calculateAge(sF5.getF502(), dob[0], dob[1], dob[2]);
-            sF5.setF507dd(age.get(2));
-            sF5.setF507mm(String.
+            List<String> age = DateUtils.calculateAge(sF5a.getF502(), dob[0], dob[1], dob[2]);
+            sF5a.setF507dd(age.get(2));
+            sF5a.setF507mm(String.
                     valueOf(DateUtils.
                             getAgeInMonths(age.get(0), age.get(1))
                     )
@@ -121,13 +120,13 @@ public class SectionF05 extends BaseActivity {
         } else if (viewId == bi.f521a.getId()) {
             if (text.isEmpty()) {
                 bi.fldGrpCVf522.setVisibility(View.GONE);
-                sF5.setF522("");
+                sF5a.setF522("");
                 return;
             }
-            int count = Integer.parseInt(sF5.getF521a());
-            if ((sF5.getF521().equals("1") && count >= 30) || (sF5.getF521().equals("2") && count >= Integer.parseInt(sF5.getF52102x()))) {
+            int count = Integer.parseInt(sF5a.getF521a());
+            if ((sF5a.getF521().equals("1") && count >= 30) || (sF5a.getF521().equals("2") && count >= Integer.parseInt(sF5a.getF52102x()))) {
                 bi.fldGrpCVf522.setVisibility(View.GONE);
-                sF5.setF522("");
+                sF5a.setF522("");
                 return;
             }
             bi.fldGrpCVf522.setVisibility(View.VISIBLE);
@@ -137,14 +136,14 @@ public class SectionF05 extends BaseActivity {
     private boolean formValidation() {
         if (!Validator.emptyCheckingContainer(activity, bi.GrpName)) return false;
 
-        if (sF5.getF521().equals("1"))
-            if (Integer.parseInt(sF5.getF521a()) > Integer.parseInt(sF5.getF52101x())) {
+        if (sF5a.getF521().equals("1"))
+            if (Integer.parseInt(sF5a.getF521a()) > Integer.parseInt(sF5a.getF52101x())) {
                 Validator.emptyCustomTextBox(activity, bi.f521a, "Given dose is greater from required dose");
                 return false;
             }
 
-        if (sF5.getF521().equals("2"))
-            if (Integer.parseInt(sF5.getF521a()) > Integer.parseInt(sF5.getF52102x())) {
+        if (sF5a.getF521().equals("2"))
+            if (Integer.parseInt(sF5a.getF521a()) > Integer.parseInt(sF5a.getF52102x())) {
                 Validator.emptyCustomTextBox(activity, bi.f521a, "Given dose is greater from required dose");
                 return false;
             }
@@ -157,7 +156,7 @@ public class SectionF05 extends BaseActivity {
         Form5.saveMainData(MainApp.form4.getScrId());
         MainApp.form5.setIStatus("1");
         MainApp.form5.setEndingDate(DateUtils.getCurrentDateTime());
-        Form5.SF5.saveData(sF5);
+        Form5A.SF5A.saveData(sF5a);
         appDatabase.form4Dao().updateIStatus(MainApp.form4.getId(), "1", "",
                 true, DateUtils.getCurrentDateTime());
         AppConstants.gotoActivity(activity, MainActivity.class, true);
@@ -191,21 +190,21 @@ public class SectionF05 extends BaseActivity {
 
     private boolean areAnyJ517One() {
         return Stream.of(
-                sF5.getF517a(), sF5.getF517b(), sF5.getF517c(),
-                sF5.getF517d(), sF5.getF517e(), sF5.getF517f(),
-                sF5.getF517g()
+                sF5a.getF517a(), sF5a.getF517b(), sF5a.getF517c(),
+                sF5a.getF517d(), sF5a.getF517e(), sF5a.getF517f(),
+                sF5a.getF517g()
         ).anyMatch("1"::equals);
     }
 
     RadioGroup.OnCheckedChangeListener listener = (group, checkedId) -> group.post(() -> {
         bi.f517Info.setVisibility(areAnyJ517One() ? View.VISIBLE : View.GONE);
-        if (areAnyJ517One()) sF5.setF521("3");
-        else sF5.setF521(sF5.getF515b());
+        if (areAnyJ517One()) sF5a.setF521("3");
+        else sF5a.setF521(sF5a.getF515b());
     });
 
     /*private boolean proceed() {
-        boolean lowMuac = !sF5.getF512().isEmpty() && Float.parseFloat(sF5.getF512()) < 12.5f;
-        boolean edema = sF5.getFo515().equals("1");
+        boolean lowMuac = !sF5a.getF512().isEmpty() && Float.parseFloat(sF5a.getF512()) < 12.5f;
+        boolean edema = sF5a.getFo515().equals("1");
         return lowMuac || edema;
     }*/
 
@@ -214,22 +213,22 @@ public class SectionF05 extends BaseActivity {
             bi.eligible.setVisibility(View.VISIBLE);
         } else {
             bi.eligible.setVisibility(View.GONE);
-            sF5.clearUnEligible();
+            sF5a.clearUnEligible();
         }
     }*/
 
     /*private boolean isAnyF517One() {
         return Stream.of(
-                sF5.getF517a(), sF5.getF517b(), sF5.getF517c(),
-                sF5.getF517d(), sF5.getF517e(), sF5.getF517f(),
-                sF5.getF517g()
+                sF5a.getF517a(), sF5a.getF517b(), sF5a.getF517c(),
+                sF5a.getF517d(), sF5a.getF517e(), sF5a.getF517f(),
+                sF5a.getF517g()
         ).anyMatch("1"::equals);
     }*/
 
     /*RadioGroup.OnCheckedChangeListener listener =
             ((group, checkedId) -> group.post(() -> {
-                if (isAnyF517One()) sF5.setF521("3");
-                else sF5.setF521(sF5.getF515b());
+                if (isAnyF517One()) sF5a.setF521("3");
+                else sF5a.setF521(sF5a.getF515b());
             }));*/
 
     /*private void setRadioGroupListeners(ViewGroup parent) {

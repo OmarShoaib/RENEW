@@ -12,15 +12,15 @@ import com.google.gson.reflect.TypeToken;
 
 import edu.aku.omarshoaib.renew.BR;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
-import edu.aku.omarshoaib.renew.database.dao.Form5Dao;
+import edu.aku.omarshoaib.renew.database.dao.Form05ADao;
 import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.MainApp;
 
-@Entity(tableName = Form5.TABLE_NAME)
-public class Form5 extends FormBaseModel {
+@Entity(tableName = Form5A.TABLE_NAME)
+public class Form5A extends FormBaseModel{
 
-    public static final String TABLE_NAME = "Form5";
-    public static final String SECTION_NAME = "Sections: F5";
+    public static final String TABLE_NAME = "Form5a";
+    public static final String SECTION_NAME = "Sections: F5a";
     // Only for Main Table i.e. Module Table like Form1.
     // These fields are used to display on Synced Recs list.
     // Dynamic approach + Sequence matters
@@ -29,8 +29,8 @@ public class Form5 extends FormBaseModel {
     @SerializedName("dist_id")
     private String districtCode = _EMPTY_;
 
-    @SerializedName("scr_id")
-    private String scrId = _EMPTY_;
+    @SerializedName("participant_id")
+    private String participantId = _EMPTY_;
 
     @SerializedName("ending_date")
     private String endingDate = _EMPTY_;
@@ -44,36 +44,39 @@ public class Form5 extends FormBaseModel {
     @ColumnInfo(defaultValue = "0")
     private transient boolean isFormCompleteOnce;
 
+    // For enabling GPS
+   /* public String gLat = SharedPrefs.read(SharedPrefs.GPS_LAT, _EMPTY_);
+    public String gLon = SharedPrefs.read(SharedPrefs.GPS_LON, _EMPTY_);
+    public String gAcc = SharedPrefs.read(SharedPrefs.GPS_ACC, _EMPTY_);
+    public String gDate = SharedPrefs.read(SharedPrefs.GPS_DATE, _EMPTY_);
+    public String gPerm = GPSLocation.GPS_PERMISSION;
+    public String gAvail = GPSLocation.GPS_AVAILABLE;*/
+
     /*JSON OBJECTS*/
-    private SF5 sF5;
+    private SF5A sF5A;
+
+    public Form5A() {
+    }
 
     // Init default data
     public static void initMeta() {
         // This is used to add record for the first time
-        MainApp.form5 = new Form5();
-        MainApp.form5.setDistrictCode(MainApp.user.getDistId());
-        MainApp.form5.setScrId(MainApp.form4.getScrId());
+        MainApp.form5a = new Form5A();
+        MainApp.form5a.setDistrictCode(MainApp.user.getDistId());
+        MainApp.form5a.setParticipantId(MainApp.vFormF05a.getParticipantId());
     }
 
     /*FOR IDENTIFICATION INFORMATION - CLUSTER-WISE*/
     // Save data in db
-    public static void saveMainData(String scrId) {
-        Form5Dao formsDao = AppDatabase.getDBInstance().form5Dao();
-        Form5 form5 = formsDao.getDataByScrId(MainApp.user.getDistId(), scrId);
-        if (form5 != null) {
-            MainApp.form5 = form5;
+    public static void saveMainData(String participantId) {
+        Form05ADao dao = AppDatabase.getDBInstance().form05aDao();
+        Form5A form = dao.getDataByParticipantId(MainApp.user.getDistId(), participantId);
+        if (form != null) {
+            MainApp.form5a = form;
         } else {
-            MainApp.form5.setUid(AppConstants.generateUid());
-            MainApp.form5.setId(formsDao.add(MainApp.form5));
+            MainApp.form5a.setUid(AppConstants.generateUid());
+            MainApp.form5a.setId(dao.add(MainApp.form5a));
         }
-    }
-
-    public String getScrId() {
-        return scrId;
-    }
-
-    public void setScrId(String scrId) {
-        this.scrId = scrId;
     }
 
     public String getDistrictCode() {
@@ -82,6 +85,14 @@ public class Form5 extends FormBaseModel {
 
     public void setDistrictCode(String districtCode) {
         this.districtCode = districtCode;
+    }
+
+    public String getParticipantId() {
+        return participantId;
+    }
+
+    public void setParticipantId(String scrId) {
+        this.participantId = scrId;
     }
 
     public boolean isFormCompleteOnce() {
@@ -100,18 +111,18 @@ public class Form5 extends FormBaseModel {
         this.endingDate = endingDate;
     }
 
-    public SF5 getSF5() {
-        return sF5;
+    public SF5A getsF5A() {
+        return sF5A;
     }
 
-    public void setSF5(SF5 sF5){
-        this.sF5 = sF5;
+    public void setsF5A(SF5A sF5A) {
+        this.sF5A = sF5A;
     }
 
     /**
-     * Form 2: Mental Health assessment (PHQ-9) Questionnaire
+     * Form 5a:
      */
-    public static class SF5 extends BaseObservable {
+    public static class SF5A extends BaseObservable {
         private String f501 = _EMPTY_;
         private String f502 = _EMPTY_;
         private String f503 = _EMPTY_;
@@ -150,21 +161,21 @@ public class Form5 extends FormBaseModel {
         private String f521a = _EMPTY_;
         private String f522 = _EMPTY_;
 
-        public static class DataConverter extends AppDatabase.BaseConverter<SF5> {
+        public static class DataConverter extends AppDatabase.BaseConverter<Form5A.SF5A> {
             public DataConverter() {
-                super(new TypeToken<SF5>() {}.getType());
+                super(new TypeToken<Form5A.SF5A>() {}.getType());
             }
         }
 
         // Save section object as json object in db
-        public static int saveData(SF5 data) {
-            MainApp.form5.setSF5(data);
-            return AppDatabase.getDBInstance().form5Dao().update(MainApp.form5);
+        public static int saveData(Form5A.SF5A data) {
+            MainApp.form5a.setsF5A(data);
+            return AppDatabase.getDBInstance().form05aDao().update(MainApp.form5a);
         }
 
         // Get section object by parsing json
-        public static SF5 getData() {
-            return MainApp.form5.getSF5();
+        public static Form5A.SF5A getData() {
+            return MainApp.form5a.getsF5A();
         }
 
         @Bindable

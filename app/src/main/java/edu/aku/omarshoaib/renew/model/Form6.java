@@ -130,6 +130,7 @@ public class Form6 extends FormBaseModel {
         private String f605 = _EMPTY_;
         private String f606 = _EMPTY_;
         private String f607 = _EMPTY_;
+        private String f607a = _EMPTY_;
         private String f608 = _EMPTY_;
         private String f608a = _EMPTY_;
         private String f609 = _EMPTY_;
@@ -159,6 +160,7 @@ public class Form6 extends FormBaseModel {
         private String f616 = _EMPTY_;
         private String f617 = _EMPTY_;
         private String f618 = _EMPTY_;
+        private String f61801x = _EMPTY_;
         private String f618a = _EMPTY_;
         private String f618b = _EMPTY_;
         private String f618b96x = _EMPTY_;
@@ -248,6 +250,7 @@ public class Form6 extends FormBaseModel {
                 setF611(_EMPTY_);
                 setF612(_EMPTY_);
                 setF613(_EMPTY_);
+                setF613a(_EMPTY_);
                 setF61497("97");
                 setF61497(_EMPTY_);
                 setF615(_EMPTY_);
@@ -302,6 +305,16 @@ public class Form6 extends FormBaseModel {
         public void setF607(String f607) {
             this.f607 = f607;
             notifyPropertyChanged(BR.f607);
+        }
+
+        @Bindable
+        public String getF607a() {
+            return f607a;
+        }
+
+        public void setF607a(String f607a) {
+            this.f607a = f607a;
+            notifyPropertyChanged(BR.f607a);
         }
 
         @Bindable
@@ -583,6 +596,7 @@ public class Form6 extends FormBaseModel {
 
         public void setF616(String f616) {
             this.f616 = f616;
+            setF617(f616.equals("1") ? this.f617 : _EMPTY_);
             setF618(f616.equals("1") ? this.f618 : _EMPTY_);
             setF618a(f616.equals("1") ? this.f618a : _EMPTY_);
             setF618b(f616.equals("1") ? this.f618b : _EMPTY_);
@@ -606,7 +620,18 @@ public class Form6 extends FormBaseModel {
 
         public void setF618(String f618) {
             this.f618 = f618;
+            setF61801x(f618.equals("1") ? this.f61801x : _EMPTY_);
             notifyPropertyChanged(BR.f618);
+        }
+
+        @Bindable
+        public String getF61801x() {
+            return f61801x;
+        }
+
+        public void setF61801x(String f61801x) {
+            this.f61801x = f61801x;
+            notifyPropertyChanged(BR.f61801x);
         }
 
         @Bindable

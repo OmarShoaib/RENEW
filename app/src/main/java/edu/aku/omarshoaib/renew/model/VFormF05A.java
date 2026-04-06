@@ -5,9 +5,9 @@ import androidx.room.PrimaryKey;
 
 import com.google.gson.annotations.SerializedName;
 
-@Entity(tableName = VFormF06.TABLE_NAME)
-public class VFormF06 {
-    public final static String TABLE_NAME = "vw_form6";
+@Entity(tableName = VFormF05A.TABLE_NAME)
+public class VFormF05A {
+    public final static String TABLE_NAME = "vw_form5";
 
     @PrimaryKey(autoGenerate = true)
     @SerializedName("_id")

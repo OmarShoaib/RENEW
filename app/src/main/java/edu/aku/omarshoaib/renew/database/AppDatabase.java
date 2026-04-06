@@ -17,6 +17,7 @@ import net.sqlcipher.database.SupportFactory;
 import java.lang.reflect.Type;
 
 import edu.aku.omarshoaib.renew.database.dao.EntryLogDao;
+import edu.aku.omarshoaib.renew.database.dao.Form05ADao;
 import edu.aku.omarshoaib.renew.database.dao.Form1Dao;
 import edu.aku.omarshoaib.renew.database.dao.Form2Dao;
 import edu.aku.omarshoaib.renew.database.dao.Form2aDao;
@@ -35,6 +36,7 @@ import edu.aku.omarshoaib.renew.database.dao.UserDao;
 import edu.aku.omarshoaib.renew.database.dao.VForm06Dao;
 import edu.aku.omarshoaib.renew.database.dao.VForm2bDao;
 import edu.aku.omarshoaib.renew.database.dao.VForm3aDao;
+import edu.aku.omarshoaib.renew.database.dao.VFormF05ADao;
 import edu.aku.omarshoaib.renew.database.dao.VPHQ9Dao;
 import edu.aku.omarshoaib.renew.database.dao.VillagesDao;
 import edu.aku.omarshoaib.renew.global.AppConstants;
@@ -47,6 +49,7 @@ import edu.aku.omarshoaib.renew.model.Form3;
 import edu.aku.omarshoaib.renew.model.Form3a;
 import edu.aku.omarshoaib.renew.model.Form4;
 import edu.aku.omarshoaib.renew.model.Form5;
+import edu.aku.omarshoaib.renew.model.Form5A;
 import edu.aku.omarshoaib.renew.model.Form6;
 import edu.aku.omarshoaib.renew.model.HCF;
 import edu.aku.omarshoaib.renew.model.Participant;
@@ -55,14 +58,15 @@ import edu.aku.omarshoaib.renew.model.Teams;
 import edu.aku.omarshoaib.renew.model.User;
 import edu.aku.omarshoaib.renew.model.VForm2b;
 import edu.aku.omarshoaib.renew.model.VForm3a;
+import edu.aku.omarshoaib.renew.model.VFormF05A;
 import edu.aku.omarshoaib.renew.model.VFormF06;
 import edu.aku.omarshoaib.renew.model.VPHQ9;
 import edu.aku.omarshoaib.renew.model.Villages;
 
 @Database(entities = {User.class, Villages.class, EntryLog.class,
         Form1.class, Form2.class, Form2a.class, Form3.class, Form4.class, Form5.class,
-        Form6.class, Participant.class, HCF.class, VPHQ9.class, Form2b.class, Form3a.class,
-        VForm2b.class, VForm3a.class, Teams.class, VFormF06.class},
+        Form5A.class, Form6.class, Participant.class, HCF.class, VPHQ9.class, Form2b.class, Form3a.class,
+        VForm2b.class, VForm3a.class, Teams.class, VFormF05A.class, VFormF06.class},
         version = 1, exportSchema = false)
 @TypeConverters({SyncModel.ResponseDate.DataConverter.class,
         Form1.SF1.DataConverter.class, Form2.SF2.DataConverter.class, Form3.SF3.DataConverter.class,
@@ -129,6 +133,8 @@ public abstract class AppDatabase extends RoomDatabase {
 
     public abstract Form5Dao form5Dao();
 
+    public abstract Form05ADao form05aDao();
+
     public abstract Form6Dao form6Dao();
 
     public abstract VPHQ9Dao vphq9Dao();
@@ -138,6 +144,8 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract VForm2bDao vForm2bDao();
 
     public abstract VForm3aDao vForm3aDao();
+
+    public abstract VFormF05ADao vFormF05aDao();
 
     public abstract VForm06Dao vFormF06Dao();
 

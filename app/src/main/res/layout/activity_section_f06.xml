@@ -153,6 +153,8 @@
                             android:hint="##"
                             android:inputType="number"
                             android:maxLength="2"
+                            android:enabled="false"
+                            android:textColor="@color/red_color"
                             android:text="@={form.f603}"
                             app:maxValue="10"
                             app:minValue="1"
@@ -439,6 +441,49 @@
                                 app:mask="###.#"
                                 app:maxValue="120.0"
                                 app:minValue="045.0"
+                                app:type="range" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- f607a Input-Numeric -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVf607a"
+                        style="@style/cardView">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_f607a" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/fo514a" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/fo514a"
+                                style="@style/Theme.AppStructure.EditTextStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:digits="@string/digits_number"
+                                android:gravity="center"
+                                android:hint="###.#"
+                                android:inputType="number"
+                                android:maxLength="5"
+                                android:text="@={form.f607a}"
+                                app:mask="###.#"
+                                app:pattern="[0-9]{3}.[0-9]"
+                                app:maxValue="105.0"
+                                app:minValue="97.0"
                                 app:type="range" />
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
@@ -1960,6 +2005,20 @@
                                     android:onClick="@{()->form.setF618(`2`)}"
                                     android:text="@string/f61802" />
                             </RadioGroup>
+
+                            <EditText
+                                android:id="@+id/f61801x"
+                                style="@style/Theme.AppStructure.EditTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:digits="@string/digits_all"
+                                android:gravity="center"
+                                android:hint="@string/f617"
+                                android:inputType="text"
+                                android:maxLength="250"
+                                android:text="@={form.f61801x}"
+                                android:visibility="@{form.f618.equals(`1`) ? View.VISIBLE : View.GONE}"
+                                tools:ignore="Autofill" />
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -2163,7 +2222,7 @@
                                 android:text="@={form.f61901}"
                                 android:visibility="@{form.f619.equals(`1`) ? View.VISIBLE : View.GONE}"
                                 app:maxValue="90"
-                                app:minValue="30"
+                                app:minValue="15"
                                 app:type="range" />
 
                             <RadioButton
