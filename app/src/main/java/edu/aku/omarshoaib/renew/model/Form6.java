@@ -26,6 +26,9 @@ public class Form6 extends FormBaseModel {
     // Dynamic approach + Sequence matters
     public static final String SYNCED_RECS_ITEMS = "scrId, districtCode, sysDate";
 
+    @SerializedName("_uuid")
+    private String uuid = _EMPTY_;
+
     @SerializedName("dist_id")
     private String districtCode = _EMPTY_;
 
@@ -64,6 +67,7 @@ public class Form6 extends FormBaseModel {
         MainApp.form6 = new Form6();
         MainApp.form6.setDistrictCode(MainApp.user.getDistId());
         MainApp.form6.setParticipantId(MainApp.vFormF06.getParticipantId());
+        MainApp.form6.setUuid(MainApp.vFormF06.getUid());
     }
 
     /*FOR IDENTIFICATION INFORMATION - CLUSTER-WISE*/
@@ -85,6 +89,14 @@ public class Form6 extends FormBaseModel {
 
     public void setDistrictCode(String districtCode) {
         this.districtCode = districtCode;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public String getParticipantId() {
@@ -167,7 +179,6 @@ public class Form6 extends FormBaseModel {
         private String f619 = _EMPTY_;
         private String f61901 = _EMPTY_;
         private String f61905 = _EMPTY_;
-        private String f61906 = _EMPTY_;
 
         public static class DataConverter extends AppDatabase.BaseConverter<SF6> {
             public DataConverter() {
@@ -259,10 +270,6 @@ public class Form6 extends FormBaseModel {
                 setF618(_EMPTY_);
                 setF618a(_EMPTY_);
                 setF618b(_EMPTY_);
-                setF619(_EMPTY_);
-                setF61901(_EMPTY_);
-                setF61905(_EMPTY_);
-                setF61906(_EMPTY_);
             }
             notifyPropertyChanged(BR.f604a);
         }
@@ -696,16 +703,5 @@ public class Form6 extends FormBaseModel {
             this.f61905 = f61905;
             notifyPropertyChanged(BR.f61905);
         }
-
-        @Bindable
-        public String getF61906() {
-            return f61906;
-        }
-
-        public void setF61906(String f61906) {
-            this.f61906 = f61906;
-            notifyPropertyChanged(BR.f61906);
-        }
-
     }
 }

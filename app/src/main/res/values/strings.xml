@@ -769,6 +769,34 @@
 
     <!-- Form1 5: "Nutritional Screening for Enrollmentof Children Under Fivewith MUAC <12.5.
     (For Community-Based Screening and Management of Malnutrition)" -->
+    <string name="f5at0">Form 05A :</string>
+    <string name="f5a">Did the field team provide a brief overview of the project activity to the caregiver?</string>
+    <string name="f5a01">Yes</string>
+    <string name="f5a02">No</string>
+    <string name="f5b">Did the field team read the informed consent form and clearly explain its contents to the caregiver?</string>
+    <string name="f5b01">Yes</string>
+    <string name="f5b02">No</string>
+    <string name="f5c">Did the field team obtain voluntary consent from the caregiver before proceeding with the screening?</string>
+    <string name="f5c01">Yes</string>
+    <string name="f5c02">No</string>
+    <string name="f5d">Does the caregiver understand the purpose of RUTF/RUSF supplementation for the child?</string>
+    <string name="f5d01">Yes</string>
+    <string name="f5d02">No</string>
+    <string name="f5e">Does the caregiver know how to feed the RUTF/RUSF sachet to the child correctly?</string>
+    <string name="f5e01">Yes</string>
+    <string name="f5e02">No</string>
+    <string name="f5f">Does the caregiver know the recommended daily quantity of RUTF/RUSF sachets for the child?</string>
+    <string name="f5f01">Yes</string>
+    <string name="f5f02">No</string>
+    <string name="f5g">Does the caregiver know the proper storage and hygiene practices for RUTF/RUSF sachets?</string>
+    <string name="f5g01">Yes</string>
+    <string name="f5g02">No</string>
+    <string name="f5h">Was the caregiver allowed to ask questions and did the field team respond appropriately?</string>
+    <string name="f5h01">Yes</string>
+    <string name="f5h02">No</string>
+    <string name="f5i">Is the caregiver able to repeat or demonstrate how the RUTF/RUSF sachets should be used?</string>
+    <string name="f5i01">Yes</string>
+    <string name="f5i02">No</string>
     <string name="f5t0">Form 05 :</string>
     <string name="f5t1">Nutritional Screening for Enrollmentof Children Under Fivewith MUAC &lt;12.5. (For Community–Based Screening and Management of Malnutrition)</string>
     <string name="f501">Interviewer Name</string>
@@ -1136,6 +1164,7 @@
     <string name='Q_f4t1' translatable='false'>f4t1</string>
     <string name='Q_f4t2' translatable='false'>f4t2</string>
 
+    <string name='Q_f5' translatable='false'>f5</string>
     <string name='Q_f501' translatable='false'>f501</string>
     <string name='Q_f502' translatable='false'>f502</string>
     <string name='Q_f503' translatable='false'>f503</string>

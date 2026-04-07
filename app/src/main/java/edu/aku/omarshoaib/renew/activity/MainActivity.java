@@ -22,6 +22,7 @@ import java.util.List;
 
 import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.sections.child.Identification04;
+import edu.aku.omarshoaib.renew.activity.sections.child.SectionF05AListAC;
 import edu.aku.omarshoaib.renew.activity.sections.child.SectionF06ListAC;
 import edu.aku.omarshoaib.renew.activity.sections.woman.Section1.Identification01;
 import edu.aku.omarshoaib.renew.activity.sections.woman.Section2.Identification02;
@@ -124,6 +125,10 @@ public class MainActivity extends AppCompatActivity {
             MainApp.formType = 8;
             MainApp.form6 = null;
             AppConstants.gotoActivity(activity, SectionF06ListAC.class, true);
+        } else if (viewId == R.id.option5a) {
+            MainApp.formType = 9;
+            MainApp.form5a = null;
+            AppConstants.gotoActivity(activity, SectionF05AListAC.class, true);
         } else if (viewId == R.id.summaryLayout) {
             // Show summary bottomsheet
             SummaryUtils.showSummary(activity);

@@ -41,11 +41,11 @@ public class SectionF05A extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(activity, R.layout.activity_section_f06);
+        bi = DataBindingUtil.setContentView(activity, R.layout.activity_section_f05a);
         super.activity = activity;
 
         // Init toolbar
-        AppConstants.initToolbar(activity, getString(R.string.f6t0), getString(R.string.f6t1), false);
+        AppConstants.initToolbar(activity, getString(R.string.f5at0), getString(R.string.f5t1), false);
         appDatabase = AppDatabase.getDBInstance();
 
         sF5a = Form5A.SF5A.getData();
@@ -57,36 +57,38 @@ public class SectionF05A extends BaseActivity {
     private void initUI() {
         setChangeListeners();
         sF5a.setF501(MainApp.user.getFullName() + " - " + MainApp.user.getUserId());
-        sF5a.setF502(MainApp.form4.getSF4().getF402());
+        bi.f502.setMinDate(MainApp.vFormF05a.getEnrollmentDate());
         bi.f502.addTextChangedListener(new AppTextWatcher(bi.f502.getId(), dateTextWatcher));
         bi.f506.addTextChangedListener(new AppTextWatcher(bi.f506.getId(), dateTextWatcher));
         bi.f521a.addTextChangedListener(new AppTextWatcher(bi.f521a.getId(), dateTextWatcher));
+        sF5a.setF505(MainApp.vFormF05a.getParticipantId());
+        sF5a.setF506(MainApp.vFormF05a.getDob());
+        sF5a.setF508(MainApp.vFormF05a.getGender());
+        sF5a.setF509(MainApp.vFormF05a.getFatherName());
+        sF5a.setF510(MainApp.vFormF05a.getContactNo());
+        sF5a.setF515b(MainApp.vFormF05a.getCaseType());
 //        bi.f512.addTextChangedListener(new AppTextWatcher(bi.f512.getId(),
 //                (viewId, text) -> eligible()));
 //        bi.fo515.setOnCheckedChangeListener((rG, i) -> rG.post(this::eligible));
-        bi.f503.setOnCheckedChangeListener(f503Listener);
+//        bi.f503.setOnCheckedChangeListener(f503Listener);
     }
 
-    RadioGroup.OnCheckedChangeListener f503Listener = (RadioGroup radioGroup, int i) -> radioGroup.post(() -> {
+    /*RadioGroup.OnCheckedChangeListener f503Listener = (RadioGroup radioGroup, int i) -> radioGroup.post(() -> {
         if (i == bi.f50301.getId()) {
-            sF5a.setF504(MainApp.form4.getSF4().getF405());
-            sF5a.setF511(MainApp.form4.getSF4().getF404());
-            sF5a.setF512(MainApp.form4.getSF4().getF410());
-            sF5a.setFo515(MainApp.form4.getSF4().getF409());
-            sF5a.setF515a(MainApp.form4.getSF4().getF409a());
-            float muac = Float.parseFloat(MainApp.form4.getSF4().getF410());
-//            if(!sF5a.getF515a().isEmpty() || muac < 12.5f) {
-            String f515b = sF5a.getFo515().equals("1") || muac < 11.5f ? "2" : "1";
-            sF5a.setF515b(f515b);
+            sF5a.setF504(MainApp.vFormF05a.getChildName());
+            sF5a.setF511(MainApp.vFormF05a.getVillage());
 //            } else bi.fldGrpCVf515b.setVisibility(View.GONE);
             return;
         }
-        sF5a = new Form5A.SF5A();
-        sF5a.setF501(MainApp.user.getFullName() + " - " + MainApp.user.getUserId());
-        sF5a.setF502(MainApp.form4.getSF4().getF402());
-        sF5a.setF503("2");
+        Form5A.SF5A newSF5a = new Form5A.SF5A();
+        newSF5a.setF501(MainApp.user.getFullName() + " - " + MainApp.user.getUserId());
+        newSF5a.setF503("2");
+        newSF5a.setF5a(sF5a.getF5a()); newSF5a.setF5b(sF5a.getF5b()); newSF5a.setF5c(sF5a.getF5c());
+        newSF5a.setF5d(sF5a.getF5d()); newSF5a.setF5e(sF5a.getF5e()); newSF5a.setF5f(sF5a.getF5f());
+        newSF5a.setF5g(sF5a.getF5g()); newSF5a.setF5h(sF5a.getF5h()); newSF5a.setF5i(sF5a.getF5i());
+        sF5a = newSF5a;
         bi.setForm(sF5a);
-    });
+    });*/
 
     AppTextWatcher.IAppTextWatcher dateTextWatcher = (viewId, text) -> {
         if (viewId == bi.f502.getId()) {
@@ -153,12 +155,10 @@ public class SectionF05A extends BaseActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        Form5.saveMainData(MainApp.form4.getScrId());
-        MainApp.form5.setIStatus("1");
-        MainApp.form5.setEndingDate(DateUtils.getCurrentDateTime());
+        Form5A.saveMainData(MainApp.vFormF05a.getParticipantId());
+        MainApp.form5a.setIStatus("1");
+        MainApp.form5a.setEndingDate(DateUtils.getCurrentDateTime());
         Form5A.SF5A.saveData(sF5a);
-        appDatabase.form4Dao().updateIStatus(MainApp.form4.getId(), "1", "",
-                true, DateUtils.getCurrentDateTime());
         AppConstants.gotoActivity(activity, MainActivity.class, true);
     }
 

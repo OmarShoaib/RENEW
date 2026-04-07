@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName;
 
 @Entity(tableName = VFormF05A.TABLE_NAME)
 public class VFormF05A {
-    public final static String TABLE_NAME = "vw_form5";
+    public final static String TABLE_NAME = "vw_form5a";
 
     @PrimaryKey(autoGenerate = true)
     @SerializedName("_id")
@@ -16,26 +16,29 @@ public class VFormF05A {
     @SerializedName("participant_id")
     private String participantId;
 
-    @SerializedName("Enrol_date")
+    @SerializedName("_uid")
+    private String uid;
+
+    @SerializedName("enrol_date")
     private String enrollmentDate;
 
-    @SerializedName("Child_Name")
+    @SerializedName("child_name")
     private String childName;
 
-    @SerializedName("visit_date")
-    private String visitDate;
-
-    @SerializedName("visit_number")
-    private String visitNumber;
-
-    @SerializedName("DOB")
+    @SerializedName("dob")
     private String dob;
+
+    @SerializedName("sex")
+    private String gender;
 
     @SerializedName("father_caregiver")
     private String fatherName;
 
     @SerializedName("contact")
     private String contactNo;
+
+    @SerializedName("f515b")
+    private String caseType;
 
     private String village;
 
@@ -53,6 +56,14 @@ public class VFormF05A {
 
     public void setParticipantId(String participantId) {
         this.participantId = participantId;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
     public String getFatherName() {
@@ -79,28 +90,28 @@ public class VFormF05A {
         this.childName = childName;
     }
 
-    public String getVisitDate() {
-        return visitDate;
-    }
-
-    public void setVisitDate(String visitDate) {
-        this.visitDate = visitDate;
-    }
-
-    public String getVisitNumber() {
-        return visitNumber;
-    }
-
-    public void setVisitNumber(String visitNumber) {
-        this.visitNumber = visitNumber;
-    }
-
     public String getDob() {
         return dob;
     }
 
     public void setDob(String dob) {
         this.dob = dob;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getCaseType() {
+        return caseType;
+    }
+
+    public void setCaseType(String caseType) {
+        this.caseType = caseType;
     }
 
     public String getContactNo() {

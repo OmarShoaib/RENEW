@@ -746,6 +746,34 @@
 
     <!-- Form1 5: "Nutritional Screening for Enrollmentof Children Under Fivewith MUAC <12.5.
     (For Community-Based Screening and Management of Malnutrition)" -->
+    <string name="f5at0">فارم 05A :</string>
+    <string name="f5a"></string>
+    <string name="f5a01">ها</string>
+    <string name="f5a02">نه</string>
+    <string name="f5b"></string>
+    <string name="f5b01">ها</string>
+    <string name="f5b02">نه</string>
+    <string name="f5c"></string>
+    <string name="f5c01">ها</string>
+    <string name="f5c02">نه</string>
+    <string name="f5d"></string>
+    <string name="f5d01">ها</string>
+    <string name="f5d02">نه</string>
+    <string name="f5e"></string>
+    <string name="f5e01">ها</string>
+    <string name="f5e02">نه</string>
+    <string name="f5f"></string>
+    <string name="f5f01">ها</string>
+    <string name="f5f02">نه</string>
+    <string name="f5g"></string>
+    <string name="f5g01">ها</string>
+    <string name="f5g02">نه</string>
+    <string name="f5h"></string>
+    <string name="f5h01">ها</string>
+    <string name="f5h02">نه</string>
+    <string name="f5i"></string>
+    <string name="f5i01">ها</string>
+    <string name="f5i02">نه</string>
     <string name="f5t0">فارم 05 :</string>
     <string name="f5t1">پنجن سالن کان گهٽ عمر وارن ٻارن جي داخلا لاءِ غذائي اسڪريننگ (ڪميونٽي تي ٻڌل اسڪريننگ ۽ غذائيت جي انتظام لاءِ)</string>
     <string name="f501">انٽرويو وٺندڙ جو نالو</string>

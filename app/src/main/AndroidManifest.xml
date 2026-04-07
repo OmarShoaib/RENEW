@@ -151,6 +151,12 @@
         <activity
             android:name="edu.aku.omarshoaib.renew.activity.sections.child.SectionF06ListAC"
             android:exported="true" />
+        <activity
+            android:name="edu.aku.omarshoaib.renew.activity.sections.child.SectionF05A"
+            android:exported="true" />
+        <activity
+            android:name="edu.aku.omarshoaib.renew.activity.sections.child.SectionF05AListAC"
+            android:exported="true" />
 
         <!-- SYNCED RECORDS LIST ACTIVITY -->
         <activity

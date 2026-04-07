@@ -72,7 +72,7 @@ import edu.aku.omarshoaib.renew.model.Villages;
         Form1.SF1.DataConverter.class, Form2.SF2.DataConverter.class, Form3.SF3.DataConverter.class,
         Form4.SF4.DataConverter.class, Form5.SF5.DataConverter.class, Form6.SF6.DataConverter.class,
         Participant.SF1.DataConverter.class, Form2a.SF2a.DataConverter.class,
-        Form2b.SF2b.DataConverter.class, Form3a.SF3a.DataConverter.class})
+        Form2b.SF2b.DataConverter.class, Form3a.SF3a.DataConverter.class, Form5A.SF5A.DataConverter.class})
 public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase appDatabase;

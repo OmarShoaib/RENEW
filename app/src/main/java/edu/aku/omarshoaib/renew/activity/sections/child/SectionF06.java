@@ -53,31 +53,75 @@ public class SectionF06 extends BaseActivity {
 
     private void initUI() {
         setChangeListeners();
+        bi.lastVisitSachets.setText(String.format("Last Visit Sachets: %s", MainApp.vFormF06.getNoOfSachets()));
         bi.f602.setMinDate(MainApp.vFormF06.getEnrollmentDate());
         bi.f604b.setMinDate(MainApp.vFormF06.getEnrollmentDate());
-        bi.f602.addTextChangedListener(new AppTextWatcher(bi.f602.getId(),
-                (viewId, text) -> {
-            if(text.isEmpty())
-                bi.f602.setMaxDate(DateUtils.getCurrentDateTime(AppConstants.APP_DATE_FORMAT));
-            else bi.f602.setMaxDate(text);
-        }));
+        bi.f602.addTextChangedListener(new AppTextWatcher(bi.f602.getId(), iAppTextWatcher));
+        bi.f611.setMaxvalue(Float.parseFloat(MainApp.vFormF06.getNoOfSachets()));
+        bi.f61296x.setMaxvalue(Float.parseFloat(MainApp.vFormF06.getNoOfSachets()));
+        bi.f61396x.setMaxvalue(Float.parseFloat(MainApp.vFormF06.getNoOfSachets()));
+        bi.f611.addTextChangedListener(new AppTextWatcher(bi.f611.getId(), iAppTextWatcher));
+        bi.f61296x.addTextChangedListener(new AppTextWatcher(bi.f61296x.getId(), iAppTextWatcher));
+        bi.f61396x.addTextChangedListener(new AppTextWatcher(bi.f61396x.getId(), iAppTextWatcher));
         sF6.setF601(MainApp.form6.getUsername());
         sF6.setF603(MainApp.vFormF06.getVisitNumber());
         sF6.setF604(MainApp.vFormF06.getParticipantId());
         bi.f61905x.setMinDate(MainApp.vFormF06.getEnrollmentDate());
+        bi.f604a.setOnCheckedChangeListener((group, checkedId) -> {
+            group.post(() -> {
+                if(sF6.getF604a().equals("3")) {
+                    if(MainApp.vFormF06.getLastVisitF604a().equals("3")) {
+                        bi.fldGrpCVf619.setVisibility(View.VISIBLE);
+                        AppConstants.disableViews(activity, bi.f619);
+                        sF6.setF619("3");
+                    } else {
+                        bi.fldGrpCVf619.setVisibility(View.GONE);
+                        AppConstants.enableViews(activity, bi.f619);
+                        sF6.setF619("");
+                    }
+                } else if (sF6.getF604a().equals("1")) {
+                    bi.fldGrpCVf619.setVisibility(View.VISIBLE);
+                } else if (sF6.getF604a().equals("2")) {
+                    bi.fldGrpCVf619.setVisibility(View.GONE);
+                    sF6.setF619("");
+                }
+            });
+        });
     }
+
+    AppTextWatcher.IAppTextWatcher iAppTextWatcher = (viewId, text) -> {
+        if(viewId == bi.f602.getId()) {
+            if(text.isEmpty())
+                bi.f602.setMaxDate(DateUtils.getCurrentDateTime(AppConstants.APP_DATE_FORMAT));
+            else bi.f602.setMaxDate(text);
+        } else if(viewId == bi.f611.getId() || viewId == bi.f61296x.getId() ||
+                viewId == bi.f61396x.getId()) {
+            int f611 = sF6.getF611().isEmpty() ? 0 : Integer.parseInt(sF6.getF611()),
+                    f612 = sF6.getF61296x().isEmpty() ? 0 : Integer.parseInt(sF6.getF61296x()),
+                    f613 = sF6.getF61396x().isEmpty() ? 0 : Integer.parseInt(sF6.getF61396x());
+            int previousSachets = Integer.parseInt(MainApp.vFormF06.getNoOfSachets());
+
+            if(f611+f612+f613 < previousSachets) bi.fldGrpCVf613a.setVisibility(View.VISIBLE);
+            else {
+                bi.fldGrpCVf613a.setVisibility(View.GONE);
+                sF6.setF613a("");
+            }
+        }
+    };
 
     private boolean formValidation() {
         if(!Validator.emptyCheckingContainer(activity,bi.GrpName)) return false;
 
-        int f611 = sF6.getF611().isEmpty() ? 0 : Integer.parseInt(sF6.getF611()),
-                f612 = sF6.getF61296x().isEmpty() ? 0 : Integer.parseInt(sF6.getF61296x()),
-                f613 = sF6.getF61396x().isEmpty() ? 0 : Integer.parseInt(sF6.getF61396x());
-//        int previousSachets = 120;
-//        if(f611+f612+f613 > previousSachets) {
-//            Validator.emptyCustomTextBox(activity, bi.f611, "Incorrect count");
-//            return false;
-//        }
+        if(sF6.getF604a().equals("1")) {
+            int f611 = sF6.getF611().isEmpty() ? 0 : Integer.parseInt(sF6.getF611()),
+                    f612 = sF6.getF61296x().isEmpty() ? 0 : Integer.parseInt(sF6.getF61296x()),
+                    f613 = sF6.getF61396x().isEmpty() ? 0 : Integer.parseInt(sF6.getF61396x());
+            int previousSachets = Integer.parseInt(MainApp.vFormF06.getNoOfSachets());
+            if (f611 + f612 + f613 > previousSachets) {
+                Validator.emptyCustomTextBox(activity, bi.f611, "Incorrect count");
+                return false;
+            }
+        }
 
         return true;
     }

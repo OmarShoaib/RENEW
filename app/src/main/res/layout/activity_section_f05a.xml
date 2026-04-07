@@ -33,6 +33,306 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+                <!-- f5 Radio -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVf5"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioGroup
+                            android:id="@+id/f5a"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/sub_labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:text="@string/f5a" />
+
+                            <RadioButton
+                                android:id="@+id/f5a01"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{form.f5a.equals(`1`)}"
+                                android:onClick="@{()->form.setF5a(`1`)}"
+                                android:text="@string/f5a01" />
+
+                            <RadioButton
+                                android:id="@+id/f5a02"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{form.f5a.equals(`2`)}"
+                                android:onClick="@{()->form.setF5a(`2`)}"
+                                android:text="@string/f5a02" />
+                        </RadioGroup>
+
+                        <RadioGroup
+                            android:id="@+id/f5b"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/sub_labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:text="@string/f5b" />
+
+                            <RadioButton
+                                android:id="@+id/f5b01"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{form.f5b.equals(`1`)}"
+                                android:onClick="@{()->form.setF5b(`1`)}"
+                                android:text="@string/f5b01" />
+
+                            <RadioButton
+                                android:id="@+id/f5b02"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{form.f5b.equals(`2`)}"
+                                android:onClick="@{()->form.setF5b(`2`)}"
+                                android:text="@string/f5b02" />
+                        </RadioGroup>
+
+                        <RadioGroup
+                            android:id="@+id/f5c"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/sub_labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:text="@string/f5c" />
+
+                            <RadioButton
+                                android:id="@+id/f5c01"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{form.f5c.equals(`1`)}"
+                                android:onClick="@{()->form.setF5c(`1`)}"
+                                android:text="@string/f5c01" />
+
+                            <RadioButton
+                                android:id="@+id/f5c02"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{form.f5c.equals(`2`)}"
+                                android:onClick="@{()->form.setF5c(`2`)}"
+                                android:text="@string/f5c02" />
+                        </RadioGroup>
+
+                        <RadioGroup
+                            android:id="@+id/f5d"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/sub_labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:text="@string/f5d" />
+
+                            <RadioButton
+                                android:id="@+id/f5d01"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{form.f5d.equals(`1`)}"
+                                android:onClick="@{()->form.setF5d(`1`)}"
+                                android:text="@string/f5d01" />
+
+                            <RadioButton
+                                android:id="@+id/f5d02"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{form.f5d.equals(`2`)}"
+                                android:onClick="@{()->form.setF5d(`2`)}"
+                                android:text="@string/f5d02" />
+                        </RadioGroup>
+
+                        <RadioGroup
+                            android:id="@+id/f5e"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/sub_labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:text="@string/f5e" />
+
+                            <RadioButton
+                                android:id="@+id/f5e01"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{form.f5e.equals(`1`)}"
+                                android:onClick="@{()->form.setF5e(`1`)}"
+                                android:text="@string/f5e01" />
+
+                            <RadioButton
+                                android:id="@+id/f5e02"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{form.f5e.equals(`2`)}"
+                                android:onClick="@{()->form.setF5e(`2`)}"
+                                android:text="@string/f5e02" />
+                        </RadioGroup>
+
+                        <RadioGroup
+                            android:id="@+id/f5f"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/sub_labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:text="@string/f5f" />
+
+                            <RadioButton
+                                android:id="@+id/f5f01"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{form.f5f.equals(`1`)}"
+                                android:onClick="@{()->form.setF5f(`1`)}"
+                                android:text="@string/f5f01" />
+
+                            <RadioButton
+                                android:id="@+id/f5f02"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{form.f5f.equals(`2`)}"
+                                android:onClick="@{()->form.setF5f(`2`)}"
+                                android:text="@string/f5f02" />
+                        </RadioGroup>
+
+                        <RadioGroup
+                            android:id="@+id/f5g"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/sub_labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:text="@string/f5g" />
+
+                            <RadioButton
+                                android:id="@+id/f5g01"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{form.f5g.equals(`1`)}"
+                                android:onClick="@{()->form.setF5g(`1`)}"
+                                android:text="@string/f5g01" />
+
+                            <RadioButton
+                                android:id="@+id/f5g02"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{form.f5g.equals(`2`)}"
+                                android:onClick="@{()->form.setF5g(`2`)}"
+                                android:text="@string/f5g02" />
+                        </RadioGroup>
+
+                        <RadioGroup
+                            android:id="@+id/f5h"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/sub_labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:text="@string/f5h" />
+
+                            <RadioButton
+                                android:id="@+id/f5h01"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{form.f5h.equals(`1`)}"
+                                android:onClick="@{()->form.setF5h(`1`)}"
+                                android:text="@string/f5h01" />
+
+                            <RadioButton
+                                android:id="@+id/f5h02"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{form.f5h.equals(`2`)}"
+                                android:onClick="@{()->form.setF5h(`2`)}"
+                                android:text="@string/f5h02" />
+                        </RadioGroup>
+
+                        <RadioGroup
+                            android:id="@+id/f5i"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/sub_labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:text="@string/f5i" />
+
+                            <RadioButton
+                                android:id="@+id/f5i01"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{form.f5i.equals(`1`)}"
+                                android:onClick="@{()->form.setF5i(`1`)}"
+                                android:text="@string/f5i01" />
+
+                            <RadioButton
+                                android:id="@+id/f5i02"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{form.f5i.equals(`2`)}"
+                                android:onClick="@{()->form.setF5i(`2`)}"
+                                android:text="@string/f5i02" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
                 <!-- f5t1 Title -->
                 <TextView
                     style="@style/info"
@@ -112,8 +412,6 @@
                             android:layout_weight="1"
                             android:gravity="center"
                             android:hint="@string/date_format"
-                            android:enabled="false"
-                            android:textColor="@color/red_color"
                             android:text="@={form.f502}"
                             app:dateFormat="@string/date_format"
                             app:maxDate="CR_DATE"
@@ -122,7 +420,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <!-- f503 Radio -->
-                <androidx.cardview.widget.CardView
+               <!-- <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVf503"
                     style="@style/cardView">
 
@@ -174,7 +472,7 @@
                                 android:text="@string/f50302" />
                         </RadioGroup>
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>-->
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -255,6 +553,8 @@
                                 android:digits="@string/digits_number"
                                 android:gravity="center"
                                 android:hint="#####"
+                                android:enabled="false"
+                                android:textColor="@color/red_color"
                                 android:inputType="number"
                                 android:maxLength="5"
                                 android:text="@={form.f505}"
@@ -295,6 +595,8 @@
                                 android:layout_weight="1"
                                 android:gravity="center"
                                 android:hint="@string/date_format"
+                                android:enabled="false"
+                                android:textColor="@color/red_color"
                                 android:text="@={form.f506}"
                                 app:dateFormat="@string/date_format"
                                 app:maxDate="CR_DATE"
@@ -428,6 +730,8 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:enabled="false"
+                                    android:textColor="@color/red_color"
                                     android:checked="@{form.f508.equals(`1`)}"
                                     android:onClick="@{()->form.setF508(`1`)}"
                                     android:text="@string/f50801" />
@@ -437,6 +741,8 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:enabled="false"
+                                    android:textColor="@color/red_color"
                                     android:checked="@{form.f508.equals(`2`)}"
                                     android:onClick="@{()->form.setF508(`2`)}"
                                     android:text="@string/f50802" />
@@ -478,6 +784,8 @@
                                 android:hint="@string/f509"
                                 android:inputType="text"
                                 android:maxLength="250"
+                                android:enabled="false"
+                                android:textColor="@color/red_color"
                                 android:text="@={form.f509}"
                                 tools:ignore="Autofill" />
                         </LinearLayout>
@@ -515,6 +823,8 @@
                                 android:digits="@string/digits_number"
                                 android:gravity="center"
                                 android:hint="###########"
+                                android:enabled="false"
+                                android:textColor="@color/red_color"
                                 android:inputType="number"
                                 android:maxLength="11"
                                 app:pattern="[0-9]{11}"
@@ -599,8 +909,6 @@
                                 android:maxLength="4"
                                 android:text="@={form.f512}"
                                 app:mask="##.#"
-                                android:enabled="false"
-                                android:textColor="@color/red_color"
                                 app:maxValue="25.0"
                                 app:minValue="10.0"
                                 app:type="range" />
@@ -782,8 +1090,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:enabled="false"
-                                    android:textColor="@color/red_color"
                                     android:checked="@{form.fo515.equals(`1`)}"
                                     android:onClick="@{()->form.setFo515(`1`)}"
                                     android:text="@string/f51501" />
@@ -793,8 +1099,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:enabled="false"
-                                    android:textColor="@color/red_color"
                                     android:checked="@{form.fo515.equals(`2`)}"
                                     android:onClick="@{()->form.setFo515(`2`)}"
                                     android:text="@string/f51502" />
@@ -842,8 +1146,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:enabled="false"
-                                    android:textColor="@color/red_color"
                                     android:checked="@{form.f515a.equals(`1`)}"
                                     android:onClick="@{()->form.setF515a(`1`)}"
                                     android:text="@string/f515a01" />
@@ -853,8 +1155,6 @@
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:enabled="false"
-                                    android:textColor="@color/red_color"
                                     android:checked="@{form.f515a.equals(`2`)}"
                                     android:onClick="@{()->form.setF515a(`2`)}"
                                     android:text="@string/f515a02" />

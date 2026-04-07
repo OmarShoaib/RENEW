@@ -29,6 +29,9 @@ public class Form5A extends FormBaseModel{
     @SerializedName("dist_id")
     private String districtCode = _EMPTY_;
 
+    @SerializedName("_uuid")
+    private String uuid = _EMPTY_;
+
     @SerializedName("participant_id")
     private String participantId = _EMPTY_;
 
@@ -64,6 +67,7 @@ public class Form5A extends FormBaseModel{
         MainApp.form5a = new Form5A();
         MainApp.form5a.setDistrictCode(MainApp.user.getDistId());
         MainApp.form5a.setParticipantId(MainApp.vFormF05a.getParticipantId());
+        MainApp.form5a.setUuid(MainApp.vFormF05a.getUid());
     }
 
     /*FOR IDENTIFICATION INFORMATION - CLUSTER-WISE*/
@@ -95,6 +99,14 @@ public class Form5A extends FormBaseModel{
         this.participantId = scrId;
     }
 
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
     public boolean isFormCompleteOnce() {
         return isFormCompleteOnce;
     }
@@ -111,11 +123,11 @@ public class Form5A extends FormBaseModel{
         this.endingDate = endingDate;
     }
 
-    public SF5A getsF5A() {
+    public SF5A getSF5A() {
         return sF5A;
     }
 
-    public void setsF5A(SF5A sF5A) {
+    public void setSF5A(SF5A sF5A) {
         this.sF5A = sF5A;
     }
 
@@ -123,9 +135,18 @@ public class Form5A extends FormBaseModel{
      * Form 5a:
      */
     public static class SF5A extends BaseObservable {
+        private String f5a = _EMPTY_;
+        private String f5b = _EMPTY_;
+        private String f5c = _EMPTY_;
+        private String f5d = _EMPTY_;
+        private String f5e = _EMPTY_;
+        private String f5f = _EMPTY_;
+        private String f5g = _EMPTY_;
+        private String f5h = _EMPTY_;
+        private String f5i = _EMPTY_;
         private String f501 = _EMPTY_;
         private String f502 = _EMPTY_;
-        private String f503 = _EMPTY_;
+//        private String f503 = _EMPTY_;
         private String f504 = _EMPTY_;
         private String f505 = _EMPTY_;
         private String f506 = _EMPTY_;
@@ -169,13 +190,103 @@ public class Form5A extends FormBaseModel{
 
         // Save section object as json object in db
         public static int saveData(Form5A.SF5A data) {
-            MainApp.form5a.setsF5A(data);
+            MainApp.form5a.setSF5A(data);
             return AppDatabase.getDBInstance().form05aDao().update(MainApp.form5a);
         }
 
-        // Get section object by parsing json
+        // Get section object by parsing JSON
         public static Form5A.SF5A getData() {
-            return MainApp.form5a.getsF5A();
+            return MainApp.form5a.getSF5A();
+        }
+
+        @Bindable
+        public String getF5a() {
+            return f5a;
+        }
+
+        public void setF5a(String f5a) {
+            this.f5a = f5a;
+            notifyPropertyChanged(BR.f5a);
+        }
+
+        @Bindable
+        public String getF5b() {
+            return f5b;
+        }
+
+        public void setF5b(String f5b) {
+            this.f5b = f5b;
+            notifyPropertyChanged(BR.f5b);
+        }
+
+        @Bindable
+        public String getF5c() {
+            return f5c;
+        }
+
+        public void setF5c(String f5c) {
+            this.f5c = f5c;
+            notifyPropertyChanged(BR.f5c);
+        }
+
+        @Bindable
+        public String getF5d() {
+            return f5d;
+        }
+
+        public void setF5d(String f5d) {
+            this.f5d = f5d;
+            notifyPropertyChanged(BR.f5d);
+        }
+
+        @Bindable
+        public String getF5e() {
+            return f5e;
+        }
+
+        public void setF5e(String f5e) {
+            this.f5e = f5e;
+            notifyPropertyChanged(BR.f5e);
+        }
+
+        @Bindable
+        public String getF5f() {
+            return f5f;
+        }
+
+        public void setF5f(String f5f) {
+            this.f5f = f5f;
+            notifyPropertyChanged(BR.f5f);
+        }
+
+        @Bindable
+        public String getF5g() {
+            return f5g;
+        }
+
+        public void setF5g(String f5g) {
+            this.f5g = f5g;
+            notifyPropertyChanged(BR.f5g);
+        }
+
+        @Bindable
+        public String getF5h() {
+            return f5h;
+        }
+
+        public void setF5h(String f5h) {
+            this.f5h = f5h;
+            notifyPropertyChanged(BR.f5h);
+        }
+
+        @Bindable
+        public String getF5i() {
+            return f5i;
+        }
+
+        public void setF5i(String f5i) {
+            this.f5i = f5i;
+            notifyPropertyChanged(BR.f5i);
         }
 
         @Bindable
@@ -198,7 +309,7 @@ public class Form5A extends FormBaseModel{
             notifyPropertyChanged(BR.f502);
         }
 
-        @Bindable
+        /*@Bindable
         public String getF503() {
             return f503;
         }
@@ -206,10 +317,9 @@ public class Form5A extends FormBaseModel{
         public void setF503(String f503) {
             this.f503 = f503;
             if(!f503.equals("1")) {
-
             }
             notifyPropertyChanged(BR.f503);
-        }
+        }*/
 
         @Bindable
         public String getF504() {

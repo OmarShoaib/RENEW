@@ -56,7 +56,7 @@ public class FollowUp5aAdapter extends RecyclerView.Adapter<FollowUp5aAdapter.Vi
             MainApp.vFormF05a = filteredList.get(pos);
 //            if (MainApp.selectedMWRA.getStatus() != 3) {
             Form5A form5a = AppDatabase.getDBInstance().form05aDao().getDataByParticipantId(MainApp.user.getDistId(),
-                    MainApp.vFormF06.getParticipantId());
+                    MainApp.vFormF05a.getParticipantId());
             if (form5a != null) MainApp.form5a = form5a;
             else Form5A.initMeta();
             AppConstants.gotoActivity(activity, SectionF05A.class, true);
