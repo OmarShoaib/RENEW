@@ -28,6 +28,6 @@
 
     <!-- FOR TESTING SERVER - WITHOUT HTTPS -->
     <domain-config cleartextTrafficPermitted="true">
-        <domain includeSubdomains="true">10.1.182.132</domain>
+        <domain includeSubdomains="true">cls-pae-fp79887</domain>
     </domain-config>
 </network-security-config>
