@@ -61,37 +61,28 @@ public class SectionF05A extends BaseActivity {
         bi.f502.addTextChangedListener(new AppTextWatcher(bi.f502.getId(), dateTextWatcher));
         bi.f506.addTextChangedListener(new AppTextWatcher(bi.f506.getId(), dateTextWatcher));
         bi.f521a.addTextChangedListener(new AppTextWatcher(bi.f521a.getId(), dateTextWatcher));
+        sF5a.setF504(MainApp.vFormF05a.getChildName());
         sF5a.setF505(MainApp.vFormF05a.getParticipantId());
         sF5a.setF506(MainApp.vFormF05a.getDob());
         sF5a.setF508(MainApp.vFormF05a.getGender());
         sF5a.setF509(MainApp.vFormF05a.getFatherName());
         sF5a.setF510(MainApp.vFormF05a.getContactNo());
-        sF5a.setF515b(MainApp.vFormF05a.getCaseType());
-//        bi.f512.addTextChangedListener(new AppTextWatcher(bi.f512.getId(),
-//                (viewId, text) -> eligible()));
-//        bi.fo515.setOnCheckedChangeListener((rG, i) -> rG.post(this::eligible));
+        sF5a.setF511(MainApp.vFormF05a.getVillage());
+        bi.fo515.setOnCheckedChangeListener((rG, i) -> rG.post(this::setType));
+        bi.f512.addTextChangedListener(new AppTextWatcher(bi.f512.getId(), (viewId, text) -> setType()));
+
 //        bi.f503.setOnCheckedChangeListener(f503Listener);
     }
 
-    /*RadioGroup.OnCheckedChangeListener f503Listener = (RadioGroup radioGroup, int i) -> radioGroup.post(() -> {
-        if (i == bi.f50301.getId()) {
-            sF5a.setF504(MainApp.vFormF05a.getChildName());
-            sF5a.setF511(MainApp.vFormF05a.getVillage());
-//            } else bi.fldGrpCVf515b.setVisibility(View.GONE);
-            return;
-        }
-        Form5A.SF5A newSF5a = new Form5A.SF5A();
-        newSF5a.setF501(MainApp.user.getFullName() + " - " + MainApp.user.getUserId());
-        newSF5a.setF503("2");
-        newSF5a.setF5a(sF5a.getF5a()); newSF5a.setF5b(sF5a.getF5b()); newSF5a.setF5c(sF5a.getF5c());
-        newSF5a.setF5d(sF5a.getF5d()); newSF5a.setF5e(sF5a.getF5e()); newSF5a.setF5f(sF5a.getF5f());
-        newSF5a.setF5g(sF5a.getF5g()); newSF5a.setF5h(sF5a.getF5h()); newSF5a.setF5i(sF5a.getF5i());
-        sF5a = newSF5a;
-        bi.setForm(sF5a);
-    });*/
+    private void setType() {
+        if(sF5a.getF512().length() < 4) return;
+        float muac = Float.parseFloat(sF5a.getF512());
+        String f515b = sF5a.getFo515().equals("1") || muac < 11.5f ? "2" : "1";
+        sF5a.setF515b(f515b);
+    }
 
     AppTextWatcher.IAppTextWatcher dateTextWatcher = (viewId, text) -> {
-        if (viewId == bi.f502.getId()) {
+        /*if (viewId == bi.f502.getId()) {
             sF5a.setF506(_EMPTY_);
             if (text.isEmpty()) {
                 String today = DateUtils.getCurrentDateTime(AppConstants.APP_DATE_FORMAT);
@@ -105,7 +96,7 @@ public class SectionF05A extends BaseActivity {
             String minDate2 = DateUtils.addSubMonths(text, -59);
             bi.f506.setMinDate(minDate2);
             bi.f506.setMaxDate(maxDate2);
-        } else if (viewId == bi.f506.getId()) {
+        } else*/ if (viewId == bi.f506.getId()) {
             if (text.isEmpty()) {
                 sF5a.setF507dd("");
                 sF5a.setF507mm("");

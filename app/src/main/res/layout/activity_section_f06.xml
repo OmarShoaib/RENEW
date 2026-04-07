@@ -247,7 +247,7 @@
                                 android:layout_weight="1"
                                 android:checked="@{form.f604a.equals(`1`)}"
                                 android:onClick="@{()->form.setF604a(`1`)}"
-                                android:text="@{@string/f604a1}"
+                                android:text="@{@string/f604a01}"
                                 tools:text="@string/f604a01" />
 
                             <RadioButton
@@ -257,7 +257,7 @@
                                 android:layout_weight="1"
                                 android:checked="@{form.f604a.equals(`2`)}"
                                 android:onClick="@{()->form.setF604a(`2`)}"
-                                android:text="@{@string/f604a2}"
+                                android:text="@{@string/f604a02}"
                                 tools:text="@string/f604a02" />
 
                             <RadioButton
@@ -267,7 +267,7 @@
                                 android:layout_weight="1"
                                 android:checked="@{form.f604a.equals(`3`)}"
                                 android:onClick="@{()->form.setF604a(`3`)}"
-                                android:text="@{@string/f604a3}"
+                                android:text="@{@string/f604a03}"
                                 tools:text="@string/f604a03" />
                         </RadioGroup>
                     </LinearLayout>
@@ -2031,8 +2031,7 @@
                     <!-- f618a Radio -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVf618a"
-                        style="@style/cardView"
-                        android:visibility="@{form.f616.equals(`1`) ? View.VISIBLE : View.GONE}">
+                        style="@style/cardView">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -2088,7 +2087,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVf618b"
                         style="@style/cardView"
-                        android:visibility="@{form.f616.equals(`1`) ? View.VISIBLE : View.GONE}">
+                        android:visibility="@{form.f618a.equals(`2`) ? View.VISIBLE : View.GONE}">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -2189,24 +2188,24 @@
                                 android:text="@string/f619" />
                         </LinearLayout>
 
-                        <!--                        <EditText-->
-                        <!--                            android:id="@+id/f619"-->
-                        <!--                            style="@style/Theme.AppStructure.EditTextStyle"-->
-                        <!--                            android:layout_width="match_parent"-->
-                        <!--                            android:layout_height="match_parent"-->
-                        <!--                            android:digits="@string/digits_all"-->
-                        <!--                            android:gravity="center"-->
-                        <!--                            android:hint="@string/f619"-->
-                        <!--                            android:inputType="text"-->
-                        <!--                            android:maxLength="250"-->
-                        <!--                            android:text="@={form.f619}"-->
-                        <!--                            tools:ignore="Autofill" />-->
+                        <!--                        <EditText
+                                                    android:id="@+id/f619"
+                                                    style="@style/Theme.AppStructure.EditTextStyle"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    android:digits="@string/digits_all"
+                                                    android:gravity="center"
+                                                    android:hint="@string/f619"
+                                                    android:inputType="text"
+                                                    android:maxLength="250"
+                                                    android:text="@={form.f619}"
+                                                    tools:ignore="Autofill" />-->
 
-                        <!--                        <TextView-->
-                        <!--                            style="@style/sub_labels"-->
-                        <!--                            android:layout_width="match_parent"-->
-                        <!--                            android:layout_height="match_parent"-->
-                        <!--                            android:text="@string/f61901" />-->
+                        <!--                        <TextView
+                                                    style="@style/sub_labels"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    android:text="@string/f61901" />-->
 
 
                         <RadioGroup

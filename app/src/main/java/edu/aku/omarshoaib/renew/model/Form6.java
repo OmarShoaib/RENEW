@@ -249,6 +249,7 @@ public class Form6 extends FormBaseModel {
                 setF605(_EMPTY_);
                 setF606(_EMPTY_);
                 setF607(_EMPTY_);
+                setF607a(_EMPTY_);
                 setF608(_EMPTY_);
                 setF609(_EMPTY_);
                 setF610a(_EMPTY_);
@@ -605,8 +606,8 @@ public class Form6 extends FormBaseModel {
             this.f616 = f616;
             setF617(f616.equals("1") ? this.f617 : _EMPTY_);
             setF618(f616.equals("1") ? this.f618 : _EMPTY_);
-            setF618a(f616.equals("1") ? this.f618a : _EMPTY_);
-            setF618b(f616.equals("1") ? this.f618b : _EMPTY_);
+//            setF618a(f616.equals("1") ? this.f618a : _EMPTY_);
+//            setF618b(f616.equals("1") ? this.f618b : _EMPTY_);
             notifyPropertyChanged(BR.f616);
         }
 
@@ -648,6 +649,7 @@ public class Form6 extends FormBaseModel {
 
         public void setF618a(String f618a) {
             this.f618a = f618a;
+            setF618b(f618a.equals("2") ? this.f618b : _EMPTY_);
             notifyPropertyChanged(BR.f618a);
         }
 

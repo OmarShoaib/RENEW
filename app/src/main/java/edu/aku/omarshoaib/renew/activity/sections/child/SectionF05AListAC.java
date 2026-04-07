@@ -40,7 +40,7 @@ public class SectionF05AListAC extends BaseActivity {
         super.activity = activity;
 
         // Init toolbar
-        AppConstants.initToolbar(activity, getString(R.string.list_of_mwras),
+        AppConstants.initToolbar(activity, getString(R.string.list_of_children_for_validation),
                 _EMPTY_, false);
 
         appDatabase = AppDatabase.getDBInstance();

@@ -26,7 +26,7 @@ public class WebClient {
             BASE_URL = "https://" + HOST_NAME + "/";
         } else {
             // Testing Base Url
-            HOST_NAME = "10.1.182.132";
+            HOST_NAME = "cls-pae-fp79887";
             BASE_URL = "http://" + HOST_NAME + "/";
         }
         // Dictionary portal url for downloading strings and ranges

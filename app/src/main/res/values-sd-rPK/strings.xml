@@ -113,6 +113,9 @@
     <string name="check">Check</string>
     <string name="edit_details">Edit details</string>
     <string name="list_of_mwras">List Of MWRAs</string>
+    <string name="list_of_preg_woman">حامله عورت جي فهرست</string>
+    <string name="list_of_children_for_validation">توثيق لاءِ ٻارن جي فهرست</string>
+    <string name="list_of_children_for_followUp">فالو اپ لاءِ ٻارن جي فهرست</string>
     <string name="list_of_mwra_child">List of Children for MWRA</string>
     <string name="list_of_adols">List of Adolescents</string>
     <string name="town">Town</string>

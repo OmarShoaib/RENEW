@@ -43,7 +43,7 @@
                     android:backgroundTint="@color/primary_color"
                     android:fontFamily="@font/roboto_regular"
                     android:gravity="center"
-                    android:text="@string/list_of_mwras"
+                    android:text="@string/list_of_children_for_followUp"
                     android:textColor="@color/white" />
 
                 <RadioGroup

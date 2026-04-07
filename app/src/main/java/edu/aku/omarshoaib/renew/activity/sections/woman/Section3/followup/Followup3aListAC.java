@@ -17,7 +17,7 @@ import edu.aku.omarshoaib.renew.activity.BaseActivity;
 import edu.aku.omarshoaib.renew.activity.MainActivity;
 import edu.aku.omarshoaib.renew.adapter.Followup3aAdapter;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
-import edu.aku.omarshoaib.renew.databinding.ActivitySection2aListBinding;
+import edu.aku.omarshoaib.renew.databinding.ActivitySection3aListBinding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.AppTextWatcher;
 import edu.aku.omarshoaib.renew.global.MainApp;
@@ -27,7 +27,7 @@ public class Followup3aListAC extends BaseActivity {
     private final String TAG = getClass().getSimpleName();
     private final Activity activity = Followup3aListAC.this;
 
-    ActivitySection2aListBinding bi;
+    ActivitySection3aListBinding bi;
     private AppDatabase appDatabase;
 //    private Loading loading;
 
@@ -36,11 +36,11 @@ public class Followup3aListAC extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bi = DataBindingUtil.setContentView(activity, R.layout.activity_section_2a_list);
+        bi = DataBindingUtil.setContentView(activity, R.layout.activity_section_3a_list);
         super.activity = activity;
 
         // Init toolbar
-        AppConstants.initToolbar(activity, getString(R.string.list_of_mwras),
+        AppConstants.initToolbar(activity, getString(R.string.list_of_preg_woman),
                 _EMPTY_, false);
 
         appDatabase = AppDatabase.getDBInstance();
@@ -50,6 +50,7 @@ public class Followup3aListAC extends BaseActivity {
     }
 
     private void initUI() {
+        bi.titleTV.setText(getString(R.string.list_of_preg_woman));
         MainApp.vForm3aList = appDatabase.vForm3aDao().getAllData();
         bi.searchET.addTextChangedListener(new AppTextWatcher(bi.searchET.getId(), iAppTextWatcher));
 

@@ -92,8 +92,8 @@ public class SectionF06 extends BaseActivity {
     AppTextWatcher.IAppTextWatcher iAppTextWatcher = (viewId, text) -> {
         if(viewId == bi.f602.getId()) {
             if(text.isEmpty())
-                bi.f602.setMaxDate(DateUtils.getCurrentDateTime(AppConstants.APP_DATE_FORMAT));
-            else bi.f602.setMaxDate(text);
+                bi.f604b.setMaxDate(DateUtils.getCurrentDateTime(AppConstants.APP_DATE_FORMAT));
+            else bi.f604b.setMaxDate(text);
         } else if(viewId == bi.f611.getId() || viewId == bi.f61296x.getId() ||
                 viewId == bi.f61396x.getId()) {
             int f611 = sF6.getF611().isEmpty() ? 0 : Integer.parseInt(sF6.getF611()),
