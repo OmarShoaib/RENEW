@@ -287,11 +287,9 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:enabled="false"
                             android:gravity="center"
                             android:hint="@string/date_format"
                             android:text="@={form.f506}"
-                            android:textColor="@color/red_color"
                             app:dateFormat="@string/date_format"
                             app:maxDate="CR_DATE"
                             app:minDate="CR_DATE" />

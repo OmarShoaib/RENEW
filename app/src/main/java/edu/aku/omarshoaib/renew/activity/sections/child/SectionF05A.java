@@ -82,21 +82,21 @@ public class SectionF05A extends BaseActivity {
     }
 
     AppTextWatcher.IAppTextWatcher dateTextWatcher = (viewId, text) -> {
-        /*if (viewId == bi.f502.getId()) {
+        if (viewId == bi.f502.getId()) {
             sF5a.setF506(_EMPTY_);
             if (text.isEmpty()) {
                 String today = DateUtils.getCurrentDateTime(AppConstants.APP_DATE_FORMAT);
-                String maxDate1 = DateUtils.addSubMonths(today, -6);
-                String minDate1 = DateUtils.addSubMonths(today, -59);
+                String maxDate1 = DateUtils.addSubMonths(today, -3);
+                String minDate1 = DateUtils.addSubMonths(today, -72);
                 bi.f506.setMinDate(minDate1);
                 bi.f506.setMaxDate(maxDate1);
                 return;
             }
-            String maxDate2 = DateUtils.addSubMonths(text, -6);
-            String minDate2 = DateUtils.addSubMonths(text, -59);
+            String maxDate2 = DateUtils.addSubMonths(text, -3);
+            String minDate2 = DateUtils.addSubMonths(text, -72);
             bi.f506.setMinDate(minDate2);
             bi.f506.setMaxDate(maxDate2);
-        } else*/ if (viewId == bi.f506.getId()) {
+        } else if (viewId == bi.f506.getId()) {
             if (text.isEmpty()) {
                 sF5a.setF507dd("");
                 sF5a.setF507mm("");

@@ -2232,8 +2232,10 @@
                                 android:hint="##"
                                 android:inputType="number"
                                 android:maxLength="2"
-                                android:text="@={form.f61901}"
                                 android:visibility="@{form.f619.equals(`1`) ? View.VISIBLE : View.GONE}"
+                                android:text="@={form.f61901}"
+                                app:mask="##"
+                                android:tag="f61901"
                                 app:maxValue="90"
                                 app:minValue="15"
                                 app:type="range" />
