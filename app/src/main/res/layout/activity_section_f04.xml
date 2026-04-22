@@ -579,7 +579,7 @@
                             android:maxLength="4"
                             android:text="@={form.f410}"
                             app:maxValue="25.0"
-                            app:minValue="7.5"
+                            app:minValue="8.0"
                             app:type="range" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -587,6 +587,7 @@
                 <!-- f4t2 Title -->
                 <TextView
                     style="@style/info"
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/f4t2" />

@@ -871,6 +871,9 @@
     <string name="f604a01">زنده</string>
     <string name="f604a02">وفات ٿي وئي</string>
     <string name="f604a03">ٻار موجود نه آهي</string>
+    <string name="f604a04">ٻار اسپتال ۾ داخل آهي</string>
+    <string name="f604a05">خاندان لڏي ويو</string>
+    <string name="f604a96">ٻيو وضاحت ڪريو</string>
     <string name="f604b">وفات جي تاريخ</string>
     <string name="f605">بازو جي مٿئين حصي جو گهيرو (سينٽي ميٽر ۾)</string>
     <string name="f606">وزن (ڪلو ۾)</string>
@@ -950,6 +953,8 @@
     <string name="f61904">علاج جو فائدو نه ٿيو (مهينن کان پوءِ به ڪا بهتري نه آئي)</string>
     <string name="f61905">فوت ٿي ويو (تاريخ)</string>
     <string name="f61906">اسپتال ڏانهن ريفر ڪيو ويو (طبي پيچيدگيون)</string>
+    <string name="f61907">سپليمينٽيشن لاءِ انڪار ڪيو</string>
+    <string name="f61908">سپليمينٽيشن تي عمل نه ڪندڙ</string>
     <string name="participant_list">Participant List</string>
     <string name="eligible_participant_list">Eligible Participant List</string>
     <string name="scr_id_not_found">Inalid Sreening Id</string>

@@ -35,6 +35,9 @@ public class Form5 extends FormBaseModel {
     @SerializedName("ending_date")
     private String endingDate = _EMPTY_;
 
+    @SerializedName("_uuid")
+    private String uuid = _EMPTY_;
+
     // This variable is used to mark the form5 that its completed once.
     // To implement the logic of displaying 'Skip to End' button over
     // the sections if user open the form5 in edit mode, update any section/value,
@@ -53,6 +56,7 @@ public class Form5 extends FormBaseModel {
         MainApp.form5 = new Form5();
         MainApp.form5.setDistrictCode(MainApp.user.getDistId());
         MainApp.form5.setScrId(MainApp.form4.getScrId());
+        MainApp.form5.setUuid(MainApp.form4.getUid());
     }
 
     /*FOR IDENTIFICATION INFORMATION - CLUSTER-WISE*/
@@ -98,6 +102,14 @@ public class Form5 extends FormBaseModel {
 
     public void setEndingDate(String endingDate) {
         this.endingDate = endingDate;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public SF5 getSF5() {

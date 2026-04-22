@@ -63,6 +63,7 @@ public class SectionF06 extends BaseActivity {
         bi.f611.addTextChangedListener(new AppTextWatcher(bi.f611.getId(), iAppTextWatcher));
         bi.f61296x.addTextChangedListener(new AppTextWatcher(bi.f61296x.getId(), iAppTextWatcher));
         bi.f61396x.addTextChangedListener(new AppTextWatcher(bi.f61396x.getId(), iAppTextWatcher));
+        bi.f605.addTextChangedListener(new AppTextWatcher(bi.f605.getId(), iAppTextWatcher));
         sF6.setF601(MainApp.form6.getUsername());
         sF6.setF603(MainApp.vFormF06.getVisitNumber());
         sF6.setF604(MainApp.vFormF06.getParticipantId());
@@ -106,6 +107,13 @@ public class SectionF06 extends BaseActivity {
                 bi.fldGrpCVf613a.setVisibility(View.GONE);
                 sF6.setF613a("");
             }
+        } else if(viewId == bi.f605.getId()) {
+            if(text.isEmpty()) return;
+            Float muac = Float.parseFloat(text);
+            if(muac >= 11.5f && muac < 12.5f) {
+                bi.fldGrpCVf609.setVisibility(View.GONE);
+                sF6.setF609("");
+            } else bi.fldGrpCVf609.setVisibility(View.GONE);
         }
     };
 

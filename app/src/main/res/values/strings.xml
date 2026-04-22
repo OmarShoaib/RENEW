@@ -831,7 +831,8 @@
     <string name="f515a01">Mild</string>
     <string name="f515a02">Moderate</string>
     <string name="f515b">Type of Malnutrition</string>
-    <string name="f515b01">MAM (if MUAC is 12.5cm to ≥11.5cm)</string>
+<!--    <string name="f515b01">MAM (if MUAC is 12.5cm to ≥11.5cm)</string>-->
+    <string name="f515b01">MAM (if MUAC ≥ 11.5 cm and &lt; 12.5 cm)</string>
     <string name="f515b02">SAM (MUAC &lt; 11.5cm or mild/moderate edema)</string>
     <string name="f516">Appetite Test</string>
     <string name="f51601"> Passed</string>
@@ -894,6 +895,9 @@
     <string name="f604a01">Alive</string>
     <string name="f604a02">Died</string>
     <string name="f604a03">Child not available</string>
+    <string name="f604a04">Child Hospitalized</string>
+    <string name="f604a05">Family Migrated</string>
+    <string name="f604a96">Other specify</string>
     <string name="f604b">Date of Death</string>
     <string name="f605">MUAC (cm)</string>
     <string name="f606">Weight (kg)</string>
@@ -973,6 +977,8 @@
     <string name="f61904">Non–responder (No improvement after 2 months)</string>
     <string name="f61905">Died (Date)</string>
     <string name="f61906">Referred to Facility (Medical complications)</string>
+    <string name="f61907">Refused for supplementation</string>
+    <string name="f61908">Non-Compliant on Supplementation</string>
 
     <!-- XML QUESTIONS -->
     <string name='Q_f101' translatable='false'>f101</string>

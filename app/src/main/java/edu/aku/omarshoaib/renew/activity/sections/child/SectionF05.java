@@ -186,6 +186,7 @@ public class SectionF05 extends BaseActivity {
 
     private void setChangeListeners() {
         getAllRadioGroups(bi.fldGrpCVf517);
+        bi.fo515.setOnCheckedChangeListener(listener);
         for (RadioGroup rg : f0515RadioGroups) rg.setOnCheckedChangeListener(listener);
     }
 
@@ -198,7 +199,8 @@ public class SectionF05 extends BaseActivity {
     }
 
     RadioGroup.OnCheckedChangeListener listener = (group, checkedId) -> group.post(() -> {
-        bi.f517Info.setVisibility(areAnyJ517One() ? View.VISIBLE : View.GONE);
+        bi.f517Info.setVisibility(areAnyJ517One() ||
+                sF5.getFo515().equals("1") ? View.VISIBLE : View.GONE);
         if (areAnyJ517One()) sF5.setF521("3");
         else sF5.setF521(sF5.getF515b());
     });

@@ -17,6 +17,9 @@ public class VForm2b {
     @SerializedName("participant_id")
     private String participantId;
 
+    @SerializedName("_uid")
+    private String uid;
+
     @SerializedName("participant_name")
     private String participantName;
 
@@ -63,6 +66,14 @@ public class VForm2b {
 
     public void setParticipantId(String participantId) {
         this.participantId = participantId;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
     public String getParticipantName() {

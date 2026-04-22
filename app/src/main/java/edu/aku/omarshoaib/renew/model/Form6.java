@@ -584,6 +584,7 @@ public class Form6 extends FormBaseModel {
                 setF61404(_EMPTY_);
                 setF61405(_EMPTY_);
                 setF61496(_EMPTY_);
+                setF615(_EMPTY_);
             }
             notifyPropertyChanged(BR.f61497);
         }
