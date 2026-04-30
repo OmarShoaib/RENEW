@@ -138,6 +138,7 @@ public class Form6 extends FormBaseModel {
         private String f603 = _EMPTY_;
         private String f604 = _EMPTY_;
         private String f604a = _EMPTY_;
+        private String f604a96x = _EMPTY_;
         private String f604b = _EMPTY_;
         private String f605 = _EMPTY_;
         private String f606 = _EMPTY_;
@@ -244,6 +245,7 @@ public class Form6 extends FormBaseModel {
 
         public void setF604a(String f604a) {
             this.f604a = f604a;
+            setF604a96x(f604a.equals("96") ? this.f604a96x : _EMPTY_);
             setF604b(f604a.equals("2") ? this.f604b : _EMPTY_);
             if(!f604a.equals("1")) {
                 setF605(_EMPTY_);
@@ -271,8 +273,19 @@ public class Form6 extends FormBaseModel {
                 setF618(_EMPTY_);
                 setF618a(_EMPTY_);
                 setF618b(_EMPTY_);
+                setF619(_EMPTY_);
             }
             notifyPropertyChanged(BR.f604a);
+        }
+
+        @Bindable
+        public String getF604a96x() {
+            return f604a96x;
+        }
+
+        public void setF604a96x(String f604a96x) {
+            this.f604a96x = f604a96x;
+            notifyPropertyChanged(BR.f604a96x);
         }
 
         @Bindable

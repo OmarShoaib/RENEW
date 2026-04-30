@@ -808,7 +808,8 @@
     <string name="f515a01">هلڪو</string>
     <string name="f515a02">وچولي</string>
     <string name="f515b">غذائي کوٽ جو قسم</string>
-    <string name="f515b01">MAM (MUAC 11.5–12.5 سينٽي ميٽر)</string>
+    <string name="f515b01">MAM (MUAC ≥ 11.5 cm and &lt; 12.5 cm سينٽي ميٽر)</string>
+<!--    <string name="f515b01">MAM (MUAC 11.5–12.5 سينٽي ميٽر)</string>-->
     <string name="f515b02">SAM (MUAC &lt;11.5 سينٽي ميٽر)</string>
     <string name="f516">اپيٽائٽ ٽيسٽ</string>
     <string name="f51601">پاس ٿيو</string>

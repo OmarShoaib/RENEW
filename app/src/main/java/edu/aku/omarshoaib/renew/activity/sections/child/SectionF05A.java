@@ -75,6 +75,8 @@ public class SectionF05A extends BaseActivity {
     }
 
     private void setType() {
+        bi.f517Info.setVisibility(areAnyJ517One() ||
+                sF5a.getFo515().equals("1") ? View.VISIBLE : View.GONE);
         if(sF5a.getF512().length() < 4) return;
         float muac = Float.parseFloat(sF5a.getF512());
         String f515b = sF5a.getFo515().equals("1") || muac < 11.5f ? "2" : "1";
@@ -177,6 +179,7 @@ public class SectionF05A extends BaseActivity {
     private void setChangeListeners() {
         getAllRadioGroups(bi.fldGrpCVf517);
         for (RadioGroup rg : f0515RadioGroups) rg.setOnCheckedChangeListener(listener);
+//        bi.fo515.setOnCheckedChangeListener(listener);
     }
 
     private boolean areAnyJ517One() {
@@ -188,7 +191,8 @@ public class SectionF05A extends BaseActivity {
     }
 
     RadioGroup.OnCheckedChangeListener listener = (group, checkedId) -> group.post(() -> {
-        bi.f517Info.setVisibility(areAnyJ517One() ? View.VISIBLE : View.GONE);
+        bi.f517Info.setVisibility(areAnyJ517One() ||
+                sF5a.getFo515().equals("1") ? View.VISIBLE : View.GONE);
         if (areAnyJ517One()) sF5a.setF521("3");
         else sF5a.setF521(sF5a.getF515b());
     });
