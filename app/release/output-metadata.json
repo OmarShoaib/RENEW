@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "edu.aku.omarshoaib.renew",
+  "variantName": "release",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 87,
+      "versionName": "1.15R",
+      "outputFile": "RENEW_2026_05_04_Rv87.apk"
+    }
+  ],
+  "elementType": "File"
+}
