@@ -79,6 +79,24 @@ android {
 
             testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
+            /* =================================
+             * CHANGE THIS PARTICULAR KEY/VALUE
+             * ================================= */
+            // App Keys
+            buildConfigField "String", "YEK_REVRES", "\"dba5cee2d4672d033150751d39f47f88928fc5f1eb35c7cef78ca91e687ce918\""
+            buildConfigField "int", "YEK_TRATS", "31"
+
+            /* DO NOT CHANGE */
+            // Dictionary Portal Keys
+            buildConfigField "String", "DP_YEK_REVRES", "\"v9y5B8E)H@McQfTjWnZr4u7w!z%C*F-JaNdRgUkXp2s5v8y/A?D(G+KbPeShVmYq\""
+            buildConfigField "int", "DP_YEK_TRATS", "7"
+
+            /* NOT IS USE */
+            // Further Security Layer
+            buildConfigField "String", "YEK_DATA_KEY", "\"df5C7KcB\""
+            buildConfigField "int", "YEK_DATA_INDEX", "8"
+
+            /* DO NOT CHANGE */
             // Change this key when certificate will update on server
             buildConfigField "String", "CERT_KEY", "\"sha256/A1HD6IfDednYIJexev3YHpRitYcLdESeiEgoxSOb3m8=\""
             buildConfigField "String", "CERT_KEY_BACKUP", "\"sha256/Wec45nQiFwKvHtuHxSAMGkt19k+uPSw9JlEkxhvYPHk=\""
