@@ -14,6 +14,7 @@ import com.google.gson.Gson;
 import java.util.List;
 
 import dev.b3nedikt.restring.Restring;
+import edu.aku.omarshoaib.renew.BuildConfig;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.model.AppInfo;
 import edu.aku.omarshoaib.renew.model.Form1;
@@ -98,7 +99,7 @@ public class MainApp extends Application {
                     PackageManager.GET_META_DATA);
             Bundle bundle = ai.metaData;
 
-            AppConstants.TRATS = bundle.getInt("YEK_TRATS");
+            /*AppConstants.TRATS = bundle.getInt("YEK_TRATS");
             AppConstants.IBAHC = bundle.getString("YEK_REVRES");
 
             // For dictionary portal
@@ -107,7 +108,20 @@ public class MainApp extends Application {
 
             // For dynamic server key - NIU
             AppConstants.YEK_DATA_KEY = bundle.getString("YEK_DATA_KEY");
-            AppConstants.YEK_DATA_INDEX = bundle.getInt("YEK_DATA_INDEX");
+            AppConstants.YEK_DATA_INDEX = bundle.getInt("YEK_DATA_INDEX");*/
+
+
+            AppConstants.TRATS = BuildConfig.YEK_TRATS;
+            AppConstants.IBAHC = BuildConfig.YEK_REVRES;
+
+            // For dictionary portal
+            AppConstants.DP_TRATS = BuildConfig.DP_YEK_TRATS;
+            AppConstants.DP_IBAHC = BuildConfig.DP_YEK_REVRES;
+
+            // For dynamic server key - NIU
+            AppConstants.YEK_DATA_KEY = BuildConfig.YEK_DATA_KEY;
+            AppConstants.YEK_DATA_INDEX = BuildConfig.YEK_DATA_INDEX;
+
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
