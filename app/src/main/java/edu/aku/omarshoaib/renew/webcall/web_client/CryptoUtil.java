@@ -232,7 +232,7 @@ public class CryptoUtil {
             pins.add(BuildConfig.CERT_KEY);           // leaf cert pin
             pins.add(BuildConfig.CERT_KEY_BACKUP);    // backup / intermediate pin
 
-            PinnedTrustManager pinnedTrustManager = new PinnedTrustManager(pins);
+            PinnedTrustManager pinnedTrustManager = new PinnedTrustManager(context, pins);
 
             // =================================================
             // SSL CONTEXT using our custom trust manager

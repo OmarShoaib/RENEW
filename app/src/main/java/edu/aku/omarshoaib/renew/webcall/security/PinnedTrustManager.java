@@ -1,13 +1,18 @@
 package edu.aku.omarshoaib.renew.webcall.security;
 
+import android.content.Context;
 import android.util.Base64;
 
 import androidx.annotation.Nullable;
 
+import java.io.InputStream;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.security.KeyStore;
 import java.security.MessageDigest;
+import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
+import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.util.Arrays;
 import java.util.Collections;
@@ -19,71 +24,83 @@ import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
 
+import edu.aku.omarshoaib.renew.R;
+
 // PinnedTrustManager.java
 public final class PinnedTrustManager implements X509TrustManager {
 
     private final Set<String> validPins;
     private final X509TrustManager systemTrustManager;
 
-    public PinnedTrustManager(Set<String> validPins) {
+    public PinnedTrustManager(Context context, Set<String> validPins) {
         if (validPins == null || validPins.isEmpty()) {
             throw new IllegalArgumentException("Pins must not be empty");
         }
         this.validPins = Collections.unmodifiableSet(new HashSet<>(validPins));
-        this.systemTrustManager = getSystemTrustManager();
+        this.systemTrustManager = buildTrustManager(context);
     }
 
     // -------------------------------------------------------
-    // Get the real system TrustManager once at construction
-    // time — reuse it for all chain validations
+    // Build TrustManager from YOUR certificate, not system CA
+    // This matches what network_security_config is doing and
+    // ensures debug and release behave identically
     // -------------------------------------------------------
-    private static X509TrustManager getSystemTrustManager() {
+    private static X509TrustManager buildTrustManager(Context context) {
         try {
+            // Load your PEM certificate
+            CertificateFactory cf = CertificateFactory.getInstance("X.509");
+            InputStream caInput = context.getResources()
+                    .openRawResource(R.raw.vcoe1_aku_edu);
+            Certificate ca = cf.generateCertificate(caInput);
+            caInput.close();
+
+            // Build a KeyStore containing your cert
+            KeyStore keyStore = KeyStore.getInstance(KeyStore.getDefaultType());
+            keyStore.load(null, null);
+            keyStore.setCertificateEntry("server_ca", ca);
+
+            // Build TrustManager from that KeyStore
             TrustManagerFactory tmf = TrustManagerFactory.getInstance(
                     TrustManagerFactory.getDefaultAlgorithm());
-            tmf.init((KeyStore) null); // null = use system trust store
+            tmf.init(keyStore);
+
             for (TrustManager tm : tmf.getTrustManagers()) {
                 if (tm instanceof X509TrustManager) {
                     return (X509TrustManager) tm;
                 }
             }
+            throw new RuntimeException("No X509TrustManager found");
+
         } catch (Exception e) {
-            throw new RuntimeException("Could not obtain system TrustManager", e);
+            throw new RuntimeException("Failed to build TrustManager", e);
         }
-        throw new RuntimeException("No X509TrustManager found");
     }
 
     // -------------------------------------------------------
-    // Standard 2-arg version (required by interface)
+    // 2-arg version — required by X509TrustManager interface
     // -------------------------------------------------------
     @Override
     public void checkServerTrusted(X509Certificate[] chain, String authType)
             throws CertificateException {
-        // Delegate to the 3-arg version with no hostname
-        // (will still do chain + pin validation)
         performFullValidation(chain, authType, null);
     }
 
     // -------------------------------------------------------
-    // Android-specific 3-arg version — THIS is what fixes
-    // the "hostname aware checkServerTrusted" error.
-    // Android's TrustManagerImpl calls this when a
-    // domain-config is present in network_security_config.xml
+    // 3-arg version — called by Android framework via
+    // reflection when domain-config is present.
+    // Must be public and exactly this signature.
     // -------------------------------------------------------
-    @SuppressWarnings("unused") // Called by Android framework via reflection
+    @SuppressWarnings("unused")
     public List<X509Certificate> checkServerTrusted(
             X509Certificate[] chain,
             String authType,
             String hostname) throws CertificateException {
-
         performFullValidation(chain, authType, hostname);
-
-        // Return the validated chain (required by Android's internal API)
         return chain != null ? Arrays.asList(chain) : Collections.emptyList();
     }
 
     // -------------------------------------------------------
-    // Core validation logic shared by both overloads
+    // Core validation — shared by both overloads
     // -------------------------------------------------------
     private void performFullValidation(
             X509Certificate[] chain,
@@ -94,35 +111,38 @@ public final class PinnedTrustManager implements X509TrustManager {
             throw new CertificateException("Empty certificate chain");
         }
 
-        // ---------------------------------------------------
-        // Step A: System chain validation
-        // Use the 3-arg version on the system TrustManager
-        // if hostname is available — this satisfies Android's
-        // domain-config requirement
-        // ---------------------------------------------------
+        // Step A: Chain validation against YOUR certificate
+        // (not system store — matches network_security_config)
         try {
             if (hostname != null) {
-                // Attempt to call the Android-specific 3-arg method
-                // on the system trust manager via reflection
-                callSystemCheckServerTrustedWithHostname(chain, authType, hostname);
+                // Try 3-arg first for domain-config compatibility
+                try {
+                    Method method = systemTrustManager.getClass().getMethod(
+                            "checkServerTrusted",
+                            X509Certificate[].class,
+                            String.class,
+                            String.class);
+                    method.setAccessible(true);
+                    method.invoke(systemTrustManager, chain, authType, hostname);
+                } catch (NoSuchMethodException e) {
+                    // 3-arg not available, fall back to 2-arg
+                    systemTrustManager.checkServerTrusted(chain, authType);
+                } catch (InvocationTargetException e) {
+                    if (e.getCause() instanceof CertificateException) {
+                        throw (CertificateException) e.getCause();
+                    }
+                    throw new CertificateException("Chain validation failed", e);
+                }
             } else {
                 systemTrustManager.checkServerTrusted(chain, authType);
             }
         } catch (CertificateException e) {
-            throw e; // Re-throw — chain is genuinely invalid
+            throw e;
         } catch (Exception e) {
-            // Reflection failed — fall back to 2-arg
-            try {
-                systemTrustManager.checkServerTrusted(chain, authType);
-            } catch (CertificateException ce) {
-                throw ce;
-            }
+            throw new CertificateException("Chain validation error: " + e.getMessage());
         }
 
-        // ---------------------------------------------------
-        // Step B: Our custom public-key pin check
-        // System chain passed — now enforce our pins
-        // ---------------------------------------------------
+        // Step B: Public key pin check
         boolean pinMatched = false;
         for (X509Certificate cert : chain) {
             try {
@@ -141,27 +161,6 @@ public final class PinnedTrustManager implements X509TrustManager {
         }
     }
 
-    // -------------------------------------------------------
-    // Call system TrustManager's 3-arg checkServerTrusted
-    // via reflection — Android hides this in TrustManagerImpl
-    // -------------------------------------------------------
-    private void callSystemCheckServerTrustedWithHostname(
-            X509Certificate[] chain,
-            String authType,
-            String hostname) throws Exception {
-
-        Method method = systemTrustManager.getClass().getMethod(
-                "checkServerTrusted",
-                X509Certificate[].class,
-                String.class,
-                String.class);
-        method.setAccessible(true);
-        method.invoke(systemTrustManager, chain, authType, hostname);
-    }
-
-    // -------------------------------------------------------
-    // Not used for server validation
-    // -------------------------------------------------------
     @Override
     public void checkClientTrusted(X509Certificate[] chain, String authType)
             throws CertificateException {
@@ -173,9 +172,6 @@ public final class PinnedTrustManager implements X509TrustManager {
         return new X509Certificate[0];
     }
 
-    // -------------------------------------------------------
-    // Compute SHA-256 of SubjectPublicKeyInfo (SPKI)
-    // -------------------------------------------------------
     private static String computeSpkiPin(X509Certificate cert) throws Exception {
         byte[] spkiBytes = cert.getPublicKey().getEncoded();
         MessageDigest digest = MessageDigest.getInstance("SHA-256");
