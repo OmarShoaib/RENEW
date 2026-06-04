@@ -32,6 +32,9 @@ public class Form6 extends FormBaseModel {
     @SerializedName("dist_id")
     private String districtCode = _EMPTY_;
 
+    @SerializedName("visit_number")
+    private String followupNo = _EMPTY_;
+
     @SerializedName("participant_id")
     private String participantId = _EMPTY_;
 
@@ -58,8 +61,7 @@ public class Form6 extends FormBaseModel {
     /*JSON OBJECTS*/
     private SF6 sF6;
 
-    public Form6() {
-    }
+    public Form6() {}
 
     // Init default data
     public static void initMeta() {
@@ -72,9 +74,9 @@ public class Form6 extends FormBaseModel {
 
     /*FOR IDENTIFICATION INFORMATION - CLUSTER-WISE*/
     // Save data in db
-    public static void saveMainData(String participantId) {
+    public static void saveMainData(String participantId, String visitNumber) {
         Form6Dao dao = AppDatabase.getDBInstance().form6Dao();
-        Form6 form = dao.getDataByParticipantId(MainApp.user.getDistId(), participantId);
+        Form6 form = dao.getDataByParticipantId(MainApp.user.getDistId(), participantId,visitNumber);
         if (form != null) {
             MainApp.form6 = form;
         } else {
@@ -113,6 +115,14 @@ public class Form6 extends FormBaseModel {
 
     public void setFormCompleteOnce(boolean formCompleteOnce) {
         isFormCompleteOnce = formCompleteOnce;
+    }
+
+    public String getFollowupNo() {
+        return followupNo;
+    }
+
+    public void setFollowupNo(String followupNo) {
+        this.followupNo = followupNo;
     }
 
     public String getEndingDate() {

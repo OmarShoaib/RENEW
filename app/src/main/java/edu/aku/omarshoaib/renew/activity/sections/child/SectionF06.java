@@ -66,6 +66,7 @@ public class SectionF06 extends BaseActivity {
         bi.f605.addTextChangedListener(new AppTextWatcher(bi.f605.getId(), iAppTextWatcher));
         sF6.setF601(MainApp.form6.getUsername());
         sF6.setF603(MainApp.vFormF06.getVisitNumber());
+        MainApp.form6.setFollowupNo(MainApp.vFormF06.getVisitNumber());
         sF6.setF604(MainApp.vFormF06.getParticipantId());
         bi.f61905x.setMinDate(MainApp.vFormF06.getEnrollmentDate());
 //        bi.f604a.setOnCheckedChangeListener((group, checkedId) -> {
@@ -136,7 +137,7 @@ public class SectionF06 extends BaseActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        Form6.saveMainData(MainApp.vFormF06.getParticipantId());
+        Form6.saveMainData(MainApp.vFormF06.getParticipantId(), MainApp.vFormF06.getVisitNumber());
         MainApp.form6.setIStatus("1");
         MainApp.form6.setEndingDate(DateUtils.getCurrentDateTime());
         Form6.SF6.saveData(sF6);

@@ -57,7 +57,7 @@ public class SectionF06Adapter extends RecyclerView.Adapter<SectionF06Adapter.Vi
             MainApp.vFormF06 = filteredList.get(pos);
 //            if (MainApp.selectedMWRA.getStatus() != 3) {
             Form6 form6 = AppDatabase.getDBInstance().form6Dao().getDataByParticipantId(MainApp.user.getDistId(),
-                    MainApp.vFormF06.getParticipantId());
+                    MainApp.vFormF06.getParticipantId(), MainApp.vFormF06.getVisitNumber());
             if (form6 != null) MainApp.form6 = form6;
             else Form6.initMeta();
             AppConstants.gotoActivity(activity, SectionF06.class, true);
@@ -93,7 +93,7 @@ public class SectionF06Adapter extends RecyclerView.Adapter<SectionF06Adapter.Vi
 
         Form6 form6 = AppDatabase.getDBInstance().form6Dao()
                 .getDataByParticipantId(MainApp.user.getDistId(),
-                        vForm06.getParticipantId());
+                        vForm06.getParticipantId(), vForm06.getVisitNumber());
         bi.statusIV.setVisibility(
                 form6 == null ? View.GONE : View.VISIBLE);
     }

@@ -40,8 +40,8 @@ public abstract class Form6Dao implements BaseDao<Form6> {
     @Query("SELECT * FROM Form6 WHERE uid = :uid")
     public abstract Form6 getDataByUid(String uid);
 
-    @Query("SELECT * FROM Form6 WHERE districtCode = :districtCode AND participantId = :scrId")
-    public abstract Form6 getDataByParticipantId(String districtCode, String scrId);
+    @Query("SELECT * FROM Form6 WHERE districtCode = :districtCode AND participantId = :scrId AND followupNo = :followupNo")
+    public abstract Form6 getDataByParticipantId(String districtCode, String scrId, String followupNo);
 
     @Query("SELECT * FROM Form6 WHERE sysDate LIKE :date || '%'")
     public abstract List<Form6> getAllByDate(String date);
