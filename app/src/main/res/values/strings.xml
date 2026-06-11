@@ -975,7 +975,10 @@
     <string name="f61902">Recovered (MUAC ≥12.5 for 2 visits &amp; no oedema)</string>
     <string name="f61903">Defaulted (Did not return for 2 consecutive visits)</string>
     <string name="f61904">Non–responder (No improvement after 2 months)</string>
+
+    <!-- Removed -->
     <string name="f61905">Died (Date)</string>
+
     <string name="f61906">Referred to Facility (Medical complications)</string>
     <string name="f61907">Refused for supplementation</string>
     <string name="f61908">Non-Compliant on Supplementation</string>
