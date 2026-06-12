@@ -650,6 +650,49 @@
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
+                    <!-- f513a Input-Numeric -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVf513a"
+                        style="@style/cardView">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_f513a" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/f513a" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/f513a"
+                                style="@style/Theme.AppStructure.EditTextStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:digits="@string/digits_number"
+                                android:gravity="center"
+                                android:hint="##.#"
+                                android:inputType="number"
+                                android:maxLength="4"
+                                android:text="@={form.f513a}"
+                                app:mask="##.#"
+                                app:pattern="[0-9]{2}.[0-9]"
+                                app:maxValue="15.0"
+                                app:minValue="3.0"
+                                app:type="range" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
                     <!-- fo514 Input-Numeric -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVfo514"
@@ -685,6 +728,49 @@
                                 android:inputType="number"
                                 android:maxLength="5"
                                 android:text="@={form.fo514}"
+                                app:mask="###.#"
+                                app:pattern="[0-9]{3}.[0-9]"
+                                app:maxValue="120.0"
+                                app:minValue="45.0"
+                                app:type="range" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- fo514a1 Input-Numeric -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVfo514a1"
+                        style="@style/cardView">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_fo514a1" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/fo514a1" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/fo514a1"
+                                style="@style/Theme.AppStructure.EditTextStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:digits="@string/digits_number"
+                                android:gravity="center"
+                                android:hint="###.#"
+                                android:inputType="number"
+                                android:maxLength="5"
+                                android:text="@={form.fo514a1}"
                                 app:mask="###.#"
                                 app:pattern="[0-9]{3}.[0-9]"
                                 app:maxValue="120.0"

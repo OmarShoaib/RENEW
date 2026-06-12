@@ -584,6 +584,48 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
+                <!-- f410a Input-Numeric -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVf410a"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_f410a" />
+
+                        <TextView
+                            style="@style/labels"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/f410a" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/f410a"
+                            style="@style/Theme.AppStructure.EditTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:digits="@string/digits_number"
+                            android:gravity="center"
+                            android:hint="##.#"
+                            app:mask="##.#"
+                            android:inputType="number"
+                            android:maxLength="4"
+                            android:text="@={form.f410a}"
+                            app:maxValue="25.0"
+                            app:minValue="8.0"
+                            app:type="range" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
                 <!-- f4t2 Title -->
                 <TextView
                     style="@style/info"

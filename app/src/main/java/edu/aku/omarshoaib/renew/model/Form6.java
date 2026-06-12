@@ -151,8 +151,11 @@ public class Form6 extends FormBaseModel {
         private String f604a96x = _EMPTY_;
         private String f604b = _EMPTY_;
         private String f605 = _EMPTY_;
+        private String f605a = _EMPTY_;
         private String f606 = _EMPTY_;
+        private String f606a = _EMPTY_;
         private String f607 = _EMPTY_;
+        private String f607a1 = _EMPTY_;
         private String f607a = _EMPTY_;
         private String f608 = _EMPTY_;
         private String f608a = _EMPTY_;
@@ -259,8 +262,11 @@ public class Form6 extends FormBaseModel {
             setF604b(f604a.equals("2") ? this.f604b : _EMPTY_);
             if(!f604a.equals("1")) {
                 setF605(_EMPTY_);
+                setF605a(_EMPTY_);
                 setF606(_EMPTY_);
+                setF606a(_EMPTY_);
                 setF607(_EMPTY_);
+                setF607a1(_EMPTY_);
                 setF607a(_EMPTY_);
                 setF608(_EMPTY_);
                 setF609(_EMPTY_);
@@ -319,6 +325,16 @@ public class Form6 extends FormBaseModel {
         }
 
         @Bindable
+        public String getF605a() {
+            return f605a;
+        }
+
+        public void setF605a(String f605a) {
+            this.f605a = f605a;
+            notifyPropertyChanged(BR.f605a);
+        }
+
+        @Bindable
         public String getF606() {
             return f606;
         }
@@ -329,6 +345,16 @@ public class Form6 extends FormBaseModel {
         }
 
         @Bindable
+        public String getF606a() {
+            return f606a;
+        }
+
+        public void setF606a(String f606a) {
+            this.f606a = f606a;
+            notifyPropertyChanged(BR.f606a);
+        }
+
+        @Bindable
         public String getF607() {
             return f607;
         }
@@ -336,6 +362,16 @@ public class Form6 extends FormBaseModel {
         public void setF607(String f607) {
             this.f607 = f607;
             notifyPropertyChanged(BR.f607);
+        }
+
+        @Bindable
+        public String getF607a1() {
+            return f607a1;
+        }
+
+        public void setF607a1(String f607a1) {
+            this.f607a1 = f607a1;
+            notifyPropertyChanged(BR.f607a1);
         }
 
         @Bindable

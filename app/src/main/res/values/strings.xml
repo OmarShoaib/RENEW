@@ -764,6 +764,7 @@
     <string name="f409a03">Severe</string>
     <string name="f409a_info">Refer Child to a public health facility for further evaluation</string>
     <string name="f410">MUAC</string>
+    <string name="f410a">MUAC-2</string>
 <!--    <string name="f4t2">If Edema is Yes or MUAC &lt;12.5 then fill Form–05 for Further screening</string>-->
     <string name="f4t2">If mild/moderate edema complete Form-05 also refer for medical evaluation to nearest public health facility MUAC is &lt;12.5 cm, complete go to Form-05</string>
     <string name="f411">Written consent taken for further screening</string>
@@ -821,7 +822,9 @@
     <string name="f511">Village/Address</string>
     <string name="f512">MUAC (cm)</string>
     <string name="f513">Weight (kg)</string>
+    <string name="f513a">Weight (kg) - 2</string>
     <string name="fo514">Height (cm)</string>
+    <string name="fo514a1">Height (cm) - 2</string>
     <string name="fo514a">Temperature (°F)</string>
     <string name="fo515">Pitting Edema</string>
     <string name="f51501"> Present</string>
@@ -900,8 +903,11 @@
     <string name="f604a96">Other specify</string>
     <string name="f604b">Date of Death</string>
     <string name="f605">MUAC (cm)</string>
+    <string name="f605a">MUAC (cm) - 2</string>
     <string name="f606">Weight (kg)</string>
+    <string name="f606a">Weight (kg) - 2</string>
     <string name="f607">Height (cm)</string>
+    <string name="f607a1">Height (cm) - 2</string>
     <string name="f608">Edema</string>
     <string name="f60801">Present</string>
     <string name="f60802">Absent</string>
@@ -1172,6 +1178,7 @@
     <string name='Q_f409' translatable='false'>f409</string>
     <string name='Q_f409a' translatable='false'>f409a</string>
     <string name='Q_f410' translatable='false'>f410</string>
+    <string name='Q_f410a' translatable='false'>f410a</string>
     <string name='Q_f411' translatable='false'>f411</string>
     <string name='Q_f4t1' translatable='false'>f4t1</string>
     <string name='Q_f4t2' translatable='false'>f4t2</string>
@@ -1192,6 +1199,7 @@
     <string name='Q_f511' translatable='false'>f511</string>
     <string name='Q_f512' translatable='false'>f512</string>
     <string name='Q_f513' translatable='false'>f513</string>
+    <string name='Q_f513a' translatable='false'>f513a</string>
     <string name='Q_f516' translatable='false'>f516</string>
     <string name='Q_f517' translatable='false'>f517</string>
     <string name='Q_f517a' translatable='false'>f517a</string>
@@ -1210,6 +1218,7 @@
     <string name='Q_f522' translatable='false'>f522</string>
     <string name='Q_f5t1' translatable='false'>f5t1</string>
     <string name='Q_fo514' translatable='false'>fo514</string>
+    <string name='Q_fo514a1' translatable='false'>fo514a1</string>
     <string name='Q_fo514a' translatable='false'>fo514a</string>
     <string name='Q_fo515' translatable='false'>fo515</string>
     <string name='Q_f515a' translatable='false'>f515a</string>
@@ -1223,8 +1232,11 @@
     <string name='Q_f604a' translatable='false'>f604a</string>
     <string name='Q_f604b' translatable='false'>f604b</string>
     <string name='Q_f605' translatable='false'>f605</string>
+    <string name='Q_f605a' translatable='false'>f605a</string>
     <string name='Q_f606' translatable='false'>f606</string>
+    <string name='Q_f606a' translatable='false'>f606a</string>
     <string name='Q_f607' translatable='false'>f607</string>
+    <string name='Q_f607a1' translatable='false'>f607a1</string>
     <string name='Q_f607a' translatable='false'>f607a</string>
     <string name='Q_f608' translatable='false'>f608</string>
     <string name='Q_f608a' translatable='false'>f608a</string>

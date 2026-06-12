@@ -138,7 +138,9 @@ public class Form5 extends FormBaseModel {
         private String f511 = _EMPTY_;
         private String f512 = _EMPTY_;
         private String f513 = _EMPTY_;
+        private String f513a = _EMPTY_;
         private String fo514 = _EMPTY_;
+        private String fo514a1 = _EMPTY_;
         private String fo514a = _EMPTY_;
         private String fo515 = _EMPTY_;
         private String f515a = _EMPTY_;
@@ -324,6 +326,16 @@ public class Form5 extends FormBaseModel {
         }
 
         @Bindable
+        public String getF513a() {
+            return f513a;
+        }
+
+        public void setF513a(String f513a) {
+            this.f513a = f513a;
+            notifyPropertyChanged(BR.f513a);
+        }
+
+        @Bindable
         public String getFo514() {
             return fo514;
         }
@@ -331,6 +343,16 @@ public class Form5 extends FormBaseModel {
         public void setFo514(String fo514) {
             this.fo514 = fo514;
             notifyPropertyChanged(BR.fo514);
+        }
+
+        @Bindable
+        public String getFo514a1() {
+            return fo514a1;
+        }
+
+        public void setFo514a1(String fo514a1) {
+            this.fo514a1 = fo514a1;
+            notifyPropertyChanged(BR.fo514a1);
         }
 
         @Bindable

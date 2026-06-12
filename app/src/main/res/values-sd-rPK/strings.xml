@@ -741,6 +741,7 @@
     <string name="f409a03">شديد</string>
     <string name="f409a_info">وڌيڪ تشخيص لاءِ ٻار کي سرڪاري صحت جي سهولت ڏانهن موڪليو</string>
     <string name="f410">مٿئين ٻانهن جي وچ واري گولائي</string>
+    <string name="f410a">مٿئين ٻانهن جي وچ واري گولائي - 2</string>
     <string name="f4t2">جيڪڏهن هلڪي يا وچولي سوج هجي ته فارم-05 مڪمل ڪريو ۽ ويجهي سرڪاري صحت مرڪز ڏانهن طبي جاچ لاءِ ريفر ڪريو۔ جيڪڏهن MUAC 12.5 سينٽي ميٽر کان گهٽ هجي ته فارم-05 مڪمل ڪريو۔</string>
 <!--    <string name="f4t2">جيڪڏهن سوجن موجود آهي يا MUAC &lt;12.5 سينٽي ميٽر کان گهٽ آهي ته وڌيڪ اسڪريننگ لاءِ فارم–05 مڪملڪريو</string>-->
     <string name="f411">وڌيڪ اسڪريننگ لاء تحريري رضامندي</string>
@@ -798,7 +799,9 @@
     <string name="f511">ڳوٺ/ پتو</string>
     <string name="f512">بازو جي مٿئين حصي جو گهيرو (سينٽي ميٽر ۾)</string>
     <string name="f513">وزن (ڪلو ۾)</string>
+    <string name="f513a">وزن (ڪلو ۾)  - 2</string>
     <string name="fo514">قد جي ماپ (سينٽي ميٽر ۾)</string>
+    <string name="fo514a1">قد جي ماپ (سينٽي ميٽر ۾) - 2</string>
     <string name="fo514a">درجا حرارت  (فارن هيٽ ۾)</string>
     <string name="fo515">پيرن تي سوجن</string>
     <string name="f51501">موجود</string>
@@ -877,8 +880,11 @@
     <string name="f604a96">ٻيو وضاحت ڪريو</string>
     <string name="f604b">وفات جي تاريخ</string>
     <string name="f605">بازو جي مٿئين حصي جو گهيرو (سينٽي ميٽر ۾)</string>
+    <string name="f605a">بازو جي مٿئين حصي جو گهيرو (سينٽي ميٽر ۾) - 2</string>
     <string name="f606">وزن (ڪلو ۾)</string>
+    <string name="f606a">وزن (ڪلو ۾) - 2</string>
     <string name="f607">قد جي ماپ (سينٽي ميٽر ۾)</string>
+    <string name="f607a1">قد جي ماپ (سينٽي ميٽر ۾) - 2</string>
     <string name="f608">پيرن تي سوجن</string>
     <string name="f60801">موجود</string>
     <string name="f60802">موجود نه</string>

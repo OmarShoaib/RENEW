@@ -400,6 +400,48 @@
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
+                    <!-- f605a Input-Numeric -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVf605a"
+                        style="@style/cardView">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_f605a" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/f605a" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/f605a"
+                                style="@style/Theme.AppStructure.EditTextStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:digits="@string/digits_number"
+                                android:gravity="center"
+                                android:hint="##.#"
+                                android:inputType="number"
+                                android:maxLength="4"
+                                android:text="@={form.f605a}"
+                                app:mask="##.#"
+                                app:maxValue="25.0"
+                                app:minValue="8.0"
+                                app:type="range" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
                     <!-- f606 Input-Numeric -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVf606"
@@ -442,6 +484,48 @@
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
+                    <!-- f606a Input-Numeric -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVf606a"
+                        style="@style/cardView">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_f606a" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/f606a" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/f606a"
+                                style="@style/Theme.AppStructure.EditTextStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:digits="@string/digits_number"
+                                android:gravity="center"
+                                android:hint="##.#"
+                                android:inputType="number"
+                                android:maxLength="4"
+                                android:text="@={form.f606a}"
+                                app:mask="##.#"
+                                app:maxValue="15.0"
+                                app:minValue="03.0"
+                                app:type="range" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
                     <!-- f607 Input-Numeric -->
                     <androidx.cardview.widget.CardView
                         android:id="@+id/fldGrpCVf607"
@@ -477,6 +561,48 @@
                                 android:inputType="number"
                                 android:maxLength="5"
                                 android:text="@={form.f607}"
+                                app:mask="###.#"
+                                app:maxValue="120.0"
+                                app:minValue="045.0"
+                                app:type="range" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- f607a1 Input-Numeric -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/fldGrpCVf607a1"
+                        style="@style/cardView">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_f607a1" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/f607a1" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/f607a1"
+                                style="@style/Theme.AppStructure.EditTextStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:digits="@string/digits_number"
+                                android:gravity="center"
+                                android:hint="###.#"
+                                android:inputType="number"
+                                android:maxLength="5"
+                                android:text="@={form.f607a1}"
                                 app:mask="###.#"
                                 app:maxValue="120.0"
                                 app:minValue="045.0"

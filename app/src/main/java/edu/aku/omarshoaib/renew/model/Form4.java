@@ -135,6 +135,7 @@ public class Form4 extends FormBaseModel {
         private String f409 = _EMPTY_;
         private String f409a = _EMPTY_;
         private String f410 = _EMPTY_;
+        private String f410a = _EMPTY_;
         private String f411 = _EMPTY_;
 
         public static class DataConverter extends AppDatabase.BaseConverter<SF4> {
@@ -274,6 +275,16 @@ public class Form4 extends FormBaseModel {
         public void setF410(String f410) {
             this.f410 = f410;
             notifyPropertyChanged(BR.f410);
+        }
+
+        @Bindable
+        public String getF410a() {
+            return f410a;
+        }
+
+        public void setF410a(String f410a) {
+            this.f410a = f410a;
+            notifyPropertyChanged(BR.f410a);
         }
 
         @Bindable
