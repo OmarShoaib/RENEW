@@ -763,8 +763,8 @@
     <string name="f409a02">Moderate</string>
     <string name="f409a03">Severe</string>
     <string name="f409a_info">Refer Child to a public health facility for further evaluation</string>
-    <string name="f410">MUAC</string>
-    <string name="f410a">MUAC-2</string>
+    <string name="f410">MUAC(cm)</string>
+    <string name="f410a">MUAC(cm) - 2</string>
 <!--    <string name="f4t2">If Edema is Yes or MUAC &lt;12.5 then fill Form–05 for Further screening</string>-->
     <string name="f4t2">If mild/moderate edema complete Form-05 also refer for medical evaluation to nearest public health facility MUAC is &lt;12.5 cm, complete go to Form-05</string>
     <string name="f411">Written consent taken for further screening</string>
