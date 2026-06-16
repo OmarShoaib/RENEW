@@ -1,19 +1,28 @@
 package edu.aku.omarshoaib.renew.activity.sections.child;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioGroup;
 
+import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
+
+import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.validatorcrawler.aliazaz.Validator;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.Objects;
 import java.util.stream.Stream;
 
 import edu.aku.omarshoaib.renew.activity.EndingAC;
+import edu.aku.omarshoaib.renew.activity.ImageViewerAC;
 import edu.aku.omarshoaib.renew.activity.MainActivity;
 import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.R;
@@ -22,6 +31,7 @@ import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivitySectionF06Binding;
 import edu.aku.omarshoaib.renew.global.AppTextWatcher;
 import edu.aku.omarshoaib.renew.global.DateUtils;
+import edu.aku.omarshoaib.renew.global.ImageUtils;
 import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.model.Form6;
 
@@ -32,6 +42,11 @@ public class SectionF06 extends BaseActivity {
 
     ActivitySectionF06Binding bi;
     private AppDatabase appDatabase;
+    private static final int VIEW_IMAGE_REQ_CODE = 1001;
+    private static final int IMAGE_MUAC = 1;
+    private static final int IMAGE_WEIGHT = 2;
+    private static final int IMAGE_HEIGHT = 3;
+    private int currentImageType = 0;
     private Form6.SF6 sF6;
     private List<RadioGroup> f610RadioGroups = new ArrayList<>();
 
@@ -132,6 +147,24 @@ public class SectionF06 extends BaseActivity {
             }
         }
 
+        if(!sF6.getF605().isEmpty() && sF6.getMuacImage().isEmpty()) {
+            AppConstants.showSimpleSnackBar(activity, String.format(Locale.ENGLISH, getString(R.string.no_image_found), "MUAC"),
+                    AppConstants.MSG_DURATION, AppConstants.TYPE_ERROR);
+            return false;
+        }
+
+        if(!sF6.getF606().isEmpty() && sF6.getWeightImage().isEmpty()) {
+            AppConstants.showSimpleSnackBar(activity, String.format(Locale.ENGLISH, getString(R.string.no_image_found), "WEIGHT"),
+                    AppConstants.MSG_DURATION, AppConstants.TYPE_ERROR);
+            return false;
+        }
+
+        if(!sF6.getF607().isEmpty() && sF6.getHeightImage().isEmpty()) {
+            AppConstants.showSimpleSnackBar(activity, String.format(Locale.ENGLISH, getString(R.string.no_image_found), "HEIGHT"),
+                    AppConstants.MSG_DURATION, AppConstants.TYPE_ERROR);
+            return false;
+        }
+
         return true;
     }
 
@@ -174,4 +207,104 @@ public class SectionF06 extends BaseActivity {
     RadioGroup.OnCheckedChangeListener listener =
             ((group, checkedId) -> group.post(() ->
                     bi.f610Info.setVisibility(areAnyJ517One() ? View.VISIBLE : View.GONE)));
+
+    /**
+     * TAKE PHOTO
+     */
+    public void takePhoto(View view) {
+        if (view.getId() == bi.mPhotoBtn.getId()) currentImageType = IMAGE_MUAC;
+        else if (view.getId() == bi.wPhotoBtn.getId()) currentImageType = IMAGE_WEIGHT;
+        else if (view.getId() == bi.hPhotoBtn.getId()) currentImageType = IMAGE_HEIGHT;
+        ImagePicker.with(activity).maxResultSize(512, 512).saveDir(AppConstants.GALLERY_DIR).start();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // Result from image viewer
+        if (requestCode == VIEW_IMAGE_REQ_CODE) {
+
+            if (resultCode == RESULT_OK) return;
+
+            switch (currentImageType) {
+                case IMAGE_MUAC:
+                    sF6.setMuacImage("");
+                    break;
+
+                case IMAGE_WEIGHT:
+                    sF6.setWeightImage("");
+                    break;
+
+                case IMAGE_HEIGHT:
+                    sF6.setHeightImage("");
+                    break;
+            }
+            return;
+        }
+
+        if (resultCode == RESULT_OK) {
+            String imageName = null;
+            switch (currentImageType) {
+
+                case IMAGE_MUAC:
+                    imageName = ImageUtils.generateImageName(TAG, "Muac");
+                    sF6.setMuacImage(imageName);
+                    break;
+
+                case IMAGE_WEIGHT:
+                    imageName = ImageUtils.generateImageName(TAG, "Weight");
+                    sF6.setWeightImage(imageName);
+                    break;
+
+                case IMAGE_HEIGHT:
+                    imageName = ImageUtils.generateImageName(TAG, "Height");
+                    sF6.setHeightImage(imageName);
+                    break;
+            }
+
+            if (imageName != null) {
+                Uri uri = Objects.requireNonNull(data).getData();
+                File file = new File(Objects.requireNonNull(uri).getPath());
+                ImageUtils.renameTo(activity, file.getName(), imageName);
+            }
+
+        } else if (resultCode == ImagePicker.RESULT_ERROR) {
+            AppConstants.showSimpleSnackBar(activity, ImagePicker.getError(data), AppConstants.MSG_DURATION, AppConstants.TYPE_ERROR);
+        } else {
+            AppConstants.showSimpleSnackBar(activity, getString(R.string.image_not_taken), AppConstants.MSG_DURATION, AppConstants.TYPE_ERROR);
+        }
+    }
+
+    public void viewPhoto(View view) {
+        String[] imageNames = getStrings(view);
+        ArrayList<File> matchingImages = ImageUtils.getImageFilesByNames(activity, imageNames);
+        if (matchingImages == null || matchingImages.isEmpty()) {
+            String image;
+            if (view.getId() == bi.viewImageTVm.getId()) image = "MUAC";
+            else if (view.getId() == bi.viewImageTVw.getId()) image = "WEIGHT";
+            else image = "HEIGHT";
+
+            AppConstants.showSimpleSnackBar(activity, String.format(Locale.ENGLISH, getString(R.string.no_image_found), image), AppConstants.MSG_DURATION, AppConstants.TYPE_ERROR);
+            return;
+        }
+        Intent intent = new Intent(activity, ImageViewerAC.class);
+        intent.putExtra("image_files", matchingImages);
+        activity.startActivityForResult(intent, VIEW_IMAGE_REQ_CODE);
+    }
+
+    private String[] getStrings(View view) {
+        String imageName;
+        if (view.getId() == bi.viewImageTVm.getId()) {
+            currentImageType = IMAGE_MUAC;
+            imageName = sF6.getMuacImage();
+        } else if (view.getId() == bi.viewImageTVw.getId()) {
+            currentImageType = IMAGE_WEIGHT;
+            imageName = sF6.getWeightImage();
+        } else {
+            currentImageType = IMAGE_HEIGHT;
+            imageName = sF6.getHeightImage();
+        }
+        return new String[]{imageName};
+    }
 }

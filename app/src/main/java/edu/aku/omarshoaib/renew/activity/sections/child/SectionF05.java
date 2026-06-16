@@ -3,19 +3,27 @@ package edu.aku.omarshoaib.renew.activity.sections.child;
 import static edu.aku.omarshoaib.renew.global.AppConstants._EMPTY_;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioGroup;
 
+import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 
+import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.validatorcrawler.aliazaz.Validator;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.Objects;
 import java.util.stream.Stream;
 
+import edu.aku.omarshoaib.renew.activity.ImageViewerAC;
 import edu.aku.omarshoaib.renew.activity.MainActivity;
 import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.R;
@@ -24,6 +32,7 @@ import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivitySectionF05Binding;
 import edu.aku.omarshoaib.renew.global.AppTextWatcher;
 import edu.aku.omarshoaib.renew.global.DateUtils;
+import edu.aku.omarshoaib.renew.global.ImageUtils;
 import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.model.Form5;
 
@@ -34,6 +43,10 @@ public class SectionF05 extends BaseActivity {
 
     ActivitySectionF05Binding bi;
     private AppDatabase appDatabase;
+    private static final int VIEW_IMAGE_REQ_CODE = 1001;
+    private static final int IMAGE_WEIGHT = 2;
+    private static final int IMAGE_HEIGHT = 3;
+    private int currentImageType = 0;
     private Form5.SF5 sF5;
     private List<RadioGroup> f0515RadioGroups = new ArrayList<>();
 
@@ -73,6 +86,7 @@ public class SectionF05 extends BaseActivity {
             sF5.setF504(MainApp.form4.getSF4().getF405());
             sF5.setF511(MainApp.form4.getSF4().getF404());
             sF5.setF512(MainApp.form4.getSF4().getF410());
+            sF5.setF512a(MainApp.form4.getSF4().getF410a());
             sF5.setFo515(MainApp.form4.getSF4().getF409());
             sF5.setF515a(MainApp.form4.getSF4().getF409a());
             float muac = Float.parseFloat(MainApp.form4.getSF4().getF410());
@@ -136,6 +150,18 @@ public class SectionF05 extends BaseActivity {
 
     private boolean formValidation() {
         if (!Validator.emptyCheckingContainer(activity, bi.GrpName)) return false;
+
+        if(!sF5.getF513().isEmpty() && sF5.getWeightImage().isEmpty()) {
+            AppConstants.showSimpleSnackBar(activity, String.format(Locale.ENGLISH, getString(R.string.no_image_found), "WEIGHT"),
+                    AppConstants.MSG_DURATION, AppConstants.TYPE_ERROR);
+            return false;
+        }
+
+        if(!sF5.getFo514().isEmpty() && sF5.getHeightImage().isEmpty()) {
+            AppConstants.showSimpleSnackBar(activity, String.format(Locale.ENGLISH, getString(R.string.no_image_found), "HEIGHT"),
+                    AppConstants.MSG_DURATION, AppConstants.TYPE_ERROR);
+            return false;
+        }
 
         if (sF5.getF521().equals("1"))
             if (Integer.parseInt(sF5.getF521a()) > Integer.parseInt(sF5.getF52101x())) {
@@ -245,4 +271,84 @@ public class SectionF05 extends BaseActivity {
             }
         }
     }*/
+
+    /**
+     * TAKE PHOTO
+     */
+    public void takePhoto(View view) {
+        if (view.getId() == bi.wPhotoBtn.getId()) currentImageType = IMAGE_WEIGHT;
+        else if (view.getId() == bi.hPhotoBtn.getId()) currentImageType = IMAGE_HEIGHT;
+        ImagePicker.with(activity).maxResultSize(512, 512).saveDir(AppConstants.GALLERY_DIR).start();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == VIEW_IMAGE_REQ_CODE) {
+            if (resultCode == RESULT_OK) return;
+            switch (currentImageType) {
+                case IMAGE_WEIGHT:
+                    sF5.setWeightImage("");
+                    break;
+                case IMAGE_HEIGHT:
+                    sF5.setHeightImage("");
+                    break;
+            }
+            return;
+        }
+
+        if (resultCode == RESULT_OK) {
+            String imageName = null;
+            switch (currentImageType) {
+                case IMAGE_WEIGHT:
+                    imageName = ImageUtils.generateImageName(TAG, "Weight");
+                    sF5.setWeightImage(imageName);
+                    break;
+                case IMAGE_HEIGHT:
+                    imageName = ImageUtils.generateImageName(TAG, "Height");
+                    sF5.setHeightImage(imageName);
+                    break;
+            }
+
+            if (imageName != null) {
+                Uri uri = Objects.requireNonNull(data).getData();
+                File file = new File(Objects.requireNonNull(uri).getPath());
+                ImageUtils.renameTo(activity, file.getName(), imageName);
+            }
+
+        } else if (resultCode == ImagePicker.RESULT_ERROR) {
+            AppConstants.showSimpleSnackBar(activity, ImagePicker.getError(data), AppConstants.MSG_DURATION, AppConstants.TYPE_ERROR);
+        } else {
+            AppConstants.showSimpleSnackBar(activity, getString(R.string.image_not_taken), AppConstants.MSG_DURATION, AppConstants.TYPE_ERROR);
+        }
+    }
+
+    public void viewPhoto(View view) {
+        String[] imageNames = getStrings(view);
+        ArrayList<File> matchingImages = ImageUtils.getImageFilesByNames(activity, imageNames);
+        if (matchingImages == null || matchingImages.isEmpty()) {
+            String image;
+            if (view.getId() == bi.viewImageTVw.getId()) image = "WEIGHT";
+            else image = "HEIGHT";
+
+            AppConstants.showSimpleSnackBar(activity, String.format(Locale.ENGLISH, getString(R.string.no_image_found), image), AppConstants.MSG_DURATION, AppConstants.TYPE_ERROR);
+            return;
+        }
+        Intent intent = new Intent(activity, ImageViewerAC.class);
+        intent.putExtra("image_files", matchingImages);
+        activity.startActivityForResult(intent, VIEW_IMAGE_REQ_CODE);
+    }
+
+    private String[] getStrings(View view) {
+        String imageName;
+        if (view.getId() == bi.viewImageTVw.getId()) {
+            currentImageType = IMAGE_WEIGHT;
+            imageName = sF5.getWeightImage();
+        } else {
+            currentImageType = IMAGE_HEIGHT;
+            imageName = sF5.getHeightImage();
+        }
+        return new String[]{imageName};
+    }
 }

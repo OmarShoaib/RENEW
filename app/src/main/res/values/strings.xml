@@ -125,7 +125,7 @@
     <string name="tehsil">Tehsil</string>
     <string name="district">District</string>
     <string name="identification">Identification</string>
-    <string name="no_image_found">No image found</string>
+    <string name="no_image_found" translatable="false">Please Take %s Image</string>
 
     <!-- Synced Recs -->
     <string name="synced_recs">Synced Records</string>
@@ -265,6 +265,8 @@
     <string name="age_c"><![CDATA[<font color=#7f7f7f7f>Age: </font>%s]]></string>
     <string name="age_c_months"><![CDATA[<font color=#7f7f7f7f>Age: </font>%02d months]]></string>
     <string name="contact_c"><![CDATA[<font color=#7f7f7f7f>Contact No: </font>%s]]></string>
+    <string name="visitNo_c" translatable="false"><![CDATA[<font color=#7f7f7f7f>Visit No: </font>%02d]]></string>
+    <string name="dueDate_c" translatable="false"><![CDATA[<font color=#7f7f7f7f>DD: </font>%s]]></string>
 
     <!-- FOOD RECALL -->
     <string name="sectionFR24hoursdietryrecall_mainheading">SECTION FR: 24–HOURS DIETARY RECALL</string>
@@ -752,7 +754,7 @@
     <string name="f407">Child Age</string>
     <string name="f407dd">Age in Days</string>
     <string name="f407mm">Age in Months</string>
-    <string name="f408">Sex</string>
+    <string name="f408">Child Gender</string>
     <string name="f4081">Male</string>
     <string name="f4082">Female</string>
     <string name="f409">Bilateral Pitting Edema</string>

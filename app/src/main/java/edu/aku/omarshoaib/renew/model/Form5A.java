@@ -157,9 +157,13 @@ public class Form5A extends FormBaseModel{
         private String f510 = _EMPTY_;
         private String f511 = _EMPTY_;
         private String f512 = _EMPTY_;
+        private String f512a = _EMPTY_;
+        private String muacImage = _EMPTY_;
         private String f513 = _EMPTY_;
+        private String weightImage = _EMPTY_;
         private String f513a = _EMPTY_;
         private String fo514 = _EMPTY_;
+        private String heightImage = _EMPTY_;
         private String fo514a1 = _EMPTY_;
         private String fo514a = _EMPTY_;
         private String fo515 = _EMPTY_;
@@ -424,6 +428,26 @@ public class Form5A extends FormBaseModel{
         }
 
         @Bindable
+        public String getF512a() {
+            return f512a;
+        }
+
+        public void setF512a(String f512a) {
+            this.f512a = f512a;
+            notifyPropertyChanged(BR.f512a);
+        }
+
+        @Bindable
+        public String getMuacImage() {
+            return muacImage;
+        }
+
+        public void setMuacImage(String muacImage) {
+            this.muacImage = muacImage;
+            notifyPropertyChanged(BR.muacImage);
+        }
+
+        @Bindable
         public String getF513() {
             return f513;
         }
@@ -445,6 +469,16 @@ public class Form5A extends FormBaseModel{
         }
 
         @Bindable
+        public String getWeightImage() {
+            return weightImage;
+        }
+
+        public void setWeightImage(String weightImage) {
+            this.weightImage = weightImage;
+            notifyPropertyChanged(BR.weightImage);
+        }
+
+        @Bindable
         public String getFo514() {
             return fo514;
         }
@@ -452,6 +486,16 @@ public class Form5A extends FormBaseModel{
         public void setFo514(String fo514) {
             this.fo514 = fo514;
             notifyPropertyChanged(BR.fo514);
+        }
+
+        @Bindable
+        public String getHeightImage() {
+            return heightImage;
+        }
+
+        public void setHeightImage(String heightImage) {
+            this.heightImage = heightImage;
+            notifyPropertyChanged(BR.heightImage);
         }
 
         @Bindable

@@ -135,6 +135,7 @@ public class Form4 extends FormBaseModel {
         private String f409 = _EMPTY_;
         private String f409a = _EMPTY_;
         private String f410 = _EMPTY_;
+        private String muacImage = _EMPTY_;
         private String f410a = _EMPTY_;
         private String f411 = _EMPTY_;
 
@@ -275,6 +276,16 @@ public class Form4 extends FormBaseModel {
         public void setF410(String f410) {
             this.f410 = f410;
             notifyPropertyChanged(BR.f410);
+        }
+
+        @Bindable
+        public String getMuacImage() {
+            return muacImage;
+        }
+
+        public void setMuacImage(String muacImage) {
+            this.muacImage = muacImage;
+            notifyPropertyChanged(BR.muacImage);
         }
 
         @Bindable

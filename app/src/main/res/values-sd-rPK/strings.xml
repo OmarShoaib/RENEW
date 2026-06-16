@@ -123,7 +123,6 @@
     <string name="tehsil">Tehsil</string>
     <string name="district">District</string>
     <string name="identification">سڃاڻپ</string>
-    <string name="no_image_found">No image found</string>
 
     <!-- Synced Recs -->
     <string name="synced_recs">Synced Records</string>
@@ -729,7 +728,7 @@
     <string name="f407">ٻار جي عمر</string>
     <string name="f407dd">عمر ڏينهن ۾</string>
     <string name="f407mm">عمر مهينن ۾</string>
-    <string name="f408">جنس</string>
+    <string name="f408">ٻار جي جنس</string>
     <string name="f4081">مرد</string>
     <string name="f4082">عورت</string>
     <string name="f409">ٻنهي ٽنگن ۾ پِٽنگ ايڊيمه</string>

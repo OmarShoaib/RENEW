@@ -152,9 +152,12 @@ public class Form6 extends FormBaseModel {
         private String f604b = _EMPTY_;
         private String f605 = _EMPTY_;
         private String f605a = _EMPTY_;
+        private String muacImage = _EMPTY_;
         private String f606 = _EMPTY_;
         private String f606a = _EMPTY_;
+        private String weightImage = _EMPTY_;
         private String f607 = _EMPTY_;
+        private String heightImage = _EMPTY_;
         private String f607a1 = _EMPTY_;
         private String f607a = _EMPTY_;
         private String f608 = _EMPTY_;
@@ -335,6 +338,16 @@ public class Form6 extends FormBaseModel {
         }
 
         @Bindable
+        public String getMuacImage() {
+            return muacImage;
+        }
+
+        public void setMuacImage(String muacImage) {
+            this.muacImage = muacImage;
+            notifyPropertyChanged(BR.muacImage);
+        }
+
+        @Bindable
         public String getF606() {
             return f606;
         }
@@ -355,6 +368,16 @@ public class Form6 extends FormBaseModel {
         }
 
         @Bindable
+        public String getWeightImage() {
+            return weightImage;
+        }
+
+        public void setWeightImage(String weightImage) {
+            this.weightImage = weightImage;
+            notifyPropertyChanged(BR.weightImage);
+        }
+
+        @Bindable
         public String getF607() {
             return f607;
         }
@@ -362,6 +385,16 @@ public class Form6 extends FormBaseModel {
         public void setF607(String f607) {
             this.f607 = f607;
             notifyPropertyChanged(BR.f607);
+        }
+
+        @Bindable
+        public String getHeightImage() {
+            return heightImage;
+        }
+
+        public void setHeightImage(String heightImage) {
+            this.heightImage = heightImage;
+            notifyPropertyChanged(BR.heightImage);
         }
 
         @Bindable

@@ -83,19 +83,20 @@ public class SectionF06Adapter extends RecyclerView.Adapter<SectionF06Adapter.Vi
                 dob[0], dob[1], dob[2]);
         int ageInMonths = DateUtils.getAgeInMonths(age.get(0), age.get(1));
 //        bi.clusterNoTV.setText(ageInMonths)
+        bi.visitContainer.setVisibility(View.VISIBLE);
+        bi.visitNoTV.setText(AppConstants.getRichText(String.format(Locale.getDefault(),
+                activity.getString(R.string.visitNo_c), AppConstants.parseInt(vForm06.getVisitNumber()))));
+        bi.dueDateTV.setText(AppConstants.getRichText(String.format(Locale.getDefault(),
+                activity.getString(R.string.dueDate_c), vForm06.getVisitDate())));
         bi.clusterNoTV.setText(vForm06.getFatherName());
-        bi.hhIdTV.setText(
-                AppConstants.getRichText(String.format(Locale.getDefault(),
-                        activity.getString(R.string.age_c_months), ageInMonths)
-                )
-        );
+        bi.hhIdTV.setText(AppConstants.getRichText(String.format(Locale.getDefault(),
+                        activity.getString(R.string.age_c_months), ageInMonths)));
         bi.contactNoTV.setText(vForm06.getContactNo());
 
         Form6 form6 = AppDatabase.getDBInstance().form6Dao()
                 .getDataByParticipantId(MainApp.user.getDistId(),
                         vForm06.getParticipantId(), vForm06.getVisitNumber());
-        bi.statusIV.setVisibility(
-                form6 == null ? View.GONE : View.VISIBLE);
+        bi.statusIV.setVisibility(form6 == null ? View.GONE : View.VISIBLE);
     }
 
     @Override
