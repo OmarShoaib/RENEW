@@ -195,7 +195,6 @@ public class SectionF05 extends BaseActivity {
 
     private void setChangeListeners() {
         getAllRadioGroups(bi.fldGrpCVf517);
-        bi.fo515.setOnCheckedChangeListener(listener);
         bi.f516.setOnCheckedChangeListener(listener);
         for (RadioGroup rg : f0515RadioGroups) rg.setOnCheckedChangeListener(listener);
     }
@@ -205,14 +204,12 @@ public class SectionF05 extends BaseActivity {
                 sF5.getF517a(), sF5.getF517b(), sF5.getF517c(),
                 sF5.getF517d(), sF5.getF517e(), sF5.getF517f(),
                 sF5.getF517g()
-        ).anyMatch("1"::equals)
-                || "2".equals(sF5.getF516());
+        ).anyMatch("1"::equals);
     }
 
     RadioGroup.OnCheckedChangeListener listener = (group, checkedId) -> group.post(() -> {
-        bi.f517Info.setVisibility(areAnyJ517One() ||
-                sF5.getFo515().equals("1") ? View.VISIBLE : View.GONE);
-        if (areAnyJ517One()) sF5.setF521("3");
+        bi.f517Info.setVisibility(areAnyJ517One() ? View.VISIBLE : View.GONE);
+        if (areAnyJ517One() || sF5.getF516().equals("2")) sF5.setF521("3");
         else sF5.setF521(sF5.getF515b());
     });
 

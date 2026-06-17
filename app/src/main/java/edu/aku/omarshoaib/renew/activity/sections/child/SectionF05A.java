@@ -121,24 +121,7 @@ public class SectionF05A extends BaseActivity {
             String[] dob = text.split("-");
             List<String> age = DateUtils.calculateAge(sF5a.getF502(), dob[0], dob[1], dob[2]);
             sF5a.setF507dd(age.get(2));
-            sF5a.setF507mm(String.
-                    valueOf(DateUtils.
-                            getAgeInMonths(age.get(0), age.get(1))
-                    )
-            );
-        } else if (viewId == bi.f521a.getId()) {
-            if (text.isEmpty()) {
-                bi.fldGrpCVf522.setVisibility(View.GONE);
-                sF5a.setF522("");
-                return;
-            }
-            int count = Integer.parseInt(sF5a.getF521a());
-            if ((sF5a.getF521().equals("1") && count >= 30) || (sF5a.getF521().equals("2") && count >= Integer.parseInt(sF5a.getF52102x()))) {
-                bi.fldGrpCVf522.setVisibility(View.GONE);
-                sF5a.setF522("");
-                return;
-            }
-            bi.fldGrpCVf522.setVisibility(View.VISIBLE);
+            sF5a.setF507mm(String.valueOf(DateUtils.getAgeInMonths(age.get(0), age.get(1))));
         }
     };
 
@@ -211,7 +194,7 @@ public class SectionF05A extends BaseActivity {
     private void setChangeListeners() {
         getAllRadioGroups(bi.fldGrpCVf517);
         for (RadioGroup rg : f0515RadioGroups) rg.setOnCheckedChangeListener(listener);
-//        bi.fo515.setOnCheckedChangeListener(listener);
+        bi.f516.setOnCheckedChangeListener(listener);
     }
 
     private boolean areAnyJ517One() {
@@ -223,9 +206,8 @@ public class SectionF05A extends BaseActivity {
     }
 
     RadioGroup.OnCheckedChangeListener listener = (group, checkedId) -> group.post(() -> {
-        bi.f517Info.setVisibility(areAnyJ517One() ||
-                sF5a.getFo515().equals("1") ? View.VISIBLE : View.GONE);
-        if (areAnyJ517One()) sF5a.setF521("3");
+        bi.f517Info.setVisibility(areAnyJ517One() ? View.VISIBLE : View.GONE);
+        if (areAnyJ517One() || sF5a.getF516().equals("2")) sF5a.setF521("3");
         else sF5a.setF521(sF5a.getF515b());
     });
 
