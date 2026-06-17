@@ -572,9 +572,10 @@ public class Form5 extends FormBaseModel {
 
         public void setF521(String f521) {
             this.f521 = f521;
-            setF521a(f521.equals("1") || f521.equals("2")? this.f521a : _EMPTY_);
+            setF521a(f521.equals("1") || f521.equals("2") ? this.f521a : _EMPTY_);
             setF52101x(f521.equals("1") ? "30" : _EMPTY_);
             calculateRUTF();
+            notifyPropertyChanged(BR.f522Eligible);
             notifyPropertyChanged(BR.f521);
         }
 
@@ -592,6 +593,7 @@ public class Form5 extends FormBaseModel {
 
         public void setF52101x(String f52101x) {
             this.f52101x = f52101x;
+            notifyPropertyChanged(BR.f522Eligible);
             notifyPropertyChanged(BR.f52101x);
         }
 
@@ -602,6 +604,7 @@ public class Form5 extends FormBaseModel {
 
         public void setF52102x(String f52102x) {
             this.f52102x = f52102x;
+            notifyPropertyChanged(BR.f522Eligible);
             notifyPropertyChanged(BR.f52102x);
         }
 
@@ -622,6 +625,7 @@ public class Form5 extends FormBaseModel {
 
         public void setF521a(String f521a) {
             this.f521a = f521a;
+            notifyPropertyChanged(BR.f522Eligible);
             notifyPropertyChanged(BR.f521a);
         }
 
@@ -633,6 +637,15 @@ public class Form5 extends FormBaseModel {
         public void setF522(String f522) {
             this.f522 = f522;
             notifyPropertyChanged(BR.f522);
+        }
+
+        @Bindable
+        public boolean isF522Eligible() {
+            int value = AppConstants.parseInt(f521a);
+            boolean b;
+            b = value > 0 && ((f521.equals("1") && value < AppConstants.parseInt(f52101x)) || (f521.equals("2") && value < Float.parseFloat(f52102x)));
+            if (!b) setF522(_EMPTY_);
+            return b;
         }
     }
 }

@@ -187,12 +187,12 @@ public class SectionF06 extends BaseActivity {
             View child = parent.getChildAt(i);
             if (child instanceof RadioGroup) f610RadioGroups.add((RadioGroup) child);
             else if (child instanceof ViewGroup) getAllRadioGroups((ViewGroup) child); // Recursive call
-
         }
     }
 
     private void setChangeListeners() {
         getAllRadioGroups(bi.fldGrpCVf610);
+        bi.f609.setOnCheckedChangeListener(listener);
         for(RadioGroup rg  : f610RadioGroups) rg.setOnCheckedChangeListener(listener);
     }
 
@@ -201,7 +201,8 @@ public class SectionF06 extends BaseActivity {
                 sF6.getF610a(), sF6.getF610b(), sF6.getF610c(),
                 sF6.getF610d(), sF6.getF610e(), sF6.getF610f(),
                 sF6.getF610g()
-        ).anyMatch("1"::equals);
+        ).anyMatch("1"::equals)
+                || "2".equals(sF6.getF609());
     }
 
     RadioGroup.OnCheckedChangeListener listener =

@@ -20,7 +20,7 @@
     <string name="search">Search</string>
     <string name="form_locked_title">Form Locked!</string>
     <string name="record_saved">Record saved successfully</string>
-    <string name="specify"> Please explain </string>
+    <string name="specify">Please (Specify)</string>
     <string name="back">Back</string>
     <string name="close">Close</string>
     <string name="ok">OK</string>
@@ -804,7 +804,7 @@
     <string name="f5i01">Yes</string>
     <string name="f5i02">No</string>
     <string name="f5t0">Form 05 :</string>
-    <string name="f5t1">Nutritional Screening for Enrollmentof Children Under Fivewith MUAC &lt;12.5. (For Community–Based Screening and Management of Malnutrition)</string>
+    <string name="f5t1">Nutritional Screening for Enrollment of Children Under Five with MUAC &lt; 12.5. (For Community–Based Screening and Management of Malnutrition)</string>
     <string name="f501">Interviewer Name</string>
     <string name="f502">Date</string>
     <string name="f503">Parent/Guardian Consent</string>
@@ -819,9 +819,9 @@
     <string name="f508">Sex</string>
     <string name="f50801">Male</string>
     <string name="f50802">Female</string>
-    <string name="f509">Caregiver/father Name</string>
-    <string name="f510">Contact number</string>
-    <string name="f511">Village/Address</string>
+    <string name="f509">Caregiver / Father Name</string>
+    <string name="f510">Contact Number</string>
+    <string name="f511">Village / Address</string>
     <string name="f512">MUAC (cm)</string>
     <string name="f513">Weight (kg)</string>
     <string name="f513a">Weight (kg) - 2</string>
@@ -829,7 +829,7 @@
     <string name="fo514a1">Height (cm) - 2</string>
     <string name="fo514a">Temperature (°F)</string>
     <string name="fo515">Pitting Edema</string>
-    <string name="f51501"> Present</string>
+    <string name="f51501">Present</string>
     <string name="f51501_info">If Present refer</string>
     <string name="f51502">Absent</string>
     <string name="f515a">Severity of pitting Edema</string>
@@ -840,6 +840,7 @@
     <string name="f515b01">MAM (if MUAC ≥ 11.5 cm and &lt; 12.5 cm)</string>
     <string name="f515b02">SAM (MUAC &lt; 11.5cm or mild/moderate edema)</string>
     <string name="f516">Appetite Test</string>
+    <string name="f516_info">If Failed Refer</string>
     <string name="f51601"> Passed</string>
     <string name="f51602">Failed</string>
     <string name="f517t">Danger Signs (If yes is marked for any danger sign. Refer child to a public health facility for further evaluation )</string>
@@ -881,7 +882,7 @@
     <string name="f52103">Referred</string>
     <string name="f52104">Refused supplements</string>
     <string name="f52105">Refused referral</string>
-    <string name="f52096">Other</string>
+    <string name="f52096">Others (Specify)</string>
     <string name="f521a">Number of Sachet Provided</string>
     <string name="f522">Record reasons, if the supplement is provided below the recommended dose.</string>
     <string name="f52201">Limited Stock / Stockout</string>

@@ -127,24 +127,7 @@ public class SectionF05 extends BaseActivity {
             String[] dob = text.split("-");
             List<String> age = DateUtils.calculateAge(sF5.getF502(), dob[0], dob[1], dob[2]);
             sF5.setF507dd(age.get(2));
-            sF5.setF507mm(String.
-                    valueOf(DateUtils.
-                            getAgeInMonths(age.get(0), age.get(1))
-                    )
-            );
-        } else if (viewId == bi.f521a.getId()) {
-            if (text.isEmpty()) {
-                bi.fldGrpCVf522.setVisibility(View.GONE);
-                sF5.setF522("");
-                return;
-            }
-            int count = Integer.parseInt(sF5.getF521a());
-            if ((sF5.getF521().equals("1") && count >= 30) || (sF5.getF521().equals("2") && count >= Integer.parseInt(sF5.getF52102x()))) {
-                bi.fldGrpCVf522.setVisibility(View.GONE);
-                sF5.setF522("");
-                return;
-            }
-            bi.fldGrpCVf522.setVisibility(View.VISIBLE);
+            sF5.setF507mm(String.valueOf(DateUtils.getAgeInMonths(age.get(0), age.get(1))));
         }
     };
 
@@ -213,6 +196,7 @@ public class SectionF05 extends BaseActivity {
     private void setChangeListeners() {
         getAllRadioGroups(bi.fldGrpCVf517);
         bi.fo515.setOnCheckedChangeListener(listener);
+        bi.f516.setOnCheckedChangeListener(listener);
         for (RadioGroup rg : f0515RadioGroups) rg.setOnCheckedChangeListener(listener);
     }
 
@@ -221,7 +205,8 @@ public class SectionF05 extends BaseActivity {
                 sF5.getF517a(), sF5.getF517b(), sF5.getF517c(),
                 sF5.getF517d(), sF5.getF517e(), sF5.getF517f(),
                 sF5.getF517g()
-        ).anyMatch("1"::equals);
+        ).anyMatch("1"::equals)
+                || "2".equals(sF5.getF516());
     }
 
     RadioGroup.OnCheckedChangeListener listener = (group, checkedId) -> group.post(() -> {

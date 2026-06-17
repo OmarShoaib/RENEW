@@ -20,7 +20,7 @@
     <string name="search">Search</string>
     <string name="form_locked_title">Form Locked!</string>
     <string name="record_saved">Record saved successfully</string>
-    <string name="specify"> Please explain </string>
+    <string name="specify">مھرباني ڪري (وضاحت ڪريو)</string>
     <string name="back">Back</string>
     <string name="close">Close</string>
     <string name="ok">OK</string>
@@ -814,6 +814,7 @@
 <!--    <string name="f515b01">MAM (MUAC 11.5–12.5 سينٽي ميٽر)</string>-->
     <string name="f515b02">SAM (MUAC &lt;11.5 سينٽي ميٽر)</string>
     <string name="f516">اپيٽائٽ ٽيسٽ</string>
+    <string name="f516_info">جيڪڏهن ناڪام ٿيو ته ريفر ڪيو</string>
     <string name="f51601">پاس ٿيو</string>
     <string name="f51602">پاس نه ٿيو</string>
     <string name="f517t">خطري جون نشانيون(جيڪڏهن ها ڪنهن به خطري جي نشاني لاءِ نشان لڳل آهي. وڌيڪ تشخيص لاءِ ٻار کي سرڪاري صحت جي سهولت ڏانهن موڪليو)</string>
