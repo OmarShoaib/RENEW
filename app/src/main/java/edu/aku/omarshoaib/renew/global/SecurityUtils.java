@@ -80,6 +80,7 @@ public class SecurityUtils {
                     activity.getString(R.string.ok),
                     (popupId, isOkClick, obj) -> {
                         activity.finishAffinity();
+                        android.os.Process.killProcess(android.os.Process.myPid());
                         System.exit(0);
                     });
             return true;
