@@ -50,7 +50,7 @@ public class Followup2aListAC extends BaseActivity {
     }
 
     private void initUI() {
-        MainApp.vPHQ9List = appDatabase.vphq9Dao().getAllData();
+        MainApp.vForm2aList = appDatabase.vphq9Dao().getAllData();
         bi.searchET.addTextChangedListener(new AppTextWatcher(bi.searchET.getId(), iAppTextWatcher));
 
 //        markSyncedForms();
@@ -99,8 +99,8 @@ public class Followup2aListAC extends BaseActivity {
 //        loading.showLoading();
 
         new Handler().post(() -> {
-            if (MainApp.vPHQ9List != null) {
-                followup2aAdapter = new Followup2aAdapter(activity, MainApp.vPHQ9List);
+            if (MainApp.vForm2aList != null) {
+                followup2aAdapter = new Followup2aAdapter(activity, MainApp.vForm2aList);
                 bi.mwraRV.setAdapter(followup2aAdapter);
                 bi.mwraRV.setVisibility(View.VISIBLE);
                 bi.emptyTV.setVisibility(View.GONE);

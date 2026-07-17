@@ -21,7 +21,6 @@ import java.util.Locale;
 import java.util.Objects;
 import java.util.stream.Stream;
 
-import edu.aku.omarshoaib.renew.activity.EndingAC;
 import edu.aku.omarshoaib.renew.activity.ImageViewerAC;
 import edu.aku.omarshoaib.renew.activity.MainActivity;
 import edu.aku.omarshoaib.renew.global.AppConstants;
@@ -84,26 +83,9 @@ public class SectionF06 extends BaseActivity {
         MainApp.form6.setFollowupNo(MainApp.vFormF06.getVisitNumber());
         sF6.setF604(MainApp.vFormF06.getParticipantId());
         bi.f61905x.setMinDate(MainApp.vFormF06.getEnrollmentDate());
-//        bi.f604a.setOnCheckedChangeListener((group, checkedId) -> {
-//            group.post(() -> {
-//                if(sF6.getF604a().equals("3")) {
-//                    if(MainApp.vFormF06.getLastVisitF604a().equals("3")) {
-//                        bi.fldGrpCVf619.setVisibility(View.VISIBLE);
-//                        AppConstants.disableViews(activity, bi.f619);
-//                        sF6.setF619("3");
-//                    } else {
-//                        bi.fldGrpCVf619.setVisibility(View.GONE);
-//                        AppConstants.enableViews(activity, bi.f619);
-//                        sF6.setF619("");
-//                    }
-//                } else if (sF6.getF604a().equals("1")) {
-//                    bi.fldGrpCVf619.setVisibility(View.VISIBLE);
-//                } else if (sF6.getF604a().equals("2")) {
-//                    bi.fldGrpCVf619.setVisibility(View.GONE);
-//                    sF6.setF619("");
-//                }
-//            });
-//        });
+    }
+
+    private void enableFollowupAnswers() {
     }
 
     AppTextWatcher.IAppTextWatcher iAppTextWatcher = (viewId, text) -> {
