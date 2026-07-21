@@ -903,6 +903,7 @@
     <string name="f604a03">Child not available</string>
     <string name="f604a04">Child Hospitalized</string>
     <string name="f604a05">Family Migrated</string>
+    <string name="f604a06">Refusal</string>
     <string name="f604a96">Other specify</string>
     <string name="f604b">Date of Death</string>
     <string name="f605">MUAC (cm)</string>
@@ -917,6 +918,7 @@
     <string name="f608a">Severity of Pitting Edema</string>
     <string name="f608a01">Mild</string>
     <string name="f608a02">Moderate</string>
+    <string name="f608a03">Severe</string>
     <string name="f609">Appetite Test</string>
     <string name="f60901">Passed</string>
     <string name="f60902">Failed</string>

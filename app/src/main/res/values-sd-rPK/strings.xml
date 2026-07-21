@@ -877,6 +877,7 @@
     <string name="f604a03">ٻار موجود نه آهي</string>
     <string name="f604a04">ٻار اسپتال ۾ داخل آهي</string>
     <string name="f604a05">خاندان لڏي ويو</string>
+    <string name="f604a06">انڪار ڪيو ويو</string>
     <string name="f604a96">ٻيو وضاحت ڪريو</string>
     <string name="f604b">وفات جي تاريخ</string>
     <string name="f605">بازو جي مٿئين حصي جو گهيرو (سينٽي ميٽر ۾)</string>
@@ -891,6 +892,7 @@
     <string name="f608a">۔(Pitting Edema) سوجن جي شدت</string>
     <string name="f608a01">هلڪي</string>
     <string name="f608a02">وچولي</string>
+    <string name="f608a03">شديد</string>
     <string name="f609">اپيٽائٽ ٽيسٽ</string>
     <string name="f60901">پاس ٿيو</string>
     <string name="f60902">ناڪام ٿيو</string>
