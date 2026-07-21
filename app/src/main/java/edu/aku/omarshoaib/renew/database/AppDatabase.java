@@ -69,7 +69,7 @@ import edu.aku.omarshoaib.renew.model.Villages;
         Form1.class, Form2.class, Form2a.class, Form3.class, Form4.class, Form5.class,
         Form5A.class, Form6.class, Participant.class, HCF.class, VPHQ9.class, Form2b.class, Form3a.class,
         VForm2b.class, VForm3a.class, Teams.class, VFormF05A.class, VFormF06.class},
-        version = 2, exportSchema = false)
+        version = 3, exportSchema = false)
 @TypeConverters({SyncModel.ResponseDate.DataConverter.class,
         Form1.SF1.DataConverter.class, Form2.SF2.DataConverter.class, Form3.SF3.DataConverter.class,
         Form4.SF4.DataConverter.class, Form5.SF5.DataConverter.class, Form6.SF6.DataConverter.class,
@@ -93,7 +93,8 @@ public abstract class AppDatabase extends RoomDatabase {
         if (appDatabase == null) {
             // Room db Initialization
             Builder<AppDatabase> builder = Room.databaseBuilder(context.getApplicationContext(),
-                    AppDatabase.class, AppConstants.DATABASE_NAME).addMigrations(MIGRATION_1_2);
+                    AppDatabase.class, AppConstants.DATABASE_NAME)
+                    .addMigrations(MIGRATION_1_2, MIGRATION_2_3);
             builder.allowMainThreadQueries();
 //                builder.fallbackToDestructiveMigration();
             if (!AppConstants.IS_ADMIN)
@@ -189,6 +190,14 @@ public abstract class AppDatabase extends RoomDatabase {
         public void migrate(SupportSQLiteDatabase database) {
             database.execSQL("ALTER TABLE Form6 "
                     + " ADD COLUMN followupNo TEXT");
+        }
+    };
+
+    public static final Migration MIGRATION_2_3 = new Migration(2, 3) {
+        @Override
+        public void migrate(SupportSQLiteDatabase database) {
+            database.execSQL("ALTER TABLE vw_form6 "
+                    + " ADD COLUMN type TEXT");
         }
     };
 
