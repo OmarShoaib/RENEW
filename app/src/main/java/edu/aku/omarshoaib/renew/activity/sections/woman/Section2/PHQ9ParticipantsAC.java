@@ -51,14 +51,6 @@ public class PHQ9ParticipantsAC extends BaseActivity {
         appDatabase = AppDatabase.getDBInstance();
     }
 
-    private boolean isCompleted(Participant participant) {
-        for (Form2 form2 : MainApp.listForm2)
-            if(form2.getUuId().equals(participant.getUid()))
-                return true;
-
-        return false;
-    }
-
     @Override
     protected void onResume() {
         super.onResume();
@@ -101,6 +93,14 @@ public class PHQ9ParticipantsAC extends BaseActivity {
         bi.rv.setAdapter(genericAdapter);
         boolean isCountMismatch = MainApp.participantList.size() == MainApp.listForm2.size();
         bi.endButtonsLayout.findViewById(R.id.posBtn).setVisibility(isCountMismatch ? View.VISIBLE : View.INVISIBLE);
+    }
+
+    private boolean isCompleted(Participant participant) {
+        for (Form2 form2 : MainApp.listForm2)
+            if(form2.getUuId().equals(participant.getUid()))
+                return true;
+
+        return false;
     }
 
     private void markIStatus() {

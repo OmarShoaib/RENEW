@@ -16,12 +16,12 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 import java.util.stream.Stream;
 
-import edu.aku.omarshoaib.renew.activity.EndingAC;
 import edu.aku.omarshoaib.renew.activity.ImageViewerAC;
 import edu.aku.omarshoaib.renew.activity.MainActivity;
 import edu.aku.omarshoaib.renew.global.AppConstants;
@@ -84,59 +84,41 @@ public class SectionF06 extends BaseActivity {
         MainApp.form6.setFollowupNo(MainApp.vFormF06.getVisitNumber());
         sF6.setF604(MainApp.vFormF06.getParticipantId());
         bi.f61905x.setMinDate(MainApp.vFormF06.getEnrollmentDate());
-//        bi.f604a.setOnCheckedChangeListener((group, checkedId) -> {
-//            group.post(() -> {
-//                if(sF6.getF604a().equals("3")) {
-//                    if(MainApp.vFormF06.getLastVisitF604a().equals("3")) {
-//                        bi.fldGrpCVf619.setVisibility(View.VISIBLE);
-//                        AppConstants.disableViews(activity, bi.f619);
-//                        sF6.setF619("3");
-//                    } else {
-//                        bi.fldGrpCVf619.setVisibility(View.GONE);
-//                        AppConstants.enableViews(activity, bi.f619);
-//                        sF6.setF619("");
-//                    }
-//                } else if (sF6.getF604a().equals("1")) {
-//                    bi.fldGrpCVf619.setVisibility(View.VISIBLE);
-//                } else if (sF6.getF604a().equals("2")) {
-//                    bi.fldGrpCVf619.setVisibility(View.GONE);
-//                    sF6.setF619("");
-//                }
-//            });
-//        });
     }
 
     AppTextWatcher.IAppTextWatcher iAppTextWatcher = (viewId, text) -> {
-        if(viewId == bi.f602.getId()) {
-            if(text.isEmpty())
+        if (viewId == bi.f602.getId()) {
+            if (text.isEmpty())
                 bi.f604b.setMaxDate(DateUtils.getCurrentDateTime(AppConstants.APP_DATE_FORMAT));
             else bi.f604b.setMaxDate(text);
-        } else if(viewId == bi.f611.getId() || viewId == bi.f61296x.getId() ||
+        } else if (viewId == bi.f611.getId() || viewId == bi.f61296x.getId() ||
                 viewId == bi.f61396x.getId()) {
             int f611 = sF6.getF611().isEmpty() ? 0 : Integer.parseInt(sF6.getF611()),
                     f612 = sF6.getF61296x().isEmpty() ? 0 : Integer.parseInt(sF6.getF61296x()),
                     f613 = sF6.getF61396x().isEmpty() ? 0 : Integer.parseInt(sF6.getF61396x());
             int previousSachets = Integer.parseInt(MainApp.vFormF06.getNoOfSachets());
 
-            if(f611+f612+f613 < previousSachets) bi.fldGrpCVf613a.setVisibility(View.VISIBLE);
+            if (f611 + f612 + f613 < previousSachets) bi.fldGrpCVf613a.setVisibility(View.VISIBLE);
             else {
                 bi.fldGrpCVf613a.setVisibility(View.GONE);
                 sF6.setF613a("");
             }
-        } else if(viewId == bi.f605.getId()) {
-            if(text.isEmpty()) return;
+        } else if (viewId == bi.f605.getId()) {
+            if (text.isEmpty()) return;
             Float muac = Float.parseFloat(text);
-            if(muac >= 11.5f && muac < 12.5f) {
+            if (muac >= 11.5f && muac < 12.5f) {
                 bi.fldGrpCVf609.setVisibility(View.GONE);
+                bi.f609.clearCheck();
                 sF6.setF609("");
             } else bi.fldGrpCVf609.setVisibility(View.VISIBLE);
+            enableFollowupAnswers();
         }
     };
 
     private boolean formValidation() {
-        if(!Validator.emptyCheckingContainer(activity,bi.GrpName)) return false;
+        if (!Validator.emptyCheckingContainer(activity, bi.GrpName)) return false;
 
-        if(sF6.getF604a().equals("1")) {
+        if (sF6.getF604a().equals("1")) {
             int f611 = sF6.getF611().isEmpty() ? 0 : Integer.parseInt(sF6.getF611()),
                     f612 = sF6.getF61296x().isEmpty() ? 0 : Integer.parseInt(sF6.getF61296x()),
                     f613 = sF6.getF61396x().isEmpty() ? 0 : Integer.parseInt(sF6.getF61396x());
@@ -147,19 +129,19 @@ public class SectionF06 extends BaseActivity {
             }
         }
 
-        if(!sF6.getF605().isEmpty() && sF6.getMuacImage().isEmpty()) {
+        if (!sF6.getF605().isEmpty() && sF6.getMuacImage().isEmpty()) {
             AppConstants.showSimpleSnackBar(activity, String.format(Locale.ENGLISH, getString(R.string.no_image_found), "MUAC"),
                     AppConstants.MSG_DURATION, AppConstants.TYPE_ERROR);
             return false;
         }
 
-        if(!sF6.getF606().isEmpty() && sF6.getWeightImage().isEmpty()) {
+        if (!sF6.getF606().isEmpty() && sF6.getWeightImage().isEmpty()) {
             AppConstants.showSimpleSnackBar(activity, String.format(Locale.ENGLISH, getString(R.string.no_image_found), "WEIGHT"),
                     AppConstants.MSG_DURATION, AppConstants.TYPE_ERROR);
             return false;
         }
 
-        if(!sF6.getF607().isEmpty() && sF6.getHeightImage().isEmpty()) {
+        if (!sF6.getF607().isEmpty() && sF6.getHeightImage().isEmpty()) {
             AppConstants.showSimpleSnackBar(activity, String.format(Locale.ENGLISH, getString(R.string.no_image_found), "HEIGHT"),
                     AppConstants.MSG_DURATION, AppConstants.TYPE_ERROR);
             return false;
@@ -186,16 +168,19 @@ public class SectionF06 extends BaseActivity {
         for (int i = 0; i < parent.getChildCount(); i++) {
             View child = parent.getChildAt(i);
             if (child instanceof RadioGroup) f610RadioGroups.add((RadioGroup) child);
-            else if (child instanceof ViewGroup) getAllRadioGroups((ViewGroup) child); // Recursive call
+            else if (child instanceof ViewGroup)
+                getAllRadioGroups((ViewGroup) child); // Recursive call
         }
     }
 
     private void setChangeListeners() {
         getAllRadioGroups(bi.fldGrpCVf610);
-        for(RadioGroup rg  : f610RadioGroups) rg.setOnCheckedChangeListener(listener);
+        for (RadioGroup rg : f610RadioGroups) rg.setOnCheckedChangeListener(listener);
+        bi.f608a.setOnCheckedChangeListener(listener);
+        bi.f609.setOnCheckedChangeListener(listener);
     }
 
-    private boolean areAnyJ517One() {
+    private boolean areAnyF619One() {
         return Stream.of(
                 sF6.getF610a(), sF6.getF610b(), sF6.getF610c(),
                 sF6.getF610d(), sF6.getF610e(), sF6.getF610f(),
@@ -203,9 +188,81 @@ public class SectionF06 extends BaseActivity {
         ).anyMatch("1"::equals);
     }
 
-    RadioGroup.OnCheckedChangeListener listener =
-            ((group, checkedId) -> group.post(() ->
-                    bi.f610Info.setVisibility(areAnyJ517One() ? View.VISIBLE : View.GONE)));
+    RadioGroup.OnCheckedChangeListener listener = (group, checkedId) -> {
+        group.post(() -> {
+                    bi.f610Info.setVisibility(areAnyF619One() ? View.VISIBLE : View.GONE);
+                    enableFollowupAnswers();
+                }
+        );
+    };
+
+    private void enableFollowupAnswers() {
+        sF6.setF619("");
+        bi.f619.clearCheck();
+        AppConstants.disableViews(activity, bi.f619, Arrays.asList("f61901x", "f61905x"));
+        /**
+         * TODO: add condition for defaulters
+         * if() {
+
+        }*/
+        if(supplementContinuedRefused()) {
+            AppConstants.enableViews(activity, Arrays.asList(bi.f61901, bi.f61907));
+//            bi.f61901.setEnabled(true);
+//            bi.f61907.setEnabled(true);
+        } if(nonResponder()) {
+            bi.f61904.setEnabled(true);
+            sF6.setF619("4");
+        } if (recoveredCondition()) {
+            bi.f61902.setEnabled(true);
+            sF6.setF619("2");
+        } if (referredCondition()) {
+            bi.f61906.setEnabled(true);
+            sF6.setF619("6");
+        }
+    }
+
+    private boolean referredCondition() {
+        return areAnyF619One() || sF6.getF608a().equals("3") || sF6.getF609().equals("2");
+    }
+
+    private boolean recoveredCondition() {
+        try {
+            float hb = Float.parseFloat(sF6.getF605());
+
+            return (MainApp.vFormF06.getType().equals("1")
+                    && hb > 12.4f
+                    && MainApp.vFormF06.getVisitNumber().equals("2"))
+                    || (MainApp.vFormF06.getType().equals("2")
+                    && hb > 11.4f
+                    && MainApp.vFormF06.getVisitNumber().equals("4"));
+
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    private boolean nonResponder() {
+        try {
+            float hb = Float.parseFloat(sF6.getF605());
+
+            return (MainApp.vFormF06.getType().equals("1")
+                    && hb < 12.5f
+                    && MainApp.vFormF06.getVisitNumber().equals("2"))
+                    || (MainApp.vFormF06.getType().equals("2")
+                    && hb < 11.5f
+                    && MainApp.vFormF06.getVisitNumber().equals("4"));
+
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    private boolean supplementContinuedRefused() {
+        return (MainApp.vFormF06.getType().equals("1")
+                && MainApp.vFormF06.getVisitNumber().equals("1")) ||
+                (MainApp.vFormF06.getType().equals("2")
+                        && MainApp.vFormF06.getVisitNumber().matches("[123]"));
+    }
 
     /**
      * TAKE PHOTO

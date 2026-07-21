@@ -51,7 +51,7 @@ public class MainApp extends Application {
     public static Form1 form1;
     public static Participant participant;
     public static VPHQ9 vPHQ9;
-    public static List<VPHQ9> vPHQ9List;
+    public static List<VPHQ9> vForm2aList;
     public static VForm2b vForm2b;
     public static List<VForm2b> vForm2bList;
     public static VFormF06 vFormF06;

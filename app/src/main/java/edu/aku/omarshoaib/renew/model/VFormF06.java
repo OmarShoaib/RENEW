@@ -46,6 +46,9 @@ public class VFormF06 {
     @SerializedName("last_visit")
     private String lastVisitF604a;
 
+    @SerializedName("f515b")
+    private String type;
+
     private String village;
 
     public long getId() {
@@ -150,5 +153,13 @@ public class VFormF06 {
 
     public void setVillage(String village) {
         this.village = village;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }
