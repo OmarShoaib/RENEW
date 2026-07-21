@@ -15,7 +15,6 @@ public class SplashAC extends AppCompatActivity {
 
     private final String TAG = getClass().getSimpleName();
     private final Activity activity = SplashAC.this;
-    private boolean appBlocked = false;
 
     @SuppressLint("SourceLockedOrientationActivity")
     @Override
@@ -25,10 +24,9 @@ public class SplashAC extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         /* Update Code */
-        if (SecurityUtils.checkIfDeviceRootedAndExit(activity)) {
-            appBlocked = true;
+        /*if (SecurityUtils.checkIfDeviceRootedAndExit(activity)) {
             return;
-        }
+        }*/
 
         /* Old Code */
         // Check if device is rooted. If rooted then exit the app
@@ -43,7 +41,7 @@ public class SplashAC extends AppCompatActivity {
         /* For Logging */
 //       Map<String, Boolean> diag = SecurityUtils.runRootChecks(activity);
 
-        if (!appBlocked) splash();
+        if (!SecurityUtils.checkIfDeviceRootedAndExit(activity)) splash();
     }
 
     private void splash() {

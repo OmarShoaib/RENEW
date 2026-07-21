@@ -59,6 +59,7 @@ public class FollowUp5aAdapter extends RecyclerView.Adapter<FollowUp5aAdapter.Vi
                     MainApp.vFormF05a.getParticipantId());
             if (form5a != null) MainApp.form5a = form5a;
             else Form5A.initMeta();
+            MainApp.isSynced = MainApp.form5a.getSynced().equals("1");
             AppConstants.gotoActivity(activity, SectionF05A.class, true);
 //            } else
 //                AlertPopup.alert(activity, activity.getString(R.string.form_synced),

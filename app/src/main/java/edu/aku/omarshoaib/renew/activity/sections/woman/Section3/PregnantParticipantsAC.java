@@ -93,6 +93,7 @@ public class PregnantParticipantsAC extends BaseActivity {
                     MainApp.participant = MainApp.participantList.get((int) view1.getTag());
                     MainApp.form3 = appDatabase.form3Dao().getDataByUuid(MainApp.participant.getUid(), MainApp.form1.getScrId());
                     if (MainApp.form3 == null) Form3.initMeta();
+                    MainApp.isSynced = MainApp.form3.getSynced().equals("1");
                     AppConstants.gotoActivity(activity, SectionF03.class, true);
                 });
             }

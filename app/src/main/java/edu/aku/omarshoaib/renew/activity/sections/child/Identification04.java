@@ -124,13 +124,8 @@ public class Identification04 extends BaseActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-
         String scrId = bi.scrId.getText().toString() + Objects.requireNonNull(bi.f103a.getText());
-
-        // Do not allow synced form1 to be edited
-        if (appDatabase.form4Dao().isFormSynced(MainApp.user.getDistId(), scrId))
-            MainApp.isSynced = true;
-
+        MainApp.isSynced = appDatabase.form4Dao().isFormSynced(MainApp.user.getDistId(), scrId);
         MainApp.form4.setScrId(scrId);
         MainApp.form4.setSF4(sF4);
         Form4.saveMainData(scrId);

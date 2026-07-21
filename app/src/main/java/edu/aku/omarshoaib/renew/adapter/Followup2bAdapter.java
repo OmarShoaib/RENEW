@@ -58,6 +58,7 @@ public class Followup2bAdapter extends RecyclerView.Adapter<Followup2bAdapter.Vi
             Form2b form2b = AppDatabase.getDBInstance().form2bDao().getDataByParticipantId(MainApp.vForm2b.getParticipantId());
             if (form2b != null) MainApp.form2b = form2b;
             else Form2b.initMeta();
+            MainApp.isSynced = MainApp.form2b.getSynced().equals("1");
             AppConstants.gotoActivity(activity, SectionF02b.class, true);
 //            } else
 //                AlertPopup.alert(activity, activity.getString(R.string.form_synced),

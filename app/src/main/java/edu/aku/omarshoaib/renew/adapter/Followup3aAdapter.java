@@ -57,6 +57,7 @@ public class Followup3aAdapter extends RecyclerView.Adapter<Followup3aAdapter.Vi
             Form3a form3a = AppDatabase.getDBInstance().form3aDao().getDataByParticipantId(MainApp.vForm3a.getParticipantId());
             if (form3a != null) MainApp.form3a = form3a;
             else Form3a.initMeta();
+            MainApp.isSynced = MainApp.form3a.getSynced().equals("1");
             AppConstants.gotoActivity(activity, SectionF03a.class, true);
         });
         return new Followup3aAdapter.ViewHolder(itemView);

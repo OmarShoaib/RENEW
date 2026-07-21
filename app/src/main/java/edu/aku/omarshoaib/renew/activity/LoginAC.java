@@ -31,6 +31,7 @@ import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.ConnectionDetector;
 import edu.aku.omarshoaib.renew.global.LocaleManager;
 import edu.aku.omarshoaib.renew.global.MainApp;
+import edu.aku.omarshoaib.renew.global.SecurityUtils;
 import edu.aku.omarshoaib.renew.global.SharedPrefs;
 import edu.aku.omarshoaib.renew.model.AppInfo;
 import edu.aku.omarshoaib.renew.model.EntryLog;
@@ -208,7 +209,7 @@ public class LoginAC extends AppCompatActivity {
         super.onResume();
         // For enabling locked layout when data is not downloaded
         List<User> userList = appDatabase.userDao().getAllData();
-        if (userList != null && !userList.isEmpty())
+        if (!SecurityUtils.checkIfDeviceRootedAndExit(activity) && !AppConstants.isEmpty(userList))
             bi.lockedLayout.setVisibility(View.GONE);
     }
 

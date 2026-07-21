@@ -34,6 +34,7 @@ import edu.aku.omarshoaib.renew.global.AppTextWatcher;
 import edu.aku.omarshoaib.renew.global.DateUtils;
 import edu.aku.omarshoaib.renew.global.ImageUtils;
 import edu.aku.omarshoaib.renew.global.MainApp;
+import edu.aku.omarshoaib.renew.model.Form4;
 import edu.aku.omarshoaib.renew.model.Form5;
 
 public class SectionF05 extends BaseActivity {
@@ -62,6 +63,7 @@ public class SectionF05 extends BaseActivity {
 
         MainApp.form5 = appDatabase.form5Dao().getDataByScrId(MainApp.user.getDistId(), MainApp.form4.getScrId());
         if (MainApp.form5 == null) Form5.initMeta();
+        MainApp.isSynced = MainApp.form5.getSynced().equals("1");
         sF5 = Form5.SF5.getData();
         sF5 = sF5 == null ? new Form5.SF5() : sF5;
         bi.setForm(sF5);
@@ -83,13 +85,14 @@ public class SectionF05 extends BaseActivity {
 
     RadioGroup.OnCheckedChangeListener f503Listener = (RadioGroup radioGroup, int i) -> radioGroup.post(() -> {
         if (i == bi.f50301.getId()) {
-            sF5.setF504(MainApp.form4.getSF4().getF405());
-            sF5.setF511(MainApp.form4.getSF4().getF404());
-            sF5.setF512(MainApp.form4.getSF4().getF410());
-            sF5.setF512a(MainApp.form4.getSF4().getF410a());
-            sF5.setFo515(MainApp.form4.getSF4().getF409());
-            sF5.setF515a(MainApp.form4.getSF4().getF409a());
-            float muac = Float.parseFloat(MainApp.form4.getSF4().getF410());
+            Form4.SF4 _sF4 = MainApp.form4.getSF4();
+            sF5.setF504(_sF4.getF405());
+            sF5.setF511(_sF4.getF404());
+            sF5.setF512(_sF4.getF410());
+            sF5.setF512a(_sF4.getF410a());
+            sF5.setFo515(_sF4.getF409());
+            sF5.setF515a(_sF4.getF409a());
+            float muac = Float.parseFloat(_sF4.getF410());
 //            if(!sF5.getF515a().isEmpty() || muac < 12.5f) {
             String f515b = sF5.getFo515().equals("1") || muac < 11.5f ? "2" : "1";
             sF5.setF515b(f515b);
