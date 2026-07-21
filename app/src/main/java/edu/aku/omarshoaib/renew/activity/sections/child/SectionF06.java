@@ -108,6 +108,7 @@ public class SectionF06 extends BaseActivity {
             Float muac = Float.parseFloat(text);
             if (muac >= 11.5f && muac < 12.5f) {
                 bi.fldGrpCVf609.setVisibility(View.GONE);
+                bi.f609.clearCheck();
                 sF6.setF609("");
             } else bi.fldGrpCVf609.setVisibility(View.VISIBLE);
             enableFollowupAnswers();
