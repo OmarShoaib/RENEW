@@ -1,5 +1,7 @@
 package edu.aku.omarshoaib.renew.activity.sections.child;
 
+import static edu.aku.omarshoaib.renew.global.AppConstants._EMPTY_;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
@@ -93,10 +95,10 @@ public class SectionF06 extends BaseActivity {
             else bi.f604b.setMaxDate(text);
         } else if (viewId == bi.f611.getId() || viewId == bi.f61296x.getId() ||
                 viewId == bi.f61396x.getId()) {
-            int f611 = sF6.getF611().isEmpty() ? 0 : Integer.parseInt(sF6.getF611()),
-                    f612 = sF6.getF61296x().isEmpty() ? 0 : Integer.parseInt(sF6.getF61296x()),
-                    f613 = sF6.getF61396x().isEmpty() ? 0 : Integer.parseInt(sF6.getF61396x());
-            int previousSachets = Integer.parseInt(MainApp.vFormF06.getNoOfSachets());
+            int f611 = AppConstants.parseInt(sF6.getF611()),
+                    f612 = AppConstants.parseInt(sF6.getF61296x()),
+                    f613 = AppConstants.parseInt(sF6.getF61396x());
+            int previousSachets = AppConstants.parseInt(MainApp.vFormF06.getNoOfSachets());
 
             if (f611 + f612 + f613 < previousSachets) bi.fldGrpCVf613a.setVisibility(View.VISIBLE);
             else {
@@ -109,7 +111,7 @@ public class SectionF06 extends BaseActivity {
             if (muac >= 11.5f && muac < 12.5f) {
                 bi.fldGrpCVf609.setVisibility(View.GONE);
                 bi.f609.clearCheck();
-                sF6.setF609("");
+                sF6.setF609(_EMPTY_);
             } else bi.fldGrpCVf609.setVisibility(View.VISIBLE);
             enableFollowupAnswers();
         }
@@ -119,9 +121,9 @@ public class SectionF06 extends BaseActivity {
         if (!Validator.emptyCheckingContainer(activity, bi.GrpName)) return false;
 
         if (sF6.getF604a().equals("1")) {
-            int f611 = sF6.getF611().isEmpty() ? 0 : Integer.parseInt(sF6.getF611()),
-                    f612 = sF6.getF61296x().isEmpty() ? 0 : Integer.parseInt(sF6.getF61296x()),
-                    f613 = sF6.getF61396x().isEmpty() ? 0 : Integer.parseInt(sF6.getF61396x());
+            int f611 = AppConstants.parseInt(sF6.getF611()),
+                    f612 = AppConstants.parseInt(sF6.getF61296x()),
+                    f613 = AppConstants.parseInt(sF6.getF61396x());
             int previousSachets = Integer.parseInt(MainApp.vFormF06.getNoOfSachets());
             if (f611 + f612 + f613 > previousSachets) {
                 Validator.emptyCustomTextBox(activity, bi.f611, "Incorrect count");
