@@ -60,7 +60,6 @@ public class SectionF06Adapter extends RecyclerView.Adapter<SectionF06Adapter.Vi
                     MainApp.vFormF06.getParticipantId(), MainApp.vFormF06.getVisitNumber());
             if (form6 != null) MainApp.form6 = form6;
             else Form6.initMeta();
-            MainApp.isSynced = MainApp.form6.getSynced().equals("1");
             AppConstants.gotoActivity(activity, SectionF06.class, true);
 //            } else
 //                AlertPopup.alert(activity, activity.getString(R.string.form_synced),

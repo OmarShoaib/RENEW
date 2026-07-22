@@ -101,8 +101,12 @@ public class IdentificationAC extends BaseActivity {
     public void btnContinue(View view) {
         if (!formValidation()) return;
 
-        MainApp.isSynced = appDatabase.form1Dao().isFormSynced(MainApp.user.getDistId(), Objects.requireNonNull(bi.a107.getText()).toString());
-
+        // Do not allow synced form1 to be edited
+        if (appDatabase.form1Dao().isFormSynced(MainApp.user.getDistId(), Objects.requireNonNull(bi.a107.getText()).toString()))
+            // Form1 has been Synced
+            MainApp.isSynced = true;
+        // New form1
+//        String clusterNo = Objects.requireNonNull(bi.a101.getText()).toString();
         String hhId = Objects.requireNonNull(bi.a107.getText()).toString();
         MainApp.form1.setDistrictCode(MainApp.user.getDistId());
         MainApp.form1.setScrId(hhId);
