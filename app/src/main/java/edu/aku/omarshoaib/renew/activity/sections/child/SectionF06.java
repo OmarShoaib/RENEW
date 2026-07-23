@@ -158,12 +158,12 @@ public class SectionF06 extends BaseActivity {
         MainApp.form6.setIStatus("1");
         MainApp.form6.setEndingDate(DateUtils.getCurrentDateTime());
         Form6.SF6.saveData(sF6);
-        AppConstants.gotoActivity(activity, MainActivity.class, true);
+        AppConstants.gotoActivity(activity, SectionF06ListAC.class, true);
     }
 
     @Override
     public void onBackPressed() {
-        AppConstants.checkDoubleBackPress(activity, MainActivity.class);
+        AppConstants.checkDoubleBackPress(activity, SectionF06ListAC.class);
     }
 
     private void getAllRadioGroups(ViewGroup parent) {

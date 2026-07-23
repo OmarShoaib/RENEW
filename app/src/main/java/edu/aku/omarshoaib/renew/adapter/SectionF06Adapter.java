@@ -53,8 +53,13 @@ public class SectionF06Adapter extends RecyclerView.Adapter<SectionF06Adapter.Vi
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ItemFollowupBinding itemView = ItemFollowupBinding.inflate(LayoutInflater.from(activity), parent, false);
         itemView.itemLayout.setOnClickListener(view -> {
+
             int pos = (int) view.getTag();
             MainApp.vFormF06 = filteredList.get(pos);
+            if (AppConstants.isEmpty(MainApp.vFormF06.getType())) {
+                AppConstants.showSimpleSnackBar(activity, "Please Sync Again ", AppConstants.TYPE_ERROR);
+                return;
+            }
 //            if (MainApp.selectedMWRA.getStatus() != 3) {
             Form6 form6 = AppDatabase.getDBInstance().form6Dao().getDataByParticipantId(MainApp.user.getDistId(),
                     MainApp.vFormF06.getParticipantId(), MainApp.vFormF06.getVisitNumber());

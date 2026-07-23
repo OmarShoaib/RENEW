@@ -341,14 +341,14 @@ public class DownloadData {
                 // Clear and Add data to db
                 appDatabase.teamsDao().reinsert(vForm3as);
             } else if (tag.equals(VFormF06.TABLE_NAME)) {
-                VFormF06[] vForm3as = gson.fromJson(jsonResponse, VFormF06[].class);
+                VFormF06[] v06s = gson.fromJson(jsonResponse, VFormF06[].class);
                 // Update sync list view
-                SyncModel syncModel = getUpdatedSyncDownloadItem(activity, syncTablesList.get(index), vForm3as.length, AppConstants.RESPONSE_SUCCESS, null);
+                SyncModel syncModel = getUpdatedSyncDownloadItem(activity, syncTablesList.get(index), v06s.length, AppConstants.RESPONSE_SUCCESS, null);
                 syncTablesList.set(index, syncModel);
                 syncAdapter.notifyItemChanged(index);
 
                 // Clear and Add data to db
-                appDatabase.vFormF06Dao().reinsert(vForm3as);
+                appDatabase.vFormF06Dao().reinsert(v06s);
             } else if (tag.equals(VFormF05A.TABLE_NAME)) {
                 VFormF05A[] vForm5as = gson.fromJson(jsonResponse, VFormF05A[].class);
                 // Update sync list view
