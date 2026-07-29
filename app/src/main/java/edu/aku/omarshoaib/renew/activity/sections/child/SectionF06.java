@@ -196,6 +196,9 @@ public class SectionF06 extends BaseActivity {
                     if (group == bi.f604a) {
                         if(sF6.getF604a().equals("1")) {
                             bi.fldGrpCVf619.setVisibility(View.VISIBLE);
+                        } else if(sF6.getF604a().equals("2")) {
+                            bi.fldGrpCVf619.setVisibility(View.GONE);
+                            bi.f619.clearCheck();
                         } else {
                             if(isDefaulted()) {
                                 bi.fldGrpCVf619.setVisibility(View.VISIBLE);
