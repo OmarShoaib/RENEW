@@ -2,6 +2,7 @@ package edu.aku.omarshoaib.renew.global;
 
 import android.annotation.SuppressLint;
 import android.app.Application;
+import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.media.AudioManager;
@@ -72,6 +73,7 @@ public class MainApp extends Application {
     public static Form5 form5;
     public static Form5A form5a;
     public static Form6 form6;
+    public static Context appContext;
 
     // LockScreen timer and tone
     public static ToneGenerator toneGen;
@@ -92,6 +94,7 @@ public class MainApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        appContext = getApplicationContext();
 
         // Prepare Encryption/Decryption Keys
         try {

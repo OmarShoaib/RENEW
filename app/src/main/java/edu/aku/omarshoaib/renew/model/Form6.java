@@ -14,6 +14,7 @@ import edu.aku.omarshoaib.renew.BR;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.database.dao.Form6Dao;
 import edu.aku.omarshoaib.renew.global.AppConstants;
+import edu.aku.omarshoaib.renew.global.ImageUtils;
 import edu.aku.omarshoaib.renew.global.MainApp;
 
 @Entity(tableName = Form6.TABLE_NAME)
@@ -214,6 +215,10 @@ public class Form6 extends FormBaseModel {
             return MainApp.form6.getSF6();
         }
 
+        /**
+         * Getters & Setters
+         */
+
         @Bindable
         public String getF601() {
             return f601;
@@ -266,11 +271,17 @@ public class Form6 extends FormBaseModel {
             if(!f604a.equals("1")) {
                 setF605(_EMPTY_);
                 setF605a(_EMPTY_);
+                ImageUtils.deleteImageFilesByNames(new String[]{getMuacImage()});
+                setMuacImage(_EMPTY_);
                 setF606(_EMPTY_);
                 setF606a(_EMPTY_);
+                ImageUtils.deleteImageFilesByNames(new String[]{getMuacImage()});
+                setWeightImage(_EMPTY_);
                 setF607(_EMPTY_);
                 setF607a1(_EMPTY_);
                 setF607a(_EMPTY_);
+                ImageUtils.deleteImageFilesByNames(new String[]{getMuacImage()});
+                setHeightImage(_EMPTY_);
                 setF608(_EMPTY_);
                 setF609(_EMPTY_);
                 setF610a(_EMPTY_);

@@ -25,7 +25,6 @@ import java.util.Objects;
 import java.util.stream.Stream;
 
 import edu.aku.omarshoaib.renew.activity.ImageViewerAC;
-import edu.aku.omarshoaib.renew.activity.MainActivity;
 import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.BaseActivity;
@@ -199,28 +198,35 @@ public class SectionF06 extends BaseActivity {
     };
 
     private void enableFollowupAnswers() {
+        String f619TempValue = sF6.getF619();
+        String f61901TempValue = sF6.getF61901();
+        String f61905TempValue = sF6.getF61905();
         sF6.setF619("");
         bi.f619.clearCheck();
         AppConstants.disableViews(activity, bi.f619, Arrays.asList("f61901x", "f61905x"));
-        /**
-         * TODO: add condition for defaulters
-         * if() {
-
-        }*/
-        if(supplementContinuedRefused()) {
-            AppConstants.enableViews(activity, Arrays.asList(bi.f61901, bi.f61907));
-//            bi.f61901.setEnabled(true);
-//            bi.f61907.setEnabled(true);
-        } if(nonResponder()) {
-            bi.f61904.setEnabled(true);
-            sF6.setF619("4");
-        } if (recoveredCondition()) {
-            bi.f61902.setEnabled(true);
-            sF6.setF619("2");
-        } if (referredCondition()) {
+        if (referredCondition()) {
             bi.f61906.setEnabled(true);
             sF6.setF619("6");
+        } else if (recoveredCondition()) {
+            bi.f61902.setEnabled(true);
+            sF6.setF619("2");
+        } else if(nonResponder()) {
+            bi.f61904.setEnabled(true);
+            sF6.setF619("4");
+        } else if(supplementContinuedRefused()) {
+            AppConstants.enableViews(activity, Arrays.asList(bi.f61901, bi.f61907));
+            sF6.setF619(f619TempValue.matches("[17]") ? f619TempValue : _EMPTY_);
+            sF6.setF61901(f619TempValue.equals("1") ? f61901TempValue : _EMPTY_);
+            sF6.setF61905(f619TempValue.equals("5") ? f61905TempValue : _EMPTY_);
+//            bi.f61901.setEnabled(true);
+//            bi.f61907.setEnabled(true);
         }
+        /**
+         * TODO: add condition for defaulters
+         *else if() {
+
+        }*/
+
     }
 
     private boolean referredCondition() {

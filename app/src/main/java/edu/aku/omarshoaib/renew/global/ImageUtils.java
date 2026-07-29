@@ -170,6 +170,28 @@ public class ImageUtils {
         }
     }
 
+    public static boolean deleteImageFilesByNames(String[] imageNames) {
+
+        File photosDirectory = getGalleryDir(MainApp.appContext);
+
+        if (photosDirectory.exists()) {
+            File[] files = photosDirectory.listFiles(file -> (file.getPath().endsWith(".jpg") || file.getPath().endsWith(".jpeg")));
+            if (files != null && files.length > 0) {
+                List<String> imageNamesList = Arrays.asList(imageNames);
+                boolean anyDeleted = false;
+
+                for (File file : files) {
+                    if (imageNamesList.contains(file.getName()))
+                        anyDeleted |= file.delete();
+                }
+
+                if (anyDeleted)
+                    return true;
+            }
+        }
+        return false;
+    }
+
     // Convert Image Uri to Byte
     public static byte[] convertImageUriToByte(Activity activity, Uri uri) {
         byte[] data = null;
