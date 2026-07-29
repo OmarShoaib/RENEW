@@ -43,8 +43,8 @@ public class VFormF06 {
     @SerializedName("sachet")
     private String noOfSachets;
 
-    @SerializedName("last_visit")
-    private String lastVisitF604a;
+    @SerializedName("last_status")
+    private String lastVisitF604a = "";
 
     @SerializedName("f515b")
     private String type;

@@ -85,6 +85,7 @@ public class SectionF06 extends BaseActivity {
         MainApp.form6.setFollowupNo(MainApp.vFormF06.getVisitNumber());
         sF6.setF604(MainApp.vFormF06.getParticipantId());
         bi.f61905x.setMinDate(MainApp.vFormF06.getEnrollmentDate());
+
     }
 
     AppTextWatcher.IAppTextWatcher iAppTextWatcher = (viewId, text) -> {
@@ -177,6 +178,7 @@ public class SectionF06 extends BaseActivity {
     private void setChangeListeners() {
         getAllRadioGroups(bi.fldGrpCVf610);
         for (RadioGroup rg : f610RadioGroups) rg.setOnCheckedChangeListener(listener);
+        bi.f604a.setOnCheckedChangeListener(listener);
         bi.f608a.setOnCheckedChangeListener(listener);
         bi.f609.setOnCheckedChangeListener(listener);
     }
@@ -191,8 +193,22 @@ public class SectionF06 extends BaseActivity {
 
     RadioGroup.OnCheckedChangeListener listener = (group, checkedId) -> {
         group.post(() -> {
-                    bi.f610Info.setVisibility(areAnyF619One() ? View.VISIBLE : View.GONE);
-                    enableFollowupAnswers();
+                    if (group == bi.f604a) {
+                        if(sF6.getF604a().equals("1")) {
+                            bi.fldGrpCVf619.setVisibility(View.VISIBLE);
+                        } else {
+                            if(isDefaulted()) {
+                                bi.fldGrpCVf619.setVisibility(View.VISIBLE);
+                                enableFollowupAnswers();
+                            } else {
+                                bi.fldGrpCVf619.setVisibility(View.GONE);
+                                bi.f619.clearCheck();
+                            }
+                        }
+                    } else {
+                        bi.f610Info.setVisibility(areAnyF619One() ? View.VISIBLE : View.GONE);
+                        enableFollowupAnswers();
+                    }
                 }
         );
     };
@@ -205,28 +221,34 @@ public class SectionF06 extends BaseActivity {
         bi.f619.clearCheck();
         AppConstants.disableViews(activity, bi.f619, Arrays.asList("f61901x", "f61905x"));
         if (referredCondition()) {
-            bi.f61906.setEnabled(true);
+            AppConstants.enableViews(activity, bi.f61906);
             sF6.setF619("6");
         } else if (recoveredCondition()) {
-            bi.f61902.setEnabled(true);
+            AppConstants.enableViews(activity, bi.f61902);
             sF6.setF619("2");
-        } else if(nonResponder()) {
-            bi.f61904.setEnabled(true);
+        } else if (nonResponder()) {
+            AppConstants.enableViews(activity, bi.f61904);
             sF6.setF619("4");
-        } else if(supplementContinuedRefused()) {
+        } else if (supplementContinuedRefused()) {
             AppConstants.enableViews(activity, Arrays.asList(bi.f61901, bi.f61907));
             sF6.setF619(f619TempValue.matches("[17]") ? f619TempValue : _EMPTY_);
             sF6.setF61901(f619TempValue.equals("1") ? f61901TempValue : _EMPTY_);
             sF6.setF61905(f619TempValue.equals("5") ? f61905TempValue : _EMPTY_);
 //            bi.f61901.setEnabled(true);
 //            bi.f61907.setEnabled(true);
+        } else if (isDefaulted()) {
+            AppConstants.enableViews(activity, bi.f61903);
+            sF6.setF619("3");
         }
-        /**
-         * TODO: add condition for defaulters
-         *else if() {
 
-        }*/
+    }
 
+    private boolean isDefaulted() {
+        return !(MainApp.vFormF06.getVisitNumber().equals("1") ||
+                (
+                        MainApp.vFormF06.getLastVisitF604a() != null &&
+                                MainApp.vFormF06.getLastVisitF604a().equals("1")
+                ) || sF6.getF604a().equals("1"));
     }
 
     private boolean referredCondition() {
