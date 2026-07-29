@@ -194,19 +194,16 @@ public class SectionF06 extends BaseActivity {
     RadioGroup.OnCheckedChangeListener listener = (group, checkedId) -> {
         group.post(() -> {
                     if (group == bi.f604a) {
-                        if(sF6.getF604a().equals("1")) {
+                        String val = sF6.getF604a();
+
+                        if ("1".equals(val)) {
                             bi.fldGrpCVf619.setVisibility(View.VISIBLE);
-                        } else if(sF6.getF604a().equals("2")) {
+                        } else if (!"2".equals(val) && isDefaulted()) {
+                            bi.fldGrpCVf619.setVisibility(View.VISIBLE);
+                            enableFollowupAnswers();
+                        } else {
                             bi.fldGrpCVf619.setVisibility(View.GONE);
                             bi.f619.clearCheck();
-                        } else {
-                            if(isDefaulted()) {
-                                bi.fldGrpCVf619.setVisibility(View.VISIBLE);
-                                enableFollowupAnswers();
-                            } else {
-                                bi.fldGrpCVf619.setVisibility(View.GONE);
-                                bi.f619.clearCheck();
-                            }
                         }
                     } else {
                         bi.f610Info.setVisibility(areAnyF619One() ? View.VISIBLE : View.GONE);
