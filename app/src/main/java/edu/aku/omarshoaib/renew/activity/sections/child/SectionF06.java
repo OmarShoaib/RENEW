@@ -239,6 +239,8 @@ public class SectionF06 extends BaseActivity {
         } else if (isDefaulted()) {
             AppConstants.enableViews(activity, bi.f61903);
             sF6.setF619("3");
+        } else {
+            AppConstants.enableViews(activity, bi.f619);
         }
 
     }
