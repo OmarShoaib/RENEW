@@ -897,6 +897,7 @@
     <string name="f602">Date of Follow–Up</string>
     <string name="f603">Follow–up Visit #</string>
     <string name="f604">Enrollment ID</string>
+    <string name="f604az">Last Visit Status</string>
     <string name="f604a">Child Status</string>
     <string name="f604a01">Alive</string>
     <string name="f604a02">Died</string>

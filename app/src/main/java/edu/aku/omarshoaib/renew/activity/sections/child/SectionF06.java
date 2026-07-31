@@ -74,8 +74,8 @@ public class SectionF06 extends BaseActivity {
         bi.f604b.setMinDate(MainApp.vFormF06.getEnrollmentDate());
         bi.f602.addTextChangedListener(new AppTextWatcher(bi.f602.getId(), iAppTextWatcher));
         bi.f611.setMaxvalue(Float.parseFloat(MainApp.vFormF06.getNoOfSachets()));
-        bi.f61296x.setMaxvalue(Float.parseFloat(MainApp.vFormF06.getNoOfSachets()));
-        bi.f61396x.setMaxvalue(Float.parseFloat(MainApp.vFormF06.getNoOfSachets()));
+        bi.f61296x.setMaxvalue(AppConstants.parseFloat(MainApp.vFormF06.getNoOfSachets()));
+        bi.f61396x.setMaxvalue(AppConstants.parseFloat(MainApp.vFormF06.getNoOfSachets()));
         bi.f611.addTextChangedListener(new AppTextWatcher(bi.f611.getId(), iAppTextWatcher));
         bi.f61296x.addTextChangedListener(new AppTextWatcher(bi.f61296x.getId(), iAppTextWatcher));
         bi.f61396x.addTextChangedListener(new AppTextWatcher(bi.f61396x.getId(), iAppTextWatcher));
@@ -85,7 +85,25 @@ public class SectionF06 extends BaseActivity {
         MainApp.form6.setFollowupNo(MainApp.vFormF06.getVisitNumber());
         sF6.setF604(MainApp.vFormF06.getParticipantId());
         bi.f61905x.setMinDate(MainApp.vFormF06.getEnrollmentDate());
+        setLastVisitStatus();
+        bi.fldGrpCVf609.setVisibility(MainApp.vFormF06.getType().equals("2") ?
+                View.VISIBLE : View.GONE);
+    }
 
+    private void setLastVisitStatus() {
+        String lastStatus = MainApp.vFormF06.getLastVisitF604a();
+        if (lastStatus == null || lastStatus.isEmpty()) {
+            bi.fldGrpCVf604az.setVisibility(View.GONE);
+        } else {
+            bi.fldGrpCVf604az.setVisibility(View.VISIBLE);
+            bi.f604az.setText(lastStatus.equals("1") ? getString(R.string.f604a01) :
+                    lastStatus.equals("2") ? getString(R.string.f604a02) :
+                            lastStatus.equals("3") ? getString(R.string.f604a03) :
+                                    lastStatus.equals("4") ? getString(R.string.f604a04) :
+                                            lastStatus.equals("5") ? getString(R.string.f604a05) :
+                                                    lastStatus.equals("6") ? getString(R.string.f604a06) :
+                                                            getString(R.string.f604a96));
+        }
     }
 
     AppTextWatcher.IAppTextWatcher iAppTextWatcher = (viewId, text) -> {
@@ -233,8 +251,6 @@ public class SectionF06 extends BaseActivity {
             sF6.setF619(f619TempValue.matches("[17]") ? f619TempValue : _EMPTY_);
             sF6.setF61901(f619TempValue.equals("1") ? f61901TempValue : _EMPTY_);
             sF6.setF61905(f619TempValue.equals("5") ? f61905TempValue : _EMPTY_);
-//            bi.f61901.setEnabled(true);
-//            bi.f61907.setEnabled(true);
         } else if (isDefaulted()) {
             AppConstants.enableViews(activity, bi.f61903);
             sF6.setF619("3");
