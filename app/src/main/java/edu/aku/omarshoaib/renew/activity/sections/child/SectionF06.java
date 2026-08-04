@@ -167,11 +167,13 @@ public class SectionF06 extends BaseActivity {
 
                 if ("1".equals(val)) {
                     bi.fldGrpCVf619.setVisibility(View.VISIBLE);
+                    enableFollowupAnswers();
                 } else if (!"2".equals(val) && isDefaulted()) {
                     bi.fldGrpCVf619.setVisibility(View.VISIBLE);
                     enableFollowupAnswers();
                 } else {
                     bi.fldGrpCVf619.setVisibility(View.GONE);
+                    sF6.setF619(_EMPTY_);
                     bi.f619.clearCheck();
                 }
             } else {
@@ -213,8 +215,8 @@ public class SectionF06 extends BaseActivity {
 
     private boolean isDefaulted() {
         return MainApp.vFormF06.getLastVisitF604a() != null &&
-                MainApp.vFormF06.getLastVisitF604a().equals("1")
-                && sF6.getF604a().equals("1");
+                !MainApp.vFormF06.getLastVisitF604a().equals("1")
+                && !sF6.getF604a().equals("1");
     }
 
     private boolean referredCondition() {
