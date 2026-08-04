@@ -124,13 +124,13 @@ public class SectionF06 extends BaseActivity {
                 sF6.setF613a("");
             }
         } else if (viewId == bi.f605.getId()) {
-            if (text.isEmpty()) return;
-            Float muac = Float.parseFloat(text);
-            if (muac >= 11.5f && muac < 12.5f) {
-                bi.fldGrpCVf609.setVisibility(View.GONE);
-                bi.f609.clearCheck();
-                sF6.setF609(_EMPTY_);
-            } else bi.fldGrpCVf609.setVisibility(View.VISIBLE);
+//            if (text.isEmpty()) return;
+//            Float muac = Float.parseFloat(text);
+//            if (muac >= 11.5f && muac < 12.5f) {
+//                bi.fldGrpCVf609.setVisibility(View.GONE);
+//                bi.f609.clearCheck();
+//                sF6.setF609(_EMPTY_);
+//            } else bi.fldGrpCVf609.setVisibility(View.VISIBLE);
             enableFollowupAnswers();
         }
     };
