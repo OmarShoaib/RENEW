@@ -152,7 +152,7 @@ public class SectionF06 extends BaseActivity {
         bi.f609.setOnCheckedChangeListener(listener);
     }
 
-    private boolean areAnyF619One() {
+    private boolean areAnyF610One() {
         return Stream.of(
                 sF6.getF610a(), sF6.getF610b(), sF6.getF610c(),
                 sF6.getF610d(), sF6.getF610e(), sF6.getF610f(),
@@ -175,7 +175,7 @@ public class SectionF06 extends BaseActivity {
                     bi.f619.clearCheck();
                 }
             } else {
-                bi.f610Info.setVisibility(areAnyF619One() ? View.VISIBLE : View.GONE);
+                bi.f610Info.setVisibility(areAnyF610One() ? View.VISIBLE : View.GONE);
                 enableFollowupAnswers();
             }
         });
@@ -212,20 +212,18 @@ public class SectionF06 extends BaseActivity {
     }
 
     private boolean isDefaulted() {
-        return !(MainApp.vFormF06.getVisitNumber().equals("1") ||
-                (
-                        MainApp.vFormF06.getLastVisitF604a() != null &&
-                                MainApp.vFormF06.getLastVisitF604a().equals("1")
-                ) || sF6.getF604a().equals("1"));
+        return MainApp.vFormF06.getLastVisitF604a() != null &&
+                MainApp.vFormF06.getLastVisitF604a().equals("1")
+                && sF6.getF604a().equals("1");
     }
 
     private boolean referredCondition() {
-        return areAnyF619One() || sF6.getF608a().equals("3") || sF6.getF609().equals("2");
+        return areAnyF610One() || sF6.getF608a().equals("3") || sF6.getF609().equals("2");
     }
 
     private boolean recoveredCondition() {
         try {
-            float hb = Float.parseFloat(sF6.getF605());
+            float hb = AppConstants.parseFloat(sF6.getF605());
 
             return (MainApp.vFormF06.getType().equals("1")
                     && hb > 12.4f
@@ -256,10 +254,14 @@ public class SectionF06 extends BaseActivity {
     }
 
     private boolean supplementContinuedRefused() {
-        return (MainApp.vFormF06.getType().equals("1")
-                && MainApp.vFormF06.getVisitNumber().equals("1")) ||
-                (MainApp.vFormF06.getType().equals("2")
-                        && MainApp.vFormF06.getVisitNumber().matches("[123]"));
+        return sF6.getF604a().equals("1") &&
+                (
+                        (MainApp.vFormF06.getType().equals("1") &&
+                                MainApp.vFormF06.getVisitNumber().equals("1"))
+                                ||
+                                (MainApp.vFormF06.getType().equals("2")
+                                        && MainApp.vFormF06.getVisitNumber().matches("[123]"))
+                );
     }
 
     private boolean formValidation() {
