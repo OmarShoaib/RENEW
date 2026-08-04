@@ -135,55 +135,6 @@ public class SectionF06 extends BaseActivity {
         }
     };
 
-    private boolean formValidation() {
-        if (!Validator.emptyCheckingContainer(activity, bi.GrpName)) return false;
-
-        if (sF6.getF604a().equals("1")) {
-            int f611 = AppConstants.parseInt(sF6.getF611()),
-                    f612 = AppConstants.parseInt(sF6.getF61296x()),
-                    f613 = AppConstants.parseInt(sF6.getF61396x());
-            int previousSachets = Integer.parseInt(MainApp.vFormF06.getNoOfSachets());
-            if (f611 + f612 + f613 > previousSachets) {
-                Validator.emptyCustomTextBox(activity, bi.f611, "Incorrect count");
-                return false;
-            }
-        }
-
-        if (!sF6.getF605().isEmpty() && sF6.getMuacImage().isEmpty()) {
-            AppConstants.showSimpleSnackBar(activity, String.format(Locale.ENGLISH, getString(R.string.no_image_found), "MUAC"),
-                    AppConstants.MSG_DURATION, AppConstants.TYPE_ERROR);
-            return false;
-        }
-
-        if (!sF6.getF606().isEmpty() && sF6.getWeightImage().isEmpty()) {
-            AppConstants.showSimpleSnackBar(activity, String.format(Locale.ENGLISH, getString(R.string.no_image_found), "WEIGHT"),
-                    AppConstants.MSG_DURATION, AppConstants.TYPE_ERROR);
-            return false;
-        }
-
-        if (!sF6.getF607().isEmpty() && sF6.getHeightImage().isEmpty()) {
-            AppConstants.showSimpleSnackBar(activity, String.format(Locale.ENGLISH, getString(R.string.no_image_found), "HEIGHT"),
-                    AppConstants.MSG_DURATION, AppConstants.TYPE_ERROR);
-            return false;
-        }
-
-        return true;
-    }
-
-    public void btnContinue(View view) {
-        if (!formValidation()) return;
-        Form6.saveMainData(MainApp.vFormF06.getParticipantId(), MainApp.vFormF06.getVisitNumber());
-        MainApp.form6.setIStatus("1");
-        MainApp.form6.setEndingDate(DateUtils.getCurrentDateTime());
-        Form6.SF6.saveData(sF6);
-        AppConstants.gotoActivity(activity, SectionF06ListAC.class, true);
-    }
-
-    @Override
-    public void onBackPressed() {
-        AppConstants.checkDoubleBackPress(activity, SectionF06ListAC.class);
-    }
-
     private void getAllRadioGroups(ViewGroup parent) {
         for (int i = 0; i < parent.getChildCount(); i++) {
             View child = parent.getChildAt(i);
@@ -309,6 +260,55 @@ public class SectionF06 extends BaseActivity {
                 && MainApp.vFormF06.getVisitNumber().equals("1")) ||
                 (MainApp.vFormF06.getType().equals("2")
                         && MainApp.vFormF06.getVisitNumber().matches("[123]"));
+    }
+
+    private boolean formValidation() {
+        if (!Validator.emptyCheckingContainer(activity, bi.GrpName)) return false;
+
+        if (sF6.getF604a().equals("1")) {
+            int f611 = AppConstants.parseInt(sF6.getF611()),
+                    f612 = AppConstants.parseInt(sF6.getF61296x()),
+                    f613 = AppConstants.parseInt(sF6.getF61396x());
+            int previousSachets = Integer.parseInt(MainApp.vFormF06.getNoOfSachets());
+            if (f611 + f612 + f613 > previousSachets) {
+                Validator.emptyCustomTextBox(activity, bi.f611, "Incorrect count");
+                return false;
+            }
+        }
+
+        if (!sF6.getF605().isEmpty() && sF6.getMuacImage().isEmpty()) {
+            AppConstants.showSimpleSnackBar(activity, String.format(Locale.ENGLISH, getString(R.string.no_image_found), "MUAC"),
+                    AppConstants.MSG_DURATION, AppConstants.TYPE_ERROR);
+            return false;
+        }
+
+        if (!sF6.getF606().isEmpty() && sF6.getWeightImage().isEmpty()) {
+            AppConstants.showSimpleSnackBar(activity, String.format(Locale.ENGLISH, getString(R.string.no_image_found), "WEIGHT"),
+                    AppConstants.MSG_DURATION, AppConstants.TYPE_ERROR);
+            return false;
+        }
+
+        if (!sF6.getF607().isEmpty() && sF6.getHeightImage().isEmpty()) {
+            AppConstants.showSimpleSnackBar(activity, String.format(Locale.ENGLISH, getString(R.string.no_image_found), "HEIGHT"),
+                    AppConstants.MSG_DURATION, AppConstants.TYPE_ERROR);
+            return false;
+        }
+
+        return true;
+    }
+
+    public void btnContinue(View view) {
+        if (!formValidation()) return;
+        Form6.saveMainData(MainApp.vFormF06.getParticipantId(), MainApp.vFormF06.getVisitNumber());
+        MainApp.form6.setIStatus("1");
+        MainApp.form6.setEndingDate(DateUtils.getCurrentDateTime());
+        Form6.SF6.saveData(sF6);
+        AppConstants.gotoActivity(activity, SectionF06ListAC.class, true);
+    }
+
+    @Override
+    public void onBackPressed() {
+        AppConstants.checkDoubleBackPress(activity, SectionF06ListAC.class);
     }
 
     /**
