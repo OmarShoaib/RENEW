@@ -50,11 +50,8 @@ public class SectionF01 extends BaseActivity {
         bi.f10x.setText(String.
                 valueOf(MainApp.participant.getLineNo()));
         bi.f105.addTextChangedListener(new AppTextWatcher(bi.f105.getId(), textWatcher));
-        bi.f106.setOnCheckedChangeListener(changeListener);
+        bi.f106.setOnCheckedChangeListener((rG, i) -> rG.post(this::askF107));
     }
-
-    RadioGroup.OnCheckedChangeListener changeListener =
-            (radioGroup, i) -> radioGroup.post(this::askF107);
 
     AppTextWatcher.IAppTextWatcher textWatcher = (viewId, text) -> {
         askF107();
@@ -65,9 +62,8 @@ public class SectionF01 extends BaseActivity {
     };
 
     private void askF107() {
-        String text = sF1.getF105();
-        boolean invalidAge = text.isEmpty() || Integer.parseInt(text) > 49 ||
-                Integer.parseInt(text) < 10,
+        int text = AppConstants.parseInt(sF1.getF105());
+        boolean invalidAge = text < 10 || text > 49,
                 married = sF1.getF106().equals("1");
         bi.fldGrpCVf107.setVisibility(!invalidAge && married ? View.VISIBLE : View.GONE);
         bi.fldGrpCVf108.setVisibility(!invalidAge ? View.VISIBLE : View.GONE);

@@ -30,7 +30,7 @@ public abstract class Form3Dao implements BaseDao<Form3> {
     @Query("UPDATE Form3 SET iStatus = :iStatus, iStatus96x = :iStatus96x, isFormCompleteOnce = :isFormCompleteOnce, endingDate = :endingDate WHERE id = :id")
     public abstract void updateIStatus(long id, String iStatus, String iStatus96x, boolean isFormCompleteOnce, String endingDate);
 
-    @Query("SELECT * FROM Form3 WHERE districtCode = :districtCode AND scrId = :checkId AND synced = '1'")
+    @Query("SELECT EXISTS(SELECT 1 FROM Form3 WHERE districtCode = :districtCode AND scrId = :checkId AND synced = '1')")
     public abstract boolean isFormSynced(String districtCode, String checkId);
 
     // This query is only used for updating sync list

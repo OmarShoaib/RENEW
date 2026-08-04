@@ -51,14 +51,6 @@ public class PregnantParticipantsAC extends BaseActivity {
         appDatabase = AppDatabase.getDBInstance();
     }
 
-    private boolean isCompleted(Participant participant) {
-        for (Form3 form : MainApp.listForm3)
-            if(form.getUuid().equals(participant.getUid()))
-                return true;
-
-        return false;
-    }
-
     @Override
     protected void onResume() {
         super.onResume();
@@ -93,6 +85,7 @@ public class PregnantParticipantsAC extends BaseActivity {
                     MainApp.participant = MainApp.participantList.get((int) view1.getTag());
                     MainApp.form3 = appDatabase.form3Dao().getDataByUuid(MainApp.participant.getUid(), MainApp.form1.getScrId());
                     if (MainApp.form3 == null) Form3.initMeta();
+                    MainApp.isSynced = MainApp.form3.getSynced().equals("1");
                     AppConstants.gotoActivity(activity, SectionF03.class, true);
                 });
             }
@@ -100,6 +93,14 @@ public class PregnantParticipantsAC extends BaseActivity {
         bi.rv.setAdapter(genericAdapter);
         boolean isCountMismatch = MainApp.participantList.size() == MainApp.listForm3.size();
         bi.endButtonsLayout.findViewById(R.id.posBtn).setVisibility(isCountMismatch ? View.VISIBLE : View.INVISIBLE);
+    }
+
+    private boolean isCompleted(Participant participant) {
+        for (Form3 form : MainApp.listForm3)
+            if(form.getUuid().equals(participant.getUid()))
+                return true;
+
+        return false;
     }
 
     private void markIStatus() {

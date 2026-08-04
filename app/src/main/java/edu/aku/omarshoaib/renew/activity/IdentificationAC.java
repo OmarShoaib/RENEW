@@ -112,7 +112,6 @@ public class IdentificationAC extends BaseActivity {
         MainApp.form1.setScrId(hhId);
         Form1.saveMainData(hhId);
         Form1.SF1.saveData(sF1);
-//            AppConstants.gotoActivity(activity, SectionA.class, true);
     }
 
     public boolean formValidation() {

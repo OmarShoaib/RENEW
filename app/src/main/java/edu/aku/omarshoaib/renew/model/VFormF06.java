@@ -16,13 +16,22 @@ public class VFormF06 {
     @SerializedName("participant_id")
     private String participantId;
 
-    @SerializedName("Enrol_date")
+    @SerializedName("_uid")
+    private String uid;
+
+    @SerializedName("enrol_date")
     private String enrollmentDate;
 
-    @SerializedName("Child_Name")
+    @SerializedName("child_name")
     private String childName;
 
-    @SerializedName("DOB")
+    @SerializedName("visit_date")
+    private String visitDate;
+
+    @SerializedName("visit_number")
+    private String visitNumber;
+
+    @SerializedName("dob")
     private String dob;
 
     @SerializedName("father_caregiver")
@@ -30,6 +39,15 @@ public class VFormF06 {
 
     @SerializedName("contact")
     private String contactNo;
+
+    @SerializedName("sachet")
+    private String noOfSachets;
+
+    @SerializedName("last_status")
+    private String lastVisitF604a = "";
+
+    @SerializedName("f515b")
+    private String type;
 
     private String village;
 
@@ -39,6 +57,14 @@ public class VFormF06 {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
     public String getParticipantId() {
@@ -73,6 +99,22 @@ public class VFormF06 {
         this.childName = childName;
     }
 
+    public String getVisitDate() {
+        return visitDate;
+    }
+
+    public void setVisitDate(String visitDate) {
+        this.visitDate = visitDate;
+    }
+
+    public String getVisitNumber() {
+        return visitNumber;
+    }
+
+    public void setVisitNumber(String visitNumber) {
+        this.visitNumber = visitNumber;
+    }
+
     public String getDob() {
         return dob;
     }
@@ -89,11 +131,35 @@ public class VFormF06 {
         this.contactNo = contactNo;
     }
 
+    public String getNoOfSachets() {
+        return noOfSachets;
+    }
+
+    public void setNoOfSachets(String noOfSachets) {
+        this.noOfSachets = noOfSachets;
+    }
+
+    public String getLastVisitF604a() {
+        return lastVisitF604a;
+    }
+
+    public void setLastVisitF604a(String lastVisitF604a) {
+        this.lastVisitF604a = lastVisitF604a;
+    }
+
     public String getVillage() {
         return village;
     }
 
     public void setVillage(String village) {
         this.village = village;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

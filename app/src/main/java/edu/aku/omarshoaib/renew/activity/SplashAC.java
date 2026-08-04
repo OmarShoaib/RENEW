@@ -24,8 +24,9 @@ public class SplashAC extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         /* Update Code */
-        if (SecurityUtils.checkIfDeviceRootedAndExit(activity))
+        /*if (SecurityUtils.checkIfDeviceRootedAndExit(activity)) {
             return;
+        }*/
 
         /* Old Code */
         // Check if device is rooted. If rooted then exit the app
@@ -40,7 +41,7 @@ public class SplashAC extends AppCompatActivity {
         /* For Logging */
 //       Map<String, Boolean> diag = SecurityUtils.runRootChecks(activity);
 
-        splash();
+        if (!SecurityUtils.checkIfDeviceRootedAndExit(activity)) splash();
     }
 
     private void splash() {

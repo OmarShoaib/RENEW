@@ -43,7 +43,7 @@
                     android:backgroundTint="@color/primary_color"
                     android:fontFamily="@font/roboto_regular"
                     android:gravity="center"
-                    android:text="@string/list_of_mwras"
+                    android:text="@string/list_of_children_for_followUp"
                     android:textColor="@color/white" />
 
                 <RadioGroup
@@ -152,7 +152,7 @@
                 android:layout_below="@+id/filterLayout"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:itemCount="10"
-                tools:listitem="@layout/item_member" />
+                tools:listitem="@layout/item_followup" />
 
             <TextView
                 android:id="@+id/emptyTV"

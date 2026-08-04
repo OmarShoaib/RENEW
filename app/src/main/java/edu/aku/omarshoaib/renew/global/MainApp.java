@@ -2,6 +2,7 @@ package edu.aku.omarshoaib.renew.global;
 
 import android.annotation.SuppressLint;
 import android.app.Application;
+import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.media.AudioManager;
@@ -14,6 +15,7 @@ import com.google.gson.Gson;
 import java.util.List;
 
 import dev.b3nedikt.restring.Restring;
+import edu.aku.omarshoaib.renew.BuildConfig;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.model.AppInfo;
 import edu.aku.omarshoaib.renew.model.Form1;
@@ -24,12 +26,14 @@ import edu.aku.omarshoaib.renew.model.Form3;
 import edu.aku.omarshoaib.renew.model.Form3a;
 import edu.aku.omarshoaib.renew.model.Form4;
 import edu.aku.omarshoaib.renew.model.Form5;
+import edu.aku.omarshoaib.renew.model.Form5A;
 import edu.aku.omarshoaib.renew.model.Form6;
 import edu.aku.omarshoaib.renew.model.HCF;
 import edu.aku.omarshoaib.renew.model.Participant;
 import edu.aku.omarshoaib.renew.model.User;
 import edu.aku.omarshoaib.renew.model.VForm2b;
 import edu.aku.omarshoaib.renew.model.VForm3a;
+import edu.aku.omarshoaib.renew.model.VFormF05A;
 import edu.aku.omarshoaib.renew.model.VFormF06;
 import edu.aku.omarshoaib.renew.model.VPHQ9;
 
@@ -48,10 +52,12 @@ public class MainApp extends Application {
     public static Form1 form1;
     public static Participant participant;
     public static VPHQ9 vPHQ9;
-    public static List<VPHQ9> vPHQ9List;
+    public static List<VPHQ9> vForm2aList;
     public static VForm2b vForm2b;
     public static List<VForm2b> vForm2bList;
     public static VFormF06 vFormF06;
+    public static VFormF05A vFormF05a;
+    public static List<VFormF05A> vFormF05aList;
     public static List<VFormF06> vFormF06List;
     public static VForm3a vForm3a;
     public static List<VForm3a> vForm3aList;
@@ -65,7 +71,9 @@ public class MainApp extends Application {
     public static List<Form3> listForm3;
     public static Form4 form4;
     public static Form5 form5;
+    public static Form5A form5a;
     public static Form6 form6;
+    public static Context appContext;
 
     // LockScreen timer and tone
     public static ToneGenerator toneGen;
@@ -86,6 +94,7 @@ public class MainApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        appContext = getApplicationContext();
 
         // Prepare Encryption/Decryption Keys
         try {
@@ -93,7 +102,7 @@ public class MainApp extends Application {
                     PackageManager.GET_META_DATA);
             Bundle bundle = ai.metaData;
 
-            AppConstants.TRATS = bundle.getInt("YEK_TRATS");
+            /*AppConstants.TRATS = bundle.getInt("YEK_TRATS");
             AppConstants.IBAHC = bundle.getString("YEK_REVRES");
 
             // For dictionary portal
@@ -102,7 +111,20 @@ public class MainApp extends Application {
 
             // For dynamic server key - NIU
             AppConstants.YEK_DATA_KEY = bundle.getString("YEK_DATA_KEY");
-            AppConstants.YEK_DATA_INDEX = bundle.getInt("YEK_DATA_INDEX");
+            AppConstants.YEK_DATA_INDEX = bundle.getInt("YEK_DATA_INDEX");*/
+
+
+            AppConstants.TRATS = BuildConfig.YEK_TRATS;
+            AppConstants.IBAHC = BuildConfig.YEK_REVRES;
+
+            // For dictionary portal
+            AppConstants.DP_TRATS = BuildConfig.DP_YEK_TRATS;
+            AppConstants.DP_IBAHC = BuildConfig.DP_YEK_REVRES;
+
+            // For dynamic server key - NIU
+            AppConstants.YEK_DATA_KEY = BuildConfig.YEK_DATA_KEY;
+            AppConstants.YEK_DATA_INDEX = BuildConfig.YEK_DATA_INDEX;
+
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }

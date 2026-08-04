@@ -124,7 +124,50 @@
 -keep public class * extends android.content.ContentProvider
 -keep public class * extends android.app.Application
 
+-dontwarn org.joda.convert.FromString
+-dontwarn org.joda.convert.ToString
+
 # Keep parcelable implementations
 -keep class * implements android.os.Parcelable {
     public static final android.os.Parcelable$Creator *;
 }
+
+# ----------------------------------
+# SSL Pinning & Security Rules
+# (Dynamic - No package name needed)
+# ----------------------------------
+
+# Keep ALL X509TrustManager implementations (covers PinnedTrustManager
+# in any project/package) — Android calls 3-arg checkServerTrusted
+# via reflection in release builds
+-keep class * implements javax.net.ssl.X509TrustManager {
+    public java.util.List checkServerTrusted(java.security.cert.X509Certificate[], java.lang.String, java.lang.String);
+    public void checkServerTrusted(java.security.cert.X509Certificate[], java.lang.String);
+    public void checkClientTrusted(java.security.cert.X509Certificate[], java.lang.String);
+    public java.security.cert.X509Certificate[] getAcceptedIssuers();
+}
+
+# Keep ALL X509ExtendedTrustManager implementations (Android 24+
+# uses this subclass internally)
+-keep class * extends javax.net.ssl.X509ExtendedTrustManager {
+    *;
+}
+
+# Keep javax.net.ssl classes — SSLContext, SSLSession, etc.
+-keep class javax.net.ssl.** { *; }
+
+# Keep java.security.cert classes — X509Certificate, CertificateFactory
+-keep class java.security.cert.** { *; }
+
+# Keep OkHttp SSL classes
+-keep class okhttp3.** { *; }
+-keep interface okhttp3.** { *; }
+-keep class okhttp3.CertificatePinner { *; }
+-keep class okhttp3.CertificatePinner$Builder { *; }
+
+# Keep security-related package patterns
+# (matches your naming conventions like webcall, security, crypto)
+-keep class **.security.** { *; }
+-keep class **.webcall.** { *; }
+-keep class **.crypto.** { *; }
+-keep class **.ssl.** { *; }

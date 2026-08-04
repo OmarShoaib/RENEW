@@ -7,6 +7,8 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverter;
 import androidx.room.TypeConverters;
+import androidx.room.migration.Migration;
+import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -17,6 +19,7 @@ import net.sqlcipher.database.SupportFactory;
 import java.lang.reflect.Type;
 
 import edu.aku.omarshoaib.renew.database.dao.EntryLogDao;
+import edu.aku.omarshoaib.renew.database.dao.Form05ADao;
 import edu.aku.omarshoaib.renew.database.dao.Form1Dao;
 import edu.aku.omarshoaib.renew.database.dao.Form2Dao;
 import edu.aku.omarshoaib.renew.database.dao.Form2aDao;
@@ -35,6 +38,7 @@ import edu.aku.omarshoaib.renew.database.dao.UserDao;
 import edu.aku.omarshoaib.renew.database.dao.VForm06Dao;
 import edu.aku.omarshoaib.renew.database.dao.VForm2bDao;
 import edu.aku.omarshoaib.renew.database.dao.VForm3aDao;
+import edu.aku.omarshoaib.renew.database.dao.VFormF05ADao;
 import edu.aku.omarshoaib.renew.database.dao.VPHQ9Dao;
 import edu.aku.omarshoaib.renew.database.dao.VillagesDao;
 import edu.aku.omarshoaib.renew.global.AppConstants;
@@ -47,6 +51,7 @@ import edu.aku.omarshoaib.renew.model.Form3;
 import edu.aku.omarshoaib.renew.model.Form3a;
 import edu.aku.omarshoaib.renew.model.Form4;
 import edu.aku.omarshoaib.renew.model.Form5;
+import edu.aku.omarshoaib.renew.model.Form5A;
 import edu.aku.omarshoaib.renew.model.Form6;
 import edu.aku.omarshoaib.renew.model.HCF;
 import edu.aku.omarshoaib.renew.model.Participant;
@@ -55,20 +60,21 @@ import edu.aku.omarshoaib.renew.model.Teams;
 import edu.aku.omarshoaib.renew.model.User;
 import edu.aku.omarshoaib.renew.model.VForm2b;
 import edu.aku.omarshoaib.renew.model.VForm3a;
+import edu.aku.omarshoaib.renew.model.VFormF05A;
 import edu.aku.omarshoaib.renew.model.VFormF06;
 import edu.aku.omarshoaib.renew.model.VPHQ9;
 import edu.aku.omarshoaib.renew.model.Villages;
 
 @Database(entities = {User.class, Villages.class, EntryLog.class,
         Form1.class, Form2.class, Form2a.class, Form3.class, Form4.class, Form5.class,
-        Form6.class, Participant.class, HCF.class, VPHQ9.class, Form2b.class, Form3a.class,
-        VForm2b.class, VForm3a.class, Teams.class, VFormF06.class},
-        version = 1, exportSchema = false)
+        Form5A.class, Form6.class, Participant.class, HCF.class, VPHQ9.class, Form2b.class, Form3a.class,
+        VForm2b.class, VForm3a.class, Teams.class, VFormF05A.class, VFormF06.class},
+        version = 3, exportSchema = false)
 @TypeConverters({SyncModel.ResponseDate.DataConverter.class,
         Form1.SF1.DataConverter.class, Form2.SF2.DataConverter.class, Form3.SF3.DataConverter.class,
         Form4.SF4.DataConverter.class, Form5.SF5.DataConverter.class, Form6.SF6.DataConverter.class,
         Participant.SF1.DataConverter.class, Form2a.SF2a.DataConverter.class,
-        Form2b.SF2b.DataConverter.class, Form3a.SF3a.DataConverter.class})
+        Form2b.SF2b.DataConverter.class, Form3a.SF3a.DataConverter.class, Form5A.SF5A.DataConverter.class})
 public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase appDatabase;
@@ -87,7 +93,8 @@ public abstract class AppDatabase extends RoomDatabase {
         if (appDatabase == null) {
             // Room db Initialization
             Builder<AppDatabase> builder = Room.databaseBuilder(context.getApplicationContext(),
-                    AppDatabase.class, AppConstants.DATABASE_NAME);
+                    AppDatabase.class, AppConstants.DATABASE_NAME)
+                    .addMigrations(MIGRATION_1_2, MIGRATION_2_3);
             builder.allowMainThreadQueries();
 //                builder.fallbackToDestructiveMigration();
             if (!AppConstants.IS_ADMIN)
@@ -129,6 +136,8 @@ public abstract class AppDatabase extends RoomDatabase {
 
     public abstract Form5Dao form5Dao();
 
+    public abstract Form05ADao form05aDao();
+
     public abstract Form6Dao form6Dao();
 
     public abstract VPHQ9Dao vphq9Dao();
@@ -138,6 +147,8 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract VForm2bDao vForm2bDao();
 
     public abstract VForm3aDao vForm3aDao();
+
+    public abstract VFormF05ADao vFormF05aDao();
 
     public abstract VForm06Dao vFormF06Dao();
 
@@ -172,6 +183,23 @@ public abstract class AppDatabase extends RoomDatabase {
 //                    + " ADD COLUMN last_update INTEGER");
         }
     };*/
+
+    // Manual DB Migration - Sample for later Use
+    public static final Migration MIGRATION_1_2 = new Migration(1, 2) {
+        @Override
+        public void migrate(SupportSQLiteDatabase database) {
+            database.execSQL("ALTER TABLE Form6 "
+                    + " ADD COLUMN followupNo TEXT");
+        }
+    };
+
+    public static final Migration MIGRATION_2_3 = new Migration(2, 3) {
+        @Override
+        public void migrate(SupportSQLiteDatabase database) {
+            database.execSQL("ALTER TABLE vw_form6 "
+                    + " ADD COLUMN type TEXT");
+        }
+    };
 
     // **Added this method to close the DB**
     public static void closeInstance() {

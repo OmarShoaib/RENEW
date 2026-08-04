@@ -29,8 +29,8 @@ public abstract class Form2Dao implements BaseDao<Form2> {
     @Query("UPDATE Form2 SET iStatus = :iStatus, iStatus96x = :iStatus96x, isFormCompleteOnce = :isFormCompleteOnce, endingDate = :endingDate WHERE id = :id")
     public abstract void updateIStatus(long id, String iStatus, String iStatus96x, boolean isFormCompleteOnce, String endingDate);
 
-    @Query("SELECT * FROM Form2 WHERE districtCode = :districtCode AND scrId = :checkId AND synced = '1'")
-    public abstract boolean isFormSynced(String districtCode, String checkId);
+    @Query("SELECT EXISTS(SELECT 1 FROM Form2 WHERE uuid = :uuid AND scrId = :scrId AND synced = '1')")
+    public abstract boolean isFormSynced(String uuid, String scrId);
 
     // This query is only used for updating sync list
     // id = rowId

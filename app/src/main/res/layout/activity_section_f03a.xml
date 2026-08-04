@@ -485,12 +485,32 @@
 
                                 <TextView
                                     style="@style/labels"
-                                    android:layout_width="match_parent"
+                                    android:layout_width="0dp"
                                     android:layout_height="match_parent"
+                                    android:layout_weight="1"
                                     android:text="@string/f3a11" />
+
+                                <com.edittextpicker.aliazaz.EditTextPicker
+                                    android:id="@+id/f3a11"
+                                    style="@style/Theme.AppStructure.EditTextStyle"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:digits="@string/digits_number"
+                                    android:gravity="center"
+                                    android:hint="##"
+                                    app:pattern="[0-9]{2}"
+                                    android:inputType="number"
+                                    android:maxLength="2"
+                                    android:tag="f3a11"
+                                    android:text="@={form.f3a11}"
+                                    app:mask="##"
+                                    app:maxValue="42"
+                                    app:minValue="01"
+                                    app:type="range" />
                             </LinearLayout>
 
-                            <RadioGroup
+                            <!--<RadioGroup
                                 android:id="@+id/f3a11"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -522,7 +542,7 @@
                                     android:checked="@{form.f3a11.equals(`3`)}"
                                     android:onClick="@{()->form.setF3a11(`3`)}"
                                     android:text="@string/f3a1103" />
-                            </RadioGroup>
+                            </RadioGroup>-->
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 

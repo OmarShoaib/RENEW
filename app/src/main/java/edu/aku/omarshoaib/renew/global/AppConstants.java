@@ -337,6 +337,12 @@ public class AppConstants {
         else return Integer.parseInt(value);
     }
 
+    // Parse string to int and return 0(Zero) if string is empty
+    public static float parseFloat(String value) {
+        if (value == null || value.trim().isEmpty()) return 0f;
+        else return Float.parseFloat(value);
+    }
+
     // Check if sum of all numeric fields are 0(Zero)
     public static boolean validateSumNotZero(List<String> values) {
         boolean anyNotEmpty = false;

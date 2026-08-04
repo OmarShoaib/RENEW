@@ -63,48 +63,7 @@ public class Identification04 extends BaseActivity {
         bi.f103.addTextChangedListener(new AppTextWatcher(bi.f103.getId(), textWatcher));
         bi.f103.setTextLocale(Locale.ENGLISH);
         setupHCFSpinner();
-//        setupTeamSpinner();
     }
-
-    /*private void setupTeamSpinner() {
-        List<Teams> list = new ArrayList<>();
-        Teams team = new Teams();
-        team.setTeamId("");
-        team.setTeamName("Please Select");
-        list.add(team);
-
-        list.addAll(
-                appDatabase.teamsDao().getAllData());
-        ArrayAdapter<Teams> adapter =
-                new ArrayAdapter<>(this,
-                        android.R.layout.simple_spinner_item, list);
-        adapter.setDropDownViewResource(
-                android.R.layout.simple_spinner_dropdown_item);
-        bi.f101.setAdapter(adapter);
-        bi.f101.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (position == 0) {
-                    sF4.setF101("");
-                    return;
-                }
-                String item = parent.getItemAtPosition(position).toString();
-                sF4.setF101(item.split("-")[0].trim());
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) { }
-        });
-        if (!sF4.getF101().isEmpty()) {
-            for (int i = 0; i < list.size(); i++) {
-                if (list.get(i).getTeamId().trim().equals(sF4.getF101())) {
-                    bi.f101.setSelection(i);
-                    break;
-                }
-            }
-        }
-
-    }*/
 
     private void setupHCFSpinner() {
         List<HCF> list = new ArrayList<>();
@@ -165,20 +124,11 @@ public class Identification04 extends BaseActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-
         String scrId = bi.scrId.getText().toString() + Objects.requireNonNull(bi.f103a.getText());
-
-        // Do not allow synced form1 to be edited
-        if (appDatabase.form4Dao().isFormSynced(MainApp.user.getDistId(), scrId))
-            MainApp.isSynced = true;
-
-        // New form1
-//        String clusterNo = Objects.requireNonNull(bi.a101.getText()).toString();
+        MainApp.isSynced = appDatabase.form4Dao().isFormSynced(MainApp.user.getDistId(), scrId);
         MainApp.form4.setScrId(scrId);
         MainApp.form4.setSF4(sF4);
         Form4.saveMainData(scrId);
-//        MainApp.form4.setTeamId(sF4.getF101());
-//        Form4.SF4.saveData(sF4);
         AppConstants.gotoActivity(activity, SectionF04.class, true);
     }
 

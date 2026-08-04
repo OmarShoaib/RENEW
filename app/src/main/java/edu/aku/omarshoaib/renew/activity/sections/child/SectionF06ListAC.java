@@ -42,7 +42,7 @@ public class SectionF06ListAC extends BaseActivity {
         super.activity = activity;
 
         // Init toolbar
-        AppConstants.initToolbar(activity, getString(R.string.list_of_mwras),
+        AppConstants.initToolbar(activity, getString(R.string.list_of_children_for_followUp),
                 _EMPTY_, false);
 
         appDatabase = AppDatabase.getDBInstance();

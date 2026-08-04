@@ -22,6 +22,9 @@
     android:fullBackupContent="@xml/backup_rules"-->
     <application
         android:name=".global.MainApp"
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="false"
         android:icon="@drawable/app_icon"
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/network_security_config"
@@ -29,6 +32,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppStructure.FullScreen.StatusBar"
         android:usesCleartextTraffic="false"
+        tools:replace="android:allowBackup"
         tools:targetApi="31">
 
         <!-- SPLASH ACTIVITY -->
@@ -36,7 +40,7 @@
             android:name=".activity.SplashAC"
             android:exported="true"
             android:theme="@style/Theme.AppStructure.FullScreen"
-            tools:ignore="LockedOrientationActivity" >
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -151,6 +155,12 @@
         <activity
             android:name="edu.aku.omarshoaib.renew.activity.sections.child.SectionF06ListAC"
             android:exported="true" />
+        <activity
+            android:name="edu.aku.omarshoaib.renew.activity.sections.child.SectionF05A"
+            android:exported="true" />
+        <activity
+            android:name="edu.aku.omarshoaib.renew.activity.sections.child.SectionF05AListAC"
+            android:exported="true" />
 
         <!-- SYNCED RECORDS LIST ACTIVITY -->
         <activity
@@ -167,27 +177,6 @@
         <activity
             android:name=".activity.EndingAC"
             android:exported="false" />
-
-        <!-- META DATA -->
-        <meta-data
-            android:name="YEK_REVRES"
-            android:value="dba5cee2d4672d033150751d39f47f88928fc5f1eb35c7cef78ca91e687ce918" />
-        <meta-data
-            android:name="YEK_TRATS"
-            android:value="31" />
-        <!-- FOR DICTIONARY PORTAL -->
-        <meta-data
-            android:name="DP_YEK_REVRES"
-            android:value="v9y5B8E)H@McQfTjWnZr4u7w!z%C*F-JaNdRgUkXp2s5v8y/A?D(G+KbPeShVmYq" />
-        <meta-data
-            android:name="DP_YEK_TRATS"
-            android:value="7" />
-        <meta-data
-            android:name="YEK_DATA_KEY"
-            android:value="df5C7KcB" />
-        <meta-data
-            android:name="YEK_DATA_INDEX"
-            android:value="8" />
 
         <!-- SEND DB -->
         <provider

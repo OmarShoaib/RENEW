@@ -161,6 +161,9 @@ public class Form3 extends FormBaseModel {
         private String f310 = _EMPTY_;
         private String f31001x = _EMPTY_;
         private String f31096x = _EMPTY_;
+        private String f310a = _EMPTY_;
+        private String f310b = _EMPTY_;
+        private String f310c = _EMPTY_;
         private String f311 = _EMPTY_;
         private String f31196x = _EMPTY_;
         private String f31301 = _EMPTY_;
@@ -278,6 +281,9 @@ public class Form3 extends FormBaseModel {
                 setF309(_EMPTY_);
                 setF309dk(_EMPTY_);
                 setF310(_EMPTY_);
+                setF310a(_EMPTY_);
+                setF310b(_EMPTY_);
+                setF310c(_EMPTY_);
                 setF311(_EMPTY_);
                 setF31301(_EMPTY_);
                 setF31302(_EMPTY_);
@@ -355,6 +361,36 @@ public class Form3 extends FormBaseModel {
         public void setF31096x(String f31096x) {
             this.f31096x = f31096x;
             notifyPropertyChanged(BR.f31096x);
+        }
+
+        @Bindable
+        public String getF310a() {
+            return f310a;
+        }
+
+        public void setF310a(String f310a) {
+            this.f310a = f310a;
+            notifyPropertyChanged(BR.f310a);
+        }
+
+        @Bindable
+        public String getF310b() {
+            return f310b;
+        }
+
+        public void setF310b(String f310b) {
+            this.f310b = f310b;
+            notifyPropertyChanged(BR.f310b);
+        }
+
+        @Bindable
+        public String getF310c() {
+            return f310c;
+        }
+
+        public void setF310c(String f310c) {
+            this.f310c = f310c;
+            notifyPropertyChanged(BR.f310c);
         }
 
         @Bindable

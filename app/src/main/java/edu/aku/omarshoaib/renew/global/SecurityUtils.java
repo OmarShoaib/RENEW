@@ -12,6 +12,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.InputStreamReader;
+import java.lang.reflect.Method;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -38,18 +39,22 @@ public class SecurityUtils {
             result.put("frida-detected", isFridaDetected());
             result.put("xposed-detected", isXposedDetected());
             result.put("method-hooked", isMethodHooked());
+
+            result.put("prop-source-mismatch", checkPropSourceMismatch());
+            result.put("mount-namespace-anomaly", checkMountAnomalies());
+            result.put("magisk-alt-package", checkMagiskAltPackages(context));
+            result.put("sbin-symlink-anomaly", checkSbinAnomaly());
+            result.put("cross-process-magisk", checkCrossProcessMagisk());
+            result.put("zygote-injected-lib", checkZygiskInjection());
+            result.put("bootloader-unlocked", checkBootloaderUnlocked());
+            result.put("verified-boot-not-green", checkVerifiedBootState());
         } catch (Throwable t) {
             Log.e(TAG, "runRootChecks exception", t);
             result.put("root-check-exception", true);
         }
-        // log for QA (can be removed or gated by build type)
+
         for (Map.Entry<String, Boolean> e : result.entrySet()) {
             Log.i(TAG, e.getKey() + " = " + e.getValue());
-
-            // Your app should log detection attempts
-            /*Log.i("Security", "Root detection check started");
-            Log.w("Security", "Root binary detected: /system/xbin/su");
-            Log.e("Security", "ROOT DETECTED - blocking application");*/
         }
         return result;
     }
@@ -71,16 +76,16 @@ public class SecurityUtils {
 
     public static boolean checkIfDeviceRootedAndExit(Activity activity) {
         if (isRootedOrTampered(activity)) {
-            String reason = getRootReason(activity);
-            // Reuse your AlertPopup.alert(...) pattern. Replace strings as needed.
+            //String reason = getRootReason(activity);
             AlertPopup.alert(0, activity,
                     activity.getString(R.string.rooted_device_title),
-                    activity.getString(R.string.rooted_device_desc) + "\nReason: " + reason,
+                    activity.getString(R.string.rooted_device_desc) /*+ "\nReason: " + reason*/,
                     AppConstants.TYPE_ERROR,
                     activity.getString(R.string.ok),
                     (popupId, isOkClick, obj) -> {
                         activity.finishAffinity();
                         System.exit(0);
+                        android.os.Process.killProcess(android.os.Process.myPid());
                     });
             return true;
         }
@@ -278,6 +283,150 @@ public class SecurityUtils {
             File system = new File("/system");
             if (!system.exists()) return false;
             return system.canWrite();
+        } catch (Exception ignored) {
+        }
+        return false;
+    }
+
+    private static boolean checkPropSourceMismatch() {
+        try {
+            String viaExec = getProp("ro.secure");
+            String viaReflection = getPropViaReflection("ro.secure");
+            if (viaReflection != null && !viaReflection.isEmpty()
+                    && viaExec != null && !viaExec.isEmpty()
+                    && !viaReflection.equals(viaExec)) {
+                return true;
+            }
+        } catch (Exception ignored) {
+        }
+        return false;
+    }
+
+    private static String getPropViaReflection(String propName) {
+        try {
+            Class<?> systemProperties = Class.forName("android.os.SystemProperties");
+            Method get = systemProperties.getMethod("get", String.class);
+            Object value = get.invoke(null, propName);
+            return value != null ? value.toString() : "";
+        } catch (Exception e) {
+            return "";
+        }
+    }
+
+    private static boolean checkMountAnomalies() {
+        BufferedReader reader = null;
+        try {
+            reader = new BufferedReader(new FileReader("/proc/self/mountinfo"));
+            String line;
+            int suspiciousCount = 0;
+            while ((line = reader.readLine()) != null) {
+                String lower = line.toLowerCase();
+                if (lower.contains("magisk")
+                        || lower.contains("/data/adb/modules")
+                        || (lower.contains("overlay") && lower.contains("/system"))) {
+                    suspiciousCount++;
+                }
+            }
+            if (suspiciousCount > 0) return true;
+        } catch (Exception ignored) {
+        } finally {
+            try {
+                if (reader != null) reader.close();
+            } catch (Exception ignored) {
+            }
+        }
+        return false;
+    }
+
+    private static boolean checkMagiskAltPackages(Context context) {
+        String[] knownPackages = {
+                "com.topjohnwu.magisk",
+                "io.github.vvb2060.magisk",
+                "io.github.huskydg.magisk",
+                "com.topjohnwu.magisk.debug"
+        };
+        for (String pkg : knownPackages) {
+            if (isPackageInstalled(context, pkg)) return true;
+        }
+        return false;
+    }
+
+    private static boolean checkSbinAnomaly() {
+        try {
+            File sbin = new File("/sbin");
+            if (sbin.exists() && java.nio.file.Files.isSymbolicLink(sbin.toPath())) {
+                return true;
+            }
+        } catch (Exception ignored) {
+        }
+        return false;
+    }
+
+    private static boolean checkCrossProcessMagisk() {
+        File procDir = new File("/proc");
+        File[] pidDirs = procDir.listFiles();
+        if (pidDirs == null) return false;
+        int checked = 0;
+        for (File pidDir : pidDirs) {
+            if (checked >= 15) break; // keep this bounded/cheap
+            if (!pidDir.isDirectory() || !pidDir.getName().matches("\\d+")) continue;
+            File status = new File(pidDir, "status");
+            if (!status.exists()) continue;
+            checked++;
+            BufferedReader reader = null;
+            try {
+                reader = new BufferedReader(new FileReader(status));
+                String line = reader.readLine();
+                if (line != null && (line.contains("magiskd") || line.contains("magisk"))) {
+                    return true;
+                }
+            } catch (Exception ignored) {
+            } finally {
+                try {
+                    if (reader != null) reader.close();
+                } catch (Exception ignored) {
+                }
+            }
+        }
+        return false;
+    }
+
+    private static boolean checkZygiskInjection() {
+        BufferedReader reader = null;
+        try {
+            reader = new BufferedReader(new FileReader("/proc/self/maps"));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String lower = line.toLowerCase();
+                if (lower.contains("zygisk") || lower.contains("magisk64") || lower.contains("magisk32")) {
+                    return true;
+                }
+            }
+        } catch (Exception ignored) {
+        } finally {
+            try {
+                if (reader != null) reader.close();
+            } catch (Exception ignored) {
+            }
+        }
+        return false;
+    }
+
+    private static boolean checkBootloaderUnlocked() {
+        try {
+            String flashLocked = getProp("ro.boot.flash.locked");
+            if ("0".equals(flashLocked)) return true;
+        } catch (Exception ignored) {
+        }
+        return false;
+    }
+
+    private static boolean checkVerifiedBootState() {
+        try {
+            String state = getProp("ro.boot.verifiedbootstate");
+            if (state != null && !state.isEmpty() && !state.equalsIgnoreCase("green")) {
+                return true;
+            }
         } catch (Exception ignored) {
         }
         return false;

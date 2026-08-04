@@ -36,6 +36,9 @@ public class Form2a extends FormBaseModel{
     @SerializedName("ending_date")
     private String endingDate = _EMPTY_;
 
+    @SerializedName("_uuid")
+    private String uuid = _EMPTY_;
+
     // This variable is used to mark the form2 that its completed once.
     // To implement the logic of displaying 'Skip to End' button over
     // the sections if user open the form2 in edit mode, update any section/value,
@@ -62,6 +65,7 @@ public class Form2a extends FormBaseModel{
         MainApp.form2a = new Form2a();
         MainApp.form2a.setDistrictCode(MainApp.user.getDistId());
         MainApp.form2a.setParticipantId(MainApp.vPHQ9.getParticipantId());
+        MainApp.form2a.setUuid(MainApp.vPHQ9.getUid());
 
 //        MainApp.form2a.setScrId(MainApp.form1.getScrId());
 //        MainApp.form2a.setVillageName(MainApp.form1.getVillageName());
@@ -112,6 +116,14 @@ public class Form2a extends FormBaseModel{
 
     public void setFormCompleteOnce(boolean formCompleteOnce) {
         isFormCompleteOnce = formCompleteOnce;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public SF2a getSF2a() {

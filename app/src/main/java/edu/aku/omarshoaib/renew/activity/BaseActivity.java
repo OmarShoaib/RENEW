@@ -155,10 +155,6 @@ public class BaseActivity extends AppCompatActivity {
                 (MainApp.formType == 6 && MainApp.form3 != null && !AppConstants.isEmpty(MainApp.form3.getSynced())) ||
                 (MainApp.formType == 7 && MainApp.form4 != null && !AppConstants.isEmpty(MainApp.form4.getSynced())) ||
                 (MainApp.formType == 8 && MainApp.form6 != null && !AppConstants.isEmpty(MainApp.form6.getSynced()))) {
-            // If form1 is synced then show form1 in view mode i.e. disable all fields
-            // isLayoutFilled = This extra check is used to the special condition when the user
-            // submits the section but cancel it on the next section. So we are check if the next
-            // section is filled then continue the form1 other skipToEnd (MainActivity)
 
             View endingButtonsLayout = activity.findViewById(R.id.endButtonsLayout);
             // This check is just for safe side in case

@@ -144,7 +144,7 @@ public class Identification01 extends BaseActivity {
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> parent) { }
+            public void onNothingSelected(AdapterView<?> parent) {}
         });
         if (!sF1.getF102().isEmpty()) {
             for (int i = 0; i < list.size(); i++) {
@@ -179,12 +179,8 @@ public class Identification01 extends BaseActivity {
 
         String scrId = bi.scrId.getText().toString() + Objects.requireNonNull(bi.f103a.getText());
 
-        // Do not allow synced form1 to be edited
-        if (appDatabase.form1Dao().isFormSynced(MainApp.user.getDistId(), scrId))
-            MainApp.isSynced = true;
+        MainApp.isSynced = appDatabase.form1Dao().isFormSynced(MainApp.user.getDistId(), scrId);
 
-        // New form1
-//        String clusterNo = Objects.requireNonNull(bi.a101.getText()).toString();
         MainApp.form1.setScrId(scrId);
         MainApp.form1.setTeamId(sF1.getF101());
         Form1.saveMainData(scrId);

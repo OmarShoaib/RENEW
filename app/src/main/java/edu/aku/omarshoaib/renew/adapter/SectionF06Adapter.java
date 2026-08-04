@@ -53,13 +53,19 @@ public class SectionF06Adapter extends RecyclerView.Adapter<SectionF06Adapter.Vi
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ItemFollowupBinding itemView = ItemFollowupBinding.inflate(LayoutInflater.from(activity), parent, false);
         itemView.itemLayout.setOnClickListener(view -> {
+
             int pos = (int) view.getTag();
             MainApp.vFormF06 = filteredList.get(pos);
+            if (AppConstants.isEmpty(MainApp.vFormF06.getType())) {
+                AppConstants.showSimpleSnackBar(activity, "Please Sync Again ", AppConstants.TYPE_ERROR);
+                return;
+            }
 //            if (MainApp.selectedMWRA.getStatus() != 3) {
             Form6 form6 = AppDatabase.getDBInstance().form6Dao().getDataByParticipantId(MainApp.user.getDistId(),
-                    MainApp.vFormF06.getParticipantId());
+                    MainApp.vFormF06.getParticipantId(), MainApp.vFormF06.getVisitNumber());
             if (form6 != null) MainApp.form6 = form6;
             else Form6.initMeta();
+            MainApp.isSynced = MainApp.form6.getSynced().equals("1");
             AppConstants.gotoActivity(activity, SectionF06.class, true);
 //            } else
 //                AlertPopup.alert(activity, activity.getString(R.string.form_synced),
@@ -83,19 +89,20 @@ public class SectionF06Adapter extends RecyclerView.Adapter<SectionF06Adapter.Vi
                 dob[0], dob[1], dob[2]);
         int ageInMonths = DateUtils.getAgeInMonths(age.get(0), age.get(1));
 //        bi.clusterNoTV.setText(ageInMonths)
+        bi.visitContainer.setVisibility(View.VISIBLE);
+        bi.visitNoTV.setText(AppConstants.getRichText(String.format(Locale.getDefault(),
+                activity.getString(R.string.visitNo_c), AppConstants.parseInt(vForm06.getVisitNumber()))));
+        bi.dueDateTV.setText(AppConstants.getRichText(String.format(Locale.getDefault(),
+                activity.getString(R.string.dueDate_c), vForm06.getVisitDate())));
         bi.clusterNoTV.setText(vForm06.getFatherName());
-        bi.hhIdTV.setText(
-                AppConstants.getRichText(String.format(Locale.getDefault(),
-                        activity.getString(R.string.age_c_months), ageInMonths)
-                )
-        );
+        bi.hhIdTV.setText(AppConstants.getRichText(String.format(Locale.getDefault(),
+                        activity.getString(R.string.age_c_months), ageInMonths)));
         bi.contactNoTV.setText(vForm06.getContactNo());
 
         Form6 form6 = AppDatabase.getDBInstance().form6Dao()
                 .getDataByParticipantId(MainApp.user.getDistId(),
-                        vForm06.getParticipantId());
-        bi.statusIV.setVisibility(
-                form6 == null ? View.GONE : View.VISIBLE);
+                        vForm06.getParticipantId(), vForm06.getVisitNumber());
+        bi.statusIV.setVisibility(form6 == null ? View.GONE : View.VISIBLE);
     }
 
     @Override

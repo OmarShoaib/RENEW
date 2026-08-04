@@ -3,13 +3,23 @@ package edu.aku.omarshoaib.renew.activity.sections.child;
 import static edu.aku.omarshoaib.renew.global.AppConstants._EMPTY_;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 
+import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.validatorcrawler.aliazaz.Validator;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Locale;
+import java.util.Objects;
+
+import edu.aku.omarshoaib.renew.activity.ImageViewerAC;
 import edu.aku.omarshoaib.renew.activity.MainActivity;
 import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.R;
@@ -18,6 +28,7 @@ import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivitySectionF04Binding;
 import edu.aku.omarshoaib.renew.global.AppTextWatcher;
 import edu.aku.omarshoaib.renew.global.DateUtils;
+import edu.aku.omarshoaib.renew.global.ImageUtils;
 import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.model.Form4;
 import edu.aku.omarshoaib.renew.model.HCF;
@@ -29,6 +40,7 @@ public class SectionF04 extends BaseActivity {
 
     ActivitySectionF04Binding bi;
     private AppDatabase appDatabase;
+    private static final int VIEW_IMAGE_REQ_CODE = 1;
     private Form4.SF4 sF4;
 
     @Override
@@ -65,12 +77,20 @@ public class SectionF04 extends BaseActivity {
 
     private boolean verifyCrieteria() {
         boolean lowMuac = !sF4.getF410().isEmpty() && Float.parseFloat(sF4.getF410()) < 12.5f;
-        boolean edema = sF4.getF409().equals("1");
-        return lowMuac || edema;
+        boolean edema = sF4.getF409().equals("1"); //&& !sF4.getF409a().equals("3");
+        return !sF4.getF409a().equals("3") && (lowMuac || edema);
     }
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(activity, bi.GrpName);
+        if(!Validator.emptyCheckingContainer(activity, bi.GrpName)) return false;
+
+        if(!sF4.getF410().isEmpty() && sF4.getMuacImage().isEmpty()) {
+            AppConstants.showSimpleSnackBar(activity, String.format(Locale.ENGLISH, getString(R.string.no_image_found), "MUAC"),
+                    AppConstants.MSG_DURATION, AppConstants.TYPE_ERROR);
+            return false;
+        }
+
+        return true;
     }
 
     public void btnContinue(View view) {
@@ -80,12 +100,73 @@ public class SectionF04 extends BaseActivity {
             MainApp.form4.setIStatus(sF4.getF411().equals("1") ? "" : "1");
         MainApp.form4.setEndingDate(DateUtils.getCurrentDateTime());
         Form4.SF4.saveData(sF4);
-        AppConstants.gotoActivity(activity, sF4.getF411().equals("1") ?
+        AppConstants.gotoActivity(activity, sF4.getF411().equals("1") && !sF4.getF409a().equals("3")?
                 SectionF05.class : MainActivity.class, true);
+    }
+
+    public void btnEnd(View view) {
+        AppConstants.checkDoubleCancelPress(activity, MainActivity.class);
     }
 
     @Override
     public void onBackPressed() {
         AppConstants.checkDoubleBackPress(activity, MainActivity.class);
+    }
+
+
+
+    /**
+     * TAKE PHOTO
+     */
+    public void takePhoto(View view) {
+        ImagePicker.with(activity).maxResultSize(512, 512).saveDir(AppConstants.GALLERY_DIR).start();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == VIEW_IMAGE_REQ_CODE) {
+            if (resultCode == RESULT_OK) return;
+            sF4.setMuacImage("");
+        } else {
+            if (resultCode == RESULT_OK) {
+                String imageName;
+                imageName = ImageUtils.generateImageName(TAG, "Muac");
+                sF4.setMuacImage(imageName);
+
+
+                Uri uri = Objects.requireNonNull(data).getData();
+                File file = new File(Objects.requireNonNull(uri).getPath());
+                ImageUtils.renameTo(activity, file.getName(), imageName);
+            } else if (resultCode == ImagePicker.RESULT_ERROR) {
+                AppConstants.showSimpleSnackBar(activity, ImagePicker.getError(data), AppConstants.MSG_DURATION, AppConstants.TYPE_ERROR);
+            } else {
+                AppConstants.showSimpleSnackBar(activity, getString(R.string.image_not_taken), AppConstants.MSG_DURATION, AppConstants.TYPE_ERROR);
+            }
+        }
+    }
+
+    public void viewPhoto(View view) {
+        String[] imageNames = getStrings(view);
+
+        // Get matching image files
+        ArrayList<File> matchingImages = ImageUtils.getImageFilesByNames(activity, imageNames);
+        if (matchingImages == null || matchingImages.isEmpty()) {
+            AppConstants.showSimpleSnackBar(activity, String.format(Locale.ENGLISH, getString(R.string.no_image_found), "MUAC"),
+                    AppConstants.MSG_DURATION, AppConstants.TYPE_ERROR);
+            return;
+        }
+
+        // Create an intent to start the ImageViewerActivity
+        Intent intent = new Intent(activity, ImageViewerAC.class);
+        intent.putExtra("image_files", matchingImages);
+
+        activity.startActivityForResult(intent, VIEW_IMAGE_REQ_CODE);
+    }
+
+    private String[] getStrings(View view) {
+        String[] imageNames;
+        imageNames = new String[]{sF4.getMuacImage()};
+        return imageNames;
     }
 }

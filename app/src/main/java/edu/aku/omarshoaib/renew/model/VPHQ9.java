@@ -46,6 +46,9 @@ public class VPHQ9 {
     @SerializedName("ref_date")
     private String refrenceDate;
 
+    @SerializedName("_uid")
+    private String uid;
+
     public long getId() {
         return id;
     }
@@ -140,5 +143,13 @@ public class VPHQ9 {
 
     public void setRefrenceDate(String refrenceDate) {
         this.refrenceDate = refrenceDate.trim();
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 }

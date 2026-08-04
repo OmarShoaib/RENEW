@@ -35,6 +35,9 @@ public class Form5 extends FormBaseModel {
     @SerializedName("ending_date")
     private String endingDate = _EMPTY_;
 
+    @SerializedName("_uuid")
+    private String uuid = _EMPTY_;
+
     // This variable is used to mark the form5 that its completed once.
     // To implement the logic of displaying 'Skip to End' button over
     // the sections if user open the form5 in edit mode, update any section/value,
@@ -53,6 +56,7 @@ public class Form5 extends FormBaseModel {
         MainApp.form5 = new Form5();
         MainApp.form5.setDistrictCode(MainApp.user.getDistId());
         MainApp.form5.setScrId(MainApp.form4.getScrId());
+        MainApp.form5.setUuid(MainApp.form4.getUid());
     }
 
     /*FOR IDENTIFICATION INFORMATION - CLUSTER-WISE*/
@@ -100,6 +104,14 @@ public class Form5 extends FormBaseModel {
         this.endingDate = endingDate;
     }
 
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
     public SF5 getSF5() {
         return sF5;
     }
@@ -111,7 +123,6 @@ public class Form5 extends FormBaseModel {
     /**
      * Form 2: Mental Health assessment (PHQ-9) Questionnaire
      */
-
     public static class SF5 extends BaseObservable {
         private String f501 = _EMPTY_;
         private String f502 = _EMPTY_;
@@ -126,9 +137,17 @@ public class Form5 extends FormBaseModel {
         private String f510 = _EMPTY_;
         private String f511 = _EMPTY_;
         private String f512 = _EMPTY_;
+        private String f512a = _EMPTY_;
         private String f513 = _EMPTY_;
+        private String weightImage = _EMPTY_;
+        private String f513a = _EMPTY_;
         private String fo514 = _EMPTY_;
+        private String heightImage = _EMPTY_;
+        private String fo514a1 = _EMPTY_;
+        private String fo514a = _EMPTY_;
         private String fo515 = _EMPTY_;
+        private String f515a = _EMPTY_;
+        private String f515b = _EMPTY_;
         private String f516 = _EMPTY_;
         private String f517a = _EMPTY_;
         private String f517b = _EMPTY_;
@@ -145,6 +164,8 @@ public class Form5 extends FormBaseModel {
         private String f52101x = _EMPTY_;
         private String f52102x = _EMPTY_;
         private String f52196x = _EMPTY_;
+        private String f521a = _EMPTY_;
+        private String f522 = _EMPTY_;
 
         public static class DataConverter extends AppDatabase.BaseConverter<SF5> {
             public DataConverter() {
@@ -297,13 +318,44 @@ public class Form5 extends FormBaseModel {
         }
 
         @Bindable
+        public String getF512a() {
+            return f512a;
+        }
+
+        public void setF512a(String f512a) {
+            this.f512a = f512a;
+            notifyPropertyChanged(BR.f512a);
+        }
+
+        @Bindable
         public String getF513() {
             return f513;
         }
 
         public void setF513(String f513) {
             this.f513 = f513;
+            calculateRUTF();
             notifyPropertyChanged(BR.f513);
+        }
+
+        @Bindable
+        public String getWeightImage() {
+            return weightImage;
+        }
+
+        public void setWeightImage(String weightImage) {
+            this.weightImage = weightImage;
+            notifyPropertyChanged(BR.weightImage);
+        }
+
+        @Bindable
+        public String getF513a() {
+            return f513a;
+        }
+
+        public void setF513a(String f513a) {
+            this.f513a = f513a;
+            notifyPropertyChanged(BR.f513a);
         }
 
         @Bindable
@@ -317,6 +369,36 @@ public class Form5 extends FormBaseModel {
         }
 
         @Bindable
+        public String getHeightImage() {
+            return heightImage;
+        }
+
+        public void setHeightImage(String heightImage) {
+            this.heightImage = heightImage;
+            notifyPropertyChanged(BR.heightImage);
+        }
+
+        @Bindable
+        public String getFo514a1() {
+            return fo514a1;
+        }
+
+        public void setFo514a1(String fo514a1) {
+            this.fo514a1 = fo514a1;
+            notifyPropertyChanged(BR.fo514a1);
+        }
+
+        @Bindable
+        public String getFo514a() {
+            return fo514a;
+        }
+
+        public void setFo514a(String fo514a) {
+            this.fo514a = fo514a;
+            notifyPropertyChanged(BR.fo514a);
+        }
+
+        @Bindable
         public String getFo515() {
             return fo515;
         }
@@ -324,6 +406,27 @@ public class Form5 extends FormBaseModel {
         public void setFo515(String fo515) {
             this.fo515 = fo515;
             notifyPropertyChanged(BR.fo515);
+        }
+
+        @Bindable
+        public String getF515a() {
+            return f515a;
+        }
+
+        public void setF515a(String f515a) {
+            this.f515a = f515a;
+            notifyPropertyChanged(BR.f515a);
+        }
+
+        @Bindable
+        public String getF515b() {
+            return f515b;
+        }
+
+        public void setF515b(String f515b) {
+            this.f515b = f515b;
+            setF516(f515b.equals("2") ? this.f516 : _EMPTY_);
+            notifyPropertyChanged(BR.f515b);
         }
 
         public void clearUnEligible() {
@@ -469,10 +572,18 @@ public class Form5 extends FormBaseModel {
 
         public void setF521(String f521) {
             this.f521 = f521;
-            setF52196x(f521.equals("96") ? this.f52196x: _EMPTY_);
-            setF52101x(f521.equals("1") ? this.f52101x: _EMPTY_);
-            setF52102x(f521.equals("2") ? this.f52102x: _EMPTY_);
+            setF521a(f521.equals("1") || f521.equals("2") ? this.f521a : _EMPTY_);
+            setF52101x(f521.equals("1") ? "30" : _EMPTY_);
+            calculateRUTF();
+            notifyPropertyChanged(BR.f522Eligible);
             notifyPropertyChanged(BR.f521);
+        }
+
+        private void calculateRUTF() {
+            if(this.f513.isEmpty()) return;
+            float weight = Float.parseFloat(this.f513);
+            float rutfValue = weight == 0 ? 150f : weight*((float) 150/500)*15;// 4.5f;
+            setF52102x(f521.equals("2") ? String.valueOf(Math.round(rutfValue)) : _EMPTY_);
         }
 
         @Bindable
@@ -482,6 +593,7 @@ public class Form5 extends FormBaseModel {
 
         public void setF52101x(String f52101x) {
             this.f52101x = f52101x;
+            notifyPropertyChanged(BR.f522Eligible);
             notifyPropertyChanged(BR.f52101x);
         }
 
@@ -492,6 +604,7 @@ public class Form5 extends FormBaseModel {
 
         public void setF52102x(String f52102x) {
             this.f52102x = f52102x;
+            notifyPropertyChanged(BR.f522Eligible);
             notifyPropertyChanged(BR.f52102x);
         }
 
@@ -505,5 +618,34 @@ public class Form5 extends FormBaseModel {
             notifyPropertyChanged(BR.f52196x);
         }
 
+        @Bindable
+        public String getF521a() {
+            return f521a;
+        }
+
+        public void setF521a(String f521a) {
+            this.f521a = f521a;
+            notifyPropertyChanged(BR.f522Eligible);
+            notifyPropertyChanged(BR.f521a);
+        }
+
+        @Bindable
+        public String getF522() {
+            return f522;
+        }
+
+        public void setF522(String f522) {
+            this.f522 = f522;
+            notifyPropertyChanged(BR.f522);
+        }
+
+        @Bindable
+        public boolean isF522Eligible() {
+            int value = AppConstants.parseInt(f521a);
+            boolean b;
+            b = value > 0 && ((f521.equals("1") && value < AppConstants.parseInt(f52101x)) || (f521.equals("2") && value < Float.parseFloat(f52102x)));
+            if (!b) setF522(_EMPTY_);
+            return b;
+        }
     }
 }

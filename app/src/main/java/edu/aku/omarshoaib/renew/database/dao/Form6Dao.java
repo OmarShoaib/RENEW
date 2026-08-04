@@ -29,7 +29,7 @@ public abstract class Form6Dao implements BaseDao<Form6> {
     @Query("UPDATE Form6 SET iStatus = :iStatus, iStatus96x = :iStatus96x, isFormCompleteOnce = :isFormCompleteOnce, endingDate = :endingDate WHERE id = :id")
     public abstract void updateIStatus(long id, String iStatus, String iStatus96x, boolean isFormCompleteOnce, String endingDate);
 
-    @Query("SELECT * FROM Form6 WHERE districtCode = :districtCode AND participantId = :checkId AND synced = '1'")
+    @Query("SELECT EXISTS(SELECT 1 FROM Form6 WHERE districtCode = :districtCode AND participantId = :checkId AND synced = '1')")
     public abstract boolean isFormSynced(String districtCode, String checkId);
 
     // This query is only used for updating sync list
@@ -40,8 +40,8 @@ public abstract class Form6Dao implements BaseDao<Form6> {
     @Query("SELECT * FROM Form6 WHERE uid = :uid")
     public abstract Form6 getDataByUid(String uid);
 
-    @Query("SELECT * FROM Form6 WHERE districtCode = :districtCode AND participantId = :scrId")
-    public abstract Form6 getDataByParticipantId(String districtCode, String scrId);
+    @Query("SELECT * FROM Form6 WHERE districtCode = :districtCode AND participantId = :scrId AND followupNo = :followupNo")
+    public abstract Form6 getDataByParticipantId(String districtCode, String scrId, String followupNo);
 
     @Query("SELECT * FROM Form6 WHERE sysDate LIKE :date || '%'")
     public abstract List<Form6> getAllByDate(String date);
@@ -80,5 +80,4 @@ public abstract class Form6Dao implements BaseDao<Form6> {
             update(obj);
         }
     }
-
 }

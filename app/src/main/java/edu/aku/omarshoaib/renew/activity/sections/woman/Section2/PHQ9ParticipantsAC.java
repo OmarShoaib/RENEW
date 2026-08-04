@@ -51,14 +51,6 @@ public class PHQ9ParticipantsAC extends BaseActivity {
         appDatabase = AppDatabase.getDBInstance();
     }
 
-    private boolean isCompleted(Participant participant) {
-        for (Form2 form2 : MainApp.listForm2)
-            if(form2.getUuId().equals(participant.getUid()))
-                return true;
-
-        return false;
-    }
-
     @Override
     protected void onResume() {
         super.onResume();
@@ -93,6 +85,7 @@ public class PHQ9ParticipantsAC extends BaseActivity {
                     MainApp.participant = MainApp.participantList.get((int) view1.getTag());
                     MainApp.form2 = appDatabase.form2Dao().getDataByUuid(MainApp.participant.getUid(), MainApp.form1.getScrId());
                     if (MainApp.form2 == null) Form2.initMeta();
+                    MainApp.isSynced = MainApp.form2.getSynced().equals("1");
                     AppConstants.gotoActivity(activity, SectionF02.class, true);
                 });
             }
@@ -100,6 +93,14 @@ public class PHQ9ParticipantsAC extends BaseActivity {
         bi.rv.setAdapter(genericAdapter);
         boolean isCountMismatch = MainApp.participantList.size() == MainApp.listForm2.size();
         bi.endButtonsLayout.findViewById(R.id.posBtn).setVisibility(isCountMismatch ? View.VISIBLE : View.INVISIBLE);
+    }
+
+    private boolean isCompleted(Participant participant) {
+        for (Form2 form2 : MainApp.listForm2)
+            if(form2.getUuId().equals(participant.getUid()))
+                return true;
+
+        return false;
     }
 
     private void markIStatus() {

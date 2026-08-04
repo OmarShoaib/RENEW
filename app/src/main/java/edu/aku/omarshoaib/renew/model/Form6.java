@@ -14,6 +14,7 @@ import edu.aku.omarshoaib.renew.BR;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.database.dao.Form6Dao;
 import edu.aku.omarshoaib.renew.global.AppConstants;
+import edu.aku.omarshoaib.renew.global.ImageUtils;
 import edu.aku.omarshoaib.renew.global.MainApp;
 
 @Entity(tableName = Form6.TABLE_NAME)
@@ -26,8 +27,14 @@ public class Form6 extends FormBaseModel {
     // Dynamic approach + Sequence matters
     public static final String SYNCED_RECS_ITEMS = "scrId, districtCode, sysDate";
 
+    @SerializedName("_uuid")
+    private String uuid = _EMPTY_;
+
     @SerializedName("dist_id")
     private String districtCode = _EMPTY_;
+
+    @SerializedName("visit_number")
+    private String followupNo = _EMPTY_;
 
     @SerializedName("participant_id")
     private String participantId = _EMPTY_;
@@ -55,8 +62,7 @@ public class Form6 extends FormBaseModel {
     /*JSON OBJECTS*/
     private SF6 sF6;
 
-    public Form6() {
-    }
+    public Form6() {}
 
     // Init default data
     public static void initMeta() {
@@ -64,13 +70,14 @@ public class Form6 extends FormBaseModel {
         MainApp.form6 = new Form6();
         MainApp.form6.setDistrictCode(MainApp.user.getDistId());
         MainApp.form6.setParticipantId(MainApp.vFormF06.getParticipantId());
+        MainApp.form6.setUuid(MainApp.vFormF06.getUid());
     }
 
     /*FOR IDENTIFICATION INFORMATION - CLUSTER-WISE*/
     // Save data in db
-    public static void saveMainData(String participantId) {
+    public static void saveMainData(String participantId, String visitNumber) {
         Form6Dao dao = AppDatabase.getDBInstance().form6Dao();
-        Form6 form = dao.getDataByParticipantId(MainApp.user.getDistId(), participantId);
+        Form6 form = dao.getDataByParticipantId(MainApp.user.getDistId(), participantId,visitNumber);
         if (form != null) {
             MainApp.form6 = form;
         } else {
@@ -87,6 +94,14 @@ public class Form6 extends FormBaseModel {
         this.districtCode = districtCode;
     }
 
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
+
     public String getParticipantId() {
         return participantId;
     }
@@ -101,6 +116,14 @@ public class Form6 extends FormBaseModel {
 
     public void setFormCompleteOnce(boolean formCompleteOnce) {
         isFormCompleteOnce = formCompleteOnce;
+    }
+
+    public String getFollowupNo() {
+        return followupNo;
+    }
+
+    public void setFollowupNo(String followupNo) {
+        this.followupNo = followupNo;
     }
 
     public String getEndingDate() {
@@ -125,10 +148,21 @@ public class Form6 extends FormBaseModel {
         private String f602 = _EMPTY_;
         private String f603 = _EMPTY_;
         private String f604 = _EMPTY_;
+        private String f604a = _EMPTY_;
+        private String f604a96x = _EMPTY_;
+        private String f604b = _EMPTY_;
         private String f605 = _EMPTY_;
+        private String f605a = _EMPTY_;
+        private String muacImage = _EMPTY_;
         private String f606 = _EMPTY_;
+        private String f606a = _EMPTY_;
+        private String weightImage = _EMPTY_;
         private String f607 = _EMPTY_;
+        private String heightImage = _EMPTY_;
+        private String f607a1 = _EMPTY_;
+        private String f607a = _EMPTY_;
         private String f608 = _EMPTY_;
+        private String f608a = _EMPTY_;
         private String f609 = _EMPTY_;
         private String f610a = _EMPTY_;
         private String f610b = _EMPTY_;
@@ -142,16 +176,27 @@ public class Form6 extends FormBaseModel {
         private String f61296x = _EMPTY_;
         private String f613 = _EMPTY_;
         private String f61396x = _EMPTY_;
-        private String f614 = _EMPTY_;
+        private String f613a = _EMPTY_;
+        private String f613a02x = _EMPTY_;
+        private String f61401 = _EMPTY_;
+        private String f61402 = _EMPTY_;
+        private String f61403 = _EMPTY_;
+        private String f61404 = _EMPTY_;
+        private String f61405 = _EMPTY_;
+        private String f61496 = _EMPTY_;
         private String f61496x = _EMPTY_;
+        private String f61497 = _EMPTY_;
         private String f615 = _EMPTY_;
         private String f616 = _EMPTY_;
         private String f617 = _EMPTY_;
         private String f618 = _EMPTY_;
+        private String f61801x = _EMPTY_;
+        private String f618a = _EMPTY_;
+        private String f618b = _EMPTY_;
+        private String f618b96x = _EMPTY_;
         private String f619 = _EMPTY_;
         private String f61901 = _EMPTY_;
         private String f61905 = _EMPTY_;
-        private String f61906 = _EMPTY_;
 
         public static class DataConverter extends AppDatabase.BaseConverter<SF6> {
             public DataConverter() {
@@ -169,6 +214,10 @@ public class Form6 extends FormBaseModel {
         public static SF6 getData() {
             return MainApp.form6.getSF6();
         }
+
+        /**
+         * Getters & Setters
+         */
 
         @Bindable
         public String getF601() {
@@ -211,6 +260,75 @@ public class Form6 extends FormBaseModel {
         }
 
         @Bindable
+        public String getF604a() {
+            return f604a;
+        }
+
+        public void setF604a(String f604a) {
+            this.f604a = f604a;
+            setF604a96x(f604a.equals("96") ? this.f604a96x : _EMPTY_);
+            setF604b(f604a.equals("2") ? this.f604b : _EMPTY_);
+            if(!f604a.equals("1")) {
+                setF605(_EMPTY_);
+                setF605a(_EMPTY_);
+                ImageUtils.deleteImageFilesByNames(new String[]{getMuacImage()});
+                setMuacImage(_EMPTY_);
+                setF606(_EMPTY_);
+                setF606a(_EMPTY_);
+                ImageUtils.deleteImageFilesByNames(new String[]{getMuacImage()});
+                setWeightImage(_EMPTY_);
+                setF607(_EMPTY_);
+                setF607a1(_EMPTY_);
+                setF607a(_EMPTY_);
+                ImageUtils.deleteImageFilesByNames(new String[]{getMuacImage()});
+                setHeightImage(_EMPTY_);
+                setF608(_EMPTY_);
+                setF609(_EMPTY_);
+                setF610a(_EMPTY_);
+                setF610b(_EMPTY_);
+                setF610c(_EMPTY_);
+                setF610d(_EMPTY_);
+                setF610e(_EMPTY_);
+                setF610f(_EMPTY_);
+                setF610g(_EMPTY_);
+                setF611(_EMPTY_);
+                setF612(_EMPTY_);
+                setF613(_EMPTY_);
+                setF613a(_EMPTY_);
+                setF61497("97");
+                setF61497(_EMPTY_);
+                setF615(_EMPTY_);
+                setF616(_EMPTY_);
+                setF617(_EMPTY_);
+                setF618(_EMPTY_);
+                setF618a(_EMPTY_);
+                setF618b(_EMPTY_);
+                setF619(_EMPTY_);
+            }
+            notifyPropertyChanged(BR.f604a);
+        }
+
+        @Bindable
+        public String getF604a96x() {
+            return f604a96x;
+        }
+
+        public void setF604a96x(String f604a96x) {
+            this.f604a96x = f604a96x;
+            notifyPropertyChanged(BR.f604a96x);
+        }
+
+        @Bindable
+        public String getF604b() {
+            return f604b;
+        }
+
+        public void setF604b(String f604b) {
+            this.f604b = f604b;
+            notifyPropertyChanged(BR.f604b);
+        }
+
+        @Bindable
         public String getF605() {
             return f605;
         }
@@ -218,6 +336,26 @@ public class Form6 extends FormBaseModel {
         public void setF605(String f605) {
             this.f605 = f605;
             notifyPropertyChanged(BR.f605);
+        }
+
+        @Bindable
+        public String getF605a() {
+            return f605a;
+        }
+
+        public void setF605a(String f605a) {
+            this.f605a = f605a;
+            notifyPropertyChanged(BR.f605a);
+        }
+
+        @Bindable
+        public String getMuacImage() {
+            return muacImage;
+        }
+
+        public void setMuacImage(String muacImage) {
+            this.muacImage = muacImage;
+            notifyPropertyChanged(BR.muacImage);
         }
 
         @Bindable
@@ -231,6 +369,26 @@ public class Form6 extends FormBaseModel {
         }
 
         @Bindable
+        public String getF606a() {
+            return f606a;
+        }
+
+        public void setF606a(String f606a) {
+            this.f606a = f606a;
+            notifyPropertyChanged(BR.f606a);
+        }
+
+        @Bindable
+        public String getWeightImage() {
+            return weightImage;
+        }
+
+        public void setWeightImage(String weightImage) {
+            this.weightImage = weightImage;
+            notifyPropertyChanged(BR.weightImage);
+        }
+
+        @Bindable
         public String getF607() {
             return f607;
         }
@@ -241,13 +399,54 @@ public class Form6 extends FormBaseModel {
         }
 
         @Bindable
+        public String getHeightImage() {
+            return heightImage;
+        }
+
+        public void setHeightImage(String heightImage) {
+            this.heightImage = heightImage;
+            notifyPropertyChanged(BR.heightImage);
+        }
+
+        @Bindable
+        public String getF607a1() {
+            return f607a1;
+        }
+
+        public void setF607a1(String f607a1) {
+            this.f607a1 = f607a1;
+            notifyPropertyChanged(BR.f607a1);
+        }
+
+        @Bindable
+        public String getF607a() {
+            return f607a;
+        }
+
+        public void setF607a(String f607a) {
+            this.f607a = f607a;
+            notifyPropertyChanged(BR.f607a);
+        }
+
+        @Bindable
         public String getF608() {
             return f608;
         }
 
         public void setF608(String f608) {
             this.f608 = f608;
+            setF608a(f608.equals("1") ? this.f608a : _EMPTY_);
             notifyPropertyChanged(BR.f608);
+        }
+
+        @Bindable
+        public String getF608a() {
+            return f608a;
+        }
+
+        public void setF608a(String f608a) {
+            this.f608a = f608a;
+            notifyPropertyChanged(BR.f608a);
         }
 
         @Bindable
@@ -383,14 +582,85 @@ public class Form6 extends FormBaseModel {
         }
 
         @Bindable
-        public String getF614() {
-            return f614;
+        public String getF613a() {
+            return f613a;
         }
 
-        public void setF614(String f614) {
-            this.f614 = f614;
-            setF61496x(f614.equals("96") ? this.f61496x: _EMPTY_);
-            notifyPropertyChanged(BR.f614);
+        public void setF613a(String f613a) {
+            this.f613a = f613a;
+            setF613a02x(f613a.equals("2") ? this.f613a02x: _EMPTY_);
+            notifyPropertyChanged(BR.f613a);
+        }
+
+        @Bindable
+        public String getF613a02x() {
+            return f613a02x;
+        }
+
+        public void setF613a02x(String f613a02x) {
+            this.f613a02x = f613a02x;
+            notifyPropertyChanged(BR.f613a02x);
+        }
+
+        @Bindable
+        public String getF61401() {
+            return f61401;
+        }
+
+        public void setF61401(String f61401) {
+            this.f61401 = f61401;
+            notifyPropertyChanged(BR.f61401);
+        }
+
+        @Bindable
+        public String getF61402() {
+            return f61402;
+        }
+
+        public void setF61402(String f61402) {
+            this.f61402 = f61402;
+            notifyPropertyChanged(BR.f61402);
+        }
+
+        @Bindable
+        public String getF61403() {
+            return f61403;
+        }
+
+        public void setF61403(String f61403) {
+            this.f61403 = f61403;
+            notifyPropertyChanged(BR.f61403);
+        }
+
+        @Bindable
+        public String getF61404() {
+            return f61404;
+        }
+
+        public void setF61404(String f61404) {
+            this.f61404 = f61404;
+            notifyPropertyChanged(BR.f61404);
+        }
+
+        @Bindable
+        public String getF61405() {
+            return f61405;
+        }
+
+        public void setF61405(String f61405) {
+            this.f61405 = f61405;
+            notifyPropertyChanged(BR.f61405);
+        }
+
+        @Bindable
+        public String getF61496() {
+            return f61496;
+        }
+
+        public void setF61496(String f61496) {
+            this.f61496 = f61496;
+            setF61496x(f61496.equals("96") ? this.f61496x: _EMPTY_);
+            notifyPropertyChanged(BR.f61496);
         }
 
         @Bindable
@@ -401,6 +671,25 @@ public class Form6 extends FormBaseModel {
         public void setF61496x(String f61496x) {
             this.f61496x = f61496x;
             notifyPropertyChanged(BR.f61496x);
+        }
+
+        @Bindable
+        public String getF61497() {
+            return f61497;
+        }
+
+        public void setF61497(String f61497) {
+            this.f61497 = f61497;
+            if(f61497.equals("97")) {
+                setF61401(_EMPTY_);
+                setF61402(_EMPTY_);
+                setF61403(_EMPTY_);
+                setF61404(_EMPTY_);
+                setF61405(_EMPTY_);
+                setF61496(_EMPTY_);
+                setF615(_EMPTY_);
+            }
+            notifyPropertyChanged(BR.f61497);
         }
 
         @Bindable
@@ -420,6 +709,10 @@ public class Form6 extends FormBaseModel {
 
         public void setF616(String f616) {
             this.f616 = f616;
+            setF617(f616.equals("1") ? this.f617 : _EMPTY_);
+            setF618(f616.equals("1") ? this.f618 : _EMPTY_);
+//            setF618a(f616.equals("1") ? this.f618a : _EMPTY_);
+//            setF618b(f616.equals("1") ? this.f618b : _EMPTY_);
             notifyPropertyChanged(BR.f616);
         }
 
@@ -440,7 +733,50 @@ public class Form6 extends FormBaseModel {
 
         public void setF618(String f618) {
             this.f618 = f618;
+            setF61801x(f618.equals("1") ? this.f61801x : _EMPTY_);
             notifyPropertyChanged(BR.f618);
+        }
+
+        @Bindable
+        public String getF61801x() {
+            return f61801x;
+        }
+
+        public void setF61801x(String f61801x) {
+            this.f61801x = f61801x;
+            notifyPropertyChanged(BR.f61801x);
+        }
+
+        @Bindable
+        public String getF618a() {
+            return f618a;
+        }
+
+        public void setF618a(String f618a) {
+            this.f618a = f618a;
+            setF618b(f618a.equals("2") ? this.f618b : _EMPTY_);
+            notifyPropertyChanged(BR.f618a);
+        }
+
+        @Bindable
+        public String getF618b() {
+            return f618b;
+        }
+
+        public void setF618b(String f618b) {
+            this.f618b = f618b;
+            setF618b96x(f618b.equals("96") ? this.f618b96x : _EMPTY_);
+            notifyPropertyChanged(BR.f618b);
+        }
+
+        @Bindable
+        public String getF618b96x() {
+            return f618b96x;
+        }
+
+        public void setF618b96x(String f618b96x) {
+            this.f618b96x = f618b96x;
+            notifyPropertyChanged(BR.f618b96x);
         }
 
         @Bindable
@@ -474,16 +810,5 @@ public class Form6 extends FormBaseModel {
             this.f61905 = f61905;
             notifyPropertyChanged(BR.f61905);
         }
-
-        @Bindable
-        public String getF61906() {
-            return f61906;
-        }
-
-        public void setF61906(String f61906) {
-            this.f61906 = f61906;
-            notifyPropertyChanged(BR.f61906);
-        }
-
     }
 }
