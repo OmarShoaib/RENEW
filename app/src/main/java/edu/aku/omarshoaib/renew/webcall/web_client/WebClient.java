@@ -20,15 +20,14 @@ public class WebClient {
         // toggling from AppConstants. Also, it will initialized only once because we
         // use Singleton pattern.
         String HOST_NAME;
-        if (AppConstants.IS_PRODUCTION_SERVER) {
-            // Production Base Url
-            HOST_NAME = "vcoe1.aku.edu";
-            BASE_URL = "https://" + HOST_NAME + "/";
-        } else {
-            // Testing Base Url
-            HOST_NAME = "cls-pae-fp79887";
-            BASE_URL = "http://" + HOST_NAME + "/";
-        }
+//        if (AppConstants.IS_PRODUCTION_SERVER) {
+//            // Production Base Url
+//        } else {
+//            // Testing Base Url
+//            HOST_NAME = "cls-pae-fp79887";
+//        }
+        HOST_NAME = AppConstants.IS_PRODUCTION_SERVER ? "vcoe1.aku.edu" : "cls-pae-fp79887";
+        BASE_URL = "https://" + HOST_NAME + "/";
         // Dictionary portal url for downloading strings and ranges
         DICTIONARY_PORTAL_URL = BASE_URL + "dictionary_portal/api/";
 
@@ -71,8 +70,14 @@ public class WebClient {
     }
 
     public static synchronized WebClient getInstance(Activity activity) {
-        instance = new WebClient(activity);
+        if(instance == null) {
+            instance = new WebClient(activity);
+        }
         return instance;
+    }
+
+    public static synchronized void resetInstance() {
+        instance = null;
     }
 
     public WebAPI getWebAPI() {

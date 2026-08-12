@@ -164,7 +164,6 @@ public class SectionF06 extends BaseActivity {
         group.post(() -> {
             if (group == bi.f604a) {
                 String val = sF6.getF604a();
-
                 if ("1".equals(val)) {
                     bi.fldGrpCVf619.setVisibility(View.VISIBLE);
                 } else if (!"2".equals(val) && isDefaulted()) {

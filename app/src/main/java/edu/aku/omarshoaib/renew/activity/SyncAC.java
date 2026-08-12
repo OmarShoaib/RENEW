@@ -32,6 +32,7 @@ import edu.aku.omarshoaib.renew.synced_recs.SyncedRecsListAC;
 import edu.aku.omarshoaib.renew.webcall.DownloadData;
 import edu.aku.omarshoaib.renew.webcall.UploadData;
 import edu.aku.omarshoaib.renew.webcall.UploadPhotos;
+import edu.aku.omarshoaib.renew.webcall.web_client.WebClient;
 
 public class SyncAC extends AppCompatActivity {
 
@@ -109,11 +110,15 @@ public class SyncAC extends AppCompatActivity {
         AppConstants.IS_PRODUCTION_SERVER = SharedPrefs.read("IS_PRODUCTION_SERVER", true);
         bi.switchLayout.setVisibility(View.VISIBLE);
         bi.productionServer.setChecked(AppConstants.IS_PRODUCTION_SERVER);
-        bi.productionServer.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            if (!AppConstants.IS_ADMIN) return;
-            AppConstants.IS_PRODUCTION_SERVER = isChecked;
-            SharedPrefs.write("IS_PRODUCTION_SERVER", isChecked);
-        });
+        bi.productionServer.setOnCheckedChangeListener(
+                (buttonView, isChecked) -> buttonView.post(() -> {
+                            if (!AppConstants.IS_ADMIN) return;
+                            AppConstants.IS_PRODUCTION_SERVER = isChecked;
+                            WebClient.resetInstance();
+                            SharedPrefs.write("IS_PRODUCTION_SERVER", isChecked);
+                        }
+                )
+        );
     }
 
     // Download Data
