@@ -115,6 +115,7 @@
                             android:hint="@string/date_format"
                             android:text="@={form.f502}"
                             android:textColor="@color/red_color"
+                            app:forceEnglish="true"
                             app:dateFormat="@string/date_format"
                             app:maxDate="CR_DATE"
                             app:minDate="2026-01-20" />
@@ -285,6 +286,7 @@
                                 android:gravity="center"
                                 android:hint="@string/date_format"
                                 android:text="@={form.f506}"
+                                app:forceEnglish="true"
                                 app:dateFormat="@string/date_format"
                                 app:maxDate="CR_DATE"
                                 app:minDate="CR_DATE" />

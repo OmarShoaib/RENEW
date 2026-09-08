@@ -137,7 +137,7 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.2.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
-//    implementation fileTree(dir: 'libs', include: ['*.aar'])
+    implementation fileTree(dir: 'libs', include: ['datetimepickeredittext-release.aar'])
 
     constraints {
         implementation("org.jetbrains.kotlin:kotlin-stdlib:1.8.0") {
@@ -213,7 +213,7 @@ dependencies {
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.2'
 
     // For Date Time Picker
-    implementation 'com.github.BlackBoxVision:datetimepicker-edittext:v0.5.0'
+//    implementation 'com.github.BlackBoxVision:datetimepicker-edittext:v0.5.0'
 
     // Room DB Explorer
     implementation 'com.wajahatkarim:roomexplorer:1.0.1'

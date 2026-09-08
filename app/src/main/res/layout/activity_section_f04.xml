@@ -108,6 +108,7 @@
                             android:hint="@string/date_format"
                             android:text="@={form.f402}"
                             android:textColor="@color/red_color"
+                            app:forceEnglish="true"
                             app:dateFormat="@string/date_format"
                             app:maxDate="CR_DATE"
                             app:minDate="2025-12-10" />

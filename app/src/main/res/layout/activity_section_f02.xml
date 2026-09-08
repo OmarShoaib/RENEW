@@ -349,6 +349,7 @@
                             android:gravity="center"
                             android:hint="@string/date_format"
                             android:text="@={form.f207}"
+                            app:forceEnglish="true"
                             app:dateFormat="@string/date_format"
                             app:maxDate="CR_DATE"
                             app:minDate="2025-10-10" />

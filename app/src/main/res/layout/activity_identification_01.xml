@@ -131,6 +131,7 @@
                             android:hint="@string/date_format"
                             android:text="@={form.f103}"
                             app:dateFormat="@string/date_format"
+                            app:forceEnglish="true"
                             app:maxDate="CR_DATE"
                             app:minDate="2026-01-20" />
                     </LinearLayout>
