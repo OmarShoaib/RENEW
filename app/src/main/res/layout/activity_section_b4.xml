@@ -1,0 +1,773 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.sections.Section">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="form"
+            type="edu.aku.omarshoaib.renew.model.FormKAP.SB4" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/topLayout"
+        style="@style/Theme.AppStructure.Background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/view_appbar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/main_padding">
+
+            <LinearLayout
+                android:id="@+id/GrpName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- b4t1 Title -->
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/b4t1" />
+
+                <!-- b401 CheckBox -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVb401"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_b401" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/b401" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/b401check"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:tag="0">
+
+                            <CheckBox
+                                android:id="@+id/b40101"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40101.equals(`1`)}"
+                                android:enabled="@{!form.b40198.equals(`98`)}"
+                                android:onClick="@{()->form.setB40101(form.b40101.equals(`1`)?``:`1`)}"
+                                android:text="@string/b40101" />
+
+                            <CheckBox
+                                android:id="@+id/b40102"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40102.equals(`2`)}"
+                                android:enabled="@{!form.b40198.equals(`98`)}"
+                                android:onClick="@{()->form.setB40102(form.b40102.equals(`2`)?``:`2`)}"
+                                android:text="@string/b40102" />
+
+                            <CheckBox
+                                android:id="@+id/b40103"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40103.equals(`3`)}"
+                                android:enabled="@{!form.b40198.equals(`98`)}"
+                                android:onClick="@{()->form.setB40103(form.b40103.equals(`3`)?``:`3`)}"
+                                android:text="@string/b40103" />
+
+                            <CheckBox
+                                android:id="@+id/b40104"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40104.equals(`4`)}"
+                                android:enabled="@{!form.b40198.equals(`98`)}"
+                                android:onClick="@{()->form.setB40104(form.b40104.equals(`4`)?``:`4`)}"
+                                android:text="@string/b40104" />
+
+                            <CheckBox
+                                android:id="@+id/b40105"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40105.equals(`5`)}"
+                                android:enabled="@{!form.b40198.equals(`98`)}"
+                                android:onClick="@{()->form.setB40105(form.b40105.equals(`5`)?``:`5`)}"
+                                android:text="@string/b40105" />
+
+                            <CheckBox
+                                android:id="@+id/b40106"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40106.equals(`6`)}"
+                                android:enabled="@{!form.b40198.equals(`98`)}"
+                                android:onClick="@{()->form.setB40106(form.b40106.equals(`6`)?``:`6`)}"
+                                android:text="@string/b40106" />
+
+                            <CheckBox
+                                android:id="@+id/b40107"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40107.equals(`7`)}"
+                                android:enabled="@{!form.b40198.equals(`98`)}"
+                                android:onClick="@{()->form.setB40107(form.b40107.equals(`7`)?``:`7`)}"
+                                android:text="@string/b40107" />
+
+                            <CheckBox
+                                android:id="@+id/b40108"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40108.equals(`8`)}"
+                                android:enabled="@{!form.b40198.equals(`98`)}"
+                                android:onClick="@{()->form.setB40108(form.b40108.equals(`8`)?``:`8`)}"
+                                android:text="@string/b40108" />
+
+                            <CheckBox
+                                android:id="@+id/b40198"
+                                style="@style/dont_know"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40198.equals(`98`)}"
+                                android:onClick="@{()->form.setB40198(form.b40198.equals(`98`)?``:`98`)}"
+
+                                android:text="@string/b40198" />
+
+                            <CheckBox
+                                android:id="@+id/b40196"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40196.equals(`96`)}"
+                                android:enabled="@{!form.b40198.equals(`98`)}"
+                                android:onClick="@{()->form.setB40196(form.b40196.equals(`96`)?``:`96`)}"
+                                android:text="@string/b40196" />
+
+                            <EditText
+                                android:id="@+id/b40196x"
+                                style="@style/Theme.AppStructure.EditTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:digits="@string/digits_all"
+                                android:hint="@string/b40196"
+                                android:inputType="text"
+                                android:maxLength="250"
+                                android:tag="b40196"
+                                android:text="@={form.b40196x}"
+                                android:visibility="@{form.b40196.equals(`96`) ? View.VISIBLE : View.GONE}"
+                                tools:hint="@string/b40196"
+                                tools:ignore="Autofill" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- b402 CheckBox -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVb402"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_b402" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/b402" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/b402check"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:tag="0">
+
+                            <CheckBox
+                                android:id="@+id/b40201"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40201.equals(`1`)}"
+                                android:enabled="@{!form.b40298.equals(`98`)}"
+                                android:onClick="@{()->form.setB40201(form.b40201.equals(`1`)?``:`1`)}"
+                                android:text="@string/b40201" />
+
+                            <CheckBox
+                                android:id="@+id/b40202"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40202.equals(`2`)}"
+                                android:enabled="@{!form.b40298.equals(`98`)}"
+                                android:onClick="@{()->form.setB40202(form.b40202.equals(`2`)?``:`2`)}"
+                                android:text="@string/b40202" />
+
+                            <CheckBox
+                                android:id="@+id/b40203"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40203.equals(`3`)}"
+                                android:enabled="@{!form.b40298.equals(`98`)}"
+                                android:onClick="@{()->form.setB40203(form.b40203.equals(`3`)?``:`3`)}"
+                                android:text="@string/b40203" />
+
+                            <CheckBox
+                                android:id="@+id/b40204"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40204.equals(`4`)}"
+                                android:enabled="@{!form.b40298.equals(`98`)}"
+                                android:onClick="@{()->form.setB40204(form.b40204.equals(`4`)?``:`4`)}"
+                                android:text="@string/b40204" />
+
+                            <CheckBox
+                                android:id="@+id/b40205"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40205.equals(`5`)}"
+                                android:enabled="@{!form.b40298.equals(`98`)}"
+                                android:onClick="@{()->form.setB40205(form.b40205.equals(`5`)?``:`5`)}"
+                                android:text="@string/b40205" />
+
+                            <CheckBox
+                                android:id="@+id/b40206"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40206.equals(`6`)}"
+                                android:enabled="@{!form.b40298.equals(`98`)}"
+                                android:onClick="@{()->form.setB40206(form.b40206.equals(`6`)?``:`6`)}"
+                                android:text="@string/b40206" />
+
+                            <CheckBox
+                                android:id="@+id/b40207"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40207.equals(`7`)}"
+                                android:enabled="@{!form.b40298.equals(`98`)}"
+                                android:onClick="@{()->form.setB40207(form.b40207.equals(`7`)?``:`7`)}"
+                                android:text="@string/b40207" />
+
+                            <CheckBox
+                                android:id="@+id/b40208"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40208.equals(`8`)}"
+                                android:enabled="@{!form.b40298.equals(`98`)}"
+                                android:onClick="@{()->form.setB40208(form.b40208.equals(`8`)?``:`8`)}"
+                                android:text="@string/b40208" />
+
+                            <CheckBox
+                                android:id="@+id/b40209"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40209.equals(`9`)}"
+                                android:enabled="@{!form.b40298.equals(`98`)}"
+                                android:onClick="@{()->form.setB40209(form.b40209.equals(`9`)?``:`9`)}"
+                                android:text="@string/b40209" />
+
+                            <CheckBox
+                                android:id="@+id/b40298"
+                                style="@style/dont_know"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40298.equals(`98`)}"
+                                android:onClick="@{()->form.setB40298(form.b40298.equals(`98`)?``:`98`)}"
+
+                                android:text="@string/b40298" />
+
+                            <CheckBox
+                                android:id="@+id/b40296"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40296.equals(`96`)}"
+                                android:enabled="@{!form.b40298.equals(`98`)}"
+                                android:onClick="@{()->form.setB40296(form.b40296.equals(`96`)?``:`96`)}"
+                                android:text="@string/b40296" />
+
+                            <EditText
+                                android:id="@+id/b40296x"
+                                style="@style/Theme.AppStructure.EditTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:digits="@string/digits_all"
+                                android:hint="@string/b40296"
+                                android:inputType="text"
+                                android:maxLength="250"
+                                android:tag="b40296"
+                                android:text="@={form.b40296x}"
+                                android:visibility="@{form.b40296.equals(`96`) ? View.VISIBLE : View.GONE}"
+                                tools:hint="@string/b40296"
+                                tools:ignore="Autofill" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- b403 CheckBox -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVb403"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_b403" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/b403" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/b403check"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:tag="0">
+
+                            <CheckBox
+                                android:id="@+id/b40301"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40301.equals(`1`)}"
+                                android:enabled="@{!form.b40398.equals(`98`)}"
+                                android:onClick="@{()->form.setB40301(form.b40301.equals(`1`)?``:`1`)}"
+                                android:text="@string/b40301" />
+
+                            <CheckBox
+                                android:id="@+id/b40302"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40302.equals(`2`)}"
+                                android:enabled="@{!form.b40398.equals(`98`)}"
+                                android:onClick="@{()->form.setB40302(form.b40302.equals(`2`)?``:`2`)}"
+                                android:text="@string/b40302" />
+
+                            <CheckBox
+                                android:id="@+id/b40303"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40303.equals(`3`)}"
+                                android:enabled="@{!form.b40398.equals(`98`)}"
+                                android:onClick="@{()->form.setB40303(form.b40303.equals(`3`)?``:`3`)}"
+                                android:text="@string/b40303" />
+
+                            <CheckBox
+                                android:id="@+id/b40304"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40304.equals(`4`)}"
+                                android:enabled="@{!form.b40398.equals(`98`)}"
+                                android:onClick="@{()->form.setB40304(form.b40304.equals(`4`)?``:`4`)}"
+                                android:text="@string/b40304" />
+
+                            <CheckBox
+                                android:id="@+id/b40305"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40305.equals(`5`)}"
+                                android:enabled="@{!form.b40398.equals(`98`)}"
+                                android:onClick="@{()->form.setB40305(form.b40305.equals(`5`)?``:`5`)}"
+                                android:text="@string/b40305" />
+
+                            <CheckBox
+                                android:id="@+id/b40306"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40306.equals(`6`)}"
+                                android:enabled="@{!form.b40398.equals(`98`)}"
+                                android:onClick="@{()->form.setB40306(form.b40306.equals(`6`)?``:`6`)}"
+                                android:text="@string/b40306" />
+
+                            <CheckBox
+                                android:id="@+id/b40307"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40307.equals(`7`)}"
+                                android:enabled="@{!form.b40398.equals(`98`)}"
+                                android:onClick="@{()->form.setB40307(form.b40307.equals(`7`)?``:`7`)}"
+                                android:text="@string/b40307" />
+
+                            <CheckBox
+                                android:id="@+id/b40398"
+                                style="@style/dont_know"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40398.equals(`98`)}"
+                                android:onClick="@{()->form.setB40398(form.b40398.equals(`98`)?``:`98`)}"
+
+                                android:text="@string/b40398" />
+
+                            <CheckBox
+                                android:id="@+id/b40396"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40396.equals(`96`)}"
+                                android:enabled="@{!form.b40398.equals(`98`)}"
+                                android:onClick="@{()->form.setB40396(form.b40396.equals(`96`)?``:`96`)}"
+                                android:text="@string/b40396" />
+
+                            <EditText
+                                android:id="@+id/b40396x"
+                                style="@style/Theme.AppStructure.EditTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:digits="@string/digits_all"
+                                android:hint="@string/b40396"
+                                android:inputType="text"
+                                android:maxLength="250"
+                                android:tag="b40396"
+                                android:text="@={form.b40396x}"
+                                android:visibility="@{form.b40396.equals(`96`) ? View.VISIBLE : View.GONE}"
+                                tools:hint="@string/b40396"
+                                tools:ignore="Autofill" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- b404 CheckBox -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVb404"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_b404" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/b404" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/b404check"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:tag="0">
+
+                            <CheckBox
+                                android:id="@+id/b40401"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40401.equals(`1`)}"
+                                android:enabled="@{!form.b40498.equals(`98`)}"
+                                android:onClick="@{()->form.setB40401(form.b40401.equals(`1`)?``:`1`)}"
+                                android:text="@string/b40401" />
+
+                            <CheckBox
+                                android:id="@+id/b40402"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40402.equals(`2`)}"
+                                android:enabled="@{!form.b40498.equals(`98`)}"
+                                android:onClick="@{()->form.setB40402(form.b40402.equals(`2`)?``:`2`)}"
+                                android:text="@string/b40402" />
+
+                            <CheckBox
+                                android:id="@+id/b40403"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40403.equals(`3`)}"
+                                android:enabled="@{!form.b40498.equals(`98`)}"
+                                android:onClick="@{()->form.setB40403(form.b40403.equals(`3`)?``:`3`)}"
+                                android:text="@string/b40403" />
+
+                            <CheckBox
+                                android:id="@+id/b40404"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40404.equals(`4`)}"
+                                android:enabled="@{!form.b40498.equals(`98`)}"
+                                android:onClick="@{()->form.setB40404(form.b40404.equals(`4`)?``:`4`)}"
+                                android:text="@string/b40404" />
+
+                            <CheckBox
+                                android:id="@+id/b40405"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40405.equals(`5`)}"
+                                android:enabled="@{!form.b40498.equals(`98`)}"
+                                android:onClick="@{()->form.setB40405(form.b40405.equals(`5`)?``:`5`)}"
+                                android:text="@string/b40405" />
+
+                            <CheckBox
+                                android:id="@+id/b40498"
+                                style="@style/dont_know"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40498.equals(`98`)}"
+                                android:onClick="@{()->form.setB40498(form.b40498.equals(`98`)?``:`98`)}"
+
+                                android:text="@string/b40498" />
+
+                            <CheckBox
+                                android:id="@+id/b40496"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40496.equals(`96`)}"
+                                android:enabled="@{!form.b40498.equals(`98`)}"
+                                android:onClick="@{()->form.setB40496(form.b40496.equals(`96`)?``:`96`)}"
+                                android:text="@string/b40496" />
+
+                            <EditText
+                                android:id="@+id/b40496x"
+                                style="@style/Theme.AppStructure.EditTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:digits="@string/digits_all"
+                                android:hint="@string/b40496"
+                                android:inputType="text"
+                                android:maxLength="250"
+                                android:tag="b40496"
+                                android:text="@={form.b40496x}"
+                                android:visibility="@{form.b40496.equals(`96`) ? View.VISIBLE : View.GONE}"
+                                tools:hint="@string/b40496"
+                                tools:ignore="Autofill" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- b405 CheckBox -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVb405"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_b405" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/b405" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/b405check"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:tag="0">
+
+                            <CheckBox
+                                android:id="@+id/b40501"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40501.equals(`1`)}"
+                                android:enabled="@{!form.b40598.equals(`98`)}"
+                                android:onClick="@{()->form.setB40501(form.b40501.equals(`1`)?``:`1`)}"
+                                android:text="@string/b40501" />
+
+                            <CheckBox
+                                android:id="@+id/b40502"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40502.equals(`2`)}"
+                                android:enabled="@{!form.b40598.equals(`98`)}"
+                                android:onClick="@{()->form.setB40502(form.b40502.equals(`2`)?``:`2`)}"
+                                android:text="@string/b40502" />
+
+                            <CheckBox
+                                android:id="@+id/b40503"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40503.equals(`3`)}"
+                                android:enabled="@{!form.b40598.equals(`98`)}"
+                                android:onClick="@{()->form.setB40503(form.b40503.equals(`3`)?``:`3`)}"
+                                android:text="@string/b40503" />
+
+                            <CheckBox
+                                android:id="@+id/b40504"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40504.equals(`4`)}"
+                                android:enabled="@{!form.b40598.equals(`98`)}"
+                                android:onClick="@{()->form.setB40504(form.b40504.equals(`4`)?``:`4`)}"
+                                android:text="@string/b40504" />
+
+                            <CheckBox
+                                android:id="@+id/b40505"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40505.equals(`5`)}"
+                                android:enabled="@{!form.b40598.equals(`98`)}"
+                                android:onClick="@{()->form.setB40505(form.b40505.equals(`5`)?``:`5`)}"
+                                android:text="@string/b40505" />
+
+                            <CheckBox
+                                android:id="@+id/b40506"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40506.equals(`6`)}"
+                                android:enabled="@{!form.b40598.equals(`98`)}"
+                                android:onClick="@{()->form.setB40506(form.b40506.equals(`6`)?``:`6`)}"
+                                android:text="@string/b40506" />
+
+                            <CheckBox
+                                android:id="@+id/b40507"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40507.equals(`7`)}"
+                                android:enabled="@{!form.b40598.equals(`98`)}"
+                                android:onClick="@{()->form.setB40507(form.b40507.equals(`7`)?``:`7`)}"
+                                android:text="@string/b40507" />
+
+                            <CheckBox
+                                android:id="@+id/b40508"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40508.equals(`8`)}"
+                                android:enabled="@{!form.b40598.equals(`98`)}"
+                                android:onClick="@{()->form.setB40508(form.b40508.equals(`8`)?``:`8`)}"
+                                android:text="@string/b40508" />
+
+                            <CheckBox
+                                android:id="@+id/b40509"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40509.equals(`9`)}"
+                                android:enabled="@{!form.b40598.equals(`98`)}"
+                                android:onClick="@{()->form.setB40509(form.b40509.equals(`9`)?``:`9`)}"
+                                android:text="@string/b40509" />
+
+                            <CheckBox
+                                android:id="@+id/b40510"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40510.equals(`10`)}"
+                                android:enabled="@{!form.b40598.equals(`98`)}"
+                                android:onClick="@{()->form.setB40510(form.b40510.equals(`10`)?``:`10`)}"
+                                android:text="@string/b40510" />
+
+                            <CheckBox
+                                android:id="@+id/b40511"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40511.equals(`11`)}"
+                                android:enabled="@{!form.b40598.equals(`98`)}"
+                                android:onClick="@{()->form.setB40511(form.b40511.equals(`11`)?``:`11`)}"
+                                android:text="@string/b40511" />
+
+                            <CheckBox
+                                android:id="@+id/b40598"
+                                style="@style/dont_know"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40598.equals(`98`)}"
+                                android:onClick="@{()->form.setB40598(form.b40598.equals(`98`)?``:`98`)}"
+
+                                android:text="@string/b40598" />
+
+                            <CheckBox
+                                android:id="@+id/b40596"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:checked="@{form.b40596.equals(`96`)}"
+                                android:enabled="@{!form.b40598.equals(`98`)}"
+                                android:onClick="@{()->form.setB40596(form.b40596.equals(`96`)?``:`96`)}"
+                                android:text="@string/b40596" />
+
+                            <EditText
+                                android:id="@+id/b40596x"
+                                style="@style/Theme.AppStructure.EditTextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:digits="@string/digits_all"
+                                android:hint="@string/b40596"
+                                android:inputType="text"
+                                android:maxLength="250"
+                                android:tag="b40596"
+                                android:text="@={form.b40596x}"
+                                android:visibility="@{form.b40596.equals(`96`) ? View.VISIBLE : View.GONE}"
+                                tools:hint="@string/b40596"
+                                tools:ignore="Autofill" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!--EndButtons Layout-->
+                <edu.aku.omarshoaib.renew.global.views.AppEndButtons
+                    android:id="@+id/endButtonsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <!--EndButtons Layout-->
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

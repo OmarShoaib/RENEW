@@ -1,0 +1,1301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.sections.Section">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="form"
+            type="edu.aku.omarshoaib.renew.model.FormKAP.SE1" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/topLayout"
+        style="@style/Theme.AppStructure.Background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/view_appbar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/main_padding">
+
+            <LinearLayout
+                android:id="@+id/GrpName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- e1t1 Title -->
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/e1t1" />
+
+                <!-- e101 Radio -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVe101"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_e101" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/e101" />
+                        </LinearLayout>
+
+                        <edu.aku.omarshoaib.renew.global.views.AppRadioGroup
+                            android:id="@+id/e101"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:columnCount="2">
+
+                            <RadioButton
+                                android:id="@+id/e10101"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e101.equals(`1`)}"
+                                android:onClick="@{()->form.setE101(`1`)}"
+                                android:text="@string/e10101" />
+
+                            <RadioButton
+                                android:id="@+id/e10102"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e101.equals(`2`)}"
+                                android:onClick="@{()->form.setE101(`2`)}"
+                                android:text="@string/e10102" />
+
+                            <RadioButton
+                                android:id="@+id/e10103"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e101.equals(`3`)}"
+                                android:onClick="@{()->form.setE101(`3`)}"
+                                android:text="@string/e10103" />
+
+                            <RadioButton
+                                android:id="@+id/e10104"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e101.equals(`4`)}"
+                                android:onClick="@{()->form.setE101(`4`)}"
+                                android:text="@string/e10104" />
+
+                            <RadioButton
+                                android:id="@+id/e10105"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e101.equals(`5`)}"
+                                android:onClick="@{()->form.setE101(`5`)}"
+                                android:text="@string/e10105" />
+                        </edu.aku.omarshoaib.renew.global.views.AppRadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- e102 Radio -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVe102"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_e102" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/e102" />
+                        </LinearLayout>
+
+                        <edu.aku.omarshoaib.renew.global.views.AppRadioGroup
+                            android:id="@+id/e102"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:columnCount="2">
+
+                            <RadioButton
+                                android:id="@+id/e10201"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e102.equals(`1`)}"
+                                android:onClick="@{()->form.setE102(`1`)}"
+                                android:text="@string/e10201" />
+
+                            <RadioButton
+                                android:id="@+id/e10202"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e102.equals(`2`)}"
+                                android:onClick="@{()->form.setE102(`2`)}"
+                                android:text="@string/e10202" />
+
+                            <RadioButton
+                                android:id="@+id/e10203"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e102.equals(`3`)}"
+                                android:onClick="@{()->form.setE102(`3`)}"
+                                android:text="@string/e10203" />
+
+                            <RadioButton
+                                android:id="@+id/e10204"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e102.equals(`4`)}"
+                                android:onClick="@{()->form.setE102(`4`)}"
+                                android:text="@string/e10204" />
+
+                            <RadioButton
+                                android:id="@+id/e10205"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e102.equals(`5`)}"
+                                android:onClick="@{()->form.setE102(`5`)}"
+                                android:text="@string/e10205" />
+                        </edu.aku.omarshoaib.renew.global.views.AppRadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- e103 Radio -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVe103"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_e103" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/e103" />
+                        </LinearLayout>
+
+                        <edu.aku.omarshoaib.renew.global.views.AppRadioGroup
+                            android:id="@+id/e103"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:columnCount="2">
+
+                            <RadioButton
+                                android:id="@+id/e10301"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e103.equals(`1`)}"
+                                android:onClick="@{()->form.setE103(`1`)}"
+                                android:text="@string/e10301" />
+
+                            <RadioButton
+                                android:id="@+id/e10302"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e103.equals(`2`)}"
+                                android:onClick="@{()->form.setE103(`2`)}"
+                                android:text="@string/e10302" />
+
+                            <RadioButton
+                                android:id="@+id/e10303"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e103.equals(`3`)}"
+                                android:onClick="@{()->form.setE103(`3`)}"
+                                android:text="@string/e10303" />
+
+                            <RadioButton
+                                android:id="@+id/e10304"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e103.equals(`4`)}"
+                                android:onClick="@{()->form.setE103(`4`)}"
+                                android:text="@string/e10304" />
+
+                            <RadioButton
+                                android:id="@+id/e10305"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e103.equals(`5`)}"
+                                android:onClick="@{()->form.setE103(`5`)}"
+                                android:text="@string/e10305" />
+                        </edu.aku.omarshoaib.renew.global.views.AppRadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- e104 Radio -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVe104"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_e104" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/e104" />
+                        </LinearLayout>
+
+                        <edu.aku.omarshoaib.renew.global.views.AppRadioGroup
+                            android:id="@+id/e104"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:columnCount="2">
+
+                            <RadioButton
+                                android:id="@+id/e10401"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e104.equals(`1`)}"
+                                android:onClick="@{()->form.setE104(`1`)}"
+                                android:text="@string/e10401" />
+
+                            <RadioButton
+                                android:id="@+id/e10402"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e104.equals(`2`)}"
+                                android:onClick="@{()->form.setE104(`2`)}"
+                                android:text="@string/e10402" />
+
+                            <RadioButton
+                                android:id="@+id/e10403"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e104.equals(`3`)}"
+                                android:onClick="@{()->form.setE104(`3`)}"
+                                android:text="@string/e10403" />
+
+                            <RadioButton
+                                android:id="@+id/e10404"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e104.equals(`4`)}"
+                                android:onClick="@{()->form.setE104(`4`)}"
+                                android:text="@string/e10404" />
+
+                            <RadioButton
+                                android:id="@+id/e10405"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e104.equals(`5`)}"
+                                android:onClick="@{()->form.setE104(`5`)}"
+                                android:text="@string/e10405" />
+                        </edu.aku.omarshoaib.renew.global.views.AppRadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- e105 Radio -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVe105"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_e105" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/e105" />
+                        </LinearLayout>
+
+                        <edu.aku.omarshoaib.renew.global.views.AppRadioGroup
+                            android:id="@+id/e105"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:columnCount="2">
+
+                            <RadioButton
+                                android:id="@+id/e10501"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e105.equals(`1`)}"
+                                android:onClick="@{()->form.setE105(`1`)}"
+                                android:text="@string/e10501" />
+
+                            <RadioButton
+                                android:id="@+id/e10502"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e105.equals(`2`)}"
+                                android:onClick="@{()->form.setE105(`2`)}"
+                                android:text="@string/e10502" />
+
+                            <RadioButton
+                                android:id="@+id/e10503"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e105.equals(`3`)}"
+                                android:onClick="@{()->form.setE105(`3`)}"
+                                android:text="@string/e10503" />
+
+                            <RadioButton
+                                android:id="@+id/e10504"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e105.equals(`4`)}"
+                                android:onClick="@{()->form.setE105(`4`)}"
+                                android:text="@string/e10504" />
+
+                            <RadioButton
+                                android:id="@+id/e10505"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e105.equals(`5`)}"
+                                android:onClick="@{()->form.setE105(`5`)}"
+                                android:text="@string/e10505" />
+                        </edu.aku.omarshoaib.renew.global.views.AppRadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- e106 Radio -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVe106"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_e106" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/e106" />
+                        </LinearLayout>
+
+                        <edu.aku.omarshoaib.renew.global.views.AppRadioGroup
+                            android:id="@+id/e106"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:columnCount="2">
+
+                            <RadioButton
+                                android:id="@+id/e10601"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e106.equals(`1`)}"
+                                android:onClick="@{()->form.setE106(`1`)}"
+                                android:text="@string/e10601" />
+
+                            <RadioButton
+                                android:id="@+id/e10602"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e106.equals(`2`)}"
+                                android:onClick="@{()->form.setE106(`2`)}"
+                                android:text="@string/e10602" />
+
+                            <RadioButton
+                                android:id="@+id/e10603"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e106.equals(`3`)}"
+                                android:onClick="@{()->form.setE106(`3`)}"
+                                android:text="@string/e10603" />
+
+                            <RadioButton
+                                android:id="@+id/e10604"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e106.equals(`4`)}"
+                                android:onClick="@{()->form.setE106(`4`)}"
+                                android:text="@string/e10604" />
+
+                            <RadioButton
+                                android:id="@+id/e10605"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e106.equals(`5`)}"
+                                android:onClick="@{()->form.setE106(`5`)}"
+                                android:text="@string/e10605" />
+                        </edu.aku.omarshoaib.renew.global.views.AppRadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- e107 Radio -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVe107"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_e107" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/e107" />
+                        </LinearLayout>
+
+                        <edu.aku.omarshoaib.renew.global.views.AppRadioGroup
+                            android:id="@+id/e107"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:columnCount="2">
+
+                            <RadioButton
+                                android:id="@+id/e10701"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e107.equals(`1`)}"
+                                android:onClick="@{()->form.setE107(`1`)}"
+                                android:text="@string/e10701" />
+
+                            <RadioButton
+                                android:id="@+id/e10702"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e107.equals(`2`)}"
+                                android:onClick="@{()->form.setE107(`2`)}"
+                                android:text="@string/e10702" />
+
+                            <RadioButton
+                                android:id="@+id/e10703"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e107.equals(`3`)}"
+                                android:onClick="@{()->form.setE107(`3`)}"
+                                android:text="@string/e10703" />
+
+                            <RadioButton
+                                android:id="@+id/e10704"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e107.equals(`4`)}"
+                                android:onClick="@{()->form.setE107(`4`)}"
+                                android:text="@string/e10704" />
+
+                            <RadioButton
+                                android:id="@+id/e10705"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e107.equals(`5`)}"
+                                android:onClick="@{()->form.setE107(`5`)}"
+                                android:text="@string/e10705" />
+                        </edu.aku.omarshoaib.renew.global.views.AppRadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- e108 Radio -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVe108"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_e108" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/e108" />
+                        </LinearLayout>
+
+                        <edu.aku.omarshoaib.renew.global.views.AppRadioGroup
+                            android:id="@+id/e108"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:columnCount="2">
+
+                            <RadioButton
+                                android:id="@+id/e10801"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e108.equals(`1`)}"
+                                android:onClick="@{()->form.setE108(`1`)}"
+                                android:text="@string/e10801" />
+
+                            <RadioButton
+                                android:id="@+id/e10802"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e108.equals(`2`)}"
+                                android:onClick="@{()->form.setE108(`2`)}"
+                                android:text="@string/e10802" />
+
+                            <RadioButton
+                                android:id="@+id/e10803"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e108.equals(`3`)}"
+                                android:onClick="@{()->form.setE108(`3`)}"
+                                android:text="@string/e10803" />
+
+                            <RadioButton
+                                android:id="@+id/e10804"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e108.equals(`4`)}"
+                                android:onClick="@{()->form.setE108(`4`)}"
+                                android:text="@string/e10804" />
+
+                            <RadioButton
+                                android:id="@+id/e10805"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e108.equals(`5`)}"
+                                android:onClick="@{()->form.setE108(`5`)}"
+                                android:text="@string/e10805" />
+                        </edu.aku.omarshoaib.renew.global.views.AppRadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- e109 Radio -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVe109"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_e109" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/e109" />
+                        </LinearLayout>
+
+                        <edu.aku.omarshoaib.renew.global.views.AppRadioGroup
+                            android:id="@+id/e109"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:columnCount="2">
+
+                            <RadioButton
+                                android:id="@+id/e10901"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e109.equals(`1`)}"
+                                android:onClick="@{()->form.setE109(`1`)}"
+                                android:text="@string/e10901" />
+
+                            <RadioButton
+                                android:id="@+id/e10902"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e109.equals(`2`)}"
+                                android:onClick="@{()->form.setE109(`2`)}"
+                                android:text="@string/e10902" />
+
+                            <RadioButton
+                                android:id="@+id/e10903"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e109.equals(`3`)}"
+                                android:onClick="@{()->form.setE109(`3`)}"
+                                android:text="@string/e10903" />
+
+                            <RadioButton
+                                android:id="@+id/e10904"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e109.equals(`4`)}"
+                                android:onClick="@{()->form.setE109(`4`)}"
+                                android:text="@string/e10904" />
+
+                            <RadioButton
+                                android:id="@+id/e10905"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e109.equals(`5`)}"
+                                android:onClick="@{()->form.setE109(`5`)}"
+                                android:text="@string/e10905" />
+                        </edu.aku.omarshoaib.renew.global.views.AppRadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- e110 Radio -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVe110"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_e110" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/e110" />
+                        </LinearLayout>
+
+                        <edu.aku.omarshoaib.renew.global.views.AppRadioGroup
+                            android:id="@+id/e110"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:columnCount="2">
+
+                            <RadioButton
+                                android:id="@+id/e11001"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e110.equals(`1`)}"
+                                android:onClick="@{()->form.setE110(`1`)}"
+                                android:text="@string/e11001" />
+
+                            <RadioButton
+                                android:id="@+id/e11002"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e110.equals(`2`)}"
+                                android:onClick="@{()->form.setE110(`2`)}"
+                                android:text="@string/e11002" />
+
+                            <RadioButton
+                                android:id="@+id/e11003"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e110.equals(`3`)}"
+                                android:onClick="@{()->form.setE110(`3`)}"
+                                android:text="@string/e11003" />
+
+                            <RadioButton
+                                android:id="@+id/e11004"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e110.equals(`4`)}"
+                                android:onClick="@{()->form.setE110(`4`)}"
+                                android:text="@string/e11004" />
+
+                            <RadioButton
+                                android:id="@+id/e11005"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e110.equals(`5`)}"
+                                android:onClick="@{()->form.setE110(`5`)}"
+                                android:text="@string/e11005" />
+                        </edu.aku.omarshoaib.renew.global.views.AppRadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- e111 Radio -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVe111"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_e111" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/e111" />
+                        </LinearLayout>
+
+                        <edu.aku.omarshoaib.renew.global.views.AppRadioGroup
+                            android:id="@+id/e111"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:columnCount="2">
+
+                            <RadioButton
+                                android:id="@+id/e11101"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e111.equals(`1`)}"
+                                android:onClick="@{()->form.setE111(`1`)}"
+                                android:text="@string/e11101" />
+
+                            <RadioButton
+                                android:id="@+id/e11102"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e111.equals(`2`)}"
+                                android:onClick="@{()->form.setE111(`2`)}"
+                                android:text="@string/e11102" />
+
+                            <RadioButton
+                                android:id="@+id/e11103"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e111.equals(`3`)}"
+                                android:onClick="@{()->form.setE111(`3`)}"
+                                android:text="@string/e11103" />
+
+                            <RadioButton
+                                android:id="@+id/e11104"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e111.equals(`4`)}"
+                                android:onClick="@{()->form.setE111(`4`)}"
+                                android:text="@string/e11104" />
+
+                            <RadioButton
+                                android:id="@+id/e11105"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e111.equals(`5`)}"
+                                android:onClick="@{()->form.setE111(`5`)}"
+                                android:text="@string/e11105" />
+                        </edu.aku.omarshoaib.renew.global.views.AppRadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- e112 Radio -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVe112"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_e112" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/e112" />
+                        </LinearLayout>
+
+                        <edu.aku.omarshoaib.renew.global.views.AppRadioGroup
+                            android:id="@+id/e112"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:columnCount="2">
+
+                            <RadioButton
+                                android:id="@+id/e11201"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e112.equals(`1`)}"
+                                android:onClick="@{()->form.setE112(`1`)}"
+                                android:text="@string/e11201" />
+
+                            <RadioButton
+                                android:id="@+id/e11202"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e112.equals(`2`)}"
+                                android:onClick="@{()->form.setE112(`2`)}"
+                                android:text="@string/e11202" />
+
+                            <RadioButton
+                                android:id="@+id/e11203"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e112.equals(`3`)}"
+                                android:onClick="@{()->form.setE112(`3`)}"
+                                android:text="@string/e11203" />
+
+                            <RadioButton
+                                android:id="@+id/e11204"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e112.equals(`4`)}"
+                                android:onClick="@{()->form.setE112(`4`)}"
+                                android:text="@string/e11204" />
+
+                            <RadioButton
+                                android:id="@+id/e11205"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e112.equals(`5`)}"
+                                android:onClick="@{()->form.setE112(`5`)}"
+                                android:text="@string/e11205" />
+                        </edu.aku.omarshoaib.renew.global.views.AppRadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- e113 Radio -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVe113"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_e113" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/e113" />
+                        </LinearLayout>
+
+                        <edu.aku.omarshoaib.renew.global.views.AppRadioGroup
+                            android:id="@+id/e113"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:columnCount="2">
+
+                            <RadioButton
+                                android:id="@+id/e11301"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e113.equals(`1`)}"
+                                android:onClick="@{()->form.setE113(`1`)}"
+                                android:text="@string/e11301" />
+
+                            <RadioButton
+                                android:id="@+id/e11302"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e113.equals(`2`)}"
+                                android:onClick="@{()->form.setE113(`2`)}"
+                                android:text="@string/e11302" />
+
+                            <RadioButton
+                                android:id="@+id/e11303"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e113.equals(`3`)}"
+                                android:onClick="@{()->form.setE113(`3`)}"
+                                android:text="@string/e11303" />
+
+                            <RadioButton
+                                android:id="@+id/e11304"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e113.equals(`4`)}"
+                                android:onClick="@{()->form.setE113(`4`)}"
+                                android:text="@string/e11304" />
+
+                            <RadioButton
+                                android:id="@+id/e11305"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e113.equals(`5`)}"
+                                android:onClick="@{()->form.setE113(`5`)}"
+                                android:text="@string/e11305" />
+                        </edu.aku.omarshoaib.renew.global.views.AppRadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- e114 Radio -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVe114"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_e114" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/e114" />
+                        </LinearLayout>
+
+                        <edu.aku.omarshoaib.renew.global.views.AppRadioGroup
+                            android:id="@+id/e114"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:columnCount="2">
+
+                            <RadioButton
+                                android:id="@+id/e11401"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e114.equals(`1`)}"
+                                android:onClick="@{()->form.setE114(`1`)}"
+                                android:text="@string/e11401" />
+
+                            <RadioButton
+                                android:id="@+id/e11402"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e114.equals(`2`)}"
+                                android:onClick="@{()->form.setE114(`2`)}"
+                                android:text="@string/e11402" />
+
+                            <RadioButton
+                                android:id="@+id/e11403"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e114.equals(`3`)}"
+                                android:onClick="@{()->form.setE114(`3`)}"
+                                android:text="@string/e11403" />
+
+                            <RadioButton
+                                android:id="@+id/e11404"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e114.equals(`4`)}"
+                                android:onClick="@{()->form.setE114(`4`)}"
+                                android:text="@string/e11404" />
+
+                            <RadioButton
+                                android:id="@+id/e11405"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e114.equals(`5`)}"
+                                android:onClick="@{()->form.setE114(`5`)}"
+                                android:text="@string/e11405" />
+                        </edu.aku.omarshoaib.renew.global.views.AppRadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- e115 Radio -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVe115"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_e115" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/e115" />
+                        </LinearLayout>
+
+                        <edu.aku.omarshoaib.renew.global.views.AppRadioGroup
+                            android:id="@+id/e115"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:columnCount="2">
+
+                            <RadioButton
+                                android:id="@+id/e11501"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e115.equals(`1`)}"
+                                android:onClick="@{()->form.setE115(`1`)}"
+                                android:text="@string/e11501" />
+
+                            <RadioButton
+                                android:id="@+id/e11502"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e115.equals(`2`)}"
+                                android:onClick="@{()->form.setE115(`2`)}"
+                                android:text="@string/e11502" />
+
+                            <RadioButton
+                                android:id="@+id/e11503"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e115.equals(`3`)}"
+                                android:onClick="@{()->form.setE115(`3`)}"
+                                android:text="@string/e11503" />
+
+                            <RadioButton
+                                android:id="@+id/e11504"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e115.equals(`4`)}"
+                                android:onClick="@{()->form.setE115(`4`)}"
+                                android:text="@string/e11504" />
+
+                            <RadioButton
+                                android:id="@+id/e11505"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e115.equals(`5`)}"
+                                android:onClick="@{()->form.setE115(`5`)}"
+                                android:text="@string/e11505" />
+                        </edu.aku.omarshoaib.renew.global.views.AppRadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- e116 Radio -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVe116"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_e116" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="@string/e116" />
+                        </LinearLayout>
+
+                        <edu.aku.omarshoaib.renew.global.views.AppRadioGroup
+                            android:id="@+id/e116"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:columnCount="2">
+
+                            <RadioButton
+                                android:id="@+id/e11601"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e116.equals(`1`)}"
+                                android:onClick="@{()->form.setE116(`1`)}"
+                                android:text="@string/e11601" />
+
+                            <RadioButton
+                                android:id="@+id/e11602"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e116.equals(`2`)}"
+                                android:onClick="@{()->form.setE116(`2`)}"
+                                android:text="@string/e11602" />
+
+                            <RadioButton
+                                android:id="@+id/e11603"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e116.equals(`3`)}"
+                                android:onClick="@{()->form.setE116(`3`)}"
+                                android:text="@string/e11603" />
+
+                            <RadioButton
+                                android:id="@+id/e11604"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e116.equals(`4`)}"
+                                android:onClick="@{()->form.setE116(`4`)}"
+                                android:text="@string/e11604" />
+
+                            <RadioButton
+                                android:id="@+id/e11605"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:checked="@{form.e116.equals(`5`)}"
+                                android:onClick="@{()->form.setE116(`5`)}"
+                                android:text="@string/e11605" />
+                        </edu.aku.omarshoaib.renew.global.views.AppRadioGroup>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!--EndButtons Layout-->
+                <edu.aku.omarshoaib.renew.global.views.AppEndButtons
+                    android:id="@+id/endButtonsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <!--EndButtons Layout-->
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

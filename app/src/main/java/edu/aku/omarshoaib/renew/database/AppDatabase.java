@@ -29,6 +29,7 @@ import edu.aku.omarshoaib.renew.database.dao.Form3aDao;
 import edu.aku.omarshoaib.renew.database.dao.Form4Dao;
 import edu.aku.omarshoaib.renew.database.dao.Form5Dao;
 import edu.aku.omarshoaib.renew.database.dao.Form6Dao;
+import edu.aku.omarshoaib.renew.database.dao.FormKAPDao;
 import edu.aku.omarshoaib.renew.database.dao.GeneralDao;
 import edu.aku.omarshoaib.renew.database.dao.HCFDao;
 import edu.aku.omarshoaib.renew.database.dao.ParticipantDao;
@@ -53,6 +54,7 @@ import edu.aku.omarshoaib.renew.model.Form4;
 import edu.aku.omarshoaib.renew.model.Form5;
 import edu.aku.omarshoaib.renew.model.Form5A;
 import edu.aku.omarshoaib.renew.model.Form6;
+import edu.aku.omarshoaib.renew.model.FormKAP;
 import edu.aku.omarshoaib.renew.model.HCF;
 import edu.aku.omarshoaib.renew.model.Participant;
 import edu.aku.omarshoaib.renew.model.SyncModel;
@@ -68,12 +70,16 @@ import edu.aku.omarshoaib.renew.model.Villages;
 @Database(entities = {User.class, Villages.class, EntryLog.class,
         Form1.class, Form2.class, Form2a.class, Form3.class, Form4.class, Form5.class,
         Form5A.class, Form6.class, Participant.class, HCF.class, VPHQ9.class, Form2b.class, Form3a.class,
-        VForm2b.class, VForm3a.class, Teams.class, VFormF05A.class, VFormF06.class},
+        VForm2b.class, VForm3a.class, Teams.class, VFormF05A.class, VFormF06.class, FormKAP.class},
         version = 3, exportSchema = false)
 @TypeConverters({SyncModel.ResponseDate.DataConverter.class,
         Form1.SF1.DataConverter.class, Form2.SF2.DataConverter.class, Form3.SF3.DataConverter.class,
         Form4.SF4.DataConverter.class, Form5.SF5.DataConverter.class, Form6.SF6.DataConverter.class,
-        Participant.SF1.DataConverter.class, Form2a.SF2a.DataConverter.class,
+        Participant.SF1.DataConverter.class, Form2a.SF2a.DataConverter.class, FormKAP.SA1.DataConverter.class,
+        FormKAP.SA2.DataConverter.class, FormKAP.SA3.DataConverter.class, FormKAP.SB1.DataConverter.class,
+        FormKAP.SB2.DataConverter.class, FormKAP.SB3.DataConverter.class, FormKAP.SB4.DataConverter.class,
+        FormKAP.SC.DataConverter.class, FormKAP.SD.DataConverter.class, FormKAP.SE1.DataConverter.class,
+        FormKAP.SE2.DataConverter.class,
         Form2b.SF2b.DataConverter.class, Form3a.SF3a.DataConverter.class, Form5A.SF5A.DataConverter.class})
 public abstract class AppDatabase extends RoomDatabase {
 
@@ -119,6 +125,8 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract VillagesDao villagesDao();
 
     public abstract Form1Dao form1Dao();
+
+    public abstract FormKAPDao formKAPDao();
 
     public abstract ParticipantDao participantDao();
 

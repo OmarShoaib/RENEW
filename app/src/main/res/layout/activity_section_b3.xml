@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+				<layout xmlns:android="http://schemas.android.com/apk/res/android"
+					xmlns:app="http://schemas.android.com/apk/res-auto"
+					xmlns:tools="http://schemas.android.com/tools"
+					tools:context=".activity.sections.Section">
+					
+					<data>
+					
+						<import type="android.view.View" />
+						
+						<variable
+							name="form"
+							type="edu.aku.omarshoaib.renew.model.FormKAP.SB3" />
+					</data>
+					
+					<LinearLayout
+						android:id="@+id/topLayout"
+						style="@style/Theme.AppStructure.Background"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:orientation="vertical">
+						
+					<include layout="@layout/view_appbar" />
+
+					<ScrollView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:padding="@dimen/main_padding">
+						
+						<LinearLayout
+							android:id="@+id/GrpName" 
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:orientation="vertical">
+
+ <!-- b3t1 Title -->
+<TextView
+									style="@style/info"
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:text="@string/b3t1" />
+
+ <!-- b3t2 Title -->
+<TextView
+									style="@style/info"
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:text="@string/b3t2" />
+
+ <!-- b301 Radio -->
+<androidx.cardview.widget.CardView
+									android:id="@+id/fldGrpCVb301"
+									style="@style/cardView">
+
+<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:orientation="vertical" >
+
+<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:orientation="horizontal">
+								
+								<TextView
+									style="@style/quesNum"
+									android:layout_width="wrap_content"
+									android:layout_height="match_parent"
+									android:text="@string/Q_b301"  />
+									
+								<TextView
+									style="@style/labels"
+									android:layout_width="match_parent" 
+									android:layout_height="match_parent"
+									android:text="@string/b301"  />
+</LinearLayout>
+
+<edu.aku.omarshoaib.renew.global.views.AppRadioGroup
+									android:id="@+id/b301"
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									app:columnCount="2"
+									android:orientation="vertical">
+
+<RadioButton
+									android:id="@+id/b30101" 
+									android:layout_width="match_parent" 
+									android:layout_height="match_parent"
+									android:checked="@{form.b301.equals(`1`)}"
+									android:onClick="@{()->form.setB301(`1`)}"
+									android:text="@string/b30101" />
+
+<RadioButton
+									android:id="@+id/b30102" 
+									android:layout_width="match_parent" 
+									android:layout_height="match_parent"
+									android:checked="@{form.b301.equals(`2`)}"
+									android:onClick="@{()->form.setB301(`2`)}"
+									android:text="@string/b30102" />
+
+<RadioButton
+									android:id="@+id/b30103" 
+									android:layout_width="match_parent" 
+									android:layout_height="match_parent"
+									android:checked="@{form.b301.equals(`3`)}"
+									android:onClick="@{()->form.setB301(`3`)}"
+									android:text="@string/b30103" />
+
+<RadioButton
+									android:id="@+id/b30104" 
+									android:layout_width="match_parent" 
+									android:layout_height="match_parent"
+									android:checked="@{form.b301.equals(`4`)}"
+									android:onClick="@{()->form.setB301(`4`)}"
+									android:text="@string/b30104" />
+
+<RadioButton
+									android:id="@+id/b30198" 
+									android:layout_width="match_parent" 
+									android:layout_height="match_parent"
+									android:checked="@{form.b301.equals(`98`)}"
+									android:onClick="@{()->form.setB301(`98`)}" style="@style/dont_know"
+									android:text="@string/b30198" />
+</edu.aku.omarshoaib.renew.global.views.AppRadioGroup>
+</LinearLayout>
+</androidx.cardview.widget.CardView>
+
+ <!-- b302 Radio -->
+<androidx.cardview.widget.CardView
+									android:id="@+id/fldGrpCVb302"
+									style="@style/cardView">
+
+<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:orientation="vertical" >
+
+<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:orientation="horizontal">
+								
+								<TextView
+									style="@style/quesNum"
+									android:layout_width="wrap_content"
+									android:layout_height="match_parent"
+									android:text="@string/Q_b302"  />
+									
+								<TextView
+									style="@style/labels"
+									android:layout_width="match_parent" 
+									android:layout_height="match_parent"
+									android:text="@string/b302"  />
+</LinearLayout>
+
+<RadioGroup
+									android:id="@+id/b302"
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:orientation="horizontal">
+
+<RadioButton
+									android:id="@+id/b30201" 
+									android:layout_width="0dp" 
+									android:layout_height="match_parent"
+android:layout_weight="1"
+									android:checked="@{form.b302.equals(`1`)}"
+									android:onClick="@{()->form.setB302(`1`)}"
+									android:text="@string/b30201" />
+
+<RadioButton
+									android:id="@+id/b30202" 
+									android:layout_width="0dp" 
+									android:layout_height="match_parent"
+android:layout_weight="1"
+									android:checked="@{form.b302.equals(`2`)}"
+									android:onClick="@{()->form.setB302(`2`)}"
+									android:text="@string/b30202" />
+</RadioGroup>
+</LinearLayout>
+</androidx.cardview.widget.CardView>
+
+ <!-- b303 Radio -->
+<androidx.cardview.widget.CardView
+									android:id="@+id/fldGrpCVb303"
+									style="@style/cardView">
+
+<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:orientation="vertical" >
+
+<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:orientation="horizontal">
+								
+								<TextView
+									style="@style/quesNum"
+									android:layout_width="wrap_content"
+									android:layout_height="match_parent"
+									android:text="@string/Q_b303"  />
+									
+								<TextView
+									style="@style/labels"
+									android:layout_width="match_parent" 
+									android:layout_height="match_parent"
+									android:text="@string/b303"  />
+</LinearLayout>
+
+<RadioGroup
+									android:id="@+id/b303"
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:orientation="horizontal">
+
+<RadioButton
+									android:id="@+id/b30301" 
+									android:layout_width="0dp" 
+									android:layout_height="match_parent"
+android:layout_weight="1"
+									android:checked="@{form.b303.equals(`1`)}"
+									android:onClick="@{()->form.setB303(`1`)}"
+									android:text="@string/b30301" />
+
+<RadioButton
+									android:id="@+id/b30302" 
+									android:layout_width="0dp" 
+									android:layout_height="match_parent"
+android:layout_weight="1"
+									android:checked="@{form.b303.equals(`2`)}"
+									android:onClick="@{()->form.setB303(`2`)}"
+									android:text="@string/b30302" />
+</RadioGroup>
+</LinearLayout>
+</androidx.cardview.widget.CardView>
+
+<!--EndButtons Layout-->
+			   <edu.aku.omarshoaib.renew.global.views.AppEndButtons
+					android:id="@+id/endButtonsLayout"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content" />
+				<!--EndButtons Layout-->
+
+</LinearLayout>
+			</ScrollView>
+		</LinearLayout>
+	</layout>

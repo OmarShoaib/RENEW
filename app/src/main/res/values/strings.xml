@@ -126,6 +126,12 @@
     <string name="district">District</string>
     <string name="identification">Identification</string>
     <string name="no_image_found" translatable="false">Please Take %s Image</string>
+    <string name="participant_list">Participant List</string>
+    <string name="eligible_participant_list">Eligible Participant List</string>
+    <string name="scr_id_not_found">Inalid Sreening Id</string>
+    <string name="no_eligible_participants">No Eligible Partiipants</string>
+    <string name="select_search_type">Please Select search type</string>
+    <string name="search_by_pid">Search value by Participant Id</string>
 
     <!-- Synced Recs -->
     <string name="synced_recs">Synced Records</string>
@@ -995,6 +1001,840 @@
     <string name="f61907">Refused for supplementation</string>
     <string name="f61908">Non-Compliant on Supplementation</string>
 
+
+    <!-- Part 1: Identification and eligibility screening -->
+    <string name="a1t1">A. RESPONDENT AND HOUSEHOLD PROFILE</string>
+    <string name="a1t2">Part 1: Identification and eligibility screening</string>
+    <string name="a101">Respondent Name</string>
+    <string name="a102">Does the respondent have a &lt;2 years child?</string>
+    <string name="a10201">Yes</string>
+    <string name="a10202">No</string>
+    <string name="a103">How old is your younger child? (Age in months)</string>
+    <string name="a103m">Months</string>
+    <string name="a103d">Days</string>
+    <string name="a104">Has written consent or assent been obtained?</string>
+    <string name="a10401">Yes</string>
+    <string name="a10402">No</string>
+    <string name="a105">Has written assent and parental consent been obtained for respondent &lt;18?</string>
+    <string name="a10501">Yes</string>
+    <string name="a10502">No</string>
+    <string name="a106">Has the respondent been living in this area for at least the last 5 years?</string>
+    <string name="a10601">Yes</string>
+    <string name="a10602">No</string>
+    <string name="a107">Household Head Name</string>
+    <string name="a108">Household Head Gender</string>
+    <string name="a10801">Male</string>
+    <string name="a10802">Female</string>
+    <string name="a109">Household ID</string>
+    <string name="a110">Cluster/HCF Name</string>
+    <string name="a111">Village Name</string>
+    <string name="a112">Landmark/Address Note</string>
+    <string name="a113">Contact number</string>
+    <string name="a115">Date</string>
+    <string name="a116">Time (hours: minutes)</string>
+    <string name="a117">Interview Status</string>
+    <string name="a11701">Completed</string>
+    <string name="a11799">Refused</string>
+
+    <!-- Part 2: Household Information -->
+    <string name="a2t1">Part 2: Household Information</string>
+    <string name="a201">How many people live in your household? (adults and children)</string>
+    <string name="a202">Do you own or rent the house that you live in?</string>
+    <string name="a20201">Own home</string>
+    <string name="a20202">Rent</string>
+    <string name="a20203">Do not know</string>
+    <string name="a20296">Other</string>
+    <string name="a203">What material is the floor of your house made of?</string>
+    <string name="a203t1">Natural floor</string>
+    <string name="a20301">Earth/sand/mud</string>
+    <string name="a20302">Dung</string>
+    <string name="a203t2">Rudimentary/simple floor</string>
+    <string name="a20303">Wood planks</string>
+    <string name="a20304">Palm/bamboo</string>
+    <string name="a203t3">Finished floor</string>
+    <string name="a20305">Parquet or polished wood</string>
+    <string name="a20306">Vinyl or asphalt strips</string>
+    <string name="a20307">Ceramic tiles</string>
+    <string name="a20308">Cement</string>
+    <string name="a20309">Carpet</string>
+    <string name="a20310">Bricks</string>
+    <string name="a20311">Mats</string>
+    <string name="a20312">Marble</string>
+    <string name="a20396">Other</string>
+    <string name="a204">What material is the roof of your house made of?</string>
+    <string name="a204t1">Natural roofing</string>
+    <string name="a20401">No roof</string>
+    <string name="a20402">Thatch/palm leaf</string>
+    <string name="a20403">Sod/grass</string>
+    <string name="a204t2">Rudimentary roofing</string>
+    <string name="a20404">Rustic mat</string>
+    <string name="a20405">Palm/bamboo</string>
+    <string name="a20406">Wood planks</string>
+    <string name="a20407">Cardboard</string>
+    <string name="a204t3">Finished roofing</string>
+    <string name="a20408">Iron sheets/asbestos</string>
+    <string name="a20409">Reinforced brick/cement</string>
+    <string name="a20410">Metal</string>
+    <string name="a20411">Wood</string>
+    <string name="a20412">Cement</string>
+    <string name="a20413">Roofing shingles</string>
+    <string name="a20496">Other</string>
+    <string name="a205">What material are the exterior walls of your house made of?</string>
+    <string name="a205t1">Natural walls</string>
+    <string name="a20501">No walls</string>
+    <string name="a20502">Cane/palm/trunks</string>
+    <string name="a20503">Mud/dirt/clay</string>
+    <string name="a20504">Mud/stones</string>
+    <string name="a20505">Bamboo/sticks/mud</string>
+    <string name="a205t2">Rudimentary walls</string>
+    <string name="a20506">Unbaked bricks/mud</string>
+    <string name="a20507">Carton/plastic</string>
+    <string name="a20508">Bamboo with mud</string>
+    <string name="a20509">Stone with mud</string>
+    <string name="a20510">Uncovered adobe</string>
+    <string name="a20511">Plywood</string>
+    <string name="a20512">Cardboard</string>
+    <string name="a20513">Reused wood</string>
+    <string name="a205t3">Finished walls</string>
+    <string name="a20514">Baked bricks</string>
+    <string name="a20515">Tent</string>
+    <string name="a20516">Cement</string>
+    <string name="a20517">Stone with cement</string>
+    <string name="a20518">Bricks</string>
+    <string name="a20519">Cement bricks</string>
+    <string name="a20520">Covered adobe</string>
+    <string name="a20521">Wood planks/shingles</string>
+    <string name="a20596">Other</string>
+    <string name="a206">How many rooms in your house are used for sleeping? (divided by walls)</string>
+    <string name="a207">What is the main source of drinking water for your household?</string>
+    <string name="a20701">Piped water into dwelling</string>
+    <string name="a20702">Public tap</string>
+    <string name="a20703">Tube well or borehole</string>
+    <string name="a20704">Hand pump</string>
+    <string name="a20705">Dug well</string>
+    <string name="a20706">Water from spring</string>
+    <string name="a20707">Rainwater</string>
+    <string name="a20708">Tanker truck</string>
+    <string name="a20709">Filtration plant</string>
+    <string name="a20710">Surface water</string>
+    <string name="a20711">Bottled water</string>
+    <string name="a20796">Other</string>
+    <string name="a208">What is the main source of water used by members of your household for other purposes, such as cooking and hand washing?</string>
+    <string name="a20801">Piped water into dwelling</string>
+    <string name="a20802">Public tap</string>
+    <string name="a20803">Tube well or borehole</string>
+    <string name="a20804">Hand pump</string>
+    <string name="a20805">Dug well</string>
+    <string name="a20806">Water from spring</string>
+    <string name="a20807">Rainwater</string>
+    <string name="a20808">Tanker truck</string>
+    <string name="a20809">Filtration plant</string>
+    <string name="a20810">Surface water</string>
+    <string name="a20896">Other</string>
+    <string name="a209">What do you usually do to make the water safer to drink?</string>
+    <string name="a20901">Nothing</string>
+    <string name="a20902">Boil</string>
+    <string name="a20903">Add bleach/chlorine</string>
+    <string name="a20904">Strain through a cloth</string>
+    <string name="a20905">Use water filter</string>
+    <string name="a20906">Solar disinfection</string>
+    <string name="a20907">Let it stand and settle.</string>
+    <string name="a20996">Other</string>
+    <string name="a210">What type of toilet facility do the members of your family use?</string>
+    <string name="a21001">Flush or pour flush toilet</string>
+    <string name="a21002">Pit latrine</string>
+    <string name="a21003">Bucket toilet</string>
+    <string name="a21004">Hanging toilet</string>
+    <string name="a21005">No facility/bush/field</string>
+    <string name="a21096">Other</string>
+    <string name="a211">Do you share this toilet facility with other households?</string>
+    <string name="a21101">Yes</string>
+    <string name="a21102">No</string>
+    <string name="a212">How many other households use this toilet facility?</string>
+    <string name="a213">What do you use in your house to wash your hands? (select as many as apply)</string>
+    <string name="a21301">Soap</string>
+    <string name="a21302">Ash</string>
+    <string name="a21303">Detergent</string>
+    <string name="a21304">Nothing</string>
+    <string name="a21396">Other</string>
+    <string name="a214">Does your household have:</string>
+    <string name="a214a">Electricity</string>
+    <string name="a214a01">Yes</string>
+    <string name="a214a02">No</string>
+    <string name="a214b">Radio</string>
+    <string name="a214b01">Yes</string>
+    <string name="a214b02">No</string>
+    <string name="a214c">Television</string>
+    <string name="a214c01">Yes</string>
+    <string name="a214c02">No</string>
+    <string name="a214d">Landline phone</string>
+    <string name="a214d01">Yes</string>
+    <string name="a214d02">No</string>
+    <string name="a214e">Refrigerator</string>
+    <string name="a214e01">Yes</string>
+    <string name="a214e02">No</string>
+    <string name="a214f">Almirah/cabinet</string>
+    <string name="a214f01">Yes</string>
+    <string name="a214f02">No</string>
+    <string name="a214g">Chair</string>
+    <string name="a214g01">Yes</string>
+    <string name="a214g02">No</string>
+    <string name="a214h">Room cooler</string>
+    <string name="a214h01">Yes</string>
+    <string name="a214h02">No</string>
+    <string name="a214i">Air conditioner</string>
+    <string name="a214i01">Yes</string>
+    <string name="a214i02">No</string>
+    <string name="a214j">Washing machine</string>
+    <string name="a214j01">Yes</string>
+    <string name="a214j02">No</string>
+    <string name="a214k">Water pump</string>
+    <string name="a214k01">Yes</string>
+    <string name="a214k02">No</string>
+    <string name="a214l">Bed</string>
+    <string name="a214l01">Yes</string>
+    <string name="a214l02">No</string>
+    <string name="a214m">Clock</string>
+    <string name="a214m01">Yes</string>
+    <string name="a214m02">No</string>
+    <string name="a214n">Sofa</string>
+    <string name="a214n01">Yes</string>
+    <string name="a214n02">No</string>
+    <string name="a214o">Camera</string>
+    <string name="a214o01">Yes</string>
+    <string name="a214o02">No</string>
+    <string name="a214p">Sewing machine</string>
+    <string name="a214p01">Yes</string>
+    <string name="a214p02">No</string>
+    <string name="a214q">Computer</string>
+    <string name="a214q01">Yes</string>
+    <string name="a214q02">No</string>
+    <string name="a214r">Internet connection</string>
+    <string name="a214r01">Yes</string>
+    <string name="a214r02">No</string>
+    <string name="a215">What type of fuel does your household mainly use for cooking?</string>
+    <string name="a21501">Electricity</string>
+    <string name="a21502">LNG</string>
+    <string name="a21503">Natural gas</string>
+    <string name="a21504">Biogas</string>
+    <string name="a21505">Kerosene</string>
+    <string name="a21506">Charcoal</string>
+    <string name="a21507">Wood</string>
+    <string name="a21508">Straw/shrubs/grass</string>
+    <string name="a21509">Animal dung</string>
+    <string name="a21510">No food cooked in household</string>
+    <string name="a21511">Biomass Fuel (Crop Residue/Saw Dust)</string>
+    <string name="a21596">Other</string>
+    <string name="a216">Is cooking done in the house, in a separate building, or outdoors?</string>
+    <string name="a21601">In the house</string>
+    <string name="a21602">In a separate area/room</string>
+    <string name="a21603">Outdoors</string>
+    <string name="a21696">Other</string>
+    <string name="a217">Does anyone in your household own:</string>
+    <string name="a217a">A watch</string>
+    <string name="a217a01">Yes</string>
+    <string name="a217a02">No</string>
+    <string name="a217b">A mobile telephone</string>
+    <string name="a217b01">Yes</string>
+    <string name="a217b02">No</string>
+    <string name="a217c">A bicycle</string>
+    <string name="a217c01">Yes</string>
+    <string name="a217c02">No</string>
+    <string name="a217d">A motorcycle or motor scooter</string>
+    <string name="a217d01">Yes</string>
+    <string name="a217d02">No</string>
+    <string name="a217e">An animal–drawn cart</string>
+    <string name="a217e01">Yes</string>
+    <string name="a217e02">No</string>
+    <string name="a217f">A car or truck or bus</string>
+    <string name="a217f01">Yes</string>
+    <string name="a217f02">No</string>
+    <string name="a217g">A tractor</string>
+    <string name="a217g01">Yes</string>
+    <string name="a217g02">No</string>
+    <string name="a217h">A boat with a motor</string>
+    <string name="a217h01">Yes</string>
+    <string name="a217h02">No</string>
+    <string name="a217i">A boat without a motor</string>
+    <string name="a217i01">Yes</string>
+    <string name="a217i02">No</string>
+    <string name="a218">Does anyone in your household own any agricultural land?</string>
+    <string name="a21801">Yes</string>
+    <string name="a21802">No</string>
+    <string name="a219">Does anyone in your household own any livestock, herds, other farm animals, or poultry?</string>
+    <string name="a21901">Yes</string>
+    <string name="a21902">No</string>
+    <string name="a220">If yes, does anyone in your household own:</string>
+    <string name="a220a">Cows/bulls</string>
+    <string name="a220a01">Yes</string>
+    <string name="a220a02">No</string>
+    <string name="a220b">Horses/donkeys/mules</string>
+    <string name="a220b01">Yes</string>
+    <string name="a220b02">No</string>
+    <string name="a220c">Goats</string>
+    <string name="a220c01">Yes</string>
+    <string name="a220c02">No</string>
+    <string name="a220d">Sheep</string>
+    <string name="a220d01">Yes</string>
+    <string name="a220d02">No</string>
+    <string name="a220e">Chickens/poultry</string>
+    <string name="a220e01">Yes</string>
+    <string name="a220e02">No</string>
+    <string name="a220f">Buffalo</string>
+    <string name="a220f01">Yes</string>
+    <string name="a220f02">No</string>
+    <string name="a220g">Camels</string>
+    <string name="a220g01">Yes</string>
+    <string name="a220g02">No</string>
+    <string name="a221">What is the main source of income for your household?</string>
+    <string name="a22101">Unskilled manual labour</string>
+    <string name="a22102">Skilled manual labour</string>
+    <string name="a22103">Agriculture</string>
+    <string name="a22104">Domestic service</string>
+    <string name="a22105">Sales and services</string>
+    <string name="a22106">Professional</string>
+    <string name="a22196">Other</string>
+
+    <!-- Part 3: Demographic information -->
+    <string name="a3t1">Part 3: Demographic information</string>
+    <string name="a3t2">Read aloud: Now I would like to ask you some questions about yourself.</string>
+    <string name="a301">In what month and year were you born?</string>
+    <string name="a301d">Day</string>
+    <string name="a301m">Month</string>
+    <string name="a301y">Year</string>
+    <string name="a302">How old were you at your last birthday? (completed years)</string>
+    <string name="a303">What is your native language?</string>
+    <string name="a30301">Urdu</string>
+    <string name="a30302">Punjabi</string>
+    <string name="a30303">Sindhi</string>
+    <string name="a30304">Pushtu</string>
+    <string name="a30305">Baluchi</string>
+    <string name="a30306">Siraiki</string>
+    <string name="a30396">Other</string>
+    <string name="a304">What is your family’s religion?</string>
+    <string name="a30401">Muslim</string>
+    <string name="a30402">Hindu</string>
+    <string name="a30403">Buddhist</string>
+    <string name="a30404">Christian</string>
+    <string name="a30496">Other</string>
+    <string name="a305">Have you ever attended school?</string>
+    <string name="a30501">Yes</string>
+    <string name="a30502">No</string>
+    <string name="a306">What is the highest class that you have completed?</string>
+    <string name="a307">What is the highest level of education you attended?</string>
+    <string name="a30701">None</string>
+    <string name="a30702">Primary</string>
+    <string name="a30703">Secondary</string>
+    <string name="a30704">Higher Secondary</string>
+    <string name="a30705">Professional/technical training</string>
+    <string name="a30706">University</string>
+    <string name="a308">What is your occupation?</string>
+    <string name="a30801">Unskilled manual labour</string>
+    <string name="a30802">Skilled manual labour</string>
+    <string name="a30803">Agriculture</string>
+    <string name="a30804">Domestic service</string>
+    <string name="a30805">Sales and services</string>
+    <string name="a30806">Professional</string>
+    <string name="a30807">Student</string>
+    <string name="a30808">Unemployed</string>
+    <string name="a30896">Other</string>
+    <string name="a309">What is your current marital status?</string>
+    <string name="a30901">Married</string>
+    <string name="a30902">Widowed</string>
+    <string name="a30903">Divorced</string>
+    <string name="a30904">Separated</string>
+    <string name="a30905">Never married</string>
+    <string name="a310">When do you usually wash your hands?</string>
+    <string name="a310a">Before preparing food</string>
+    <string name="a310a01">Always</string>
+    <string name="a310a02">Sometimes</string>
+    <string name="a310a03">Never</string>
+    <string name="a310a97">Not applicable</string>
+    <string name="a310b">Before eating</string>
+    <string name="a310b01">Always</string>
+    <string name="a310b02">Sometimes</string>
+    <string name="a310b03">Never</string>
+    <string name="a310b97">Not applicable</string>
+    <string name="a310c">After toilet use</string>
+    <string name="a310c01">Always</string>
+    <string name="a310c02">Sometimes</string>
+    <string name="a310c03">Never</string>
+    <string name="a310c97">Not applicable</string>
+
+    <!-- B1. PREPAREDNESS ACTIONS AND PLANNING (PAP) -->
+    <string name="b1t1">B. DISASTER RISK REDUCTION</string>
+    <string name="b1t2">B1. PREPAREDNESS ACTIONS AND PLANNING (PAP)</string>
+    <string name="b101">Do you have an emergency plan for your home?</string>
+    <string name="b10101">Yes</string>
+    <string name="b10102">No</string>
+    <string name="b102">Have you completed first aid training?</string>
+    <string name="b10201">Yes</string>
+    <string name="b10202">No</string>
+    <string name="b102a">Who provided this training?</string>
+    <string name="b102a01">FOCUS</string>
+    <string name="b102a02">CERT</string>
+    <string name="b102a03">AKU</string>
+    <string name="b102a96">Others</string>
+    <string name="b103">Do you know what types of disasters are likely to occur in your community?</string>
+    <string name="b10301">Yes</string>
+    <string name="b10302">No</string>
+    <string name="b104">Do you have supplies set aside in your home in a kit to use in case of a disaster?</string>
+    <string name="b10401">Yes</string>
+    <string name="b10402">No</string>
+    <string name="b105">Do you check your disaster supplies regularly for expired items?</string>
+    <string name="b10501">Yes</string>
+    <string name="b10502">No</string>
+    <string name="b106">Have you planned how you would contact important people in your life in an emergency if you were separated?</string>
+    <string name="b10601">Yes</string>
+    <string name="b10602">No</string>
+    <string name="b107">Do you know if your home is in a designated evacuation zone?</string>
+    <string name="b10701">Yes</string>
+    <string name="b10702">No</string>
+    <string name="b108">Do you have a safe place to go if you had to evacuate from your home?</string>
+    <string name="b10801">Yes</string>
+    <string name="b10802">No</string>
+    <string name="b109">Have you planned what route to take if you evacuate from home?</string>
+    <string name="b10901">Yes</string>
+    <string name="b10902">No</string>
+    <string name="b110">Have you selected a place to meet important people in your life in case of separation during an evacuation?</string>
+    <string name="b11001">Yes</string>
+    <string name="b11002">No</string>
+    <string name="b111">Is everyone in your home aware of your evacuation plan?</string>
+    <string name="b11101">Yes</string>
+    <string name="b11102">No</string>
+    <string name="b112">Do you know where your local emergency shelter is?</string>
+    <string name="b11201">Yes</string>
+    <string name="b11202">No</string>
+    <string name="b113">Do you have a plan for what you will take if you had to leave your home quickly?</string>
+    <string name="b11301">Yes</string>
+    <string name="b11302">No</string>
+    <string name="b114">Have you prepared a small kit with emergency supplies to take with you if you had to leave quickly?</string>
+    <string name="b11401">Yes</string>
+    <string name="b11402">No</string>
+
+    <!-- B2. EIGHT-ITEM DISASTER PREPAREDNESS QUESTIONNAIRE -->
+    <string name="b2t1">B2. EIGHT–ITEM DISASTER PREPAREDNESS QUESTIONNAIRE</string>
+    <string name="b201">Do you prepare yourself prior to disasters?</string>
+    <string name="b20101">Yes</string>
+    <string name="b20102">No</string>
+    <string name="b202">Do you take measures such as cleaning gutters and trimming vegetation to save your home?</string>
+    <string name="b20201">Yes</string>
+    <string name="b20202">No</string>
+    <string name="b203">Do you have an evacuation or emergency plan?</string>
+    <string name="b20301">Yes</string>
+    <string name="b20302">No</string>
+    <string name="b204">Do you have access to hazard mapping?</string>
+    <string name="b20401">Yes</string>
+    <string name="b20402">No</string>
+    <string name="b205">Do you have access to warnings by government agencies?</string>
+    <string name="b20501">Yes</string>
+    <string name="b20502">No</string>
+    <string name="b206">Have you participated in disaster education or training in your village?</string>
+    <string name="b20601">Yes</string>
+    <string name="b20602">No</string>
+    <string name="b206a">If yes, who conducted the session?</string>
+    <string name="b206a01">Lady Health Worker (LHW)</string>
+    <string name="b206a02">Aga Khan University (AKU) Team</string>
+    <string name="b206a96">Other organizations (specify):</string>
+    <string name="b206b">How many times have you attended disaster education or training sessions in the past 12 months?</string>
+    <string name="b207">Do you participate with the community in coping with disaster?</string>
+    <string name="b20701">Yes</string>
+    <string name="b20702">No</string>
+    <string name="b208">Have you spoken to a responsible person about improvements for disaster preparedness?</string>
+    <string name="b20801">Yes</string>
+    <string name="b20802">No</string>
+
+    <!-- B3. HEAT EMERGENCY AWARENESS AND TREATMENT (HEAT) -->
+    <string name="b3t1">B3. HEAT EMERGENCY AWARENESS AND TREATMENT (HEAT)</string>
+    <string name="b3t2">SECTION A: KNOWLEDGE</string>
+    <string name="b301">What is the distance from your home to the nearest health care facility?</string>
+    <string name="b30101">Less than 1 km</string>
+    <string name="b30102">1–5 km</string>
+    <string name="b30103">6–10 km</string>
+    <string name="b30104">More than 10 km</string>
+    <string name="b30198">Don’t know</string>
+    <string name="b302">Do you think exposure to extreme heat can cause health problems?</string>
+    <string name="b30201">Yes</string>
+    <string name="b30202">No</string>
+    <string name="b303">Have you heard about “Heat–stroke”?</string>
+    <string name="b30301">Yes</string>
+    <string name="b30302">No</string>
+
+    <!-- B4. CLIMATE-SENSITIVE DISEASES -->
+    <string name="b4t1">B4. CLIMATE–SENSITIVE DISEASES</string>
+    <string name="b401">What are the common disease outbreaks in flood–prone settings like yours? (Do not prompt; select all responses mentioned.)</string>
+    <string name="b40101">Diarrhea, including cholera</string>
+    <string name="b40102">Malaria</string>
+    <string name="b40103">Dengue</string>
+    <string name="b40104">Typhoid fever</string>
+    <string name="b40105">Acute respiratory infections</string>
+    <string name="b40106">Skin infections</string>
+    <string name="b40107">Eye infections</string>
+    <string name="b40108">Leptospirosis</string>
+    <string name="b40198">Don’t know</string>
+    <string name="b40196">Other, specify</string>
+    <string name="b402">In your opinion, what causes malaria?
+PROBE: ANYTHING ELSE?
+RECORD ALL MENTIONED</string>
+    <string name="b40201">Mosquito bites</string>
+    <string name="b40202">Eating maize</string>
+    <string name="b40203">Eating mangoes</string>
+    <string name="b40204">Eating dirty food</string>
+    <string name="b40205">Drinking unboiled water</string>
+    <string name="b40206">Getting soaked with rain</string>
+    <string name="b40207">Cold/changing weather</string>
+    <string name="b40208">Witchcraft</string>
+    <string name="b40209">Contact with infected person</string>
+    <string name="b40298">Don’t know</string>
+    <string name="b40296">Other, specify</string>
+    <string name="b403">What are the ways to avoid getting malaria? PROBE: ANYTHING ELSE?
+ RECORD ALL MENTIONED</string>
+    <string name="b40301">Sleep under mosquito net</string>
+    <string name="b40302">Sleep under an insecticide–treated net</string>
+    <string name="b40303">Taking preventive medication</string>
+    <string name="b40304">Use mosquito repellent</string>
+    <string name="b40305">Spraying house with insecticide</string>
+    <string name="b40306">Using mosquito coils</string>
+    <string name="b40307">Destroy mosquito breeding sites</string>
+    <string name="b40398">Don’t know</string>
+    <string name="b40396">Other, specify</string>
+    <string name="b404">What causes diarrhea? (Do not read. Select Yes for all that are mentioned and No for those that are not mentioned.)</string>
+    <string name="b40401">Drinking bad water</string>
+    <string name="b40402">Eating bad food</string>
+    <string name="b40403">Unwashed fruits/vegetables</string>
+    <string name="b40404">Flies/insects</string>
+    <string name="b40405">Poor hygiene/not washing hands</string>
+    <string name="b40498">Don’t know</string>
+    <string name="b40496">Other, specify</string>
+    <string name="b405">How can you prevent you or your family members from becoming ill with diarrhea? (Do not read. Select Yes for all that are mentioned and No for those that are not mentioned.)</string>
+    <string name="b40501">Wash hands with soap and water</string>
+    <string name="b40502">Cook food thoroughly</string>
+    <string name="b40503">Wash vegetables/fruits</string>
+    <string name="b40504">Dispose of human waste properly</string>
+    <string name="b40505">Boil water</string>
+    <string name="b40506">Clean cooking utensils/vessels</string>
+    <string name="b40507">Treat water with chlorine products</string>
+    <string name="b40508">Cover food to keep away from flies</string>
+    <string name="b40509">Cholera vaccine</string>
+    <string name="b40510">Reduce the spices in food</string>
+    <string name="b40511">Cannot prevent</string>
+    <string name="b40598">Don’t know</string>
+    <string name="b40596">Other, specify</string>
+
+    <!-- C. NUTRITION IN EMERGENCIES - FOOD AND AGRICULTURE ORGANIZATION (FAO) - ADAPTED FORM -->
+    <string name="c1t1">C. NUTRITION IN EMERGENCIES – FOOD AND AGRICULTURE ORGANIZATION (FAO) – ADAPTED FORM</string>
+    <string name="c1t2">Section A. Breastfeeding and infant feeding</string>
+    <string name="c101">What is the first food a newborn baby should receive?</string>
+    <string name="c10101">Only breastmilk</string>
+    <string name="c10198">Don’t know</string>
+    <string name="c10196">Other</string>
+    <string name="c102">What does exclusive breastfeeding mean?</string>
+    <string name="c10201">Only breastmilk; no other foods/drinks</string>
+    <string name="c10298">Don’t know</string>
+    <string name="c10296">Other</string>
+    <string name="c103">How long should a baby receive nothing more than breast milk?</string>
+    <string name="c10301">Birth to 6 months</string>
+    <string name="c10302">Don’t know</string>
+    <string name="c10396">Other age</string>
+    <string name="c104">Yesterday, during the day or night, what did the baby receive? [Caregiver of infant &lt;6 months; read and select all.]</string>
+    <string name="c10401">Breastmilk</string>
+    <string name="c10402">Plain water</string>
+    <string name="c10403">Infant formula</string>
+    <string name="c10404">Animal milk</string>
+    <string name="c10405">Juice/other drinks</string>
+    <string name="c10406">Porridge/other foods</string>
+    <string name="c10498">Don’t know/no answer</string>
+    <string name="c105">How confident do you feel that you can continue breastfeeding your baby during an emergency or stressful situation?</string>
+    <string name="c10501">Not confident</string>
+    <string name="c10502">Somewhat/so–so</string>
+    <string name="c10503">Confident</string>
+    <string name="c1t3">Section B. Complementary feeding (6–23 months)</string>
+    <string name="c106">At what age should babies start eating foods in addition to breastmilk?</string>
+    <string name="c10601">At 6 months</string>
+    <string name="c10698">Don’t know</string>
+    <string name="c10696">Other age (In months)</string>
+    <string name="c107">Why is it important to give foods in addition to breastmilk to babies from the age of six months?</string>
+    <string name="c10701">Breastmilk alone no longer supplies all energy/nutrients needed</string>
+    <string name="c10798">Don’t know</string>
+    <string name="c10796">Other</string>
+    <string name="c108">Please look at these two pictures of porridges. Which one do you think should be given to a young child? (Show the images/pictures of thick and watery/thin porridges and tick one of the options here below depending on the respondent answer.)</string>
+    <string name="c10801">Thick/spoonable</string>
+    <string name="c10802">Very watery/thin</string>
+    <string name="c10898">Don’t know</string>
+    <string name="c109">Which foods or types of food can be added to rice porridge make it more nutritious? [Do not read; select all mentioned.]</string>
+    <string name="c10901">Animal–source food</string>
+    <string name="c10902">Pulses/beans/lentils/nuts</string>
+    <string name="c10903">Vitamin–A–rich fruit/vegetables</string>
+    <string name="c10904">Green leafy vegetables</string>
+    <string name="c10905">Oil/ghee</string>
+    <string name="c10998">Don’t know</string>
+    <string name="c10996">Other</string>
+    <string name="c110">How many times did (name of the baby) eat foods, that is meals and snacks other than liquids yesterday during the day or at night?</string>
+    <string name="c110n">Numbers</string>
+    <string name="c11098">Don’t know</string>
+    <string name="c111">Do you know any ways to encourage young children to eat? [Do not read; select all mentioned.]</string>
+    <string name="c11101">Give attention/talk kindly</string>
+    <string name="c11102">Encourage patiently</string>
+    <string name="c11103">Model eating/gently attract attention</string>
+    <string name="c11104">Other supportive approach</string>
+    <string name="c11105">Force/punish</string>
+    <string name="c11198">Don’t know</string>
+    <string name="c1t4">Section C. Maternal nutrition during pregnancy and lactation</string>
+    <string name="c112">For a pregnant woman: How should a pregnant woman eat in comparison with a non–pregnant woman to provide good nutrition to her baby and help him grow? Please list four practices she should do.
+For a lactating woman: How should a lactating woman eat in comparison with a non–lactating woman to be healthy and produce more breastmilk? Please list four practices she should do.</string>
+    <string name="c11201">Eat more/more frequently</string>
+    <string name="c11202">Eat more protein–rich foods</string>
+    <string name="c11203">Eat more iron–rich foods</string>
+    <string name="c11204">Use iodized salt when preparing meals</string>
+    <string name="c11298">Don’t know</string>
+    <string name="c11296">Other</string>
+    <string name="c113">How good do you think it is for a pregnant woman to eat additional food or eat more frequently during pregnancy?</string>
+    <string name="c11301">Not Good</string>
+    <string name="c11302">Not Sure</string>
+    <string name="c11303">Good</string>
+    <string name="c1t5">Section D. Recognizing undernutrition and seeking care</string>
+    <string name="c114">What are the signs of undernutrition?</string>
+    <string name="c11401">Weight loss/marked thinness</string>
+    <string name="c11402">Weakness/low energy</string>
+    <string name="c11403">Frequent/severe illness</string>
+    <string name="c11404">Child not growing as expected</string>
+    <string name="c11405">Swelling/oedema</string>
+    <string name="c11406">Pallor Skin / Anemia</string>
+    <string name="c11498">Don’t know</string>
+    <string name="c11496">Other</string>
+    <string name="c115">How can you (caregiver) find out if the baby is growing well or not?</string>
+    <string name="c11501">Go to the health center/ask a doctor or nurse (health professional) (seeking health–care services for growth monitoring)</string>
+    <string name="c11598">Don’t know</string>
+    <string name="c11596">Other</string>
+    <string name="c1t6">Section E. Food, hand and water safety in emergencies</string>
+    <string name="c116">Why should you prevent raw meat, offal, poultry and seafood from touching other foods such as those that are cooked or ready to eat?</string>
+    <string name="c11601">Raw animal foods often contain germs (which may be transferred to cooked and ready–to–eat foods)</string>
+    <string name="c11698">Don’t know</string>
+    <string name="c11696">Other</string>
+    <string name="c117">Could you please describe step by step how you wash your hands?</string>
+    <string name="c11701">Washes hands in a bowl of water (sharing with other people) – poor practice</string>
+    <string name="c11702">With someone pouring a little clean water from a jug onto one’s hands – appropriate practice</string>
+    <string name="c11703">Under running water – appropriate practice</string>
+    <string name="c11704">Washes hands with soap or ashes</string>
+    <string name="c11705">Wash hands using water from a hand pump</string>
+    <string name="c11798">Don’t know/no answer</string>
+    <string name="c11796">Other</string>
+    <string name="c118">If you know that the water you are going to use for cooking or drinking is not safe or does not come from a safe source, what should you do?</string>
+    <string name="c11801">Boil it</string>
+    <string name="c11802">Add bleach/chlorine</string>
+    <string name="c11803">Strain it through a cloth</string>
+    <string name="c11804">Use a water filter (ceramic, sand, composite, etc.)</string>
+    <string name="c11805">Use solar disinfection</string>
+    <string name="c11806">Let it stand and settle</string>
+    <string name="c11807">Discard it and get water from a safe source</string>
+    <string name="c11898">Don’t know</string>
+    <string name="c11896">Other</string>
+
+    <!-- D. RMNCH - JHPIEGO Birth Preparedness and Complication Readiness (BP/CR) -->
+    <string name="d1t1">D. RMNCH – JHPIEGO Birth Preparedness and Complication Readiness (BP/CR)</string>
+    <string name="d101">In your opinion, can unforeseen problems related to pregnancy occur during any pregnancy or childbirth that could endanger the life of a woman?</string>
+    <string name="d10101">Yes</string>
+    <string name="d10102">No</string>
+    <string name="d10198">Don’t know</string>
+    <string name="d102">In your opinion, what are some serious health problems that can occur during pregnancy that could endanger the life of a pregnant woman? PROBE: Any others?</string>
+    <string name="d10201">Severe vaginal bleeding</string>
+    <string name="d10202">Severe headache</string>
+    <string name="d10203">Blurred vision</string>
+    <string name="d10204">Convulsions</string>
+    <string name="d10205">Swollen hands/face</string>
+    <string name="d10206">High fever</string>
+    <string name="d10207">Loss of consciousness</string>
+    <string name="d10208">Difficulty breathing</string>
+    <string name="d10209">Severe weakness</string>
+    <string name="d10210">Severe abdominal pain</string>
+    <string name="d10211">Accelerated/reduced fetal movement</string>
+    <string name="d10212">Water breaks without labor</string>
+    <string name="d10297">None</string>
+    <string name="d10298">Don’t know</string>
+    <string name="d10296">Other</string>
+    <string name="d103">In your opinion, could a woman die from [this problem] any of these problems?</string>
+    <string name="d10301">Yes</string>
+    <string name="d10302">No</string>
+    <string name="d10398">Don’t know</string>
+    <string name="d104">In your opinion, what are some serious health problems that can occur during labor and childbirth that could endanger the life of a pregnant woman? PROBE: Any others?</string>
+    <string name="d10401">Severe vaginal bleeding</string>
+    <string name="d10402">Severe headache</string>
+    <string name="d10403">Convulsions</string>
+    <string name="d10404">High fever</string>
+    <string name="d10405">Loss of consciousness</string>
+    <string name="d10406">Labor lasting &gt; hours</string>
+    <string name="d10407">Retained placenta</string>
+    <string name="d10497">None</string>
+    <string name="d10498">Don’t know</string>
+    <string name="d10496">Other</string>
+    <string name="d105">In your opinion, could a woman die from [this problem] any of these problems?</string>
+    <string name="d10501">Yes</string>
+    <string name="d10502">No</string>
+    <string name="d10598">Don’t know</string>
+    <string name="d106">In your opinion, what are some serious health problems that can occur during the first 2 days after birth that could endanger the life of the woman? PROBE: Any others?</string>
+    <string name="d10601">Severe vaginal bleeding</string>
+    <string name="d10602">Severe headache</string>
+    <string name="d10603">Blurred vision</string>
+    <string name="d10604">Convulsions</string>
+    <string name="d10605">Swollen hands/face</string>
+    <string name="d10606">High fever</string>
+    <string name="d10607">Malodorous vaginal discharge</string>
+    <string name="d10608">Loss of consciousness</string>
+    <string name="d10609">Difficulty breathing</string>
+    <string name="d10610">Severe weakness</string>
+    <string name="d10697">None</string>
+    <string name="d10698">Don’t know</string>
+    <string name="d10696">Other</string>
+    <string name="d107">In your opinion, could a woman die from [this problem] any of these problems?</string>
+    <string name="d10701">Yes</string>
+    <string name="d10702">No</string>
+    <string name="d10798">Don’t know</string>
+    <string name="d108">Now, I would like to ask you a few questions about the health of newborn babies. In your opinion, what are some serious health problems that can occur during the first 7 days after birth that could endanger the life of a newborn baby? PROBE: Any others?</string>
+    <string name="d10801">Difficult/fast breathing</string>
+    <string name="d10802">Yellow skin/eyes (jaundice)</string>
+    <string name="d10803">Poor sucking/feeding</string>
+    <string name="d10804">Pus, bleeding or discharge around umbilical cord</string>
+    <string name="d10805">Baby very small</string>
+    <string name="d10806">Skin lesions/blisters</string>
+    <string name="d10807">Convulsions/spasms/rigidity</string>
+    <string name="d10808">Lethargy/unconsciousness</string>
+    <string name="d10809">Red/swollen eyes with pus</string>
+    <string name="d10810">Hypothermia</string>
+    <string name="d10811">Hyperthermia</string>
+    <string name="d10897">None</string>
+    <string name="d10898">Don’t know</string>
+    <string name="d10896">Other</string>
+    <string name="d109">In your opinion, could a newborn baby die from [this problem] any of these problems?</string>
+    <string name="d10901">Yes</string>
+    <string name="d10902">No</string>
+    <string name="d10998">Don’t know</string>
+
+    <!-- E1. MENTAL HEALTH AND GENDER-BASED VIOLENCE -->
+    <string name="e1t1">E. MENTAL HEALTH AND GENDER–BASED VIOLENCE</string>
+    <string name="e101">Physical exercise contributes to good mental health.</string>
+    <string name="e10101">Strongly disagree</string>
+    <string name="e10102">Disagree</string>
+    <string name="e10103">Neither agree nor disagree</string>
+    <string name="e10104">Agree</string>
+    <string name="e10105">Strongly agree</string>
+    <string name="e102">Mental disorders do not affect people’s behavior.</string>
+    <string name="e10201">Strongly disagree</string>
+    <string name="e10202">Disagree</string>
+    <string name="e10203">Neither agree nor disagree</string>
+    <string name="e10204">Agree</string>
+    <string name="e10205">Strongly agree</string>
+    <string name="e103">Good sleep contributes to good mental health.</string>
+    <string name="e10301">Strongly disagree</string>
+    <string name="e10302">Disagree</string>
+    <string name="e10303">Neither agree nor disagree</string>
+    <string name="e10304">Agree</string>
+    <string name="e10305">Strongly agree</string>
+    <string name="e104">If I had a mental disorder, I would seek a psychologist’s help.</string>
+    <string name="e10401">Strongly disagree</string>
+    <string name="e10402">Disagree</string>
+    <string name="e10403">Neither agree nor disagree</string>
+    <string name="e10404">Agree</string>
+    <string name="e10405">Strongly agree</string>
+    <string name="e105">Mental disorders do not affect people’s feelings.</string>
+    <string name="e10501">Strongly disagree</string>
+    <string name="e10502">Disagree</string>
+    <string name="e10503">Neither agree nor disagree</string>
+    <string name="e10504">Agree</string>
+    <string name="e10505">Strongly agree</string>
+    <string name="e106">Only adults have mental disorders.</string>
+    <string name="e10601">Strongly disagree</string>
+    <string name="e10602">Disagree</string>
+    <string name="e10603">Neither agree nor disagree</string>
+    <string name="e10604">Agree</string>
+    <string name="e10605">Strongly agree</string>
+    <string name="e107">Changes in brain functioning may lead to the onset of mental disorders.</string>
+    <string name="e10701">Strongly disagree</string>
+    <string name="e10702">Disagree</string>
+    <string name="e10703">Neither agree nor disagree</string>
+    <string name="e10704">Agree</string>
+    <string name="e10705">Strongly agree</string>
+    <string name="e108">If someone close to me had a mental disorder, I would encourage them to seek a psychiatrist’s help.</string>
+    <string name="e10801">Strongly disagree</string>
+    <string name="e10802">Disagree</string>
+    <string name="e10803">Neither agree nor disagree</string>
+    <string name="e10804">Agree</string>
+    <string name="e10805">Strongly agree</string>
+    <string name="e109">A balanced diet contributes to good mental health</string>
+    <string name="e10901">Strongly disagree</string>
+    <string name="e10902">Disagree</string>
+    <string name="e10903">Neither agree nor disagree</string>
+    <string name="e10904">Agree</string>
+    <string name="e10905">Strongly agree</string>
+    <string name="e110">Loss of interest or pleasure in most activities can be a symptom of depression.</string>
+    <string name="e11001">Strongly disagree</string>
+    <string name="e11002">Disagree</string>
+    <string name="e11003">Neither agree nor disagree</string>
+    <string name="e11004">Agree</string>
+    <string name="e11005">Strongly agree</string>
+    <string name="e111">How long symptoms last is important when identifying a mental disorder.</string>
+    <string name="e11101">Strongly disagree</string>
+    <string name="e11102">Disagree</string>
+    <string name="e11103">Neither agree nor disagree</string>
+    <string name="e11104">Agree</string>
+    <string name="e11105">Strongly agree</string>
+    <string name="e112">Mental disorders can affect the way people think.</string>
+    <string name="e11201">Strongly disagree</string>
+    <string name="e11202">Disagree</string>
+    <string name="e11203">Neither agree nor disagree</string>
+    <string name="e11204">Agree</string>
+    <string name="e11205">Strongly agree</string>
+    <string name="e113">Doing enjoyable activities contributes to good mental health.</string>
+    <string name="e11301">Strongly disagree</string>
+    <string name="e11302">Disagree</string>
+    <string name="e11303">Neither agree nor disagree</string>
+    <string name="e11304">Agree</string>
+    <string name="e11305">Strongly agree</string>
+    <string name="e114">A person with schizophrenia may see or hear things that other people do not</string>
+    <string name="e11401">Strongly disagree</string>
+    <string name="e11402">Disagree</string>
+    <string name="e11403">Neither agree nor disagree</string>
+    <string name="e11404">Agree</string>
+    <string name="e11405">Strongly agree</string>
+    <string name="e115">Extremely stressful situations can lead to mental disorders.</string>
+    <string name="e11501">Strongly disagree</string>
+    <string name="e11502">Disagree</string>
+    <string name="e11503">Neither agree nor disagree</string>
+    <string name="e11504">Agree</string>
+    <string name="e11505">Strongly agree</string>
+    <string name="e116">If I had a mental disorder, I would seek a psychiatrist’s help.</string>
+    <string name="e11601">Strongly disagree</string>
+    <string name="e11602">Disagree</string>
+    <string name="e11603">Neither agree nor disagree</string>
+    <string name="e11604">Agree</string>
+    <string name="e11605">Strongly agree</string>
+
+    <!-- E2. PDHS ATTITUDES TOWARD GBV -->
+    <string name="e2t1">E2. PDHS ATTITUDES TOWARD GBV</string>
+    <string name="e201">If she goes out without telling him?</string>
+    <string name="e20101">Yes</string>
+    <string name="e20102">No</string>
+    <string name="e20198">Don’t know</string>
+    <string name="e202">If she neglects the children?</string>
+    <string name="e20201">Yes</string>
+    <string name="e20202">No</string>
+    <string name="e20298">Don’t know</string>
+    <string name="e203">If she argues with him?</string>
+    <string name="e20301">Yes</string>
+    <string name="e20302">No</string>
+    <string name="e20398">Don’t know</string>
+    <string name="e204">If she burns the food?</string>
+    <string name="e20401">Yes</string>
+    <string name="e20402">No</string>
+    <string name="e20498">Don’t know</string>
+    <string name="e205">If she neglects her in–laws?</string>
+    <string name="e20501">Yes</string>
+    <string name="e20502">No</string>
+    <string name="e20598">Don’t know</string>
+    <string name="e206">Was privacy maintained throughout the interview?</string>
+    <string name="e20601">Yes</string>
+    <string name="e20602">No</string>
+
+
     <!-- XML QUESTIONS -->
     <string name='Q_f101' translatable='false'>f101</string>
     <string name='Q_f102' translatable='false'>f102</string>
@@ -1270,11 +2110,194 @@
     <string name='Q_t6t2' translatable='false'>t6t2</string>
     <string name='Q_t6t2a' translatable='false'>t6t2a</string>
     <string name='Q_t6t3' translatable='false'>t6t3</string>
-    <string name="participant_list">Participant List</string>
-    <string name="eligible_participant_list">Eligible Participant List</string>
-    <string name="scr_id_not_found">Inalid Sreening Id</string>
-    <string name="no_eligible_participants">No Eligible Partiipants</string>
-    <string name="select_search_type">Please Select search type</string>
-    <string name="search_by_pid">Search value by Participant Id</string>
+
+    <string name='Q_a101' translatable='false'>a101</string>
+    <string name='Q_a102' translatable='false'>a102</string>
+    <string name='Q_a103' translatable='false'>a103</string>
+    <string name='Q_a104' translatable='false'>a104</string>
+    <string name='Q_a105' translatable='false'>a105</string>
+    <string name='Q_a106' translatable='false'>a106</string>
+    <string name='Q_a107' translatable='false'>a107</string>
+    <string name='Q_a108' translatable='false'>a108</string>
+    <string name='Q_a109' translatable='false'>a109</string>
+    <string name='Q_a110' translatable='false'>a110</string>
+    <string name='Q_a111' translatable='false'>a111</string>
+    <string name='Q_a112' translatable='false'>a112</string>
+    <string name='Q_a113' translatable='false'>a113</string>
+    <string name='Q_a115' translatable='false'>a115</string>
+    <string name='Q_a116' translatable='false'>a116</string>
+    <string name='Q_a117' translatable='false'>a117</string>
+    <string name='Q_a1t1' translatable='false'>a1t1</string>
+    <string name='Q_a1t2' translatable='false'>a1t2</string>
+    <string name='Q_a201' translatable='false'>a201</string>
+    <string name='Q_a202' translatable='false'>a202</string>
+    <string name='Q_a203' translatable='false'>a203</string>
+    <string name='Q_a204' translatable='false'>a204</string>
+    <string name='Q_a205' translatable='false'>a205</string>
+    <string name='Q_a206' translatable='false'>a206</string>
+    <string name='Q_a207' translatable='false'>a207</string>
+    <string name='Q_a208' translatable='false'>a208</string>
+    <string name='Q_a209' translatable='false'>a209</string>
+    <string name='Q_a210' translatable='false'>a210</string>
+    <string name='Q_a211' translatable='false'>a211</string>
+    <string name='Q_a212' translatable='false'>a212</string>
+    <string name='Q_a213' translatable='false'>a213</string>
+    <string name='Q_a214' translatable='false'>a214</string>
+    <string name='Q_a214a' translatable='false'>a214a</string>
+    <string name='Q_a214b' translatable='false'>a214b</string>
+    <string name='Q_a214c' translatable='false'>a214c</string>
+    <string name='Q_a214d' translatable='false'>a214d</string>
+    <string name='Q_a214e' translatable='false'>a214e</string>
+    <string name='Q_a214f' translatable='false'>a214f</string>
+    <string name='Q_a214g' translatable='false'>a214g</string>
+    <string name='Q_a214h' translatable='false'>a214h</string>
+    <string name='Q_a214i' translatable='false'>a214i</string>
+    <string name='Q_a214j' translatable='false'>a214j</string>
+    <string name='Q_a214k' translatable='false'>a214k</string>
+    <string name='Q_a214l' translatable='false'>a214l</string>
+    <string name='Q_a214m' translatable='false'>a214m</string>
+    <string name='Q_a214n' translatable='false'>a214n</string>
+    <string name='Q_a214o' translatable='false'>a214o</string>
+    <string name='Q_a214p' translatable='false'>a214p</string>
+    <string name='Q_a214q' translatable='false'>a214q</string>
+    <string name='Q_a214r' translatable='false'>a214r</string>
+    <string name='Q_a215' translatable='false'>a215</string>
+    <string name='Q_a216' translatable='false'>a216</string>
+    <string name='Q_a217' translatable='false'>a217</string>
+    <string name='Q_a217a' translatable='false'>a217a</string>
+    <string name='Q_a217b' translatable='false'>a217b</string>
+    <string name='Q_a217c' translatable='false'>a217c</string>
+    <string name='Q_a217d' translatable='false'>a217d</string>
+    <string name='Q_a217e' translatable='false'>a217e</string>
+    <string name='Q_a217f' translatable='false'>a217f</string>
+    <string name='Q_a217g' translatable='false'>a217g</string>
+    <string name='Q_a217h' translatable='false'>a217h</string>
+    <string name='Q_a217i' translatable='false'>a217i</string>
+    <string name='Q_a218' translatable='false'>a218</string>
+    <string name='Q_a219' translatable='false'>a219</string>
+    <string name='Q_a220' translatable='false'>a220</string>
+    <string name='Q_a220a' translatable='false'>a220a</string>
+    <string name='Q_a220b' translatable='false'>a220b</string>
+    <string name='Q_a220c' translatable='false'>a220c</string>
+    <string name='Q_a220d' translatable='false'>a220d</string>
+    <string name='Q_a220e' translatable='false'>a220e</string>
+    <string name='Q_a220f' translatable='false'>a220f</string>
+    <string name='Q_a220g' translatable='false'>a220g</string>
+    <string name='Q_a221' translatable='false'>a221</string>
+    <string name='Q_a2t1' translatable='false'>a2t1</string>
+    <string name='Q_a301' translatable='false'>a301</string>
+    <string name='Q_a302' translatable='false'>a302</string>
+    <string name='Q_a303' translatable='false'>a303</string>
+    <string name='Q_a304' translatable='false'>a304</string>
+    <string name='Q_a305' translatable='false'>a305</string>
+    <string name='Q_a306' translatable='false'>a306</string>
+    <string name='Q_a307' translatable='false'>a307</string>
+    <string name='Q_a308' translatable='false'>a308</string>
+    <string name='Q_a309' translatable='false'>a309</string>
+    <string name='Q_a310' translatable='false'>a310</string>
+    <string name='Q_a310a' translatable='false'>a310a</string>
+    <string name='Q_a310b' translatable='false'>a310b</string>
+    <string name='Q_a310c' translatable='false'>a310c</string>
+    <string name='Q_a3t1' translatable='false'>a3t1</string>
+    <string name='Q_a3t2' translatable='false'>a3t2</string>
+    <string name='Q_b101' translatable='false'>b101</string>
+    <string name='Q_b102' translatable='false'>b102</string>
+    <string name='Q_b102a' translatable='false'>b102a</string>
+    <string name='Q_b103' translatable='false'>b103</string>
+    <string name='Q_b104' translatable='false'>b104</string>
+    <string name='Q_b105' translatable='false'>b105</string>
+    <string name='Q_b106' translatable='false'>b106</string>
+    <string name='Q_b107' translatable='false'>b107</string>
+    <string name='Q_b108' translatable='false'>b108</string>
+    <string name='Q_b109' translatable='false'>b109</string>
+    <string name='Q_b110' translatable='false'>b110</string>
+    <string name='Q_b111' translatable='false'>b111</string>
+    <string name='Q_b112' translatable='false'>b112</string>
+    <string name='Q_b113' translatable='false'>b113</string>
+    <string name='Q_b114' translatable='false'>b114</string>
+    <string name='Q_b1t1' translatable='false'>b1t1</string>
+    <string name='Q_b1t2' translatable='false'>b1t2</string>
+    <string name='Q_b201' translatable='false'>b201</string>
+    <string name='Q_b202' translatable='false'>b202</string>
+    <string name='Q_b203' translatable='false'>b203</string>
+    <string name='Q_b204' translatable='false'>b204</string>
+    <string name='Q_b205' translatable='false'>b205</string>
+    <string name='Q_b206' translatable='false'>b206</string>
+    <string name='Q_b206a' translatable='false'>b206a</string>
+    <string name='Q_b206b' translatable='false'>b206b</string>
+    <string name='Q_b207' translatable='false'>b207</string>
+    <string name='Q_b208' translatable='false'>b208</string>
+    <string name='Q_b2t1' translatable='false'>b2t1</string>
+    <string name='Q_b301' translatable='false'>b301</string>
+    <string name='Q_b302' translatable='false'>b302</string>
+    <string name='Q_b303' translatable='false'>b303</string>
+    <string name='Q_b3t1' translatable='false'>b3t1</string>
+    <string name='Q_b3t2' translatable='false'>b3t2</string>
+    <string name='Q_b401' translatable='false'>b401</string>
+    <string name='Q_b402' translatable='false'>b402</string>
+    <string name='Q_b403' translatable='false'>b403</string>
+    <string name='Q_b404' translatable='false'>b404</string>
+    <string name='Q_b405' translatable='false'>b405</string>
+    <string name='Q_b4t1' translatable='false'>b4t1</string>
+    <string name='Q_c101' translatable='false'>c101</string>
+    <string name='Q_c102' translatable='false'>c102</string>
+    <string name='Q_c103' translatable='false'>c103</string>
+    <string name='Q_c104' translatable='false'>c104</string>
+    <string name='Q_c105' translatable='false'>c105</string>
+    <string name='Q_c106' translatable='false'>c106</string>
+    <string name='Q_c107' translatable='false'>c107</string>
+    <string name='Q_c108' translatable='false'>c108</string>
+    <string name='Q_c109' translatable='false'>c109</string>
+    <string name='Q_c110' translatable='false'>c110</string>
+    <string name='Q_c111' translatable='false'>c111</string>
+    <string name='Q_c112' translatable='false'>c112</string>
+    <string name='Q_c113' translatable='false'>c113</string>
+    <string name='Q_c114' translatable='false'>c114</string>
+    <string name='Q_c115' translatable='false'>c115</string>
+    <string name='Q_c116' translatable='false'>c116</string>
+    <string name='Q_c117' translatable='false'>c117</string>
+    <string name='Q_c118' translatable='false'>c118</string>
+    <string name='Q_c1t1' translatable='false'>c1t1</string>
+    <string name='Q_c1t2' translatable='false'>c1t2</string>
+    <string name='Q_c1t3' translatable='false'>c1t3</string>
+    <string name='Q_c1t4' translatable='false'>c1t4</string>
+    <string name='Q_c1t5' translatable='false'>c1t5</string>
+    <string name='Q_c1t6' translatable='false'>c1t6</string>
+    <string name='Q_d101' translatable='false'>d101</string>
+    <string name='Q_d102' translatable='false'>d102</string>
+    <string name='Q_d103' translatable='false'>d103</string>
+    <string name='Q_d104' translatable='false'>d104</string>
+    <string name='Q_d105' translatable='false'>d105</string>
+    <string name='Q_d106' translatable='false'>d106</string>
+    <string name='Q_d107' translatable='false'>d107</string>
+    <string name='Q_d108' translatable='false'>d108</string>
+    <string name='Q_d109' translatable='false'>d109</string>
+    <string name='Q_d1t1' translatable='false'>d1t1</string>
+    <string name='Q_e101' translatable='false'>e101</string>
+    <string name='Q_e102' translatable='false'>e102</string>
+    <string name='Q_e103' translatable='false'>e103</string>
+    <string name='Q_e104' translatable='false'>e104</string>
+    <string name='Q_e105' translatable='false'>e105</string>
+    <string name='Q_e106' translatable='false'>e106</string>
+    <string name='Q_e107' translatable='false'>e107</string>
+    <string name='Q_e108' translatable='false'>e108</string>
+    <string name='Q_e109' translatable='false'>e109</string>
+    <string name='Q_e110' translatable='false'>e110</string>
+    <string name='Q_e111' translatable='false'>e111</string>
+    <string name='Q_e112' translatable='false'>e112</string>
+    <string name='Q_e113' translatable='false'>e113</string>
+    <string name='Q_e114' translatable='false'>e114</string>
+    <string name='Q_e115' translatable='false'>e115</string>
+    <string name='Q_e116' translatable='false'>e116</string>
+    <string name='Q_e1t1' translatable='false'>e1t1</string>
+    <string name='Q_e201' translatable='false'>e201</string>
+    <string name='Q_e202' translatable='false'>e202</string>
+    <string name='Q_e203' translatable='false'>e203</string>
+    <string name='Q_e204' translatable='false'>e204</string>
+    <string name='Q_e205' translatable='false'>e205</string>
+    <string name='Q_e206' translatable='false'>e206</string>
+    <string name='Q_e2t1' translatable='false'>e2t1</string>
+
+
 
 </resources>

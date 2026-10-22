@@ -28,6 +28,7 @@ import edu.aku.omarshoaib.renew.model.Form4;
 import edu.aku.omarshoaib.renew.model.Form5;
 import edu.aku.omarshoaib.renew.model.Form5A;
 import edu.aku.omarshoaib.renew.model.Form6;
+import edu.aku.omarshoaib.renew.model.FormKAP;
 import edu.aku.omarshoaib.renew.model.HCF;
 import edu.aku.omarshoaib.renew.model.Participant;
 import edu.aku.omarshoaib.renew.model.User;
@@ -50,6 +51,7 @@ public class MainApp extends Application {
     public static User user;
     public static HCF hcf;
     public static Form1 form1;
+    public static FormKAP formKAP;
     public static Participant participant;
     public static VPHQ9 vPHQ9;
     public static List<VPHQ9> vForm2aList;
