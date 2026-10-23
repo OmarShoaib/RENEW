@@ -1004,7 +1004,8 @@
 
     <!-- Part 1: Identification and eligibility screening -->
     <string name="a1t1">A. RESPONDENT AND HOUSEHOLD PROFILE</string>
-    <string name="a1t2">Part 1: Identification and eligibility screening</string>
+    <string name="a1t2">Part 1</string>
+    <string name="a1t22">Identification and eligibility screening</string>
     <string name="a101">Respondent Name</string>
     <string name="a102">Does the respondent have a &lt;2 years child?</string>
     <string name="a10201">Yes</string>
@@ -1037,7 +1038,8 @@
     <string name="a11799">Refused</string>
 
     <!-- Part 2: Household Information -->
-    <string name="a2t1">Part 2: Household Information</string>
+    <string name="a2t1">Part 2</string>
+    <string name="a2t2">Household Information</string>
     <string name="a201">How many people live in your household? (adults and children)</string>
     <string name="a202">Do you own or rent the house that you live in?</string>
     <string name="a20201">Own home</string>
@@ -1296,7 +1298,8 @@
     <string name="a22196">Other</string>
 
     <!-- Part 3: Demographic information -->
-    <string name="a3t1">Part 3: Demographic information</string>
+    <string name="a3t1">Part 3</string>
+    <string name="a3t12">Demographic information</string>
     <string name="a3t2">Read aloud: Now I would like to ask you some questions about yourself.</string>
     <string name="a301">In what month and year were you born?</string>
     <string name="a301d">Day</string>
@@ -1363,7 +1366,8 @@
 
     <!-- B1. PREPAREDNESS ACTIONS AND PLANNING (PAP) -->
     <string name="b1t1">B. DISASTER RISK REDUCTION</string>
-    <string name="b1t2">B1. PREPAREDNESS ACTIONS AND PLANNING (PAP)</string>
+    <string name="b1t2">SectionB1</string>
+    <string name="b1t22">PREPAREDNESS ACTIONS AND PLANNING (PAP)</string>
     <string name="b101">Do you have an emergency plan for your home?</string>
     <string name="b10101">Yes</string>
     <string name="b10102">No</string>
@@ -1413,7 +1417,8 @@
     <string name="b11402">No</string>
 
     <!-- B2. EIGHT-ITEM DISASTER PREPAREDNESS QUESTIONNAIRE -->
-    <string name="b2t1">B2. EIGHT–ITEM DISASTER PREPAREDNESS QUESTIONNAIRE</string>
+    <string name="b2t1">SectionB2</string>
+    <string name="b2t2">EIGHT–ITEM DISASTER PREPAREDNESS QUESTIONNAIRE</string>
     <string name="b201">Do you prepare yourself prior to disasters?</string>
     <string name="b20101">Yes</string>
     <string name="b20102">No</string>
@@ -1445,7 +1450,8 @@
     <string name="b20802">No</string>
 
     <!-- B3. HEAT EMERGENCY AWARENESS AND TREATMENT (HEAT) -->
-    <string name="b3t1">B3. HEAT EMERGENCY AWARENESS AND TREATMENT (HEAT)</string>
+    <string name="b3t1">SectionB3</string>
+    <string name="b3t12">HEAT EMERGENCY AWARENESS AND TREATMENT (HEAT)</string>
     <string name="b3t2">SECTION A: KNOWLEDGE</string>
     <string name="b301">What is the distance from your home to the nearest health care facility?</string>
     <string name="b30101">Less than 1 km</string>
@@ -1461,7 +1467,8 @@
     <string name="b30302">No</string>
 
     <!-- B4. CLIMATE-SENSITIVE DISEASES -->
-    <string name="b4t1">B4. CLIMATE–SENSITIVE DISEASES</string>
+    <string name="b4t1">SectionB4</string>
+    <string name="b4t12">CLIMATE–SENSITIVE DISEASES</string>
     <string name="b401">What are the common disease outbreaks in flood–prone settings like yours? (Do not prompt; select all responses mentioned.)</string>
     <string name="b40101">Diarrhea, including cholera</string>
     <string name="b40102">Malaria</string>
@@ -1522,7 +1529,8 @@ RECORD ALL MENTIONED</string>
     <string name="b40596">Other, specify</string>
 
     <!-- C. NUTRITION IN EMERGENCIES - FOOD AND AGRICULTURE ORGANIZATION (FAO) - ADAPTED FORM -->
-    <string name="c1t1">C. NUTRITION IN EMERGENCIES – FOOD AND AGRICULTURE ORGANIZATION (FAO) – ADAPTED FORM</string>
+    <string name="c1t1">Section C</string>
+    <string name="c1t12">NUTRITION IN EMERGENCIES – FOOD AND AGRICULTURE ORGANIZATION (FAO) – ADAPTED FORM</string>
     <string name="c1t2">Section A. Breastfeeding and infant feeding</string>
     <string name="c101">What is the first food a newborn baby should receive?</string>
     <string name="c10101">Only breastmilk</string>
@@ -1631,7 +1639,8 @@ For a lactating woman: How should a lactating woman eat in comparison with a non
     <string name="c11896">Other</string>
 
     <!-- D. RMNCH - JHPIEGO Birth Preparedness and Complication Readiness (BP/CR) -->
-    <string name="d1t1">D. RMNCH – JHPIEGO Birth Preparedness and Complication Readiness (BP/CR)</string>
+    <string name="d1t1">Section D</string>
+    <string name="d1t12">RMNCH – JHPIEGO Birth Preparedness and Complication Readiness (BP/CR)</string>
     <string name="d101">In your opinion, can unforeseen problems related to pregnancy occur during any pregnancy or childbirth that could endanger the life of a woman?</string>
     <string name="d10101">Yes</string>
     <string name="d10102">No</string>
@@ -1710,7 +1719,8 @@ For a lactating woman: How should a lactating woman eat in comparison with a non
     <string name="d10998">Don’t know</string>
 
     <!-- E1. MENTAL HEALTH AND GENDER-BASED VIOLENCE -->
-    <string name="e1t1">E. MENTAL HEALTH AND GENDER–BASED VIOLENCE</string>
+    <string name="e1t1">Section E</string>
+    <string name="e1t12">MENTAL HEALTH AND GENDER–BASED VIOLENCE</string>
     <string name="e101">Physical exercise contributes to good mental health.</string>
     <string name="e10101">Strongly disagree</string>
     <string name="e10102">Disagree</string>
@@ -1809,7 +1819,8 @@ For a lactating woman: How should a lactating woman eat in comparison with a non
     <string name="e11605">Strongly agree</string>
 
     <!-- E2. PDHS ATTITUDES TOWARD GBV -->
-    <string name="e2t1">E2. PDHS ATTITUDES TOWARD GBV</string>
+    <string name="e2t1">Section E2</string>
+    <string name="e2t12">PDHS ATTITUDES TOWARD GBV</string>
     <string name="e201">If she goes out without telling him?</string>
     <string name="e20101">Yes</string>
     <string name="e20102">No</string>

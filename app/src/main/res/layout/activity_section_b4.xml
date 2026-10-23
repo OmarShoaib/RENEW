@@ -33,13 +33,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- b4t1 Title -->
-                <TextView
-                    style="@style/info"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/b4t1" />
-
                 <!-- b401 CheckBox -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVb401"

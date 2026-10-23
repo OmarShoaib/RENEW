@@ -161,6 +161,39 @@
         <activity
             android:name="edu.aku.omarshoaib.renew.activity.sections.child.SectionF05AListAC"
             android:exported="true" />
+        <activity
+            android:name="edu.aku.omarshoaib.renew.activity.sections.KAP.SectionA1"
+            android:exported="true" />
+        <activity
+            android:name="edu.aku.omarshoaib.renew.activity.sections.KAP.SectionA2"
+            android:exported="true" />
+        <activity
+            android:name="edu.aku.omarshoaib.renew.activity.sections.KAP.SectionA3"
+            android:exported="true" />
+        <activity
+            android:name="edu.aku.omarshoaib.renew.activity.sections.KAP.SectionB1"
+            android:exported="true" />
+        <activity
+            android:name="edu.aku.omarshoaib.renew.activity.sections.KAP.SectionB2"
+            android:exported="true" />
+        <activity
+            android:name="edu.aku.omarshoaib.renew.activity.sections.KAP.SectionB3"
+            android:exported="true" />
+        <activity
+            android:name="edu.aku.omarshoaib.renew.activity.sections.KAP.SectionB4"
+            android:exported="true" />
+        <activity
+            android:name="edu.aku.omarshoaib.renew.activity.sections.KAP.SectionC"
+            android:exported="true" />
+        <activity
+            android:name="edu.aku.omarshoaib.renew.activity.sections.KAP.SectionD"
+            android:exported="true" />
+        <activity
+            android:name="edu.aku.omarshoaib.renew.activity.sections.KAP.SectionE1"
+            android:exported="true" />
+        <activity
+            android:name="edu.aku.omarshoaib.renew.activity.sections.KAP.SectionE2"
+            android:exported="true" />
 
         <!-- SYNCED RECORDS LIST ACTIVITY -->
         <activity

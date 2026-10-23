@@ -33,13 +33,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- e1t1 Title -->
-                <TextView
-                    style="@style/info"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/e1t1" />
-
                 <!-- e101 Radio -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVe101"

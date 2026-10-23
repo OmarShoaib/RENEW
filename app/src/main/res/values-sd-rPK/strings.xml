@@ -976,7 +976,8 @@
     <!-- Part 1: Identification and eligibility screening -->
 
     <string name="a1t1">جواب ڏيندڙ ۽ گھر بابت ڄاڻ</string>
-    <string name="a1t2">سڃاڻپ ۽ شموليت جي جاچ</string>
+    <string name="a1t2">حصہ 1</string>
+    <string name="a1t22">سڃاڻپ ۽ شموليت جي جاچ</string>
     <string name="a101">جواب ڏيندڙ جو نالو</string>
     <string name="a102">ڇا جواب ڏيندڙ وٽ ٻن سالن کان گهٽ عمر جو ٻار آهي؟</string>
     <string name="a10201">ها</string>
@@ -1009,8 +1010,8 @@
     <string name="a11799">انڪار ڪيو</string>
 
     <!-- Part 2: Household Information -->
-
-    <string name="a2t1">گھراڻي متعلق معلومات</string>
+    <string name="a2t1">حصہ 2</string>
+    <string name="a2t2">گھراڻي متعلق معلومات</string>
     <string name="a201">توهان جي گھر ۾ ڪُل ڪيترا  ڀاتي رهندا آهن؟  (بالغ ۽ ٻار)</string>
     <string name="a202">هي گهرتوهان جو پنھنجو آهي يا ڪرائي جوآهي؟</string>
     <string name="a20201">پنهنجو گهر</string>
@@ -1270,7 +1271,8 @@
     <string name="a22196">ٻيو ڪجهه</string>
 
     <!-- Part 3: Demographic information -->
-    <string name="a3t1">ذاتي ۽ آبادي جي معلومات</string>
+    <string name="a3t1">حصہ 3</string>
+    <string name="a3t12">ذاتي ۽ آبادي جي معلومات</string>
     <string name="a3t2">وڏي آواز ۾ چئو؛هاڻي آء توهان کان توهان جي باري ۾ ڪجهه سوال پڇندس.</string>
     <string name="a301">توھان ڪهڙي مهيني ۽ سال ۾ پيدا ٿيا آھيو؟</string>
     <string name="a301d">ڏينهن</string>
@@ -1337,7 +1339,8 @@
 
     <!-- B1. PREPAREDNESS ACTIONS AND PLANNING (PAP) -->
     <string name="b1t1">آفتن جي خطري (ھنگامي حلتن) کي گھٽ ڪرڻ</string>
-    <string name="b1t2">آفتن (ھنگامي حلتن) جي لاءِ تياري ۽ منصوبابندي</string>
+    <string name="b1t2">سیکشنB1</string>
+    <string name="b1t22">آفتن (ھنگامي حلتن) جي لاءِ تياري ۽ منصوبابندي</string>
     <string name="b101">ڇا توهان وٽ پنهنجي گهر لاءِ هنگامي حالتن جو منصوبو موجود آهي؟</string>
     <string name="b10101">ها</string>
     <string name="b10102">نه</string>
@@ -1387,7 +1390,8 @@
     <string name="b11402">نه</string>
 
     <!-- B2. EIGHT-ITEM DISASTER PREPAREDNESS QUESTIONNAIRE -->
-    <string name="b2t1">آفتن لاءِ تياري بابت اٰٺ سوالن تي ٻڌل سوالنامو</string>
+    <string name="b2t1">سیکشن B2</string>
+    <string name="b2t2">آفتن لاءِ تياري بابت اٰٺ سوالن تي ٻڌل سوالنامو</string>
     <string name="b201">ڇا توهان آفت اچڻ کان اڳ پاڻ کي تيار ڪندا آهيو؟</string>
     <string name="b20101">ها</string>
     <string name="b20102">نه</string>
@@ -1419,7 +1423,8 @@
     <string name="b20802">نه</string>
 
     <!-- B3. HEAT EMERGENCY AWARENESS AND TREATMENT (HEAT) -->
-    <string name="b3t1">گرمي جي ھنگامي صورتحال بابت آگاھي ۽ علاج</string>
+    <string name="b3t1">سیکشن B3</string>
+    <string name="b3t12">گرمي جي ھنگامي صورتحال بابت آگاھي ۽ علاج</string>
     <string name="b3t2">حصو اي. ڄاڻ</string>
     <string name="b301">توهان جي گهر کان ويجهي صحت مرڪز تائين ڪيترو فاصلو آهي؟</string>
     <string name="b30101">1 ڪلوميٽر کان گهٽ</string>
@@ -1435,7 +1440,8 @@
     <string name="b30302">نه</string>
 
     <!-- B4. CLIMATE-SENSITIVE DISEASES -->
-    <string name="b4t1">موسمي تبديليءَ سان لاڳاپيل بيماريون</string>
+    <string name="b4t1">سیکشنB4</string>
+    <string name="b4t12">موسمي تبديليءَ سان لاڳاپيل بيماريون</string>
     <string name="b401">توهان جي علائقي جهڙن ٻوڏ کان متاثر ٿيندڙ علائقن ۾ عام طور تي ڪهڙين بيمارين جون وبائون پکڙجن ٿيون؟ (جواب نه ٻڌايو؛ ٻڌايل سڀ جوابن تي ✔ لڳايو.)</string>
     <string name="b40101">دست، جنهن ۾ ڪالرا به شامل آهي</string>
     <string name="b40102">مليريا</string>
@@ -1497,7 +1503,8 @@
     <string name="b40596">ٻيو، وضاحت ڪريو</string>
 
     <!-- C. NUTRITION IN EMERGENCIES - FOOD AND AGRICULTURE ORGANIZATION (FAO) - ADAPTED FORM -->
-    <string name="c1t1">هنگامي حالتن ۾ غذائيت — خوراڪ ۽ زراعت واري اداري (FAO) جي ترتيب ڏنل فارم</string>
+    <string name="c1t1">سیکشن C</string>
+    <string name="c1t12">هنگامي حالتن ۾ غذائيت — خوراڪ ۽ زراعت واري اداري (FAO) جي ترتيب ڏنل فارم</string>
     <string name="c1t2">حصو . ٻار کي کير پيارڻ ۽ ٻار جي خوراڪ</string>
     <string name="c101">نئين ڄاول ٻار کي سڀ کان پهرين ڪهڙي خوراڪ ڏيڻ گهرجي؟</string>
     <string name="c10101">صرف ماءُ جو کير(ٿڃ)</string>
@@ -1607,7 +1614,8 @@
     <string name="c11896">ٻيو</string>
 
     <!-- D. RMNCH - JHPIEGO Birth Preparedness and Complication Readiness (BP/CR) -->
-    <string name="d1t1">ٻار جي پيدائش جي تياري ۽ پيچيدگين لاءِ اڳواٽ تيار رهڻ (BP/CR)</string>
+    <string name="d1t1">سیکشن D</string>
+    <string name="d1t12">ٻار جي پيدائش جي تياري ۽ پيچيدگين لاءِ اڳواٽ تيار رهڻ (BP/CR)</string>
     <string name="d101">توهان جي خيال ۾، ڇا ڪنهن به حمل يا ويم دوران اوچتا مسئلا پيدا ٿي سگهن ٿا جيڪي عورت جي زندگي لاءِ خطرو بڻجي سگھن ٿا؟</string>
     <string name="d10101">ها</string>
     <string name="d10102">نه</string>
@@ -1686,7 +1694,8 @@
     <string name="d10998">خبر ناهي</string>
 
     <!-- E1. MENTAL HEALTH AND GENDER-BASED VIOLENCE -->
-    <string name="e1t1">ذهني صحت ۽ جنس جي بنياد تي تشدد</string>
+    <string name="e1t1">سیکشن E</string>
+    <string name="e1t12">ذهني صحت ۽ جنس جي بنياد تي تشدد</string>
     <string name="e101">جسماني ورزش سٺي ذهني صحت لاءِ فائديمند آھي.</string>
     <string name="e10101">بلڪل متفق ناهيان</string>
     <string name="e10102">متفق ناهيان</string>
@@ -1785,7 +1794,8 @@
     <string name="e11605">بلڪل متفق آهيان</string>
 
     <!-- E2. PDHS ATTITUDES TOWARD GBV -->
-    <string name="e2t1">PDHS E2. ۾ جنس جي بنياد تي تشدد (GBV) بابت رويا</string>
+    <string name="e2t1">سیکشن E</string>
+    <string name="e2t12">PDHS E2. ۾ جنس جي بنياد تي تشدد (GBV) بابت رويا</string>
     <string name="e201">جيڪڏهن هوءَ مڙس کي ٻڌائڻ کان سواءِ ٻاهر وڃي؟</string>
     <string name="e20101">ها</string>
     <string name="e20102">نه</string>
