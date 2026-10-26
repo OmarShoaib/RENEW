@@ -74,4 +74,8 @@
         <attr name="columnCount" format="integer" />
     </declare-styleable>
 
+    <declare-styleable name="AppRadioGroup_Layout">
+        <attr name="layout_span" format="integer" />
+    </declare-styleable>
+
 </resources>

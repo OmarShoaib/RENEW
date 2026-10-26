@@ -12,6 +12,7 @@ import androidx.databinding.DataBindingUtil;
 import java.util.List;
 
 import edu.aku.omarshoaib.renew.R;
+import edu.aku.omarshoaib.renew.activity.sections.KAP.SectionA1;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivityModuleBinding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
@@ -56,6 +57,7 @@ public class ModuleAC extends AppCompatActivity {
         if (viewId == R.id.option1) MainApp.entryType = MainApp.MODULE_WOMAN;
         else if (viewId == R.id.option2) MainApp.entryType = MainApp.MODULE_CHILD;
 
-        AppConstants.gotoActivity(activity, MainActivity.class, false);
+        AppConstants.gotoActivity(activity, viewId == R.id.option3 ?
+                SectionA1.class : MainActivity.class, false);
     }
 }

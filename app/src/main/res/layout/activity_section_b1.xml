@@ -68,6 +68,15 @@
                             android:orientation="horizontal">
 
                             <RadioButton
+                                android:id="@+id/b10101"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:checked="@{form.b101.equals(`1`)}"
+                                android:onClick="@{()->form.setB101(`1`)}"
+                                android:text="@string/b10101" />
+
+                            <RadioButton
                                 android:id="@+id/b10102"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
@@ -137,7 +146,8 @@
                 <!-- b102a CheckBox -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVb102a"
-                    style="@style/cardView">
+                    style="@style/cardView"
+                    android:visibility="@{form.b102.equals(`1`) ? View.VISIBLE : View.GONE}">
 
                     <LinearLayout
                         android:layout_width="match_parent"

@@ -10,11 +10,14 @@ import androidx.room.Entity;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.reflect.TypeToken;
 
+import java.util.List;
+
 import edu.aku.omarshoaib.renew.BR;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.database.dao.Form1Dao;
 import edu.aku.omarshoaib.renew.database.dao.FormKAPDao;
 import edu.aku.omarshoaib.renew.global.AppConstants;
+import edu.aku.omarshoaib.renew.global.DateUtils;
 import edu.aku.omarshoaib.renew.global.MainApp;
 
 @Entity(tableName = FormKAP.TABLE_NAME)
@@ -719,6 +722,7 @@ public class FormKAP extends FormBaseModel {
 
         public void setA211(String a211) {
             this.a211 = a211;
+            setA212(a211.equals("1") ? this.a212 : _EMPTY_);
             notifyPropertyChanged(BR.a211);
         }
 
@@ -1132,6 +1136,13 @@ public class FormKAP extends FormBaseModel {
 
         public void setA219(String a219) {
             this.a219 = a219;
+            setA220a(a219.equals("1") ? this.a220a : _EMPTY_);
+            setA220b(a219.equals("1") ? this.a220b : _EMPTY_);
+            setA220c(a219.equals("1") ? this.a220c : _EMPTY_);
+            setA220d(a219.equals("1") ? this.a220d : _EMPTY_);
+            setA220e(a219.equals("1") ? this.a220e : _EMPTY_);
+            setA220f(a219.equals("1") ? this.a220f : _EMPTY_);
+            setA220g(a219.equals("1") ? this.a220g : _EMPTY_);
             notifyPropertyChanged(BR.a219);
         }
 
@@ -1274,6 +1285,7 @@ public class FormKAP extends FormBaseModel {
 
         public void setA301d(String a301d) {
             this.a301d = a301d;
+            setAgeA302();
             notifyPropertyChanged(BR.a301d);
         }
 
@@ -1284,6 +1296,11 @@ public class FormKAP extends FormBaseModel {
 
         public void setA301m(String a301m) {
             this.a301m = a301m;
+            if (a301m.equals("98")) {
+                setA301d("98");
+                setA302(_EMPTY_);
+            }
+            else setAgeA302();
             notifyPropertyChanged(BR.a301m);
         }
 
@@ -1294,7 +1311,19 @@ public class FormKAP extends FormBaseModel {
 
         public void setA301y(String a301y) {
             this.a301y = a301y;
+            if (a301y.equals("9998")) {
+                setA301m("98");
+                setA302(_EMPTY_);
+            }
+            else setAgeA302();
             notifyPropertyChanged(BR.a301y);
+        }
+
+        private void setAgeA302() {
+            List<String> age = DateUtils.calculateAge(this.a301y, this.a301m, this.a301d);
+            setA302(age.get(0));
+//            setA206m(age.get(1));
+//            setA206d(age.get(2));
         }
 
         @Bindable
@@ -1356,6 +1385,10 @@ public class FormKAP extends FormBaseModel {
 
         public void setA305(String a305) {
             this.a305 = a305;
+            if(!a305.equals("1")) {
+                setA306(_EMPTY_);
+                setA307(_EMPTY_);
+            }
             notifyPropertyChanged(BR.a305);
         }
 
@@ -1499,6 +1532,12 @@ public class FormKAP extends FormBaseModel {
 
         public void setB102(String b102) {
             this.b102 = b102;
+            if(!b102.equals("1")) {
+                setB102a01(_EMPTY_);
+                setB102a02(_EMPTY_);
+                setB102a03(_EMPTY_);
+                setB102a96(_EMPTY_);
+            }
             notifyPropertyChanged(BR.b102);
         }
 
@@ -1767,6 +1806,12 @@ public class FormKAP extends FormBaseModel {
 
         public void setB206(String b206) {
             this.b206 = b206;
+            if(!b206.equals("1")) {
+                setB206a01(_EMPTY_);
+                setB206a02(_EMPTY_);
+                setB206a96(_EMPTY_);
+                setB206b(_EMPTY_);
+            }
             notifyPropertyChanged(BR.b206);
         }
 
