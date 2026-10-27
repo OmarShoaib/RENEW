@@ -888,7 +888,9 @@
             </ScrollView>
         </LinearLayout>
 
-        <!--INTRO LAYOUT-->
+        <!--
+
+        &lt;!&ndash;INTRO LAYOUT&ndash;&gt;
         <RelativeLayout
             android:id="@+id/lockedLayout"
             android:layout_width="match_parent"
@@ -943,6 +945,6 @@
                 android:elevation="@dimen/_2sdp"
                 android:focusable="true"
                 tools:ignore="ContentDescription" />
-        </RelativeLayout>
+        </RelativeLayout>-->
     </RelativeLayout>
 </layout>

@@ -37,6 +37,7 @@ import edu.aku.omarshoaib.renew.model.Form4;
 import edu.aku.omarshoaib.renew.model.Form5;
 import edu.aku.omarshoaib.renew.model.Form5A;
 import edu.aku.omarshoaib.renew.model.Form6;
+import edu.aku.omarshoaib.renew.model.FormKAP;
 import edu.aku.omarshoaib.renew.model.Participant;
 import edu.aku.omarshoaib.renew.model.SyncModel;
 import edu.aku.omarshoaib.renew.webcall.web_client.CryptoUtil;
@@ -81,6 +82,7 @@ public class UploadData {
             put(new SyncModel(Form2b.class, MainApp.MODULE_FORM, Form2b.TABLE_NAME, Form2b.SECTION_NAME), true);
             put(new SyncModel(Form3a.class, MainApp.MODULE_FORM, Form3a.TABLE_NAME, Form3a.SECTION_NAME), true);
             put(new SyncModel(Form5A.class, MainApp.MODULE_FORM, Form5A.TABLE_NAME, Form5A.SECTION_NAME), true);
+            put(new SyncModel(FormKAP.class, MainApp.MODULE_KAP, FormKAP.TABLE_NAME, FormKAP.SECTION_NAME), true);
         }};
     }
 
@@ -232,16 +234,6 @@ public class UploadData {
         } else
             iWebCallback.onFailure(tableName, activity.getString(R.string.no_new_records_to_upload), ++index, 0, null);
 
-        // Form6
-        iFormCompletedUIds = uIdsHM.get(Form6.TABLE_NAME);
-        tableName = ((SyncModel) UPLOAD_TABLES.keySet().toArray()[7]).getTable();
-        List<Form6> list6 = appDatabase.form6Dao().getAllUnSyncedDataByUIds(iFormCompletedUIds);
-        if (list6 != null && !list6.isEmpty()) {
-            postData = prepareUploadData(tableName, gson.toJson(list6));
-            webCall.call(webAPI.uploadEncData(postData), AppConstants.UPLOAD_DATA, tableName, ++index, list6.size(), iFormCompletedUIds, IS_CALL_ENCRYPTED);
-        } else
-            iWebCallback.onFailure(tableName, activity.getString(R.string.no_new_records_to_upload), ++index, 0, null);
-
         // Form2a
         iFormCompletedUIds = uIdsHM.get(Form2a.TABLE_NAME);
         tableName = ((SyncModel) UPLOAD_TABLES.keySet().toArray()[8]).getTable();
@@ -279,6 +271,26 @@ public class UploadData {
         if (list5a != null && !list5a.isEmpty()) {
             postData = prepareUploadData(tableName, gson.toJson(list5a));
             webCall.call(webAPI.uploadEncData(postData), AppConstants.UPLOAD_DATA, tableName, ++index, list5a.size(), iFormCompletedUIds, IS_CALL_ENCRYPTED);
+        } else
+            iWebCallback.onFailure(tableName, activity.getString(R.string.no_new_records_to_upload), ++index, 0, null);
+
+        // Form6
+        iFormCompletedUIds = uIdsHM.get(Form6.TABLE_NAME);
+        tableName = ((SyncModel) UPLOAD_TABLES.keySet().toArray()[7]).getTable();
+        List<Form6> list6 = appDatabase.form6Dao().getAllUnSyncedDataByUIds(iFormCompletedUIds);
+        if (list6 != null && !list6.isEmpty()) {
+            postData = prepareUploadData(tableName, gson.toJson(list6));
+            webCall.call(webAPI.uploadEncData(postData), AppConstants.UPLOAD_DATA, tableName, ++index, list6.size(), iFormCompletedUIds, IS_CALL_ENCRYPTED);
+        } else
+            iWebCallback.onFailure(tableName, activity.getString(R.string.no_new_records_to_upload), ++index, 0, null);
+
+        // FormKAP
+        iFormCompletedUIds = uIdsHM.get(FormKAP.TABLE_NAME);
+        tableName = ((SyncModel) UPLOAD_TABLES.keySet().toArray()[12]).getTable();
+        List<FormKAP> listKAP = appDatabase.formKAPDao().getAllUnSyncedDataByUIds(iFormCompletedUIds);
+        if (listKAP != null && !listKAP.isEmpty()) {
+            postData = prepareUploadData(tableName, gson.toJson(listKAP));
+            webCall.call(webAPI.uploadEncData(postData), AppConstants.UPLOAD_DATA, tableName, ++index, listKAP.size(), iFormCompletedUIds, IS_CALL_ENCRYPTED);
         } else
             iWebCallback.onFailure(tableName, activity.getString(R.string.no_new_records_to_upload), ++index, 0, null);
 
@@ -374,6 +386,8 @@ public class UploadData {
                 appDatabase.form3aDao().updateSyncSuccess(responses);
             } else if (tag.equals(Form5A.TABLE_NAME)) {
                 appDatabase.form05aDao().updateSyncSuccess(responses);
+            } else if (tag.equals(FormKAP.TABLE_NAME)) {
+                appDatabase.formKAPDao().updateSyncSuccess(responses);
             }
         } else {
             // Update sync error status to db
@@ -401,6 +415,8 @@ public class UploadData {
                 appDatabase.form3aDao().updateSyncError(appDatabase.form3aDao().getAllUnSyncedDataByUIds(list));
             } else if (tag.equals(Form5A.TABLE_NAME)) {
                 appDatabase.form05aDao().updateSyncError(appDatabase.form05aDao().getAllUnSyncedDataByUIds(list));
+            } else if (tag.equals(FormKAP.TABLE_NAME)) {
+                appDatabase.formKAPDao().updateSyncError(appDatabase.formKAPDao().getAllUnSyncedDataByUIds(list));
             }
         }
     }

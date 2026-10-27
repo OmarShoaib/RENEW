@@ -154,7 +154,9 @@ public class BaseActivity extends AppCompatActivity {
                 (MainApp.formType == 5 && MainApp.form3a != null && !AppConstants.isEmpty(MainApp.form3a.getSynced())) ||
                 (MainApp.formType == 6 && MainApp.form3 != null && !AppConstants.isEmpty(MainApp.form3.getSynced())) ||
                 (MainApp.formType == 7 && MainApp.form4 != null && !AppConstants.isEmpty(MainApp.form4.getSynced())) ||
-                (MainApp.formType == 8 && MainApp.form6 != null && !AppConstants.isEmpty(MainApp.form6.getSynced()))) {
+                (MainApp.formType == 8 && MainApp.form6 != null && !AppConstants.isEmpty(MainApp.form6.getSynced())) ||
+                (MainApp.entryType == MainApp.MODULE_KAP && MainApp.formKAP != null
+                        && !AppConstants.isEmpty(MainApp.formKAP.getSynced()))) {
 
             View endingButtonsLayout = activity.findViewById(R.id.endButtonsLayout);
             // This check is just for safe side in case

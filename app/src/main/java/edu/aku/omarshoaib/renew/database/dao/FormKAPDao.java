@@ -29,8 +29,8 @@ public abstract class FormKAPDao implements BaseDao<FormKAP> {
     @Query("UPDATE FormKAP SET iStatus = :iStatus, iStatus96x = :iStatus96x, isFormCompleteOnce = :isFormCompleteOnce, endingDate = :endingDate WHERE id = :id")
     public abstract void updateIStatus(long id, String iStatus, String iStatus96x, boolean isFormCompleteOnce, String endingDate);
 
-    @Query("SELECT EXISTS(SELECT 1 FROM FormKAP WHERE districtCode = :districtCode AND scrId = :checkId AND synced = '1')")
-    public abstract boolean isFormSynced(String districtCode, String checkId);
+    @Query("SELECT EXISTS(SELECT 1 FROM FormKAP WHERE hcfCode = :hcfCode AND hhid = :hhid AND synced = '1')")
+    public abstract boolean isFormSynced(String hcfCode, String hhid);
 
     // This query is only used for updating sync list
     // id = rowId
@@ -40,8 +40,8 @@ public abstract class FormKAPDao implements BaseDao<FormKAP> {
     @Query("SELECT * FROM FormKAP WHERE uid = :uid")
     public abstract FormKAP getDataByUid(String uid);
 
-    @Query("SELECT * FROM FormKAP WHERE districtCode = :districtCode AND scrId = :scrId")
-    public abstract FormKAP getDataByScrId(String districtCode, String scrId);
+    @Query("SELECT * FROM FormKAP WHERE hcfCode = :hcfCode AND hhid = :hhId")
+    public abstract FormKAP getDataByHhid(String hcfCode, String hhId);
 
     @Query("SELECT * FROM FormKAP WHERE sysDate LIKE :date || '%'")
     public abstract List<FormKAP> getAllByDate(String date);

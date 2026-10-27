@@ -9,14 +9,19 @@ import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
 
+import java.util.List;
 import java.util.Objects;
 
 import edu.aku.omarshoaib.renew.R;
+import edu.aku.omarshoaib.renew.activity.sections.KAP.SectionA1;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivityIdentificationBinding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.MainApp;
+import edu.aku.omarshoaib.renew.global.views.SpinnerBuilder;
 import edu.aku.omarshoaib.renew.model.Form1;
+import edu.aku.omarshoaib.renew.model.FormKAP;
+import edu.aku.omarshoaib.renew.model.HCF;
 
 public class IdentificationAC extends BaseActivity {
 
@@ -26,7 +31,7 @@ public class IdentificationAC extends BaseActivity {
     ActivityIdentificationBinding bi;
     private AppDatabase appDatabase;
 
-    private Form1.SF1 sF1;
+    private FormKAP.SA1 sF1;
     private Button posBtn;
 
     @Override
@@ -38,8 +43,8 @@ public class IdentificationAC extends BaseActivity {
         AppConstants.initToolbar(activity, getString(R.string.identification), "", false);
 
         // Init form1 for the first time
-        Form1.initMeta();
-        sF1 = new Form1.SF1();
+        FormKAP.initMeta();
+        sF1 = new FormKAP.SA1();
         bi.setForm(sF1);
 
         appDatabase = AppDatabase.getDBInstance();
@@ -48,70 +53,32 @@ public class IdentificationAC extends BaseActivity {
     }
 
     private void initUI() {
-        bi.a102.setEnabled(false);
-//        bi.a103.setEnabled(false);
-//        bi.a104.setEnabled(false);
-//        bi.a105.setEnabled(false);
+        List<HCF> hcfList = appDatabase.hcfDao().getAllData();
 
-        posBtn = bi.endButtonsLayout.findViewById(R.id.posBtn);
-
-       /* bi.a101.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if (Objects.requireNonNull(bi.a101.getText()).toString().length() < 8) {
-                    bi.a102.setText(_EMPTY_);
-                    bi.a103.setText(_EMPTY_);
-                    bi.a104.setText(_EMPTY_);
-                    bi.a105.setText(_EMPTY_);
-                    posBtn.setEnabled(false);
-                    MainApp.form1.setDistrictCode(MainApp.user.getDistId());
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });*/
-    }
-
-    // Search Cluster
-    public void search(View view) {
-        /*if (AppConstants.isEmpty(bi.a101) || Objects.requireNonNull(bi.a101.getText()).toString().length() < 8)
-            return;
-        Cluster cluster = appDatabase.clusterDao().getDataByClusterNo(Objects.requireNonNull(bi.a101.getText()).toString());
-        if (cluster != null) {
-            bi.a102.setText(cluster.getDistrictName());
-            bi.a103.setText(cluster.getTehsilName());
-            bi.a104.setText(cluster.getUcName());
-            bi.a105.setText(cluster.getVillageName());
-            posBtn.setEnabled(true);
-        } else {
-            AppConstants.hideSoftKeyboard(activity);
-            AppConstants.showSimpleSnackBar(activity, getString(R.string.incorrect_cluster_code),
-                    AppConstants.MSG_DURATION, AppConstants.TYPE_ERROR);
-        }*/
+        new SpinnerBuilder<>(activity, bi.a110, hcfList, value -> sF1.setA110(value))
+                .setValueAs(hcf -> String.valueOf(hcf.getHfCode()))
+                .displayValueAs(HCF::getHfName)
+                .hintText("Select an option")
+                .build();
     }
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
 
+        String hhId = sF1.getA109();
+        String hcfCode = sF1.getA110();
+
         // Do not allow synced form1 to be edited
-        if (appDatabase.form1Dao().isFormSynced(MainApp.user.getDistId(), Objects.requireNonNull(bi.a107.getText()).toString()))
+        if (appDatabase.formKAPDao().isFormSynced(hcfCode, hhId))
             // Form1 has been Synced
             MainApp.isSynced = true;
-        // New form1
-//        String clusterNo = Objects.requireNonNull(bi.a101.getText()).toString();
-        String hhId = Objects.requireNonNull(bi.a107.getText()).toString();
-        MainApp.form1.setDistrictCode(MainApp.user.getDistId());
-        MainApp.form1.setScrId(hhId);
-        Form1.saveMainData(hhId);
-        Form1.SF1.saveData(sF1);
+
+        // New formKAP
+        MainApp.formKAP.setHhid(hhId);
+        MainApp.formKAP.setHcfCode(hcfCode);
+        FormKAP.saveMainData(hhId, hcfCode);
+
+        AppConstants.gotoActivity(activity, SectionA1.class, true);
     }
 
     public boolean formValidation() {
@@ -119,13 +86,7 @@ public class IdentificationAC extends BaseActivity {
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
-    @Override
     public void onBackPressed() {
-        super.onBackPressed();
-        AppConstants.gotoActivity(activity, MainActivity.class, true);
+        AppConstants.gotoActivity(activity, ModuleAC.class, true);
     }
 }

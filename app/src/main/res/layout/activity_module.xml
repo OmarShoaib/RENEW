@@ -273,5 +273,62 @@
                 </LinearLayout>
             </ScrollView>
         </LinearLayout>
+
+        <!--INTRO LAYOUT-->
+        <RelativeLayout
+            android:id="@+id/lockedLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="@dimen/_2sdp"
+            android:orientation="vertical"
+            tools:visibility="gone">
+
+            <ImageView
+                android:id="@+id/lockedBG"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.85"
+                android:background="@drawable/bg_sync"
+                android:clickable="false"
+                android:elevation="@dimen/_2sdp"
+                android:focusable="true"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/lockedTitleTV"
+                style="@style/Theme.AppStructure.TitleBoldText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_150sdp"
+                android:elevation="@dimen/_2sdp"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="center_horizontal"
+                android:text="@string/download_data"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_17ssp" />
+
+            <TextView
+                android:id="@+id/lockedDescTV"
+                style="@style/Theme.AppStructure.RegularText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lockedTitleTV"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:elevation="@dimen/_2sdp"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="center_horizontal"
+                android:text="@string/download_data_desc_2"
+                android:textColor="@color/white" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_40sdp"
+                android:clickable="true"
+                android:elevation="@dimen/_2sdp"
+                android:focusable="true"
+                tools:ignore="ContentDescription" />
+        </RelativeLayout>
     </RelativeLayout>
 </layout>

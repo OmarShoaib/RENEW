@@ -1463,6 +1463,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.a21301.equals(`1`)}"
+                                android:enabled="@{!form.a21304.equals(`4`)}"
                                 android:onClick="@{()->form.setA21301(form.a21301.equals(`1`)?``:`1`)}"
 
                                 android:text="@string/a21301" />
@@ -1472,6 +1473,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.a21302.equals(`2`)}"
+                                android:enabled="@{!form.a21304.equals(`4`)}"
                                 android:onClick="@{()->form.setA21302(form.a21302.equals(`2`)?``:`2`)}"
 
                                 android:text="@string/a21302" />
@@ -1481,12 +1483,14 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.a21303.equals(`3`)}"
+                                android:enabled="@{!form.a21304.equals(`4`)}"
                                 android:onClick="@{()->form.setA21303(form.a21303.equals(`3`)?``:`3`)}"
 
                                 android:text="@string/a21303" />
 
                             <CheckBox
                                 android:id="@+id/a21304"
+                                style="@style/dont_know"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:checked="@{form.a21304.equals(`4`)}"
@@ -1500,6 +1504,7 @@
                                 android:layout_height="wrap_content"
 
                                 android:checked="@{form.a21396.equals(`96`)}"
+                                android:enabled="@{!form.a21304.equals(`4`)}"
                                 android:onClick="@{()->form.setA21396(form.a21396.equals(`96`)?``:`96`)}"
                                 android:text="@string/a21396" />
 

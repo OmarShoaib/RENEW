@@ -54,11 +54,11 @@ public class SectionD extends BaseActivity {
     }
 
     public void btnEnd(View view) {
-        AppConstants.checkDoubleCancelPress(activity, IdentificationAC.class);
+        AppConstants.checkDoubleCancelPress(activity, EndingACKAP.class);
     }
 
     @Override
     public void onBackPressed() {
-        AppConstants.checkDoubleBackPress(activity, IdentificationAC.class);
+        AppConstants.checkDoubleBackPress(activity, EndingACKAP.class);
     }
 }

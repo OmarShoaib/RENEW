@@ -23,8 +23,11 @@ import java.util.List;
 import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.BaseActivity;
 import edu.aku.omarshoaib.renew.activity.MainActivity;
+import edu.aku.omarshoaib.renew.activity.ModuleAC;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivityEndingBinding;
+import edu.aku.omarshoaib.renew.databinding.KapEndingActivityBinding;
+import edu.aku.omarshoaib.renew.databinding.KapEndingActivityBindingImpl;
 import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.DateUtils;
 import edu.aku.omarshoaib.renew.global.MainApp;
@@ -34,7 +37,7 @@ public class EndingACKAP extends BaseActivity {
     private final String TAG = getClass().getSimpleName();
     private final Activity activity = EndingACKAP.this;
 
-    ActivityEndingBinding bi;
+    KapEndingActivityBinding bi;
     private AppDatabase appDatabase;
 
     private RadioGroup radioGroup;
@@ -166,9 +169,10 @@ public class EndingACKAP extends BaseActivity {
         if(AppConstants.isEmpty(MainApp.formKAP.getSyncDate()))
             endingDate = DateUtils.getCurrentDateTime();
 
-        appDatabase.formKAPDao().updateIStatus(MainApp.formKAP.getId(), status, otherET.getText().toString(), isFormCompleteOnce, endingDate);
+//        appDatabase.formKAPDao().updateIStatus(MainApp.formKAP.getId(), status, otherET.getText().toString(), isFormCompleteOnce, endingDate);
+        appDatabase.formKAPDao().updateIStatus(MainApp.formKAP.getId(), status, "", isFormCompleteOnce, endingDate);
         //appDatabase.formDao().update(MainApp.formKAP);
-        AppConstants.gotoActivity(activity, MainActivity.class, true);
+        AppConstants.gotoActivity(activity, ModuleAC.class, true);
     }
 
     @Override

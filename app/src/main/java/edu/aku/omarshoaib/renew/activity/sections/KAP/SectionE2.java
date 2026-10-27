@@ -1,6 +1,7 @@
 package edu.aku.omarshoaib.renew.activity.sections.KAP;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -50,15 +51,16 @@ public class SectionE2 extends BaseActivity {
     public void btnContinue(View view) {
         if (!formValidation()) return;
         FormKAP.SE2.saveData(sE);
-        AppConstants.gotoActivity(activity, EndingACKAP.class, true);
+        startActivity(new Intent(activity, EndingACKAP.class).putExtra("complete", true));
+        finish();
     }
 
     public void btnEnd(View view) {
-        AppConstants.checkDoubleCancelPress(activity, IdentificationAC.class);
+        AppConstants.checkDoubleCancelPress(activity, EndingACKAP.class);
     }
 
     @Override
     public void onBackPressed() {
-        AppConstants.checkDoubleBackPress(activity, IdentificationAC.class);
+        AppConstants.checkDoubleBackPress(activity, EndingACKAP.class);
     }
 }

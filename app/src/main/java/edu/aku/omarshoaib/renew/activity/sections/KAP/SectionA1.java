@@ -4,9 +4,12 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 
 import com.validatorcrawler.aliazaz.Validator;
+
+import java.util.Arrays;
 
 import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.BaseActivity;
@@ -43,16 +46,38 @@ public class SectionA1 extends BaseActivity {
         initUI();
     }
 
-    private void initUI() {}
+    private void initUI() {
+        if(!sA1.getA115().isEmpty()) {
+            bi.a115.setEnabled(false);
+            bi.a115.setTextColor(ContextCompat.getColor(this, R.color.red_color));
+        } else {
+            String minDate = DateUtils
+                    .addSubDays(DateUtils.getCurrentDateTime(AppConstants.APP_DATE_FORMAT),
+                            -25);
+            bi.a115.setMinDate(minDate);
+        }
+        if(MainApp.formKAP.getSA2() != null) {
+            AppConstants.disableViews(activity, Arrays.asList(bi.a102, bi.a104, bi.a105, bi.a106));
+        }
+    }
 
     private boolean formValidation() {
-        return Validator.emptyCheckingContainer(activity, bi.GrpName);
+        if(!Validator.emptyCheckingContainer(activity, bi.GrpName)) return false;
+
+        /*if(!sA1.getA103m().isEmpty() && !sA1.getA103d().isEmpty() &&
+                Integer.parseInt(sA1.getA103m()) == 0 && Integer.parseInt(sA1.getA103d()) == 0  ) {
+            return Validator.emptyCustomTextBox(activity, bi.a103m, "Both cannot be zero");
+        }*/
+
+        return true;
     }
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
         FormKAP.SA1.saveData(sA1);
-        AppConstants.gotoActivity(activity, SectionA2.class, true);
+
+        AppConstants.gotoActivity(activity, sA1.getA106().equals("1") ? SectionA2.class :
+                EndingACKAP.class, true);
     }
 
     public void btnEnd(View view) {

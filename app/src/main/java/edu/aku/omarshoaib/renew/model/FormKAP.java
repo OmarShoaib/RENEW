@@ -24,7 +24,7 @@ import edu.aku.omarshoaib.renew.global.MainApp;
 public class FormKAP extends FormBaseModel {
 
     public static final String TABLE_NAME = "FormKAP";
-    public static final String SECTION_NAME = "Sections: F1, F1A";
+    public static final String SECTION_NAME = "Sections: A1, A2, A3, B1, B2, B3, B4, C, D, E1, E2";
     // Only for Main Table i.e. Module Table like Form1.
     // These fields are used to display on Synced Recs list.
     // Dynamic approach + Sequence matters
@@ -33,14 +33,14 @@ public class FormKAP extends FormBaseModel {
     @SerializedName("dist_id")
     private String districtCode = _EMPTY_;
 
-    @SerializedName("scr_id")
-    private String scrId = _EMPTY_;
+    @SerializedName("hcf_if")
+    private String hcfCode = _EMPTY_;
+
+    @SerializedName("hhid")
+    private String hhid = _EMPTY_;
 
     @SerializedName("ending_date")
     private String endingDate = _EMPTY_;
-
-    @SerializedName("team_id")
-    private String teamId = _EMPTY_;
 
     // This variable is used to mark the form1 that its completed once.
     // To implement the logic of displaying 'Skip to End' button over
@@ -173,9 +173,9 @@ public class FormKAP extends FormBaseModel {
 
     /*FOR IDENTIFICATION INFORMATION - CLUSTER-WISE*/
     // Save data in db
-    public static void saveMainData(String scrId) {
+    public static void saveMainData(String hhid, String hcfCode) {
         FormKAPDao formsKAPDao = AppDatabase.getDBInstance().formKAPDao();
-        FormKAP formKAP = formsKAPDao.getDataByScrId(MainApp.user.getDistId(), scrId);
+        FormKAP formKAP = formsKAPDao.getDataByHhid(hcfCode, hhid);
         if (formKAP != null) {
             MainApp.formKAP = formKAP;
         } else {
@@ -192,12 +192,20 @@ public class FormKAP extends FormBaseModel {
         this.districtCode = districtCode;
     }
 
-    public String getScrId() {
-        return scrId;
+    public String getHcfCode() {
+        return hcfCode;
     }
 
-    public void setScrId(String scrId) {
-        this.scrId = scrId;
+    public void setHcfCode(String hcfCode) {
+        this.hcfCode = hcfCode;
+    }
+
+    public String getHhid() {
+        return hhid;
+    }
+
+    public void setHhid(String hhid) {
+        this.hhid = hhid;
     }
 
     public String getEndingDate() {
@@ -206,14 +214,6 @@ public class FormKAP extends FormBaseModel {
 
     public void setEndingDate(String endingDate) {
         this.endingDate = endingDate;
-    }
-
-    public String getTeamId() {
-        return teamId;
-    }
-
-    public void setTeamId(String teamId) {
-        this.teamId = teamId;
     }
 
     public boolean isFormCompleteOnce() {
@@ -281,6 +281,9 @@ public class FormKAP extends FormBaseModel {
 
         public void setA102(String a102) {
             this.a102 = a102;
+            setA103m(a102.equals("1") ? this.a103m : _EMPTY_);
+            setA103d(a102.equals("1") ? this.a103d : _EMPTY_);
+            setA104(a102.equals("1") ? this.a104 : _EMPTY_);
             notifyPropertyChanged(BR.a102);
         }
 
@@ -311,6 +314,7 @@ public class FormKAP extends FormBaseModel {
 
         public void setA104(String a104) {
             this.a104 = a104;
+            setA105(a104.equals("1") ? this.a105 : _EMPTY_);
             notifyPropertyChanged(BR.a104);
         }
 
@@ -321,6 +325,7 @@ public class FormKAP extends FormBaseModel {
 
         public void setA105(String a105) {
             this.a105 = a105;
+            setA106(a105.equals("1") ? this.a106 : _EMPTY_);
             notifyPropertyChanged(BR.a105);
         }
 
@@ -331,6 +336,11 @@ public class FormKAP extends FormBaseModel {
 
         public void setA106(String a106) {
             this.a106 = a106;
+            if(!a106.equals("1")) {
+                setA107(_EMPTY_);
+                setA108(_EMPTY_);
+                setA113(_EMPTY_);
+            }
             notifyPropertyChanged(BR.a106);
         }
 
@@ -773,6 +783,12 @@ public class FormKAP extends FormBaseModel {
 
         public void setA21304(String a21304) {
             this.a21304 = a21304;
+            if(a21304.equals("4")) {
+                setA21301(_EMPTY_);
+                setA21302(_EMPTY_);
+                setA21303(_EMPTY_);
+                setA21396(_EMPTY_);
+            }
             notifyPropertyChanged(BR.a21304);
         }
 
@@ -3018,6 +3034,7 @@ public class FormKAP extends FormBaseModel {
 
         public void setC110(String c110) {
             this.c110 = c110;
+            setC110nx(c110.equals("1") ? this.c110nx : _EMPTY_);
             notifyPropertyChanged(BR.c110);
         }
 
