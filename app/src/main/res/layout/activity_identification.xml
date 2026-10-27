@@ -9,7 +9,7 @@
 
         <variable
             name="form"
-            type="edu.aku.omarshoaib.renew.model.Form1.SF1" />
+            type="edu.aku.omarshoaib.renew.model.FormKAP.SA1" />
 
     </data>
 
@@ -33,7 +33,7 @@
                 android:orientation="vertical">
 
                 <!-- district  Input   -->
-                <androidx.cardview.widget.CardView
+                <!--<androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVo102"
                     style="@style/cardView">
 
@@ -70,7 +70,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!-- sNo  Input   -->
+                &lt;!&ndash; sNo  Input   &ndash;&gt;
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVo107"
                     style="@style/cardView">
@@ -107,6 +107,81 @@
                             app:pattern="[0-9]{3}" />
 
                     </LinearLayout>
+                </androidx.cardview.widget.CardView>-->
+
+                <!-- a110 Dropdown -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVa110"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_a110" />
+
+                        <TextView
+                            style="@style/labels"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/a110" />
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/a110"
+                            style="@style/Theme.AppStructure.SpinnerStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:spinnerMode="dropdown" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- a109 Input-Numeric -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fldGrpCVa109"
+                    style="@style/cardView">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/quesNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="@string/Q_a109" />
+
+                        <TextView
+                            style="@style/labels"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="@string/a109" />
+
+                        <com.edittextpicker.aliazaz.EditTextPicker
+                            android:id="@+id/a109"
+                            style="@style/Theme.AppStructure.EditTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:digits="@string/digits_number"
+                            android:gravity="center"
+                            android:hint="###"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:text="@={form.a109}"
+                            app:maxValue="999"
+                            app:minValue="001"
+                            app:pattern="[0-9]{3}"
+                            app:type="range" />
+                    </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
                 <TextView
@@ -127,8 +202,7 @@
                     android:id="@+id/endButtonsLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:btnNegVisible="-1"
-                    app:btnPosEnabled="false" />
+                    app:btnNegVisible="-1" />
 
             </LinearLayout>
 

@@ -50,7 +50,7 @@ public class SectionE2 extends BaseActivity {
     public void btnContinue(View view) {
         if (!formValidation()) return;
         FormKAP.SE2.saveData(sE);
-        AppConstants.gotoActivity(activity, SectionE1.class, true);
+        AppConstants.gotoActivity(activity, EndingACKAP.class, true);
     }
 
     public void btnEnd(View view) {

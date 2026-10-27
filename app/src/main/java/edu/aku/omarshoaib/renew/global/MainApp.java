@@ -45,6 +45,7 @@ public class MainApp extends Application {
     public static int MODULE_FORM = 1;
     public final static int MODULE_WOMAN = 1;
     public final static int MODULE_CHILD = 2;
+    public final static int MODULE_KAP = 3;
 
     // Static object of models
     public static AppInfo appInfo;

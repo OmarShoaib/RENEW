@@ -826,13 +826,5 @@
                     tools:ignore="Autofill" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-
-        <!--EndButtons Layout-->
-        <edu.aku.omarshoaib.renew.global.views.AppEndButtons
-            android:id="@+id/endButtonsLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <!--EndButtons Layout-->
-
     </LinearLayout>
 </layout>

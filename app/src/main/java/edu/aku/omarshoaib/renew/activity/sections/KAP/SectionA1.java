@@ -37,7 +37,6 @@ public class SectionA1 extends BaseActivity {
         AppConstants.initToolbar(activity, getString(R.string.a1t2), getString(R.string.a1t22), false);
         appDatabase = AppDatabase.getDBInstance();
 
-        FormKAP.initMeta();
         sA1 = FormKAP.SA1.getData();
         sA1 = sA1 == null ? new FormKAP.SA1() : sA1;
         bi.setForm(sA1);
@@ -52,8 +51,6 @@ public class SectionA1 extends BaseActivity {
 
     public void btnContinue(View view) {
         if (!formValidation()) return;
-        FormKAP.saveMainData("MainApp.form1.getScrId()");
-        MainApp.participant.setEndingDate(DateUtils.getCurrentDateTime());
         FormKAP.SA1.saveData(sA1);
         AppConstants.gotoActivity(activity, SectionA2.class, true);
     }

@@ -56,8 +56,9 @@ public class ModuleAC extends AppCompatActivity {
 
         if (viewId == R.id.option1) MainApp.entryType = MainApp.MODULE_WOMAN;
         else if (viewId == R.id.option2) MainApp.entryType = MainApp.MODULE_CHILD;
+        else if (viewId == R.id.option3) MainApp.entryType = MainApp.MODULE_KAP;
 
-        AppConstants.gotoActivity(activity, viewId == R.id.option3 ?
-                SectionA1.class : MainActivity.class, false);
+        AppConstants.gotoActivity(activity, MainApp.entryType == MainApp.MODULE_KAP ?
+                IdentificationAC.class : MainActivity.class, false);
     }
 }

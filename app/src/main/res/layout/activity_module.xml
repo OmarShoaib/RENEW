@@ -238,7 +238,7 @@
                                     android:layout_toEndOf="@+id/siIV3"
                                     android:fontFamily="@font/roboto_regular"
                                     android:gravity="center_vertical"
-                                    android:text="@string/m2t1"
+                                    android:text="@string/m3t1"
                                     android:textAllCaps="true"
                                     android:textColor="@color/primary_color"
                                     android:textSize="@dimen/_9ssp" />
@@ -254,7 +254,7 @@
                                     android:layout_toEndOf="@+id/siIV3"
                                     android:fontFamily="@font/roboto_regular"
                                     android:gravity="center_vertical"
-                                    android:text="@string/m2t0"
+                                    android:text="@string/m3t0"
                                     android:textColor="@color/gray_dark" />
 
                                 <ImageView
