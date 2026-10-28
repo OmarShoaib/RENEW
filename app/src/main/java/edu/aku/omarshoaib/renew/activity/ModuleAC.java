@@ -83,7 +83,7 @@ public class ModuleAC extends AppCompatActivity {
         else if (viewId == R.id.option3) MainApp.entryType = MainApp.MODULE_KAP;
 
         AppConstants.gotoActivity(activity, MainApp.entryType == MainApp.MODULE_KAP ?
-                IdentificationAC.class : MainActivity.class, false);
+                IdentificationAC.class : MainActivity.class, true);
     }
 
     @Override

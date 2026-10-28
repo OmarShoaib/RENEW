@@ -33,6 +33,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+                <TextView
+                    style="@style/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/a3t2"/>
+
                 <!-- a301 Title -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa301"
@@ -839,6 +845,12 @@
                         </edu.aku.omarshoaib.renew.global.views.AppRadioGroup>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
+                <TextView
+                    style="@style/labelsHead"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/a310"/>
 
                 <!-- a310a Radio -->
                 <androidx.cardview.widget.CardView
