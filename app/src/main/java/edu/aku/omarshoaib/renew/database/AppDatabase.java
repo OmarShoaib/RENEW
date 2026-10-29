@@ -100,7 +100,7 @@ public abstract class AppDatabase extends RoomDatabase {
             // Room db Initialization
             Builder<AppDatabase> builder = Room.databaseBuilder(context.getApplicationContext(),
                     AppDatabase.class, AppConstants.DATABASE_NAME)
-                    .addMigrations(MIGRATION_1_2, MIGRATION_2_3);
+                    .addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4);
             builder.allowMainThreadQueries();
 //                builder.fallbackToDestructiveMigration();
             if (!AppConstants.IS_ADMIN)
