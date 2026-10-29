@@ -71,7 +71,7 @@ import edu.aku.omarshoaib.renew.model.Villages;
         Form1.class, Form2.class, Form2a.class, Form3.class, Form4.class, Form5.class,
         Form5A.class, Form6.class, Participant.class, HCF.class, VPHQ9.class, Form2b.class, Form3a.class,
         VForm2b.class, VForm3a.class, Teams.class, VFormF05A.class, VFormF06.class, FormKAP.class},
-        version = 3, exportSchema = false)
+        version = 4, exportSchema = false)
 @TypeConverters({SyncModel.ResponseDate.DataConverter.class,
         Form1.SF1.DataConverter.class, Form2.SF2.DataConverter.class, Form3.SF3.DataConverter.class,
         Form4.SF4.DataConverter.class, Form5.SF5.DataConverter.class, Form6.SF6.DataConverter.class,
@@ -206,6 +206,13 @@ public abstract class AppDatabase extends RoomDatabase {
         public void migrate(SupportSQLiteDatabase database) {
             database.execSQL("ALTER TABLE vw_form6 "
                     + " ADD COLUMN type TEXT");
+        }
+    };
+
+    public static final Migration MIGRATION_3_4 = new Migration(3, 4) {
+        @Override
+        public void migrate(SupportSQLiteDatabase database) {
+            database.execSQL("CREATE TABLE IF NOT EXISTS FormKAP (`districtCode` TEXT, `hcfCode` TEXT, `hhid` TEXT, `endingDate` TEXT, `isFormCompleteOnce` INTEGER NOT NULL DEFAULT 0, `sA1` TEXT, `sA2` TEXT, `sA3` TEXT, `sB1` TEXT, `sB2` TEXT, `sB3` TEXT, `sB4` TEXT, `sC` TEXT, `sD` TEXT, `sE1` TEXT, `sE2` TEXT, `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `uid` TEXT, `projectName` TEXT, `username` TEXT, `sysDate` TEXT, `deviceId` TEXT, `deviceName` TEXT, `appVersion` TEXT, `iStatus` TEXT, `iStatus96x` TEXT, `synced` TEXT, `syncDate` TEXT, `isError` INTEGER NOT NULL DEFAULT 0)");
         }
     };
 
