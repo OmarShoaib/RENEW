@@ -26,6 +26,7 @@ import java.util.Locale;
 
 import dev.b3nedikt.restring.Restring;
 import edu.aku.omarshoaib.renew.R;
+import edu.aku.omarshoaib.renew.activity.sections.KAP.EndingACKAP;
 import edu.aku.omarshoaib.renew.global.AppConstants;
 import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.global.Helper;
@@ -38,7 +39,7 @@ public class BaseActivity extends AppCompatActivity {
     // To implement anything after loading child and parent activity i.e. onFullLoad
     public IBaseAC iBaseAC;
     // SkipEnd button visibility after sync form1. By default its visible.
-    public boolean isSkipEndVisible = true;
+    public boolean isSkipEndVisible = false;
 
     private final Handler idleHandler = new Handler();
     // This boolean is used to prevent calling startHandler when switching activity.
@@ -237,7 +238,8 @@ public class BaseActivity extends AppCompatActivity {
                 return false;
 
             finish();
-            startActivity(new Intent(activity, EndingAC.class).putExtra("complete", true));
+            startActivity(new Intent(activity, MainApp.entryType == MainApp.MODULE_KAP ?
+                    EndingACKAP.class : EndingAC.class).putExtra("complete", true));
             return true;
         });
     }
