@@ -1029,9 +1029,10 @@
     <string name="a10801">Male</string>
     <string name="a10802">Female</string>
     <string name="a109">Household ID</string>
-    <string name="a110">Cluster/HCF Name</string>
+    <!--<string name="a110">Cluster / HCF Name</string>-->
+    <string name="a110">Cluster</string>
     <string name="a111">Village Name</string>
-    <string name="a112">Landmark/Address Note</string>
+    <string name="a112">Landmark / Address Note</string>
     <string name="a113">Contact number</string>
     <string name="a115">Date</string>
     <string name="a116">Time (hours: minutes)</string>
