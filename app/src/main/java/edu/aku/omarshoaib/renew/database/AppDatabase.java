@@ -75,7 +75,7 @@ import edu.aku.omarshoaib.renew.model.Villages;
         Form1.class, Form2.class, Form2a.class, Form3.class, Form4.class, Form5.class,
         Form5A.class, Form6.class, Participant.class, HCF.class, VPHQ9.class, Form2b.class, Form3a.class,
         VForm2b.class, VForm3a.class, Teams.class, VFormF05A.class, VFormF06.class, FormKAP.class, BLRandomized.class, Cluster.class},
-        version = 4, exportSchema = false)
+        version = 5, exportSchema = false)
 @TypeConverters({SyncModel.ResponseDate.DataConverter.class,
         Form1.SF1.DataConverter.class, Form2.SF2.DataConverter.class, Form3.SF3.DataConverter.class,
         Form4.SF4.DataConverter.class, Form5.SF5.DataConverter.class, Form6.SF6.DataConverter.class,
@@ -103,8 +103,8 @@ public abstract class AppDatabase extends RoomDatabase {
         if (appDatabase == null) {
             // Room db Initialization
             Builder<AppDatabase> builder = Room.databaseBuilder(context.getApplicationContext(),
-                    AppDatabase.class, AppConstants.DATABASE_NAME)
-                    .addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4);
+                            AppDatabase.class, AppConstants.DATABASE_NAME)
+                    .addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5);
             builder.allowMainThreadQueries();
 //                builder.fallbackToDestructiveMigration();
             if (!AppConstants.IS_ADMIN)
@@ -220,6 +220,12 @@ public abstract class AppDatabase extends RoomDatabase {
         @Override
         public void migrate(SupportSQLiteDatabase database) {
             database.execSQL("CREATE TABLE IF NOT EXISTS FormKAP (`districtCode` TEXT, `hcfCode` TEXT, `hhid` TEXT, `endingDate` TEXT, `isFormCompleteOnce` INTEGER NOT NULL DEFAULT 0, `sA1` TEXT, `sA2` TEXT, `sA3` TEXT, `sB1` TEXT, `sB2` TEXT, `sB3` TEXT, `sB4` TEXT, `sC` TEXT, `sD` TEXT, `sE1` TEXT, `sE2` TEXT, `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `uid` TEXT, `projectName` TEXT, `username` TEXT, `sysDate` TEXT, `deviceId` TEXT, `deviceName` TEXT, `appVersion` TEXT, `iStatus` TEXT, `iStatus96x` TEXT, `synced` TEXT, `syncDate` TEXT, `isError` INTEGER NOT NULL DEFAULT 0)");
+        }
+    };
+
+    public static final Migration MIGRATION_4_5 = new Migration(4, 5) {
+        @Override
+        public void migrate(SupportSQLiteDatabase database) {
             database.execSQL("CREATE TABLE IF NOT EXISTS `bl_randomised` (`id` INTEGER NOT NULL, `sNo` TEXT, `randomizedDT` TEXT, `clusterNo` TEXT, `luid` TEXT, `tabNo` TEXT, `hhId` TEXT, `compId` TEXT, `hhHead` TEXT, `districtId` TEXT, `geoArea` TEXT, `username` TEXT, PRIMARY KEY(`id`))");
             database.execSQL("CREATE TABLE IF NOT EXISTS `Cluster` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `colId` INTEGER NOT NULL, `colDT` TEXT, `clusterNo` TEXT, `geoArea` TEXT, `districtCode` TEXT, `districtName` TEXT, `tehsilCode` TEXT, `tehsilName` TEXT, `hfCode` TEXT, `hfName` TEXT, `lhs` TEXT, `lhw` TEXT, `group` TEXT, `ucCode` TEXT, `ucName` TEXT, `villageName` TEXT)");
         }
