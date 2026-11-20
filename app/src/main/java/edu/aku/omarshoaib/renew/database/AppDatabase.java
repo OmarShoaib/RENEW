@@ -18,6 +18,8 @@ import net.sqlcipher.database.SupportFactory;
 
 import java.lang.reflect.Type;
 
+import edu.aku.omarshoaib.renew.database.dao.BLRandomizedDao;
+import edu.aku.omarshoaib.renew.database.dao.ClusterDao;
 import edu.aku.omarshoaib.renew.database.dao.EntryLogDao;
 import edu.aku.omarshoaib.renew.database.dao.Form05ADao;
 import edu.aku.omarshoaib.renew.database.dao.Form1Dao;
@@ -43,6 +45,8 @@ import edu.aku.omarshoaib.renew.database.dao.VFormF05ADao;
 import edu.aku.omarshoaib.renew.database.dao.VPHQ9Dao;
 import edu.aku.omarshoaib.renew.database.dao.VillagesDao;
 import edu.aku.omarshoaib.renew.global.AppConstants;
+import edu.aku.omarshoaib.renew.model.BLRandomized;
+import edu.aku.omarshoaib.renew.model.Cluster;
 import edu.aku.omarshoaib.renew.model.EntryLog;
 import edu.aku.omarshoaib.renew.model.Form1;
 import edu.aku.omarshoaib.renew.model.Form2;
@@ -70,7 +74,7 @@ import edu.aku.omarshoaib.renew.model.Villages;
 @Database(entities = {User.class, Villages.class, EntryLog.class,
         Form1.class, Form2.class, Form2a.class, Form3.class, Form4.class, Form5.class,
         Form5A.class, Form6.class, Participant.class, HCF.class, VPHQ9.class, Form2b.class, Form3a.class,
-        VForm2b.class, VForm3a.class, Teams.class, VFormF05A.class, VFormF06.class, FormKAP.class},
+        VForm2b.class, VForm3a.class, Teams.class, VFormF05A.class, VFormF06.class, FormKAP.class, BLRandomized.class, Cluster.class},
         version = 4, exportSchema = false)
 @TypeConverters({SyncModel.ResponseDate.DataConverter.class,
         Form1.SF1.DataConverter.class, Form2.SF2.DataConverter.class, Form3.SF3.DataConverter.class,
@@ -162,6 +166,10 @@ public abstract class AppDatabase extends RoomDatabase {
 
     public abstract TeamDao teamsDao();
 
+    public abstract ClusterDao clusterDao();
+
+    public abstract BLRandomizedDao blRandomizedDao();
+
     // Type converter used to save JsonObject in a single column
     public static class BaseConverter<T> {
         private final Gson gson;
@@ -204,8 +212,7 @@ public abstract class AppDatabase extends RoomDatabase {
     public static final Migration MIGRATION_2_3 = new Migration(2, 3) {
         @Override
         public void migrate(SupportSQLiteDatabase database) {
-            database.execSQL("ALTER TABLE vw_form6 "
-                    + " ADD COLUMN type TEXT");
+            database.execSQL("ALTER TABLE vw_form6 ADD COLUMN type TEXT");
         }
     };
 
@@ -213,6 +220,8 @@ public abstract class AppDatabase extends RoomDatabase {
         @Override
         public void migrate(SupportSQLiteDatabase database) {
             database.execSQL("CREATE TABLE IF NOT EXISTS FormKAP (`districtCode` TEXT, `hcfCode` TEXT, `hhid` TEXT, `endingDate` TEXT, `isFormCompleteOnce` INTEGER NOT NULL DEFAULT 0, `sA1` TEXT, `sA2` TEXT, `sA3` TEXT, `sB1` TEXT, `sB2` TEXT, `sB3` TEXT, `sB4` TEXT, `sC` TEXT, `sD` TEXT, `sE1` TEXT, `sE2` TEXT, `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `uid` TEXT, `projectName` TEXT, `username` TEXT, `sysDate` TEXT, `deviceId` TEXT, `deviceName` TEXT, `appVersion` TEXT, `iStatus` TEXT, `iStatus96x` TEXT, `synced` TEXT, `syncDate` TEXT, `isError` INTEGER NOT NULL DEFAULT 0)");
+            database.execSQL("CREATE TABLE IF NOT EXISTS `bl_randomised` (`id` INTEGER NOT NULL, `sNo` TEXT, `randomizedDT` TEXT, `clusterNo` TEXT, `luid` TEXT, `tabNo` TEXT, `hhId` TEXT, `compId` TEXT, `hhHead` TEXT, `districtId` TEXT, `geoArea` TEXT, `username` TEXT, PRIMARY KEY(`id`))");
+            database.execSQL("CREATE TABLE IF NOT EXISTS `Cluster` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `colId` INTEGER NOT NULL, `colDT` TEXT, `clusterNo` TEXT, `geoArea` TEXT, `districtCode` TEXT, `districtName` TEXT, `tehsilCode` TEXT, `tehsilName` TEXT, `hfCode` TEXT, `hfName` TEXT, `lhs` TEXT, `lhw` TEXT, `group` TEXT, `ucCode` TEXT, `ucName` TEXT, `villageName` TEXT)");
         }
     };
 

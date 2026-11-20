@@ -30,6 +30,8 @@ import edu.aku.omarshoaib.renew.global.DateUtils;
 import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.global.SharedPrefs;
 import edu.aku.omarshoaib.renew.model.AppInfo;
+import edu.aku.omarshoaib.renew.model.BLRandomized;
+import edu.aku.omarshoaib.renew.model.Cluster;
 import edu.aku.omarshoaib.renew.model.DPortal;
 import edu.aku.omarshoaib.renew.model.HCF;
 import edu.aku.omarshoaib.renew.model.SyncModel;
@@ -83,6 +85,8 @@ public class DownloadData {
         add(Teams.TABLE_NAME);
         add(VFormF06.TABLE_NAME);
         add(VFormF05A.TABLE_NAME);
+        add(Cluster.TABLE_NAME);
+        add(BLRandomized.TABLE_NAME);
     }};
 
     /**
@@ -162,6 +166,12 @@ public class DownloadData {
 
             SyncModel s8 = new SyncModel(DT_AFTER_LOGIN.get(8), select, "" /*" dist_id = " + MainApp.user.getDistId()*/, check);
             webCall.call(webAPI.downloadEncData(CryptoUtil.encrypt(gson.toJson(s8))), AppConstants.DOWNLOAD_DATA, DT_AFTER_LOGIN.get(8), ++index, 0, IS_CALL_ENCRYPTED);
+
+            SyncModel s9 = new SyncModel(DT_AFTER_LOGIN.get(9), select, " dist_id = " + MainApp.user.getDistId(), check);
+            webCall.call(webAPI.downloadEncData(CryptoUtil.encrypt(gson.toJson(s9))), AppConstants.DOWNLOAD_DATA, DT_AFTER_LOGIN.get(9), ++index, 0, IS_CALL_ENCRYPTED);
+
+            SyncModel s10 = new SyncModel(DT_AFTER_LOGIN.get(10), select, " dist_id = " + MainApp.user.getDistId(), check);
+            webCall.call(webAPI.downloadEncData(CryptoUtil.encrypt(gson.toJson(s10))), AppConstants.DOWNLOAD_DATA, DT_AFTER_LOGIN.get(10), ++index, 0, IS_CALL_ENCRYPTED);
         }
     }
 
@@ -358,6 +368,24 @@ public class DownloadData {
 
                 // Clear and Add data to db
                 appDatabase.vFormF05aDao().reinsert(vForm5as);
+            } else if (tag.equals(Cluster.TABLE_NAME)) {
+                Cluster[] clusters = gson.fromJson(jsonResponse, Cluster[].class);
+                // Update sync list view
+                SyncModel syncModel = getUpdatedSyncDownloadItem(activity, syncTablesList.get(index), clusters.length, AppConstants.RESPONSE_SUCCESS, null);
+                syncTablesList.set(index, syncModel);
+                syncAdapter.notifyItemChanged(index);
+
+                // Clear and Add data to db
+                appDatabase.clusterDao().reinsert(clusters);
+            } else if (tag.equals(BLRandomized.TABLE_NAME)) {
+                BLRandomized[] bl = gson.fromJson(jsonResponse, BLRandomized[].class);
+                // Update sync list view
+                SyncModel syncModel = getUpdatedSyncDownloadItem(activity, syncTablesList.get(index), bl.length, AppConstants.RESPONSE_SUCCESS, null);
+                syncTablesList.set(index, syncModel);
+                syncAdapter.notifyItemChanged(index);
+
+                // Clear and Add data to db
+                appDatabase.blRandomizedDao().reinsert(bl);
             }
         }
 

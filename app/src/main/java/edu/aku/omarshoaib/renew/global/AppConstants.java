@@ -1098,4 +1098,18 @@ public class AppConstants {
         return null; // Return null if no matching key is found
     }
 
+    public static String toTitleCase(String str) {
+        if (isEmpty(str)) return str;
+        StringBuilder builder = new StringBuilder();
+        boolean capitalizeNext = true;
+        for (char c : str.toLowerCase().toCharArray()) {
+            if (capitalizeNext && Character.isLetter(c)) {
+                builder.append(Character.toUpperCase(c));
+                capitalizeNext = false;
+            } else  builder.append(c);
+            if (c == ' ') capitalizeNext = true;
+        }
+        return builder.toString();
+    }
+
 }

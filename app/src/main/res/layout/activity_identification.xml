@@ -32,84 +32,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- district  Input   -->
-                <!--<androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVo102"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_dist" />
-
-                        <TextView
-                            style="@style/labels"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="@string/dist" />
-
-                        <EditText
-                            android:id="@+id/a102"
-                            style="@style/Theme.AppStructure.EditTextStyle"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1.9"
-                            android:enabled="false"
-                            android:gravity="center"
-                            android:hint="@string/dist"
-                            android:inputType="text"
-                            tools:ignore="Autofill" />
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                &lt;!&ndash; sNo  Input   &ndash;&gt;
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/fldGrpCVo107"
-                    style="@style/cardView">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_scrid" />
-
-                        <TextView
-                            style="@style/labels"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="@string/scrid" />
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/a107"
-                            style="@style/Theme.AppStructure.EditTextStyle"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="2"
-                            android:gravity="center"
-                            android:hint="###"
-                            android:inputType="textCapCharacters|textVisiblePassword"
-                            android:maxLength="3"
-                            app:mask="###"
-                            app:pattern="[0-9]{3}" />
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>-->
-
-                <!-- a110 Dropdown -->
+                <!-- a110  Input-Numeric   -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/fldGrpCVa110"
                     style="@style/cardView">
@@ -117,28 +40,164 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
 
-                        <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="@string/Q_a110" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
-                        <TextView
-                            style="@style/labels"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="@string/a110" />
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_a110" />
 
-                        <androidx.appcompat.widget.AppCompatSpinner
-                            android:id="@+id/a110"
-                            style="@style/Theme.AppStructure.SpinnerStyle"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:spinnerMode="dropdown" />
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1.45"
+                                android:text="@string/a110" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/a110"
+                                style="@style/Theme.AppStructure.EditTextStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:background="@android:color/transparent"
+                                android:digits="@string/digits_number"
+                                android:gravity="center"
+                                android:hint="########"
+                                android:inputType="number"
+                                android:text="@={form.a110}"
+                                app:mask="########"
+                                app:pattern="[0-9]{8}" />
+
+                            <Button
+                                android:id="@+id/searchBtn"
+                                style="@style/Theme.AppStructure.ButtonStyle"
+                                android:layout_width="0dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:onClick="search"
+                                android:text="@string/search"
+                                app:backgroundTint="@color/primary_color_dark"
+                                tools:ignore="UsingOnClickInXml" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1sdp"
+                            android:background="@color/divider_color_light" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2.05"
+                                android:gravity="center"
+                                android:text="District" />
+
+                            <TextView
+                                android:id="@+id/district"
+                                style="@style/sub_labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:hint="District"
+                                android:textColor="@color/red_color" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1sdp"
+                            android:background="@color/divider_color_light" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2.05"
+                                android:gravity="center"
+                                android:text="Tehsil" />
+
+                            <TextView
+                                android:id="@+id/tehsil"
+                                style="@style/sub_labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:hint="Tehsil"
+                                android:textColor="@color/red_color" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1sdp"
+                            android:background="@color/divider_color_light" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2.05"
+                                android:gravity="center"
+                                android:text="Union Council" />
+
+                            <TextView
+                                android:id="@+id/uc"
+                                style="@style/sub_labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:hint="Union Council"
+                                android:textColor="@color/red_color" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1sdp"
+                            android:background="@color/divider_color_light" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2.05"
+                                android:gravity="center"
+                                android:text="City / Village" />
+
+                            <TextView
+                                android:id="@+id/village"
+                                style="@style/sub_labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:hint="City / Village"
+                                android:textColor="@color/red_color" />
+                        </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -150,37 +209,61 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                style="@style/quesNum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="@string/Q_a109" />
+
+                            <TextView
+                                style="@style/labels"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1.45"
+                                android:text="@string/a109" />
+
+                            <com.edittextpicker.aliazaz.EditTextPicker
+                                android:id="@+id/a109"
+                                style="@style/Theme.AppStructure.EditTextStyle"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2"
+                                android:digits="0123456789-ABCD"
+                                android:enabled="false"
+                                android:gravity="center"
+                                android:hint="#-###-##"
+                                android:inputType="textCapCharacters|textVisiblePassword"
+                                android:text="@={form.a109}"
+                                app:mask="#-###-##"
+                                app:pattern="[A-D]-[0-9]{3}-[0-9]{2}" />
+
+                            <Button
+                                android:id="@+id/checkBtn"
+                                style="@style/Theme.AppStructure.ButtonStyle"
+                                android:layout_width="0dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight="1"
+                                android:onClick="searchHH"
+                                android:text="@string/check"
+                                app:backgroundTint="@color/primary_color_dark"
+                                tools:ignore="UsingOnClickInXml" />
+                        </LinearLayout>
 
                         <TextView
-                            style="@style/quesNum"
-                            android:layout_width="wrap_content"
+                            android:id="@+id/head"
+                            style="@style/sub_labels"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="@string/Q_a109" />
-
-                        <TextView
-                            style="@style/labels"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="@string/a109" />
-
-                        <com.edittextpicker.aliazaz.EditTextPicker
-                            android:id="@+id/a109"
-                            style="@style/Theme.AppStructure.EditTextStyle"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:digits="@string/digits_number"
-                            android:gravity="center"
-                            android:hint="###"
-                            android:inputType="number"
-                            android:maxLength="3"
-                            android:text="@={form.a109}"
-                            app:maxValue="999"
-                            app:minValue="001"
-                            app:pattern="[0-9]{3}"
-                            app:type="range" />
+                            android:textColor="@color/red_color"
+                            android:visibility="gone"
+                            tools:visibility="visible" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -202,7 +285,8 @@
                     android:id="@+id/endButtonsLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:btnNegVisible="-1" />
+                    app:btnNegVisible="-1"
+                    app:btnPosVisible="-1" />
 
             </LinearLayout>
 

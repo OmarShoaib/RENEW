@@ -10,13 +10,9 @@ import com.validatorcrawler.aliazaz.Validator;
 
 import edu.aku.omarshoaib.renew.R;
 import edu.aku.omarshoaib.renew.activity.BaseActivity;
-import edu.aku.omarshoaib.renew.activity.IdentificationAC;
-import edu.aku.omarshoaib.renew.activity.sections.woman.Section1.ParticipantListAC;
 import edu.aku.omarshoaib.renew.database.AppDatabase;
 import edu.aku.omarshoaib.renew.databinding.ActivitySectionA2Binding;
 import edu.aku.omarshoaib.renew.global.AppConstants;
-import edu.aku.omarshoaib.renew.global.DateUtils;
-import edu.aku.omarshoaib.renew.global.MainApp;
 import edu.aku.omarshoaib.renew.model.FormKAP;
 
 public class SectionA2 extends BaseActivity {
